@@ -1,0 +1,117 @@
+body {
+	background-color: black;
+	color: lightgrey;
+    font-size: 18px;
+    font-family: Open Sans, sans-serif;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	font-size: 32px;
+}
+
+a:link,
+a:active,
+a:visited,
+a {
+	color: DarkGoldenRod;
+	text-decoration: none;
+}
+
+div.border {
+	border: 1px DarkGoldenRod solid;
+}
+
+header {
+	display: flex;
+	justify-content: center;
+}
+
+nav > ul {
+	display: flex;
+	justify-content: space-between;
+}
+
+nav > ul > li {
+	margin: 0 5px;
+}
+
+.sitetitle {
+	color: #CE7898;
+}
+
+.pagetitle {
+	text-align: center;
+}
+
+section.pagefilm {
+	display: flex;
+	justify-content: center;
+	width: 800px;
+	margin: 0 auto;
+}
+
+.film {
+	display: flex;
+	flex-direction: column;
+}
+
+.top_film {
+	text-align: center;
+}
+
+.bottom_film {
+	display: flex;
+	justify-content: space-between;
+}
+
+.bottom_film .left_film {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 500px;
+}
+
+.details_film {
+	display: flex;
+	flex-wrap: wrap;
+	border-top: 1px lightgrey solid;
+}
+
+.details_film div:nth-child(odd) {
+	width: 150px;
+}
+
+.details_film div:nth-child(even) {
+	width: calc( 100% - 150px );
+}
+
+.bottom_edition .border,
+.right_film .border {
+	width: 200px;
+	height: 296px;
+}
+
+.bottom_edition img,
+.right_film img {
+	width: 100%;
+	height: 100%;
+}
+
+.pagehistorique.current {
+	display: flex;
+	justify-content: center;	
+}
+
+.pagehistorique .editions {
+	display: flex;
+}
+
+.edition_short {
+	padding: 20px;
+}

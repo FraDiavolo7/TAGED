@@ -1,0 +1,29 @@
+div.fds_header {
+	display: flex;
+	justify-content: space-between;
+	
+    text-transform: uppercase; 
+	color: grey;
+    font-size: 0.66em;
+    font-family: Open Sans, sans-serif;
+    font-weight: lighter;
+    border-bottom: 1px darkgrey solid;
+    
+    margin-bottom: 5px;
+}
+
+div.fds_header a:link,
+div.fds_header a:active,
+div.fds_header a:visited,
+div.fds_header a {
+	color: grey;
+	text-decoration: none;
+}
+
+div.fds_header .links {
+	display: flex;
+}
+
+div.fds_header .links a {
+	margin: 5px 20px 5px 0;
+}
