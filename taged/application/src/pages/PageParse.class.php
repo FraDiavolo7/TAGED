@@ -28,6 +28,8 @@ class PageParse extends TagedPage
 	        $this->FileToParse = Form::getFileName ( self::PARSER_FILE );
 	        $this->add ( HTML::div ( '$this->FileToParse : ' . $this->FileToParse ) );
 	        $this->add ( HTML::div ( '$_FILES : ' . print_r ( $_FILES, true ) ) );
+	        
+	        if ( NULL != $this->FileToParse ) $this->parse ();
 	    }
 	    
 	    if ( $this->FileToParse != NULL )
@@ -43,7 +45,16 @@ class PageParse extends TagedPage
 	    $File = HTML::inputFile ( self::PARSER_FILE );
 	    $Submit = HTML::submit( self::PARSER_SUBMIT, "Envoyer" );
 	    
-	    $this->add ( HTML::form ( $File . $Submit, array ( 'method' => 'POST') ) );
+	    $this->add ( HTML::form ( $File . $Submit, array ( 'method' => 'POST',  'enctype' => 'multipart/form-data' ) ) );
+	}
+	
+	protected function parse ()
+	{
+	    $TextToParse = file_get_contents ( $this->FileToParse );
+	    
+	    $Parser = new Parser ( $TextToParse );
+	    
+	    $Parser->parse ();
 	}
 	
 	protected $FileToParse; //!< The file to parse 
