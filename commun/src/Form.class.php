@@ -19,7 +19,7 @@ class Form
 	    $Result = NULL;
 	    if ( ( isset ( $UsedArray [ $Name ] ) ) && ( $UsedArray [ $Name ] [ 'error' ] == UPLOAD_ERR_OK ) )
 	    {
-	        $Result = $UsedArray [ $Name ] [ 'tmp_name '];
+	        $Result = $UsedArray [ $Name ] [ 'tmp_name' ];
 	    }
 	    return $Result;
 	}

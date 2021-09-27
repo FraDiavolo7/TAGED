@@ -19,17 +19,10 @@ class Parser {
     private $filename;
     private $head;
     private $text;
-    private $gameType;
-    private $gen;
-    private $rated;
-    private $rules;
-    private $teamPreview;
     private $currentPokemon1;
     private $currentPokemon2;
-    private $turns;
     private $currentTurn;
-    private $winner;
-    private $tie;
+    private $turns;
     
     private $FullText;
     private $ProcessedText;
@@ -37,18 +30,49 @@ class Parser {
     private $Player2;
     private $Team1;
     private $Team2;
+    private $GameType;
+    private $Gen;
+    private $Rated;
+    private $Rules;
+    private $TeamPreview;
+    private $Winner;
+    private $Tie;
     
     public function __construct ( $TextToParse ) 
     {
         $this->FullText = $TextToParse;
-        $this->Rated ( false );
-        $this->Tie ( false );
+        
+        $this->Player1 = NULL;
+        $this->Player2 = NULL;
+        $this->Team1 = NULL;
+        $this->Team2 = NULL;
+        $this->GameType = NULL;
+        $this->Gen = NULL;
+        $this->Rules = NULL;
+        $this->TeamPreview = NULL;
+        $this->Winner = NULL;
+        
+        $this->tie ( false );
 
         $this->clean ();
     }
+    
+    public function __destruct ( )
+    {
+        unset ( $this->Player1 );
+        unset ( $this->Player2 );
+        unset ( $this->Team1 );
+        unset ( $this->Team2 );
+        unset ( $this->Gen );
+        unset ( $this->Rules );
+        unset ( $this->TeamPreview );
+        unset ( $this->Winner );
+        unset ( $this->Rated );
+        unset ( $this->Tie );
+    }
 
     /**
-     *  @brief Clean the $this->FullText member variable of all undesirables characters.
+     * @brief Clean the $this->FullText member variable of all undesirables characters.
      * Use because PCRE pattern modifier m (PCRE_MULTILINE) have to use "\n" characters in a subject string to match
      * multiline group (particularly useful for lists).
      */
@@ -62,43 +86,44 @@ class Parser {
     {
         // TOTO @CDE Tester utilité.
         // Si Player est appelé 1 fois, pourquoi rule doit être appelé un nombre de fois défini?
-//         for ( $i = 0 ; $i < $Count ; ++$i )
-//         {
+        for ( $i = 0 ; $i < $Count ; ++$i )
+        {
             $this->ProcessedText = preg_replace_callback ( $Pattern, array ( $this, $Callback ), $this->ProcessedText );
-//         }
+        }
     }
 
     /**
      *  @brief Parse (with PCRE) the $this->text member variable.
+     *  @throws Exception
      */
     public function parse () 
     {
         /* ******************************** Battle initialization. ******************************** */
         /* Players. */
-        $this->applyPattern ( '/\|player\|p([0-9]+)\|([^\|\n|\r|\f]+)\|([^\|\n|\r|\f]+)(?:\|([^\|\n|\r|\f]+))?(?:\|([^\|\n|\r|\f]+))?(?:\|)?/', 'PlayerPreg' );
+        $this->applyPattern ( '/\|player\|p([0-9]+)\|([^\|\n|\r|\f]+)\|([^\|\n|\r|\f]+)(?:\|([^\|\n|\r|\f]+))?(?:\|([^\|\n|\r|\f]+))?(?:\|)?/', 'playerPreg' );
 
         /* Teams sizes. */
-        $this->applyPattern ( '/\|teamsize\|p([0-9]+)\|([0-9])/', 'TeamSizePreg' );
+        $this->applyPattern ( '/\|teamsize\|p([0-9]+)\|([0-9])/', 'teamSizePreg' );
 
         /* Game type. */
-        $this->applyPattern ( '/\|gametype\|(.*)/', 'GameTypePreg' );
+        $this->applyPattern ( '/\|gametype\|(.*)/', 'gameTypePreg' );
 
         /* Gen. */
-        $this->applyPattern ( '/\|gen\|(.*)/', 'GenPreg' );
+        $this->applyPattern ( '/\|gen\|(.*)/', 'genPreg' );
 
         /* Tier. */
-        $this->applyPattern ( '/\|tier\|(.*)/', 'TierPreg' );
+        $this->applyPattern ( '/\|tier\|(.*)/', 'tierPreg' );
 
         /* Rated. */
-        $this->applyPattern ( '/\|(rated)\|(.*)/', 'RatedPreg' );
+        $this->applyPattern ( '/\|(rated)\|(.*)/', 'ratedPreg' );
 
         /* Rule(s). */
         $NbRules = substr_count ( $this->ProcessedText, '|rule|' );
-        $this->applyPattern ( '/\|rule\|(.*)/', 'RulePreg', $NbRules );
+        $this->applyPattern ( '/\|rule\|(.*)/', 'rulePreg', $NbRules );
         
         /* Team preview(s). */
         $NbPreview = substr_count ( $this->ProcessedText, '|poke|' );
-        $this->applyPattern ( '/\|poke\|(.*)\|(.*)\|(.*)/', 'TeamPreviewPokemonPreg', $NbPreview );
+        $this->applyPattern ( '/\|poke\|(.*)\|(.*)\|(.*)/', 'teamPreviewPokemonPreg', $NbPreview );
 
         /* ******************************** Battle progress. ******************************** */
 
@@ -112,42 +137,77 @@ class Parser {
         $this->currentPokemon2 = $matches[1];
 
         /* Turns. */
-        $this->applyPattern ( '/\|turn\|([0-9]+)\n(.*)(?=\|turn\|)/sU', 'TurnPreg' );
+        $this->applyPattern ( '/\|turn\|([0-9]+)\n(.*)(?=\|turn\|)/sU', 'turnPreg' );
         
         // Last turn.
         $this->turns[] = $this->ProcessedText;
 
         /* Win. */
-        $this->applyPattern ( '/\|win\|(.*)/', 'WinnerPreg' );
+        $this->applyPattern ( '/\|win\|(.*)/', 'winnerPreg' );
 
         /* Tie. */
-        $this->applyPattern ( '/\|tie\|/', 'TiePreg' );
-
+        $this->applyPattern ( '/\|tie\|/', 'tiePreg' );
+        
+        if ( NULL == $this->Player1     ) throw new Exception ( 'Player 1 not provided'     );
+        if ( NULL == $this->Player2     ) throw new Exception ( 'Player 2 not provided'     );
+        if ( NULL == $this->Team1       ) throw new Exception ( 'Team 1 not provided'       );
+        if ( NULL == $this->Team2       ) throw new Exception ( 'Team 2 not provided'       );
+        if ( NULL == $this->GameType    ) throw new Exception ( 'Game Type not provided'    );
+        if ( NULL == $this->Gen         ) throw new Exception ( 'Generation not provided'   );
+        if ( NULL == $this->Tier        ) throw new Exception ( 'Tier not provided'         );
+        if ( NULL == $this->Rated       ) $this->Rated = new Rated ( false );
+//         if ( NULL == $this->Rules       ) throw new Exception ( 'Rules not provided'        );
+//         if ( NULL == $this->TeamPreview ) throw new Exception ( 'Team Preview not provided' );
+//         if ( NULL == $this->Winner      ) throw new Exception ( 'Winner not provided'       );
+//         if ( NULL == $this->Tie         ) throw new Exception ( 'Tie not provided'          );
+    }
+    
+    public function __toString ()
+    {
+        $String = '';
+        
+        $String .= $this->Player1 . "<br>\n";
+        $String .= $this->Team1 . "<br>\n";
+        $String .= $this->Player2 . "<br>\n";
+        $String .= $this->Team2 . "<br>\n";
+        $String .= $this->GameType . "<br>\n";
+        $String .= $this->Gen . "<br>\n";
+        $String .= $this->Tier . "<br>\n";
+        $String .= $this->Rated . "<br>\n";
+//         $String .= 'Rules ' . $this->Rules . "<br>\n";
+//         $String .= 'Team Preview ' . $this->TeamPreview . "<br>\n";
+//         $String .= 'Winner ' . $this->Winner . "<br>\n";
+//         $String .= 'Tie ' . $this->Tie . "<br>\n";
+        return $String;
+    }
+    
+    public function display ()
+    {
         /* ******************************** Traces. ******************************** */
-
+        
         var_dump($this->Player1);
         var_dump($this->Player2);
-
+        
         var_dump($this->Team1);
         var_dump($this->Team2);
-
-        var_dump($this->gameType);
-
-        var_dump($this->gen);
-
-        var_dump($this->tier);
-
-        var_dump($this->rated);
-
-        var_dump($this->rules);
-
-        var_dump($this->teamPreview);
-
-        var_dump($this->winner);
-
-        var_dump($this->tie);
+        
+        var_dump($this->GameType);
+        
+        var_dump($this->Gen);
+        
+        var_dump($this->Tier);
+        
+        var_dump($this->Rated);
+        
+//         var_dump($this->rules);
+        
+//         var_dump($this->teamPreview);
+        
+//         var_dump($this->winner);
+        
+//         var_dump($this->tie);
     }
-
+    
     /* ************************************************************************* */
 
     /* Preg functions. */
@@ -156,9 +216,9 @@ class Parser {
      *  @brief Handles the description of a Player
      *  @param [in] $Match The list of arguments read from the text
      */
-    protected function PlayerPreg ( $Match ) 
+    protected function playerPreg ( $Match ) 
     {
-        echo 'PlayerPreg ( ' . print_r ( $Match, true ) . ' )<br>';
+//         echo 'PlayerPreg ( ' . print_r ( $Match, true ) . ' )<br>';
         $Player = Player::create ( $Match );
         
         if ( 1 == $Player->getPlayer () ) 
@@ -175,7 +235,7 @@ class Parser {
      *  @brief Handles the description of a Team
      *  @param [in] $Match The list of arguments read from the Text
      */
-    protected function TeamSizePreg ( $Match ) 
+    protected function teamSizePreg ( $Match ) 
     {
         $TeamSize = TeamSize::create ( $Match );
 
@@ -189,57 +249,57 @@ class Parser {
         }
     }
 
-    protected function GameTypePreg ( $Match ) 
+    protected function gameTypePreg ( $Match ) 
     {
-//         return $this->matchFunc1($match, 'gameType');
+        $this->GameType = GameType::create ( $Match );
     }
 
-    protected function GenPreg ( $Match ) 
+    protected function genPreg ( $Match ) 
     {
-//         return $this->matchFunc1($match, 'gen');
+        $this->Gen = Gen::create ( $Match );
     }
 
-    protected function TierPreg ( $Match ) 
+    protected function tierPreg ( $Match ) 
     {
-//         return $this->matchFunc1($match, 'tier');
+        $this->Tier = Tier::create ( $Match );
     }
 
-    protected function RatedPreg ( $Match ) 
+    protected function ratedPreg ( $Match ) 
     {
-//         return $this->matchFunc2($match, 'rated');
+        $this->Rated = Rated::create ( $Match );
     }
 
-    protected function RulePreg ( $Match ) 
+    protected function rulePreg ( $Match ) 
     {
 //         return $this->matchFunc1($match, 'rule');
     }
 
-    protected function TeamPreviewPokemonPreg ( $Match ) 
+    protected function teamPreviewPokemonPreg ( $Match ) 
     {
 //         return $this->matchFunc3($match, 'teamPreviewPokemon');
     }
 
-    protected function TurnPreg ( $Match ) 
+    protected function turnPreg ( $Match ) 
     {
 //         return $this->matchFunc2($match, 'turn');
     }
 
-    protected function Move1Preg ( $Match ) 
+    protected function move1Preg ( $Match ) 
     {
 //         return $this->matchFunc3($match, 'move1');
     }
 
-    protected function Move2Preg ( $Match ) 
+    protected function move2Preg ( $Match ) 
     {
 //         return $this->matchFunc3($match, 'move2');
     }
 
-    protected function WinnerPreg ( $Match ) 
+    protected function winnerPreg ( $Match ) 
     {
 //         return $this->matchFunc1($match, 'winner');
     }
 
-    protected function TiePreg ( $Match ) 
+    protected function tiePreg ( $Match ) 
     {
 //         return $this->matchFunc0($match, 'tie');
     }
@@ -248,12 +308,12 @@ class Parser {
 
     /* Wrapper functions. */
 
-    protected function Move1 ( $pokemon, $move, $effect ) 
+    protected function move1 ( $pokemon, $move, $effect ) 
     {
 //         return $this->move('1', $pokemon, $move, $effect);
     }
 
-    protected function Move2 ( $pokemon, $move, $effect ) 
+    protected function move2 ( $pokemon, $move, $effect ) 
     {
 //         return $this->move('2', $pokemon, $move, $effect);
     }
@@ -285,15 +345,15 @@ class Parser {
 //         $this->tier = new Tier($tier);
 //     }
 
-    function Rated ( $rated, $message = '' ) 
-    {
+//     function rated ( $rated, $message = '' ) 
+//     {
 //         require_once 'Rated.php';
 
 //         if ($rated == 'rated') {
 //             $this->rated = new Rated(true, $message);
 //         }
 //         $this->rated = new Rated(false, $message);
-    }
+//     }
 
 //     function rule($rule) {
 //         require_once 'Rule.php';
@@ -356,14 +416,14 @@ class Parser {
 //         }
 //     }
 
-    protected function Winner ( $user ) 
+    protected function winner ( $user ) 
     {
 //         require_once 'Winner.php';
 
 //         $this->winner = new Winner($user);
     }
 
-    protected function Tie ( $tie = false ) 
+    protected function tie ( $tie = false ) 
     {
 //         $this->tie = $tie;
     }

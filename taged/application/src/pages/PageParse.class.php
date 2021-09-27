@@ -19,22 +19,21 @@ class PageParse extends TagedPage
 
 	protected function handle ( $Data )
 	{
-	    $this->add ( HTML::div ( print_r ( $Data, true ) ) );
+// 	    $this->add ( HTML::div ( print_r ( $Data, true ) ) );
 	    
 	    $Submit = Form::getData ( self::PARSER_SUBMIT, '', $Data );
 	    
 	    if ( $Submit != '' )
 	    {
 	        $this->FileToParse = Form::getFileName ( self::PARSER_FILE );
-	        $this->add ( HTML::div ( '$this->FileToParse : ' . $this->FileToParse ) );
-	        $this->add ( HTML::div ( '$_FILES : ' . print_r ( $_FILES, true ) ) );
+// 	        $this->add ( HTML::div ( '$this->FileToParse : ' . $this->FileToParse ) );
+// 	        $this->add ( HTML::div ( '$_FILES : ' . print_r ( $_FILES, true ) ) );
 	        
-	        if ( NULL != $this->FileToParse ) $this->parse ();
-	    }
-	    
-	    if ( $this->FileToParse != NULL )
-	    {
-	        $this->add ( HTML::div ( 'File to parse : ' . $this->FileToParse ) );
+	        if ( NULL != $this->FileToParse ) 
+	        {
+	            // 	        $this->add ( HTML::div ( 'File to parse : ' . $this->FileToParse ) );
+	            $this->parse ();
+	        }
 	    }
 	    
 	    $this->show ();
@@ -50,11 +49,24 @@ class PageParse extends TagedPage
 	
 	protected function parse ()
 	{
-	    $TextToParse = file_get_contents ( $this->FileToParse );
+	    $Content = '';
 	    
-	    $Parser = new Parser ( $TextToParse );
+	    try
+	    {
+	        $TextToParse = file_get_contents ( $this->FileToParse );
+	        
+	        $Parser = new Parser ( $TextToParse );
+	        
+	        $Parser->parse ();
+	        $Content = 'Parsing succeeded<br>' . $Parser;
+	    }
 	    
-	    $Parser->parse ();
+	    catch ( Exception $Exc )
+	    {
+	        $Content = $Exc->getMessage ();
+	    }
+	    
+	    $this->add ( HTML::div ( $Content ) );
 	}
 	
 	protected $FileToParse; //!< The file to parse 

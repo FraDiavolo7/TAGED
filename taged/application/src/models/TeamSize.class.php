@@ -27,8 +27,8 @@ class TeamSize
 
     /**
      * TeamSize constructor.
-     * @param [in] $Player The player position of the Team 
-     * @param [in] $Number The Quantity of pokemons in the Team 
+     * @param int $Player The player position of the Team 
+     * @param int $Number The Quantity of pokemons in the Team 
      */
     public function __construct ( $Player, $Number ) 
     {
@@ -40,17 +40,23 @@ class TeamSize
      *  @brief Creates a TeamSize from an array of data arrange as :
      *  Array [1] => Player position
      *  Array [2] => Quantity of pokemon in the team
-     *  @param [in] $Array The array to use for filling the Palyer
+     *  @param array $Array The array to use for filling the Palyer
      *  @return A new TeamSize object
      */
     public static function create ( $Array )
     {
-        $Player = Arrays::getIfSet ( $Array, 1, 'p1');
-        $Number = Arrays::getIfSet ( $Array, 2, '0' );
+        $Player = Arrays::getOrCrash ( $Array, 1, 'Team not affected to as player' );
+        $Number = Arrays::getOrCrash ( $Array, 2, 'Team quantity invalid' );
         
         return new TeamSize ( $Player, $Number );
     }
 
+    
+    public function __toString ( )
+    {
+        return 'Team ' . $this->Player . ' has ' . $this->Number . ' pokemon';
+    }
+    
     /**
      * @return The player position of the Team.
      */
@@ -60,7 +66,7 @@ class TeamSize
     }
 
     /**
-     * @param [in] $Player The player position of the Team 
+     * @param int $Player The player position of the Team 
      */
     public function setPlayer ( $Player )
     {
@@ -76,7 +82,7 @@ class TeamSize
     }
 
     /**
-     * @param [in] $Number The Quantity of pokemons in the Team 
+     * @param int $Number The Quantity of pokemons in the Team 
      */
     public function setNumber ( $Number )
     {

@@ -37,12 +37,13 @@ class Player
 
     /**
      * @brief Player constructor.
-     * @param [in] $Player The position of the player
-     * @param [in] $Username The name of the user playing
-     * @param [in] $Avatar The avatar of the user
-     * @param [in] $Rating The rating of the user
+     * @param int $Player The position of the player
+     * @param string $Username The name of the user playing
+     * @param int $Avatar The avatar of the user
+     * @param int $Rating The rating of the user
      */
-    public function __construct ( $Player, $Username, $Avatar, $Rating) {
+    public function __construct ( $Player, $Username, $Avatar, $Rating) 
+    {
         $this->Player = $Player;
         $this->Username = $Username;
         $this->Avatar = $Avatar;
@@ -55,15 +56,15 @@ class Player
      *  Array [2] => User name
      *  Array [3] => Avatar
      *  Array [4] => Rating
-     *  @param [in] $Array The array to use for filling the Palyer
+     *  @param array $Array The array to use for filling the Palyer
      *  @return A new Player object
      */
     public static function create ( $Array )
     {
-        $PlayerPosition = Arrays::getIfSet ( $Array, 1, 'p1');
-        $Username       = Arrays::getIfSet ( $Array, 2, 'Unknown' );
-        $Avatar         = Arrays::getIfSet ( $Array, 3, '' );
-        $Rating         = Arrays::getIfSet ( $Array, 4, '0' );
+        $PlayerPosition = Arrays::getOrCrash ( $Array, 1, 'Invalid player position' );
+        $Username       = Arrays::getOrCrash ( $Array, 2, 'Invalid player name'     );
+        $Avatar         = Arrays::getIfSet   ( $Array, 3, ''  );
+        $Rating         = Arrays::getIfSet   ( $Array, 4, '0' );
         
         return new Player ( $PlayerPosition, $Username, $Avatar, $Rating );
     }
@@ -82,7 +83,7 @@ class Player
     }
 
     /**
-     * @param [in] $Player The position of the player
+     * @param int $Player The position of the player
      */
     public function setPlayer ( $Player )
     {
@@ -98,7 +99,7 @@ class Player
     }
 
     /**
-     * @param [in] $Username The name of the user playing
+     * @param string $Username The name of the user playing
      */
     public function setUsername ( $Username )
     {
@@ -114,7 +115,7 @@ class Player
     }
 
     /**
-     * @param [in] $Avatar The avatar of the user
+     * @param int $Avatar The avatar of the user
      */
     public function setAvatar ( $Avatar )
     {
@@ -130,7 +131,7 @@ class Player
     }
 
     /**
-     * @param [in] $Rating The rating of the user
+     * @param int $Rating The rating of the user
      */
     public function setRating($Rating)
     {
