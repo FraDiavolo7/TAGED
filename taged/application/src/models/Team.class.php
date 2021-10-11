@@ -13,7 +13,7 @@
  * @author Mickaël Martin-Nevot
  */
 
-class TeamSize 
+class Team 
 {
     /**
      * @var $Player is p1, p2, p3, or p4.
@@ -21,19 +21,24 @@ class TeamSize
     private $Player;
 
     /**
-     * @var $Number is the number of Pokémon your opponent starts with. In games without ReplayParser Preview, you don't know which Pokémon your opponent has, but you at least know how many there are.
+     * @var $Size is the number of Pokémon your opponent starts with. In games without ReplayParser Preview, you don't know which Pokémon your opponent has, but you at least know how many there are.
      */
-    private $Number;
+    private $Size;
+    
+    /**
+     * @var $Pokemons is the array of Pokemons, index by position
+     */
+    private $Pokemons;
 
     /**
      * TeamSize constructor.
      * @param int $Player The player position of the Team 
-     * @param int $Number The Quantity of pokemons in the Team 
+     * @param int $Size The Quantity of pokemons in the Team 
      */
-    public function __construct ( $Player, $Number ) 
+    public function __construct ( $Player, $Size ) 
     {
         $this->Player = $Player;
-        $this->Number = $Number;
+        $this->Size = $Size;
     }
     
     /**
@@ -46,15 +51,15 @@ class TeamSize
     public static function create ( $Array )
     {
         $Player = Arrays::getOrCrash ( $Array, 1, 'Team not affected to as player' );
-        $Number = Arrays::getOrCrash ( $Array, 2, 'Team quantity invalid' );
+        $Size = Arrays::getOrCrash ( $Array, 2, 'Team quantity invalid' );
         
-        return new TeamSize ( $Player, $Number );
+        return new Team ( $Player, $Size );
     }
 
     
     public function __toString ( )
     {
-        return 'Team ' . $this->Player . ' has ' . $this->Number . ' pokemon';
+        return 'Team ' . $this->Player . ' has ' . $this->Size . ' pokemon';
     }
     
     /**
@@ -76,16 +81,25 @@ class TeamSize
     /**
      * @return The Quantity of pokemons in the Team.
      */
-    public function getNumber ()
+    public function getSize ()
     {
-        return $this->Number;
+        return $this->Size;
     }
 
     /**
-     * @param int $Number The Quantity of pokemons in the Team 
+     * @param int $Size The Quantity of pokemons in the Team 
      */
-    public function setNumber ( $Number )
+    public function setSize ( $Size )
     {
-        $this->Number = $Number;
+        $this->Size = $Size;
+    }
+    
+    /**
+     * Adds a Pokemon to the list
+     * @param String $Pokemon The name of the pokemon
+     */
+    public function addPokemon ( $Pokemon )
+    {
+        $this->Pokemons [] = $Pokemon;
     }
 }

@@ -26,49 +26,19 @@ class Parser {
     
     private $FullText;
     private $ProcessedText;
-    private $Player1;
-    private $Player2;
-    private $Team1;
-    private $Team2;
-    private $GameType;
-    private $Gen;
-    private $Rated;
-    private $Rules;
-    private $TeamPreview;
-    private $Winner;
-    private $Tie;
+    private $Game;
     
     public function __construct ( $TextToParse ) 
     {
         $this->FullText = $TextToParse;
         
-        $this->Player1 = NULL;
-        $this->Player2 = NULL;
-        $this->Team1 = NULL;
-        $this->Team2 = NULL;
-        $this->GameType = NULL;
-        $this->Gen = NULL;
-        $this->Rules = NULL;
-        $this->TeamPreview = NULL;
-        $this->Winner = NULL;
-        
-        $this->tie ( false );
-
+        $this->Game = new Game ();
         $this->clean ();
     }
     
     public function __destruct ( )
     {
-        unset ( $this->Player1 );
-        unset ( $this->Player2 );
-        unset ( $this->Team1 );
-        unset ( $this->Team2 );
-        unset ( $this->Gen );
-        unset ( $this->Rules );
-        unset ( $this->TeamPreview );
-        unset ( $this->Winner );
-        unset ( $this->Rated );
-        unset ( $this->Tie );
+        unset ( $this->Game );
     }
 
     /**
@@ -148,14 +118,7 @@ class Parser {
         /* Tie. */
         $this->applyPattern ( '/\|tie\|/', 'tiePreg' );
         
-        if ( NULL == $this->Player1     ) throw new Exception ( 'Player 1 not provided'     );
-        if ( NULL == $this->Player2     ) throw new Exception ( 'Player 2 not provided'     );
-        if ( NULL == $this->Team1       ) throw new Exception ( 'Team 1 not provided'       );
-        if ( NULL == $this->Team2       ) throw new Exception ( 'Team 2 not provided'       );
-        if ( NULL == $this->GameType    ) throw new Exception ( 'Game Type not provided'    );
-        if ( NULL == $this->Gen         ) throw new Exception ( 'Generation not provided'   );
-        if ( NULL == $this->Tier        ) throw new Exception ( 'Tier not provided'         );
-        if ( NULL == $this->Rated       ) $this->Rated = new Rated ( false );
+        $this->Game->check ();
 //         if ( NULL == $this->Rules       ) throw new Exception ( 'Rules not provided'        );
 //         if ( NULL == $this->TeamPreview ) throw new Exception ( 'Team Preview not provided' );
 //         if ( NULL == $this->Winner      ) throw new Exception ( 'Winner not provided'       );
@@ -166,18 +129,7 @@ class Parser {
     {
         $String = '';
         
-        $String .= $this->Player1 . "<br>\n";
-        $String .= $this->Team1 . "<br>\n";
-        $String .= $this->Player2 . "<br>\n";
-        $String .= $this->Team2 . "<br>\n";
-        $String .= $this->GameType . "<br>\n";
-        $String .= $this->Gen . "<br>\n";
-        $String .= $this->Tier . "<br>\n";
-        $String .= $this->Rated . "<br>\n";
-//         $String .= 'Rules ' . $this->Rules . "<br>\n";
-//         $String .= 'Team Preview ' . $this->TeamPreview . "<br>\n";
-//         $String .= 'Winner ' . $this->Winner . "<br>\n";
-//         $String .= 'Tie ' . $this->Tie . "<br>\n";
+        $String .= $this->Game . "<br>\n";
         return $String;
     }
     
@@ -185,19 +137,19 @@ class Parser {
     {
         /* ******************************** Traces. ******************************** */
         
-        var_dump($this->Player1);
-        var_dump($this->Player2);
+//         var_dump($this->Player1);
+//         var_dump($this->Player2);
         
-        var_dump($this->Team1);
-        var_dump($this->Team2);
+//         var_dump($this->Team1);
+//         var_dump($this->Team2);
         
-        var_dump($this->GameType);
+//         var_dump($this->GameType);
         
-        var_dump($this->Gen);
+//         var_dump($this->Gen);
         
-        var_dump($this->Tier);
+//         var_dump($this->Tier);
         
-        var_dump($this->Rated);
+//         var_dump($this->Rated);
         
 //         var_dump($this->rules);
         
@@ -218,17 +170,9 @@ class Parser {
      */
     protected function playerPreg ( $Match ) 
     {
-//         echo 'PlayerPreg ( ' . print_r ( $Match, true ) . ' )<br>';
+        //         echo 'PlayerPreg ( ' . print_r ( $Match, true ) . ' )<br>';
         $Player = Player::create ( $Match );
-        
-        if ( 1 == $Player->getPlayer () ) 
-        {
-            $this->Player1 = $Player;
-        } 
-        else
-        {
-            $this->Player2 = $Player;
-        }
+        $this->Game->setPlayer ( $Player );
     }
 
     /**
@@ -237,36 +181,33 @@ class Parser {
      */
     protected function teamSizePreg ( $Match ) 
     {
-        $TeamSize = TeamSize::create ( $Match );
-
-        if ( 1 == $TeamSize->getPlayer () ) 
-        {
-            $this->Team1 = $TeamSize;
-        } 
-        else 
-        {
-            $this->Team2 = $TeamSize;
-        }
+        $Team = Team::create ( $Match );
+        $this->Game->setTeam ( $Team );
     }
 
     protected function gameTypePreg ( $Match ) 
     {
-        $this->GameType = GameType::create ( $Match );
+        $GameType = Arrays::getOrCrash ( $Match, 1, 'Invalid Game Type' );
+        $this->Game->setType ( $GameType );
     }
 
     protected function genPreg ( $Match ) 
     {
-        $this->Gen = Gen::create ( $Match );
+        $Gen = Arrays::getOrCrash ( $Match, 1, 'Invalid Generation' );
+        $this->Game->setGen ( $Gen );
     }
 
     protected function tierPreg ( $Match ) 
     {
-        $this->Tier = Tier::create ( $Match );
+        $Tier = Arrays::getOrCrash ( $Match, 1, 'Invalid Tier' );
+        $this->Game->setTier ( $Tier );
     }
 
     protected function ratedPreg ( $Match ) 
     {
-        $this->Rated = Rated::create ( $Match );
+        $Rated   = Arrays::getOrCrash ( $Match, 1, 'Rated not filled' );
+        $Message = Arrays::getIfSet   ( $Match, 2, '' );
+        $this->Game->setRated ( $Message );
     }
 
     protected function rulePreg ( $Match ) 
@@ -296,12 +237,13 @@ class Parser {
 
     protected function winnerPreg ( $Match ) 
     {
-//         return $this->matchFunc1($match, 'winner');
+        $User = Arrays::getOrCrash ( $Match, 1, 'User not filled' );
+        $this->Game->setWinner ( $User );
     }
 
     protected function tiePreg ( $Match ) 
     {
-//         return $this->matchFunc0($match, 'tie');
+        $this->Game->setTie ( );
     }
 
     /* ************************************************************************* */
@@ -316,115 +258,5 @@ class Parser {
     protected function move2 ( $pokemon, $move, $effect ) 
     {
 //         return $this->move('2', $pokemon, $move, $effect);
-    }
-
-    /* ************************************************************************* */
-
-    /* Model functions. */
-
-//     function teamSize($player, $number) {
-//         require_once 'TeamSize.php';
-
-//     }
-
-//     function gameType($gameType) {
-//         require_once 'GameType.php';
-
-//         $this->gameType = new GameType($gameType);
-//     }
-
-//     function gen($gen) {
-//         require_once 'Gen.php';
-
-//         $this->gen = new Gen($gen);
-//     }
-
-//     function tier($tier) {
-//         require_once 'Tier.php';
-
-//         $this->tier = new Tier($tier);
-//     }
-
-//     function rated ( $rated, $message = '' ) 
-//     {
-//         require_once 'Rated.php';
-
-//         if ($rated == 'rated') {
-//             $this->rated = new Rated(true, $message);
-//         }
-//         $this->rated = new Rated(false, $message);
-//     }
-
-//     function rule($rule) {
-//         require_once 'Rule.php';
-
-//         $this->rules[] = new Rule($rule);
-//     }
-
-//     function teamPreviewPokemon($player, $details, $item) {
-//         require_once 'TeamPreviewPokemon.php';
-
-//         $this->teamPreview[] = new TeamPreviewPokemon($player, $details, $item);
-//     }
-
-//     function turn($urnNum, $turn) {
-//         require_once 'Turn.php';
-
-//         $this->turns[$urnNum] = new Turn($turn);
-//         $this->currentTurn = $this->turns[$urnNum];
-
-//         // TODO : faint can be a kind of move.
-
-//         $turn = preg_replace_callback('/\|move\|p1a: ([^\|]+)\|([^\|]+)\|.*(?=\|)(.*)(?=(?=\n\|\n\|upkeep)|(?=\n\|move))/sU', array($this, 'move1Preg'), $turn);
-//         $turn = preg_replace_callback('/\|move\|p2a: ([^\|]+)\|([^\|]+)\|.*(?=\|)(.*)(?=(?=\n\|\n\|upkeep)|(?=\n\|move))/sU', array($this, 'move2Preg'), $turn);
-
-//         return '';
-//     }
-
-//     function move($player, $pokemon, $move, $effect) {
-//         require_once 'Move.php';
-
-//         $memberFunction = 'setP' . $player . 'Move';
-
-//         $this->currentTurn->{$memberFunction}(new Move($player, $pokemon, $move, $effect));
-
-//         // TODO : sidestart, sideend
-
-//         // TODO : ([^\\|]+)\|([0-9]+(?=\\\/)|)(.*)(?=(?=\n\|\n\|upkeep)|(?=\n\|move))\|-([^\\|]+)\|p([12])[^ ]+ ([^\\|]+)\|([0-9]+(?=\\\/)|)
-
-//         return '';
-//     }
-
-//     function effect() {
-//         $effect = '';
-
-//         switch($effect) {
-//             case 'sidestart';
-//                 break;
-//             case 'sideend';
-//                 break;
-//             case 'damage';
-//                 break;
-//             case 'boost';
-//                 break;
-//             case 'mega';
-//                 break;
-//             case 'supereffective';
-//                 break;
-//             case 'status';
-//                 break;
-//         }
-//     }
-
-    protected function winner ( $user ) 
-    {
-//         require_once 'Winner.php';
-
-//         $this->winner = new Winner($user);
-    }
-
-    protected function tie ( $tie = false ) 
-    {
-//         $this->tie = $tie;
     }
 }
