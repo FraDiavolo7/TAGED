@@ -59,7 +59,23 @@ class Team
     
     public function __toString ( )
     {
-        return 'Team ' . $this->Player . ' has ' . $this->Size . ' pokemon';
+        $Result = 'Team ' . $this->Player . ' has ' . $this->Size . ' pokemon (';
+        $Sep = '';
+        foreach ( $this->Pokemons as $Pokemon )
+        {
+            $Result .= $Sep . $Pokemon;
+            $Sep = ', ';
+        }
+        $Result .= ')';
+        return $Result;
+    }
+    
+    public function switch ( $Pokemon )
+    {
+        if ( ! isset ( $this->Pokemons [ $Pokemon ] ) )
+        {
+            $this->addPokemon ( $Pokemon );
+        }
     }
     
     /**
@@ -100,6 +116,6 @@ class Team
      */
     public function addPokemon ( $Pokemon )
     {
-        $this->Pokemons [] = $Pokemon;
+        $this->Pokemons [ $Pokemon ] = $Pokemon;
     }
 }

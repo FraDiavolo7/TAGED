@@ -130,5 +130,18 @@ class Game
     {
         $this->Result = 0;
     }
+    
+    public function switch ( $Player, $Pokemon )
+    {
+        echo "Switch $Player $Pokemon <br>\n";
+        if ( 1 == $Player )
+        {
+            $this->Team1->switch ( $Pokemon );
+        }
+        else
+        {
+            $this->Team2->switch ( $Pokemon );
+        }
+    }
 }
 

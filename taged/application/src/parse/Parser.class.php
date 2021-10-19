@@ -100,12 +100,15 @@ class Parser {
         $this->ProcessedText = preg_replace('/\|start[\|\n|\r|\f](.*)$/sU', '$1', $this->ProcessedText);
 
         /* First (current) pokemons. */
+        $this->applyPattern ( '/^\|switch\|p1a: ([^\|]+)\|.*$/mU', 'switchP1' );
+        $this->applyPattern ( '/^\|switch\|p2a: ([^\|]+)\|.*$/mU', 'switchP2' );
+        /*
         preg_match('/^\|switch\|p1a: ([^\|]+)\|.*$/mU', $this->ProcessedText, $matches);
         $this->currentPokemon1 = $matches[1];
         
-        preg_match('/^\|switch\|p1a: ([^\|]+)\|.*$/mU', $this->ProcessedText, $matches);
+        preg_match('/^\|switch\|p2a: ([^\|]+)\|.*$/mU', $this->ProcessedText, $matches);
         $this->currentPokemon2 = $matches[1];
-
+        */
         /* Turns. */
         $this->applyPattern ( '/\|turn\|([0-9]+)\n(.*)(?=\|turn\|)/sU', 'turnPreg' );
         
@@ -209,7 +212,19 @@ class Parser {
         $Message = Arrays::getIfSet   ( $Match, 2, '' );
         $this->Game->setRated ( $Message );
     }
+    
+    protected function switchP1 ( $Match )
+    {
+        $Pokemon = Arrays::getOrCrash ( $Match, 1, 'Pokemon not filled' );
+        $this->Game->switch ( 1, $Pokemon );
+    }
 
+    protected function switchP2 ( $Match )
+    {
+        $Pokemon = Arrays::getOrCrash ( $Match, 1, 'Pokemon not filled' );
+        $this->Game->switch ( 2, $Pokemon );
+    }
+    
     protected function rulePreg ( $Match ) 
     {
 //         return $this->matchFunc1($match, 'rule');
