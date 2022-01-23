@@ -44,7 +44,11 @@ trait Connection
             array ( 'class' => 'connection_buttons' )
             );
         
-        return HTML::form ( $Form, $FormAttributes );
+        return HTML::div ( 
+            HTML::div ( ' ', array ( 'class' => 'show_connection' ) ) .
+            HTML::form ( $Form, $FormAttributes ),
+            array ( 'class' => 'connection_area' )
+            );
     }
     
     protected function connectionHandle ( $Data = array () )

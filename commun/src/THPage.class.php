@@ -2,9 +2,11 @@
 
 class THPage extends BasicPage
 {
-    const TAGED_URL = '/taged/';
+    use Connection;
+
+    const TAGED_URL = '/';
     const LINK_LIST = array (
-		'TAGED' => '/taged'
+		'TAGED' => '/'
     	);
     	
 	public function __construct ( $InputData = NULL )
@@ -33,10 +35,10 @@ class THPage extends BasicPage
 	    HTML::showStartBody ();
 	    
 	    HTML::showDiv ( 
-	           self::links (),
-	           array ( "class" => "taged_header" )
-	        
-	            );
+            $this->links () . 
+            self::connectionForm (),
+	        array ( "class" => "taged_header" )
+	        );
 	    Log::fct_exit ( __METHOD__ );
 	}
 	    

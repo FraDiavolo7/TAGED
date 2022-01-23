@@ -1,4 +1,4 @@
-div.fds_header {
+div.taged_header {
 	display: flex;
 	justify-content: space-between;
 	
@@ -12,18 +12,37 @@ div.fds_header {
     margin-bottom: 5px;
 }
 
-div.fds_header a:link,
-div.fds_header a:active,
-div.fds_header a:visited,
-div.fds_header a {
+div.taged_header a:link,
+div.taged_header a:active,
+div.taged_header a:visited,
+div.taged_header a {
 	color: grey;
 	text-decoration: none;
 }
 
-div.fds_header .links {
+div.taged_header .links {
 	display: flex;
 }
 
-div.fds_header .links a {
+div.taged_header .links a {
 	margin: 5px 20px 5px 0;
+}
+
+div.taged_header div.connection_area div.show_connection {
+    width: 20px;
+    height: 20px;
+}
+
+div.taged_header #connection_form {
+    display: none;
+    position: absolute;
+    right: 0;
+    padding: 5px;
+    border: 1px darkgrey solid;
+    border-radius: 5px;
+    background-color: black;
+}
+
+div.taged_header div.connection_area:hover #connection_form {
+    display: block;
 }

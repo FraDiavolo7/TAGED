@@ -2,7 +2,7 @@
 
 URL=https://replay.pokemonshowdown.com/
 
-DataManager=/opt/taged/data/datamanager.sh
+DataManager=/home/taged/data/datamanager.sh
 AppliType=collection
 
 TmpFolder=/tmp/taged
