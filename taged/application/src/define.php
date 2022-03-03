@@ -1,5 +1,14 @@
 <?php
-set_include_path ( get_include_path() . ":.:../src:../src/modules:../src/models:../src/pages:../src/parse:../../../commun/src");
+$NewPath = get_include_path();
+$NewPath .= PATH_SEPARATOR . '.';
+$NewPath .= PATH_SEPARATOR . '../src';
+$NewPath .= PATH_SEPARATOR . '../src/modules';
+$NewPath .= PATH_SEPARATOR . '../src/models';
+$NewPath .= PATH_SEPARATOR . '../src/pages';
+$NewPath .= PATH_SEPARATOR . '../src/parse';
+$NewPath .= PATH_SEPARATOR . '../../../commun/src';
+
+set_include_path ( $NewPath );
 
 spl_autoload_register(function ($ClassName) {
     $Extensions = array ( '.class.php', '.trait.php', '.php' );
@@ -8,6 +17,7 @@ spl_autoload_register(function ($ClassName) {
     foreach ( $Extensions as $Ext )
     {
         $TmpName = $ClassName . $Ext;
+
         if ( stream_resolve_include_path ( $TmpName ) )
         {
             $FileName = $TmpName;

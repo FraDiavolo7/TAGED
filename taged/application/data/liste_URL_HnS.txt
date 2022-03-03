@@ -1,0 +1,24 @@
+https://us.diablo3.blizzard.co/fr-fr/rankings/era/15/rift-barbarian
+https://eu.diablo3.blizzard.co/fr-fr/rankings/era/15/rift-barbarian
+https://kr.diablo3.blizzard.co/fr-fr/rankings/era/15/rift-barbarian
+
+https://us.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-hardcore-barbarian
+https://eu.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-hardcore-barbarian
+https://kr.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-hardcore-barbarian
+
+https://eu.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-barbarian#page=1
+
+
+
+$servers=array( 'us', 'eu', 'kr' );
+
+$classes=array ( "barbarian", "crusader", "dh", "monk", "necromancer", "wd", "wizard" );
+
+$nbpages = 7
+
+$URL='https://' . $server . '.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-' . $class . '#page=' . $page
+
+
+<table>
+
+</table>

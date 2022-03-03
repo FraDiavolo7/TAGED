@@ -6,7 +6,8 @@ class TagedPage extends THPage
 	const PAGE_DEFAULT = 'Accueil';
 	const PAGE_LIST = array (
 		'Accueil' => 'Accueil',
-		'Replay Parser' => 'Parse'
+		'Collection Parser' => 'Parse',
+		'Hack&apos;n Slash Parser' => 'ParseHnS'
 	);
     	
 	public function __construct ( $InputData = NULL )
