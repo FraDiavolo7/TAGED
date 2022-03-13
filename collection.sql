@@ -9,7 +9,7 @@ CREATE DATABASE taged_collection;
 CREATE TABLE combat
 (
    Id_Combat SERIAL,
-   Résultat VARCHAR(50),
+   Resultat VARCHAR(50),
    Tier INT,
    Rules VARCHAR(250),
    Classe VARCHAR(50),
