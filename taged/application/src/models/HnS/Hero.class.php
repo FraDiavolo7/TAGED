@@ -1,140 +1,78 @@
 <?php
-/*
- * Copyright © 2013 Diveen
- * All Rights Reserved.
- *
- * This software is proprietary and confidential to Diveen ReplayParser
- * and is protected by copyright law as an unpublished work.
- *
- * Unauthorized access and disclosure strictly forbidden.
- */
 
-/**
- * @author Mickaël Martin-Nevot
- */
-
-class Player 
+class Hero 
 {
-    /**
-     * @var $Player is p1 or p2 most of the time, may also be p3 or p4 in 4 players battles.
-     */
-    private $Player;
-
-    /**
-     * @var $Username is the username.
-     */
+    private $Heroname;
     private $Username;
+    private $URL;
+    private $Rank;
+    private $Rift;
+    private $Time;
 
     /**
-     * @var $Avatar is the player's avatar identifier (usually a number, but other values can be used for custom avatars).
-     */
-    private $Avatar;
-
-    /**
-     * @var $Rating is the player's Elo rating in the format they're playing. This will only be displayed in rated battles and when the player is first introduced otherwise it's blank.
-     */
-    private $Rating;
-
-    /**
-     * @brief Player constructor.
-     * @param int $Player The position of the player
+     * @brief Hero constructor.
+     * @param int $Hero The position of the player
      * @param string $Username The name of the user playing
      * @param int $Avatar The avatar of the user
      * @param int $Rating The rating of the user
      */
-    public function __construct ( $Player, $Username, $Avatar, $Rating) 
+    public function __construct ( $Hero, $Username, $URL, $Rank, $Rift, $Time) 
     {
-        $this->Player = $Player;
+        $this->Heroname = $Hero;
         $this->Username = $Username;
-        $this->Avatar = $Avatar;
-        $this->Rating = $Rating;
+        $this->URL = $URL;
+        $this->Rank = $Rank;
+        $this->Rift = $Rift;
+        $this->Time = $Time;
     }
 
     /**
      *  @brief Creates a player from an array of data arrange as :
-     *  Array [1] => Player position
+     *  Array [1] => Hero position
      *  Array [2] => User name
      *  Array [3] => Avatar
      *  Array [4] => Rating
      *  @param array $Array The array to use for filling the Palyer
-     *  @return A new Player object
+     *  @return A new Hero object
      */
     public static function create ( $Array )
     {
-        $PlayerPosition = Arrays::getOrCrash ( $Array, 1, 'Invalid player position' );
-        $Username       = Arrays::getOrCrash ( $Array, 2, 'Invalid player name'     );
-        $Avatar         = Arrays::getIfSet   ( $Array, 3, ''  );
-        $Rating         = Arrays::getIfSet   ( $Array, 4, '0' );
+        $Rank     = Arrays::getOrCrash ( $Array, 1, 'Invalid Hero position' );
+        $Username = Arrays::getOrCrash ( $Array, 3, 'Invalid Player name'     );
+        $URL      = Arrays::getOrCrash ( $Array, 2, 'Invalid hero URL'     );
+        $Rift     = Arrays::getIfSet   ( $Array, 4, ''  );
+        $Time     = Arrays::getIfSet   ( $Array, 5, ''  );
         
-        return new Player ( $PlayerPosition, $Username, $Avatar, $Rating );
+        return new Hero ( '', $Username, $URL, $Rank, $Rift, $Time );
     }
     
+    public static function mark4DL ( $Array )
+    {
+        $Rank     = Arrays::getOrCrash ( $Array, 1, 'Invalid Hero position' );
+        $Username = Arrays::getOrCrash ( $Array, 3, 'Invalid Player name'     );
+        $URL      = Arrays::getOrCrash ( $Array, 2, 'Invalid hero URL'     );
+        $Rift     = Arrays::getIfSet   ( $Array, 4, ''  );
+        $Time     = Arrays::getIfSet   ( $Array, 5, ''  );
+        $TimeArr  = explode ( 'min ', $Time );
+        $TimeMin  = $TimeArr [0];
+        $TimeArrS = explode ( '.', $TimeArr [1] ); 
+        $TimeS    = $TimeArrS [0];
+        $TimeMS   = $TimeArrS [1];
+        $TimeStr = sprintf ( "%02d-%02d-%03d", $TimeMin, $TimeS, $TimeMS );
+
+        $FileName = sprintf ( '%04d_%03d_%s_%s', $Rank, $Rift, $TimeStr, $Username );
+        $FilePath = DATA_TMP_HNS . $FileName;
+
+        if ( ! is_dir ( DATA_TMP_HNS ) ) mkdir ( DATA_TMP_HNS, 0777, true );
+
+        file_put_contents ( $FilePath, $URL );
+
+
+    }
+
     public function __toString ( )
     {
-        return 'Player ' . $this->Player . ' is ' . $this->Username . ' ' . $this->Rating . 'ELO';
+        return 'Hero ' . $this->Heroname . ' is ' . $this->Username . ' #' . $this->Rank . ' Rift ' . $this->Rift . " in " . $this->Time;
     }
 
-    /**
-     * @return The position of the player
-     */
-    public function getPlayer ()
-    {
-        return $this->Player;
-    }
-
-    /**
-     * @param int $Player The position of the player
-     */
-    public function setPlayer ( $Player )
-    {
-        $this->Player = $Player;
-    }
-
-    /**
-     * @return The name of the user playing
-     */
-    public function getUsername ()
-    {
-        return $this->Username;
-    }
-
-    /**
-     * @param string $Username The name of the user playing
-     */
-    public function setUsername ( $Username )
-    {
-        $this->Username = $Username;
-    }
-
-    /**
-     * @return The avatar of the user
-     */
-    public function getAvatar ()
-    {
-        return $this->Avatar;
-    }
-
-    /**
-     * @param int $Avatar The avatar of the user
-     */
-    public function setAvatar ( $Avatar )
-    {
-        $this->Avatar = $Avatar;
-    }
-
-    /**
-     * @return The rating of the user.
-     */
-    public function getRating()
-    {
-        return $this->Rating;
-    }
-
-    /**
-     * @param int $Rating The rating of the user
-     */
-    public function setRating($Rating)
-    {
-        $this->Rating = $Rating;
-    }
 }

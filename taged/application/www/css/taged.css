@@ -115,3 +115,11 @@ section.pagefilm {
 .edition_short {
 	padding: 20px;
 }
+
+.coll_data table {
+	border-collapse: collapse;
+}
+.coll_data th,
+.coll_data td {
+	border: 1px solid white;
+}

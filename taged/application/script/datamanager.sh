@@ -11,14 +11,38 @@ function usage ()
 
 }
 
-
-
 DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 Action=$1
 Appli=$2
 
+DataFileName=.datafile
+
 shift 2
+
+function getCollectionEntryFolder ()
+{
+    Entry=$1
+
+    BaseFolder=${Entry%%-*}
+    EndName=${Entry##*-}
+    SubRep=${EndName:0:5}
+
+    Tirets=${Entry//[^-]}
+    if [ ${#Tirets} -eq 2 ]
+    then
+        SubRep=${Entry%%-*}
+        Tmp=${Entry#*-}
+        BaseFolder=${Tmp%%-*}
+    elif [ ${#Tirets} -eq 0 ]
+    then
+        SubRep=""
+    fi
+
+    InnerFolder=$BaseFolder/$SubRep
+
+    echo $InnerFolder
+}
 
 function getEntryFolder ()
 {
@@ -26,7 +50,7 @@ function getEntryFolder ()
     InnerFolder=$Entry
 
     case "$Appli" in
-        "collection") InnerFolder=${Entry%%-*} ;;
+        "collection") InnerFolder=`getCollectionEntryFolder $Entry` ;;
         *) InnerFolder=${Entry:0:2} ;;
     esac
 
@@ -44,6 +68,7 @@ function storeFile ()
         InnerFolder=`getEntryFolder $FileName`
 
         DestFolder=$DIR/$Appli/$InnerFolder
+        DataFile=$DIR/$Appli/$InnerFolder/$DataFileName
 
         if [ -f $FileToStore ]
         then
@@ -51,8 +76,13 @@ function storeFile ()
             then
                 mkdir -p $DestFolder
             fi
-            echo "Storing $FileToStore into $DestFolder"
-            cp $FileToStore $DestFolder
+            
+            if ! [ -f $DataFile ] || ! grep -q $FileName $DataFile
+            then
+                echo "Storing $FileToStore into $DestFolder"
+                cp $FileToStore $DestFolder
+                echo $FileName >> $DataFile
+            fi
         fi
     else
         usage
@@ -68,10 +98,9 @@ function existsEntry ()
 
     InnerFolder=`getEntryFolder $Entry`
 
-    DataFile=$DIR/$Appli/$InnerFolder/$Entry
-    echo $DataFile
+    DataFile=$DIR/$Appli/$InnerFolder/$DataFileName
     
-    if [ -e $DataFile ]
+    if [ -e $DataFile ] && grep -q $Entry $DataFile
     then
         echo "$Entry exists"
         exit 0
@@ -89,9 +118,15 @@ function removeEntry ()
     echo "Removing Entry $Entry"
 }
 
-function getNextEntry ()
+function getEntries ()
 {
-    echo "Getting next Entry for $Appli"
+    Entry=$1
+    if [ "" != "$Entry" ]
+    then
+        InnerFolder=`getEntryFolder $Entry`
+        DataFolder=$DIR/$Appli/$InnerFolder
+        find $DataFolder -type f -name "[^.]*"
+    fi
 }
 
 function getEntry ()
@@ -107,11 +142,11 @@ then
 else
 
     case "$Action" in
-        "STORE")   storeFile    $@ ;;
-        "GET")     getEntry     $@ ;;
-        "GETNEXT") getNextEntry $@ ;;
-        "REMOVE")  removeEntry  $@ ;;
-        "EXISTS")  existsEntry  $@ ;;
+        "STORE")  storeFile   $@ ;;
+        "GET")    getEntry    $@ ;;
+        "GETALL") getEntries  $@ ;;
+        "REMOVE") removeEntry $@ ;;
+        "EXISTS") existsEntry $@ ;;
         *) usage ;;
     esac
 fi

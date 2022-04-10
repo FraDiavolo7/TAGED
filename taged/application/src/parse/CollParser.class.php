@@ -1,27 +1,7 @@
 <?php
-/*
- * Copyright © 2013 Diveen
- * All Rights Reserved.
- *
- * This software is proprietary and confidential to Diveen ReplayParser
- * and is protected by copyright law as an unpublished work.
- *
- * Unauthorized access and disclosure strictly forbidden.
- */
 
-/**
- * @author Mickaël Martin-Nevot
- */
+class CollParser {
 
-class Parser {
-    const REPLAYS_PATH = 'replays/';
-
-    private $filename;
-    private $head;
-    private $text;
-    private $currentPokemon1;
-    private $currentPokemon2;
-    private $currentTurn;
     private $turns;
     
     private $FullText;
@@ -30,10 +10,12 @@ class Parser {
     
     public function __construct ( $TextToParse ) 
     {
+        Log::setDebug ( __FILE__ );
         $this->FullText = $TextToParse;
         
-        $this->Game = new Game ();
+        $this->Game = new CollGame ();
         $this->clean ();
+        Log::setDebug ( __FILE__ );
     }
     
     public function __destruct ( )
@@ -49,6 +31,9 @@ class Parser {
     private function clean () 
     {
         $tmp = preg_replace('/\R/u', "\n", $this->FullText);
+        
+        preg_replace_callback ( '/input type="hidden" name="replayid" value="([^"]*)" \//m', array ( $this, "gameIdPreg" ), $tmp );
+        
         $this->ProcessedText  = preg_replace('/^.*\<script type="text\/plain" class="battle-log-data"\>(.*)\<\/script\>.*$/sU', '$1', $tmp);
     }
 
@@ -68,6 +53,8 @@ class Parser {
      */
     public function parse () 
     {
+        Log::fct_enter ( __METHOD__ );
+
         /* ******************************** Battle initialization. ******************************** */
         /* Players. */
         $this->applyPattern ( '/\|player\|p([0-9]+)\|([^\|\n|\r|\f]+)\|([^\|\n|\r|\f]+)(?:\|([^\|\n|\r|\f]+))?(?:\|([^\|\n|\r|\f]+))?(?:\|)?/', 'playerPreg' );
@@ -100,8 +87,8 @@ class Parser {
         $this->ProcessedText = preg_replace('/\|start[\|\n|\r|\f](.*)$/sU', '$1', $this->ProcessedText);
 
         /* First (current) pokemons. */
-        $this->applyPattern ( '/^\|switch\|p1a: ([^\|]+)\|.*$/mU', 'switchP1' );
-        $this->applyPattern ( '/^\|switch\|p2a: ([^\|]+)\|.*$/mU', 'switchP2' );
+        $this->applyPattern ( '/^\|switch\|p1a: .*\|([^\|]+)\|.*$/mU', 'switchP1' );
+        $this->applyPattern ( '/^\|switch\|p2a: .*\|([^\|]+)\|.*$/mU', 'switchP2' );
         /*
         preg_match('/^\|switch\|p1a: ([^\|]+)\|.*$/mU', $this->ProcessedText, $matches);
         $this->currentPokemon1 = $matches[1];
@@ -122,10 +109,13 @@ class Parser {
         $this->applyPattern ( '/\|tie\|/', 'tiePreg' );
         
         $this->Game->check ();
+        
+        $this->Game->save ();
 //         if ( NULL == $this->Rules       ) throw new Exception ( 'Rules not provided'        );
 //         if ( NULL == $this->TeamPreview ) throw new Exception ( 'Team Preview not provided' );
 //         if ( NULL == $this->Winner      ) throw new Exception ( 'Winner not provided'       );
 //         if ( NULL == $this->Tie         ) throw new Exception ( 'Tie not provided'          );
+        Log::fct_exit ( __METHOD__ );
     }
     
     public function __toString ()
@@ -171,11 +161,29 @@ class Parser {
      *  @brief Handles the description of a Player
      *  @param [in] $Match The list of arguments read from the text
      */
+    protected function gameIdPreg ( $Match )
+    {
+        Log::fct_enter ( __METHOD__  . json_encode ( $Match ) );
+        $GameID = Arrays::getOrCrash ( $Match, 1, 'Invalid game ID' );
+        
+        $this->Game->setID ( $GameID );
+        Log::fct_exit ( __METHOD__ );
+    }
+    
+    /**
+     *  @brief Handles the description of a Player
+     *  @param [in] $Match The list of arguments read from the text
+     */
     protected function playerPreg ( $Match ) 
     {
-        //         echo 'PlayerPreg ( ' . print_r ( $Match, true ) . ' )<br>';
-        $Player = Player::create ( $Match );
-        $this->Game->setPlayer ( $Player );
+        Log::fct_enter ( __METHOD__  . json_encode ( $Match ) );
+        $PlayerPosition = Arrays::getOrCrash ( $Match, 1, 'Invalid player position' );
+        $Username       = Arrays::getOrCrash ( $Match, 2, 'Invalid player name'     );
+        $Avatar         = Arrays::getIfSet   ( $Match, 3, ''  );
+        $Rating         = Arrays::getIfSet   ( $Match, 4, '0' );
+        
+        $this->Game->setPlayer ( new CollPlayer ( $PlayerPosition, $Username, $Avatar, $Rating ) );
+        Log::fct_exit ( __METHOD__ );
     }
 
     /**
@@ -184,45 +192,61 @@ class Parser {
      */
     protected function teamSizePreg ( $Match ) 
     {
-        $Team = Team::create ( $Match );
-        $this->Game->setTeam ( $Team );
+        Log::fct_enter ( __METHOD__  . json_encode ( $Match ) );
+        $Player = Arrays::getOrCrash ( $Match, 1, 'Team not affected to as player' );
+        $Size = Arrays::getOrCrash ( $Match, 2, 'Team quantity invalid' );
+        
+        $this->Game->setTeam ( new CollTeam ( $Player, $Size ) );
+        Log::fct_exit ( __METHOD__ );
     }
 
     protected function gameTypePreg ( $Match ) 
     {
+        Log::fct_enter ( __METHOD__  . json_encode ( $Match ) );
         $GameType = Arrays::getOrCrash ( $Match, 1, 'Invalid Game Type' );
         $this->Game->setType ( $GameType );
+        Log::fct_exit ( __METHOD__ );
     }
 
     protected function genPreg ( $Match ) 
     {
+        Log::fct_enter ( __METHOD__  . json_encode ( $Match ) );
         $Gen = Arrays::getOrCrash ( $Match, 1, 'Invalid Generation' );
         $this->Game->setGen ( $Gen );
+        Log::fct_exit ( __METHOD__ );
     }
 
     protected function tierPreg ( $Match ) 
     {
+        Log::fct_enter ( __METHOD__  . json_encode ( $Match ) );
         $Tier = Arrays::getOrCrash ( $Match, 1, 'Invalid Tier' );
         $this->Game->setTier ( $Tier );
+        Log::fct_exit ( __METHOD__ );
     }
 
     protected function ratedPreg ( $Match ) 
     {
+        Log::fct_enter ( __METHOD__  . json_encode ( $Match ) );
         $Rated   = Arrays::getOrCrash ( $Match, 1, 'Rated not filled' );
         $Message = Arrays::getIfSet   ( $Match, 2, '' );
         $this->Game->setRated ( $Message );
+        Log::fct_exit ( __METHOD__ );
     }
     
     protected function switchP1 ( $Match )
     {
+        Log::fct_enter ( __METHOD__  . json_encode ( $Match ) );
         $Pokemon = Arrays::getOrCrash ( $Match, 1, 'Pokemon not filled' );
         $this->Game->switch ( 1, $Pokemon );
+        Log::fct_exit ( __METHOD__ );
     }
 
     protected function switchP2 ( $Match )
     {
+        Log::fct_enter ( __METHOD__  . json_encode ( $Match ) );
         $Pokemon = Arrays::getOrCrash ( $Match, 1, 'Pokemon not filled' );
         $this->Game->switch ( 2, $Pokemon );
+        Log::fct_exit ( __METHOD__ );
     }
     
     protected function rulePreg ( $Match ) 
@@ -252,13 +276,17 @@ class Parser {
 
     protected function winnerPreg ( $Match ) 
     {
+        Log::fct_enter ( __METHOD__  . json_encode ( $Match ) );
         $User = Arrays::getOrCrash ( $Match, 1, 'User not filled' );
         $this->Game->setWinner ( $User );
+        Log::fct_exit ( __METHOD__ );
     }
 
     protected function tiePreg ( $Match ) 
     {
+        Log::fct_enter ( __METHOD__  . json_encode ( $Match ) );
         $this->Game->setTie ( );
+        Log::fct_exit ( __METHOD__ );
     }
 
     /* ************************************************************************* */
@@ -275,3 +303,4 @@ class Parser {
 //         return $this->move('2', $pokemon, $move, $effect);
     }
 }
+

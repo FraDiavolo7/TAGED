@@ -1,19 +1,6 @@
 <?php
-/*
- * Copyright © 2013 Diveen
- * All Rights Reserved.
- *
- * This software is proprietary and confidential to Diveen ReplayParser
- * and is protected by copyright law as an unpublished work.
- *
- * Unauthorized access and disclosure strictly forbidden.
- */
 
-/**
- * @author Mickaël Martin-Nevot
- */
-
-class ParserHnS {
+class HnSParser {
 
     private $filename;
     private $head;
@@ -76,22 +63,21 @@ class ParserHnS {
 	
 	protected function parseHero ( $Matches )
 	{
-        preg_replace_callback ( '/(?:.*)\<a href="([^"]*)".*\<img[^\<\>]*\>\n(.*)\n\<\/a\>.*\<td[^\<\>]*\>\n([^\<\>]*)\n\<\/td\>.*\<td[^\<\>]*\>\n([^\<\>]*)\n\<\/td\>/msU', array ( $this, 'parseHeroData' ), $Matches [0] );
+        preg_replace_callback ( '/[^<]*<td[^>]*>\n([0-9]*)\..*\<a href="([^"]*)".*\<img[^\<\>]*\>\n(.*)\n\<\/a\>.*\<td[^\<\>]*\>\n([^\<\>]*)\n\<\/td\>.*\<td[^\<\>]*\>\n([^\<\>]*)\n\<\/td\>/msU', array ( $this, 'parseHeroData' ), $Matches [0] );
           
 		return '';
 	}
 	
 	protected function parseHeroData ( $Matches )
 	{
-	//	echo "CDE " . count ( $Matches ) . "<br>\n";
-	
-	    echo $Matches [1] . "<br>\n";
-		/*
-		foreach ( $Matches as $K => $Match )
-		{
-			echo "CDE $K " . $Match . "\n";
-		}
-		*/
+        /*
+        $Hero = Hero::create ( $Matches );
+        $this->Heroes [] = $Hero;
+
+        echo $Hero . "<br>\n";
+         */
+        Hero::mark4DL ( $Matches );
+		
 		return '';
 	}
 }
