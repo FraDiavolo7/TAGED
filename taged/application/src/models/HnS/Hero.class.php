@@ -46,7 +46,7 @@ class Hero
         return new Hero ( '', $Username, $URL, $Rank, $Rift, $Time );
     }
     
-    public static function mark4DL ( $Array )
+    public static function mark4DL ( $Array, $Server, $HeroClass )
     {
         $Rank     = Arrays::getOrCrash ( $Array, 1, 'Invalid Hero position' );
         $Username = Arrays::getOrCrash ( $Array, 3, 'Invalid Player name'     );
@@ -60,7 +60,8 @@ class Hero
         $TimeMS   = $TimeArrS [1];
         $TimeStr = sprintf ( "%02d-%02d-%03d", $TimeMin, $TimeS, $TimeMS );
 
-        $FileName = sprintf ( '%04d_%03d_%s_%s', $Rank, $Rift, $TimeStr, $Username );
+        $FileName = sprintf ( '%s_%s_%04d_%03d_%s_%s', $Server, $HeroClass, $Rank, $Rift, $TimeStr, Strings::convertToAscii ($Username) );
+        echo "marking $FileName<br>\n";
         $FilePath = DATA_TMP_HNS . $FileName;
 
         if ( ! is_dir ( DATA_TMP_HNS ) ) mkdir ( DATA_TMP_HNS, 0777, true );

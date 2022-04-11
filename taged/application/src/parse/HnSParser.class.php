@@ -9,9 +9,15 @@ class HnSParser {
     private $FullText;
     private $ProcessedText;
     private $Game;
+
+    private $Server; ///!< Server on which the ladder is coming
+    private $HeroClass; ///!< Class of the Heroes listed
     
-    public function __construct ( $TextToParse ) 
+    public function __construct ( $TextToParse, $Srv = "eu", $HClass = "barbarian" ) 
     {
+        $this->Server = $Srv;
+        $this->HeroClass = $HClass;
+           
         $this->FullText = $TextToParse;
         $this->clean ();
     }
@@ -76,7 +82,7 @@ class HnSParser {
 
         echo $Hero . "<br>\n";
          */
-        Hero::mark4DL ( $Matches );
+        Hero::mark4DL ( $Matches, $this->Server, $this->HeroClass );
 		
 		return '';
 	}
