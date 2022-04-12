@@ -60,11 +60,12 @@ class Hero
         $TimeMS   = $TimeArrS [1];
         $TimeStr = sprintf ( "%02d-%02d-%03d", $TimeMin, $TimeS, $TimeMS );
 
-        $FileName = sprintf ( '%s_%s_%04d_%03d_%s_%s', $Server, $HeroClass, $Rank, $Rift, $TimeStr, Strings::convertToAscii ($Username) );
+        $Folder = sprintf ( '%s%03d/', DATA_TMP_HNS, $Rank % 100 );
+        $FileName = sprintf ( '%s_%s_%04d_%03d_%s', $Server, $HeroClass, $Rank, $Rift, $TimeStr );
         echo "marking $FileName<br>\n";
-        $FilePath = DATA_TMP_HNS . $FileName;
+        $FilePath = $Folder . $FileName;
 
-        if ( ! is_dir ( DATA_TMP_HNS ) ) mkdir ( DATA_TMP_HNS, 0777, true );
+        if ( ! is_dir ( $Folder ) ) mkdir ( $Folder, 0777, true );
 
         file_put_contents ( $FilePath, $URL );
 

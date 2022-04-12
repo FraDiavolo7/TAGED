@@ -15,15 +15,14 @@ foreach ( $Servers as $Srv )
 {
     foreach ( $Classes as $Cls )
     {
-        for ( $i = 1 ; $i <= $NbPages ; ++$i )
-        {
-            $URL = sprintf ( $URLpattern, $Srv, $Cls, $i );
-            $FileName = sprintf ( "%s_%s_%d", $Srv, $Cls, $i );
-            $FilePath = DATA_TMP_HNS . $FileName;
-            if ( ! is_dir ( DATA_TMP_HNS ) ) mkdir ( DATA_TMP_HNS, 0777, true );
+        $URL = sprintf ( $URLpattern, $Srv, $Cls, 1 );
 
-            file_put_contents ( $FilePath, $URL );
-        }
+        if ( ! is_dir ( DATA_TMP_HNS ) ) mkdir ( DATA_TMP_HNS, 0777, true );
+
+        $TextToParse = file_get_contents ( $URL );
+
+        $Parser = new HnSParser ( $TextToParse, $Srv, $Cls );
+        $Parser->parse ();
     }
 }
 
