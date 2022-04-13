@@ -46,11 +46,11 @@ class Hero
         return new Hero ( '', $Username, $URL, $Rank, $Rift, $Time );
     }
     
-    public static function mark4DL ( $Array, $Server, $HeroClass )
+    public static function mark4DL ( $Array, $BaseURL, $Server, $HeroClass )
     {
         $Rank     = Arrays::getOrCrash ( $Array, 1, 'Invalid Hero position' );
         $Username = Arrays::getOrCrash ( $Array, 3, 'Invalid Player name'     );
-        $URL      = Arrays::getOrCrash ( $Array, 2, 'Invalid hero URL'     );
+        $URL      = $BaseURL . Arrays::getOrCrash ( $Array, 2, 'Invalid hero URL'     );
         $Rift     = Arrays::getIfSet   ( $Array, 4, ''  );
         $Time     = Arrays::getIfSet   ( $Array, 5, ''  );
         $TimeArr  = explode ( 'min ', $Time );
@@ -62,7 +62,7 @@ class Hero
 
         $Folder = sprintf ( '%s%03d/', DATA_TMP_HNS, $Rank % 100 );
         $FileName = sprintf ( '%s_%s_%04d_%03d_%s', $Server, $HeroClass, $Rank, $Rift, $TimeStr );
-        echo "marking $FileName<br>\n";
+        echo "marking $FileName $URL<br>\n";
         $FilePath = $Folder . $FileName;
 
         if ( ! is_dir ( $Folder ) ) mkdir ( $Folder, 0777, true );

@@ -1,6 +1,6 @@
 <?php
 
-class HnSParser {
+class HnSHeroParser {
 
     private $filename;
     private $head;
@@ -13,17 +13,9 @@ class HnSParser {
     private $Server; ///!< Server on which the ladder is coming
     private $HeroClass; ///!< Class of the Heroes listed
     
-    private $URL;
-    private $BaseURL;
-    
-    public function __construct ( $TextToParse, $URL = '', $Srv = "eu", $HClass = "barbarian" ) 
+    public function __construct ( $TextToParse, $Parameters = array () ) 
     {
-        $this->Server = $Srv;
-        $this->HeroClass = $HClass;
-        $this->URL = $URL;
-        $URLinfo =  parse_url ( $URL );
-        $this->BaseURL = $URLinfo ['scheme'] . '://' . $URLinfo ['host'];
-           
+        echo __CLASS__ . ' ' . print_r ( $Parameters, TRUE ) . "\n";
         $this->FullText = $TextToParse;
         $this->clean ();
     }
@@ -79,17 +71,5 @@ class HnSParser {
           
 		return '';
 	}
-	
-	protected function parseHeroData ( $Matches )
-	{
-        /*
-        $Hero = Hero::create ( $Matches );
-        $this->Heroes [] = $Hero;
 
-        echo $Hero . "<br>\n";
-         */
-        Hero::mark4DL ( $Matches, $this->BaseURL, $this->Server, $this->HeroClass );
-		
-		return '';
-	}
 }

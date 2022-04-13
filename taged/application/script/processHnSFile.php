@@ -1,4 +1,5 @@
 #!/usr/bin/php
+# This script is meant to process a Hero URL file and DL the 
 <?php
 
 $File=$argv[1];
@@ -11,16 +12,7 @@ $FileToDL = file_get_contents ( $File );
 
 $TextToParse = file_get_contents ( $FileToDL );
 
-if ( count ( $FilenameItems ) == 3 )
-{
-    $Parser = new HnSParser ( $TextToParse, $FilenameItems [0], $FilenameItems [1] );
-    $Parser->parse ();
-}
-else
-{
-    echo "Hero File!!! " . print_r ( $FilenameItems, TRUE ) . "\n";
-    //$Parser = new HnSHeroParser ( $TextToParse, $FilenameItems );
-    //$Parser->parse ();
-}
+$Parser = new HnSHeroParser ( $TextToParse, $FilenameItems );
+//$Parser->parse ();
 
 

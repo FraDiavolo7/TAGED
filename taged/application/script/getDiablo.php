@@ -1,5 +1,6 @@
 #!/bin/php
 <?php
+# This script retrieves all Hero URL from le Diablo 3 Ladder for each servers and each class
 
 include '../src/define.php';
 
@@ -8,8 +9,6 @@ $URLpattern= 'https://%s.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-%s#page
 $Servers = array ( 'us', 'eu', 'kr' );
 
 $Classes = array ( "barbarian", "crusader", "dh", "monk", "necromancer", "wd", "wizard" );
-
-$NbPages = 7;
 
 foreach ( $Servers as $Srv )
 {
@@ -21,7 +20,7 @@ foreach ( $Servers as $Srv )
 
         $TextToParse = file_get_contents ( $URL );
 
-        $Parser = new HnSParser ( $TextToParse, $Srv, $Cls );
+        $Parser = new HnSParser ( $TextToParse, $URL, $Srv, $Cls );
         $Parser->parse ();
     }
 }
