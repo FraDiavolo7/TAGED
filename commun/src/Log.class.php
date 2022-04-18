@@ -15,6 +15,7 @@ class Log
 	public static function warning ( $Data ) {  self::logText ( self::WARNING, $Data );	}
 	public static function info    ( $Data ) {  self::logText ( self::INFO,    $Data );	}
 	public static function debug   ( $Data ) {  self::logText ( self::DEBUG,   $Data );	}
+	public static function logVar  ( $Name, $Var ) {  self::logText ( self::DEBUG, "$Name = $Var" );	}
 	
 	public static function logText ( $Level, $Data )
 	{
@@ -53,6 +54,7 @@ class Log
 		{
     		$Text = "$Date $Level $Caller$Data\n";
     		
+//    		echo 'file_put_contents (' .  self::$LogFilePath . ' , ' . $Text . ', FILE_APPEND )' . "\n";
     		file_put_contents ( self::$LogFilePath, $Text, FILE_APPEND );
     		if ( fileowner ( self::$LogFilePath ) === getmyuid () )
     		{
@@ -80,12 +82,12 @@ class Log
 	
 	protected static function isDebug ( $FileName )
 	{
-// 	    echo __METHOD__ . ' D ' . json_encode ( self::$DebugList, 0, 1 ) . "<br>\n";
 	    $Debug = self::$BypassDebug;
 	    if ( isset ( self::$DebugList [ $FileName ] ) )
 	    {
 	        $Debug = self::$DebugList [ $FileName ];
 	    }
+// 	    echo __METHOD__ . ' D ' . Strings::bool ( $Debug ) .  ' <= ' . Strings::bool ( self::$BypassDebug ) . ' ' . json_encode ( self::$DebugList, 0, 1 ) . "<br>\n";
 	    return $Debug;
 	}
 	

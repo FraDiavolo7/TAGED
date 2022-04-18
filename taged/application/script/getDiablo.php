@@ -19,9 +19,11 @@ foreach ( $Servers as $Srv )
         if ( ! is_dir ( DATA_TMP_HNS ) ) mkdir ( DATA_TMP_HNS, 0777, true );
 
         $TextToParse = file_get_contents ( $URL );
+        file_put_contents ( DATA_TMP_HNS . '/toto1', $TextToParse);
 
         $Parser = new HnSParser ( $TextToParse, $URL, $Srv, $Cls );
         $Parser->parse ();
+        exit;
     }
 }
 

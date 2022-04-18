@@ -23,6 +23,7 @@ class HnSParser {
         $this->URL = $URL;
         $URLinfo =  parse_url ( $URL );
         $this->BaseURL = $URLinfo ['scheme'] . '://' . $URLinfo ['host'];
+        Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " . $URL );
            
         $this->FullText = $TextToParse;
         $this->clean ();
@@ -49,6 +50,9 @@ class HnSParser {
     {
         $tmp = preg_replace('/\R/u', "\n", $this->FullText);
         $this->ProcessedText  = preg_replace('/^.*\<tbody\>(.*)\<\/tbody\>.*$/sU', '$1', $tmp);
+        Log::logVar ( 'tmp',  $tmp );
+        Log::logVar ( '$this->ProcessedText',  $this->ProcessedText );
+
     }
     protected function applyPattern ( $Pattern, $Callback, $Count = 1 )
     {
@@ -66,6 +70,7 @@ class HnSParser {
      */
     public function parse () 
     {
+        Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " . $this->ProcessedText );
 		//echo "Processed <table border=1>" . $this->ProcessedText . "</table>\n";
 		$Tmp = $this->ProcessedText;
 		$Cpt = 0;
@@ -75,6 +80,7 @@ class HnSParser {
 	
 	protected function parseHero ( $Matches )
 	{
+        Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " . print_r ( $Matches, TRUE) );
         preg_replace_callback ( '/[^<]*<td[^>]*>\n([0-9]*)\..*\<a href="([^"]*)".*\<img[^\<\>]*\>\n(.*)\n\<\/a\>.*\<td[^\<\>]*\>\n([^\<\>]*)\n\<\/td\>.*\<td[^\<\>]*\>\n([^\<\>]*)\n\<\/td\>/msU', array ( $this, 'parseHeroData' ), $Matches [0] );
           
 		return '';
@@ -88,6 +94,7 @@ class HnSParser {
 
         echo $Hero . "<br>\n";
          */
+        Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " . print_r ( $Matches, TRUE) );
         Hero::mark4DL ( $Matches, $this->BaseURL, $this->Server, $this->HeroClass );
 		
 		return '';
