@@ -13,10 +13,20 @@ class HnSHeroParser {
     private $Server; ///!< Server on which the ladder is coming
     private $HeroClass; ///!< Class of the Heroes listed
     
+    protected $CurrentItem;
+    protected $ItemList;
+    
+    const ITEM_NAME  = 'itemname';
+    const ITEM_POS   = 'itempos';
+    const ITEM_IMG   = 'itemimg';
+    const ITEM_AFFIX = 'itemaffix';
+    
     public function __construct ( $TextToParse, $Parameters = array () ) 
     {
         echo __CLASS__ . ' ' . print_r ( $Parameters, TRUE ) . "\n";
         $this->FullText = $TextToParse;
+        $this->CurrentItem = 0;
+        $this->ItemList = array ();
         $this->clean ();
     }
     
@@ -39,18 +49,9 @@ class HnSHeroParser {
      */
     private function clean () 
     {
-        $tmp = preg_replace('/\R/u', "\n", $this->FullText);
-        $this->ProcessedText  = preg_replace('/^.*\<tbody\>(.*)\<\/tbody\>.*$/sU', '$1', $tmp);
+        $this->ProcessedText = preg_replace('/\R/u', "\n", $this->FullText);
     }
-    protected function applyPattern ( $Pattern, $Callback, $Count = 1 )
-    {
-        // TOTO @CDE Tester utilité.
-        // Si Player est appelé 1 fois, pourquoi rule doit être appelé un nombre de fois défini?
-        for ( $i = 0 ; $i < $Count ; ++$i )
-        {
-            $this->ProcessedText = preg_replace_callback ( $Pattern, array ( $this, $Callback ), $this->ProcessedText );
-        }
-    }
+    
 
     /**
      *  @brief Parse (with PCRE) the $this->text member variable.
@@ -58,18 +59,56 @@ class HnSHeroParser {
      */
     public function parse () 
     {
-		//echo "Processed <table border=1>" . $this->ProcessedText . "</table>\n";
 		$Tmp = $this->ProcessedText;
-		$Cpt = 0;
-//        $Tmp = preg_replace_callback ( '/^(.*)\<\/tr\>.*$/msU', array ( $this, 'parseHero' ), $Tmp );
-        $Tmp = preg_replace_callback ( '/(<tr.*<\/tr>)/sU', array ( $this, 'parseHero' ), $Tmp );
+        $Tmp = preg_replace_callback ( '#<ul class="gear-labels"(.*)</ul>#sU', array ( $this, 'parseItems' ), $Tmp );
 	}
 	
-	protected function parseHero ( $Matches )
+	protected function parseItems ( $Matches )
 	{
-        preg_replace_callback ( '/[^<]*<td[^>]*>\n([0-9]*)\..*\<a href="([^"]*)".*\<img[^\<\>]*\>\n(.*)\n\<\/a\>.*\<td[^\<\>]*\>\n([^\<\>]*)\n\<\/td\>.*\<td[^\<\>]*\>\n([^\<\>]*)\n\<\/td\>/msU', array ( $this, 'parseHeroData' ), $Matches [0] );
-          
+	    $Tmp = preg_replace_callback ( '#<li class="(.*)".*>.*<a href="(.*)".*<span class="item-name">(.*)</span>(.*)</a>.*</li>#sU', array ( $this, 'parseItem' ), $Matches [0] );
+	    
 		return '';
+	}
+	
+	protected function parseItem ( $Matches )
+	{
+	    $Item = array ();
+	    $Item [self::ITEM_POS ] = Strings::replace ( 'gear-label slot-', '', $Matches [1] );
+	    $Item [self::ITEM_IMG ] = $Matches [2];
+	    $Item [self::ITEM_NAME] = $Matches [3];
+	    $Item [self::ITEM_AFFIX] = array ();
+	    
+	    $this->ItemList [$this->CurrentItem] = $Item;
+	    
+	    $Tmp = preg_replace_callback ( '#.*class="bonus-value (.*)".*>(.*)</span>#sU', array ( $this, 'parseParams' ), $Matches [4] );
+	    $this->showItem ();
+	    
+	    $this->CurrentItem += 1;
+	    return '';
+	}
+	
+	protected function parseParams ( $Matches )
+	{
+	    $this->ItemList [$this->CurrentItem][self::ITEM_AFFIX][] = trim ($Matches [2]);
+	    return '';
+	}
+	
+	protected function showItem ( $ItemNum = -1 )
+	{
+	    if ( $ItemNum == -1 ) $ItemNum = $this->CurrentItem;
+	    
+	    if ( isset ( $this->ItemList [$ItemNum] ) )
+	    {
+	        $Name  = Arrays::getIfSet ( $this->ItemList [$ItemNum], self::ITEM_NAME, "" );
+	        $Pos   = Arrays::getIfSet ( $this->ItemList [$ItemNum], self::ITEM_POS,  "" );
+	        $Image = Arrays::getIfSet ( $this->ItemList [$ItemNum], self::ITEM_IMG,  "" );
+	        $Affix = Arrays::getIfSet ( $this->ItemList [$ItemNum], self::ITEM_AFFIX, array () );
+	        echo 'Item ' . $ItemNum . ' ' . $Name . ' on ' . $Pos . "\n";
+	        foreach ( $Affix as $Aff )
+	        {
+	            echo $Aff . "\n";
+	        }
+	    }
 	}
 
 }

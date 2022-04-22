@@ -13,6 +13,6 @@ $FileToDL = file_get_contents ( $File );
 $TextToParse = file_get_contents ( $FileToDL );
 
 $Parser = new HnSHeroParser ( $TextToParse, $FilenameItems );
-//$Parser->parse ();
+$Parser->parse ();
 
 

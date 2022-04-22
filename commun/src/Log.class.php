@@ -15,7 +15,11 @@ class Log
 	public static function warning ( $Data ) {  self::logText ( self::WARNING, $Data );	}
 	public static function info    ( $Data ) {  self::logText ( self::INFO,    $Data );	}
 	public static function debug   ( $Data ) {  self::logText ( self::DEBUG,   $Data );	}
-	public static function logVar  ( $Name, $Var ) {  self::logText ( self::DEBUG, "$Name = $Var" );	}
+	public static function logVar  ( $Name, $Var ) 
+	{
+	    if ( is_string ( $Var ) ) self::logText ( self::DEBUG, "$Name = $Var" );
+	    else  self::logText ( self::DEBUG, "$Name = " . print_r ( $Var, TRUE ) );
+	}
 	
 	public static function logText ( $Level, $Data )
 	{
