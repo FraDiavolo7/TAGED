@@ -1,0 +1,5 @@
+2022-04-24T22:02:47+00:00 DEBUG   HnSHeroParser.class.php:62 parse:62 
+2022-04-24T22:06:19+00:00 DEBUG   HnSHeroParser.class.php:62 parse:62 
+2022-04-24T22:08:52+00:00 DEBUG   HnSHeroParser.class.php:62 parse:62 
+2022-04-24T22:11:01+00:00 DEBUG   HnSHeroParser.class.php:62 parse:62 
+2022-04-24T22:11:01+00:00 DEBUG   HnSHeroParser.class.php:65 parse:65 CDE : parseUser n'est pas appelé!!!

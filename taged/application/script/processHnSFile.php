@@ -12,6 +12,8 @@ $FileToDL = file_get_contents ( $File );
 
 $TextToParse = file_get_contents ( $FileToDL );
 
+file_put_contents ( '/home/taged/data/hns_tmp/test.html', $TextToParse );
+
 $Parser = new HnSHeroParser ( $TextToParse, $FilenameItems );
 $Parser->parse ();
 

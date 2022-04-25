@@ -59,9 +59,34 @@ class HnSHeroParser {
      */
     public function parse () 
     {
-		$Tmp = $this->ProcessedText;
-        $Tmp = preg_replace_callback ( '#<ul class="gear-labels"(.*)</ul>#sU', array ( $this, 'parseItems' ), $Tmp );
+        Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " );
+        $Tmp = $this->ProcessedText;
+		/** NOT WORKING **/
+        Log::debug ( __FUNCTION__ . ':' . __LINE__ . " CDE : parseUser n'est pas appelé!!!" );
+        $Tmp = preg_replace_callback ( '#<div class="profile-head".*<h2 class="header-2">(.*)</div>#sU', array ( $this, 'parseUser' ), $Tmp );
+		$Tmp = preg_replace_callback ( '#<ul class="gear-labels"(.*)</ul>#sU', array ( $this, 'parseItems' ), $Tmp );
 	}
+
+	protected function parseUser ( $Matches )
+	{
+	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " );
+	    
+	    $Tmp = preg_replace_callback ( '#<a href="(.*)">.*>(.*)<span.*>(.*)</span>.*<span.*>(.*)</span>#sU', array ( $this, 'parseUserDetails' ), $Matches [0] );
+	    
+	    return '';
+	}
+
+	protected function parseUserDetails ( $Matches )
+	{
+	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " );
+	    $Link = $Matches [1];
+	    $UserName = $Matches [2];
+	    $UserTag = $Matches [3];
+	    $Clan = $Matches [4];
+	    echo 'User ' . $UserName . ' ' . $UserTag . ' from ' . $Clan . "\n";
+	    return '';
+	}
+	
 	
 	protected function parseItems ( $Matches )
 	{
