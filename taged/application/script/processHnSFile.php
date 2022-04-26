@@ -11,10 +11,11 @@ $FilenameItems = explode ( '_', basename ( $File ) );
 $FileToDL = file_get_contents ( $File );
 
 $TextToParse = file_get_contents ( $FileToDL );
+$TextToParse = file_get_contents ( urlencode ( $FileToDL ) );
 
 file_put_contents ( '/home/taged/data/hns_tmp/test.html', $TextToParse );
 
 $Parser = new HnSHeroParser ( $TextToParse, $FilenameItems );
-$Parser->parse ();
+#$Parser->parse ();
 
 

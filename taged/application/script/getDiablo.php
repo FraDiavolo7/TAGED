@@ -4,7 +4,7 @@
 
 include '../src/define.php';
 
-$URLpattern= 'https://%s.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-%s#page=%d';
+$URLpattern= 'https://%s.diablo3.blizzard.com/fr-fr/rankings/era/16/rift-%s#page=%d';
 
 $Servers = array ( 'us', 'eu', 'kr' );
 
@@ -16,14 +16,12 @@ foreach ( $Servers as $Srv )
     {
         $URL = sprintf ( $URLpattern, $Srv, $Cls, 1 );
 
-        if ( ! is_dir ( DATA_TMP_HNS ) ) mkdir ( DATA_TMP_HNS, 0777, true );
+        if ( ! is_dir ( DATA_TMP_HNS_ADDR ) ) mkdir ( DATA_TMP_HNS_ADDR, 0777, true );
 
         $TextToParse = file_get_contents ( $URL );
-        file_put_contents ( DATA_TMP_HNS . '/toto1', $TextToParse);
 
         $Parser = new HnSParser ( $TextToParse, $URL, $Srv, $Cls );
         $Parser->parse ();
-        exit;
     }
 }
 

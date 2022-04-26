@@ -51,7 +51,6 @@ class HnSHeroParser {
     {
         $this->ProcessedText = preg_replace('/\R/u', "\n", $this->FullText);
     }
-    
 
     /**
      *  @brief Parse (with PCRE) the $this->text member variable.
@@ -61,10 +60,14 @@ class HnSHeroParser {
     {
         Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " );
         $Tmp = $this->ProcessedText;
-		/** NOT WORKING **/
-        Log::debug ( __FUNCTION__ . ':' . __LINE__ . " CDE : parseUser n'est pas appelé!!!" );
-        $Tmp = preg_replace_callback ( '#<div class="profile-head".*<h2 class="header-2">(.*)</div>#sU', array ( $this, 'parseUser' ), $Tmp );
+        $Tmp = preg_replace_callback ( '#<div class="profile-head".*<h2 class="header-2".*>(.*)</div>#sU', array ( $this, 'parseUser' ), $Tmp );
+        $Tmp = preg_replace_callback ( '#<div class="profile-sheet".*<strong>(.*)<span.*>.(.*).</span>.*<h2.*>(.*)</h2>#sU', array ( $this, 'parseHero' ), $Tmp );
 		$Tmp = preg_replace_callback ( '#<ul class="gear-labels"(.*)</ul>#sU', array ( $this, 'parseItems' ), $Tmp );
+		$Tmp = preg_replace_callback ( '#<ul class="active-skills clear-after">(.*)</ul>#sU', array ( $this, 'parseActive' ), $Tmp );
+		$Tmp = preg_replace_callback ( '#<ul class="passive-skills clear-after">(.*)</ul>#sU', array ( $this, 'parsePassive' ), $Tmp );
+		$Tmp = preg_replace_callback ( '#<div class="page-section attributes".*<ul class="attributes-core">(.*)</ul>.*<ul class="attributes-core secondary">(.*)</ul>.*<ul class="resources">(.*)</ul>#sU', array ( $this, 'parseAttributes' ), $Tmp );
+		
+		
 	}
 
 	protected function parseUser ( $Matches )
@@ -80,13 +83,24 @@ class HnSHeroParser {
 	{
 	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " );
 	    $Link = $Matches [1];
-	    $UserName = $Matches [2];
-	    $UserTag = $Matches [3];
-	    $Clan = $Matches [4];
-	    echo 'User ' . $UserName . ' ' . $UserTag . ' from ' . $Clan . "\n";
+	    $UserName = trim ( $Matches [2] );
+	    $UserTag = trim ( $Matches [3] );
+	    $Clan = trim ( $Matches [4] );
+	    echo 'User ' . $UserName . ' ' . $UserTag;
+	    if ( '' != $Clan ) echo ' from ' . $Clan;
+	    echo "\n";
 	    return '';
 	}
 	
+	protected function parseHero ( $Matches )
+	{
+	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " );
+	    $Level = $Matches [1];
+	    $Parangon = trim ( $Matches [2] );
+	    $HeroName = trim ( $Matches [3] );
+	    echo "Hero $HeroName level $Level ($Parangon)\n";
+	    return '';
+	}
 	
 	protected function parseItems ( $Matches )
 	{
@@ -136,4 +150,77 @@ class HnSHeroParser {
 	    }
 	}
 
+	protected function parseActive ( $Matches )
+	{
+	    $Tmp = preg_replace_callback ( '#<li>.*<span class="skill-name">(.*)<span.*>(.*)<.*</li>#sU', array ( $this, 'parseAct' ), $Matches [0] );
+	    
+	    return '';
+	}
+	
+	protected function parseAct ( $Matches )
+	{
+	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " );
+	    static $Count = 1;
+	    $Skill = trim ( $Matches [1] );
+	    $Rune = trim ( $Matches [2] );
+	    echo "Active #" . $Count++ . " -> $Skill ($Rune)\n";
+	    return '';
+	}
+	
+	
+	protected function parsePassive ( $Matches )
+	{
+	    $Tmp = preg_replace_callback ( '#<li>.*<span class="skill-name">(.*)</span>#sU', array ( $this, 'parsePass' ), $Matches [0] );
+	    
+	    return '';
+	}
+
+	protected function parsePass ( $Matches )
+	{
+	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " );
+	    static $Count = 1;
+	    $Passive = trim ( $Matches [1] );
+	    echo "Passive #" . $Count++ . " -> $Passive\n";
+	    return '';
+	}
+	
+	
+	protected function parseAttributes ( $Matches )
+	{
+	    $Tmp = preg_replace_callback ( '#<li>.*<span.*>(.*)</span>.*<span.*>(.*)</span>.*</li>#sU', array ( $this, 'parseAttrP' ), $Matches [1] );
+	    $Tmp = preg_replace_callback ( '#<li>.*<span.*>(.*)</span>.*<span.*>(.*)</span>.*</li>#sU', array ( $this, 'parseAttrS' ), $Matches [2] );
+	    $Tmp = preg_replace_callback ( '#<li.*<span class="value">(.*)</span>.*<span class="label">(.*)</span>.*</li>#sU', array ( $this, 'parseAttrR' ), $Matches [3] );
+	    
+	    return '';
+	}
+	
+	protected function parseAttrP ( $Matches )
+	{
+	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " );
+	    $Label = trim ( $Matches [1] );
+	    $Value = trim ( $Matches [2] );
+	    echo "$Label -> $Value\n";
+	    return '';
+	}
+	
+	protected function parseAttrS ( $Matches )
+	{
+	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " );
+	    $Label = trim ( $Matches [1] );
+	    $Value = trim ( $Matches [2] );
+	    echo "$Label -> $Value\n";
+	    return '';
+	}
+	
+	protected function parseAttrR ( $Matches )
+	{
+	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " );
+	    $Label = trim ( $Matches [2] );
+	    $Value = trim ( $Matches [1] );
+	    echo "$Label -> $Value\n";
+	    return '';
+	}
+	
+	
+	
 }

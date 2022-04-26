@@ -44,6 +44,8 @@ define ( 'APP_NAME_MATHC3', 'match3' );
 define ( 'APP_NAME_HACK_N_SLASH', 'hackNslash' );
 
 define ( 'DATA_TMP_HNS', DATA_HOME . '/hns_tmp/' );
+define ( 'DATA_TMP_HNS_ADDR', DATA_TMP_HNS . 'addr/' );
+define ( 'DATA_TMP_HNS_FILES', DATA_TMP_HNS . 'files/' );
 
 define ( 'STATS_GET_SCRIPT', SCRIPT_HOME . "/getStats.sh" );
 define ( 'STATS_SEPARATOR', " : " );

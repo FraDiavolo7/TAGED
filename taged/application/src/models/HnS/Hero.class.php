@@ -60,7 +60,7 @@ class Hero
         $TimeMS   = $TimeArrS [1];
         $TimeStr = sprintf ( "%02d-%02d-%03d", $TimeMin, $TimeS, $TimeMS );
 
-        $Folder = sprintf ( '%s%03d/', DATA_TMP_HNS, $Rank % 100 );
+        $Folder = sprintf ( '%s%03d/', DATA_TMP_HNS_ADDR, $Rank % 100 );
         $FileName = sprintf ( '%s_%s_%04d_%03d_%s', $Server, $HeroClass, $Rank, $Rift, $TimeStr );
         echo "marking $FileName $URL<br>\n";
         $FilePath = $Folder . $FileName;
