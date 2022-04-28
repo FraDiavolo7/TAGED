@@ -12,6 +12,7 @@ abstract class Database
         {
             self::$PDO = new PDO ( static::$DBserver, static::$DBuser, static::$DBpwd );
         }
+        
     }
     
     public static function execute ( $Query, $Parameters = array () )
@@ -32,8 +33,8 @@ abstract class Database
             self::$PDOStatement = self::$PDO->query ( $Query );
         }
         
-        if ( FALSE !== self::$PDO          ) Log::debug ( print_r ( self::$PDO->errorInfo ( ), true ) ); 
-        if ( FALSE !== self::$PDOStatement ) Log::debug ( print_r ( self::$PDOStatement->errorInfo ( ), true ) );
+        if ( FALSE !== self::$PDO          ) Log::debug ( json_encode ( self::$PDO->errorInfo ( ) ) ); 
+        if ( FALSE !== self::$PDOStatement ) Log::debug ( json_encode ( self::$PDOStatement->errorInfo ( ) ) );
     }
     
     public static function getResults ( )

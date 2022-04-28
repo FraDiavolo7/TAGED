@@ -8,7 +8,6 @@ class Log
 	const DEBUG   = 'DEBUG  ';
 	const ALL     = 'all';
 
-
 	public static function fct_enter ( $Function ) {  self::debug ( "$Function IN" );	}
 	public static function fct_exit  ( $Function ) {  self::debug ( "$Function OUT" );	}
 	
@@ -16,28 +15,55 @@ class Log
 	public static function warning ( $Data ) {  self::logText ( self::WARNING, $Data );	}
 	public static function info    ( $Data ) {  self::logText ( self::INFO,    $Data );	}
 	public static function debug   ( $Data ) {  self::logText ( self::DEBUG,   $Data );	}
+	public static function logVar  ( $Name, $Var ) 
+	{
+	    if ( is_string ( $Var ) ) self::logText ( self::DEBUG, "$Name = $Var" );
+	    else  self::logText ( self::DEBUG, "$Name = " . print_r ( $Var, TRUE ) );
+	}
 	
 	public static function logText ( $Level, $Data )
 	{
 		date_default_timezone_set( 'UTC' );
-		$Call = debug_backtrace() [0];
+		$CallTrace = debug_backtrace ( DEBUG_BACKTRACE_IGNORE_ARGS );
+		
+		$Call = '';
+		// il faut la première version dont la classe n'est pas log
+		// et qui a une entrée 'file'
+		foreach ( $CallTrace as $CT )
+		{
+		    $File = Arrays::getIfSet ( $CT, 'file', '' );
+		    if ( ( $File != __FILE__ ) && ( $File != '' ) )
+		    {
+		        $Call = $CT;
+		        break;
+		    }
+		} 
+		    
 		$CalledFunction = $Call [ 'function' ];
 		$CallerLine     = $Call [ 'line'     ];
 		$CallerFile     = basename ( $Call [ 'file'     ] );
 		$Date = date ( DATE_W3C );
-		$Debug = self::isDebug ( $CallerFile );
+		$Debug = self::isDebug ( $Call [ 'file'     ] );
 		$Caller = '';
+	
+// 		echo __METHOD__ . ' CT ' . print_r ( $CallTrace, TRUE ) . "<br>\n";
+// 		echo __METHOD__ . ' C ' . json_encode ( $Call, 0, 1 ) . "<br>\n";
 		
 		if ( $Debug ) 
 		{
 		    $Caller = "$CallerFile:$CallerLine ";
 		}
 
-		if ( ( $Level != self::DEBUG ) || $Debug )
+		if ( ( $Level != self::DEBUG ) || $Debug ) 
 		{
     		$Text = "$Date $Level $Caller$Data\n";
     		
+//    		echo 'file_put_contents (' .  self::$LogFilePath . ' , ' . $Text . ', FILE_APPEND )' . "\n";
     		file_put_contents ( self::$LogFilePath, $Text, FILE_APPEND );
+    		if ( fileowner ( self::$LogFilePath ) === getmyuid () )
+    		{
+                chmod ( self::$LogFilePath, 0666 );
+    		}
 		}
 	}
 	
@@ -65,6 +91,7 @@ class Log
 	    {
 	        $Debug = self::$DebugList [ $FileName ];
 	    }
+// 	    echo __METHOD__ . ' D ' . Strings::bool ( $Debug ) .  ' <= ' . Strings::bool ( self::$BypassDebug ) . ' ' . json_encode ( self::$DebugList, 0, 1 ) . "<br>\n";
 	    return $Debug;
 	}
 	
@@ -72,3 +99,5 @@ class Log
 	protected static $DebugList = array ();
 	protected static $BypassDebug = false;
 }
+
+

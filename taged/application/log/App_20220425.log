@@ -1,0 +1,57 @@
+2022-04-24T22:02:47+00:00 DEBUG   HnSHeroParser.class.php:62 parse:62 
+2022-04-24T22:06:19+00:00 DEBUG   HnSHeroParser.class.php:62 parse:62 
+2022-04-24T22:08:52+00:00 DEBUG   HnSHeroParser.class.php:62 parse:62 
+2022-04-24T22:11:01+00:00 DEBUG   HnSHeroParser.class.php:62 parse:62 
+2022-04-24T22:11:01+00:00 DEBUG   HnSHeroParser.class.php:65 parse:65 CDE : parseUser n'est pas appelé!!!
+2022-04-25T20:36:09+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://us.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-barbarian#page=1
+2022-04-25T20:36:11+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://us.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-crusader#page=1
+2022-04-25T20:36:13+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://us.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-dh#page=1
+2022-04-25T20:36:14+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://us.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-monk#page=1
+2022-04-25T20:36:15+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://us.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-necromancer#page=1
+2022-04-25T20:36:17+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://us.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-wd#page=1
+2022-04-25T20:36:18+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://us.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-wizard#page=1
+2022-04-25T20:36:19+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://eu.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-barbarian#page=1
+2022-04-25T20:36:19+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://eu.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-crusader#page=1
+2022-04-25T20:36:20+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://eu.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-dh#page=1
+2022-04-25T20:37:21+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://us.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-barbarian#page=1
+2022-04-25T20:37:22+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://us.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-crusader#page=1
+2022-04-25T20:37:24+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://us.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-dh#page=1
+2022-04-25T20:37:28+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://us.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-monk#page=1
+2022-04-25T20:37:32+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://us.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-necromancer#page=1
+2022-04-25T20:37:35+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://us.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-wd#page=1
+2022-04-25T20:37:38+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://us.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-wizard#page=1
+2022-04-25T20:37:39+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://eu.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-barbarian#page=1
+2022-04-25T20:37:40+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://eu.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-crusader#page=1
+2022-04-25T20:37:40+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://eu.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-dh#page=1
+2022-04-25T20:37:41+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://eu.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-monk#page=1
+2022-04-25T20:37:42+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://eu.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-necromancer#page=1
+2022-04-25T20:37:43+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://eu.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-wd#page=1
+2022-04-25T20:37:43+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://eu.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-wizard#page=1
+2022-04-25T20:37:46+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://kr.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-barbarian#page=1
+2022-04-25T20:37:48+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://kr.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-crusader#page=1
+2022-04-25T20:37:51+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://kr.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-dh#page=1
+2022-04-25T20:37:53+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://kr.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-monk#page=1
+2022-04-25T20:37:55+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://kr.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-necromancer#page=1
+2022-04-25T20:37:58+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://kr.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-wd#page=1
+2022-04-25T20:38:00+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://kr.diablo3.blizzard.com/fr-fr/rankings/era/15/rift-wizard#page=1
+2022-04-25T21:41:09+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://us.diablo3.blizzard.com/fr-fr/rankings/era/16/rift-barbarian#page=1
+2022-04-25T21:41:10+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://us.diablo3.blizzard.com/fr-fr/rankings/era/16/rift-crusader#page=1
+2022-04-25T21:41:11+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://us.diablo3.blizzard.com/fr-fr/rankings/era/16/rift-dh#page=1
+2022-04-25T21:41:12+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://us.diablo3.blizzard.com/fr-fr/rankings/era/16/rift-monk#page=1
+2022-04-25T21:41:12+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://us.diablo3.blizzard.com/fr-fr/rankings/era/16/rift-necromancer#page=1
+2022-04-25T21:41:14+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://us.diablo3.blizzard.com/fr-fr/rankings/era/16/rift-wd#page=1
+2022-04-25T21:41:14+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://us.diablo3.blizzard.com/fr-fr/rankings/era/16/rift-wizard#page=1
+2022-04-25T21:41:15+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://eu.diablo3.blizzard.com/fr-fr/rankings/era/16/rift-barbarian#page=1
+2022-04-25T21:41:16+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://eu.diablo3.blizzard.com/fr-fr/rankings/era/16/rift-crusader#page=1
+2022-04-25T21:41:16+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://eu.diablo3.blizzard.com/fr-fr/rankings/era/16/rift-dh#page=1
+2022-04-25T21:41:17+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://eu.diablo3.blizzard.com/fr-fr/rankings/era/16/rift-monk#page=1
+2022-04-25T21:41:18+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://eu.diablo3.blizzard.com/fr-fr/rankings/era/16/rift-necromancer#page=1
+2022-04-25T21:41:18+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://eu.diablo3.blizzard.com/fr-fr/rankings/era/16/rift-wd#page=1
+2022-04-25T21:41:19+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://eu.diablo3.blizzard.com/fr-fr/rankings/era/16/rift-wizard#page=1
+2022-04-25T21:41:21+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://kr.diablo3.blizzard.com/fr-fr/rankings/era/16/rift-barbarian#page=1
+2022-04-25T21:41:23+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://kr.diablo3.blizzard.com/fr-fr/rankings/era/16/rift-crusader#page=1
+2022-04-25T21:41:25+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://kr.diablo3.blizzard.com/fr-fr/rankings/era/16/rift-dh#page=1
+2022-04-25T21:41:27+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://kr.diablo3.blizzard.com/fr-fr/rankings/era/16/rift-monk#page=1
+2022-04-25T21:41:29+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://kr.diablo3.blizzard.com/fr-fr/rankings/era/16/rift-necromancer#page=1
+2022-04-25T21:41:31+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://kr.diablo3.blizzard.com/fr-fr/rankings/era/16/rift-wd#page=1
+2022-04-25T21:41:33+00:00 DEBUG   HnSParser.class.php:26 __construct:26 https://kr.diablo3.blizzard.com/fr-fr/rankings/era/16/rift-wizard#page=1

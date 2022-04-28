@@ -184,6 +184,10 @@ class HTML
     public static function showStartAside   ( $Attributes = array () )  { echo self::startAside   ( $Attributes ) . "\n";    }
     public static function showStartUL      ( $Attributes = array () )  { echo self::startUL      ( $Attributes ) . "\n";    }
     public static function showStartLI      ( $Attributes = array () )  { echo self::startLI      ( $Attributes ) . "\n";    }
+    public static function showStartTable   ( $Attributes = array () )  { echo self::startTable   ( $Attributes ) . "\n";    }
+    public static function showStartTR      ( $Attributes = array () )  { echo self::startTR      ( $Attributes ) . "\n";    }
+    public static function showStartTH      ( $Attributes = array () )  { echo self::startTH      ( $Attributes ) . "\n";    }
+    public static function showStartTD      ( $Attributes = array () )  { echo self::startTD      ( $Attributes ) . "\n";    }
     public static function showEndUL      ( )  { echo self::endUL      ( ) . "\n"; }
     public static function showEndLI      ( )  { echo self::endLI      ( ) . "\n"; }
     public static function showEndForm    ( )  { echo self::endForm    ( ) . "\n"; }
@@ -194,6 +198,10 @@ class HTML
     public static function showEndSection ( )  { echo self::endSection ( ) . "\n"; }
     public static function showEndArticle ( )  { echo self::endArticle ( ) . "\n"; }
     public static function showEndAside   ( )  { echo self::endAside   ( ) . "\n"; }
+    public static function showEndTable   ( )  { echo self::endTable   ( ) . "\n"; }
+    public static function showEndTR      ( )  { echo self::endTR      ( ) . "\n"; }
+    public static function showEndTH      ( )  { echo self::endTH      ( ) . "\n"; }
+    public static function showEndTD      ( )  { echo self::endTD      ( ) . "\n"; }
     public static function showForm      ( $Content = ' ', $Attributes = array () )  { echo self::form      ( $Content, $Attributes ) . "\n";    }
     public static function showDiv       ( $Content = ' ', $Attributes = array () )  { echo self::div       ( $Content, $Attributes ) . "\n";    }
     public static function showNav       ( $Content = ' ', $Attributes = array () )  { echo self::div       ( $Content, $Attributes ) . "\n";    }
@@ -204,6 +212,10 @@ class HTML
     public static function showAside     ( $Content = ' ', $Attributes = array () )  { echo self::aside     ( $Content, $Attributes ) . "\n";    }
     public static function showUL        ( $Content = ' ', $Attributes = array () )  { echo self::ul        ( $Content, $Attributes ) . "\n";    }
     public static function showLI        ( $Content = ' ', $Attributes = array () )  { echo self::li        ( $Content, $Attributes ) . "\n";    }
+    public static function showTable     ( $Content = ' ', $Attributes = array () )  { echo self::table     ( $Content, $Attributes ) . "\n";    }
+    public static function showTR        ( $Content = ' ', $Attributes = array () )  { echo self::tr        ( $Content, $Attributes ) . "\n";    }
+    public static function showTH        ( $Content = ' ', $Attributes = array () )  { echo self::th        ( $Content, $Attributes ) . "\n";    }
+    public static function showTD        ( $Content = ' ', $Attributes = array () )  { echo self::td        ( $Content, $Attributes ) . "\n";    }
     public static function showLink ( $URL, $Label = '', $NewPage = false, $Attributes = array () )  { echo self::link ( $URL, $Label, $NewPage, $Attributes ) . "\n";    }
 
     

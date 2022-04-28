@@ -1,19 +1,6 @@
 <?php
-/*
- * Copyright © 2013 Diveen
- * All Rights Reserved.
- *
- * This software is proprietary and confidential to Diveen ReplayParser
- * and is protected by copyright law as an unpublished work.
- *
- * Unauthorized access and disclosure strictly forbidden.
- */
 
-/**
- * @author Mickaël Martin-Nevot
- */
-
-class ParserHnS {
+class HnSParser {
 
     private $filename;
     private $head;
@@ -22,9 +9,22 @@ class ParserHnS {
     private $FullText;
     private $ProcessedText;
     private $Game;
+
+    private $Server; ///!< Server on which the ladder is coming
+    private $HeroClass; ///!< Class of the Heroes listed
     
-    public function __construct ( $TextToParse ) 
+    private $URL;
+    private $BaseURL;
+    
+    public function __construct ( $TextToParse, $URL = '', $Srv = "eu", $HClass = "barbarian" ) 
     {
+        $this->Server = $Srv;
+        $this->HeroClass = $HClass;
+        $this->URL = $URL;
+        $URLinfo =  parse_url ( $URL );
+        $this->BaseURL = $URLinfo ['scheme'] . '://' . $URLinfo ['host'];
+        Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " . $URL );
+           
         $this->FullText = $TextToParse;
         $this->clean ();
     }
@@ -49,7 +49,13 @@ class ParserHnS {
     private function clean () 
     {
         $tmp = preg_replace('/\R/u', "\n", $this->FullText);
-        $this->ProcessedText  = preg_replace('/^.*\<tbody\>(.*)\<\/tbody\>.*$/sU', '$1', $tmp);
+        //Log::logVar ( 'tmp',  $tmp );
+        $TmpItems = explode ( 'tbody', $tmp );
+        //Log::logVar ( 'Test',  count ( $TmpItems ) );
+        $this->ProcessedText = $TmpItems [1];
+        //$this->ProcessedText  = preg_replace('/^.*\<tbody\>(.*)\<\/tbody\>.*$/sU', '$1', $tmp);
+        //Log::logVar ( '$this->ProcessedText',  $this->ProcessedText );
+
     }
     protected function applyPattern ( $Pattern, $Callback, $Count = 1 )
     {
@@ -67,6 +73,7 @@ class ParserHnS {
      */
     public function parse () 
     {
+        //Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " . $this->ProcessedText );
 		//echo "Processed <table border=1>" . $this->ProcessedText . "</table>\n";
 		$Tmp = $this->ProcessedText;
 		$Cpt = 0;
@@ -76,22 +83,23 @@ class ParserHnS {
 	
 	protected function parseHero ( $Matches )
 	{
-        preg_replace_callback ( '/(?:.*)\<a href="([^"]*)".*\<img[^\<\>]*\>\n(.*)\n\<\/a\>.*\<td[^\<\>]*\>\n([^\<\>]*)\n\<\/td\>.*\<td[^\<\>]*\>\n([^\<\>]*)\n\<\/td\>/msU', array ( $this, 'parseHeroData' ), $Matches [0] );
+        //Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " . print_r ( $Matches, TRUE) );
+        preg_replace_callback ( '/[^<]*<td[^>]*>\n([0-9]*)\..*\<a href="([^"]*)".*\<img[^\<\>]*\>\n(.*)\n\<\/a\>.*\<td[^\<\>]*\>\n([^\<\>]*)\n\<\/td\>.*\<td[^\<\>]*\>\n([^\<\>]*)\n\<\/td\>/msU', array ( $this, 'parseHeroData' ), $Matches [0] );
           
 		return '';
 	}
 	
 	protected function parseHeroData ( $Matches )
 	{
-	//	echo "CDE " . count ( $Matches ) . "<br>\n";
-	
-	    echo $Matches [1] . "<br>\n";
-		/*
-		foreach ( $Matches as $K => $Match )
-		{
-			echo "CDE $K " . $Match . "\n";
-		}
-		*/
+        /*
+        $Hero = Hero::create ( $Matches );
+        $this->Heroes [] = $Hero;
+
+        echo $Hero . "<br>\n";
+         */
+        //Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " . print_r ( $Matches, TRUE) );
+        Hero::mark4DL ( $Matches, $this->BaseURL, $this->Server, $this->HeroClass );
+		
 		return '';
 	}
 }

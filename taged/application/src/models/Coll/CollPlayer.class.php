@@ -1,20 +1,12 @@
 <?php
-/*
- * Copyright Â© 2013 Diveen
- * All Rights Reserved.
- *
- * This software is proprietary and confidential to Diveen ReplayParser
- * and is protected by copyright law as an unpublished work.
- *
- * Unauthorized access and disclosure strictly forbidden.
- */
 
-/**
- * @author MickaÃ«l Martin-Nevot
- */
-
-class Player 
+class CollPlayer 
 {
+    const TABLE  = 'utilisateur';
+    const NOM    = 'nom';
+    const AVATAR = 'avatar';
+    const RATING = 'elo';
+    
     /**
      * @var $Player is p1 or p2 most of the time, may also be p3 or p4 in 4 players battles.
      */
@@ -48,25 +40,6 @@ class Player
         $this->Username = $Username;
         $this->Avatar = $Avatar;
         $this->Rating = $Rating;
-    }
-
-    /**
-     *  @brief Creates a player from an array of data arrange as :
-     *  Array [1] => Player position
-     *  Array [2] => User name
-     *  Array [3] => Avatar
-     *  Array [4] => Rating
-     *  @param array $Array The array to use for filling the Palyer
-     *  @return A new Player object
-     */
-    public static function create ( $Array )
-    {
-        $PlayerPosition = Arrays::getOrCrash ( $Array, 1, 'Invalid player position' );
-        $Username       = Arrays::getOrCrash ( $Array, 2, 'Invalid player name'     );
-        $Avatar         = Arrays::getIfSet   ( $Array, 3, ''  );
-        $Rating         = Arrays::getIfSet   ( $Array, 4, '0' );
-        
-        return new Player ( $PlayerPosition, $Username, $Avatar, $Rating );
     }
     
     public function __toString ( )
@@ -137,4 +110,22 @@ class Player
     {
         $this->Rating = $Rating;
     }
+    
+    public function save ()
+    {
+        Log::fct_enter ( __METHOD__ );
+        
+        // #1 vérifie si un Utilisateur existe pour ce nom
+        TagedDB::execute ( "SELECT * FROM " . self::TABLE . " WHERE " . self::NOM . " = '" . $this->Username ."'" );
+        $Results = TagedDB::getResults ( );
+        
+        if ( ( NULL == $Results ) || ( count ( $Results ) == 0 ) )
+        {
+            // #2 Si non, ajoute entrée Utilisateur
+            TagedDB::execute ( "INSERT INTO " . self::TABLE . " (" . self::NOM . ", " . self::AVATAR . ") VALUES ('" . $this->Username . "', '" . $this->Avatar . "');" );
+        }
+        
+        Log::fct_exit ( __METHOD__ );
+    }
+    
 }

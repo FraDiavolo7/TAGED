@@ -1,6 +1,6 @@
 <?php
 
-class PageParseHnS extends TagedPage
+class PageHnSParse extends TagedPage
 {
     const PARSER_FILE = 'parser_file';
     const PARSER_SUBMIT = 'parser_submit';
@@ -9,7 +9,7 @@ class PageParseHnS extends TagedPage
 	{
 		parent::__construct ( $InputData );
 		$Data = ( NULL == $InputData ? $_REQUEST : $InputData );
-		$this->PageTitle = 'Parser';
+		$this->PageTitle = 'Hack&apos;n Slash Parser';
 		$this->FileToParse = NULL;
 	
 		$Switch = new Switcher ( $InputData );
@@ -55,7 +55,7 @@ class PageParseHnS extends TagedPage
 	    {
 	        $TextToParse = file_get_contents ( $this->FileToParse );
 	        
-	        $Parser = new ParserHnS ( $TextToParse );
+	        $Parser = new HnSParser ( $TextToParse );
 	        
 	        $Parser->parse ();
 	        $Content = 'Parsing succeeded<br>' . $Parser;

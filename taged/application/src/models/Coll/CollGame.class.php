@@ -1,12 +1,17 @@
 <?php
 
-/**
- *
- * @author Fra Diavolo
- *        
- */
-class Game
+class CollGame
 {
+    const TABLE = 'combat';
+    const VIEW = 'vw_equipe';
+    const TABLE_ENGAGE = 'engage';
+    
+    const ID = 'id_combat';
+    const RESULT = 'resultat';
+    const TIER = 'tier';
+    const RULES = 'rules';
+    const CLASSE = 'classe';
+    
     protected $Player1;
     protected $Player2;
     protected $Team1;
@@ -18,15 +23,33 @@ class Game
     protected $Type;
     protected $Rating;
     
+    protected $IDCombat; // ID dans la table Combat
+    
     /**
      */
-    public function __construct()
+    public function __construct ( 
+        $IDCombat = -1,
+        $Type     = '',
+        $Gen      = '',
+        $Tier     = '',
+        $Rules    = '',
+        $Result   =  0,
+        $Rating   = ''
+        
+        )
     {
-        $this->Result = 0;
-        $this->GameType = '';
-        $this->Gen      = '';
-        $this->Tier     = '';
-        $this->Rating   = '';
+        $this->Result   = $Result;
+        $this->IDCombat = $IDCombat;
+        $this->Type     = $Type;
+        $this->Gen      = $Gen;
+        $this->Tier     = $Tier;
+        $this->Rules    = $Rules;
+        $this->Rating   = $Rating;
+        
+        if ( $IDCombat != -1 )
+        {
+            $this->fill ();
+        }
     }
 
     /**
@@ -43,6 +66,7 @@ class Game
     {
         $String = '';
         
+        $String .= $this->Player1 . "<br>\n";
         $String .= $this->Team1 . "<br>\n";
         $String .= $this->Player2 . "<br>\n";
         $String .= $this->Team2 . "<br>\n";
@@ -62,6 +86,67 @@ class Game
         return $String;
     }
     
+    public static function showTableHeader ()
+    {
+        $Content  = HTML::startTable ();
+        $Content .= HTML::startTR ();
+        $Content .= HTML::th ( 'ID' );
+        $Content .= HTML::th ( 'Vainqueur' );
+        $Content .= HTML::th ( 'Joueur 1' );
+        for ( $i = 1 ; $i <= 6 ; ++$i )
+        {
+            $Content .= HTML::th ( 'pokemon' . $i );
+        }
+        $Content .= HTML::endTR ();
+        return $Content;
+    }
+    
+    public static function showTableFooter ()
+    {
+        return HTML::endTable ();
+    }
+    
+    public function showAsTableEntry ()
+    {
+        $V1 = ( $this->Result == 1 ? '*' : '' );
+        $V2 = ( $this->Result == 2 ? '*' : '' );
+        if ( $this->Result == 0 ) 
+        {
+            $V1 = '-'; 
+            $V2 = '-';
+        }
+        $P1 = ( $this->Player1 != NULL ? $this->Player1->getUsername () : '' );
+        $P2 = ( $this->Player2 != NULL ? $this->Player2->getUsername () : '' );
+        
+        $Pokemons = array ( 
+            1 => '', 
+            2 => '', 
+            3 => '', 
+            4 => '',
+            5 => '',
+            6 => '');
+        $Pokemons1 = ( $this->Team1 != NULL ? $this->Team1->getPokemon () : $Pokemons );
+        $Pokemons2 = ( $this->Team2 != NULL ? $this->Team2->getPokemon () : $Pokemons );
+        
+        $Content  = HTML::startTR ();
+        $Content .= HTML::td ( $this->IDCombat, array ( 'rowspan' => 2 ) );
+        $Content .= HTML::td ( $V1 );
+        $Content .= HTML::td ( $P1 );
+        for ( $i = 1 ; $i <= 6 ; ++$i )
+        {
+            $Content .= HTML::td ( $Pokemons1 [$i] );
+        }
+        $Content .= HTML::endTR ();
+        $Content .= HTML::startTR ();
+        $Content .= HTML::td ( $V2 );
+        $Content .= HTML::td ( $P2 );
+        for ( $i = 1 ; $i <= 6 ; ++$i )
+        {
+            $Content .= HTML::td ( $Pokemons2 [$i] );
+        }
+        $Content .= HTML::endTR ();
+        return $Content;
+    }
     
     public function check ( )
     {
@@ -75,8 +160,15 @@ class Game
         if ( ''   == $this->Rating  ) $this->Rating = false;
     }
     
+    public function setID ( $GameID )
+    {
+        $Idfields = explode ( '-', $GameID );
+        $this->IDCombat = end ( $Idfields );
+    }
+    
     public function setPlayer ( $Player ) 
     {
+        
         if ( 1 == $Player->getPlayer () )
         {
             $this->Player1 = $Player;
@@ -133,7 +225,6 @@ class Game
     
     public function switch ( $Player, $Pokemon )
     {
-        echo "Switch $Player $Pokemon <br>\n";
         if ( 1 == $Player )
         {
             $this->Team1->switch ( $Pokemon );
@@ -142,6 +233,93 @@ class Game
         {
             $this->Team2->switch ( $Pokemon );
         }
+    }
+    
+    protected function savePlayerEngaged ( $Player, $Team )
+    {
+        Log::fct_enter ( __METHOD__ );
+        TagedDB::execute ( "INSERT INTO " . self::TABLE_ENGAGE . " (" .
+            self::ID . ', ' .
+            CollTeam::ID . ', ' .
+            CollPlayer::NOM . ', ' .
+            CollPlayer::RATING .
+            ") VALUES (" .
+            $this->IDCombat . ', ' .
+            $Team->getID () .  ', ' .
+            "'" . $Player->getUsername () . "'" . ', ' .
+            $Player->getRating () . 
+            ");" );
+            Log::fct_exit ( __METHOD__ );
+    }
+    
+    protected function saveGame ()
+    {
+        Log::fct_enter ( __METHOD__ );
+        // #1 Enregistrer entrée Combat
+        TagedDB::execute ( "INSERT INTO " . self::TABLE . " (" . 
+            self::ID . ', ' .
+            self::RESULT . ', ' .
+            self::TIER . ', ' .
+            self::RULES . ', ' .
+            self::CLASSE .            
+            ") VALUES (" . 
+            $this->IDCombat . ', ' .
+            "'" . $this->Result . "'" .  ', ' .
+            $this->Gen .  ', ' .
+            "'" . $this->Rules . "'" . ', ' .
+            "'" . $this->Tier . "'" . 
+            ");" );
+        
+        // #3 Enregistrer les entrées Engage
+        $this->savePlayerEngaged ( $this->Player1, $this->Team1 );
+        $this->savePlayerEngaged ( $this->Player2, $this->Team2 );
+        
+        Log::fct_exit ( __METHOD__ );
+    }
+    
+    public function save ()
+    {
+        Log::fct_enter ( __METHOD__ );
+        $this->Player1->save ();
+        $this->Player2->save ();
+        $this->Team1->save ();
+        $this->Team2->save ();
+        $this->saveGame ();
+        Log::fct_exit ( __METHOD__ );
+    }
+    
+    protected function fill ()
+    {
+        Log::fct_enter ( __METHOD__ );
+        
+        TagedDB::execute ( "SELECT * FROM " . self::VIEW . " WHERE " . self::ID . " = " . $this->IDCombat . ";" );
+        
+        $Results = TagedDB::getResults ( );
+        
+        $PlayerNum = 1;
+
+        foreach ( $Results as $Result )
+        {
+            $PlayerID = Arrays::getIfSet ( $Result, CollPlayer::NOM,    '' );
+            $Avatar   = Arrays::getIfSet ( $Result, CollPlayer::AVATAR, '' );
+            $Elo      = Arrays::getIfSet ( $Result, CollPlayer::RATING,  0 );
+            $EquipeID = Arrays::getIfSet ( $Result, CollTeam::ID,       -1 );
+            $Nombre   = Arrays::getIfSet ( $Result, CollTeam::NOMBRE,    0 );
+            $Pokemons = array ();
+            for ( $i = 1 ; $i <= 6 ; ++$i )
+            {
+                $Pokemons [$i] = Arrays::getIfSet ( $Result, CollTeam::POKEMON . $i, '' );
+            }
+            $Player = new CollPlayer ( $PlayerNum, $PlayerID, $Avatar, $Elo );
+            $Equipe = new CollTeam ( $PlayerNum, $Nombre, $EquipeID, $Pokemons );
+            
+            $this->setPlayer ( $Player );
+            $this->setTeam ( $Equipe );
+            
+            ++$PlayerNum;
+        }
+        
+        Log::fct_exit ( __METHOD__ );
     }
 }
 

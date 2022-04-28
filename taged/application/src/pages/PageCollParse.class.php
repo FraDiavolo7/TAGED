@@ -1,6 +1,6 @@
 <?php
 
-class PageParse extends TagedPage
+class PageCollParse extends TagedPage
 {
     const PARSER_FILE = 'parser_file';
     const PARSER_SUBMIT = 'parser_submit';
@@ -9,7 +9,7 @@ class PageParse extends TagedPage
 	{
 		parent::__construct ( $InputData );
 		$Data = ( NULL == $InputData ? $_REQUEST : $InputData );
-		$this->PageTitle = 'Parser';
+		$this->PageTitle = 'Collection Parser';
 		$this->FileToParse = NULL;
 	
 		$Switch = new Switcher ( $InputData );
@@ -55,7 +55,7 @@ class PageParse extends TagedPage
 	    {
 	        $TextToParse = file_get_contents ( $this->FileToParse );
 	        
-	        $Parser = new Parser ( $TextToParse );
+	        $Parser = new CollParser ( $TextToParse );
 	        
 	        $Parser->parse ();
 	        $Content = 'Parsing succeeded<br>' . $Parser;
@@ -70,4 +70,4 @@ class PageParse extends TagedPage
 	}
 	
 	protected $FileToParse; //!< The file to parse 
-} // PageParse
+} // PageCollParse
