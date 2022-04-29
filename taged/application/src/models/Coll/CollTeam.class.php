@@ -3,11 +3,13 @@
 class CollTeam 
 {
     const TABLE = 'equipe';
+    const TABLE_ALIGNE = 'aligne';
     const TABLE_POKEMON = 'pokemon';
     
     const ID = 'id_equipe';
     const NOMBRE = 'nombre';
-    const POKEMON = 'pokemon';
+    const LISTE = 'liste';
+    const ORDRE = 'ordre';
     const NOM = 'nom';
     
     /**
@@ -56,10 +58,7 @@ class CollTeam
     
     public function switch ( $Pokemon )
     {
-        if ( ! isset ( $this->Pokemons [ $Pokemon ] ) )
-        {
-            $this->addPokemon ( $Pokemon );
-        }
+         $this->addPokemon ( $Pokemon );
     }
     
     /**
@@ -103,7 +102,7 @@ class CollTeam
     {
         if ( $PokemonNum == 0 )
         {
-            return $this->Pokemons;
+            return implode ( ',', $this->Pokemons );
         }
         else
         {
@@ -125,10 +124,10 @@ class CollTeam
      */
     public function addPokemon ( $Pokemon )
     {
-        if ( ! in_array ( $Pokemon, $this->Pokemons ) )
-        {
+//         if ( ! in_array ( $Pokemon, $this->Pokemons ) )
+//         {
             $this->Pokemons [ ] = $Pokemon;
-        }
+//         }
     }
 
     protected function savePokemon ( $Pokemon )
@@ -147,6 +146,17 @@ class CollTeam
         Log::fct_exit ( __METHOD__ );
     }
     
+    protected function alignePokemon ( $Pokemon, $Ordre )
+    {
+        Log::fct_enter ( __METHOD__ );
+        
+        $this->savePokemon ( $Pokemon );
+        
+        TagedDB::execute ( "INSERT INTO " . self::TABLE_ALIGNE . " (" . self::ID . ", " . self::NOM . ", " . self::ORDRE . ") VALUES (" . $this->IDEquipe . ", '" . $Pokemon . "', " . $Ordre . ");" );
+        
+        Log::fct_exit ( __METHOD__ );
+    }
+    
     public function save ()
     {
         Log::fct_enter ( __METHOD__ );
@@ -156,46 +166,20 @@ class CollTeam
         // Si pas de team, ajoute une entrée Equipe
         // Récupère l'ID
         
-        foreach ( $this->Pokemons as $Pokemon )
-        {
-            $this->savePokemon ( $Pokemon );
-        }
+        $Aligne = FALSE;
         
-        $SortedPokemons = $this->Pokemons;
-        sort ( $SortedPokemons );
-        
-        $SelectPokemons = "";
-        $InsertHeader   = "";
-        $InsertPokemons = "";
-        
-        for ( $i = 1; $i <= 6 ; ++$i )
-        {
-            $Pokemon = Arrays::getIfSet ( $SortedPokemons, $i - 1, NULL );
-            $InsertHeader .= ", " . self::POKEMON . $i;
-            $SelectPokemons .= ' AND ' . self::POKEMON . $i;
-            $InsertPokemons .= ", ";
-            
-            if ( NULL === $Pokemon )
-            {
-                $SelectPokemons .= " IS NULL";
-                $InsertPokemons .= "NULL";
-            }
-            else 
-            {
-                $SelectPokemons .= " = '$Pokemon'";
-                $InsertPokemons .= "'$Pokemon'";
-            }
-        }
+        $ListPokemon = implode ( ',', $this->Pokemons );
         
         // #1 vérifie si une Equipe existe pour ce nom
-        $Select = "SELECT " . self::ID . " FROM " . self::TABLE . " WHERE " . self::NOMBRE . " = " . $this->Size . $SelectPokemons;
+        $Select = "SELECT " . self::ID . " FROM " . self::TABLE . " WHERE " . self::NOMBRE . " = " . $this->Size . ' AND ' . self::LISTE . " = '" . $ListPokemon . "'";
         TagedDB::execute ( $Select );
         $Results = TagedDB::getResults ( );
         
         if ( ( NULL == $Results ) || ( count ( $Results ) == 0 ) )
         {
             // #2 Si non, ajoute entrée Equipe
-            TagedDB::execute ( "INSERT INTO " . self::TABLE . " (" . self::NOMBRE . $InsertHeader . ") VALUES (" . $this->Size . $InsertPokemons . ");" );
+            $Aligne = TRUE;
+            TagedDB::execute ( "INSERT INTO " . self::TABLE . " (" . self::NOMBRE . ", " . self::LISTE . ") VALUES (" . $this->Size . ", '" . $ListPokemon  . "');" );
 
             TagedDB::execute ( $Select );
             $Results = TagedDB::getResults ( );
@@ -205,6 +189,13 @@ class CollTeam
         {
             $this->IDEquipe = Arrays::getIfSet ( $Results[0], self::ID, -1 );
             Log::debug ( json_encode ( $Results ) . ' ' . $this->IDEquipe );
+            if ( $Aligne )
+            {
+                foreach ( $this->Pokemons as $Position => $Pokemon )
+                {
+                    $this->alignePokemon ( $Pokemon, $Position );
+                }
+            }
         }
         Log::fct_exit ( __METHOD__ );
     }
