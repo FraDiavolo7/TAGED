@@ -17,24 +17,25 @@ class PageAccueil extends TagedPage
     {
         $Stats = array ();
 
-        $Folder = DATA_HOME . '/' . $AppName;
-        $Cmd = STATS_GET_SCRIPT . ' ' . $Folder;
-
-        $Text = shell_exec ( $Cmd );
-        $TextLines = explode ( PHP_EOL, $Text );
-
-        foreach ( $TextLines as $Line )
+        $StatFile = DATA_HOME . '/stat_' . $AppName;
+        if ( file_exists ( $StatFile ) )
         {
-            if ( '' != $Line )
+            $Text = file_get_contents ( $StatFile );
+            $TextLines = explode ( PHP_EOL, $Text );
+
+            foreach ( $TextLines as $Line )
             {
-                $Data = explode ( STATS_SEPARATOR, $Line );
-                if ( count ( $Data ) > 1 )
+                if ( '' != $Line )
                 {
-                    $Stats [ $Data [0] ] = $Data [ 1 ];
-                }
-                else
-                {
-                    $Stats [] = $Line;
+                    $Data = explode ( STATS_SEPARATOR, $Line );
+                    if ( count ( $Data ) > 1 )
+                    {
+                        $Stats [ $Data [0] ] = $Data [ 1 ];
+                    }
+                    else
+                    {
+                        $Stats [] = $Line;
+                    }
                 }
             }
         }
