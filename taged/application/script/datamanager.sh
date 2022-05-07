@@ -115,9 +115,39 @@ function removeEntry ()
 {
     Entry=$1
 
-    echo "Removing Entry $Entry"
+    InnerFolder=`getEntryFolder $Entry`
+
+    DataFile=$DIR/$Appli/$InnerFolder/$Entry
+    ArchiveFolder=$DIR/archive/$Appli/$InnerFolder
+    ArchiveFile=$ArchiveFolder/$Entry
+    
+    if [ -e $DataFile ]
+    then
+        echo "Removing Entry $Entry from $Appli"
+        mkdir -p $ArchiveFolder &> /dev/null
+        mv $DataFile $ArchiveFile
+    fi
+
 }
 
+function errorEntry ()
+{
+    Entry=$1
+
+    InnerFolder=`getEntryFolder $Entry`
+
+    DataFile=$DIR/$Appli/$InnerFolder/$Entry
+    ErrorFolder=$DIR/errors/$Appli/$InnerFolder
+    ErrorFile=$ErrorFolder/$Entry
+    
+    if [ -e $DataFile ]
+    then
+        echo "Moving Entry $Entry from $Appli to Error"
+        mkdir -p $ErrorFolder &> /dev/null
+        mv $DataFile $ErrorFile
+    fi
+
+}
 function getEntries ()
 {
     Entry=$1
@@ -146,6 +176,7 @@ else
         "GET")    getEntry    $@ ;;
         "GETALL") getEntries  $@ ;;
         "REMOVE") removeEntry $@ ;;
+        "ERROR")  errorEntry  $@ ;;
         "EXISTS") existsEntry $@ ;;
         *) usage ;;
     esac
