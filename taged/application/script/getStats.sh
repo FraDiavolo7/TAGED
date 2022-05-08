@@ -1,24 +1,51 @@
 #!/bin/bash
 
-Folder=$1
+DataFolder=$1
+Space=$2
 Separator=" : "
+
+function getFolderStat ()
+{
+    local InFolder=$1
+    local Label=$2
+
+    if [ -d $InFolder ]
+    then
+        echo "$Label Files$Separator" `find $InFolder -type f | wc -l`
+        echo "$Label Size$Separator" `du -sh $InFolder | awk -F ' ' ' { print $ 1 } '`
+    fi
+}
+
+function getFolderData ()
+{
+    local Folder=$DataFolder/$1
+    local ErrorFolder=$DataFolder/errors/$1
+    local ArchiveFolder=$DataFolder/archive/$1
+    local LabelExt=''
+
+    if [ "" != "$2" ]
+    then
+        LabelExt="_$2"
+    fi
+
+    getFolderStat $Folder "Data$LabelExt"
+    getFolderStat $ErrorFolder "Errors$LabelExt"
+    getFolderStat $ArchiveFolder "Archive$LabelExt"
+}
 
 function handleOptionnal ()
 {
-    Optionnal=$1
-    OptFolder=$Folder/$Optionnal
+    Opt=$1
+    Optionnal=$Space/$Opt
+    OptFolder=$DataFolder/$Optionnal
 
     if [ -d $OptFolder ]
     then
-
-         echo "Nb Files $Optionnal$Separator" `find $OptFolder -type f | wc -l`
+         getFolderData $Optionnal $Opt
 
     fi
 }
 
+getFolderData $Space
 
-echo "Nb Files$Separator" `find $Folder -type f | wc -l`
-
-echo "Size on Disk$Separator" `du -sh $Folder | awk -F ' ' ' { print $ 1 } '`
-
-handleOptionnal gen1ou
+handleOptionnal gen1ou 
