@@ -10,6 +10,7 @@ class PageAccueil extends TagedPage
 	
 		$Switch = new Switcher ( $InputData );
         
+        Log::info ( 'pouet' );
         $this->addStats ();
 	}
 

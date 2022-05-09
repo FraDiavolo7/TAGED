@@ -201,4 +201,4 @@ class CollTeam
     }
 }
 
-Log::setDebug ( __FILE__ );
+//Log::setDebug ( __FILE__ );

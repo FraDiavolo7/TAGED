@@ -11,7 +11,7 @@ function getFolderStat ()
 
     if [ -d $InFolder ]
     then
-        echo "$Label Files$Separator" `find $InFolder -type f | wc -l`
+        echo "$Label Files$Separator" `find $InFolder -type f ! -name ".*" | wc -l`
         echo "$Label Size$Separator" `du -sh $InFolder | awk -F ' ' ' { print $ 1 } '`
     fi
 }

@@ -54,14 +54,17 @@ class Log
 		    $Caller = "$CallerFile:$CallerLine ";
 		}
 
+//		echo "if ( ( $Level != self::DEBUG ) || $Debug ) <br>";
 		if ( ( $Level != self::DEBUG ) || $Debug ) 
 		{
     		$Text = "$Date $Level $Caller$Data\n";
     		
-//    		echo 'file_put_contents (' .  self::$LogFilePath . ' , ' . $Text . ', FILE_APPEND )' . "\n";
+    		//echo 'file_put_contents (' .  self::$LogFilePath . ' , ' . $Text . ', FILE_APPEND )' . "<br>\n";
     		file_put_contents ( self::$LogFilePath, $Text, FILE_APPEND );
-    		if ( fileowner ( self::$LogFilePath ) === getmyuid () )
+    		//echo "if ( " . fileowner ( self::$LogFilePath ) ." === ". posix_getuid () .")<br>";
+    		if ( fileowner ( self::$LogFilePath ) === posix_getuid () )
     		{
+//                echo 'MINE!!! chmod<br>';
                 chmod ( self::$LogFilePath, 0666 );
     		}
 		}
