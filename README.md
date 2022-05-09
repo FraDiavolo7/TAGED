@@ -2,6 +2,11 @@
 
 Collection :
 
+Configuration :
+fichier de vhost apache : /taged.conf
+fichier de constantes PHP : /taged/application/define.php ( emplacement des données DATA_HOME )
+fichier de connexion BD : /taged/application/TagedDB.class.php
+
 Récupération des données :
 taged/application/script/TAGED_get_collection.sh appelé toutes les 5 minutes pour couvrir un maximum de données
 
