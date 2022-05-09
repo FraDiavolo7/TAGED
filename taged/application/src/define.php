@@ -51,7 +51,7 @@ define ( 'STATS_GET_SCRIPT', SCRIPT_HOME . "/getStats.sh" );
 define ( 'STATS_SEPARATOR', " : " );
 
 Log::setLogFile ( LOG_FILE );
-Log::setDebug ( Log::ALL );
+//Log::setDebug ( Log::ALL );
 
 
 $GLOBALS [ APP_LIST ] [] = APP_NAME_COLLECTION;

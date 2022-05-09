@@ -93,10 +93,7 @@ class CollGame
         $Content .= HTML::th ( 'ID' );
         $Content .= HTML::th ( 'Vainqueur' );
         $Content .= HTML::th ( 'Joueur 1' );
-        for ( $i = 1 ; $i <= 6 ; ++$i )
-        {
-            $Content .= HTML::th ( 'pokemon' . $i );
-        }
+        $Content .= HTML::th ( 'Pokemons');
         $Content .= HTML::endTR ();
         return $Content;
     }
@@ -118,13 +115,7 @@ class CollGame
         $P1 = ( $this->Player1 != NULL ? $this->Player1->getUsername () : '' );
         $P2 = ( $this->Player2 != NULL ? $this->Player2->getUsername () : '' );
         
-        $Pokemons = array ( 
-            1 => '', 
-            2 => '', 
-            3 => '', 
-            4 => '',
-            5 => '',
-            6 => '');
+        $Pokemons = '';
         $Pokemons1 = ( $this->Team1 != NULL ? $this->Team1->getPokemon () : $Pokemons );
         $Pokemons2 = ( $this->Team2 != NULL ? $this->Team2->getPokemon () : $Pokemons );
         
@@ -132,18 +123,12 @@ class CollGame
         $Content .= HTML::td ( $this->IDCombat, array ( 'rowspan' => 2 ) );
         $Content .= HTML::td ( $V1 );
         $Content .= HTML::td ( $P1 );
-        for ( $i = 1 ; $i <= 6 ; ++$i )
-        {
-            $Content .= HTML::td ( $Pokemons1 [$i] );
-        }
+        $Content .= HTML::td ( $Pokemons1 );
         $Content .= HTML::endTR ();
         $Content .= HTML::startTR ();
         $Content .= HTML::td ( $V2 );
         $Content .= HTML::td ( $P2 );
-        for ( $i = 1 ; $i <= 6 ; ++$i )
-        {
-            $Content .= HTML::td ( $Pokemons2 [$i] );
-        }
+        $Content .= HTML::td ( $Pokemons2 );
         $Content .= HTML::endTR ();
         return $Content;
     }
@@ -305,11 +290,8 @@ class CollGame
             $Elo      = Arrays::getIfSet ( $Result, CollPlayer::RATING,  0 );
             $EquipeID = Arrays::getIfSet ( $Result, CollTeam::ID,       -1 );
             $Nombre   = Arrays::getIfSet ( $Result, CollTeam::NOMBRE,    0 );
-            $Pokemons = array ();
-            for ( $i = 1 ; $i <= 6 ; ++$i )
-            {
-                $Pokemons [$i] = Arrays::getIfSet ( $Result, CollTeam::POKEMON . $i, '' );
-            }
+            $Liste    = Arrays::getIfSet ( $Result, CollTeam::LISTE,    '' );
+            $Pokemons = explode ( ',', $Liste );
             $Player = new CollPlayer ( $PlayerNum, $PlayerID, $Avatar, $Elo );
             $Equipe = new CollTeam ( $PlayerNum, $Nombre, $EquipeID, $Pokemons );
             

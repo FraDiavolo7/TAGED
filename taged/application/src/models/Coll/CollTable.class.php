@@ -49,7 +49,8 @@ class CollTable
     
     public function show ()
     {
-        $Content  = CollGame::showTableHeader ();
+        $Content  = HTML::div ( count ( $this->ListeCombats ) . ' combats', array ( 'class' => 'combat_number' ) );
+        $Content .= CollGame::showTableHeader ();
         
         foreach ( $this->ListeCombats as $Combat )
         {

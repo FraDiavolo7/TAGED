@@ -10,12 +10,10 @@ class CollParser {
     
     public function __construct ( $TextToParse ) 
     {
-        Log::setDebug ( __FILE__ );
         $this->FullText = $TextToParse;
         
         $this->Game = new CollGame ();
         $this->clean ();
-        Log::setDebug ( __FILE__ );
     }
     
     public function __destruct ( )
@@ -165,6 +163,8 @@ class CollParser {
     {
         Log::fct_enter ( __METHOD__  . json_encode ( $Match ) );
         $GameID = Arrays::getOrCrash ( $Match, 1, 'Invalid game ID' );
+
+        Log::info ( "Parsing game $GameID" );
         
         $this->Game->setID ( $GameID );
         Log::fct_exit ( __METHOD__ );
@@ -304,3 +304,4 @@ class CollParser {
     }
 }
 
+// Log::setDebug ( __FILE__ );
