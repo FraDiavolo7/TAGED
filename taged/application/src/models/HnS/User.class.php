@@ -1,17 +1,10 @@
 <?php
 
-class Hero 
+class User 
 {
-    private $Heroname;
     private $Username;
-    private $URL;
-    private $Server;
-    private $Class;
-    private $Rank;
-    private $Rift;
-    private $Time;
-    private $Level;
-    private $Parangon;
+    private $Tag;
+    private $Clan;
     
     /**
      * @brief Hero constructor.
@@ -20,18 +13,11 @@ class Hero
      * @param int $Avatar The avatar of the user
      * @param int $Rating The rating of the user
      */
-    public function __construct ( $Hero = '', $Username = '', $URL = '', $Rank = 9999, $Rift = 0, $Time = '' ) 
+    public function __construct ( $Username = '', $Tag = '', $Clan = '' ) 
     {
-        $this->Heroname = $Hero;
         $this->Username = $Username;
-        $this->URL = $URL;
-        $this->Server = 'pq';
-        $this->Class = 'class';
-        $this->Rank = $Rank;
-        $this->Rift = $Rift;
-        $this->Time = $Time;
-        $this->Level = 0;
-        $this->Parangon = 0;
+        $this->Tag = $Tag;
+        $this->Clan = $Clan;
     }
 
     /**
@@ -90,8 +76,7 @@ class Hero
     public function setRank     ( $NewValue ) { $this->Rank     = $NewValue; }
     public function setRift     ( $NewValue ) { $this->Rift     = $NewValue; }
     public function setTime     ( $NewValue ) { $this->Time     = $NewValue; }
-    public function setLevel    ( $NewValue ) { $this->Level    = $NewValue; }
-    public function setParangon ( $NewValue ) { $this->Parangon = $NewValue; }
+    public function setTime     ( $NewValue ) { $this->Time     = $NewValue; }
     
     public function getHeroname ( ) { return $this->Heroname; }
     public function getUsername ( ) { return $this->Username; }
@@ -101,8 +86,6 @@ class Hero
     public function getRank     ( ) { return $this->Rank    ; }
     public function getRift     ( ) { return $this->Rift    ; }
     public function getTime     ( ) { return $this->Time    ; }
-    public function getLevel    ( ) { return $this->Level   ; }
-    public function getParangon ( ) { return $this->Parangon; }
     
     
 }

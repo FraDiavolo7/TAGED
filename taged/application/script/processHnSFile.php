@@ -7,6 +7,7 @@ $File=$argv[1];
 include '../src/define.php';
 
 $FilenameItems = explode ( '_', basename ( $File ) );
+$FilenameItems [] = $File;
 
 $FileToDL = file_get_contents ( $File );
 

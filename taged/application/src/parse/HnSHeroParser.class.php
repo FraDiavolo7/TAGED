@@ -2,17 +2,10 @@
 
 class HnSHeroParser {
 
-    private $filename;
-    private $head;
-    private $text;
-    
     private $FullText;
     private $ProcessedText;
     private $Game;
 
-    private $Server; ///!< Server on which the ladder is coming
-    private $HeroClass; ///!< Class of the Heroes listed
-    
     protected $CurrentItem;
     protected $ItemList;
     
@@ -27,6 +20,22 @@ class HnSHeroParser {
         $this->FullText = $TextToParse;
         $this->CurrentItem = 0;
         $this->ItemList = array ();
+        
+        $Server    = Arrays::getIfSet ( $Parameters, 0, 'pq'       );
+        $HeroClass = Arrays::getIfSet ( $Parameters, 1, 'class'    );
+        $Rank      = Arrays::getIfSet ( $Parameters, 2, 9999       );
+        $Rift      = Arrays::getIfSet ( $Parameters, 3, 0          );
+        $Time      = Arrays::getIfSet ( $Parameters, 4, '00-00-00' );
+        $URL       = Arrays::getIfSet ( $Parameters, 5, 'http://'  );
+        
+        $this->Hero = new Hero ( );
+        $this->Hero->setServer ( $Server    );
+        $this->Hero->setClass  ( $HeroClass );
+        $this->Hero->setRank   ( $Rank      );
+        $this->Hero->setRift   ( $Rift      );
+        $this->Hero->setTime   ( $Time      );
+        $this->Hero->setURL    ( $URL       );
+        
         $this->clean ();
     }
     
@@ -66,8 +75,6 @@ class HnSHeroParser {
 		$Tmp = preg_replace_callback ( '#<ul class="active-skills clear-after">(.*)</ul>#sU', array ( $this, 'parseActive' ), $Tmp );
 		$Tmp = preg_replace_callback ( '#<ul class="passive-skills clear-after">(.*)</ul>#sU', array ( $this, 'parsePassive' ), $Tmp );
 		$Tmp = preg_replace_callback ( '#<div class="page-section attributes".*<ul class="attributes-core">(.*)</ul>.*<ul class="attributes-core secondary">(.*)</ul>.*<ul class="resources">(.*)</ul>#sU', array ( $this, 'parseAttributes' ), $Tmp );
-		
-		
 	}
 
 	protected function parseUser ( $Matches )
@@ -82,10 +89,12 @@ class HnSHeroParser {
 	protected function parseUserDetails ( $Matches )
 	{
 	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " );
-	    $Link = $Matches [1];
-	    $UserName = trim ( $Matches [2] );
-	    $UserTag = trim ( $Matches [3] );
-	    $Clan = trim ( $Matches [4] );
+	    $URL      = trim ( Arrays::getOrCrash ( $Matches, 1, 'Invalid URL' ) );
+	    $UserName = trim ( Arrays::getOrCrash ( $Matches, 2, 'Invalid User name' ) );
+	    $UserTag  = trim ( Arrays::getOrCrash ( $Matches, 3, 'Invalid User Tag'  ) );
+	    $Clan     = trim ( Arrays::getIfSet   ( $Matches, 4, '' ) );
+	    $this->Hero->setURL      ( $URL      );
+	    $this->Hero->setUsername ( $UserName );
 	    echo 'User ' . $UserName . ' ' . $UserTag;
 	    if ( '' != $Clan ) echo ' from ' . $Clan;
 	    echo "\n";
@@ -96,8 +105,12 @@ class HnSHeroParser {
 	{
 	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " );
 	    $Level = $Matches [1];
-	    $Parangon = trim ( $Matches [2] );
-	    $HeroName = trim ( $Matches [3] );
+	    $Level    = trim ( Arrays::getOrCrash ( $Matches, 1, 'Invalid Level' ) );
+	    $Parangon = trim ( Arrays::getOrCrash ( $Matches, 2, 'Invalid Parangon' ) );
+	    $HeroName = trim ( Arrays::getOrCrash ( $Matches, 3, 'Invalid Hero name' ) );
+	    $this->Hero->setLevel    ( $Level    );
+	    $this->Hero->setParangon ( $Parangon );
+	    $this->Hero->setHeroname ( $HeroName );
 	    echo "Hero $HeroName level $Level ($Parangon)\n";
 	    return '';
 	}
@@ -126,7 +139,7 @@ class HnSHeroParser {
 	    return '';
 	}
 	
-	protected function parseParams ( $Matches )
+	protected function parseParams ( $Matches ) 
 	{
 	    $this->ItemList [$this->CurrentItem][self::ITEM_AFFIX][] = trim ($Matches [2]);
 	    return '';
@@ -220,7 +233,5 @@ class HnSHeroParser {
 	    echo "$Label -> $Value\n";
 	    return '';
 	}
-	
-	
 	
 }
