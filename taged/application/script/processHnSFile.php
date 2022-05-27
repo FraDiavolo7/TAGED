@@ -2,7 +2,9 @@
 # This script is meant to process a Hero URL file and DL the 
 <?php
 
-$File=$argv[1];
+$File=realpath ( $argv[1] ); // absolute path
+chdir ( realpath ( dirname ( __FILE__ ) ) ); // change to script dir to enable relative path used for web
+
 
 include '../src/define.php';
 
