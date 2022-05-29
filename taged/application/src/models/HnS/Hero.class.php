@@ -2,6 +2,27 @@
 
 class Hero 
 {
+    const TABLE      = 'perso';
+    const ID         = 'id_perso';
+    const NOM        = 'nomperso';
+    const SERVER     = 'serveur';
+    const RANK       = 'rang';
+    const RIFT       = 'faille';
+    const TIME       = 'tempsfaille';
+    const CLASSE     = 'classe';
+    const LEVEL      = 'niveau';
+    const PARANGON   = 'parangon';
+    const FOR        = 'force';
+    const DEX        = 'dexterite';
+    const INTEL      = 'intelligence';
+    const VITA       = 'vitalite';
+    const DEGATS     = 'degats';
+    const ROBUSTESSE = 'robustesse';
+    const REGEN      = 'recuperation';
+    const VIE        = 'vie';
+    const RES1       = 'ressource_principale';
+    const RES2       = 'ressource_secondaire';
+
     
     const ATTR_FOR        = 'Force';
     const ATTR_DEX        = 'Dextérité';
@@ -25,6 +46,7 @@ class Hero
     private $Class;
     private $Rank;
     private $Rift;
+    private $TimeStr;
     private $Time;
     private $Level;
     private $Parangon;
@@ -59,7 +81,7 @@ class Hero
         $this->Class = 'class';
         $this->Rank = $Rank;
         $this->Rift = $Rift;
-        $this->Time = $Time;
+        $this->setTime ( $Time );
         $this->Level = 0;
         $this->Parangon = 0;
         $this->Comps = array ();
@@ -121,6 +143,9 @@ class Hero
 
     public function setAttr       ( $Label, $NewValue ) 
     { 
+        $Repl = array ( ' ', 'k',   'M' ) ;
+        $By   = array ( '',  '000', '000000' ) ;
+        $NewValue = str_replace ( $Repl, $By, $NewValue );
         switch ( $Label )
         {
             case self::ATTR_FOR        : $this->setFor        ( $NewValue ); break;
@@ -145,20 +170,26 @@ class Hero
     
     public function setResources ( $NewValue ) 
     { 
-        $Resources = explode ( '<br />', $NewValue );
+        $Resources = explode ( '<br/>', $NewValue );
         $this->setRessource1 ( $Resources [0] );     
         $this->setRessource2 ( $Resources [1] );
     }
     
+    public function setTime     ( $NewValue ) 
+    { 
+        $this->TimeStr     = $NewValue; 
+        $Time = explode ( '-', $this->TimeStr );
+        $this->Time = $Time [0] * 60000 + $Time [1] * 1000 + $Time [2];
+    }
+
     public function setHeroname ( $NewValue ) { $this->Heroname = $NewValue; }
     public function setURL      ( $NewValue ) { $this->URL      = $NewValue; }
     public function setServer   ( $NewValue ) { $this->Server   = $NewValue; }
     public function setClass    ( $NewValue ) { $this->Class    = $NewValue; }
     public function setRank     ( $NewValue ) { $this->Rank     = $NewValue; }
     public function setRift     ( $NewValue ) { $this->Rift     = $NewValue; }
-    public function setTime     ( $NewValue ) { $this->Time     = $NewValue; }
     public function setLevel    ( $NewValue ) { $this->Level    = $NewValue; }
-    public function setParangon ( $NewValue ) { $this->Parangon = str_replace ( ' ', '', $NewValue ); }
+    public function setParangon ( $NewValue ) { $this->Parangon = str_replace ( ' ', '', $NewValue ); }
     public function addComp     ( $NewValue ) { $this->Comps [] = $NewValue; }
     public function addItem     ( $NewValue ) { $this->CurrentItem += 1; $this->Items [ $this->CurrentItem ] = $NewValue; }
     public function addAffix    ( $NewValue ) { $this->Items [ $this->CurrentItem ]->addAffix ( $NewValue ); }
@@ -201,4 +232,56 @@ class Hero
     public function getItem     ( $ItemId ) { return $this->Items [ $ItemId ] ; }
     
     public function getComps    ( ) { return $this->Comps ; }
+
+
+    public function save ()
+    {
+        Log::fct_enter ( __METHOD__ );
+
+        $PlId = $this->Player->save ();
+
+        TagedDBHnS::execute ( "INSERT INTO " . self::TABLE . " (" . 
+            self::NOM . ", " . 
+            self::SERVER . ", " .
+            self::RANK . ", " .
+            self::RIFT . ", " .
+            self::TIME . ", " .
+            self::CLASSE . ", " .
+            self::LEVEL . ", " .
+            self::PARANGON . ", " .
+            self::FOR . ", " .
+            self::DEX . ", " .
+            self::INTEL . ", " .
+            self::VITA . ", " .
+            self::DEGATS . ", " .
+            self::ROBUSTESSE . ", " .
+            self::REGEN . ", " .
+            self::VIE . ", " .
+            self::RES1 . ", " .
+            self::RES2 . ", " .
+            HnSPlayer::ID . 
+            ") VALUES (" . 
+            "'" . $this->Heroname   . "', " .
+            "'" . $this->Server     . "', " .
+            ""  . $this->Rank       . ", " .
+            ""  . $this->Rift       . ", " .
+            ""  . $this->Time       . ", " .
+            "'" . $this->Class      . "', " .
+            ""  . $this->Level      . ", " .
+            ""  . $this->Parangon   . ", " .
+            ""  . $this->For        . ", " .
+            ""  . $this->Dex        . ", " .
+            ""  . $this->Intel      . ", " .
+            ""  . $this->Vita       . ", " .
+            ""  . $this->Degats     . ", " .
+            ""  . $this->Robustesse . ", " .
+            ""  . $this->Regen      . ", " .
+            ""  . $this->Vie        . ", " .
+            ""  . $this->Ressource1 . ", " .
+            ""  . $this->Ressource2 . ", " .
+            ""  . $PlId . "" .
+            ");" );
+
+        Log::fct_exit ( __METHOD__ );
+    }
 }

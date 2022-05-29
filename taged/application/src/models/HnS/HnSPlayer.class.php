@@ -2,6 +2,12 @@
 
 class HnSPlayer 
 {
+
+    const TABLE  = 'joueur';
+    const NOM    = 'nom';
+    const ID     = 'id_joueur';
+
+    private $Id;
     private $Username;
     private $Tag;
     private $Clan;
@@ -32,6 +38,37 @@ class HnSPlayer
     public function getUsername ( ) { return $this->Username; }
     public function getTag      ( ) { return $this->Tag     ; }
     public function getClan     ( ) { return $this->Clan    ; }
-    
+
+    private function fetchID ()
+    {
+        $this->Id = -1;
+
+        TagedDBHnS::execute ( "SELECT " . self::ID . " FROM " . self::TABLE . " WHERE " . self::NOM . " = '" . $this->Username ."'" );
+        $Results = TagedDBHnS::getResults ( );
+
+        if ( ( NULL !== $Results ) && ( count ( $Results ) > 0 ) )
+        {
+            $this->Id = $Results [0] [ self::ID ];
+        }
+    }
+
+    public function save ()
+    {
+        Log::fct_enter ( __METHOD__ );
+
+        // #1 vérifie si un Utilisateur existe pour ce nom
+        $this->fetchId ( );
+
+        if ( -1 == $this->Id )
+        {
+            // #2 Si non, ajoute entrée Utilisateur
+            TagedDBHnS::execute ( "INSERT INTO " . self::TABLE . " (" . self::NOM . ") VALUES ('" . $this->Username . "');" );
+            $this->fetchId ();
+        }
+
+        Log::fct_exit ( __METHOD__ );
+        return $this->Id;
+    }
+
     
 }

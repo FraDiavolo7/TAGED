@@ -64,9 +64,9 @@ class CollTable
     {
         Log::fct_enter ( __METHOD__ );
         // #1 Enregistrer entrée Combat
-        TagedDB::execute ( "SELECT * FROM " . CollGame::TABLE . ";" );
+        TagedDBColl::execute ( "SELECT * FROM " . CollGame::TABLE . ";" );
         
-        $Results = TagedDB::getResults ( );
+        $Results = TagedDBColl::getResults ( );
         foreach ( $Results as $Result )
         {
             $GameID  = Arrays::getIfSet ( $Result, CollGame::ID,     -1 );
