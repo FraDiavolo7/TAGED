@@ -39,7 +39,13 @@ class HnSPlayer
     public function getTag      ( ) { return $this->Tag     ; }
     public function getClan     ( ) { return $this->Clan    ; }
 
-    private function fetchID ()
+    public function getId  ( )
+    {
+        if ( -1 == $this->Id ) $this->fetchId ();
+        return $this->Id ;
+    }
+
+    private function fetchId ()
     {
         $this->Id = -1;
 
@@ -67,7 +73,6 @@ class HnSPlayer
         }
 
         Log::fct_exit ( __METHOD__ );
-        return $this->Id;
     }
 
     

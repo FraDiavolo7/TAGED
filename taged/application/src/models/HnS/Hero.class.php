@@ -39,6 +39,7 @@ class Hero
     const ATTR_RES_M      = 'Esprit';
     const ATTR_RES_DH     = 'Haine/ Discipline';
     
+    private $Id;
     private $Heroname;
     private $Player;
     private $URL;
@@ -178,8 +179,15 @@ class Hero
     public function setTime     ( $NewValue ) 
     { 
         $this->TimeStr     = $NewValue; 
-        $Time = explode ( '-', $this->TimeStr );
-        $this->Time = $Time [0] * 60000 + $Time [1] * 1000 + $Time [2];
+        if ( '' != $NewValue )
+        {
+            $Time = explode ( '-', $this->TimeStr );
+            $this->Time = $Time [0] * 60000 + $Time [1] * 1000 + $Time [2];
+        }
+        else
+        {
+            $this->Time = 0;
+        }
     }
 
     public function setHeroname ( $NewValue ) { $this->Heroname = $NewValue; }
@@ -233,12 +241,48 @@ class Hero
     
     public function getComps    ( ) { return $this->Comps ; }
 
+    public function getId  ( )
+    {
+        if ( -1 == $this->Id ) $this->fetchId ();
+        return $this->Id ;
+    }
+
+    private function fetchId ()
+    {
+        $this->Id = -1;
+
+        TagedDBHnS::execute ( "SELECT " . self::ID . " FROM " . self::TABLE . " WHERE " . self::NOM . " = '" . $this->Heroname ."'" );
+        $Results = TagedDBHnS::getResults ( );
+
+        if ( ( NULL !== $Results ) && ( count ( $Results ) > 0 ) )
+        {
+            $this->Id = $Results [0] [ self::ID ];
+        }
+    }
+
+    private function saveComps ()
+    {
+        foreach ( $this->Comps as $Comp )
+        {
+            $Comp->save ( $this->Id );
+        }
+    }
+
+    private function saveItems ()
+    {
+        foreach ( $this->Items as $Item )
+        {
+            $Item->save ( $this->Id );
+        }
+    }
 
     public function save ()
     {
         Log::fct_enter ( __METHOD__ );
 
-        $PlId = $this->Player->save ();
+        $this->Player->save ();
+
+        $PlId = $this->Player->getId ();
 
         TagedDBHnS::execute ( "INSERT INTO " . self::TABLE . " (" . 
             self::NOM . ", " . 
@@ -281,6 +325,11 @@ class Hero
             ""  . $this->Ressource2 . ", " .
             ""  . $PlId . "" .
             ");" );
+
+        $this->fetchId ();
+
+        $this->saveComps ();
+        $this->saveItems ();
 
         Log::fct_exit ( __METHOD__ );
     }

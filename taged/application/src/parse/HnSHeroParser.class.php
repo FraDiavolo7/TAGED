@@ -75,7 +75,7 @@ class HnSHeroParser {
 		$Tmp = preg_replace_callback ( '#<ul class="active-skills clear-after">(.*)</ul>#sU', array ( $this, 'parseActive' ), $Tmp );
 		$Tmp = preg_replace_callback ( '#<ul class="passive-skills clear-after">(.*)</ul>#sU', array ( $this, 'parsePassive' ), $Tmp );
 		$Tmp = preg_replace_callback ( '#<div class="page-section attributes".*<ul class="attributes-core">(.*)</ul>.*<ul class="attributes-core secondary">(.*)</ul>.*<ul class="resources">(.*)</ul>#sU', array ( $this, 'parseAttributes' ), $Tmp );
-		echo $this->Hero . "\n";
+//		echo $this->Hero . "\n";
         $this->Hero->save ();
     }
 

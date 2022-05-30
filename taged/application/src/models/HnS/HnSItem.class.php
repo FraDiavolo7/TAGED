@@ -3,6 +3,7 @@
 class HnsItem 
 {
     const TABLE = 'equip';
+    const ID    = 'id_equip';
     const NOM   = 'nomequip';
     const PLACE = 'place';
 
@@ -12,6 +13,8 @@ class HnsItem
     const COTE_LEFT   = 'Left';
     const COTE_RIGHT  = 'Right';
 
+    private $Id;
+    private $IdPorte;
     private $Position;
     private $Image;
     private $Name;
@@ -77,19 +80,57 @@ class HnsItem
     public function getName     ( ) { return $this->Name    ; }
     public function getAffix    ( ) { return $this->Affix   ; }
     
-    public function save ()
+    public function getId  ( )
+    {
+        if ( -1 == $this->Id ) $this->fetchId ();
+        return $this->Id ;
+    }
+
+    private function fetchId ()
+    {
+        $this->Id = -1;
+
+        TagedDBHnS::execute ( "SELECT " . self::ID . " FROM " . self::TABLE . " WHERE " . self::NOM . " = '" . $this->Name ."'" );
+        $Results = TagedDBHnS::getResults ( );
+
+        if ( ( NULL !== $Results ) && ( count ( $Results ) > 0 ) )
+        {
+            $this->Id = $Results [0] [ self::ID ];
+        }
+    }
+
+    private function porte ( $HeroId )
+    {
+        Log::fct_enter ( __METHOD__ );
+
+        TagedDBHnS::execute ( "INSERT INTO " . self::TABLE_PORTE . " (" . 
+            self::ID . ", " . 
+            Hero::ID . ", " . 
+            self::COTE . ") VALUES (" .
+            ""  . $this->Id    . ", " .
+            ""  . $HeroId      . ", " .
+            "'" . $this->Cote  . "' " . 
+            ");" );
+
+        Log::fct_exit ( __METHOD__ );
+    }
+
+    public function save ( $HeroId )
     {
         Log::fct_enter ( __METHOD__ );
 
         // #1 vérifie si un Utilisateur existe pour ce nom
-        TagedDBHnS::execute ( "SELECT * FROM " . self::TABLE . " WHERE " . self::NOM . " = '" . $this->Name ."'" );
-        $Results = TagedDBHnS::getResults ( );
+        $this->fetchId ( );
 
-        if ( ( NULL == $Results ) || ( count ( $Results ) == 0 ) )
+        if ( -1 == $this->Id )
         {
             // #2 Si non, ajoute entrée Utilisateur
             TagedDBHnS::execute ( "INSERT INTO " . self::TABLE . " (" . self::NOM . ", " . self::PLACE . ") VALUES ('" . $this->Name . "', '" . $this->Place . "');" );
+
+            $this->fetchId ( );
         }
+        
+        $this->porte ( $HeroId );
 
         Log::fct_exit ( __METHOD__ );
     }
