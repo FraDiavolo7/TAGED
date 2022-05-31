@@ -24,20 +24,20 @@ class Hero
     const RES2       = 'ressource_secondaire';
 
     
-    const ATTR_FOR        = 'Force';
-    const ATTR_DEX        = 'Dextérité';
+    const ATTR_FOR        = 'Strength';
+    const ATTR_DEX        = 'Dexterity';
     const ATTR_INTEL      = 'Intelligence';
-    const ATTR_VITA       = 'Vitalité';
-    const ATTR_DEGATS     = 'Dégâts';
-    const ATTR_ROBUSTESSE = 'Robustesse';
-    const ATTR_REGEN      = 'Récupération';
-    const ATTR_VIE        = 'Vie';
-    const ATTR_RES_B      = 'Furie';
-    const ATTR_RES_W      = 'Puissance arcanique';
+    const ATTR_VITA       = 'Vitality';
+    const ATTR_DEGATS     = 'Damage';
+    const ATTR_ROBUSTESSE = 'Toughness';
+    const ATTR_REGEN      = 'Recovery';
+    const ATTR_VIE        = 'Life';
+    const ATTR_RES_B      = 'Fury';
+    const ATTR_RES_W      = 'Essence';
     const ATTR_RES_WD     = 'Mana';
-    const ATTR_RES_C      = 'Colère';
-    const ATTR_RES_M      = 'Esprit';
-    const ATTR_RES_DH     = 'Haine/ Discipline';
+    const ATTR_RES_C      = 'Wrath';
+    const ATTR_RES_M      = 'Spirit';
+    const ATTR_RES_DH     = 'Hatred/ Discipline';
     
     private $Id;
     private $Heroname;
@@ -107,7 +107,7 @@ class Hero
         $URL      = $BaseURL . Arrays::getOrCrash ( $Array, 2, 'Invalid hero URL'     );
         $Rift     = Arrays::getIfSet   ( $Array, 4, ''  );
         $Time     = Arrays::getIfSet   ( $Array, 5, ''  );
-        $TimeArr  = explode ( 'min ', $Time );
+        $TimeArr  = explode ( 'm ', $Time );
         $TimeMin  = $TimeArr [0];
         $TimeArrS = explode ( '.', $TimeArr [1] ); 
         $TimeS    = $TimeArrS [0];
@@ -144,7 +144,7 @@ class Hero
 
     public function setAttr       ( $Label, $NewValue ) 
     { 
-        $Repl = array ( ' ', 'k',   'M' ) ;
+        $Repl = array ( ',', 'k',   'M' ) ;
         $By   = array ( '',  '000', '000000' ) ;
         $NewValue = str_replace ( $Repl, $By, $NewValue );
         switch ( $Label )
@@ -171,7 +171,7 @@ class Hero
     
     public function setResources ( $NewValue ) 
     { 
-        $Resources = explode ( '<br/>', $NewValue );
+        $Resources = explode ( '<br />', $NewValue );
         $this->setRessource1 ( $Resources [0] );     
         $this->setRessource2 ( $Resources [1] );
     }
@@ -197,7 +197,7 @@ class Hero
     public function setRank     ( $NewValue ) { $this->Rank     = $NewValue; }
     public function setRift     ( $NewValue ) { $this->Rift     = $NewValue; }
     public function setLevel    ( $NewValue ) { $this->Level    = $NewValue; }
-    public function setParangon ( $NewValue ) { $this->Parangon = str_replace ( ' ', '', $NewValue ); }
+    public function setParangon ( $NewValue ) { $this->Parangon = str_replace ( ',', '', $NewValue ); }
     public function addComp     ( $NewValue ) { $this->Comps [] = $NewValue; }
     public function addItem     ( $NewValue ) { $this->CurrentItem += 1; $this->Items [ $this->CurrentItem ] = $NewValue; }
     public function addAffix    ( $NewValue ) { $this->Items [ $this->CurrentItem ]->addAffix ( $NewValue ); }

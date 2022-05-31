@@ -33,7 +33,7 @@ class HnsItem
     {
         $this->setPosition ( $Position );
         $this->Image = $Image;
-        $this->Name = $Name;
+        $this->setName ( $Name );
         $this->Affix = $Affix;
     }
 
@@ -71,7 +71,7 @@ class HnsItem
         }
     }
     public function setImage    ( $NewValue ) { $this->Image    = $NewValue; }
-    public function setName     ( $NewValue ) { $this->Name     = $NewValue; }
+    public function setName     ( $NewValue ) { $this->Name     = TagedDBHnS::escape4HTML ( $NewValue ); }
     public function setAffix    ( $NewValue ) { $this->Affix    = $NewValue; }
     public function addAffix    ( $NewValue ) { $this->Affix [] = $NewValue; }
     
