@@ -134,13 +134,13 @@ class CollTeam
     {
         Log::fct_enter ( __METHOD__ );
         
-        TagedDB::execute ( "SELECT * FROM " . self::TABLE_POKEMON . " WHERE " . self::NOM . " = '" . $Pokemon ."'" );
-        $Results = TagedDB::getResults ( );
+        TagedDBColl::execute ( "SELECT * FROM " . self::TABLE_POKEMON . " WHERE " . self::NOM . " = '" . $Pokemon ."'" );
+        $Results = TagedDBColl::getResults ( );
 
         if ( ( NULL == $Results ) || ( count ( $Results ) == 0 ) )
         {
             // #2 Si non, ajoute entrée Utilisateur
-            TagedDB::execute ( "INSERT INTO " . self::TABLE_POKEMON . " (" . self::NOM . ") VALUES ('" . $Pokemon . "');" );
+            TagedDBColl::execute ( "INSERT INTO " . self::TABLE_POKEMON . " (" . self::NOM . ") VALUES ('" . $Pokemon . "');" );
         }
         
         Log::fct_exit ( __METHOD__ );
@@ -152,7 +152,7 @@ class CollTeam
         
         $this->savePokemon ( $Pokemon );
         
-        TagedDB::execute ( "INSERT INTO " . self::TABLE_ALIGNE . " (" . self::ID . ", " . self::NOM . ", " . self::ORDRE . ") VALUES (" . $this->IDEquipe . ", '" . $Pokemon . "', " . $Ordre . ");" );
+        TagedDBColl::execute ( "INSERT INTO " . self::TABLE_ALIGNE . " (" . self::ID . ", " . self::NOM . ", " . self::ORDRE . ") VALUES (" . $this->IDEquipe . ", '" . $Pokemon . "', " . $Ordre . ");" );
         
         Log::fct_exit ( __METHOD__ );
     }
@@ -172,17 +172,17 @@ class CollTeam
         
         // #1 vérifie si une Equipe existe pour ce nom
         $Select = "SELECT " . self::ID . " FROM " . self::TABLE . " WHERE " . self::NOMBRE . " = " . $this->Size . ' AND ' . self::LISTE . " = '" . $ListPokemon . "'";
-        TagedDB::execute ( $Select );
-        $Results = TagedDB::getResults ( );
+        TagedDBColl::execute ( $Select );
+        $Results = TagedDBColl::getResults ( );
         
         if ( ( NULL == $Results ) || ( count ( $Results ) == 0 ) )
         {
             // #2 Si non, ajoute entrée Equipe
             $Aligne = TRUE;
-            TagedDB::execute ( "INSERT INTO " . self::TABLE . " (" . self::NOMBRE . ", " . self::LISTE . ") VALUES (" . $this->Size . ", '" . $ListPokemon  . "');" );
+            TagedDBColl::execute ( "INSERT INTO " . self::TABLE . " (" . self::NOMBRE . ", " . self::LISTE . ") VALUES (" . $this->Size . ", '" . $ListPokemon  . "');" );
 
-            TagedDB::execute ( $Select );
-            $Results = TagedDB::getResults ( );
+            TagedDBColl::execute ( $Select );
+            $Results = TagedDBColl::getResults ( );
         }
 
         if ( ( NULL != $Results ) || ( count ( $Results ) > 0 ) )

@@ -116,13 +116,13 @@ class CollPlayer
         Log::fct_enter ( __METHOD__ );
         
         // #1 vérifie si un Utilisateur existe pour ce nom
-        TagedDB::execute ( "SELECT * FROM " . self::TABLE . " WHERE " . self::NOM . " = '" . $this->Username ."'" );
-        $Results = TagedDB::getResults ( );
+        TagedDBColl::execute ( "SELECT * FROM " . self::TABLE . " WHERE " . self::NOM . " = '" . $this->Username ."'" );
+        $Results = TagedDBColl::getResults ( );
         
         if ( ( NULL == $Results ) || ( count ( $Results ) == 0 ) )
         {
             // #2 Si non, ajoute entrée Utilisateur
-            TagedDB::execute ( "INSERT INTO " . self::TABLE . " (" . self::NOM . ", " . self::AVATAR . ") VALUES ('" . $this->Username . "', '" . $this->Avatar . "');" );
+            TagedDBColl::execute ( "INSERT INTO " . self::TABLE . " (" . self::NOM . ", " . self::AVATAR . ") VALUES ('" . $this->Username . "', '" . $this->Avatar . "');" );
         }
         
         Log::fct_exit ( __METHOD__ );

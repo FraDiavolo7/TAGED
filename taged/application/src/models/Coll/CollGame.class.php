@@ -223,7 +223,7 @@ class CollGame
     protected function savePlayerEngaged ( $Player, $Team )
     {
         Log::fct_enter ( __METHOD__ );
-        TagedDB::execute ( "INSERT INTO " . self::TABLE_ENGAGE . " (" .
+        TagedDBColl::execute ( "INSERT INTO " . self::TABLE_ENGAGE . " (" .
             self::ID . ', ' .
             CollTeam::ID . ', ' .
             CollPlayer::NOM . ', ' .
@@ -241,7 +241,7 @@ class CollGame
     {
         Log::fct_enter ( __METHOD__ );
         // #1 Enregistrer entrée Combat
-        TagedDB::execute ( "INSERT INTO " . self::TABLE . " (" . 
+        TagedDBColl::execute ( "INSERT INTO " . self::TABLE . " (" . 
             self::ID . ', ' .
             self::RESULT . ', ' .
             self::TIER . ', ' .
@@ -277,9 +277,9 @@ class CollGame
     {
         Log::fct_enter ( __METHOD__ );
         
-        TagedDB::execute ( "SELECT * FROM " . self::VIEW . " WHERE " . self::ID . " = " . $this->IDCombat . ";" );
+        TagedDBColl::execute ( "SELECT * FROM " . self::VIEW . " WHERE " . self::ID . " = " . $this->IDCombat . ";" );
         
-        $Results = TagedDB::getResults ( );
+        $Results = TagedDBColl::getResults ( );
         
         $PlayerNum = 1;
 

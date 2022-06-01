@@ -4,7 +4,8 @@
 
 include '../src/define.php';
 
-$URLpattern= 'https://%s.diablo3.blizzard.com/fr-fr/rankings/era/16/rift-%s#page=%d';
+//$URLpattern= 'https://%s.diablo3.blizzard.com/fr-fr/rankings/era/16/rift-%s#page=%d';
+$URLpattern= 'https://%s.diablo3.blizzard.com/en-us/rankings/era/16/rift-%s#page=%d';
 
 $Servers = array ( 'us', 'eu', 'kr' );
 

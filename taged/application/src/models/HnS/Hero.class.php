@@ -2,16 +2,69 @@
 
 class Hero 
 {
+    const TABLE      = 'perso';
+    const ID         = 'id_perso';
+    const NOM        = 'nomperso';
+    const SERVER     = 'serveur';
+    const RANK       = 'rang';
+    const RIFT       = 'faille';
+    const TIME       = 'tempsfaille';
+    const CLASSE     = 'classe';
+    const LEVEL      = 'niveau';
+    const PARANGON   = 'parangon';
+    const FOR        = 'force';
+    const DEX        = 'dexterite';
+    const INTEL      = 'intelligence';
+    const VITA       = 'vitalite';
+    const DEGATS     = 'degats';
+    const ROBUSTESSE = 'robustesse';
+    const REGEN      = 'recuperation';
+    const VIE        = 'vie';
+    const RES1       = 'ressource_principale';
+    const RES2       = 'ressource_secondaire';
+
+    
+    const ATTR_FOR        = 'Strength';
+    const ATTR_DEX        = 'Dexterity';
+    const ATTR_INTEL      = 'Intelligence';
+    const ATTR_VITA       = 'Vitality';
+    const ATTR_DEGATS     = 'Damage';
+    const ATTR_ROBUSTESSE = 'Toughness';
+    const ATTR_REGEN      = 'Recovery';
+    const ATTR_VIE        = 'Life';
+    const ATTR_RES_B      = 'Fury';
+    const ATTR_RES_W      = 'Essence';
+    const ATTR_RES_WD     = 'Mana';
+    const ATTR_RES_C      = 'Wrath';
+    const ATTR_RES_M      = 'Spirit';
+    const ATTR_RES_DH     = 'Hatred/ Discipline';
+    
+    private $Id;
     private $Heroname;
-    private $Username;
+    private $Player;
     private $URL;
     private $Server;
     private $Class;
     private $Rank;
     private $Rift;
+    private $TimeStr;
     private $Time;
     private $Level;
     private $Parangon;
+    private $For;
+    private $Dex;
+    private $Intel;
+    private $Vita;
+    private $Degats;
+    private $Robustesse;
+    private $Regen;
+    private $Ressource1;
+    private $Ressource2;
+    private $Vie;
+    
+    private $Comps;
+    private $Items;
+    private $CurrentItem;
     
     /**
      * @brief Hero constructor.
@@ -22,38 +75,31 @@ class Hero
      */
     public function __construct ( $Hero = '', $Username = '', $URL = '', $Rank = 9999, $Rift = 0, $Time = '' ) 
     {
+        $this->Player = new HnSPlayer ( $Username );
         $this->Heroname = $Hero;
-        $this->Username = $Username;
         $this->URL = $URL;
         $this->Server = 'pq';
         $this->Class = 'class';
         $this->Rank = $Rank;
         $this->Rift = $Rift;
-        $this->Time = $Time;
+        $this->setTime ( $Time );
         $this->Level = 0;
         $this->Parangon = 0;
+        $this->Comps = array ();
+        $this->Items = array ();
+        $this->CurrentItem = 0;
+        $this->For        = 0;
+        $this->Dex        = 0;
+        $this->Intel      = 0;
+        $this->Vita       = 0;
+        $this->Degats     = 0;
+        $this->Robustesse = 0;
+        $this->Regen      = 0;
+        $this->Ressource1 = 0;
+        $this->Ressource2 = 0;
+        $this->Vie        = 0;
     }
-
-    /**
-     *  @brief Creates a player from an array of data arrange as :
-     *  Array [1] => Hero position
-     *  Array [2] => User name
-     *  Array [3] => Avatar
-     *  Array [4] => Rating
-     *  @param array $Array The array to use for filling the Palyer
-     *  @return A new Hero object
-     */
-    public static function create ( $Array )
-    {
-        $Rank     = Arrays::getOrCrash ( $Array, 1, 'Invalid Hero position' );
-        $Username = Arrays::getOrCrash ( $Array, 3, 'Invalid Player name'     );
-        $URL      = Arrays::getOrCrash ( $Array, 2, 'Invalid hero URL'     );
-        $Rift     = Arrays::getIfSet   ( $Array, 4, ''  );
-        $Time     = Arrays::getIfSet   ( $Array, 5, ''  );
-        
-        return new Hero ( '', $Username, $URL, $Rank, $Rift, $Time );
-    }
-    
+   
     public static function mark4DL ( $Array, $BaseURL, $Server, $HeroClass )
     {
         $Rank     = Arrays::getOrCrash ( $Array, 1, 'Invalid Hero position' );
@@ -61,7 +107,7 @@ class Hero
         $URL      = $BaseURL . Arrays::getOrCrash ( $Array, 2, 'Invalid hero URL'     );
         $Rift     = Arrays::getIfSet   ( $Array, 4, ''  );
         $Time     = Arrays::getIfSet   ( $Array, 5, ''  );
-        $TimeArr  = explode ( 'min ', $Time );
+        $TimeArr  = explode ( 'm ', $Time );
         $TimeMin  = $TimeArr [0];
         $TimeArrS = explode ( '.', $TimeArr [1] ); 
         $TimeS    = $TimeArrS [0];
@@ -79,22 +125,95 @@ class Hero
 
     public function __toString ( )
     {
-        return 'Hero ' . $this->Heroname . ' is ' . $this->Username . ' #' . $this->Rank . ' Rift ' . $this->Rift . " in " . $this->Time;
+        $Result = 'Hero ' . $this->Heroname . '(' . $this->Level . '(' . $this->Parangon . ')) is #' . $this->Rank . ' ' . $this->Class . ' ' . $this->Server . ' Rift ' . $this->Rift . " in " . $this->Time . "\n";
+        $Result .= ' FOR ' . $this->For . "\n";        
+        $Result .= ' DEX ' . $this->Dex . "\n";
+        $Result .= ' INT ' . $this->Intel . "\n";
+        $Result .= ' VIT ' . $this->Vita . "\n";
+        $Result .= ' DGT ' . $this->Degats . "\n";
+        $Result .= ' ROB ' . $this->Robustesse . "\n";
+        $Result .= ' RGN ' . $this->Regen . "\n";
+        $Result .= ' VIE ' . $this->Vie . "\n";
+        $Result .= ' RES ' . $this->Ressource1 . "\n";
+        if ( 0 != $this->Ressource2 )  $Result .= ' RS2 ' . $this->Ressource2 . "\n";
+        $Result .= $this->Player . "\n";
+        $Result .= Arrays::arrToString ( $this->Comps, '', '', "\n" );
+        $Result .= Arrays::arrToString ( $this->Items, '', '', "\n" );
+        return $Result;
+    }
+
+    public function setAttr       ( $Label, $NewValue ) 
+    { 
+        $Repl = array ( ',', 'k',   'M' ) ;
+        $By   = array ( '',  '000', '000000' ) ;
+        $NewValue = str_replace ( $Repl, $By, $NewValue );
+        switch ( $Label )
+        {
+            case self::ATTR_FOR        : $this->setFor        ( $NewValue ); break;
+            case self::ATTR_DEX        : $this->setDex        ( $NewValue ); break;
+            case self::ATTR_INTEL      : $this->setIntel      ( $NewValue ); break;
+            case self::ATTR_VITA       : $this->setVita       ( $NewValue ); break;
+            case self::ATTR_DEGATS     : $this->setDegats     ( $NewValue ); break;
+            case self::ATTR_ROBUSTESSE : $this->setRobustesse ( $NewValue ); break;
+            case self::ATTR_REGEN      : $this->setRegen      ( $NewValue ); break;
+            case self::ATTR_VIE        : $this->setVie        ( $NewValue ); break;
+            case self::ATTR_RES_B      :
+            case self::ATTR_RES_W      :
+            case self::ATTR_RES_WD     :
+            case self::ATTR_RES_C      :
+            case self::ATTR_RES_M      : $this->setRessource1 ( $NewValue ); break;
+            case self::ATTR_RES_DH     : $this->setResources ( $NewValue ); break;
+            
+            default : 
+                throw new Exception ( 'Attribut inconnu ' . $Label );
+        }
+    }
+    
+    public function setResources ( $NewValue ) 
+    { 
+        $Resources = explode ( '<br />', $NewValue );
+        $this->setRessource1 ( $Resources [0] );     
+        $this->setRessource2 ( $Resources [1] );
+    }
+    
+    public function setTime     ( $NewValue ) 
+    { 
+        $this->TimeStr     = $NewValue; 
+        if ( '' != $NewValue )
+        {
+            $Time = explode ( '-', $this->TimeStr );
+            $this->Time = $Time [0] * 60000 + $Time [1] * 1000 + $Time [2];
+        }
+        else
+        {
+            $this->Time = 0;
+        }
     }
 
     public function setHeroname ( $NewValue ) { $this->Heroname = $NewValue; }
-    public function setUsername ( $NewValue ) { $this->Username = $NewValue; }
     public function setURL      ( $NewValue ) { $this->URL      = $NewValue; }
     public function setServer   ( $NewValue ) { $this->Server   = $NewValue; }
     public function setClass    ( $NewValue ) { $this->Class    = $NewValue; }
     public function setRank     ( $NewValue ) { $this->Rank     = $NewValue; }
     public function setRift     ( $NewValue ) { $this->Rift     = $NewValue; }
-    public function setTime     ( $NewValue ) { $this->Time     = $NewValue; }
     public function setLevel    ( $NewValue ) { $this->Level    = $NewValue; }
-    public function setParangon ( $NewValue ) { $this->Parangon = $NewValue; }
+    public function setParangon ( $NewValue ) { $this->Parangon = str_replace ( ',', '', $NewValue ); }
+    public function addComp     ( $NewValue ) { $this->Comps [] = $NewValue; }
+    public function addItem     ( $NewValue ) { $this->CurrentItem += 1; $this->Items [ $this->CurrentItem ] = $NewValue; }
+    public function addAffix    ( $NewValue ) { $this->Items [ $this->CurrentItem ]->addAffix ( $NewValue ); }
+    
+    public function setFor        ( $NewValue ) { $this->For        = $NewValue; }
+    public function setDex        ( $NewValue ) { $this->Dex        = $NewValue; }
+    public function setIntel      ( $NewValue ) { $this->Intel      = $NewValue; }
+    public function setVita       ( $NewValue ) { $this->Vita       = $NewValue; }
+    public function setDegats     ( $NewValue ) { $this->Degats     = $NewValue; }
+    public function setRobustesse ( $NewValue ) { $this->Robustesse = $NewValue; }
+    public function setRegen      ( $NewValue ) { $this->Regen      = $NewValue; }
+    public function setRessource1 ( $NewValue ) { $this->Ressource1 = $NewValue; }
+    public function setRessource2 ( $NewValue ) { $this->Ressource2 = $NewValue; }
+    public function setVie        ( $NewValue ) { $this->Vie        = $NewValue; }
     
     public function getHeroname ( ) { return $this->Heroname; }
-    public function getUsername ( ) { return $this->Username; }
     public function getURL      ( ) { return $this->URL     ; }
     public function getServer   ( ) { return $this->Server  ; }
     public function getClass    ( ) { return $this->Class   ; }
@@ -104,5 +223,114 @@ class Hero
     public function getLevel    ( ) { return $this->Level   ; }
     public function getParangon ( ) { return $this->Parangon; }
     
+    public function getFor        () { return $this->For       ; }
+    public function getDex        () { return $this->Dex       ; }
+    public function getIntel      () { return $this->Intel     ; }
+    public function getVita       () { return $this->Vita      ; }
+    public function getDegats     () { return $this->Degats    ; }
+    public function getRobustesse () { return $this->Robustesse; }
+    public function getRegen      () { return $this->Regen     ; }
+    public function getRessource1 () { return $this->Ressource1; }
+    public function getRessource2 () { return $this->Ressource2; }
+    public function getVie        () { return $this->Vie       ; }
     
+    public function getPlayer   ( ) { return $this->Player; }
+    public function getItems    ( ) { return $this->Items ; }
+    public function getCurItem  ( ) { return $this->Items [ $this->CurrentItem ] ; }
+    public function getItem     ( $ItemId ) { return $this->Items [ $ItemId ] ; }
+    
+    public function getComps    ( ) { return $this->Comps ; }
+
+    public function getId  ( )
+    {
+        if ( -1 == $this->Id ) $this->fetchId ();
+        return $this->Id ;
+    }
+
+    private function fetchId ()
+    {
+        $this->Id = -1;
+
+        TagedDBHnS::execute ( "SELECT " . self::ID . " FROM " . self::TABLE . " WHERE " . self::NOM . " = '" . $this->Heroname ."'" );
+        $Results = TagedDBHnS::getResults ( );
+
+        if ( ( NULL !== $Results ) && ( count ( $Results ) > 0 ) )
+        {
+            $this->Id = $Results [0] [ self::ID ];
+        }
+    }
+
+    private function saveComps ()
+    {
+        foreach ( $this->Comps as $Comp )
+        {
+            $Comp->save ( $this->Id );
+        }
+    }
+
+    private function saveItems ()
+    {
+        foreach ( $this->Items as $Item )
+        {
+            $Item->save ( $this->Id );
+        }
+    }
+
+    public function save ()
+    {
+        Log::fct_enter ( __METHOD__ );
+
+        $this->Player->save ();
+
+        $PlId = $this->Player->getId ();
+
+        TagedDBHnS::execute ( "INSERT INTO " . self::TABLE . " (" . 
+            self::NOM . ", " . 
+            self::SERVER . ", " .
+            self::RANK . ", " .
+            self::RIFT . ", " .
+            self::TIME . ", " .
+            self::CLASSE . ", " .
+            self::LEVEL . ", " .
+            self::PARANGON . ", " .
+            self::FOR . ", " .
+            self::DEX . ", " .
+            self::INTEL . ", " .
+            self::VITA . ", " .
+            self::DEGATS . ", " .
+            self::ROBUSTESSE . ", " .
+            self::REGEN . ", " .
+            self::VIE . ", " .
+            self::RES1 . ", " .
+            self::RES2 . ", " .
+            HnSPlayer::ID . 
+            ") VALUES (" . 
+            "'" . $this->Heroname   . "', " .
+            "'" . $this->Server     . "', " .
+            ""  . $this->Rank       . ", " .
+            ""  . $this->Rift       . ", " .
+            ""  . $this->Time       . ", " .
+            "'" . $this->Class      . "', " .
+            ""  . $this->Level      . ", " .
+            ""  . $this->Parangon   . ", " .
+            ""  . $this->For        . ", " .
+            ""  . $this->Dex        . ", " .
+            ""  . $this->Intel      . ", " .
+            ""  . $this->Vita       . ", " .
+            ""  . $this->Degats     . ", " .
+            ""  . $this->Robustesse . ", " .
+            ""  . $this->Regen      . ", " .
+            ""  . $this->Vie        . ", " .
+            ""  . $this->Ressource1 . ", " .
+            ""  . $this->Ressource2 . ", " .
+            ""  . $PlId . "" .
+            ");" );
+
+        $this->fetchId ();
+
+        $this->saveComps ();
+        $this->saveItems ();
+
+        Log::fct_exit ( __METHOD__ );
+    }
 }

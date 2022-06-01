@@ -159,6 +159,7 @@ class PageAccueil extends TagedPage
         }
 
 	    $this->add ( HTML::div ( $Content ) );
+        TagedDBHnS::stats ();
     }
 
     protected $Cols;

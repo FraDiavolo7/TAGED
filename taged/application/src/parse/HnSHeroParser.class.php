@@ -75,7 +75,9 @@ class HnSHeroParser {
 		$Tmp = preg_replace_callback ( '#<ul class="active-skills clear-after">(.*)</ul>#sU', array ( $this, 'parseActive' ), $Tmp );
 		$Tmp = preg_replace_callback ( '#<ul class="passive-skills clear-after">(.*)</ul>#sU', array ( $this, 'parsePassive' ), $Tmp );
 		$Tmp = preg_replace_callback ( '#<div class="page-section attributes".*<ul class="attributes-core">(.*)</ul>.*<ul class="attributes-core secondary">(.*)</ul>.*<ul class="resources">(.*)</ul>#sU', array ( $this, 'parseAttributes' ), $Tmp );
-	}
+//		echo $this->Hero . "\n";
+        $this->Hero->save ();
+    }
 
 	protected function parseUser ( $Matches )
 	{
@@ -94,10 +96,9 @@ class HnSHeroParser {
 	    $UserTag  = trim ( Arrays::getOrCrash ( $Matches, 3, 'Invalid User Tag'  ) );
 	    $Clan     = trim ( Arrays::getIfSet   ( $Matches, 4, '' ) );
 	    $this->Hero->setURL      ( $URL      );
-	    $this->Hero->setUsername ( $UserName );
-	    echo 'User ' . $UserName . ' ' . $UserTag;
-	    if ( '' != $Clan ) echo ' from ' . $Clan;
-	    echo "\n";
+	    $this->Hero->getPlayer ()->setUserName ( $UserName );
+	    $this->Hero->getPlayer ()->setTag      ( $UserTag );
+	    $this->Hero->getPlayer ()->setClan     ( $Clan );
 	    return '';
 	}
 	
@@ -111,7 +112,6 @@ class HnSHeroParser {
 	    $this->Hero->setLevel    ( $Level    );
 	    $this->Hero->setParangon ( $Parangon );
 	    $this->Hero->setHeroname ( $HeroName );
-	    echo "Hero $HeroName level $Level ($Parangon)\n";
 	    return '';
 	}
 	
@@ -124,44 +124,26 @@ class HnSHeroParser {
 	
 	protected function parseItem ( $Matches )
 	{
-	    $Item = array ();
-	    $Item [self::ITEM_POS ] = Strings::replace ( 'gear-label slot-', '', $Matches [1] );
-	    $Item [self::ITEM_IMG ] = $Matches [2];
-	    $Item [self::ITEM_NAME] = $Matches [3];
-	    $Item [self::ITEM_AFFIX] = array ();
-	    
-	    $this->ItemList [$this->CurrentItem] = $Item;
+	    $Item = new HnSItem ();
+	    $Item->setPosition ( Strings::replace ( 'gear-label slot-', '', $Matches [1] ) );
+	    $Item->setImage ( $Matches [2] );
+	    $Item->setName ( $Matches [3] );
+
+	    $this->Hero->addItem ( $Item );
 	    
 	    $Tmp = preg_replace_callback ( '#.*class="bonus-value (.*)".*>(.*)</span>#sU', array ( $this, 'parseParams' ), $Matches [4] );
-	    $this->showItem ();
+
+	  //  echo $this->Hero->getCurItem () . "\n";
 	    
-	    $this->CurrentItem += 1;
 	    return '';
 	}
 	
 	protected function parseParams ( $Matches ) 
 	{
-	    $this->ItemList [$this->CurrentItem][self::ITEM_AFFIX][] = trim ($Matches [2]);
+	    $this->Hero->addAffix ( trim ($Matches [2]) );
 	    return '';
 	}
 	
-	protected function showItem ( $ItemNum = -1 )
-	{
-	    if ( $ItemNum == -1 ) $ItemNum = $this->CurrentItem;
-	    
-	    if ( isset ( $this->ItemList [$ItemNum] ) )
-	    {
-	        $Name  = Arrays::getIfSet ( $this->ItemList [$ItemNum], self::ITEM_NAME, "" );
-	        $Pos   = Arrays::getIfSet ( $this->ItemList [$ItemNum], self::ITEM_POS,  "" );
-	        $Image = Arrays::getIfSet ( $this->ItemList [$ItemNum], self::ITEM_IMG,  "" );
-	        $Affix = Arrays::getIfSet ( $this->ItemList [$ItemNum], self::ITEM_AFFIX, array () );
-	        echo 'Item ' . $ItemNum . ' ' . $Name . ' on ' . $Pos . "\n";
-	        foreach ( $Affix as $Aff )
-	        {
-	            echo $Aff . "\n";
-	        }
-	    }
-	}
 
 	protected function parseActive ( $Matches )
 	{
@@ -174,9 +156,10 @@ class HnSHeroParser {
 	{
 	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " );
 	    static $Count = 1;
-	    $Skill = trim ( $Matches [1] );
-	    $Rune = trim ( $Matches [2] );
-	    echo "Active #" . $Count++ . " -> $Skill ($Rune)\n";
+	    $Comp = new HnSComp ( trim ( $Matches [1] ), $Count++, HnSComp::TYPE_ACTIVE, trim ( $Matches [2] ) );
+	    
+	    $this->Hero->addComp ( $Comp );
+	    
 	    return '';
 	}
 	
@@ -192,8 +175,9 @@ class HnSHeroParser {
 	{
 	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " );
 	    static $Count = 1;
-	    $Passive = trim ( $Matches [1] );
-	    echo "Passive #" . $Count++ . " -> $Passive\n";
+	    $Comp = new HnSComp ( trim ( $Matches [1] ), $Count++ );
+	    
+	    $this->Hero->addComp ( $Comp );
 	    return '';
 	}
 	
@@ -210,27 +194,21 @@ class HnSHeroParser {
 	protected function parseAttrP ( $Matches )
 	{
 	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " );
-	    $Label = trim ( $Matches [1] );
-	    $Value = trim ( $Matches [2] );
-	    echo "$Label -> $Value\n";
+	    $this->Hero->setAttr ( trim ( $Matches [1] ), trim ( $Matches [2] ) );
 	    return '';
 	}
 	
 	protected function parseAttrS ( $Matches )
 	{
 	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " );
-	    $Label = trim ( $Matches [1] );
-	    $Value = trim ( $Matches [2] );
-	    echo "$Label -> $Value\n";
+	    $this->Hero->setAttr ( trim ( $Matches [1] ), trim ( $Matches [2] ) );
 	    return '';
 	}
 	
 	protected function parseAttrR ( $Matches )
 	{
 	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " );
-	    $Label = trim ( $Matches [2] );
-	    $Value = trim ( $Matches [1] );
-	    echo "$Label -> $Value\n";
+	    $this->Hero->setAttr ( trim ( $Matches [2] ), trim ( $Matches [1] ) );
 	    return '';
 	}
 	
