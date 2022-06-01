@@ -84,4 +84,5 @@ CREATE TABLE Carac(
    FOREIGN KEY(Id_Porte) REFERENCES Porte(Id_Porte),
    FOREIGN KEY(NomCarac) REFERENCES CaracEquip(NomCarac)
 );
-
+ 
+ 
