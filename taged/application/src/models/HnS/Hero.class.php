@@ -2,6 +2,7 @@
 
 class Hero 
 {
+    const VIEW       = 'vw_hero';
     const TABLE      = 'perso';
     const ID         = 'id_perso';
     const NOM        = 'nomperso';
@@ -190,6 +191,7 @@ class Hero
         }
     }
 
+    public function setId       ( $NewValue ) { $this->Id       = $NewValue; }
     public function setHeroname ( $NewValue ) { $this->Heroname = $NewValue; }
     public function setURL      ( $NewValue ) { $this->URL      = $NewValue; }
     public function setServer   ( $NewValue ) { $this->Server   = $NewValue; }
@@ -247,6 +249,46 @@ class Hero
         return $this->Id ;
     }
 
+    
+    public static function showTableHeader ()
+    {
+        $Content  = HTML::startTable ();
+        $Content .= HTML::startTR ();
+        $Content .= HTML::th ( 'Player' );
+        $Content .= HTML::th ( 'Hero' );
+        $Content .= HTML::th ( 'Server' );
+        $Content .= HTML::th ( 'Class' );
+        $Content .= HTML::th ( 'Level' );
+        $Content .= HTML::th ( 'Parangon' );
+        $Content .= HTML::th ( 'Rank' );
+        $Content .= HTML::th ( 'Rift' );
+        $Content .= HTML::th ( 'Time' );
+        $Content .= HTML::endTR ();
+        return $Content;
+    }
+    
+    public static function showTableFooter ()
+    {
+        return HTML::endTable ();
+    }
+    
+    public function showAsTableEntry ()
+    {
+        $Content  = HTML::startTR ();
+        $Content .= HTML::td ( $this->Player );
+        $Content .= HTML::td ( $this->Heroname );
+        $Content .= HTML::td ( $this->Server );
+        $Content .= HTML::td ( $this->Class );
+        $Content .= HTML::td ( $this->Level );
+        $Content .= HTML::td ( $this->Parangon );
+        $Content .= HTML::td ( $this->Rank );
+        $Content .= HTML::td ( $this->Rift );
+        $Content .= HTML::td ( $this->Time );
+        $Content .= HTML::endTR ();
+        return $Content;
+    }
+    
+    
     private function fetchId ()
     {
         $this->Id = -1;

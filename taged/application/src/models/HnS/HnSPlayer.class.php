@@ -4,9 +4,11 @@ class HnSPlayer
 {
 
     const TABLE  = 'joueur';
-    const NOM    = 'nom';
     const ID     = 'id_joueur';
-
+    const NOM    = 'nom';
+    const TAG    = 'tag';
+    const CLAN   = 'clan';
+    
     private $Id;
     private $Username;
     private $Tag;
@@ -28,9 +30,10 @@ class HnSPlayer
 
     public function __toString ( )
     {
-        return 'Player ' . $this->Username . ' is ' . $this->Tag . ( '' != $this->Clan ? ' from ' . $this->Clan : '' );
+        return ( '' != $this->Clan ? '[' . $this->Clan . '] ' : '' ) . $this->Username . ' ' . $this->Tag;
     }
 
+    public function setId       ( $NewValue ) { $this->Id       = $NewValue; }
     public function setUsername ( $NewValue ) { $this->Username = $NewValue; }
     public function setTag      ( $NewValue ) { $this->Tag      = $NewValue; }
     public function setClan     ( $NewValue ) { $this->Clan     = $NewValue; }
@@ -68,7 +71,7 @@ class HnSPlayer
         if ( -1 == $this->Id )
         {
             // #2 Si non, ajoute entrée Utilisateur
-            TagedDBHnS::execute ( "INSERT INTO " . self::TABLE . " (" . self::NOM . ") VALUES ('" . $this->Username . "');" );
+            TagedDBHnS::execute ( "INSERT INTO " . self::TABLE . " (" . self::NOM . ", " . self::TAG . ", " . self::CLAN . ") VALUES ('" . $this->Username . "', '" . $this->Tag . "'n '" . $this->Clan . "');" );
             $this->fetchId ();
         }
 
