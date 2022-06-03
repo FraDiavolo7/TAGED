@@ -32,8 +32,8 @@ abstract class Database
             self::$PDOStatement = self::$PDO->query ( $Query );
         }
         
-        if ( FALSE !== self::$PDO          ) Log::error ( json_encode ( self::$PDO->errorInfo ( ) ) ); 
-        if ( FALSE !== self::$PDOStatement ) Log::error ( json_encode ( self::$PDOStatement->errorInfo ( ) ) );
+//        if ( FALSE !== self::$PDO          ) Log::error ( json_encode ( self::$PDO->errorInfo ( ) ) ); 
+        if ( FALSE === self::$PDOStatement ) Log::error ( json_encode ( self::$PDO->errorInfo ( ) ) );
     }
 
     public static function stats ()

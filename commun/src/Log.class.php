@@ -8,8 +8,17 @@ class Log
 	const DEBUG   = 'DEBUG  ';
 	const ALL     = 'all';
 
-	public static function fct_enter ( $Function ) {  self::debug ( "$Function IN" );	}
-	public static function fct_exit  ( $Function ) {  self::debug ( "$Function OUT" );	}
+	public static function fct_enter ( $Function ) 
+	{
+	    self::$FunctionTimer [ $Function ] = microtime ( TRUE );
+	    self::debug ( "$Function IN" );	
+	}
+	
+	public static function fct_exit  ( $Function ) 
+	{  
+	    $Time = microtime ( TRUE ) - self::$FunctionTimer [ $Function ];
+	    self::debug ( "$Function OUT ( $Time )" );	
+	}
 	
 	public static function error   ( $Data ) {  self::logText ( self::ERROR,   $Data );	}
 	public static function warning ( $Data ) {  self::logText ( self::WARNING, $Data );	}
@@ -23,12 +32,11 @@ class Log
 	
 	public static function logText ( $Level, $Data )
 	{
-		date_default_timezone_set( 'UTC' );
 		$CallTrace = debug_backtrace ( DEBUG_BACKTRACE_IGNORE_ARGS );
 		
 		$Call = '';
-		// il faut la première version dont la classe n'est pas log
-		// et qui a une entrée 'file'
+		// il faut la premiï¿½re version dont la classe n'est pas log
+		// et qui a une entrï¿½e 'file'
 		foreach ( $CallTrace as $CT )
 		{
 		    $File = Arrays::getIfSet ( $CT, 'file', '' );
@@ -42,7 +50,18 @@ class Log
 		$CalledFunction = $Call [ 'function' ];
 		$CallerLine     = $Call [ 'line'     ];
 		$CallerFile     = basename ( $Call [ 'file'     ] );
-		$Date = date ( DATE_W3C );
+		$DateT = DateTime::createFromFormat ( 'U.u', microtime ( TRUE ) );
+		
+		if ( FALSE === $DateT )
+		{
+		    usleep ( 1 );
+		    $DateT = DateTime::createFromFormat ( 'U.u', microtime ( TRUE ) );
+		}
+		
+		$DateT->setTimeZone(new DateTimeZone('Europe/Paris'));
+		
+		$Date = $DateT->format ( 'd/m/Y H:i:s:u' );
+		//$Date = date ( DATE_W3C );
 		$Debug = self::isDebug ( $Call [ 'file'     ] );
 		$Caller = '';
 	
@@ -58,14 +77,20 @@ class Log
 		if ( ( $Level != self::DEBUG ) || $Debug ) 
 		{
     		$Text = "$Date $Level $Caller$Data\n";
+    		$FileExists = file_exists ( self::$LogFilePath );
     		
     		//echo 'file_put_contents (' .  self::$LogFilePath . ' , ' . $Text . ', FILE_APPEND )' . "<br>\n";
     		file_put_contents ( self::$LogFilePath, $Text, FILE_APPEND );
     		//echo "if ( " . fileowner ( self::$LogFilePath ) ." === ". posix_getuid () .")<br>";
-    		if ( fileowner ( self::$LogFilePath ) === posix_getuid () )
+    		if ( ( ! $FileExists ) && ( fileowner ( self::$LogFilePath ) === posix_getuid () ) )
     		{
 //                echo 'MINE!!! chmod<br>';
                 chmod ( self::$LogFilePath, 0666 );
+                if ( self::$LogLinkSet )
+                {
+                    unlink ( self::$LogLinkPath );
+                    symlink ( self::$LogFilePath, self::$LogLinkPath );
+                }
     		}
 		}
 	}
@@ -73,6 +98,12 @@ class Log
 	public static function setLogFile ( $FilePath )
 	{
 		self::$LogFilePath = $FilePath;
+	}
+	
+	public static function setLogLink ( $LinkPath )
+	{
+	    self::$LogLinkPath = $LinkPath;
+	    self::$LogLinkSet = TRUE;
 	}
 	
 	public static function setDebug ( $FileName = self::ALL, $View = true )
@@ -98,9 +129,12 @@ class Log
 	    return $Debug;
 	}
 	
+	protected static $LogLinkSet  = '../log/App.log';
+	protected static $LogLinkPath = '../log/App.log';
 	protected static $LogFilePath = '../log/App.log';
 	protected static $DebugList = array ();
 	protected static $BypassDebug = false;
+	protected static $FunctionTimer = array ();
 }
 
 

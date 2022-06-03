@@ -71,7 +71,7 @@ class HnSPlayer
         if ( -1 == $this->Id )
         {
             // #2 Si non, ajoute entrée Utilisateur
-            TagedDBHnS::execute ( "INSERT INTO " . self::TABLE . " (" . self::NOM . ", " . self::TAG . ", " . self::CLAN . ") VALUES ('" . $this->Username . "', '" . $this->Tag . "'n '" . $this->Clan . "');" );
+            TagedDBHnS::execute ( "INSERT INTO " . self::TABLE . " (" . self::NOM . ", " . self::TAG . ", " . self::CLAN . ") VALUES ('" . $this->Username . "', '" . $this->Tag . "', '" . $this->Clan . "');" );
             $this->fetchId ();
         }
 

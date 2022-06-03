@@ -34,7 +34,8 @@ class Hero
     const ATTR_REGEN      = 'Recovery';
     const ATTR_VIE        = 'Life';
     const ATTR_RES_B      = 'Fury';
-    const ATTR_RES_W      = 'Essence';
+    const ATTR_RES_W      = 'Arcane Power';
+    const ATTR_RES_N      = 'Essence';
     const ATTR_RES_WD     = 'Mana';
     const ATTR_RES_C      = 'Wrath';
     const ATTR_RES_M      = 'Spirit';
@@ -162,6 +163,7 @@ class Hero
             case self::ATTR_RES_W      :
             case self::ATTR_RES_WD     :
             case self::ATTR_RES_C      :
+            case self::ATTR_RES_N      :
             case self::ATTR_RES_M      : $this->setRessource1 ( $NewValue ); break;
             case self::ATTR_RES_DH     : $this->setResources ( $NewValue ); break;
             

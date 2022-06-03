@@ -12,6 +12,7 @@ $NewPath .= PATH_SEPARATOR . '../src/parse';
 $NewPath .= PATH_SEPARATOR . '../../../commun/src';
 
 set_include_path ( $NewPath );
+date_default_timezone_set( 'Europe/Paris' );
 
 spl_autoload_register(function ($ClassName) {
     $Extensions = array ( '.class.php', '.trait.php', '.php' );
@@ -46,6 +47,8 @@ define ( 'APP_NAME_HACK_N_SLASH', 'hackNslash' );
 define ( 'DATA_TMP_HNS', DATA_HOME . '/hns_tmp/' );
 define ( 'DATA_TMP_HNS_ADDR', DATA_TMP_HNS . 'addr/' );
 define ( 'DATA_TMP_HNS_FILES', DATA_TMP_HNS . 'files/' );
+define ( 'DATA_ARCHIVE_HNS', DATA_HOME . '/archive/' . APP_NAME_HACK_N_SLASH . '/' );
+define ( 'DATA_ERRORS_HNS', DATA_HOME . '/errors/' . APP_NAME_HACK_N_SLASH . '/' );
 
 define ( 'STATS_GET_SCRIPT', SCRIPT_HOME . "/getStats.sh" );
 define ( 'STATS_SEPARATOR', " : " );
