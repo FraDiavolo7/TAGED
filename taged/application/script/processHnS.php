@@ -17,8 +17,6 @@ foreach ( $Data as $Folder )
         $Command = "$ProcessFolderScr $Folder";
 
         system ( $Command );
-
-        sleep ( 1 );
     }
 }
 

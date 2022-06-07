@@ -23,9 +23,9 @@ class HnSPlayer
      */
     public function __construct ( $Username = '', $Tag = '', $Clan = '' ) 
     {
-        $this->Username = $Username;
-        $this->Tag = $Tag;
-        $this->Clan = $Clan;
+        $this->setUsername ( $Username );
+        $this->setTag ( $Tag );
+        $this->setClan ( $Clan );
     }
 
     public function __toString ( )
@@ -34,9 +34,9 @@ class HnSPlayer
     }
 
     public function setId       ( $NewValue ) { $this->Id       = $NewValue; }
-    public function setUsername ( $NewValue ) { $this->Username = $NewValue; }
+    public function setUsername ( $NewValue ) { $this->Username = TagedDBHnS::escape4HTML ( $NewValue ); }
     public function setTag      ( $NewValue ) { $this->Tag      = $NewValue; }
-    public function setClan     ( $NewValue ) { $this->Clan     = $NewValue; }
+    public function setClan     ( $NewValue ) { $this->Clan     = TagedDBHnS::escape4HTML ( $NewValue ); }
     
     public function getUsername ( ) { return $this->Username; }
     public function getTag      ( ) { return $this->Tag     ; }

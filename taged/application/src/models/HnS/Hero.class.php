@@ -78,7 +78,7 @@ class Hero
     public function __construct ( $Hero = '', $Username = '', $URL = '', $Rank = 9999, $Rift = 0, $Time = '' ) 
     {
         $this->Player = new HnSPlayer ( $Username );
-        $this->Heroname = $Hero;
+        $this->setHeroname ( $Hero );
         $this->URL = $URL;
         $this->Server = 'pq';
         $this->Class = 'class';
@@ -194,7 +194,7 @@ class Hero
     }
 
     public function setId       ( $NewValue ) { $this->Id       = $NewValue; }
-    public function setHeroname ( $NewValue ) { $this->Heroname = $NewValue; }
+    public function setHeroname ( $NewValue ) { $this->Heroname = TagedDBHnS::escape4HTML ( $NewValue ); }
     public function setURL      ( $NewValue ) { $this->URL      = $NewValue; }
     public function setServer   ( $NewValue ) { $this->Server   = $NewValue; }
     public function setClass    ( $NewValue ) { $this->Class    = $NewValue; }
@@ -295,7 +295,13 @@ class Hero
     {
         $this->Id = -1;
 
-        TagedDBHnS::execute ( "SELECT " . self::ID . " FROM " . self::TABLE . " WHERE " . self::NOM . " = '" . $this->Heroname ."'" );
+        TagedDBHnS::execute ( "SELECT " . self::ID . " FROM " . self::TABLE
+            . " WHERE " . self::NOM . " = '" . $this->Heroname ."'" 
+            . " AND " . HnSPlayer::ID . " = '" . $this->Player->getId () ."'"
+            . " AND " . self::SERVER . " = '" . $this->Server ."'"
+            . " AND " . self::RANK . " = '" . $this->Rank ."'"
+            . " AND " . self::CLASSE . " = '" . $this->Class ."'"
+            );
         $Results = TagedDBHnS::getResults ( );
 
         if ( ( NULL !== $Results ) && ( count ( $Results ) > 0 ) )

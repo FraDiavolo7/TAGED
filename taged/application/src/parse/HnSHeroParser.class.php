@@ -68,6 +68,7 @@ class HnSHeroParser {
     public function parse () 
     {
         Log::fct_enter ( __METHOD__ );
+        Log::debug ( __METHOD__ . ' ' . $this->Hero->getURL () );
 
         $Tmp = $this->ProcessedText;
         $Tmp = preg_replace_callback ( '#<div class="profile-head".*<h2 class="header-2".*>(.*)</div>#sU', array ( $this, 'parseUser' ), $Tmp );
