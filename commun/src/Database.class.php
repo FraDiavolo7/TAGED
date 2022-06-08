@@ -54,7 +54,7 @@ abstract class Database
     
     public static function escape4HTML ( $Text )
     {
-        $HTMLSpeChars = htmlentities ( $Text, ENT_QUOTES | ENT_HTML5, 'UTF-8' );
+        $HTMLSpeChars = htmlentities ( $Text, ENT_QUOTES | ENT_HTML5, 'UTF-8', false );
         
         $Escaped = $HTMLSpeChars;
         

@@ -333,53 +333,71 @@ class Hero
         $this->Player->save ();
 
         $PlId = $this->Player->getId ();
-
-        TagedDBHnS::execute ( "INSERT INTO " . self::TABLE . " (" . 
-            self::NOM . ", " . 
-            self::SERVER . ", " .
-            self::RANK . ", " .
-            self::RIFT . ", " .
-            self::TIME . ", " .
-            self::CLASSE . ", " .
-            self::LEVEL . ", " .
-            self::PARANGON . ", " .
-            self::FOR . ", " .
-            self::DEX . ", " .
-            self::INTEL . ", " .
-            self::VITA . ", " .
-            self::DEGATS . ", " .
-            self::ROBUSTESSE . ", " .
-            self::REGEN . ", " .
-            self::VIE . ", " .
-            self::RES1 . ", " .
-            self::RES2 . ", " .
-            HnSPlayer::ID . 
-            ") VALUES (" . 
-            "'" . $this->Heroname   . "', " .
-            "'" . $this->Server     . "', " .
-            ""  . $this->Rank       . ", " .
-            ""  . $this->Rift       . ", " .
-            ""  . $this->Time       . ", " .
-            "'" . $this->Class      . "', " .
-            ""  . $this->Level      . ", " .
-            ""  . $this->Parangon   . ", " .
-            ""  . $this->For        . ", " .
-            ""  . $this->Dex        . ", " .
-            ""  . $this->Intel      . ", " .
-            ""  . $this->Vita       . ", " .
-            ""  . $this->Degats     . ", " .
-            ""  . $this->Robustesse . ", " .
-            ""  . $this->Regen      . ", " .
-            ""  . $this->Vie        . ", " .
-            ""  . $this->Ressource1 . ", " .
-            ""  . $this->Ressource2 . ", " .
-            ""  . $PlId . "" .
-            ");" );
-
         $this->fetchId ();
-
-        $this->saveComps ();
-        $this->saveItems ();
+        
+        if ( -1 != $this->Id )
+        {
+            $ErrorText = "Impossible d'insérer " . $this->Heroname . " il est déjà dans la base avec l'ID " . $this->Id;
+            Log::error ( $ErrorText );
+            throw new Exception ( $ErrorText );
+        }
+        
+        elseif ( $PlId == -1 )
+        {
+            $ErrorText = "Impossible d'insérer " . $this->Heroname . " son joueur n'a pas été inséré";
+            Log::error ( $ErrorText );
+            throw new Exception ( $ErrorText );
+        }
+        
+        else
+        {
+            TagedDBHnS::execute ( "INSERT INTO " . self::TABLE . " (" . 
+                self::NOM . ", " . 
+                self::SERVER . ", " .
+                self::RANK . ", " .
+                self::RIFT . ", " .
+                self::TIME . ", " .
+                self::CLASSE . ", " .
+                self::LEVEL . ", " .
+                self::PARANGON . ", " .
+                self::FOR . ", " .
+                self::DEX . ", " .
+                self::INTEL . ", " .
+                self::VITA . ", " .
+                self::DEGATS . ", " .
+                self::ROBUSTESSE . ", " .
+                self::REGEN . ", " .
+                self::VIE . ", " .
+                self::RES1 . ", " .
+                self::RES2 . ", " .
+                HnSPlayer::ID . 
+                ") VALUES (" . 
+                "'" . $this->Heroname   . "', " .
+                "'" . $this->Server     . "', " .
+                ""  . $this->Rank       . ", " .
+                ""  . $this->Rift       . ", " .
+                ""  . $this->Time       . ", " .
+                "'" . $this->Class      . "', " .
+                ""  . $this->Level      . ", " .
+                ""  . $this->Parangon   . ", " .
+                ""  . $this->For        . ", " .
+                ""  . $this->Dex        . ", " .
+                ""  . $this->Intel      . ", " .
+                ""  . $this->Vita       . ", " .
+                ""  . $this->Degats     . ", " .
+                ""  . $this->Robustesse . ", " .
+                ""  . $this->Regen      . ", " .
+                ""  . $this->Vie        . ", " .
+                ""  . $this->Ressource1 . ", " .
+                ""  . $this->Ressource2 . ", " .
+                ""  . $PlId . "" .
+                ");" );
+    
+            $this->fetchId ();
+    
+            $this->saveComps ();
+            $this->saveItems ();
+        }
 
         Log::fct_exit ( __METHOD__ );
     }

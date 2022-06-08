@@ -52,7 +52,10 @@ class HnSPlayer
     {
         $this->Id = -1;
 
-        TagedDBHnS::execute ( "SELECT " . self::ID . " FROM " . self::TABLE . " WHERE " . self::NOM . " = '" . $this->Username ."'" );
+        TagedDBHnS::execute ( "SELECT " . self::ID . " FROM " . self::TABLE 
+            . " WHERE " . self::NOM . " = '" . $this->Username ."'" 
+            . " AND " . self::TAG . " = '" . $this->Tag ."'"
+            );
         $Results = TagedDBHnS::getResults ( );
 
         if ( ( NULL !== $Results ) && ( count ( $Results ) > 0 ) )
