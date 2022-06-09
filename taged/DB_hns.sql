@@ -9,16 +9,20 @@ CREATE DATABASE taged_hns;
 CREATE TABLE Joueur(
    Id_Joueur SERIAL,
    Nom VARCHAR(64),
+   Tag VARCHAR(64),
+   Clan VARCHAR(64),
    PRIMARY KEY(Id_Joueur)
 );
+alter table joueur add column Tag VARCHAR(64);
+alter table joueur add column Clan VARCHAR(64);
 
 CREATE TABLE Perso(
    Id_Perso SERIAL,
-   NomPerso VARCHAR(50),
+   NomPerso VARCHAR(256),
    Serveur VARCHAR(50),
    Rang INT,
    Faille INT,
-   DateFaille DATE,
+   tempsfaille INT,
    Classe VARCHAR(50) NOT NULL,
    Niveau INT,
    Parangon INT,
@@ -86,3 +90,33 @@ CREATE TABLE Carac(
 );
   
  
+CREATE VIEW vw_hero AS SELECT 
+   Id_Perso,
+   NomPerso,
+   Serveur,
+   Rang,
+   Faille,
+   tempsfaille,
+   Classe,
+   Niveau,
+   Parangon,
+   Force,
+   Dexterite,
+   Intelligence,
+   Vitalite,
+   Degats,
+   Robustesse,
+   Recuperation,
+   Vie,
+   Ressource_principale,
+   Ressource_Secondaire,
+   J.Id_Joueur,
+   Nom,
+   Tag,
+   Clan
+	FROM perso P
+	JOIN joueur J ON P.Id_Joueur = J.Id_Joueur
+	order by Serveur, Classe, Rang;
+	
+	
+TRUNCATE Affecte, Porte, Equip, Comp, Perso, Joueur;
