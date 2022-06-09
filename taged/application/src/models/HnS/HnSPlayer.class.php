@@ -4,9 +4,11 @@ class HnSPlayer
 {
 
     const TABLE  = 'joueur';
-    const NOM    = 'nom';
     const ID     = 'id_joueur';
-
+    const NOM    = 'nom';
+    const TAG    = 'tag';
+    const CLAN   = 'clan';
+    
     private $Id;
     private $Username;
     private $Tag;
@@ -21,19 +23,20 @@ class HnSPlayer
      */
     public function __construct ( $Username = '', $Tag = '', $Clan = '' ) 
     {
-        $this->Username = $Username;
-        $this->Tag = $Tag;
-        $this->Clan = $Clan;
+        $this->setUsername ( $Username );
+        $this->setTag ( $Tag );
+        $this->setClan ( $Clan );
     }
 
     public function __toString ( )
     {
-        return 'Player ' . $this->Username . ' is ' . $this->Tag . ( '' != $this->Clan ? ' from ' . $this->Clan : '' );
+        return ( '' != $this->Clan ? '[' . $this->Clan . '] ' : '' ) . $this->Username . ' ' . $this->Tag;
     }
 
-    public function setUsername ( $NewValue ) { $this->Username = $NewValue; }
+    public function setId       ( $NewValue ) { $this->Id       = $NewValue; }
+    public function setUsername ( $NewValue ) { $this->Username = TagedDBHnS::escape4HTML ( $NewValue ); }
     public function setTag      ( $NewValue ) { $this->Tag      = $NewValue; }
-    public function setClan     ( $NewValue ) { $this->Clan     = $NewValue; }
+    public function setClan     ( $NewValue ) { $this->Clan     = TagedDBHnS::escape4HTML ( $NewValue ); }
     
     public function getUsername ( ) { return $this->Username; }
     public function getTag      ( ) { return $this->Tag     ; }
@@ -49,7 +52,10 @@ class HnSPlayer
     {
         $this->Id = -1;
 
-        TagedDBHnS::execute ( "SELECT " . self::ID . " FROM " . self::TABLE . " WHERE " . self::NOM . " = '" . $this->Username ."'" );
+        TagedDBHnS::execute ( "SELECT " . self::ID . " FROM " . self::TABLE 
+            . " WHERE " . self::NOM . " = '" . $this->Username ."'" 
+            . " AND " . self::TAG . " = '" . $this->Tag ."'"
+            );
         $Results = TagedDBHnS::getResults ( );
 
         if ( ( NULL !== $Results ) && ( count ( $Results ) > 0 ) )
@@ -68,7 +74,7 @@ class HnSPlayer
         if ( -1 == $this->Id )
         {
             // #2 Si non, ajoute entrée Utilisateur
-            TagedDBHnS::execute ( "INSERT INTO " . self::TABLE . " (" . self::NOM . ") VALUES ('" . $this->Username . "');" );
+            TagedDBHnS::execute ( "INSERT INTO " . self::TABLE . " (" . self::NOM . ", " . self::TAG . ", " . self::CLAN . ") VALUES ('" . $this->Username . "', '" . $this->Tag . "', '" . $this->Clan . "');" );
             $this->fetchId ();
         }
 

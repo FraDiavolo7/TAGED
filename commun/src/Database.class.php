@@ -32,8 +32,8 @@ abstract class Database
             self::$PDOStatement = self::$PDO->query ( $Query );
         }
         
-        if ( FALSE !== self::$PDO          ) Log::error ( json_encode ( self::$PDO->errorInfo ( ) ) ); 
-        if ( FALSE !== self::$PDOStatement ) Log::error ( json_encode ( self::$PDOStatement->errorInfo ( ) ) );
+//        if ( FALSE !== self::$PDO          ) Log::error ( json_encode ( self::$PDO->errorInfo ( ) ) ); 
+        if ( FALSE === self::$PDOStatement ) Log::error ( json_encode ( self::$PDO->errorInfo ( ) ) );
     }
 
     public static function stats ()
@@ -54,7 +54,7 @@ abstract class Database
     
     public static function escape4HTML ( $Text )
     {
-        $HTMLSpeChars = htmlentities ( $Text, ENT_QUOTES | ENT_HTML5, 'UTF-8' );
+        $HTMLSpeChars = htmlentities ( $Text, ENT_QUOTES | ENT_HTML5, 'UTF-8', false );
         
         $Escaped = $HTMLSpeChars;
         

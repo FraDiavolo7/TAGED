@@ -72,8 +72,8 @@ class HnsItem
     }
     public function setImage    ( $NewValue ) { $this->Image    = $NewValue; }
     public function setName     ( $NewValue ) { $this->Name     = TagedDBHnS::escape4HTML ( $NewValue ); }
-    public function setAffix    ( $NewValue ) { $this->Affix    = $NewValue; }
-    public function addAffix    ( $NewValue ) { $this->Affix [] = $NewValue; }
+    public function setAffix    ( $NewValue ) { $this->Affix    = TagedDBHnS::escape4HTML ( $NewValue ); }
+    public function addAffix    ( $NewValue ) { $this->Affix [] = TagedDBHnS::escape4HTML ( $NewValue ); }
     
     public function getPosition ( ) { return $this->Position; }
     public function getImage    ( ) { return $this->Image   ; }

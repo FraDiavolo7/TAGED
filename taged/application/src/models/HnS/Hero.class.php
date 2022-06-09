@@ -2,6 +2,7 @@
 
 class Hero 
 {
+    const VIEW       = 'vw_hero';
     const TABLE      = 'perso';
     const ID         = 'id_perso';
     const NOM        = 'nomperso';
@@ -33,7 +34,8 @@ class Hero
     const ATTR_REGEN      = 'Recovery';
     const ATTR_VIE        = 'Life';
     const ATTR_RES_B      = 'Fury';
-    const ATTR_RES_W      = 'Essence';
+    const ATTR_RES_W      = 'Arcane Power';
+    const ATTR_RES_N      = 'Essence';
     const ATTR_RES_WD     = 'Mana';
     const ATTR_RES_C      = 'Wrath';
     const ATTR_RES_M      = 'Spirit';
@@ -76,7 +78,7 @@ class Hero
     public function __construct ( $Hero = '', $Username = '', $URL = '', $Rank = 9999, $Rift = 0, $Time = '' ) 
     {
         $this->Player = new HnSPlayer ( $Username );
-        $this->Heroname = $Hero;
+        $this->setHeroname ( $Hero );
         $this->URL = $URL;
         $this->Server = 'pq';
         $this->Class = 'class';
@@ -161,6 +163,7 @@ class Hero
             case self::ATTR_RES_W      :
             case self::ATTR_RES_WD     :
             case self::ATTR_RES_C      :
+            case self::ATTR_RES_N      :
             case self::ATTR_RES_M      : $this->setRessource1 ( $NewValue ); break;
             case self::ATTR_RES_DH     : $this->setResources ( $NewValue ); break;
             
@@ -190,7 +193,8 @@ class Hero
         }
     }
 
-    public function setHeroname ( $NewValue ) { $this->Heroname = $NewValue; }
+    public function setId       ( $NewValue ) { $this->Id       = $NewValue; }
+    public function setHeroname ( $NewValue ) { $this->Heroname = TagedDBHnS::escape4HTML ( $NewValue ); }
     public function setURL      ( $NewValue ) { $this->URL      = $NewValue; }
     public function setServer   ( $NewValue ) { $this->Server   = $NewValue; }
     public function setClass    ( $NewValue ) { $this->Class    = $NewValue; }
@@ -247,11 +251,57 @@ class Hero
         return $this->Id ;
     }
 
+    
+    public static function showTableHeader ()
+    {
+        $Content  = HTML::startTable ();
+        $Content .= HTML::startTR ();
+        $Content .= HTML::th ( 'Player' );
+        $Content .= HTML::th ( 'Hero' );
+        $Content .= HTML::th ( 'Server' );
+        $Content .= HTML::th ( 'Class' );
+        $Content .= HTML::th ( 'Level' );
+        $Content .= HTML::th ( 'Parangon' );
+        $Content .= HTML::th ( 'Rank' );
+        $Content .= HTML::th ( 'Rift' );
+        $Content .= HTML::th ( 'Time' );
+        $Content .= HTML::endTR ();
+        return $Content;
+    }
+    
+    public static function showTableFooter ()
+    {
+        return HTML::endTable ();
+    }
+    
+    public function showAsTableEntry ()
+    {
+        $Content  = HTML::startTR ();
+        $Content .= HTML::td ( $this->Player );
+        $Content .= HTML::td ( $this->Heroname );
+        $Content .= HTML::td ( $this->Server );
+        $Content .= HTML::td ( $this->Class );
+        $Content .= HTML::td ( $this->Level );
+        $Content .= HTML::td ( $this->Parangon );
+        $Content .= HTML::td ( $this->Rank );
+        $Content .= HTML::td ( $this->Rift );
+        $Content .= HTML::td ( $this->Time );
+        $Content .= HTML::endTR ();
+        return $Content;
+    }
+    
+    
     private function fetchId ()
     {
         $this->Id = -1;
 
-        TagedDBHnS::execute ( "SELECT " . self::ID . " FROM " . self::TABLE . " WHERE " . self::NOM . " = '" . $this->Heroname ."'" );
+        TagedDBHnS::execute ( "SELECT " . self::ID . " FROM " . self::TABLE
+            . " WHERE " . self::NOM . " = '" . $this->Heroname ."'" 
+            . " AND " . HnSPlayer::ID . " = '" . $this->Player->getId () ."'"
+            . " AND " . self::SERVER . " = '" . $this->Server ."'"
+            . " AND " . self::RANK . " = '" . $this->Rank ."'"
+            . " AND " . self::CLASSE . " = '" . $this->Class ."'"
+            );
         $Results = TagedDBHnS::getResults ( );
 
         if ( ( NULL !== $Results ) && ( count ( $Results ) > 0 ) )
@@ -283,53 +333,71 @@ class Hero
         $this->Player->save ();
 
         $PlId = $this->Player->getId ();
-
-        TagedDBHnS::execute ( "INSERT INTO " . self::TABLE . " (" . 
-            self::NOM . ", " . 
-            self::SERVER . ", " .
-            self::RANK . ", " .
-            self::RIFT . ", " .
-            self::TIME . ", " .
-            self::CLASSE . ", " .
-            self::LEVEL . ", " .
-            self::PARANGON . ", " .
-            self::FOR . ", " .
-            self::DEX . ", " .
-            self::INTEL . ", " .
-            self::VITA . ", " .
-            self::DEGATS . ", " .
-            self::ROBUSTESSE . ", " .
-            self::REGEN . ", " .
-            self::VIE . ", " .
-            self::RES1 . ", " .
-            self::RES2 . ", " .
-            HnSPlayer::ID . 
-            ") VALUES (" . 
-            "'" . $this->Heroname   . "', " .
-            "'" . $this->Server     . "', " .
-            ""  . $this->Rank       . ", " .
-            ""  . $this->Rift       . ", " .
-            ""  . $this->Time       . ", " .
-            "'" . $this->Class      . "', " .
-            ""  . $this->Level      . ", " .
-            ""  . $this->Parangon   . ", " .
-            ""  . $this->For        . ", " .
-            ""  . $this->Dex        . ", " .
-            ""  . $this->Intel      . ", " .
-            ""  . $this->Vita       . ", " .
-            ""  . $this->Degats     . ", " .
-            ""  . $this->Robustesse . ", " .
-            ""  . $this->Regen      . ", " .
-            ""  . $this->Vie        . ", " .
-            ""  . $this->Ressource1 . ", " .
-            ""  . $this->Ressource2 . ", " .
-            ""  . $PlId . "" .
-            ");" );
-
         $this->fetchId ();
-
-        $this->saveComps ();
-        $this->saveItems ();
+        
+        if ( -1 != $this->Id )
+        {
+            $ErrorText = "Impossible d'insérer " . $this->Heroname . " il est déjà dans la base avec l'ID " . $this->Id;
+            Log::error ( $ErrorText );
+            throw new Exception ( $ErrorText );
+        }
+        
+        elseif ( $PlId == -1 )
+        {
+            $ErrorText = "Impossible d'insérer " . $this->Heroname . " son joueur n'a pas été inséré";
+            Log::error ( $ErrorText );
+            throw new Exception ( $ErrorText );
+        }
+        
+        else
+        {
+            TagedDBHnS::execute ( "INSERT INTO " . self::TABLE . " (" . 
+                self::NOM . ", " . 
+                self::SERVER . ", " .
+                self::RANK . ", " .
+                self::RIFT . ", " .
+                self::TIME . ", " .
+                self::CLASSE . ", " .
+                self::LEVEL . ", " .
+                self::PARANGON . ", " .
+                self::FOR . ", " .
+                self::DEX . ", " .
+                self::INTEL . ", " .
+                self::VITA . ", " .
+                self::DEGATS . ", " .
+                self::ROBUSTESSE . ", " .
+                self::REGEN . ", " .
+                self::VIE . ", " .
+                self::RES1 . ", " .
+                self::RES2 . ", " .
+                HnSPlayer::ID . 
+                ") VALUES (" . 
+                "'" . $this->Heroname   . "', " .
+                "'" . $this->Server     . "', " .
+                ""  . $this->Rank       . ", " .
+                ""  . $this->Rift       . ", " .
+                ""  . $this->Time       . ", " .
+                "'" . $this->Class      . "', " .
+                ""  . $this->Level      . ", " .
+                ""  . $this->Parangon   . ", " .
+                ""  . $this->For        . ", " .
+                ""  . $this->Dex        . ", " .
+                ""  . $this->Intel      . ", " .
+                ""  . $this->Vita       . ", " .
+                ""  . $this->Degats     . ", " .
+                ""  . $this->Robustesse . ", " .
+                ""  . $this->Regen      . ", " .
+                ""  . $this->Vie        . ", " .
+                ""  . $this->Ressource1 . ", " .
+                ""  . $this->Ressource2 . ", " .
+                ""  . $PlId . "" .
+                ");" );
+    
+            $this->fetchId ();
+    
+            $this->saveComps ();
+            $this->saveItems ();
+        }
 
         Log::fct_exit ( __METHOD__ );
     }

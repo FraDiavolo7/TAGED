@@ -30,10 +30,10 @@ class HnsComp
     public function __construct ( $Skill = '', $Order = '', $Type = self::TYPE_PASSIVE, $Rune = '' ) 
     {
         $this->Id = -1;
-        $this->Skill = $Skill;
-        $this->Order = $Order;
-        $this->Rune = $Rune;
-        $this->Type = $Type;
+        $this->setSkill ( $Skill );
+        $this->setOrder ( $Order );
+        $this->setRune ( $Rune );
+        $this->setType ( $Type );
     }
 
     public function __toString ( )
@@ -41,9 +41,9 @@ class HnsComp
         return 'Comp ' . $this->Type . ' #' . $this->Order . ' ' . $this->Skill . ( '' != $this->Rune ? ' with ' . $this->Rune : '' );
     }
 
-    public function setSkill ( $NewValue ) { $this->Skill = $NewValue; }
+    public function setSkill ( $NewValue ) { $this->Skill = TagedDBHnS::escape4HTML ( $NewValue ); }
     public function setOrder ( $NewValue ) { $this->Order = $NewValue; }
-    public function setRune  ( $NewValue ) { $this->Rune  = $NewValue; }
+    public function setRune  ( $NewValue ) { $this->Rune  = TagedDBHnS::escape4HTML ( $NewValue ); }
     public function setType  ( $NewValue ) { $this->Type  = $NewValue; }
     
     public function getSkill ( ) { return $this->Skill; }

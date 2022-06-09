@@ -25,10 +25,13 @@ if ( is_dir ( $Folder ) )
 
                 system ( $Command );
 
-                sleep ( 1 );
+//                sleep ( 1 );
+//                usleep ( 1000 );
             }
+            
         }
     }
 
+    rmdir ( $Folder );
 }
 

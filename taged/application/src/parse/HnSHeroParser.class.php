@@ -67,7 +67,9 @@ class HnSHeroParser {
      */
     public function parse () 
     {
-        Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " );
+        Log::fct_enter ( __METHOD__ );
+        Log::debug ( __METHOD__ . ' ' . $this->Hero->getURL () );
+
         $Tmp = $this->ProcessedText;
         $Tmp = preg_replace_callback ( '#<div class="profile-head".*<h2 class="header-2".*>(.*)</div>#sU', array ( $this, 'parseUser' ), $Tmp );
         $Tmp = preg_replace_callback ( '#<div class="profile-sheet".*<strong>(.*)<span.*>.(.*).</span>.*<h2.*>(.*)</h2>#sU', array ( $this, 'parseHero' ), $Tmp );
@@ -75,22 +77,26 @@ class HnSHeroParser {
 		$Tmp = preg_replace_callback ( '#<ul class="active-skills clear-after">(.*)</ul>#sU', array ( $this, 'parseActive' ), $Tmp );
 		$Tmp = preg_replace_callback ( '#<ul class="passive-skills clear-after">(.*)</ul>#sU', array ( $this, 'parsePassive' ), $Tmp );
 		$Tmp = preg_replace_callback ( '#<div class="page-section attributes".*<ul class="attributes-core">(.*)</ul>.*<ul class="attributes-core secondary">(.*)</ul>.*<ul class="resources">(.*)</ul>#sU', array ( $this, 'parseAttributes' ), $Tmp );
-//		echo $this->Hero . "\n";
-        $this->Hero->save ();
+		
+		Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " . $this->Hero );
+
+		$this->Hero->save ();
+		Log::fct_exit ( __METHOD__ );
     }
 
 	protected function parseUser ( $Matches )
 	{
-	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " );
+	    Log::fct_enter ( __METHOD__ );
 	    
 	    $Tmp = preg_replace_callback ( '#<a href="(.*)">.*>(.*)<span.*>(.*)</span>.*<span.*>(.*)</span>#sU', array ( $this, 'parseUserDetails' ), $Matches [0] );
 	    
+	    Log::fct_exit ( __METHOD__ );
 	    return '';
 	}
 
 	protected function parseUserDetails ( $Matches )
 	{
-	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " );
+	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " . Arrays::arrToString ( array_slice ( $Matches, 1 ) ) );
 	    $URL      = trim ( Arrays::getOrCrash ( $Matches, 1, 'Invalid URL' ) );
 	    $UserName = trim ( Arrays::getOrCrash ( $Matches, 2, 'Invalid User name' ) );
 	    $UserTag  = trim ( Arrays::getOrCrash ( $Matches, 3, 'Invalid User Tag'  ) );
@@ -104,7 +110,7 @@ class HnSHeroParser {
 	
 	protected function parseHero ( $Matches )
 	{
-	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " );
+	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " . Arrays::arrToString ( array_slice ( $Matches, 1 ) ) );
 	    $Level = $Matches [1];
 	    $Level    = trim ( Arrays::getOrCrash ( $Matches, 1, 'Invalid Level' ) );
 	    $Parangon = trim ( Arrays::getOrCrash ( $Matches, 2, 'Invalid Parangon' ) );
@@ -124,6 +130,7 @@ class HnSHeroParser {
 	
 	protected function parseItem ( $Matches )
 	{
+	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " . Arrays::arrToString ( array_slice ( $Matches, 1 ) ) );
 	    $Item = new HnSItem ();
 	    $Item->setPosition ( Strings::replace ( 'gear-label slot-', '', $Matches [1] ) );
 	    $Item->setImage ( $Matches [2] );
@@ -140,6 +147,7 @@ class HnSHeroParser {
 	
 	protected function parseParams ( $Matches ) 
 	{
+	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " . Arrays::arrToString ( array_slice ( $Matches, 1 ) ) );
 	    $this->Hero->addAffix ( trim ($Matches [2]) );
 	    return '';
 	}
@@ -154,7 +162,7 @@ class HnSHeroParser {
 	
 	protected function parseAct ( $Matches )
 	{
-	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " );
+	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " . Arrays::arrToString ( array_slice ( $Matches, 1 ) ) );
 	    static $Count = 1;
 	    $Comp = new HnSComp ( trim ( $Matches [1] ), $Count++, HnSComp::TYPE_ACTIVE, trim ( $Matches [2] ) );
 	    
@@ -173,7 +181,7 @@ class HnSHeroParser {
 
 	protected function parsePass ( $Matches )
 	{
-	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " );
+	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " . Arrays::arrToString ( array_slice ( $Matches, 1 ) ) );
 	    static $Count = 1;
 	    $Comp = new HnSComp ( trim ( $Matches [1] ), $Count++ );
 	    
@@ -193,21 +201,21 @@ class HnSHeroParser {
 	
 	protected function parseAttrP ( $Matches )
 	{
-	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " );
+	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " . Arrays::arrToString ( array_slice ( $Matches, 1 ) ) );
 	    $this->Hero->setAttr ( trim ( $Matches [1] ), trim ( $Matches [2] ) );
 	    return '';
 	}
 	
 	protected function parseAttrS ( $Matches )
 	{
-	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " );
+	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " . Arrays::arrToString ( array_slice ( $Matches, 1 ) ) );
 	    $this->Hero->setAttr ( trim ( $Matches [1] ), trim ( $Matches [2] ) );
 	    return '';
 	}
 	
 	protected function parseAttrR ( $Matches )
 	{
-	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " );
+	    Log::debug ( __FUNCTION__ . ':' . __LINE__ . " " . Arrays::arrToString ( array_slice ( $Matches, 1 ) ) );
 	    $this->Hero->setAttr ( trim ( $Matches [2] ), trim ( $Matches [1] ) );
 	    return '';
 	}
