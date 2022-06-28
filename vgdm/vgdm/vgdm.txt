@@ -1,0 +1,111 @@
+*** A faire
+
+Expliquer mieux les dimensions, car DRounds est composé de games et de rounds, DMatch est composé de stroke et de matchs.
+
+===============================
+Nb De Coups Par Joueur + Temps Moy round Par Joueur
+===============================
+
+Nb de coups / parties, pour chaque jour
+Nb de points / coups
+
+Localization -> Player      -> Game ->  Round    -> Stroke      -> Match
+ipaddress (id)  player_id      game_id  round_id    stroke_id      match_id
+VARCHAR(15)     CHAR(32)       INTEGER  INTEGER     INTEGER        INTEGER
+                +++
+
+===============================
+
+Jeu :
+ - Rajouter un cookie
+
+Cube :
+ - Temps moyen (total) par round
+ - Fréquence moyenne de coup
+ - Nb pièces par coup (stroke)
+ - Score (total par round)
+ - Shape
+ 
+A venir ?
+ - durée d'un coup (stroke) par rapport au tps restant
+ - taille d'un motif (stroke) par rapport au tps restant
+
+ - temps écoulé depuis le début de partie (stroke) / temps restant (stroke)
+
+ - dlocalization :
+   * ipaddress	country	region	city platform	browser	lang
+ - dtime :
+   * tempsDébutDePartie
+
+*** Requête en cours
+ 
+WITH T AS (
+SELECT R.round_id, round_num,round_date, S.stroke_id, stroke_num, duration, M.match_id, match_num, color, length, shape, score, score_total, special_four, beam, time, time_left in_game_time FROM Round R
+  INNER JOIN RoundStroke RS
+    ON R.round_id = RS.round_id
+  INNER JOIN Stroke S
+    ON RS.stroke_id = S.stroke_id
+  INNER JOIN StrokeGameMatch SM
+    ON S.stroke_id = SM.stroke_id
+  INNER JOIN GameMatch M
+    ON SM.match_id = M.match_id
+), U AS (
+SELECT round_id, COUNT(*) AS cpt 
+FROM T
+WHERE shape = 'horizontal'
+GROUP BY round_id
+), V AS (
+SELECT round_id, COUNT(*) AS cpt 
+FROM T
+GROUP BY round_id
+), W AS (
+SELECT U.round_id, ((U.cpt * 1.0) / (V.cpt * 1.0)) AS cpt
+FROM U INNER JOIN V
+     ON U.round_id = V.round_id
+), X AS (
+SELECT *
+FROM T
+WHERE match_num = 1
+)
+SELECT T.round_id, SUM(time), AVG(duration), (SELECT AVG(length) FROM X), AVG(length), MAX(score_total), AVG(cpt)
+FROM T INNER JOIN W ON T.round_id = W.round_id
+GROUP BY T.round_id;
+
+***
+
+WITH T AS (
+SELECT R.round_id, round_num,round_date, S.stroke_id, stroke_num, duration, M.match_id, match_num, color, length, shape, score, score_total, special_four, beam, time, time_left in_game_time FROM Round R
+  INNER JOIN RoundStroke RS
+    ON R.round_id = RS.round_id
+  INNER JOIN Stroke S
+    ON RS.stroke_id = S.stroke_id
+  INNER JOIN StrokeGameMatch SM
+    ON S.stroke_id = SM.stroke_id
+  INNER JOIN GameMatch M
+    ON SM.match_id = M.match_id
+), U AS (
+SELECT round_id, COUNT(*) AS cpt 
+FROM T
+WHERE shape = 'horizontal'
+GROUP BY round_id
+), V AS (
+SELECT round_id, COUNT(*) AS cpt 
+FROM T
+GROUP BY round_id
+), W AS (
+SELECT U.round_id, ((U.cpt * 1.0) / (V.cpt * 1.0)) AS cpt
+FROM U INNER JOIN V
+     ON U.round_id = V.round_id
+), X AS (
+SELECT T.round_id, length AS len
+FROM T
+WHERE match_num = 1
+)
+SELECT T.round_id, SUM(time), AVG(duration), AVG(len), AVG(length), MAX(score_total), AVG(cpt)
+FROM T 
+     INNER JOIN W 
+       ON T.round_id = W.round_id
+     INNER JOIN X 
+       ON W.round_id = X.round_id
+GROUP BY T.round_id
+ORDER BY T.round_id;
