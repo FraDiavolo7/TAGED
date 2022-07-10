@@ -15,18 +15,20 @@ CREATE TABLE Joueur(
 CREATE TABLE Partie(
    Id_Partie SERIAL,
    Date_Partie BIGINT,
+   Num_Tour INT,
+   Date_Tour BIGINT,
    ID_Joueur VARCHAR(50) NOT NULL,
    PRIMARY KEY(Id_Partie),
    FOREIGN KEY(ID_Joueur) REFERENCES Joueur(ID_Joueur)
 );
 
-CREATE TABLE Tour(
-   Id_Tour SERIAL,
-   Num_Tour INT,
+CREATE TABLE Coup(
+   Id_Coup SERIAL,
+   Num_Coup INT,
    Duree DECIMAL(15,2),
    Heure BIGINT,
    Id_Partie INT NOT NULL,
-   PRIMARY KEY(Id_Tour),
+   PRIMARY KEY(Id_Coup),
    FOREIGN KEY(Id_Partie) REFERENCES Partie(Id_Partie)
 );
 
@@ -42,7 +44,8 @@ CREATE TABLE Beam(
    Temps DECIMAL(15,2),
    Temps_Restant DECIMAL(15,2),
    Temps_En_Jeu DECIMAL(15,2),
-   Id_Tour INT NOT NULL,
+   Id_Coup INT NOT NULL,
    PRIMARY KEY(Id_Beam),
-   FOREIGN KEY(Id_Tour) REFERENCES Tour(Id_Tour)
+   FOREIGN KEY(Id_Coup) REFERENCES Coup(Id_Coup)
 );
+
