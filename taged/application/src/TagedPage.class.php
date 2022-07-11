@@ -6,6 +6,7 @@ class TagedPage extends THPage
 	const PAGE_DEFAULT = 'Accueil';
 	const PAGE_LIST = array (
 		'Accueil' => 'Accueil',
+	    'Match 3' => 'Match3',
 	    'Collection Data' => 'CollData',
 	    'Hack&apos;n Slash Data' => 'HnSData'
 	);

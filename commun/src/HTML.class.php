@@ -43,7 +43,7 @@ class HTML
        self::tag ( '!DOCTYPE html' );
        self::tag ( 'html' );
        self::tag ( 'head' );
-       self::tag ( 'meta', array ( 'http-equiv' => "refresh", 'content' => $Time . "; URL=" . $URL ) );
+       self::tag ( 'meta', '', array ( 'http-equiv' => "refresh", 'content' => $Time . "; URL=" . $URL ) );
        self::tag ( '/head' );
        self::tag ( '/html' );
     }
@@ -77,19 +77,26 @@ class HTML
         echo self::getTag ( $Tag, $Content, $Attributes );
     }
 
+    public static function upgradeInsecureRequests ()
+    {
+        self::tag ( 'meta', '', array ( 'http-equiv' => "Content-Security-Policy", 'content' => "upgrade-insecure-requests" ) );
+    }
+    
+    
     public static function startHtml ()
     {
         $Text  = self::getTag ( '!DOCTYPE html' ) . "\n";
         $Text .= self::getTag ( 'html' );
         return $Text;
     }
+    public static function meta ( $Data )  { return self::getTag ( 'meta', '', $Data );    }
     public static function cssFile ( $File )  { return self::getTag ( 'link', '', array ( 'rel' => 'stylesheet', 'href' => $File ) );    }
     public static function endHtml ()  {   return self::getTag ( '/html' );    }
     public static function endBody () { return self::getTag ( '/body' ); }
     public static function startBody ( $Attributes = array () )  {   return self::getTag ( 'body', '', $Attributes );    }
     public static function startHead ()  {   return self::getTag ( 'head' ); }    
     public static function endHead ()  {   return self::getTag ( '/head' );    }
-    public static function jsFile ( $File )  {   return self::getTag ( 'script' ) . self::getTag ( '/script' );    }
+    public static function jsFile ( $File )  {   return self::getTag ( 'script', ' ', array ( "src" => $File ) );    }
     public static function startCSS ()  {   return self::getTag ( 'style' );    }
     public static function endCSS ()     {   return self::getTag ( '/style' );    }
     public static function table     ( $Content = ' ', $Attributes = array () )  { return self::getTag ( 'table',   $Content, $Attributes );    }

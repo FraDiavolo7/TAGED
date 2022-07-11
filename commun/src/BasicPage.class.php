@@ -17,6 +17,7 @@ abstract class BasicPage
 	 */
 	public function __construct ( $InputData = NULL )
 	{
+		$this->MetaList = array ();
 		$this->CSSList = array ();
 		$this->CSSCodes = array ();
 		$this->JSList = array ();
@@ -32,7 +33,7 @@ abstract class BasicPage
 	{
 	    if ( '' != $this->RedirectURL )
 	    {
-	         HTML::swhoRedirect ();
+	        HTML::showRedirect ( $this->RedirectURL );
 	    }
 	    else 
 	    {
@@ -44,6 +45,14 @@ abstract class BasicPage
 	        $this->showPageFooter ();
 	        $this->showFoot ();
 	    }
+	}
+	
+	public final function addMeta ( $MetaData = array () )
+	{
+		if ( ! empty ( $MetaData ) )
+		{
+			$this->MetaList [] = HTML::meta ( $MetaData );
+		}
 	}
 	
 	public final function addJS ( $JSFile )
@@ -92,6 +101,16 @@ abstract class BasicPage
 		HTML::showStartHead ();
 		HTML::showHeadTitle ( $this->SiteTitle . '-' . $this->PageTitle );
 
+		HTML::upgradeInsecureRequests ();
+		
+		if ( ! empty ( $this->MetaList ) )
+		{
+			foreach ( $this->MetaList as $Meta )
+			{
+				echo $Meta . "\n";
+			}
+		}
+		
 		if ( ! empty ( $this->CSSList ) )
 		{
 			foreach ( $this->CSSList as $CSSFile )
@@ -123,7 +142,7 @@ abstract class BasicPage
 			HTML::showStartJS ();
 			foreach ( $this->JSCodes as $JSCode )
 			{
-				echo $JSFile . "\n";
+			    echo $JSCode . "\n";
 			}
 			HTML::showEndJS ();
 		}
@@ -145,7 +164,7 @@ abstract class BasicPage
 	
 	public final function redirect ( $URL )
 	{
-	    $this->RedirectURL = URL;
+	    $this->RedirectURL = $URL;
 	}
 	
 	protected $SiteTitle;

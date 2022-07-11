@@ -1,14 +1,14 @@
 <?php
 
-class CollTable
+class Match3
 {
-    protected $ListeCombats;
+    protected $ListGames;
     
     /**
      */
     public function __construct()
     {
-        $this->ListeCombats = array ();
+        $this->$ListGames = array ();
         $this->getGames ();
     }
 
@@ -16,11 +16,11 @@ class CollTable
      */
     public function __destruct()
     {
-        foreach ( $this->ListeCombats as $Game )
+        foreach ( $this->$ListGames as $Game )
         {
             unset ( $Game ); 
         }
-        $this->ListeCombats = array ();
+        $this->$ListGames = array ();
     }
     
     public function __toString ()
@@ -63,7 +63,7 @@ class CollTable
     protected function getGames ()
     {
         Log::fct_enter ( __METHOD__ );
-        // #1 Enregistrer entrée Combat
+        // #1 Enregistrer entrï¿½e Combat
         TagedDBColl::execute ( "SELECT * FROM " . CollGame::TABLE . ";" );
         
         $Results = TagedDBColl::getResults ( );

@@ -14,6 +14,11 @@ abstract class Database
         }
     }
     
+    public static function close ( )
+    {
+        self::$PDO = NULL;
+    }
+    
     public static function execute ( $Query, $Parameters = array () )
     {
         self::init ();

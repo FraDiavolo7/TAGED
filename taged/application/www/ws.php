@@ -2,5 +2,5 @@
 
 include '../src/define.php';
 
-WebServices::handle ( Form::getData ( TagedWS::WS_SELECTOR, TagedWS::WS_DEFAULT ), $_REQUEST );
+WebServices::handle ( TagedWS::getSelector (), $_REQUEST );
 

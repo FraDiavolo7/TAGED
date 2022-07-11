@@ -4,8 +4,10 @@ class WebServices
 {
 	public static function handle ( $WSName, $Data = NULL )
 	{
-		$Class = 'WS' . $PageName;
+		$Class = 'WS' . $WSName;
 		
 		$WS = new $Class ( $Data );
+        
+        echo $WS->serve ( );
 	}
 } // WebServices

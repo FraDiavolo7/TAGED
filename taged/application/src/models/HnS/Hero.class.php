@@ -3,6 +3,7 @@
 class Hero 
 {
     const VIEW       = 'vw_hero';
+    const VIEW_STAT  = 'vw_hns_stat';
     const TABLE      = 'perso';
     const ID         = 'id_perso';
     const NOM        = 'nomperso';
@@ -40,6 +41,12 @@ class Hero
     const ATTR_RES_C      = 'Wrath';
     const ATTR_RES_M      = 'Spirit';
     const ATTR_RES_DH     = 'Hatred/ Discipline';
+    
+    const COUNT_HERO  = 'count_perso';
+    
+    const COUNT_TRAD = array (
+        self::COUNT_HERO => 'Héros'
+    );
     
     private $Id;
     private $Heroname;
@@ -395,10 +402,41 @@ class Hero
     
             $this->fetchId ();
     
-            $this->saveComps ();
-            $this->saveItems ();
+            if ( -1 != $this->Id )
+            {
+                $this->saveComps ();
+                $this->saveItems ();
+            }
+            else
+            {
+                $ErrorText = "Insertion de " . $this->Heroname . " échouée, compétences et items non importés";
+                Log::error ( $ErrorText );
+                throw new Exception ( $ErrorText );
+            }
         }
 
         Log::fct_exit ( __METHOD__ );
     }
+    
+    public static function getStats ()
+    {
+        $Stats = array ();
+        
+        TagedDBHnS::execute ( "SELECT * FROM " . self::VIEW_STAT );
+        $Results = TagedDBHnS::getResults ( );
+        
+        if ( ( NULL !== $Results ) && ( count ( $Results ) > 0 ) )
+        {
+            foreach ( $Results [0] as $Key => $Stat )
+            {
+                if ( ! is_numeric ( $Key ) )
+                {
+                    $Stats [0] [ self::COUNT_TRAD [ $Key ] ] = $Stat;
+                }
+            }
+        }
+        
+        return $Stats;
+    }
+    
 }

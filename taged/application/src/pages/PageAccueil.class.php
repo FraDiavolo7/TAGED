@@ -14,10 +14,56 @@ class PageAccueil extends TagedPage
         $this->addStats ();
 	}
 
-    protected function computeStats ( $AppName )
+	protected function computeStats ( $App )
+	{
+	    $Stats = array ();
+	    if ( $App [STATS_FILE] )
+	    {
+	        $Stats [STATS_FILE] = $this->computeStatsFiles ( $App );
+	    }
+	    if ( NULL != $App [STATS_DB] )
+	    {
+	        $Stats [STATS_DB] = $this->computeStatsDB ( $App );
+	    }
+	    return $Stats;
+	}
+	
+	protected function computeStatsDB ( $App )
+	{
+	    $StatsCols = array ();
+	    $StatsData = array ();
+	    $StatClass = $App [STATS_DB];
+	    
+	    Database::close (); // force initialization to switch DB
+	    
+	    $RawData = $StatClass::getStats ();
+	    
+	    foreach ( $RawData as $Raw )
+	    {
+	        $Stat = array (); 
+	        foreach ( $Raw as $ColName => $Data )
+	        {
+	            if ( ! in_array ( $ColName, $StatsCols ) )
+	            {
+	                $StatsCols [ ] = $ColName;
+	            }
+	            $Stat [ $ColName ] = $Data;
+	        }
+	        $StatsData [] = $Stat;
+	    }
+	    
+	    $Stats = array ();
+	    $Stats [STATS_COLS] = $StatsCols;
+	    $Stats [STATS_DATA] = $StatsData;
+	    return $Stats;
+	}
+	
+	
+	protected function computeStatsFiles ( $App )
     {
-        $this->Cols = array ();
-        $Stats = array ();
+        $AppName = $App [APP_NAME];
+        $StatsCols = array ();
+        $StatsData = array ();
         // Format of the Stats array :
         // [0] => Data for the main part
         // [1] => Data for invalid stats
@@ -64,23 +110,26 @@ class PageAccueil extends TagedPage
                         //echo " => $DataType / $DataType_opt<br>\n";
 
                         $ColName = $DataType . ' ' . $MeasureType;
-                        $Stats [ $DataType_opt ] [ $ColName ] = $Value;
-                        if ( ! in_array ( $ColName, $this->Cols ) )
+                        $StatsData [ $DataType_opt ] [ $ColName ] = $Value;
+                        if ( ! in_array ( $ColName, $StatsCols ) )
                         { 
-                            $this->Cols [ ] = $ColName;
+                            $StatsCols [ ] = $ColName;
                         }
                     }
                     else
                     {
-                        $Stats [1][] = $Line;
+                        $StatsData [1][] = $Line;
                     }
                 }
             }
         }
         //print_r ( $Stats );
 
+        $Stats = array ();
+        $Stats [STATS_COLS] = $StatsCols;
+        $Stats [STATS_DATA] = $StatsData;
         return $Stats;
-    }
+	}
 
     protected function computeAllStats ( )
     {
@@ -88,26 +137,26 @@ class PageAccueil extends TagedPage
 
         foreach ( $GLOBALS [ APP_LIST ] as $App )
         {
-            $Stats [ $App ] = $this->computeStats ( $App );
+            $Stats [ $App [APP_NAME] ] = $this->computeStats ( $App );
         }
 
         return $Stats;
     }
 
-    protected function doStatHead ( )
+    protected function doStatHead ( $Columns )
     {
         $LineContent = HTML::th ( 'Part' );
-        foreach ( $this->Cols as $ColName )
+        foreach ( $Columns as $ColName )
         {
             $LineContent .= HTML::th ( $ColName );
         }
         return HTML::tr ( $LineContent );
     }
 
-    protected function doStatLine ( $Stats, $Part = 'main' )
+    protected function doStatLine ( $Stats, $Columns, $Part = 'main' )
     {
         $LineContent = HTML::td ( $Part );
-        foreach ( $this->Cols as $ColName )
+        foreach ( $Columns as $ColName )
         {
             $LineContent .= HTML::td ( isset ( $Stats [ $ColName ] ) ?  $Stats [ $ColName ] : '&nbsp;' ); 
         }
@@ -117,17 +166,20 @@ class PageAccueil extends TagedPage
 
     protected function doStats ( $Data )
     {
-        $TableHead = $this->doStatHead ();
+        $StatsData = $Data [STATS_DATA];
+        $Columns = $Data [STATS_COLS];
+        
+        $TableHead = $this->doStatHead ( $Columns );
         $TableContent = '';
         $TableContentFirst = '';
         $TableContentLast = '';
-        $NbCols = count ( $this->Cols ) + 1;
+        $NbCols = count ( $Columns ) + 1;
 
-        foreach ( $Data as $Index => $Stats )
+        foreach ( $StatsData as $Index => $Stats )
         {
             if ( $Index === 0 )
             {
-                $TableContentFirst = $this->doStatLine ( $Stats );
+                $TableContentFirst = $this->doStatLine ( $Stats, $Columns );
             }
             elseif ( $Index === 1 )
             {
@@ -138,24 +190,35 @@ class PageAccueil extends TagedPage
             }
             else
             {
-                $TableContent .= $this->doStatLine ( $Stats, $Index );
+                $TableContent .= $this->doStatLine ( $Stats, $Columns, $Index );
             }
         }
         return HTML::div ( HTML::table ( $TableHead . $TableContentFirst . $TableContent . $TableContentLast, array ( 'class' => 'taged_stats' ) ) );
     }
 
+    protected function addStat ( $Data, $StatType )
+    {
+        $StatTitle = HTML::title ( $StatType, 4 );
+        $TableContent = $this->doStats ( $Data );
+        return HTML::div ( $StatTitle . $TableContent );
+    }
 
-    public function addStats ()
+    public function addStats () 
     {
         $Stats = $this->computeAllStats ();
 
         $Content = '';
-
+        
         foreach ( $Stats as $App => $Data )
         {
-            $AppContent = HTML::title ( $App, 3 ); 
-            $TableContent = $this->doStats ( $Data );
-            $Content .= HTML::div ( $AppContent . $TableContent );
+            $DivContent = HTML::title ( $App, 3 );
+            
+            foreach ( $Data as $StatType => $Stat )
+            {
+                $DivContent .= $this->addStat ( $Stat, $StatType );
+            }
+            
+            $Content .= HTML::div ( $DivContent );
         }
 
 	    $this->add ( HTML::div ( $Content ) );

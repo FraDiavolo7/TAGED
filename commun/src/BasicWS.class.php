@@ -16,5 +16,20 @@ abstract class BasicWS
 	{
 	}
 	
-	           
+    /*
+     * MAIN ws function
+     */
+    public function serve ()
+    {
+        return 'Unknown WS';
+    }
+
+    /*
+     * Function used by children as default
+     */
+    protected function nothing ()
+    {
+        return '';
+    }
+    
 }

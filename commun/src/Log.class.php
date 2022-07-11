@@ -50,12 +50,13 @@ class Log
 		$CalledFunction = $Call [ 'function' ];
 		$CallerLine     = $Call [ 'line'     ];
 		$CallerFile     = basename ( $Call [ 'file'     ] );
-		$DateT = DateTime::createFromFormat ( 'U.u', microtime ( TRUE ) );
+		$TimeU = microtime ( TRUE );
+		$DateT = DateTime::createFromFormat ( 'U.u', $TimeU );
 		
 		if ( FALSE === $DateT )
 		{
-		    usleep ( 1 );
-		    $DateT = DateTime::createFromFormat ( 'U.u', microtime ( TRUE ) );
+		    $TimeU2 =  $TimeU . ".0";
+		    $DateT = DateTime::createFromFormat ( 'U.u', $TimeU2 );
 		}
 		
 		$DateT->setTimeZone(new DateTimeZone('Europe/Paris'));
