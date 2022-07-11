@@ -49,3 +49,37 @@ CREATE TABLE Beam(
    FOREIGN KEY(Id_Coup) REFERENCES Coup(Id_Coup)
 );
 
+CREATE VIEW vw_m3_data AS SELECT 
+   j.ID_Joueur,
+   j.IP_addr,
+   p.Id_Partie,
+   p.Date_Partie,
+   p.Num_Tour,
+   p.Date_Tour,
+   c.Id_Coup,
+   c.Num_Coup,
+   c.Duree,
+   c.Heure,
+   b.Id_Beam,
+   b.Num_Match,
+   b.Couleur,
+   b.Longueur,
+   b.Forme,
+   b.Score,
+   b.Score_total,
+   b.Barre,
+   b.Temps,
+   b.Temps_Restant,
+   b.Temps_En_Jeu
+FROM joueur j
+JOIN partie p ON j.id_joueur = p.id_joueur
+JOIN coup   c ON p.id_partie = c.id_partie 
+JOIN beam   b ON c.id_coup   = b.id_coup;
+
+CREATE VIEW vw_m3_stat AS SELECT 
+
+    COUNT ( DISTINCT id_joueur ) as count_joueur, 
+	COUNT ( DISTINCT id_partie) as count_partie, 
+	COUNT ( DISTINCT id_coup ) as count_coup, 
+	COUNT ( DISTINCT id_beam ) as count_beam
+FROM vw_m3_data;

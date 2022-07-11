@@ -118,5 +118,10 @@ CREATE VIEW vw_hero AS SELECT
 	JOIN joueur J ON P.Id_Joueur = J.Id_Joueur
 	order by Serveur, Classe, Rang;
 	
-	
+CREATE VIEW vw_hns_stat AS SELECT 
+
+    COUNT ( DISTINCT Id_Perso ) as count_perso
+
+FROM vw_hero;
+
 TRUNCATE Affecte, Porte, Equip, Comp, Perso, Joueur;
