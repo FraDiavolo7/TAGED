@@ -17,7 +17,8 @@ Structure :
 /taged/application/src/models -> les modèles de données
 /taged/application/src/modules -> les modules d'affichage (inutile)
 /taged/application/src/pages -> les pages affichables
-/taged/application/src/parse -> les parseurs (pour le moment que Collection)
+/taged/application/src/parse -> les parseurs
+/taged/application/src/parse -> les webservices
 
 Pages affichées :
 / => Statistiques de stockage
@@ -46,6 +47,29 @@ CollGame -> Ensemble structuré des données d'un combat
 CollPlayer -> Ensemble structuré des données d'un joueur
 CollTeam -> Ensemble structuré des données d'une équipe de pokemons
 CollTable -> Ensemble des données formattées dans un grand tableau
+
+Match3 :
+
+Configuration :
+fichier de connexion BD : /taged/application/TagedDBMatch3.class.php
+
+Récupération des données :
+Automatique dès lors que quelqu'un joue au jeu
+
+Traitement des données :
+Automatique dès lors que quelqu'un joue au jeu
+
+Calcul des statistiques de stockage :
+Uniquement en base de données, fait par le système à la demande
+
+Pages affichées :
+/?sel=Match3 => Le jeu (les données ne sont pas encore affichées car peu descriptives)
+
+Classes :
+PageMatch3 -> redirige vers le jeu.
+M3Game -> Ensemble structuré des données d'une partie
+M3Stroke -> Ensemble structuré des données d'un coup
+M3Match -> Ensemble structuré des données d'un e correspondance dans le jeu
 
 Hack'n Slash :
 
