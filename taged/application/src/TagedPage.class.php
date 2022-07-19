@@ -8,6 +8,7 @@ class TagedPage extends THPage
 		'Accueil' => 'Accueil',
 	    'Match 3' => 'Match3',
 	    'Collection Data' => 'CollData',
+	    'Collection Aggregate' => 'CollAggregate',
 	    'Hack&apos;n Slash Data' => 'HnSData'
 	);
     	
