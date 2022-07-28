@@ -67,13 +67,13 @@ abstract class Arrays
      *  - EXPORT_ROW_FROM_DATA : Using the data index as row header 
      *  - EXPORT_ROW_ADD_NUM : A number will be added as row header
      *  - EXPORT_ROW_NO_HEADER : Nothing is presented as row header
-     *  - an array : A list of add indexes to use (index shall match Input Data)
+     *  - an array : A list of indexes to use (index shall match Input Data)
      *  - a string : The name of the row to present as row header
      * Column Header can be either :
      *  - EXPORT_COLUMN_FROM_DATA : Using the data index as column header 
      *  - EXPORT_COLUMN_AS_NUM : Using a number as column header
      *  - EXPORT_COLUMN_NO_HEADER : Nothing is presented as column header 
-     *  - an array : A list of add indexes to use (index shall match Input Data)
+     *  - an array : A list of column names indexed by output label (column names shall match Input Data)
      * @param array $InputData The data to export
      * @param string $Separator The field separator
      * @param string|array $ColumnHeader How the column header should be handled
@@ -81,20 +81,50 @@ abstract class Arrays
      * @param sring $FilePath The path of the file to export to (if any )
      * @param array $IgnoreColums List of columns to ignore in presentation
      * @param array $IgnoreRows List of rows to ignore in presentation
+     * @return Error message ('' if no problem)
      */
     public static function exportAsCSV ( $InputData, $Separator = ',', $ColumnHeader = EXPORT_COLUMN_FROM_DATA, $RowHeader = EXPORT_ROW_FROM_DATA, $FilePath = '', $IgnoreColumns = array (), $IgnoreRows = array () )
     {
         $Result = '';
+        $Continue = true;
+
+        $BuildAsYouRun = false;
+        $GenerateColNum = false;
+        $IgnoreCols = false;
+        $Columns = array ();
+        // Array of input column name indexed by the output label
         
-        $Columns = '';
+        $Rows = array ();
         
-        foreach ( $InputData as $Index => $Row )
+        if ( ( $ColumnHeader == EXPORT_COLUMN_FROM_DATA ) ||
+             ( $ColumnHeader == EXPORT_COLUMN_AS_NUM ) ||
+             ( $ColumnHeader == EXPORT_COLUMN_NO_HEADER ) )
         {
-            foreach ( $Row as $Col => $Row )
+            $BuildAsYouRun = true;
+        }
+        
+        else if ( is_array ( $ColumnHeader ) )
+        {
+            $ColumnHeader = $ColumnHeader;
+        }
+        
+        else
+        {
+            $Result = 'Invalid ColumnHeader parameter';
+            $Continue = false;
+        }
+
+        if ( $Continue )
+        {
+            foreach ( $InputData as $Index => $Row )
             {
+                foreach ( $Row as $Col => $Row )
+                {
+                    
+                }
+             
                 
             }
-            
         }
                 
         return $Result;
