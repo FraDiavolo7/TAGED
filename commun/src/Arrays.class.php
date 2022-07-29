@@ -61,6 +61,59 @@ abstract class Arrays
     const EXPORT_ROW_ADD_NUM = 'export_row_add';
     const EXPORT_ROW_NO_HEADER = 'export_row_not';
     
+    
+    
+    private static function extractColumns ( $InputData, $ColumnHeader = EXPORT_COLUMN_FROM_DATA, $IgnoreColumns = array () )
+    {
+        $Columns = array ();
+        $UnfilteredCols = array ();
+
+        if ( ( $ColumnHeader == EXPORT_COLUMN_FROM_DATA ) ||
+            ( $ColumnHeader == EXPORT_COLUMN_AS_NUM ) ||
+            ( $ColumnHeader == EXPORT_COLUMN_NO_HEADER ) )
+        {
+            // Using first item's columns
+            $ColumnsTmp = array_keys ( reset ( $InputData ) );
+            
+            if ( $ColumnHeader == EXPORT_COLUMN_FROM_DATA )
+            {
+                foreach ( $TrashCols as $Key )
+                {
+                    $UnfilteredCols [ $Key ] = $Key;
+                }
+            }
+            else
+            {
+                $UnfilteredCols = $ColumnsTmp;
+            }
+            
+        }
+        
+        else if ( is_array ( $ColumnHeader ) )
+        {
+            $UnfilteredCols = $ColumnHeader;
+        }
+        
+        else
+        {
+            Log::error ( 'Invalid ColumnHeader parameter' );
+            $Columns = false;
+        }
+        
+        if ( is_array ( $Columns ) )
+        {
+            foreach ( $UnfilteredCols as $Label => $Key )
+            {
+                if ( ! in_array ( $Key, $IgnoreColumns ) )
+                {
+                    $Columns [ $Label ] = $Key;
+                }
+            }
+        }
+        
+        return $Columns;
+    }
+    
     /**
      * @brief Exports the given $InputData as a CSV text
      * Row Header can be either :
@@ -88,41 +141,48 @@ abstract class Arrays
         $Result = '';
         $Continue = true;
 
-        $BuildAsYouRun = false;
-        $GenerateColNum = false;
-        $IgnoreCols = false;
-        $Columns = array ();
         // Array of input column name indexed by the output label
-        
-        $Rows = array ();
-        
-        if ( ( $ColumnHeader == EXPORT_COLUMN_FROM_DATA ) ||
-             ( $ColumnHeader == EXPORT_COLUMN_AS_NUM ) ||
-             ( $ColumnHeader == EXPORT_COLUMN_NO_HEADER ) )
+        $Columns = self::extractColumns ( $InputData, $ColumnHeader, $IgnoreColumns );
+                
+        if ( is_array ( $Columns ) )
         {
-            $BuildAsYouRun = true;
-        }
-        
-        else if ( is_array ( $ColumnHeader ) )
-        {
-            $ColumnHeader = $ColumnHeader;
-        }
-        
-        else
-        {
-            $Result = 'Invalid ColumnHeader parameter';
-            $Continue = false;
-        }
-
-        if ( $Continue )
-        {
+            $FalseIndex = 0;
             foreach ( $InputData as $Index => $Row )
             {
-                foreach ( $Row as $Col => $Row )
+                $Line = '';
+                
+                if ( $RowHeader == EXPORT_ROW_FROM_DATA )
                 {
-                    
+                    $Line .= $Index . $Separator;
                 }
+                
+                else if ( $RowHeader == EXPORT_ROW_ADD_NUM )
+                {
+                    $Line .= $FalseIndex . $Separator;
+                    ++$FalseIndex;
+                }
+                
+                else if ( is_array ( $RowHeader ) )
+                {
+                    $Line .= $RowHeader [ $Index ] . $Separator;
+                }
+                
+                else if ( is_string ( $RowHeader ) && ( $RowHeader != EXPORT_ROW_NO_HEADER ) )
+                {
+                    $Line .= $Row [ $RowHeader ] . $Separator;
+                }
+                
+                foreach ( $Columns as $Label => $Key )
+                {
+                    if ( isset ( $Row [ $Key ] ) )
+                    {
+                        $Line .= $Row [ $Key ];
+                    }
+                    $Line .= $Separator;
+                }
+                $Line .= '\n';
              
+                file_put_contents ( $FilePath, $Line, FILE_APPEND );
                 
             }
         }
