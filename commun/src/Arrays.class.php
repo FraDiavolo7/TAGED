@@ -63,19 +63,23 @@ abstract class Arrays
     
     
     
-    private static function extractColumns ( $InputData, $ColumnHeader = EXPORT_COLUMN_FROM_DATA, $IgnoreColumns = array () )
+    private static function extractColumns ( $InputData, $ColumnHeader = self::EXPORT_COLUMN_FROM_DATA, $IgnoreColumns = array () )
     {
         $Columns = array ();
         $UnfilteredCols = array ();
-
-        if ( ( $ColumnHeader == EXPORT_COLUMN_FROM_DATA ) ||
-            ( $ColumnHeader == EXPORT_COLUMN_AS_NUM ) ||
-            ( $ColumnHeader == EXPORT_COLUMN_NO_HEADER ) )
+//         HTML::showVar ( '$InputData', $InputData );
+//          HTML::showVar ( '$ColumnHeader', $ColumnHeader );
+//         HTML::showVar ( '$IgnoreColumns', $IgnoreColumns );
+        
+        if ( ( $ColumnHeader == self::EXPORT_COLUMN_FROM_DATA ) ||
+            ( $ColumnHeader == self::EXPORT_COLUMN_AS_NUM ) ||
+            ( $ColumnHeader == self::EXPORT_COLUMN_NO_HEADER ) )
         {
             // Using first item's columns
-            $ColumnsTmp = array_keys ( reset ( $InputData ) );
+            $TrashCols = array_keys ( reset ( $InputData ) );
+//             HTML::showVar ( '$TrashCols', $TrashCols );
             
-            if ( $ColumnHeader == EXPORT_COLUMN_FROM_DATA )
+            if ( $ColumnHeader == self::EXPORT_COLUMN_FROM_DATA )
             {
                 foreach ( $TrashCols as $Key )
                 {
@@ -84,10 +88,10 @@ abstract class Arrays
             }
             else
             {
-                $UnfilteredCols = $ColumnsTmp;
+                $UnfilteredCols = $TrashCols;
             }
             
-        }
+        } 
         
         else if ( is_array ( $ColumnHeader ) )
         {
@@ -100,6 +104,8 @@ abstract class Arrays
             $Columns = false;
         }
         
+//         HTML::showVar ( '$UnfilteredCols', $UnfilteredCols );
+        
         if ( is_array ( $Columns ) )
         {
             foreach ( $UnfilteredCols as $Label => $Key )
@@ -110,6 +116,7 @@ abstract class Arrays
                 }
             }
         }
+//          HTML::showVar ( '$Columns', $Columns );
         
         return $Columns;
     }
@@ -136,7 +143,7 @@ abstract class Arrays
      * @param array $IgnoreRows List of rows to ignore in presentation
      * @return Error message ('' if no problem)
      */
-    public static function exportAsCSV ( $InputData, $Separator = ',', $ColumnHeader = EXPORT_COLUMN_FROM_DATA, $RowHeader = EXPORT_ROW_FROM_DATA, $FilePath = '', $IgnoreColumns = array (), $IgnoreRows = array () )
+    public static function exportAsCSV ( $InputData, $Separator = ',', $ColumnHeader = self::EXPORT_COLUMN_FROM_DATA, $RowHeader = self::EXPORT_ROW_FROM_DATA, $FilePath = '', $IgnoreColumns = array (), $IgnoreRows = array () )
     {
         $Result = '';
         $Continue = true;
@@ -146,44 +153,79 @@ abstract class Arrays
                 
         if ( is_array ( $Columns ) )
         {
+            if ( $ColumnHeader != self::EXPORT_COLUMN_NO_HEADER ) 
+            {
+                $Line = '';
+                if ( $RowHeader != self::EXPORT_ROW_NO_HEADER )
+                {
+                    $Line .= 'index' . $Separator;
+                }
+                foreach ( $Columns as $Label => $Key )
+                {
+                    $Line .= $Label;
+                    $Line .= $Separator;
+                }
+                
+                $Line .= PHP_EOL;
+                
+                if ( '' != $FilePath )
+                {
+                    file_put_contents ( $FilePath, $Line, FILE_APPEND );
+                }
+                else
+                {
+                    $Result .= $Line;
+                }
+            }
+                
             $FalseIndex = 0;
             foreach ( $InputData as $Index => $Row )
             {
                 $Line = '';
                 
-                if ( $RowHeader == EXPORT_ROW_FROM_DATA )
+                if ( ! in_array ( $Index, $IgnoreRows ) )
                 {
-                    $Line .= $Index . $Separator;
-                }
-                
-                else if ( $RowHeader == EXPORT_ROW_ADD_NUM )
-                {
-                    $Line .= $FalseIndex . $Separator;
-                    ++$FalseIndex;
-                }
-                
-                else if ( is_array ( $RowHeader ) )
-                {
-                    $Line .= $RowHeader [ $Index ] . $Separator;
-                }
-                
-                else if ( is_string ( $RowHeader ) && ( $RowHeader != EXPORT_ROW_NO_HEADER ) )
-                {
-                    $Line .= $Row [ $RowHeader ] . $Separator;
-                }
-                
-                foreach ( $Columns as $Label => $Key )
-                {
-                    if ( isset ( $Row [ $Key ] ) )
+                            
+                    if ( $RowHeader == self::EXPORT_ROW_FROM_DATA )
                     {
-                        $Line .= $Row [ $Key ];
+                        $Line .= $Index . $Separator;
                     }
-                    $Line .= $Separator;
+                    
+                    else if ( $RowHeader == self::EXPORT_ROW_ADD_NUM )
+                    {
+                        $Line .= $FalseIndex . $Separator;
+                        ++$FalseIndex;
+                    }
+                    
+                    else if ( is_array ( $RowHeader ) )
+                    {
+                        $Line .= $RowHeader [ $Index ] . $Separator;
+                    }
+                    
+                    else if ( is_string ( $RowHeader ) && ( $RowHeader != self::EXPORT_ROW_NO_HEADER ) )
+                    {
+                        $Line .= $Row [ $RowHeader ] . $Separator;
+                    }
+                    
+                    foreach ( $Columns as $Label => $Key )
+                    {
+                        if ( isset ( $Row [ $Key ] ) )
+                        {
+                            $Line .= $Row [ $Key ];
+                        }
+                        $Line .= $Separator;
+                    }
+                    $Line .= PHP_EOL;
+                 
+                    if ( '' != $FilePath )
+                    {
+                        file_put_contents ( $FilePath, $Line, FILE_APPEND );
+                    }
+                    else
+                    {
+                        $Result .= $Line;
+                    }
                 }
-                $Line .= '\n';
-             
-                file_put_contents ( $FilePath, $Line, FILE_APPEND );
-                
             }
         }
                 

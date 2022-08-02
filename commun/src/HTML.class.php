@@ -451,7 +451,11 @@ class HTML
         return $Result;
     }
     
-    
+    public static function showVar  ( $Name, $Var )
+    {
+        if ( is_string ( $Var ) ) self::tag ( 'pre', "$Name = $Var" );
+        else  self::tag ( 'pre', "$Name = " . print_r ( $Var, TRUE ) );
+    }
     public static function buildGenLink ( $Page, $Parameters = array () )
     {
         $Args = "?" . self::PAGE_SELECTOR . "=" . $Page;
