@@ -81,14 +81,14 @@ class Aggregate
         return $Content;
     }
     
-    public function export ( $FilePath )
+    public function export ( $FilePath, $ExportHeaders = true, $ExportNbTuples = true )
     {
         $TupleFile = $FilePath . '.nbtuple';
         $HeaderFile = $FilePath . '.headers';
 
-        file_put_contents ( $TupleFile, $this->NbTuples . PHP_EOL );
+        if ( $ExportNbTuples ) file_put_contents ( $TupleFile, $this->NbTuples . PHP_EOL );
 
-        Arrays::exportAsCSV ( $this->Attributes, ',', Arrays::EXPORT_COLUMN_NO_HEADER, Arrays::EXPORT_ROW_NO_HEADER, $HeaderFile );
+        if ( $ExportHeaders ) Arrays::exportAsCSV ( $this->Attributes, ',', Arrays::EXPORT_COLUMN_NO_HEADER, Arrays::EXPORT_ROW_NO_HEADER, $HeaderFile );
 
         Arrays::exportAsCSV ( $this->Data, ',', Arrays::EXPORT_COLUMN_NO_HEADER, Arrays::EXPORT_ROW_NO_HEADER, $FilePath );
     }
@@ -96,6 +96,11 @@ class Aggregate
     public function getData ( ) 
     {
         return $this->Data;
+    }
+    
+    public function getNbAttributes ( )
+    {
+        return count ( $this->Attributes );
     }
     
     public function getAttributes ( )
