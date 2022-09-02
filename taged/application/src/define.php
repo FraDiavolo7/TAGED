@@ -2,6 +2,10 @@
 $NewPath = get_include_path();
 $NewPath .= PATH_SEPARATOR . '.';
 $NewPath .= PATH_SEPARATOR . '../src';
+$NewPath .= PATH_SEPARATOR . '../src/aggregates';
+$NewPath .= PATH_SEPARATOR . '../src/aggregates/Coll';
+$NewPath .= PATH_SEPARATOR . '../src/aggregates/HnS';
+$NewPath .= PATH_SEPARATOR . '../src/aggregates/Match3';
 $NewPath .= PATH_SEPARATOR . '../src/modules';
 $NewPath .= PATH_SEPARATOR . '../src/models';
 $NewPath .= PATH_SEPARATOR . '../src/models/Coll';

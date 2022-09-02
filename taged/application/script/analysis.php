@@ -26,12 +26,12 @@ $TmpFolder = $TargetBase . ".tmp";
 
 if ( file_exists ( $TargetFile ) )
 {
-    $Message = "Executing analysis on $Taget"; 
+    $Message = "Executing analysis on $Target"; 
     
     Log::info ( $Message );
-    echo $Message;
+    echo $Message . PHP_EOL;
 
-    mkdir ( $TmpFolder );
+    if ( ! is_dir ( $TmpFolder ) ) mkdir ( $TmpFolder );
     
     $AnalysisData = parse_ini_file ( $TargetFile );
     
@@ -39,18 +39,18 @@ if ( file_exists ( $TargetFile ) )
     
     if ( NULL != $Class )
     {
-        $AggrgateFile = "$TmpFolder/aggregate";
+        $AggregateFile = "$TmpFolder/aggregate";
         
         $Aggregate = new $Class ();
         
         $NbTuples = $Aggregate->getNbTuples ();
         $NbAttributes = $Aggregate->getNbAttributes ();
         
-        $Aggregate->export ( $AggrgateFile, false, false );
+        $Aggregate->export ( $AggregateFile, false, false );
         
         $Command = "$Algo $AggregateFile $NbAttributes $NbTuples $AlgoOpt"; 
         
-        echo $Command;
+        echo $Command . PHP_EOL;
         // unlink ( $AlgoInput );
     }
     

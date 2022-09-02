@@ -88,9 +88,9 @@ class Aggregate
 
         if ( $ExportNbTuples ) file_put_contents ( $TupleFile, $this->NbTuples . PHP_EOL );
 
-        if ( $ExportHeaders ) Arrays::exportAsCSV ( $this->Attributes, ',', Arrays::EXPORT_COLUMN_NO_HEADER, Arrays::EXPORT_ROW_NO_HEADER, $HeaderFile );
+        if ( $ExportHeaders ) Arrays::exportAsCSV ( $this->Attributes, ',', Arrays::EXPORT_COLUMN_NO_HEADER, Arrays::EXPORT_ROW_NO_HEADER, $HeaderFile, array (), array (), ';' );
 
-        Arrays::exportAsCSV ( $this->Data, ',', Arrays::EXPORT_COLUMN_NO_HEADER, Arrays::EXPORT_ROW_NO_HEADER, $FilePath );
+        Arrays::exportAsCSV ( $this->Data, ',', Arrays::EXPORT_COLUMN_NO_HEADER, Arrays::EXPORT_ROW_NO_HEADER, $FilePath, array (), array (), ';' );
     }
     
     public function getData ( ) 

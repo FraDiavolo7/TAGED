@@ -121,6 +121,17 @@ abstract class Arrays
         return $Columns;
     }
     
+    private static function replaceIfNeeded ( $String, $Needle, $ReplaceBy = '' )
+    {
+        $Result = $String;
+        if ( '' != $ReplaceBy )
+        {
+            $Result = str_replace ( $Needle, $ReplaceBy, $String );
+            //echo "$Result = str_replace ( $Needle, $ReplaceBy, $String )" . PHP_EOL;
+        }
+        return $Result;
+    }
+    
     /**
      * @brief Exports the given $InputData as a CSV text
      * Row Header can be either :
@@ -143,7 +154,7 @@ abstract class Arrays
      * @param array $IgnoreRows List of rows to ignore in presentation
      * @return Error message ('' if no problem)
      */
-    public static function exportAsCSV ( $InputData, $Separator = ',', $ColumnHeader = self::EXPORT_COLUMN_FROM_DATA, $RowHeader = self::EXPORT_ROW_FROM_DATA, $FilePath = '', $IgnoreColumns = array (), $IgnoreRows = array () )
+    public static function exportAsCSV ( $InputData, $Separator = ',', $ColumnHeader = self::EXPORT_COLUMN_FROM_DATA, $RowHeader = self::EXPORT_ROW_FROM_DATA, $FilePath = '', $IgnoreColumns = array (), $IgnoreRows = array (), $ReplaceSep = '' )
     {
         $Result = '';
         $Continue = true;
@@ -162,7 +173,7 @@ abstract class Arrays
                 }
                 foreach ( $Columns as $Label => $Key )
                 {
-                    $Line .= $Label;
+                    $Line .= self::replaceIfNeeded ( $Label, $Separator, $ReplaceSep );
                     $Line .= $Separator;
                 }
                 
@@ -188,30 +199,30 @@ abstract class Arrays
                             
                     if ( $RowHeader == self::EXPORT_ROW_FROM_DATA )
                     {
-                        $Line .= $Index . $Separator;
+                        $Line .= self::replaceIfNeeded ( $Index, $Separator, $ReplaceSep ) . $Separator;
                     }
                     
                     else if ( $RowHeader == self::EXPORT_ROW_ADD_NUM )
                     {
-                        $Line .= $FalseIndex . $Separator;
+                        $Line .= self::replaceIfNeeded ( $FalseIndex, $Separator, $ReplaceSep ) . $Separator;
                         ++$FalseIndex;
                     }
                     
                     else if ( is_array ( $RowHeader ) )
                     {
-                        $Line .= $RowHeader [ $Index ] . $Separator;
+                        $Line .= self::replaceIfNeeded ( $RowHeader [ $Index ], $Separator, $ReplaceSep ) . $Separator;
                     }
                     
                     else if ( is_string ( $RowHeader ) && ( $RowHeader != self::EXPORT_ROW_NO_HEADER ) )
                     {
-                        $Line .= $Row [ $RowHeader ] . $Separator;
+                        $Line .= self::replaceIfNeeded ( $Row [ $RowHeader ], $Separator, $ReplaceSep ) . $Separator;
                     }
                     
                     foreach ( $Columns as $Label => $Key )
                     {
                         if ( isset ( $Row [ $Key ] ) )
                         {
-                            $Line .= $Row [ $Key ];
+                            $Line .= self::replaceIfNeeded ( $Row [ $Key ], $Separator, $ReplaceSep );
                         }
                         $Line .= $Separator;
                     }
