@@ -81,9 +81,26 @@ class Aggregate
         return $Content;
     }
     
+    public function export ( $FilePath, $ExportHeaders = true, $ExportNbTuples = true )
+    {
+        $TupleFile = $FilePath . '.nbtuple';
+        $HeaderFile = $FilePath . '.headers';
+
+        if ( $ExportNbTuples ) file_put_contents ( $TupleFile, $this->NbTuples . PHP_EOL );
+
+        if ( $ExportHeaders ) Arrays::exportAsCSV ( $this->Attributes, ',', Arrays::EXPORT_COLUMN_NO_HEADER, Arrays::EXPORT_ROW_NO_HEADER, $HeaderFile, array (), array (), ';' );
+
+        Arrays::exportAsCSV ( $this->Data, ',', Arrays::EXPORT_COLUMN_NO_HEADER, Arrays::EXPORT_ROW_NO_HEADER, $FilePath, array (), array (), ';' );
+    }
+    
     public function getData ( ) 
     {
         return $this->Data;
+    }
+    
+    public function getNbAttributes ( )
+    {
+        return count ( $this->Attributes );
     }
     
     public function getAttributes ( )
