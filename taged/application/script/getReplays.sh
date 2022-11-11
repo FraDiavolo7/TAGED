@@ -1,6 +1,7 @@
 #!/bin/bash
 
-URL=https://replay.pokemonshowdown.com/
+#URL=https://replay.pokemonshowdown.com/search/?format=gen1ou
+URL=https://replay.pokemonshowdown.com
 
 DataManager=/home/taged/data/datamanager.sh
 AppliType=collection
@@ -28,8 +29,6 @@ function handleReplay ()
         rm $DLReplayFile
     fi
 }
-
-
 
 if [ ! -d $TmpFolder ]
 then

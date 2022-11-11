@@ -43,6 +43,8 @@ public:
 		if (r->ValAgg1 > minSeuil1 || r->ValAgg2 < minSeuil2)//Filtrage des tuples non émergents
 				return;
 		++NbLineInCubeEmergent;
+                cerr << "CDE CDE CDE!!!!! 2 " << NbLineInCubeEmergent << endl;
+        cout << s.str();
 		out << s.str();
 	}
 

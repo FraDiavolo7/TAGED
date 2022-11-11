@@ -22,4 +22,5 @@
 # 
 # m h  dom mon dow   command
 
-*/5 * * * * ~/crontab/scripts/TAGED_get_collection.sh &> /dev/null
+#*/5 * * * * ~/crontab/scripts/TAGED_get_collection.sh &> /dev/null
+14 3 * * * ~/crontab/scripts/GIT_commit_push.sh &> /dev/null

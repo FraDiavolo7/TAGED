@@ -8,14 +8,20 @@ class Aggregate
     protected $Data;
     protected $Attributes;
     protected $NbTuples;
+    protected $AttributeValues;
+    protected $AttributeIgnored;
+    protected $AsNumerics;
     
     /**
      */
-    public function __construct ()
+    public function __construct ( $AsNumerics = FALSE )
     {
         $this->Data = array ();
         $this->Attributes = array ();
         $this->NbTuples = 0;
+        $this->AttributeValues = array ();
+        $this->AttributeIgnored = array ();
+        $this->AsNumerics = $AsNumerics;
         $this->fill ();
     }
 
@@ -81,16 +87,41 @@ class Aggregate
         return $Content;
     }
     
-    public function export ( $FilePath, $ExportHeaders = true, $ExportNbTuples = true )
+    public function export ( $FilePath, $RelationCols, $MeasureCols, $ExportNbTuples = true )
     {
         $TupleFile = $FilePath . '.nbtuple';
-        $HeaderFile = $FilePath . '.headers';
+        $AttrValues = $FilePath . '.attr.';
+        $RelPath = $FilePath . '.rel';
+        $MesPath = $FilePath . '.mes';
+        
+        if ( $this->AsNumerics )
+        {
+            foreach ( $this->AttributeValues as $Attr => $Values )
+            {
+                $AttrValuesFile = $AttrValues . $Attr;
+                
+                if ( file_exists ( $AttrValuesFile ) )
+                {
+                    unlink ( $AttrValuesFile );
+                }
+
+                if ( ! isset ( $this->AttributeIgnored [$Attr] ) )
+                {
+                    foreach ( $Values as $Key => $Val )
+                    {
+                        file_put_contents ( $AttrValuesFile, "$Key=$Val" . PHP_EOL, FILE_APPEND );
+                    }
+                }
+            }
+        }
+        
+        
 
         if ( $ExportNbTuples ) file_put_contents ( $TupleFile, $this->NbTuples . PHP_EOL );
+       
+        Arrays::exportAsCSV ( $this->Data, ' ', $RelationCols, Arrays::EXPORT_ROW_NO_HEADER, $RelPath, array (), array (), ';' );
 
-        if ( $ExportHeaders ) Arrays::exportAsCSV ( $this->Attributes, ',', Arrays::EXPORT_COLUMN_NO_HEADER, Arrays::EXPORT_ROW_NO_HEADER, $HeaderFile, array (), array (), ';' );
-
-        Arrays::exportAsCSV ( $this->Data, ',', Arrays::EXPORT_COLUMN_NO_HEADER, Arrays::EXPORT_ROW_NO_HEADER, $FilePath, array (), array (), ';' );
+        Arrays::exportAsCSV ( $this->Data, ' ', $MeasureCols, Arrays::EXPORT_ROW_NO_HEADER, $MesPath, array (), array (), ';' );
     }
     
     public function getData ( ) 
@@ -106,6 +137,11 @@ class Aggregate
     public function getAttributes ( )
     {
         return $this->Attributes;
+    }
+    
+    public function getAttributeValues ( )
+    {
+        return $this->AttributeValues;
     }
     
     public function getNbTuples ( )
@@ -125,15 +161,59 @@ class Aggregate
         if ( empty ( $this->Attributes ) ) throw new Exception ( 'No Attributes' );
     }
     
-    protected function fill ()
+    protected function convertToNumerics ( $Value, $Attribute )
+    {
+        $Result = $Value;
+        
+        if ( $this->AsNumerics )
+        {
+            $Attr = rtrim ( $Attribute, "0123456789" );
+            if ( ! isset ( $this->AttributeValues [$Attr] ) ) 
+            {
+                if ( is_numeric ( $Value ) )
+                {
+                    $this->AttributeIgnored [$Attr] = TRUE;
+                }
+                else
+                {
+                    $this->AttributeValues [$Attr] = array ();
+                    $Result = 1;
+                }
+            }
+            elseif ( ! isset ( $this->AttributeIgnored [$Attr] ) )
+            {
+                $Result = array_search ( $Value, $this->AttributeValues [$Attr] );
+                if ( FALSE === $Result )
+                {
+                    $Result = count ( $this->AttributeValues [$Attr] ) + 1;
+                }
+            }
+            
+            $this->AttributeValues [$Attr] [$Result] = $Value; 
+        }
+        
+        return $Result;
+    }
+    
+    protected function retrieveData ()
     {
         Log::fct_enter ( __METHOD__ );
-
         $DbClass = static::$DBClass;
         
         $DbClass::execute ( "SELECT * FROM " . static::$Table . ";" );
         
         $Results = $DbClass::getResults ( );
+        
+        Log::fct_exit ( __METHOD__ );
+        
+        return $Results;
+    }
+    
+    protected function fill ()
+    {
+        Log::fct_enter ( __METHOD__ );
+
+        $Results = $this->retrieveData ( );
         
         $CurrentTuple = 0;
         
@@ -147,12 +227,14 @@ class Aggregate
                     { 
                         if ( ! in_array ( $Key, $this->Attributes ) ) $this->Attributes [] = $Key;
                          
-                        $this->Data [ $CurrentTuple ] [ $Key ] = $Value;
+                        $this->Data [ $CurrentTuple ] [ $Key ] = $this->convertToNumerics ( $Value, $Key );
                     }
                 }
                 $CurrentTuple++;
             }
         }
+        
+//        print_r ( $this->AttributeValues );
         
         $this->NbTuples += $CurrentTuple;
 

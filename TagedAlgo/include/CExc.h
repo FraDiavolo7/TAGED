@@ -5,13 +5,14 @@
 #include <iostream>
 #include <string>
 #include <cerrno>
+#include <exception>
 namespace Taged
 {
 /**
  * @brief Classe CExc.
  * 
  */
-class CExc
+class CExc : public std::exception
 {
   protected :
     std::string m_Libelle;
@@ -38,6 +39,7 @@ class CExc
      */
     virtual std::ostream & Afficher (std::ostream & os = std::cerr) const;
 
+    virtual const char * what ( void ) const throw ();
 };  //  CExc
 
 ////////////////// class CExc ////////////////
@@ -50,6 +52,12 @@ inline std::ostream & CExc::Afficher (std::ostream & os /*= cerr*/ ) const
     return os << m_Libelle ;
 
 }  //  Afficher()
+
+inline const char * CExc::what ( void ) const throw ()
+{
+   return m_Libelle.c_str ();
+} // what
+
 }
 #endif  // __CEXC_H__
 

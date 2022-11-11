@@ -10,7 +10,7 @@ class PageCollAggregate extends TagedPage
 	
 		$Switch = new Switcher ( $InputData );
 		
-		$Aggregate = new CollAggregate ();
+		$Aggregate = new AggCollRequete ( FALSE );
 		
 		$this->add ( HTML::div ( $Aggregate->show (), array ( 'class' => 'coll_data' ) ) );
 	}

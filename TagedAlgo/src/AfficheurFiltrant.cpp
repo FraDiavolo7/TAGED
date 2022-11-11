@@ -64,6 +64,8 @@ void Filtrage(const char* fileNameIn, ostream & ficOut, unsigned int minSeuil1, 
 			if (estEmergent(contenu, minSeuil1, minSeuil2))
 			{
 				NbLineInCubeEmergent++;
+                cerr << "CDE CDE CDE!!!!! " << NbLineInCubeEmergent << endl;
+				cout << contenu << endl; // on affiche la ligne
 				ficOut << contenu << endl; // on affiche la ligne
 			}
 

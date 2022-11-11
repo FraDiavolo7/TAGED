@@ -16,45 +16,11 @@ chdir ( realpath ( dirname ( __FILE__ ) ) ); // change to script dir to enable r
 
 include '../src/define.php';
 
-$Algo = './taged';
-$AlgoOpt = '';
+$Algo = '/opt/taged/taged/TagedAlgo/exe/taged';
 
 $Target = $argv [1];
-$TargetBase = './Analysis/' . $Target;
-$TargetFile =  $TargetBase . ".ini";
-$TmpFolder = $TargetBase . ".tmp";
 
-if ( file_exists ( $TargetFile ) )
-{
-    $Message = "Executing analysis on $Target"; 
-    
-    Log::info ( $Message );
-    echo $Message . PHP_EOL;
+$Analysis = new Analysis ( $Target . '.ini' );
 
-    if ( ! is_dir ( $TmpFolder ) ) mkdir ( $TmpFolder );
-    
-    $AnalysisData = parse_ini_file ( $TargetFile );
-    
-    $Class = $AnalysisData [ 'AggregateClass' ] ?? NULL;
-    
-    if ( NULL != $Class )
-    {
-        $AggregateFile = "$TmpFolder/aggregate";
-        
-        $Aggregate = new $Class ();
-        
-        $NbTuples = $Aggregate->getNbTuples ();
-        $NbAttributes = $Aggregate->getNbAttributes ();
-        
-        $Aggregate->export ( $AggregateFile, false, false );
-        
-        $Command = "$Algo $AggregateFile $NbAttributes $NbTuples $AlgoOpt"; 
-        
-        echo $Command . PHP_EOL;
-        // unlink ( $AlgoInput );
-    }
-    
-    // rmdir ( $TmpFolder );
-}
+$Analysis->run ( $Algo, 200, 200 );
 
-?>

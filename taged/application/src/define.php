@@ -48,6 +48,7 @@ define ( 'APP_LIST', 'app_list' );
 define ( 'APP_NAME_COLLECTION', 'collection' );
 define ( 'APP_NAME_MATCH3', 'match3' );
 define ( 'APP_NAME_HACK_N_SLASH', 'hackNslash' );
+define ( 'APP_NAMES', array ( APP_NAME_COLLECTION, APP_NAME_MATCH3, APP_NAME_HACK_N_SLASH ) );
 
 define ( 'DATA_TMP_HNS', DATA_HOME . '/' . APP_NAME_HACK_N_SLASH . '/' );
 define ( 'DATA_TMP_HNS_ADDR', DATA_TMP_HNS . 'addr/' );
@@ -57,6 +58,15 @@ define ( 'DATA_ERRORS_HNS', DATA_HOME . '/errors/' . APP_NAME_HACK_N_SLASH . '/'
 
 define ( 'STATS_GET_SCRIPT', SCRIPT_HOME . "/getStats.sh" );
 define ( 'STATS_SEPARATOR', " : " );
+
+define ( 'AGGREGATE_FOLDER_DESC',     '/home/taged/data/aggregates/list/' );
+define ( 'AGGREGATE_FOLDER_TMP',      '/home/taged/data/aggregates/tmp/' );
+define ( 'AGGREGATE_FOLDER_RESULTS',  '/home/taged/data/aggregates/results/' );
+define ( 'AGGREGATE_FOLDER_REQUESTS', '/home/taged/data/aggregates/requests/' );
+define ( 'ANALYSIS_ALGO', '/opt/taged/taged/TagedAlgo/exe/taged' );
+define ( 'ANALYSIS_PARAM_M', 200 );
+define ( 'ANALYSIS_PARAM_N', 200 );
+
 
 Log::setLogFile ( LOG_FILE );
 //Log::setDebug ( Log::ALL );

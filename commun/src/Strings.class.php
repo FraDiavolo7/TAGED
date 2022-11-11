@@ -214,6 +214,83 @@ public static function convertToAscii ( $String )
     return $Result;
 }
 
+const CASE_SNAKE = 'snake_case';
+const CASE_SNAKE_UPPER = 'Snake_Case';
+const CASE_CAMEL = 'CamelCase';
+const CASE_CAMEL_LOWER = 'camelCase';
+const CASE_NATURAL = 'Natural Case';
+const CASE_NATURAL_LOWER = 'natural case';
+
+public static function convertCase ( $Text, $To = self::CASE_NATURAL, $From = self::CASE_CAMEL )
+{
+    $Text = trim ( $Text );
+    $Result = $Text;
+    
+    if ( $To != $From )
+    {
+        $Intermediate = array ();
+        switch ( $From )
+        {
+            case self::CASE_SNAKE_UPPER :
+                $Text = strtolower ( $Text );
+                
+            case self::CASE_SNAKE :
+                $Intermediate = explode ( '_', $Text );
+                break;
+                
+            case self::CASE_CAMEL : 
+            case self::CASE_CAMEL_LOWER : 
+                $StringToExplode = str_replace ( 
+                    array ( 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ), 
+                    array ( ' A', ' B', ' C', ' D', ' E', ' F', ' G', ' H', ' I', ' J', ' K', ' L', ' M', ' N', ' O', ' P', ' Q', ' R', ' S', ' T', ' U', ' V', ' W', ' X', ' Y', ' Z' ),
+                    $Text );
+                
+                $Text = trim ( $StringToExplode );
+            
+            case self::CASE_NATURAL : 
+                $Text = strtolower ( $Text );
+            
+            case self::CASE_NATURAL_LOWER : 
+                $Intermediate = explode ( ' ', $Text );
+                break;
+                
+            default: break;
+        }
+        
+        switch ( $To ) 
+        {
+            case self::CASE_SNAKE_UPPER :
+                $Intermediate = array_map ( 'ucfirst', $Intermediate );
+            
+            case self::CASE_SNAKE :
+                
+                $Result = implode ( '_', $Intermediate );
+                break;
+            
+            case self::CASE_CAMEL : 
+            case self::CASE_CAMEL_LOWER :
+                $Intermediate = array_map ( 'ucfirst', $Intermediate );
+                
+                $Result = implode ( '', $Intermediate );
+                
+                if ( $To == self::CASE_CAMEL_LOWER ) $Result = lcfirst ( $Result );
+                
+                break;
+                
+            case self::CASE_NATURAL :  
+                $Intermediate = array_map ( 'ucfirst', $Intermediate );
+                
+            case self::CASE_NATURAL_LOWER : 
+                
+                $Result = implode ( ' ', $Intermediate );
+                break;
+                
+            default: break;
+        }
+    }
+    
+    return $Result;
+}
 
 //--------------
 } // Strings

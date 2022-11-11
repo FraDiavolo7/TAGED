@@ -3,6 +3,16 @@
 DIR=`dirname $0`
 cd $DIR &> /dev/null
 
+ExecFile=`basename $0`.run
+
+if [ -f $ExecFile ]
+then
+    echo "Already running"
+    exit
+fi
+
+touch $ExecFile
+
 DataManager=/home/taged/data/datamanager.sh
 AppliType=collection
 Process=`dirname $0`/processCollEntry.php
@@ -26,5 +36,6 @@ do
     done
 done
 
+rm $ExecFile
 
 cd - &> /dev/null

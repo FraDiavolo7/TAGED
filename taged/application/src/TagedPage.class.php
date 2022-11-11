@@ -10,7 +10,9 @@ class TagedPage extends THPage
 	    'Test' => 'Test',
 	    'Collection Data' => 'CollData',
 	    'Collection Aggregate' => 'CollAggregate',
-	    'Hack&apos;n Slash Data' => 'HnSData'
+	    'Hack&apos;n Slash Data' => 'HnSData',
+	    'Gestion Aggregations' => 'GestAggregate',
+	    'Aggregations' => 'ChangeAggregate'
 	);
     	
 	public function __construct ( $InputData = NULL )

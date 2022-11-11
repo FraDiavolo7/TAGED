@@ -6,6 +6,8 @@ class CollPlayer
     const NOM    = 'nom';
     const AVATAR = 'avatar';
     const RATING = 'elo';
+    const NUMERO = 'numero';
+    const VICTOIRE = 'victoire';
     
     /**
      * @var $Player is p1 or p2 most of the time, may also be p3 or p4 in 4 players battles.
@@ -37,7 +39,7 @@ class CollPlayer
     public function __construct ( $Player, $Username, $Avatar, $Rating) 
     {
         $this->Player = $Player;
-        $this->Username = $Username;
+        $this->setUsername ( $Username );
         $this->Avatar = $Avatar;
         $this->Rating = $Rating;
     }
@@ -76,7 +78,7 @@ class CollPlayer
      */
     public function setUsername ( $Username )
     {
-        $this->Username = $Username;
+        $this->Username = TagedDBColl::escape4HTML ( $Username );
     }
 
     /**
@@ -98,7 +100,7 @@ class CollPlayer
     /**
      * @return The rating of the user.
      */
-    public function getRating()
+    public function getRating ()
     {
         return $this->Rating;
     }
@@ -106,8 +108,15 @@ class CollPlayer
     /**
      * @param int $Rating The rating of the user
      */
-    public function setRating($Rating)
+    public function setRating ( $Rating )
     {
+        if ( 0 == $Rating )
+        {
+            TagedDBColl::execute ( "SELECT " . self::RATING . " FROM " . self::TABLE . " WHERE " . self::NOM . " = '" . $this->Username ."'" );
+            $Results = TagedDBColl::getResults ( );
+            
+            $Rating = Arrays::getIfSet ( $Results, self::RATING, 1000 );
+        }
         $this->Rating = $Rating;
     }
     
@@ -115,14 +124,23 @@ class CollPlayer
     {
         Log::fct_enter ( __METHOD__ );
         
-        // #1 vérifie si un Utilisateur existe pour ce nom
-        TagedDBColl::execute ( "SELECT * FROM " . self::TABLE . " WHERE " . self::NOM . " = '" . $this->Username ."'" );
+        // #1 vï¿½rifie si un Utilisateur existe pour ce nom
+        TagedDBColl::execute ( "SELECT *  FROM " . self::TABLE . " WHERE " . self::NOM . " = '" . $this->Username ."'" );
         $Results = TagedDBColl::getResults ( );
         
         if ( ( NULL == $Results ) || ( count ( $Results ) == 0 ) )
         {
-            // #2 Si non, ajoute entrée Utilisateur
-            TagedDBColl::execute ( "INSERT INTO " . self::TABLE . " (" . self::NOM . ", " . self::AVATAR . ") VALUES ('" . $this->Username . "', '" . $this->Avatar . "');" );
+            // #2 Si non, ajoute entrï¿½e Utilisateur
+            TagedDBColl::execute ( "INSERT INTO " . self::TABLE . " (" . self::NOM . ", " . self::AVATAR . ", " . self::RATING . ") VALUES ('" . $this->Username . "', '" . $this->Avatar . "', " . $this->Rating . ");" );
+        }
+        else 
+        {
+            $Elo = Arrays::getIfSet ( $Results, self::RATING,  0 );
+            
+            if ( $this->Rating != $Elo )
+            {
+                TagedDBColl::execute ( "UPDATE " . self::TABLE . " SET " . self::RATING . " = " . $this->Rating . " WHERE " . self::NOM . " = '" . $this->Username ."'" );
+            }
         }
         
         Log::fct_exit ( __METHOD__ );

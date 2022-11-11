@@ -106,6 +106,7 @@ class HTML
     public static function form      ( $Content = ' ', $Attributes = array () )  { return self::getTag ( 'form',    $Content, $Attributes );    }
     public static function p         ( $Content = ' ', $Attributes = array () )  { return self::getTag ( 'p',       $Content, $Attributes );    }
     public static function div       ( $Content = ' ', $Attributes = array () )  { return self::getTag ( 'div',     $Content, $Attributes );    }
+    public static function pre       ( $Content = ' ', $Attributes = array () )  { return self::getTag ( 'pre',     $Content, $Attributes );    }
     public static function span      ( $Content = ' ', $Attributes = array () )  { return self::getTag ( 'span',    $Content, $Attributes );    }
     public static function headerDiv ( $Content = ' ', $Attributes = array () )  { return self::getTag ( 'header',  $Content, $Attributes );    }
     public static function footer    ( $Content = ' ', $Attributes = array () )  { return self::getTag ( 'foorter', $Content, $Attributes );    }
@@ -399,6 +400,7 @@ class HTML
     {
         echo self::inputHidden ( $Name, $Value, $Attributes ) . "\n";
     }
+
     public static function input ( $Name, $Type, $Value, $Attributes = array () )
     {
         $InnerAttributes = $Attributes;
@@ -411,7 +413,22 @@ class HTML
     
     public static function showInput ( $Name, $Type, $Value, $Attributes = array () )
     {
-        echo self::inputNum ( $Name, $Type, $Value, $Attributes ) . "\n";
+        echo self::input ( $Name, $Type, $Value, $Attributes ) . "\n";
+    }
+    
+    public static function textarea ( $Name, $Value, $Rows, $Cols, $Attributes = array () )
+    {
+        $InnerAttributes = $Attributes;
+        $InnerAttributes [ 'name' ] = $Name;
+        $InnerAttributes [ 'rows' ] = $Rows;
+        $InnerAttributes [ 'cols' ] = $Cols;
+        
+        return self::getTag ( 'textarea', $Value, $InnerAttributes );
+    }
+    
+    public static function showTextarea ( $Name, $Value, $Rows, $Cols, $Attributes = array () )
+    {
+        echo self::textarea ( $Name, $Value, $Rows, $Cols, $Attributes ) . "\n";
     }
     
     public static function menu ( $Liste, $Selected = '', $Attributes = array (), $Depth = 1 )

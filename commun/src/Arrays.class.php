@@ -156,12 +156,14 @@ abstract class Arrays
      */
     public static function exportAsCSV ( $InputData, $Separator = ',', $ColumnHeader = self::EXPORT_COLUMN_FROM_DATA, $RowHeader = self::EXPORT_ROW_FROM_DATA, $FilePath = '', $IgnoreColumns = array (), $IgnoreRows = array (), $ReplaceSep = '' )
     {
+//         echo $FilePath . print_r ( $InputData, true ) . PHP_EOL;
         $Result = '';
         $Continue = true;
 
         // Array of input column name indexed by the output label
         $Columns = self::extractColumns ( $InputData, $ColumnHeader, $IgnoreColumns );
                 
+//         echo $FilePath . print_r ( $Columns, true ) . PHP_EOL;
         if ( is_array ( $Columns ) )
         {
             if ( $ColumnHeader != self::EXPORT_COLUMN_NO_HEADER ) 

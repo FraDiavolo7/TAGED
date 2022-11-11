@@ -161,7 +161,8 @@ class CollParser {
      */
     protected function gameIdPreg ( $Match )
     {
-        Log::fct_enter ( __METHOD__  . json_encode ( $Match ) );
+        Log::fct_enter ( __METHOD__ );
+        Log::info ( json_encode ( $Match ) );
         $GameID = Arrays::getOrCrash ( $Match, 1, 'Invalid game ID' );
 
         Log::info ( "Parsing game $GameID" );
@@ -176,7 +177,8 @@ class CollParser {
      */
     protected function playerPreg ( $Match ) 
     {
-        Log::fct_enter ( __METHOD__  . json_encode ( $Match ) );
+        Log::fct_enter ( __METHOD__ );
+        Log::info ( json_encode ( $Match ) );
         $PlayerPosition = Arrays::getOrCrash ( $Match, 1, 'Invalid player position' );
         $Username       = Arrays::getOrCrash ( $Match, 2, 'Invalid player name'     );
         $Avatar         = Arrays::getIfSet   ( $Match, 3, ''  );
@@ -192,7 +194,8 @@ class CollParser {
      */
     protected function teamSizePreg ( $Match ) 
     {
-        Log::fct_enter ( __METHOD__  . json_encode ( $Match ) );
+        Log::fct_enter ( __METHOD__ );
+        Log::info ( json_encode ( $Match ) );
         $Player = Arrays::getOrCrash ( $Match, 1, 'Team not affected to as player' );
         $Size = Arrays::getOrCrash ( $Match, 2, 'Team quantity invalid' );
         
@@ -202,7 +205,8 @@ class CollParser {
 
     protected function gameTypePreg ( $Match ) 
     {
-        Log::fct_enter ( __METHOD__  . json_encode ( $Match ) );
+        Log::fct_enter ( __METHOD__ );
+        Log::info ( json_encode ( $Match ) );
         $GameType = Arrays::getOrCrash ( $Match, 1, 'Invalid Game Type' );
         $this->Game->setType ( $GameType );
         Log::fct_exit ( __METHOD__ );
@@ -210,7 +214,8 @@ class CollParser {
 
     protected function genPreg ( $Match ) 
     {
-        Log::fct_enter ( __METHOD__  . json_encode ( $Match ) );
+        Log::fct_enter ( __METHOD__ );
+        Log::info ( json_encode ( $Match ) );
         $Gen = Arrays::getOrCrash ( $Match, 1, 'Invalid Generation' );
         $this->Game->setGen ( $Gen );
         Log::fct_exit ( __METHOD__ );
@@ -218,7 +223,8 @@ class CollParser {
 
     protected function tierPreg ( $Match ) 
     {
-        Log::fct_enter ( __METHOD__  . json_encode ( $Match ) );
+        Log::fct_enter ( __METHOD__ );
+        Log::info ( json_encode ( $Match ) );
         $Tier = Arrays::getOrCrash ( $Match, 1, 'Invalid Tier' );
         $this->Game->setTier ( $Tier );
         Log::fct_exit ( __METHOD__ );
@@ -226,7 +232,8 @@ class CollParser {
 
     protected function ratedPreg ( $Match ) 
     {
-        Log::fct_enter ( __METHOD__  . json_encode ( $Match ) );
+        Log::fct_enter ( __METHOD__ );
+        Log::info ( json_encode ( $Match ) );
         $Rated   = Arrays::getOrCrash ( $Match, 1, 'Rated not filled' );
         $Message = Arrays::getIfSet   ( $Match, 2, '' );
         $this->Game->setRated ( $Message );
@@ -235,7 +242,8 @@ class CollParser {
     
     protected function switchP1 ( $Match )
     {
-        Log::fct_enter ( __METHOD__  . json_encode ( $Match ) );
+        Log::fct_enter ( __METHOD__ );
+        Log::info ( json_encode ( $Match ) );
         $Pokemon = Arrays::getOrCrash ( $Match, 1, 'Pokemon not filled' );
         $this->Game->switch ( 1, $Pokemon );
         Log::fct_exit ( __METHOD__ );
@@ -243,7 +251,8 @@ class CollParser {
 
     protected function switchP2 ( $Match )
     {
-        Log::fct_enter ( __METHOD__  . json_encode ( $Match ) );
+        Log::fct_enter ( __METHOD__ );
+        Log::info ( json_encode ( $Match ) );
         $Pokemon = Arrays::getOrCrash ( $Match, 1, 'Pokemon not filled' );
         $this->Game->switch ( 2, $Pokemon );
         Log::fct_exit ( __METHOD__ );
@@ -276,7 +285,8 @@ class CollParser {
 
     protected function winnerPreg ( $Match ) 
     {
-        Log::fct_enter ( __METHOD__  . json_encode ( $Match ) );
+        Log::fct_enter ( __METHOD__ );
+        Log::info ( json_encode ( $Match ) );
         $User = Arrays::getOrCrash ( $Match, 1, 'User not filled' );
         $this->Game->setWinner ( $User );
         Log::fct_exit ( __METHOD__ );
@@ -284,7 +294,8 @@ class CollParser {
 
     protected function tiePreg ( $Match ) 
     {
-        Log::fct_enter ( __METHOD__  . json_encode ( $Match ) );
+        Log::fct_enter ( __METHOD__ );
+        Log::info ( json_encode ( $Match ) );
         $this->Game->setTie ( );
         Log::fct_exit ( __METHOD__ );
     }

@@ -8,6 +8,7 @@ class CollGame
     
     const ID = 'id_combat';
     const RESULT = 'resultat';
+    const GAGNANT = 'gagnant';
     const TIER = 'tier';
     const RULES = 'rules';
     const CLASSE = 'classe';
@@ -220,19 +221,25 @@ class CollGame
         }
     }
     
-    protected function savePlayerEngaged ( $Player, $Team )
+    protected function savePlayerEngaged ( $Player, $Team, $Num )
     {
         Log::fct_enter ( __METHOD__ );
+        $Victoire = 0;
+        if ( $this->Result == $Num ) $Victoire = 1;
         TagedDBColl::execute ( "INSERT INTO " . self::TABLE_ENGAGE . " (" .
             self::ID . ', ' .
             CollTeam::ID . ', ' .
             CollPlayer::NOM . ', ' .
-            CollPlayer::RATING .
+            CollPlayer::RATING . ', ' .
+            CollPlayer::NUMERO . ', ' .
+            CollPlayer::VICTOIRE . 
             ") VALUES (" .
             $this->IDCombat . ', ' .
             $Team->getID () .  ', ' .
             "'" . $Player->getUsername () . "'" . ', ' .
-            $Player->getRating () . 
+            $Player->getRating () . ', ' .
+            $Num  . ', ' .
+            $Victoire .
             ");" );
             Log::fct_exit ( __METHOD__ );
     }
@@ -240,24 +247,26 @@ class CollGame
     protected function saveGame ()
     {
         Log::fct_enter ( __METHOD__ );
-        // #1 Enregistrer entrée Combat
+        // #1 Enregistrer entrï¿½e Combat
         TagedDBColl::execute ( "INSERT INTO " . self::TABLE . " (" . 
             self::ID . ', ' .
             self::RESULT . ', ' .
+            self::GAGNANT . ', ' .
             self::TIER . ', ' .
             self::RULES . ', ' .
             self::CLASSE .            
             ") VALUES (" . 
             $this->IDCombat . ', ' .
             "'" . $this->Result . "'" .  ', ' .
+            $this->Result .  ', ' .
             $this->Gen .  ', ' .
             "'" . $this->Rules . "'" . ', ' .
             "'" . $this->Tier . "'" . 
             ");" );
         
-        // #3 Enregistrer les entrées Engage
-        $this->savePlayerEngaged ( $this->Player1, $this->Team1 );
-        $this->savePlayerEngaged ( $this->Player2, $this->Team2 );
+        // #3 Enregistrer les entrï¿½es Engage
+        $this->savePlayerEngaged ( $this->Player1, $this->Team1, 1 );
+        $this->savePlayerEngaged ( $this->Player2, $this->Team2, 2 );
         
         Log::fct_exit ( __METHOD__ );
     }
@@ -272,6 +281,46 @@ class CollGame
         $this->saveGame ();
         Log::fct_exit ( __METHOD__ );
     }
+    
+    /* NE PLUS UTILISER
+    public static function pouet ()
+    {
+        Log::fct_enter ( __METHOD__ );
+        
+        TagedDBColl::execute ( "SELECT * FROM " . self::VIEW . ";" );
+
+        $Results = TagedDBColl::getResults ( );
+        $PlayerNum = 0;
+        
+        foreach ( $Results as $Result )
+        {
+            $ResultPlayer   = Arrays::getIfSet ( $Result, CollPlayer::NUMERO,   -1 );
+            $ResultVictoire = Arrays::getIfSet ( $Result, CollPlayer::VICTOIRE, -1 );
+            
+            if ( ( $ResultPlayer == -1 ) || ( $ResultVictoire == -1 ) )
+            {
+                $PlayerNum = ( $PlayerNum == 1 ? 2 : 1 ); 
+                $Resultat = Arrays::getIfSet ( $Result, self::RESULT,  0 );
+                $Victoire = ( $Resultat == $PlayerNum ? 1 : 0 );
+                
+                if ( $ResultPlayer   != -1 ) $PlayerNum = $ResultPlayer;
+                if ( $ResultVictoire != -1 ) $Victoire = $ResultVictoire;
+                 
+                $Request = "UPDATE " . self::TABLE_ENGAGE . " SET " .
+                    CollPlayer::NUMERO   . ' = ' . $PlayerNum . ', ' .
+                    CollPlayer::VICTOIRE . ' = ' . $Victoire  .
+                    " WHERE " .
+                    self::ID        . ' = ' .       Arrays::getIfSet ( $Result, self::ID,           -1 ) . ' AND ' .
+                    CollTeam::ID    . ' = ' .       Arrays::getIfSet ( $Result, CollTeam::ID,       -1 ) . ' AND ' .
+                    CollPlayer::NOM . ' = ' . "'" . Arrays::getIfSet ( $Result, CollPlayer::NOM,    '' ) . "'" . 
+                    ";" ;
+                
+                Log::info ( "Request = " . $Request );
+                TagedDBColl::execute ( $Request );
+            }
+        }
+        Log::fct_exit ( __METHOD__ );
+    } */
     
     protected function fill ()
     {
