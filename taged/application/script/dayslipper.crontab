@@ -24,3 +24,5 @@
 
 #*/5 * * * * ~/crontab/scripts/TAGED_get_collection.sh &> /dev/null
 14 3 * * * ~/crontab/scripts/GIT_commit_push.sh &> /dev/null
+41 * * * * ~/crontab/scripts/GIT_commit_push_data.sh &> /dev/null
+0 9 * * * ~/crontab/scripts/GIT_tell.sh &> /dev/null

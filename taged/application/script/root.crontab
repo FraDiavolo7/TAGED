@@ -23,6 +23,6 @@
 # m h  dom mon dow   command
 
 #0 5 * * 0 ~/crontab/scripts/reboot.sh &> /dev/null
-0 5 * * 5 /root/crontab/scripts/ROOT_reboot.sh &> /dev/null
-0 9 * * 5 /root/crontab/scripts/ROOT_tell.sh &> /dev/null
+0 5 * * * /root/crontab/scripts/ROOT_reboot.sh &> /dev/null
+0 9 * * * /root/crontab/scripts/ROOT_tell.sh &> /dev/null
 0 17 * * * /root/crontab/scripts/ROOT_heartbeat.sh &> /dev/null

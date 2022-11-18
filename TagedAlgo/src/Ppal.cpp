@@ -35,8 +35,7 @@ Relation* TraiterArg(int argc, char *argv[]);
  * @param algo 
  * @param ficName 
  */
-template <typename TAlgo>
-void EvaluerAlgo(Relation* r, TAlgo & algo, string const & ficName);
+void EvaluerAlgo(Relation* r, string const & ficName);
 
 unsigned int MinSeuil2 = 0;
 unsigned int MinSeuil1 = numeric_limits<unsigned int>::max();
@@ -65,27 +64,8 @@ void ppal(int argc, char *argv[])
 	VerifierArg(argc, argv);
 	Relation* r = TraiterArg(argc, argv);
 
-	//BucComplet<Filtre<AfficheurStd> > fbuc1(r,defaultOut, MinSeuil1, MinSeuil2);
-	//EvaluerAlgo(r, fbuc1, argv[1]);
+	EvaluerAlgo(r, argv[1]);
 
-	//TagedE<AfficheurStd> tagede1(r,defaultOut, MinSeuil1, MinSeuil2);
-	//EvaluerAlgo(r, tagede1, argv[1]);
-
-	//TagedF<AfficheurStd> tagedf1(r,defaultOut, MinSeuil1, MinSeuil2);
-	//EvaluerAlgo(r, tagedf1, argv[1]);
-
-	//BucComplet<Filtre<AfficheurMax<DicoMaxList> > > fbuc2(r,defaultOut, MinSeuil1, MinSeuil2);
-	//EvaluerAlgo(r, fbuc2, argv[1]);
-
-	//TagedE<AfficheurMax<DicoMaxList> > tagede2(r,defaultOut, MinSeuil1, MinSeuil2);
-	//EvaluerAlgo(r, tagede2, argv[1]);
-
-	//TagedF<AfficheurMax<DicoMaxList> > tagedf2(r,defaultOut, MinSeuil1, MinSeuil2);
-	//EvaluerAlgo(r, tagedf2, argv[1]);
-
-	// Utilisation de l'algorithme Taged-F
-	TagedF<AfficheurMaxRapide<DicoMaxList> > tagedf3(r,defaultOut, MinSeuil1, MinSeuil2);
-	EvaluerAlgo(r, tagedf3, argv[1]);
 
 	// Libération ressources
 	delete r;
@@ -99,8 +79,7 @@ void ppal(int argc, char *argv[])
  * @param algo 
  * @param ficName 
  */
-template <typename TAlgo>
-void EvaluerAlgo(Relation* r, TAlgo & algo, const string & ficName)
+void EvaluerAlgo(Relation* r, const string & ficName)
 {
 	// Pour réaliser le premier traitement sur les données (trier sur la première dimension)
 	//  il faut de la mémoire disponible et initialisée
@@ -120,9 +99,6 @@ void EvaluerAlgo(Relation* r, TAlgo & algo, const string & ficName)
 	for (unsigned int i = 0; i < r->NbTuple; ++i)
 		IndexData[i] = i;
 
-	cerr << endl;
-	cerr << "==== "<< algo.getNomAlgo() <<" ====" << endl;
-
 	string FicNameCubeEmergent = ficName + ".cube.emergent";
 	ofstream ficCubeEmergent(FicNameCubeEmergent.c_str(), ios::out | ios::trunc); //déclaration du flux et ouverture du fichier
 	if (!ficCubeEmergent)
@@ -130,6 +106,17 @@ void EvaluerAlgo(Relation* r, TAlgo & algo, const string & ficName)
 		cerr << "Impossible d'ouvrir le fichier " << FicNameCubeEmergent << " !" << endl;
 		exit(-1);
 	}
+
+	//BucComplet<Filtre<AfficheurStd> >               algo ( r, ficCubeEmergent, MinSeuil1, MinSeuil2);
+	//BucComplet<Filtre<AfficheurMax<DicoMaxList> > > algo ( r, ficCubeEmergent, MinSeuil1, MinSeuil2);
+	//TagedE<AfficheurStd>               algo ( r, ficCubeEmergent, MinSeuil1, MinSeuil2);
+	TagedE<AfficheurMax<DicoMaxList> > algo ( r, ficCubeEmergent, MinSeuil1, MinSeuil2);
+	//TagedF<AfficheurStd>                     algo ( r, ficCubeEmergent, MinSeuil1, MinSeuil2);
+	//TagedF<AfficheurMax<DicoMaxList> >       algo ( r, ficCubeEmergent, MinSeuil1, MinSeuil2);
+	//TagedF<AfficheurMaxRapide<DicoMaxList> > algo ( r, ficCubeEmergent, MinSeuil1, MinSeuil2);
+    
+	cerr << endl;
+	cerr << "==== "<< algo.getNomAlgo() <<" ====" << endl;
 
 	// Init du compteur de temps
 	ThreadTimeInit();

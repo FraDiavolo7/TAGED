@@ -94,7 +94,8 @@ class Analysis
     
     public function run ( $Algorithm, $M, $N )
     {
-        $Content = '';
+        $Result = FALSE;
+        $this->Result = '';
         $this->check ();
         
         if ( $this->Runnable )
@@ -102,12 +103,18 @@ class Analysis
             $Message = "Executing analysis on " . $this->DescFile;
             
             Log::info ( $Message );
-            $Content .= $Message . PHP_EOL;
+            $this->Result .= $Message . PHP_EOL;
             
             $Name = basename ( $this->DescFile, '.ini' ); 
             $TmpFolder = AGGREGATE_FOLDER_TMP . $Name . "/";
+            $ResultFolder = AGGREGATE_FOLDER_RESULTS . $Name . "/";
             
-            if ( ! is_dir ( $TmpFolder ) ) mkdir ( $TmpFolder );
+            if ( is_dir ( $TmpFolder ) ) 
+            {
+                shell_exec ( "rm -Rf $TmpFolder" );
+            }
+            
+            mkdir ( $TmpFolder );
             
             $AggregateFile = "$TmpFolder/aggregate";
             
@@ -128,16 +135,106 @@ class Analysis
             
             $Command = "$Algorithm $AggregateFile $NbAttributes $NbTuples $AlgoOpt";
             
-            $Content .= shell_exec ( $Command . ' 2>&1' ) . PHP_EOL;
+            $this->Result .= shell_exec ( $Command . ' 2>&1' ) . PHP_EOL;
 
-            // rmdir ( $TmpFolder );
+            shell_exec ( "rm -Rf $ResultFolder" );
+            shell_exec ( "mv $TmpFolder $ResultFolder" );
+            
+            $Result = TRUE;
         }
         else 
         {
-            $Content = 'Analyse non valide' . PHP_EOL;
+            $this->Result = 'Analyse non valide' . PHP_EOL;
+            $Result = FALSE;
         }
         
-        return $Content;
+        return $Result;
+    }
+    
+    public function formatResult ()
+    {
+        $Name = basename ( $this->DescFile, '.ini' );
+        $ResultFolder = AGGREGATE_FOLDER_RESULTS . $Name . "/";
+        
+        $FileBase = 'aggregate';
+        
+        $AggregateFile = "$ResultFolder/$FileBase";
+        
+        // Load Field Translation
+        $Files = scandir ( $ResultFolder );
+        $TradFields = array ();
+        
+        foreach ( $Files as $File )
+        {
+            $Attr = "$FileBase.attr.";
+            if ( Strings::compareSameSize ( $File, $Attr ) )
+            {
+                $FieldName = substr ( $File, strlen ( $Attr ) );
+                $TradFields [$FieldName] = parse_ini_file ( "$ResultFolder/$File" );
+            }
+        }
+
+//         echo '$TradFields ' . print_r ( $TradFields, TRUE ) . "<br>";
+        
+        // Get Fields
+        $RelFields = explode ( ',', $this->RelationCols );
+        $MesFields = explode ( ',', $this->MeasureCols  );
+        
+        $FieldNames = array_merge ( $RelFields, $MesFields );
+
+//         echo '$FieldNames ' . print_r ( $FieldNames, TRUE ) . "<br>";
+        
+        $this->Result  = HTML::startTable ( array ( 'class' => 'taged_stats' ));
+        $this->Result .= HTML::startTR ();
+        
+        // Compute an array of translation indexed by ordered fields
+        $Fields = array ();
+        foreach ( $FieldNames as $FieldName )
+        {
+            $Array = array ();
+            
+            $this->Result .= HTML::th ( $FieldName );
+            
+            $FieldName = rtrim ( $FieldName, "0123456789" );
+            
+            if ( isset ( $TradFields [$FieldName] ) ) $Array = $TradFields [$FieldName];
+            
+            $Fields [] = $Array;
+        }
+        $this->Result .= HTML::endTR ();
+        
+//         echo '$Fields ' . print_r ( $Fields, TRUE ) . "<br>";
+        
+        // For each line of Cube, convert relevant fields
+        $CubeFile = fopen ( "$AggregateFile.cube.emergent", "r" );
+        if ( $CubeFile )  
+        {
+            while ( ( $Line = fgets ( $CubeFile ) ) !== false ) 
+            {
+                $Entries = explode ( ' ', $Line );
+                $this->Result .= HTML::startTR ();
+                
+                foreach ( $Entries as $Num => $Entry )
+                {
+                    $OutEntry = $Entry;
+                    if ( isset ( $Fields [$Num] [$Entry] ) ) $OutEntry = $Fields [$Num] [$Entry];
+                    
+                    if ( ':' != $OutEntry ) $this->Result .= HTML::td ( $OutEntry );
+                }
+                $this->Result .= HTML::endTR ();
+            }
+            
+            fclose ( $CubeFile );
+        }
+        
+        $this->Result .= HTML::endTable ();
+        
+        return $this->Result;
+    }
+ 
+    public function getResult ()
+    {
+        return $this->Result;
     }
     
     public static function create ( $Name, $Game, $RelationCols, $MeasureCols, $File = NULL, $Table = NULL )
@@ -213,7 +310,7 @@ class Analysis
     protected $RelationCols;
     protected $MeasureCols;
     protected $Runnable;
-
+    protected $Result;
 }
 
 

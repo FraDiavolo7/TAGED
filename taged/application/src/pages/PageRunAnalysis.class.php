@@ -4,6 +4,8 @@ class PageRunAnalysis extends TagedPage
 {
     const RAN_AGGREGATE = 'ran_aggregate';
     const RAN_PASSWORD = 'ran_password';
+    const RAN_MIN1 = 'ran_min1';
+    const RAN_MIN2 = 'ran_min2';
     const RAN_SUBMIT = 'ran_submit';
     
 	public function __construct ( $InputData = NULL )
@@ -29,6 +31,8 @@ class PageRunAnalysis extends TagedPage
     	$Submit = Form::getData ( self::RAN_SUBMIT, '', $Data );
 	    
     	$this->Aggregate = Form::getData ( self::RAN_AGGREGATE, '', $Data );
+    	$this->Min1 = Form::getData ( self::RAN_MIN1, ANALYSIS_PARAM_M, $Data );
+    	$this->Min2 = Form::getData ( self::RAN_MIN2, ANALYSIS_PARAM_N, $Data );
     	$AggregateFile = NULL;
     	
     	if ( '' != $this->Aggregate )
@@ -38,12 +42,20 @@ class PageRunAnalysis extends TagedPage
     	
 	    if ( $Submit != '' )
 	    {
-	        $this->Aggregate = Form::getData ( self::RAN_AGGREGATE, '', $Data );
 	        $Password = Form::getData ( self::RAN_PASSWORD, '', $Data );
 	        
             if ( $Password == $this->Password ) 
 	        {
-	            $this->Result = $this->AggregateObj->run ( ANALYSIS_ALGO, ANALYSIS_PARAM_M, ANALYSIS_PARAM_N );
+	            $Result = $this->AggregateObj->run ( ANALYSIS_ALGO, $this->Min1, $this->Min2 );
+	            
+	            if ( TRUE == $Result)
+	            {
+	                $this->Result = $this->AggregateObj->formatResult ();
+	            }
+	            else
+	            {
+	                $this->Result = $this->AggregateObj->getResult ();
+	            }
 	        }
 	    }
 	    
@@ -54,6 +66,8 @@ class PageRunAnalysis extends TagedPage
 	{
 	    $Password = HTML::div ( HTML::inputPassword ( self::RAN_PASSWORD, '' ), array ( 'class' => 'passwd' ) );
 	    $Aggregate = HTML::div ( HTML::select ( self::RAN_AGGREGATE, $this->AggregateList, $this->Aggregate, array ( 'onchange' => 'this.form.submit()' ) ), array ( 'class' => 'aggregate' ) );
+	    $Min1 = HTML::div ( HTML::inputNum ( self::RAN_MIN1, $this->Min1, 0, 1000  ), array ( 'class' => 'min' ) );
+	    $Min2 = HTML::div ( HTML::inputNum ( self::RAN_MIN2, $this->Min2, 0, 1000  ), array ( 'class' => 'min' ) );
 	    $Submit = HTML::div ( HTML::submit( self::RAN_SUBMIT, "Envoyer" ), array ( 'class' => 'submit' ) );
 
         $Content = $Aggregate;
@@ -61,13 +75,15 @@ class PageRunAnalysis extends TagedPage
         if ( '' != $this->Aggregate )
         {
             $Content .= $Password;
+            $Content .= $Min1;
+            $Content .= $Min2;
             $Content .= $Submit;
         }
          
 	    $this->add ( HTML::form ( $Content, array ( 'method' => 'POST',  'enctype' => 'multipart/form-data' ) ) );
 	    if ( '' != $this->Result )
 	    {
-	        $this->add ( HTML::pre ( $this->Result ) );
+	        $this->add ( $this->Result );
 	    }
 	    
 	}

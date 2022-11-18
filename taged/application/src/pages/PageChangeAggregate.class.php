@@ -44,10 +44,15 @@ class PageChangeAggregate extends TagedPage
 	    if ( $Submit != '' )
 	    {
 	        $this->Request = Form::getData ( self::CHANGE_REQUEST, '', $Data );
+	        $RelCols = Form::getData ( self::CHANGE_REL_COLS, '', $Data );
+	        $MesCols = Form::getData ( self::CHANGE_MES_COLS, '', $Data );
 	        $Password = Form::getData ( self::CHANGE_PASSWORD, '', $Data );
 	        
 	        if ( ( $Password == $this->Password ) && ( NULL != $AggregateFile ) ) 
 	        {
+	            $this->AggregateObj->setRelationCols ( $RelCols );
+	            $this->AggregateObj->setMeasureCols ( $MesCols );
+	            $this->AggregateObj->write ( );
 	            $AggregateFile->setRequest ( $this->Request );
 	            echo "Updating Request for " . $this->Aggregate;
 	        }

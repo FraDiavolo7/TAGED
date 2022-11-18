@@ -53,6 +53,7 @@ class PageGestAggregate extends TagedPage
                 HTML::td ( $Label ) .
                 HTML::td ( 
                     HTML::link ( Menu::buildGenLink ( 'RunAnalysis', array ( PageRunAnalysis::RAN_AGGREGATE => $Name ) ), "Analyser" ) .
+                    HTML::link ( Menu::buildGenLink ( 'ShowAggregate', array ( PageShowAggregate::SHOW_AGGREGATE => $Name ) ), "Afficher" ) .
                     HTML::link ( Menu::buildGenLink ( 'ChangeAggregate', array ( PageChangeAggregate::CHANGE_AGGREGATE => $Name ) ), "Modifier" ) .
                     HTML::link ( Menu::buildGenLink ( 'GestAggregate', array ( self::GAG_AGGREGATE => $Name ) ), "Supprimer" )
                     )

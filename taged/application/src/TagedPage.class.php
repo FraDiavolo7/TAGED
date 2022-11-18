@@ -7,12 +7,13 @@ class TagedPage extends THPage
 	const PAGE_LIST = array (
 		'Accueil' => 'Accueil',
 	    'Match 3' => 'Match3',
-	    'Test' => 'Test',
+//	    'Test' => 'Test',
 	    'Collection Data' => 'CollData',
-	    'Collection Aggregate' => 'CollAggregate',
+//	    'Collection Aggregate' => 'CollAggregate',
 	    'Hack&apos;n Slash Data' => 'HnSData',
 	    'Gestion Aggregations' => 'GestAggregate',
-	    'Aggregations' => 'ChangeAggregate'
+	    'Aggregations' => 'ChangeAggregate',
+	    'Show Aggregations' => 'ShowAggregate'
 	);
     	
 	public function __construct ( $InputData = NULL )
