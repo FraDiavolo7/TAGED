@@ -1,5 +1,6 @@
 CXX      := -g++
 CXXFLAGS := -pedantic-errors -Wall -Wextra -DDEBUG -g -O2
+ALGO     := -DALGO_
 LDFLAGS  := -L/usr/lib -lstdc++ -lm -L./lib/
 OBJ_DIR  := ./build
 APP_DIR  := ./exe
@@ -8,19 +9,28 @@ INCLUDE  := -Iinclude/ -Ilib/boost/
 SRC      :=                      \
    $(wildcard src/*.cpp)         \
 
+ALGO_NAME:=E
+f: ALGO_NAME=F
+
+
+
 OBJECTS  := $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 DEPENDENCIES \
          := $(OBJECTS:.o=.d)
 
-all: build $(APP_DIR)/$(TARGET)
+all: algo
+
+f: algo
+
+algo: clean build $(APP_DIR)/$(TARGET)$(ALGO_NAME)
 
 $(OBJ_DIR)/%.o: %.cpp
 	@mkdir -p $(@D)
-	$(CXX) $(CXXFLAGS) $(INCLUDE) -c $< -MMD -o $@
+	$(CXX) $(CXXFLAGS) $(ALGO)$(ALGO_NAME) $(INCLUDE) -c $< -MMD -o $@
 
-$(APP_DIR)/$(TARGET): $(OBJECTS)
+$(APP_DIR)/$(TARGET)$(ALGO_NAME): $(OBJECTS)
 	@mkdir -p $(@D)
-	$(CXX) $(CXXFLAGS) -o $(APP_DIR)/$(TARGET) $^ $(LDFLAGS)
+	$(CXX) $(CXXFLAGS)  -o $(APP_DIR)/$(TARGET)$(ALGO_NAME) $^ $(LDFLAGS)
 
 -include $(DEPENDENCIES)
 
@@ -30,7 +40,7 @@ build:
 
 clean:
 	-@rm -rvf $(OBJ_DIR)/*
-	-@rm -rvf $(APP_DIR)/*
+#	-@rm -rvf $(APP_DIR)/*
 
 info:
 	@echo "[*] Application dir: ${APP_DIR}     "

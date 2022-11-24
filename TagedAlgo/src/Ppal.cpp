@@ -109,11 +109,15 @@ void EvaluerAlgo(Relation* r, const string & ficName)
 
 	//BucComplet<Filtre<AfficheurStd> >               algo ( r, ficCubeEmergent, MinSeuil1, MinSeuil2);
 	//BucComplet<Filtre<AfficheurMax<DicoMaxList> > > algo ( r, ficCubeEmergent, MinSeuil1, MinSeuil2);
+#ifdef ALGO_E
 	//TagedE<AfficheurStd>               algo ( r, ficCubeEmergent, MinSeuil1, MinSeuil2);
 	TagedE<AfficheurMax<DicoMaxList> > algo ( r, ficCubeEmergent, MinSeuil1, MinSeuil2);
+#endif
+#ifdef ALGO_F
 	//TagedF<AfficheurStd>                     algo ( r, ficCubeEmergent, MinSeuil1, MinSeuil2);
 	//TagedF<AfficheurMax<DicoMaxList> >       algo ( r, ficCubeEmergent, MinSeuil1, MinSeuil2);
-	//TagedF<AfficheurMaxRapide<DicoMaxList> > algo ( r, ficCubeEmergent, MinSeuil1, MinSeuil2);
+	TagedF<AfficheurMaxRapide<DicoMaxList> > algo ( r, ficCubeEmergent, MinSeuil1, MinSeuil2);
+#endif
     
 	cerr << endl;
 	cerr << "==== "<< algo.getNomAlgo() <<" ====" << endl;
