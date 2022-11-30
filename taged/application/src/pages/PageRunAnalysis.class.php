@@ -50,7 +50,7 @@ class PageRunAnalysis extends TagedPage
 	        
             if ( $Password == $this->Password ) 
 	        {
-	            $Result = $this->AggregateObj->run ( ANALYSIS_ALGO, $this->Min1, $this->Min2 );
+	            $Result = $this->AggregateObj->run ( $this->Algo, $this->Min1, $this->Min2 );
 	            
 	            if ( TRUE == $Result)
 	            {

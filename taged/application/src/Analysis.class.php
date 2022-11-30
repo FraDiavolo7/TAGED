@@ -100,7 +100,7 @@ class Analysis
         
         if ( $this->Runnable )
         {
-            $Message = "Executing analysis on " . $this->DescFile;
+            $Message = "Executing analysis on " . $this->DescFile . " ($Algorithm)";
             
             Log::info ( $Message );
             $this->Result .= $Message . PHP_EOL;
@@ -160,74 +160,80 @@ class Analysis
         
         $AggregateFile = "$ResultFolder/$FileBase";
         
-        // Load Field Translation
-        $Files = scandir ( $ResultFolder );
-        $TradFields = array ();
+        $CubeFile = "$AggregateFile.cube.emergent";
         
-        foreach ( $Files as $File )
+        clearstatcache (); // to prevent cache of file size
+        if ( file_exists ( $CubeFile ) && filesize ( $CubeFile ) )  // if file is not empty
         {
-            $Attr = "$FileBase.attr.";
-            if ( Strings::compareSameSize ( $File, $Attr ) )
+            // Load Field Translation
+            $Files = scandir ( $ResultFolder );
+            $TradFields = array ();
+            
+            foreach ( $Files as $File )
             {
-                $FieldName = substr ( $File, strlen ( $Attr ) );
-                $TradFields [$FieldName] = parse_ini_file ( "$ResultFolder/$File" );
-            }
-        }
-
-//         echo '$TradFields ' . print_r ( $TradFields, TRUE ) . "<br>";
-        
-        // Get Fields
-        $RelFields = explode ( ',', $this->RelationCols );
-        $MesFields = explode ( ',', $this->MeasureCols  );
-        
-        $FieldNames = array_merge ( $RelFields, $MesFields );
-
-//         echo '$FieldNames ' . print_r ( $FieldNames, TRUE ) . "<br>";
-        
-        $this->Result  = HTML::startTable ( array ( 'class' => 'taged_stats' ));
-        $this->Result .= HTML::startTR ();
-        
-        // Compute an array of translation indexed by ordered fields
-        $Fields = array ();
-        foreach ( $FieldNames as $FieldName )
-        {
-            $Array = array ();
-            
-            $this->Result .= HTML::th ( $FieldName );
-            
-            $FieldName = rtrim ( $FieldName, "0123456789" );
-            
-            if ( isset ( $TradFields [$FieldName] ) ) $Array = $TradFields [$FieldName];
-            
-            $Fields [] = $Array;
-        }
-        $this->Result .= HTML::endTR ();
-        
-//         echo '$Fields ' . print_r ( $Fields, TRUE ) . "<br>";
-        
-        // For each line of Cube, convert relevant fields
-        $CubeFile = fopen ( "$AggregateFile.cube.emergent", "r" );
-        if ( $CubeFile )  
-        {
-            while ( ( $Line = fgets ( $CubeFile ) ) !== false ) 
-            {
-                $Entries = explode ( ' ', $Line );
-                $this->Result .= HTML::startTR ();
-                
-                foreach ( $Entries as $Num => $Entry )
+                $Attr = "$FileBase.attr.";
+                if ( Strings::compareSameSize ( $File, $Attr ) )
                 {
-                    $OutEntry = $Entry;
-                    if ( isset ( $Fields [$Num] [$Entry] ) ) $OutEntry = $Fields [$Num] [$Entry];
-                    
-                    if ( ':' != $OutEntry ) $this->Result .= HTML::td ( $OutEntry );
+                    $FieldName = substr ( $File, strlen ( $Attr ) );
+                    $TradFields [$FieldName] = parse_ini_file ( "$ResultFolder/$File" );
                 }
-                $this->Result .= HTML::endTR ();
             }
             
-            fclose ( $CubeFile );
+            //         echo '$TradFields ' . print_r ( $TradFields, TRUE ) . "<br>";
+            
+            // Get Fields
+            $RelFields = explode ( ',', $this->RelationCols );
+            $MesFields = explode ( ',', $this->MeasureCols  );
+            
+            $FieldNames = array_merge ( $RelFields, $MesFields );
+            
+            //         echo '$FieldNames ' . print_r ( $FieldNames, TRUE ) . "<br>";
+            
+            $this->Result  = HTML::startTable ( array ( 'class' => 'taged_stats' ));
+            $this->Result .= HTML::startTR ();
+            
+            // Compute an array of translation indexed by ordered fields
+            $Fields = array ();
+            foreach ( $FieldNames as $FieldName )
+            {
+                $Array = array ();
+                
+                $this->Result .= HTML::th ( $FieldName );
+                
+                $FieldName = rtrim ( $FieldName, "0123456789" );
+                
+                if ( isset ( $TradFields [$FieldName] ) ) $Array = $TradFields [$FieldName];
+                
+                $Fields [] = $Array;
+            }
+            $this->Result .= HTML::endTR ();
+            
+            //         echo '$Fields ' . print_r ( $Fields, TRUE ) . "<br>";
+            
+            // For each line of Cube, convert relevant fields
+            $CubeFile = fopen ( "$AggregateFile.cube.emergent", "r" );
+            if ( $CubeFile )
+            {
+                while ( ( $Line = fgets ( $CubeFile ) ) !== false )
+                {
+                    $Entries = explode ( ' ', $Line );
+                    $this->Result .= HTML::startTR ();
+                    
+                    foreach ( $Entries as $Num => $Entry )
+                    {
+                        $OutEntry = $Entry;
+                        if ( isset ( $Fields [$Num] [$Entry] ) ) $OutEntry = $Fields [$Num] [$Entry];
+                        
+                        if ( ':' != $OutEntry ) $this->Result .= HTML::td ( $OutEntry );
+                    }
+                    $this->Result .= HTML::endTR ();
+                }
+                
+                fclose ( $CubeFile );
+            }
+            
+            $this->Result .= HTML::endTable ();
         }
-        
-        $this->Result .= HTML::endTable ();
         
         return $this->Result;
     }
