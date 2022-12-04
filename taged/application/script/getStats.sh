@@ -49,3 +49,6 @@ function handleOptionnal ()
 getFolderData $Space
 
 handleOptionnal gen1ou 
+handleOptionnal gen2ou 
+handleOptionnal gen3ou 
+handleOptionnal gen4ou 
