@@ -11,6 +11,7 @@ SRC      :=                      \
 
 ALGO_NAME:=E
 f: ALGO_NAME=F
+c: ALGO_NAME=C
 
 
 
@@ -21,6 +22,7 @@ DEPENDENCIES \
 all: algo
 
 f: algo
+c: algo
 
 algo: clean build $(APP_DIR)/$(TARGET)$(ALGO_NAME)
 
