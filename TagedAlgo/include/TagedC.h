@@ -62,7 +62,7 @@ public:
 	}
 
 	/**
-	 * @brief Algorithme Taged-F (première passe).
+	 * @brief Algorithme Taged-C (première passe).
 	 * 
 	 * @param indexDataIn 
 	 * @param taille 
@@ -71,7 +71,7 @@ public:
 protected:
 
 	/**
-	 * @brief Algorithme Taged-F (récursif).
+	 * @brief Algorithme Taged-C (récursif).
 	 * 
 	 * @param indexDataIn 
 	 * @param taille 
