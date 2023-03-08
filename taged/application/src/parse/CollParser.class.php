@@ -270,7 +270,10 @@ class CollParser {
 
     protected function turnPreg ( $Match ) 
     {
-//         return $this->matchFunc2($match, 'turn');
+        Log::fct_enter ( __METHOD__ );
+        Log::info ( json_encode ( $Match ) );
+        $this->Game->addTurn ( );
+        Log::fct_exit ( __METHOD__ );
     }
 
     protected function move1Preg ( $Match ) 

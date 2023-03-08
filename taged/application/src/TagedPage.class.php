@@ -8,6 +8,7 @@ class TagedPage extends THPage
 		'Accueil' => 'Accueil',
 	    'Match 3' => 'Match3',
 //	    'Test' => 'Test',
+	    'Test SkyCube' => 'TestSkyCube',
 	    'Collection Data' => 'CollData',
 //	    'Collection Aggregate' => 'CollAggregate',
 	    'Hack&apos;n Slash Data' => 'HnSData',
@@ -30,7 +31,10 @@ class TagedPage extends THPage
 	    parent::showPageHeader ();
 	    
 	    HTML::showHeaderDiv ( 
-	            HTML::div ( $this->SiteTitle, array ( "class" => "sitetitle" ) ) .
+	            HTML::div ( 
+	                HTML::div ( $this->SiteTitle, array ( "class" => "sitetitle" ) ) . 
+	                HTML::div ( Date::getDateHTML (), array ( "class" => "sitedate" ) )
+	                ) .
 	            HTML::div (
 	                    HTML::div ( HTML::Title ( $this->PageTitle, 1 ), array ( "class" => "pagetitle" ) ) .
 	                    Menu::nav ( self::PAGE_LIST )

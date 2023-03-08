@@ -244,5 +244,37 @@ abstract class Arrays
                 
         return $Result;
     }
+    
+    public static function getCSVLine ( $CSVFile, $SearchValue, $Column = 0, $MaxLength = 1000, $Separator = ',', $IgnoreTitles = TRUE )
+    {
+        $Row = array ();
+        
+        if ( ( $File = fopen ( $CSVFile, "r" ) ) !== FALSE )
+        {
+            while ( ( $Line = fgetcsv ( $File, $MaxLength, $Separator) ) !== FALSE )
+            {
+                if ( count ( $Line ) > $Column )
+                {
+                    if ( $Line [$Column] == $SearchValue )
+                    {
+                        $Row = $Line;
+                        break;
+                    }
+                }
+//                 else
+//                 {
+//                     echo 'pas assez de donnees ' . print_r ( $Line, FALSE ) . PHP_EOL;
+//                 }
+            }
+            
+            fclose ( $File );
+        }
+//         else
+//         {
+//             echo 'file not found';
+//         }
+        
+        return $Row;
+    }
 }
 

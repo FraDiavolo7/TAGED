@@ -8,9 +8,22 @@ class CollTeam
     
     const ID = 'id_equipe';
     const NOMBRE = 'nombre';
-    const LISTE = 'liste';
+    const LISTE  = 'liste';
+    const LISTE2 = 'liste2';
+    const LISTE3 = 'liste3';
+    const LISTE4 = 'liste4';
+    const LISTE5 = 'liste5';
     const ORDRE = 'ordre';
     const NOM = 'nom';
+    const GENERATION = 'generation';
+    const RARETE = 'rarete';
+    const DROP_RATE  = 'drop_rate';
+    const DROP_RATE2 = 'drop_rate2';
+    const DROP_RATE3 = 'drop_rate3';
+    const DROP_RATE4 = 'drop_rate4';
+    const DROP_RATE5 = 'drop_rate5';
+    
+    const POKEDEX = CONFIG_HOME . 'pokedex.csv';
     
     /**
      * @var $Player is p1, p2, p3, or p4.
@@ -26,7 +39,9 @@ class CollTeam
      * @var $Pokemons is the array of Pokemons, index by position
      */
     private $Pokemons;
-
+    private $DropRate;
+    private $TeamDropRate;
+    
     private $IDEquipe; // ID dans la table Equipe
     
     /**
@@ -34,13 +49,15 @@ class CollTeam
      * @param int $Player The player position of the Team 
      * @param int $Size The Quantity of pokemons in the Team 
      */
-    public function __construct ( $Player, $Size, $EquipeID = -1, $Pokemons = array () ) 
+    public function __construct ( $Player, $Size, $EquipeID = -1, $Pokemons = array (), $DropRate = 0 ) 
     {
         $this->Player = $Player;
         $this->Size = $Size;
         
         $this->IDEquipe = $EquipeID;
         $this->Pokemons = $Pokemons;
+        $this->DropRate = array ();
+        $this->TeamDropRate = $DropRate;
     }
     
     public function __toString ( )
@@ -52,7 +69,7 @@ class CollTeam
             $Result .= $Sep . $Pokemon;
             $Sep = ', ';
         }
-        $Result .= ')';
+        $Result .= ') [' . $this->TeamDropRate . ']';
         return $Result;
     }
     
@@ -77,6 +94,14 @@ class CollTeam
         $this->Player = $Player;
     }
 
+    /**
+     * @return The drop rate of the Team.
+     */
+    public function getDropRate ()
+    {
+        return $this->TeamDropRate;
+    }
+    
     /**
      * @return The Quantity of pokemons in the Team.
      */
@@ -124,24 +149,49 @@ class CollTeam
      */
     public function addPokemon ( $Pokemon )
     {
-//         if ( ! in_array ( $Pokemon, $this->Pokemons ) )
-//         {
-            $this->Pokemons [ ] = $Pokemon;
-//         }
+        $RealName = explode ( ',', $Pokemon ) [0];
+        $this->Pokemons [ ] = $RealName;
     }
 
     protected function savePokemon ( $Pokemon )
     {
         Log::fct_enter ( __METHOD__ );
+        $DropRate = 0;
         
-        TagedDBColl::execute ( "SELECT * FROM " . self::TABLE_POKEMON . " WHERE " . self::NOM . " = '" . $Pokemon ."'" );
+        TagedDBColl::execute ( 'SELECT ' . self::NOM . ', ' . self::DROP_RATE . ' FROM ' . self::TABLE_POKEMON . " WHERE " . self::NOM . " = '" . $Pokemon ."'" );
         $Results = TagedDBColl::getResults ( );
 
+        $DropRate   = Arrays::getIfSet ( $Results, 1, 0 );
+        
         if ( ( NULL == $Results ) || ( count ( $Results ) == 0 ) )
         {
-            // #2 Si non, ajoute entrée Utilisateur
-            TagedDBColl::execute ( "INSERT INTO " . self::TABLE_POKEMON . " (" . self::NOM . ") VALUES ('" . $Pokemon . "');" );
+            // #2 Si non, ajoute entrï¿½e Pokemon
+            // RÃ©cupÃ©ration des donnÃ©es statiques
+            
+            $StaticData = Arrays::getCSVLine ( self::POKEDEX, $Pokemon, 2, 1000, ';' );
+
+            $Generation = Arrays::getIfSet ( $StaticData,  3, 1 );
+            $Rarete     = Arrays::getIfSet ( $StaticData, 22, 'common' );
+            $DropRate   = str_replace ( ',', '.', Arrays::getIfSet ( $StaticData, 19, 0 ) );
+            
+            TagedDBColl::execute ( "INSERT INTO " . self::TABLE_POKEMON . " (" . self::NOM . ", " . self::GENERATION . ", " . self::RARETE . ", " . self::DROP_RATE . ") VALUES ('" . $Pokemon . "', " . $Generation . ", '" . $Rarete . "', " . $DropRate . ");" );
         }
+        elseif ( $DropRate == 0 )
+        {
+            $StaticData = Arrays::getCSVLine ( self::POKEDEX, $Pokemon, 2, 1000, ';' );
+            
+            $Generation = Arrays::getIfSet ( $StaticData,  3, 1 );
+            $Rarete     = Arrays::getIfSet ( $StaticData, 22, 'common' );
+            $DropRate   = str_replace ( ',', '.', Arrays::getIfSet ( $StaticData, 19, 0 ) );
+            
+            TagedDBColl::execute ( "UPDATE " . self::TABLE_POKEMON . " SET " . 
+                self::GENERATION . " = " . $Generation . ", " .
+                self::RARETE . " = '" . $Rarete . "'" . ", " .
+                self::DROP_RATE . " = " . $DropRate . " " .
+                "WHERE " . self::NOM . " = '" . $Pokemon . "';" );
+        }
+        
+        $this->DropRate [$Pokemon] = $DropRate;
         
         Log::fct_exit ( __METHOD__ );
     }
@@ -150,10 +200,36 @@ class CollTeam
     {
         Log::fct_enter ( __METHOD__ );
         
-        $this->savePokemon ( $Pokemon );
         
         TagedDBColl::execute ( "INSERT INTO " . self::TABLE_ALIGNE . " (" . self::ID . ", " . self::NOM . ", " . self::ORDRE . ") VALUES (" . $this->IDEquipe . ", '" . $Pokemon . "', " . $Ordre . ");" );
         
+        Log::fct_exit ( __METHOD__ );
+    }
+    
+    protected function getPokemonList ( $Length, &$DR )
+    {
+        Log::fct_enter ( __METHOD__ );
+        $List = $this->Pokemons;
+        $DR = 1;
+//         Log::info ( __METHOD__ . ' ' . $Length );
+        
+        if ( $Length != 0 )
+        {
+            $List = array_slice ( $this->Pokemons, 0, $Length );
+//             Log::info ( __METHOD__ . ' ' . print_r ( $List, TRUE ) );
+        }
+        
+//         Log::info ( __METHOD__ . ' ' . print_r ( $this->DropRate, TRUE ) );
+        
+        foreach ( $List as $Pokemon )
+        {
+            $Rate = Arrays::getIfSet ( $this->DropRate, $Pokemon, 0 );
+            $DR *= $Rate;
+        }
+        
+//         Log::info ( __METHOD__ . ' ' . $DR );
+        
+        return implode ( ',', $List );
         Log::fct_exit ( __METHOD__ );
     }
     
@@ -161,25 +237,43 @@ class CollTeam
     {
         Log::fct_enter ( __METHOD__ );
 
-        // Pour chaque Pokemon vérifie s'il existe.
-        // Vérifie s'il existe 1 team existant avec la même liste de Pokemon
-        // Si pas de team, ajoute une entrée Equipe
-        // Récupère l'ID
+        // Pour chaque Pokemon vï¿½rifie s'il existe.
+        // Vï¿½rifie s'il existe 1 team existant avec la mï¿½me liste de Pokemon
+        // Si pas de team, ajoute une entrï¿½e Equipe
+        // Rï¿½cupï¿½re l'ID
         
         $Aligne = FALSE;
         
-        $ListPokemon = implode ( ',', $this->Pokemons );
+        $this->Size = count ( $this->Pokemons );
         
-        // #1 vérifie si une Equipe existe pour ce nom
+        foreach ( $this->Pokemons as $Pokemon )
+        {
+            $this->savePokemon ( $Pokemon );
+        }
+        
+        $DRList  = 1;
+        $DRList2 = 1;
+        $DRList3 = 1;
+        $DRList4 = 1;
+        $DRList5 = 1;
+        
+        $ListPokemon  = $this->getPokemonList ( 0, $DRList  );
+        $List2Pokemon = $this->getPokemonList ( 2, $DRList2 );
+        $List3Pokemon = $this->getPokemonList ( 3, $DRList3 );
+        $List4Pokemon = $this->getPokemonList ( 4, $DRList4 );
+        $List5Pokemon = $this->getPokemonList ( 5, $DRList5 );
+        
+        // #1 vï¿½rifie si une Equipe existe pour ce nom
         $Select = "SELECT " . self::ID . " FROM " . self::TABLE . " WHERE " . self::NOMBRE . " = " . $this->Size . ' AND ' . self::LISTE . " = '" . $ListPokemon . "'";
         TagedDBColl::execute ( $Select );
         $Results = TagedDBColl::getResults ( );
         
         if ( ( NULL == $Results ) || ( count ( $Results ) == 0 ) )
         {
-            // #2 Si non, ajoute entrée Equipe
+            // #2 Si non, ajoute entrï¿½e Equipe
             $Aligne = TRUE;
-            TagedDBColl::execute ( "INSERT INTO " . self::TABLE . " (" . self::NOMBRE . ", " . self::LISTE . ") VALUES (" . $this->Size . ", '" . $ListPokemon  . "');" );
+            TagedDBColl::execute ( "INSERT INTO " . self::TABLE . " (" . self::NOMBRE . ", " . self::LISTE . ", " . self::LISTE2 . ", " . self::LISTE3 . ", " . self::LISTE4 . ", " . self::LISTE5 . ", " . self::DROP_RATE . ", " . self::DROP_RATE2 . ", " . self::DROP_RATE3 . ", " . self::DROP_RATE4 . ", " . self::DROP_RATE5 . 
+                ") VALUES (" . $this->Size . ", '" . $ListPokemon  . "', '" . $List2Pokemon  . "', '" . $List3Pokemon  . "', '" . $List4Pokemon  . "', '" . $List5Pokemon  . "', " . $DRList . ", " . $DRList2 . ", " . $DRList3 . ", " . $DRList4 . ", " . $DRList5 . ");" );
 
             TagedDBColl::execute ( $Select );
             $Results = TagedDBColl::getResults ( );

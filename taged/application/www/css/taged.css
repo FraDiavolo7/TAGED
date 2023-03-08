@@ -45,6 +45,11 @@ nav > ul > li {
 	color: #CE7898;
 }
 
+.sitedate {
+    font-size: 0.42em;
+    color: dimgray;	
+}
+
 .pagetitle {
 	text-align: center;
 }
@@ -158,4 +163,37 @@ table.taged_stats td + td {
 .coll_data th,
 .coll_data td {
 	border: 1px solid white;
+}
+
+.testskycube div {
+	display: flex;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+div.skycube {
+	flex-direction: column;
+	padding: 1rem;
+}
+
+div.cuboides {
+	flex-direction: column;
+}
+
+div.cuboides > :nth-child(2) {
+	flex-direction: column;
+}
+
+div.cuboides_lvl {
+	flex-direction: column;
+}
+
+div.cuboides_lvl > :nth-child(2) {
+	justify-content: space-around;
+}
+
+div.cuboide {
+	flex-direction: column;
+	border: 1px solid white;
+	padding: 0.25rem;
 }

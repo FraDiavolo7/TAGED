@@ -12,6 +12,7 @@
 
 #include "Relation.h"
 #include "BucComplet.h"
+#include "TagedC.h"
 #include "TagedE.h"
 #include "TagedF.h"
 #include "DicoMaxList.h"

@@ -1,0 +1,5 @@
+ - https://www.kaggle.com/search?q=pok%C3%A9mon+in%3Adatasets+sortBy%3Adate
+ - https://www.kaggle.com/datasets/takamasakato/pokemon-all-status-data
+ - https://bulbapedia.bulbagarden.net/wiki/Catch_rate
+ - https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_catch_rate
+ - https://www.pokebip.com/page/jeuxvideo/pokemon_go/taux-apparition

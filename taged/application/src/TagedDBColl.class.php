@@ -9,3 +9,4 @@ class TagedDBColl extends Database
     protected static $PDOStatement = NULL;
 }
 
+//Log::setDebug ( __FILE__ );
