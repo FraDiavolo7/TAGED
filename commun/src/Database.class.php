@@ -103,3 +103,4 @@ abstract class Database
     protected static $PDOStatement = NULL;
 }
 
+//Log::setDebug ( __FILE__ );

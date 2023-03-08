@@ -161,6 +161,6 @@ build/src/Ppal.o: src/Ppal.cpp include/Relation.h include/Attribute.h \
  lib/boost/boost/type_traits/integral_promotion.hpp \
  lib/boost/boost/type_traits/promote.hpp include/AfficheurEmergent.h \
  include/Afficheur.h include/Statistiques.h include/AfficheurStd.h \
- include/AlgoCube.h include/TagedE.h include/TagedF.h \
+ include/AlgoCube.h include/TagedC.h include/TagedE.h include/TagedF.h \
  include/DicoMaxList.h include/DicoMax.h include/AfficheurMax.h \
  include/ThreadTime.h include/Attribute.h

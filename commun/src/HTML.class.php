@@ -485,4 +485,41 @@ class HTML
         }
         return $Args;
     }
+    
+    public static function tableFull ( $Array, $Attributes = array () )
+    {
+        $TableContent = '';
+        $TableContent .= self::startTR ();
+        
+        foreach ( $Array as $RowHeader => $Row )
+        {
+            if ( is_array ( $Row ) )
+            {
+                $TRContent = '';
+                foreach ( $Row as $ColHeader => $Cell )
+                {
+                    $TRContent .= self::td ( $Cell );
+                }
+                $TableContent .= $TRContent;
+                $TableContent .= self::endTR ();
+                $TableContent .= self::startTR ();
+            }
+            else
+            {
+                $TableContent .= self::td ( $Row );
+            }
+        }
+        
+        $TableContent .= self::endTR ();
+        
+        
+        
+        return self::table ( $TableContent, $Attributes );
+    }
+    
+    public static function showTableFull ( $Array, $Attributes = array () )
+    {
+        echo self::tableFull ( $Array, $Attributes ) . "\n";
+    }
+        
 }

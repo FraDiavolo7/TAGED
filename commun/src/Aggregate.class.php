@@ -65,7 +65,7 @@ class Aggregate
         foreach ( $this->Data as $TupleNum => $Data )
         {
             $Content .= HTML::startTR ();
-            $Content .= HTML::td ( $TupleNum );
+            $Content .= HTML::td ( $TupleNum + 1 );
             foreach ( $this->Attributes as $Attr )
             {
                 $Value = $Data [$Attr] ?? '&nbsp';

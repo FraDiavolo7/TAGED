@@ -2,6 +2,20 @@
 
 class CollTable
 {
+    const VIEW_STAT = 'vw_coll_stat';
+    
+    const COUNT_POKEMON  = 'count_pokemon';
+    const COUNT_EQUIPE  = 'count_equipe';
+    const COUNT_COMBAT  = 'count_combat';
+    const COUNT_UTILISATEUR  = 'count_utilisateur';
+    
+    const COUNT_TRAD = array (
+        self::COUNT_POKEMON => 'Pokemons',
+        self::COUNT_EQUIPE => '&Eacute;quipes',
+        self::COUNT_COMBAT => 'Combats',
+        self::COUNT_UTILISATEUR => 'Utilisateurs',
+    );
+    
     protected $ListeCombats;
     
     /**
@@ -63,7 +77,7 @@ class CollTable
     protected function getGames ()
     {
         Log::fct_enter ( __METHOD__ );
-        // #1 Enregistrer entrée Combat
+        // #1 Enregistrer entrï¿½e Combat
         TagedDBColl::execute ( "SELECT * FROM " . CollGame::TABLE . ";" );
         
         $Results = TagedDBColl::getResults ( );
@@ -78,6 +92,27 @@ class CollTable
         }
         
         Log::fct_exit ( __METHOD__ );
+    }
+    
+    public static function getStats ()
+    {
+        $Stats = array ();
+        
+        TagedDBColl::execute ( "SELECT * FROM " . self::VIEW_STAT );
+        $Results = TagedDBColl::getResults ( );
+        
+        if ( ( NULL !== $Results ) && ( count ( $Results ) > 0 ) )
+        {
+            foreach ( $Results [0] as $Key => $Stat )
+            {
+                if ( ! is_numeric ( $Key ) )
+                {
+                    $Stats [0] [ self::COUNT_TRAD [ $Key ] ] = $Stat;
+                }
+            }
+        }
+        
+        return $Stats;
     }
 }
 

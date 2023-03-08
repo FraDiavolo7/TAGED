@@ -2,7 +2,7 @@
 
 
 db_list=("taged_collection" "taged_hns" "taged_match3")
-dump_folder=/home/taged/data/db_dump
+dump_folder=/opt/taged/taged/taged/dump
 
 
 function dump ()

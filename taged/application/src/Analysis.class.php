@@ -120,8 +120,8 @@ class Analysis
             
             $Aggregate = $this->getAggregateFile ( TRUE ) ;
 
-            $RelationCols = self::explodeCols ( $this->RelationCols );
-            $MeasureCols  = self::explodeCols ( $this->MeasureCols  );
+            $RelationCols = self::explodeCols ( strtolower ( $this->RelationCols ) );
+            $MeasureCols  = self::explodeCols ( strtolower ( $this->MeasureCols  ) );
             
             $NbTuples = $Aggregate->getNbTuples ();
             $NbAttributes = count ( $RelationCols );

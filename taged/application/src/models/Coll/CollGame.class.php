@@ -12,6 +12,7 @@ class CollGame
     const TIER = 'tier';
     const RULES = 'rules';
     const CLASSE = 'classe';
+    const TURNS = 'tours';
     
     protected $Player1;
     protected $Player2;
@@ -46,6 +47,7 @@ class CollGame
         $this->Tier     = $Tier;
         $this->Rules    = $Rules;
         $this->Rating   = $Rating;
+        $this->Turns    = 0;
         
         if ( $IDCombat != -1 )
         {
@@ -74,6 +76,7 @@ class CollGame
         $String .= $this->Type . "<br>\n";
         $String .= $this->Gen . "<br>\n";
         $String .= $this->Tier . "<br>\n";
+        $String .= $this->Turns . "<br>\n";
         $String .= $this->Rating . "<br>\n";
         //         $String .= 'Rules ' . $this->Rules . "<br>\n";
         //         $String .= 'Team Preview ' . $this->TeamPreview . "<br>\n";
@@ -92,9 +95,11 @@ class CollGame
         $Content  = HTML::startTable ();
         $Content .= HTML::startTR ();
         $Content .= HTML::th ( 'ID' );
+        $Content .= HTML::th ( 'Tours' );
         $Content .= HTML::th ( 'Vainqueur' );
         $Content .= HTML::th ( 'Joueur 1' );
         $Content .= HTML::th ( 'Pokemons');
+        $Content .= HTML::th ( 'DropRate');
         $Content .= HTML::endTR ();
         return $Content;
     }
@@ -119,17 +124,22 @@ class CollGame
         $Pokemons = '';
         $Pokemons1 = ( $this->Team1 != NULL ? $this->Team1->getPokemon () : $Pokemons );
         $Pokemons2 = ( $this->Team2 != NULL ? $this->Team2->getPokemon () : $Pokemons );
+        $DropRate1 = ( $this->Team1 != NULL ? $this->Team1->getDropRate () : '0' );
+        $DropRate2 = ( $this->Team2 != NULL ? $this->Team2->getDropRate () : '0' );
         
         $Content  = HTML::startTR ();
         $Content .= HTML::td ( $this->IDCombat, array ( 'rowspan' => 2 ) );
+        $Content .= HTML::td ( $this->Turns, array ( 'rowspan' => 2 ) );
         $Content .= HTML::td ( $V1 );
         $Content .= HTML::td ( $P1 );
         $Content .= HTML::td ( $Pokemons1 );
+        $Content .= HTML::td ( $DropRate1 );
         $Content .= HTML::endTR ();
         $Content .= HTML::startTR ();
         $Content .= HTML::td ( $V2 );
         $Content .= HTML::td ( $P2 );
         $Content .= HTML::td ( $Pokemons2 );
+        $Content .= HTML::td ( $DropRate2 );
         $Content .= HTML::endTR ();
         return $Content;
     }
@@ -209,6 +219,11 @@ class CollGame
         $this->Result = 0;
     }
     
+    public function addTurn ( )
+    {
+        $this->Turns += 1;
+    }
+    
     public function switch ( $Player, $Pokemon )
     {
         if ( 1 == $Player )
@@ -253,6 +268,7 @@ class CollGame
             self::RESULT . ', ' .
             self::GAGNANT . ', ' .
             self::TIER . ', ' .
+            self::TURNS . ', ' .
             self::RULES . ', ' .
             self::CLASSE .            
             ") VALUES (" . 
@@ -260,6 +276,7 @@ class CollGame
             "'" . $this->Result . "'" .  ', ' .
             $this->Result .  ', ' .
             $this->Gen .  ', ' .
+            $this->Turns .  ', ' .
             "'" . $this->Rules . "'" . ', ' .
             "'" . $this->Tier . "'" . 
             ");" );
@@ -331,18 +348,22 @@ class CollGame
         $Results = TagedDBColl::getResults ( );
         
         $PlayerNum = 1;
+        
+        Log::logVar ( __METHOD__ . ' ' . $this->IDCombat, $Results );
 
         foreach ( $Results as $Result )
         {
-            $PlayerID = Arrays::getIfSet ( $Result, CollPlayer::NOM,    '' );
-            $Avatar   = Arrays::getIfSet ( $Result, CollPlayer::AVATAR, '' );
-            $Elo      = Arrays::getIfSet ( $Result, CollPlayer::RATING,  0 );
-            $EquipeID = Arrays::getIfSet ( $Result, CollTeam::ID,       -1 );
-            $Nombre   = Arrays::getIfSet ( $Result, CollTeam::NOMBRE,    0 );
-            $Liste    = Arrays::getIfSet ( $Result, CollTeam::LISTE,    '' );
+            $PlayerID = Arrays::getIfSet ( $Result, CollPlayer::NOM,     '' );
+            $Avatar   = Arrays::getIfSet ( $Result, CollPlayer::AVATAR,  '' );
+            $Elo      = Arrays::getIfSet ( $Result, CollPlayer::RATING,   0 );
+            $EquipeID = Arrays::getIfSet ( $Result, CollTeam::ID,        -1 );
+            $Nombre   = Arrays::getIfSet ( $Result, CollTeam::NOMBRE,     0 );
+            $Liste    = Arrays::getIfSet ( $Result, CollTeam::LISTE,     '' );
+            $this->Turns = Arrays::getIfSet ( $Result, self::TURNS,          0 );
+            $DropRate = Arrays::getIfSet ( $Result, CollTeam::DROP_RATE,  0 );
             $Pokemons = explode ( ',', $Liste );
             $Player = new CollPlayer ( $PlayerNum, $PlayerID, $Avatar, $Elo );
-            $Equipe = new CollTeam ( $PlayerNum, $Nombre, $EquipeID, $Pokemons );
+            $Equipe = new CollTeam ( $PlayerNum, $Nombre, $EquipeID, $Pokemons, $DropRate );
             
             $this->setPlayer ( $Player );
             $this->setTeam ( $Equipe );
@@ -354,3 +375,4 @@ class CollGame
     }
 }
 
+// Log::setDebug ( __FILE__ );

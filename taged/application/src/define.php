@@ -6,6 +6,7 @@ $NewPath .= PATH_SEPARATOR . '../src/aggregates';
 $NewPath .= PATH_SEPARATOR . '../src/aggregates/Coll';
 $NewPath .= PATH_SEPARATOR . '../src/aggregates/HnS';
 $NewPath .= PATH_SEPARATOR . '../src/aggregates/Match3';
+$NewPath .= PATH_SEPARATOR . '../src/algo';
 $NewPath .= PATH_SEPARATOR . '../src/modules';
 $NewPath .= PATH_SEPARATOR . '../src/models';
 $NewPath .= PATH_SEPARATOR . '../src/models/Coll';
@@ -41,6 +42,7 @@ spl_autoload_register(function ($ClassName) {
 define ( 'DATA_HOME', "/home/taged/data" );
 define ( 'SCRIPT_HOME', "../script" );
 define ( 'LOG_HOME', "../log/" );
+define ( 'CONFIG_HOME', "../cfg/" );
 
 define ( 'LOG_FILE', LOG_HOME . 'App_' . date("Ymd") . '.log' );
 
@@ -70,6 +72,7 @@ define ( 'ANALYSIS_PARAM_N', 200 );
 
 Log::setLogFile ( LOG_FILE );
 //Log::setDebug ( Log::ALL );
+//Log::setDebug ( '/opt/taged/taged/taged/application/src/models/Coll/CollGame.class.php' );
 
 define ( 'APP_NAME', 'APP_NAME' );
 define ( 'STATS_FILE', 'Disque' );
@@ -77,6 +80,6 @@ define ( 'STATS_DB', 'Base de données' );
 define ( 'STATS_COLS', 'STATS_COLS' );
 define ( 'STATS_DATA', 'STATS_DATA' );
 
-$GLOBALS [ APP_LIST ] [] = array ( APP_NAME => APP_NAME_COLLECTION,   STATS_FILE => TRUE,  STATS_DB => NULL );
+$GLOBALS [ APP_LIST ] [] = array ( APP_NAME => APP_NAME_COLLECTION,   STATS_FILE => TRUE,  STATS_DB => 'CollTable' );
 $GLOBALS [ APP_LIST ] [] = array ( APP_NAME => APP_NAME_MATCH3,       STATS_FILE => FALSE, STATS_DB => 'M3Game' );
 $GLOBALS [ APP_LIST ] [] = array ( APP_NAME => APP_NAME_HACK_N_SLASH, STATS_FILE => TRUE,  STATS_DB => 'Hero' );

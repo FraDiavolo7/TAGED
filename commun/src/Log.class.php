@@ -68,6 +68,7 @@ class Log
 	
 // 		echo __METHOD__ . ' CT ' . print_r ( $CallTrace, TRUE ) . "<br>\n";
 // 		echo __METHOD__ . ' C ' . json_encode ( $Call, 0, 1 ) . "<br>\n";
+//		echo __METHOD__ . ' C ' . $Call [ 'file'     ] . "<br>\n";
 		
 		if ( $Debug ) 
 		{
