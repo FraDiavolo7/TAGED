@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Basic features of a Page on this framework
+ */
 abstract class BasicPage
 {
 	/*
