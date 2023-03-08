@@ -244,6 +244,55 @@ WITH TCombat AS (
  GROUP BY Liste1, Liste2
 )
 
+
+WITH TNbVictoire AS (
+    SELECT CASE WHEN (TC.elo1 <= 1100) THEN 'Novice' ELSE 'Expert' END AS Elo,
+           TC.Liste1 AS Liste1,
+           TC.Liste2 AS Liste2,
+		   Classe,
+		   Drop_Rate1,
+		   Drop_Rate2,
+		   AVG (Tours) as Tours, 
+           COUNT(*) AS NbVictoire
+    FROM vw_combat_L3 TC
+    WHERE TC.gagnant IN (0, 1)
+    GROUP BY Elo, Liste1, Liste2, Classe, Drop_Rate1, Drop_Rate2
+        ), 
+TNbCombat AS (
+    SELECT CASE WHEN (TC.elo1 <= 1100) THEN 'Novice' ELSE 'Expert' END AS Elo,
+           TC.Liste1 AS Liste1,
+           TC.Liste2 AS Liste2,
+		   Classe,
+		   Drop_Rate1,
+		   Drop_Rate2,
+		   AVG (Tours) as Tours, 
+           COUNT(*) AS NbCombat
+    FROM vw_combat_L3 TC
+    GROUP BY Elo, Liste1, Liste2, Classe, Drop_Rate1, Drop_Rate2
+        ), 
+TMain AS (
+    SELECT TNV.Elo AS ELoRank,
+		   TNV.Classe,
+		   TNV.Tours,
+           TNV.Liste1 AS Seq1,
+           TNV.Liste2 AS Seq2, 
+		   TNV.Drop_Rate1,
+		   TNV.Drop_Rate2,
+           NbVictoire AS NbV,
+           NbCombat AS NbC,
+           CASE WHEN (TNV.Elo = 'Expert') THEN 0 ELSE 100 - ( CAST(ROUND(CAST(NbVictoire AS DECIMAL) / CAST(NbCombat AS DECIMAL), 2) * 100 AS INTEGER) ) END AS TxVictoire1,
+           CASE WHEN (TNV.Elo = 'Novice') THEN 0 ELSE 100 - ( CAST(ROUND(CAST(NbVictoire AS DECIMAL) / CAST(NbCombat AS DECIMAL), 2) * 100 AS INTEGER) ) END AS TxVictoire2
+    FROM TNbVictoire TNV, TNbCombat TNC
+    WHERE TNV.Elo = TNC.Elo
+    AND TNV.Liste1 = TNC.Liste1
+    AND TNV.Liste2 = TNC.Liste2
+    GROUP BY ELoRank, TNV.Classe, TNV.Tours, Seq1, Seq2, TNV.Drop_Rate1, TNV.Drop_Rate2, NbV, NbC, TxVictoire1, TxVictoire2
+        )
+SELECT Classe as Format, Seq1 as Joueur, Seq2 as Adversaire, ELoRank as Rang, Drop_Rate1 as Rarete, Tours as Duree, nbv, nbc, TxVictoire1 as Echec1, TxVictoire2 as Echec2
+FROM TMain
+WHERE NbC > 3
+ORDER BY Rang DESC, Joueur, Adversaire;
+
 CREATE VIEW vw_coll_stat AS 
   SELECT 
 	( SELECT COUNT ( DISTINCT p.nom ) FROM pokemon p ) as count_pokemon,
