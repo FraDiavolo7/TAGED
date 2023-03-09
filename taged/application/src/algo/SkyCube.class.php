@@ -62,7 +62,7 @@ class SkyCube
             $CurrentLevel = '';
             foreach ( $Cuboides as $Cuboide )
             {
-                $CurrentLevel .= $Cuboide;
+                $CurrentLevel .= $Cuboide->toHTML ();
             }
             $CuboidesContent .= HTML::div ( 
                 HTML::div ( $Level, array ( 'class' => 'title' ) ) . 

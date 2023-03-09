@@ -194,6 +194,42 @@ div.cuboides_lvl > :nth-child(2) {
 
 div.cuboide {
 	flex-direction: column;
-	border: 1px solid white;
 	padding: 0.25rem;
+}
+
+div.cuboide .title{
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+}
+
+div.cuboide .title :nth-child(2){
+	font-size: 0.5rem;
+}
+
+table.cuboide {
+	border-top: 2px solid white;
+	border-bottom: 2px solid white;
+	padding: 0.25rem;
+	border-collapse: separate;
+	border-spacing: 0 0.4rem;
+	text-align: center;
+}
+
+table.cuboide th,
+table.cuboide td {
+	padding: 0 0.5rem;;
+}
+
+table.cuboide tr > .rowid{
+	border-right: 1px solid white;
+}
+
+table.cuboide tr > .row_header + .row_value {
+	border-left: 1px solid white;
+}
+
+tr.headers th {
+	border-bottom: 1px solid white;
+	padding-bottom: 0.25rem;
 }

@@ -35,6 +35,45 @@ class Cuboide
         return HTML::div ( $String, array ( 'class' => 'cuboide' ) );
     }
     
+    public function toHTML ()
+    {
+        $HTML = HTML::div ( HTML::div ( $this->ID ) . HTML::div ( '(' . ( $this->IsValid ? 'V' : 'I' ) . ')' ), array ( 'class' => 'title' ) );
+        
+        $TableHeaders = '';
+        $TableRows = '';
+        $FirstRow = TRUE;
+        foreach ( $this->DataSet as $RowID => $Row )
+        {
+            $TableRow = '';
+            foreach ( $this->RowHeaders[$RowID] as $RowHeader => $HeaderValue )
+            {
+                if ( $FirstRow )
+                {
+                    $TableHeaders .= HTML::th ( $RowHeader, array ( 'class' => 'row_header ' . strtolower ( $RowHeader ) ) );
+                }
+                $TableRow .= HTML::td ( $HeaderValue, array ( 'class' => 'row_header ' . strtolower ( $RowHeader ) ) );
+            }
+            foreach ( $Row as $ColID => $Value )
+            {
+                if ( $FirstRow )
+                {
+                    $TableHeaders .= HTML::th ( $ColID, array ( 'class' => 'row_value' ) );
+                }
+                $TableRow .= HTML::td ( $Value, array ( 'class' => 'row_value' ) );
+            }
+
+            $TableRows .= HTML::tr ( $TableRow );
+            $FirstRow = FALSE;
+        }
+        
+        $HTML .= HTML::table (
+            HTML::tr ( $TableHeaders, array ( 'class' => 'headers' ) ) .
+            $TableRows,
+            array ( 'class' => 'cuboide' )
+            );
+        return HTML::div ( $HTML, array ( 'class' => 'cuboide' ) );
+    }
+    
     protected function computeDataSet ( $SkyCube )
     {
         $RawDataSet = $SkyCube->getDataSet ();
