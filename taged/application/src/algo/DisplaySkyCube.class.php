@@ -18,8 +18,6 @@ class SkyCube
     
     public function __construct ( $Data, $RelationCols, $MeasureCols, $MinMax = Cuboide::TO_MAX )
     {
-        Log::fct_enter ( __METHOD__ );
-        Log::logVar ( '$MeasureCols', $MeasureCols );
         $this->DataSet = array ();
         $this->RowHeaders = array ();
         $this->ColIDs = array ();
@@ -28,23 +26,153 @@ class SkyCube
         $this->IsValid = TRUE;
         $this->computeDataSet ( $Data, $RelationCols, $MeasureCols );
         
+//         if ( $this->IsValid )
+//         {
+//             echo "Valid <br>\n";
+//             echo "DataSet " . HTML::tableFull ( $this->DataSet, array ( 'border' => '1' ) ) .  "<br>\n";
+//             echo "RowHeaders " . HTML::tableFull ( $this->RowHeaders, array ( 'border' => '1' ) ) .  "<br>\n";
+//             echo "ColIDs " . HTML::tableFull ( $this->ColIDs, array ( 'border' => '1' ) ) .  "<br>\n";
+//         }
+//         else 
+//         {
+//             echo "Not Valid <br>\n";
+//         }
+        
         $this->generateCuboideList ();
-
-        Log::fct_exit ( __METHOD__ );
+        
+//         if ( $this->IsValid )
+//         {
+//             echo "Valid <br>\n";
+//             echo "Cuboides " . Arrays::arrToString ( $this->Cuboides ) .  "<br>\n";
+//         }
+//         else
+//         {
+//             echo "Not Valid <br>\n";
+//         }
     }
 
+    public function toLaTex ()
+    {
+        $CuboideLaTeX = '\begin{figure}[htbp]
+ \centering
+ \tiny
+ \resizebox{1\textwidth}{!}{
+  \begin{tikzpicture}[
+   line join=bevel
+   ]';
+        $Arrows = '';
+        $NbLevels = count ( $this->Cuboides );
+        
+        $SizeMax = ( $NbLevels - 1 ) * 100 ;
+        
+        $Yinc = 75;
+        $Y = $SizeMax;
+        
+        $ArrowArray = array ();
+        
+        foreach ( array_reverse ( $this->Cuboides, TRUE ) as $Level => $Cuboides )
+        {
+            $CurrentLevel = '';
+            $NbCuboidesLvl = count ( $Cuboides );
+            $i = 1;
+            $Xinc = 300 / $NbCuboidesLvl;
+            $X = $Xinc / 2;
+            
+            $Arrows .= '   \draw [stealth-] (n' . $NbLevels . $Level . '.north) -- (top);' . PHP_EOL ;
+            $Arrows .= '   \draw [stealth-] (bottom) -- (n1' . $Level . '.south);' . PHP_EOL ;
+            
+            foreach ( $Cuboides as $Cuboide )
+            {
+                if ( $Level == $NbLevels )
+                {
+                    $Node = 'top';
+                    $X = 150;
+                }
+                else
+                {
+                    $Node = 'n' . $Level . $i++;
+                }
+                
+                if ( $Level > 1 && $Level < $NbLevels )
+                {
+                    
+                }
+                
+                $CuboideLaTeX .= $Cuboide->toLaTeX ( $Node, $X, $Y );
+                
+                $X += $Xinc;
+            }
+            $Y -= $Yinc;
+        }
+        
+        $CuboideLaTeX .= '   \node (bottom) at (150pt, 0pt) {$\emptyset$};' . PHP_EOL;
+        
+        $CuboideLaTeX .= '   %% Draws' . PHP_EOL;
+        
+        $CuboideLaTeX .= $Arrows;
+        
+        $CuboideLaTeX .= '  \end{tikzpicture}
+ }
+ \caption{Représentation du treillis du Skycube de la relation \texttt{Mettre un Nom}}\label{fig:skycube_treillis_complet_3}
+\end{figure}';
+        
+        
+        return HTML::pre ( $CuboideLaTeX,
+            array ( 'class' => 'cuboides_latex' ) );
+        
+    }
+    
+    public function __toString ()
+    {
+        $String  = HTML::div ( HTML::tableFull ( $this->RowHeaders, array ( 'border' => '1' ) ) );
+        $String .= HTML::div ( HTML::tableFull ( $this->ColIDs, array ( 'border' => '1' ) ) );
+        $String .= HTML::div ( HTML::tableFull ( $this->DataSet, array ( 'border' => '1' ) ) );
+        
+        $CuboidesContent = '';
+        //foreach (  $this->Cuboides as $Level => $Cuboides )
+        foreach ( array_reverse ( $this->Cuboides, TRUE ) as $Level => $Cuboides )
+        {
+            $CurrentLevel = '';
+            
+            foreach ( $Cuboides as $Cuboide )
+            {
+                $CurrentLevel .= $Cuboide->toHTML ();
+            }
+            $CuboidesContent .= HTML::div ( 
+                HTML::div ( $Level, array ( 'class' => 'title' ) ) . 
+                HTML::div ( $CurrentLevel), 
+                array ( 'class' => 'cuboides_lvl lvl_' . $Level ) );
+        }
+        
+        $String .= HTML::div ( 
+            HTML::div ( 'Cuboides', array ( 'class' => 'title' ) ) . 
+            HTML::div ( $CuboidesContent ), 
+            array ( 'class' => 'cuboides' ) );
+        
+        $String .= HTML::pre ( $CuboideLaTeX, 
+            array ( 'class' => 'cuboides' ) );
+        
+        return HTML::div ( $String, array ( 'class' => 'skycube' ) );
+    }
+    
+    
     protected function generateCuboideListLvl ( $Level, $ColIDs, $Current = '' )
     {
-        Log::fct_enter ( __METHOD__ );
+//         echo "Level $Level <br>\n";
+//         echo "ColIDs " . print_r ( $ColIDs, TRUE ) .  "<br>\n";
+//         echo "Current $Current <br>\n";
         $Left = count ( $ColIDs );
         $Length = strlen ( $Current );
         $Needed = $Level - $Length;
+//         echo "Left $Left <br>\n";
+//         echo "Length $Length <br>\n";
+//         echo "Needed $Needed <br>\n";
         
         if ( $Length == $Level )
         {
             $CuboideClass = static::CUBOIDE;
-            Log::logVar ( '$CuboideClass', $CuboideClass );
-            $this->Cuboides [$Level] [$Current] = new $CuboideClass ( $Current, $this->DataSet, $this->RowHeaders, $this->ColIDs, $this->MinMax );
+            //echo "Cuboide : $Level $Current <br>\n";
+            $this->Cuboides [$Level] [$Current] = new $CuboideClass ( $Current, $this, $this->MinMax );
         }
         else if ( $Left >= $Needed )
         {
@@ -54,17 +182,16 @@ class SkyCube
                 $this->generateCuboideListLvl ( $Level, $ColIDs, $Current . $Key );
             }
         }
-        Log::fct_exit ( __METHOD__ );
     }
     
     protected function generateCuboideList ()
     {
-        Log::fct_enter ( __METHOD__ );
         if ( $this->IsValid )
         {
             $IDCount = count ( $this->ColIDs );
             $NbCuboide = pow ( 2, $IDCount ) - 1;
-            Log::logVar ( '$NbCuboide', $NbCuboide );
+//             echo "IDCount $IDCount <br>\n";
+//             echo "NbCuboide $NbCuboide <br>\n";
             
             if ( $NbCuboide <= self::MAX_CUBOIDE )
             {
@@ -78,12 +205,10 @@ class SkyCube
                 $this->IsValid = FALSE;
             }
         }
-        Log::fct_exit ( __METHOD__ );
     }
     
     protected function computeDataSet ( $Data, $RelationCols, $MeasureCols )
     {
-        Log::fct_enter ( __METHOD__ );
         if ( is_array ( $Data ) )
         {
             $ColHeaders = array ();
@@ -138,7 +263,6 @@ class SkyCube
         {
             $this->IsValid = FALSE;
         }
-        Log::fct_exit ( __METHOD__ );
     }
     
     public function getDataSet ()
@@ -156,11 +280,6 @@ class SkyCube
         return $this->ColIDs;
     }
     
-    public function getCuboides ()
-    {
-        return $this->Cuboides;
-    }
-    
     protected $DataSet; //** Table indexed by RowID and ColID of Relation measures
     protected $RowHeaders; //** Table indexed by RowID of Relation identifiers
     protected $ColIDs; //** Table indexed by ColID of Measure identifiers
@@ -169,5 +288,4 @@ class SkyCube
     protected $IsValid;
 }
 
-Log::setDebug ( __FILE__ );
 

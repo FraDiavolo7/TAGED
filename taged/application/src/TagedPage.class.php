@@ -9,6 +9,7 @@ class TagedPage extends THPage
 	    'Match 3' => 'Match3',
 //	    'Test' => 'Test',
 	    'Test SkyCube' => 'TestSkyCube',
+	    'Test SkyCube Emergent' => 'TestSkyCubeEmergent',
 	    'Collection Data' => 'CollData',
 //	    'Collection Aggregate' => 'CollAggregate',
 	    'Hack&apos;n Slash Data' => 'HnSData',

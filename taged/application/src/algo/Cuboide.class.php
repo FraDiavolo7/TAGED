@@ -7,86 +7,22 @@ class Cuboide
     
     const TEST_ON = self::TO_MAX;
     
-    
-    public function __construct ( $CuboideID, $SkyCube )
+    public function __construct ( $CuboideID, $RawDataSet, $RawRowHeaders, $RawColIDs, $MinMax = self::TO_MAX )
     {
         $this->ID = $CuboideID;
         $this->DataSet = array ();
-        $this->RowHeaders = array ();
+        $this->RowHeaders = $RawRowHeaders;
         $this->ColIDs = array ();
+        $this->MinMax = $MinMax;
         $this->IsValid = FALSE;
         
-        $this->computeDataSet ( $SkyCube );
+        $this->computeDataSet ( $RawDataSet, $RawColIDs );
         
         $this->computeCuboide ( );
-        
-//         echo "ID " . $this->ID . " ";
-        
-//         if ( $this->IsValid )
-//         {
-//             echo "Valid <br>\n";
-//             echo "ColIDs " . HTML::tableFull ( $this->ColIDs, array ( 'border' => '1' ) ) .  "<br>\n";
-//             echo "DataSet " . HTML::tableFull ( $this->DataSet, array ( 'border' => '1' ) ) .  "<br>\n";
-//             //echo "RowHeaders " . HTML::tableFull ( $this->RowHeaders, array ( 'border' => '1' ) ) .  "<br>\n";
-//         }
-//         else
-//         {
-//             echo "Not Valid <br>\n";
-//         }
     }
     
-    public function __toString ()
+    protected function computeDataSet ( $RawDataSet, $RawColIDs )
     {
-        $String  = HTML::div ( $this->ID . ' (' . ( $this->IsValid ? 'V' : 'I' ) . ')' );
-        $String .= HTML::div ( HTML::tableFull ( $this->DataSet, array ( 'border' => '1' ) ) );
-        
-        return HTML::div ( $String, array ( 'class' => 'cuboide' ) );
-    }
-    
-    public function toHTML ()
-    {
-        $HTML = HTML::div ( HTML::div ( $this->ID ) . HTML::div ( '(' . ( $this->IsValid ? 'V' : 'I' ) . ')' ), array ( 'class' => 'title' ) );
-        
-        $TableHeaders = '';
-        $TableRows = '';
-        $FirstRow = TRUE;
-        foreach ( $this->DataSet as $RowID => $Row )
-        {
-            $TableRow = '';
-            foreach ( $this->RowHeaders[$RowID] as $RowHeader => $HeaderValue )
-            {
-                if ( $FirstRow )
-                {
-                    $TableHeaders .= HTML::th ( $RowHeader, array ( 'class' => 'row_header ' . strtolower ( $RowHeader ) ) );
-                }
-                $TableRow .= HTML::td ( $HeaderValue, array ( 'class' => 'row_header ' . strtolower ( $RowHeader ) ) );
-            }
-            foreach ( $Row as $ColID => $Value )
-            {
-                if ( $FirstRow )
-                {
-                    $TableHeaders .= HTML::th ( $ColID, array ( 'class' => 'row_value' ) );
-                }
-                $TableRow .= HTML::td ( $Value, array ( 'class' => 'row_value' ) );
-            }
-
-            $TableRows .= HTML::tr ( $TableRow );
-            $FirstRow = FALSE;
-        }
-        
-        $HTML .= HTML::table (
-            HTML::tr ( $TableHeaders, array ( 'class' => 'headers' ) ) .
-            $TableRows,
-            array ( 'class' => 'cuboide' )
-            );
-        return HTML::div ( $HTML, array ( 'class' => 'cuboide' ) );
-    }
-    
-    protected function computeDataSet ( $SkyCube )
-    {
-        $RawDataSet = $SkyCube->getDataSet ();
-        $this->RowHeaders = $SkyCube->getRowHeaders ();
-        $RawColIDs = $SkyCube->getColIDs ();
         $CuboideCols = str_split ( $this->ID );
         
         foreach ( $CuboideCols as $ColID )
@@ -120,22 +56,7 @@ class Cuboide
         {
             unset ( $this->DataSet [$RowID] );
         }
-        
-        $Transposed = array ();
-        foreach ( $this->DataSet as $RowID => $Row )
-        {
-            foreach ( $Row as $ColID => $Value )
-            {
-                $Transposed[$ColID][$RowID] = $Value;
-            }
-        }
-        
-        foreach ( $Transposed as $ColID => $Col )
-        {
-            $Function = self::TEST_ON;
-            $this->MaxCols [$ColID] = $Function ( $Col );
-        }
-        
+
         $this->IsValid = TRUE;
     }
     
@@ -158,55 +79,23 @@ class Cuboide
             }
         }
     }
-    
+
     protected function isInCuboide ( $ConsideredRowID )
     {
-        return $this->isInCuboideBruteForce ( $ConsideredRowID );
+        return TRUE;
     }
     
-    protected function isInCuboideBruteForce ( $ConsideredRowID )
-    {
-        // Compares this Row to each other to test if it is better or not (keep the best)
-        // If current Row is on 2 factors better than ConsideredRow then it is not in the SkyLine 
-        
-        $Current = '';
-        
-        $NbCols = count ( $this->ColIDs );
-        $InSkyLine = FALSE;
-        if ( $this->ID == $Current ) echo "ConsideredRowID $ConsideredRowID<br>";
-        if ( $this->ID == $Current ) echo "NbCols $NbCols<br>";
-        
-        $NbBetter = array ();
-        
-        foreach ( $this->DataSet as $RowID => $Row )
-        {
-            $NbB = 0;
-            foreach ( $Row as $ColID => $Value )
-            {
-                if ( $Value == $this->MaxCols [$ColID] )
-                {
-                    ++$NbB;
-                }
-            }
-            if ( $this->ID == $Current ) echo "NbBetter $NbB<br>";
-            
-            $NbBetter[$RowID] = $NbB;
-        }
-        
-        $MaxBetter = max ( $NbBetter );
-        
-        if ( $this->ID == $Current ) echo "MaxBetter $MaxBetter<br>";
-        if ( $this->ID == $Current ) echo "MaxBetter [$ConsideredRowID] " . $NbBetter [$ConsideredRowID] ."<br>";
-        
-        if ( $NbBetter [$ConsideredRowID] == $MaxBetter ) $InSkyLine = TRUE;
-        
-        return $InSkyLine;
-    }
+    public function getID ( ) { return $this->ID; }
+    public function getDataSet ( ) { return $this->DataSet; }
+    public function getRowHeaders ( ) { return $this->RowHeaders; }
+    public function getColIDs ( ) { return $this->ColIDs; }
+    public function isValid ( ) { return $this->IsValid; }
     
     protected $ID; //** Cuboide ID is the combinaison of ColIDs
     protected $DataSet; //** Table indexed by RowID and ColID of Relation measures
     protected $RowHeaders; //** Table indexed by RowID of Relation identifiers
     protected $ColIDs; //** Table indexed by ColID of Measure identifiers
+    protected $MinMax;
     protected $IsValid;
     protected $MaxCols;
 }

@@ -1,0 +1,93 @@
+<?php
+
+class CuboideBlocNestedLoop extends Cuboide
+{
+    const CURRENT = '';
+    
+    protected function countDifferences ( $RowID1, $RowID2, &$NbBetter, &$NbWorse )
+    {
+        $NbBetter = 0;
+        $NbWorse = 0;
+        
+        foreach ( $this->ColIDs as $ColID => $Header )
+        {
+//             if ( $this->ID == self::CURRENT ) echo "ColID $ColID<br>";
+//             if ( $this->ID == self::CURRENT ) echo "[$RowID1]" . $this->DataSet [$RowID1] [$ColID] ."<br>";
+//             if ( $this->ID == self::CURRENT ) echo "[$RowID2]" . $this->DataSet [$RowID2] [$ColID] ."<br>";
+            if ( $this->MinMax == self::TO_MAX )
+            {
+                $NbBetter += ( $this->DataSet [$RowID1] [$ColID] > $this->DataSet [$RowID2] [$ColID] ? 1 : 0 );
+                $NbWorse  += ( $this->DataSet [$RowID1] [$ColID] < $this->DataSet [$RowID2] [$ColID] ? 1 : 0 );
+            }
+            else
+            {
+                $NbBetter += ( $this->DataSet [$RowID1] [$ColID] < $this->DataSet [$RowID2] [$ColID] ? 1 : 0 );
+                $NbWorse  += ( $this->DataSet [$RowID1] [$ColID] > $this->DataSet [$RowID2] [$ColID] ? 1 : 0 );
+            }
+        }
+    }
+    
+    protected function computeCuboide ( )
+    {
+        $Skyline = array ( 0 => 0 );
+        
+        if ( $this->ID == self::CURRENT ) echo "Skyline " . __LINE__  . " " . print_r ( $Skyline, TRUE ) . "<br>";
+        
+        foreach ( $this->DataSet as $RowID => $Row )
+        {
+            if ( $RowID == 0 ) continue;
+            if ( $this->ID == self::CURRENT ) echo "RowID $RowID<br>";
+            
+            $RowsToRemove = array ();
+            
+            $IsWorse = FALSE;
+            
+            foreach ( $Skyline as $SLRowID )
+            {
+                $NbBetter = 0;
+                $NbWorse = 0;
+                $this->countDifferences ( $RowID, $SLRowID, $NbBetter, $NbWorse );
+                if ( $this->ID == self::CURRENT ) echo "SLRowID $SLRowID<br>";
+                if ( $this->ID == self::CURRENT ) echo "NbBetter $NbBetter<br>";
+                if ( $this->ID == self::CURRENT ) echo "NbWorse $NbWorse<br>";
+                
+                if ( ( $NbWorse > 0 ) && ( $NbBetter == 0 ) )
+                {
+                    $IsWorse = TRUE;
+                    break;
+                }
+                
+                if ( ( $NbBetter > 0 ) && ( $NbWorse == 0 ) )
+                {
+                    $RowsToRemove [] = $SLRowID;
+                }
+            }
+            
+            if ( $IsWorse ) continue;
+            
+            foreach ( $RowsToRemove as $RowToRemove )
+            {
+                unset ( $Skyline [$RowToRemove] );
+            }
+            
+            $Skyline [$RowID] = $RowID;
+            if ( $this->ID == self::CURRENT ) echo "Skyline " . __LINE__  . " " . print_r ( $Skyline, TRUE ) . "<br>";
+        }
+
+        $RowsToRemove = array ();
+        if ( $this->ID == self::CURRENT ) echo "Skyline " . __LINE__  . " " . print_r ( $Skyline, TRUE ) . "<br>";
+        
+        foreach ( $this->DataSet as $RowID => $Row )
+        {
+            if ( ! isset ( $Skyline [$RowID] ) )
+            {
+                $RowsToRemove [] = $RowID;                                        
+            }
+        }
+        
+        foreach ( $RowsToRemove as $RowToRemove )
+        {
+            unset ( $this->DataSet [$RowToRemove] );
+        }
+    }
+}

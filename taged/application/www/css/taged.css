@@ -165,6 +165,12 @@ table.taged_stats td + td {
 	border: 1px solid white;
 }
 
+div.testskycube {
+	display: flex;
+	flex-wrap: wrap;
+	
+}
+
 .testskycube div {
 	display: flex;
 	justify-content: center;
@@ -172,11 +178,14 @@ table.taged_stats td + td {
 }
 
 div.skycube {
-	flex-direction: column;
+	display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rowss: 1fr auto;
 	padding: 1rem;
 }
 
 div.cuboides {
+    grid-column: 1 / span 3;
 	flex-direction: column;
 }
 
