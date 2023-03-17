@@ -165,22 +165,20 @@ table.taged_stats td + td {
 	border: 1px solid white;
 }
 
-div.testskycube {
-	display: flex;
-	flex-wrap: wrap;
-	
-}
-
-.testskycube div {
+div.skycube div {
 	display: flex;
 	justify-content: center;
 	gap: 0.5rem;
 }
 
+div.skycube > div:nth-child(2) {
+	display: block;
+}
+
 div.skycube {
 	display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rowss: 1fr auto;
+    grid-template-rows: 1fr auto;
 	padding: 1rem;
 }
 

@@ -26,8 +26,6 @@ class PageShowAggregate extends TagedPage
 
 	protected function handle ( $Data )
 	{
-// 	    $this->add ( HTML::div ( print_r ( $Data, true ) ) );
-	    
 	    $Submit = Form::getData ( self::SHOW_SUBMIT, '', $Data );
         $this->Aggregate = Form::getData ( self::SHOW_AGGREGATE, '', $Data );
         $AggregateFile = NULL;
