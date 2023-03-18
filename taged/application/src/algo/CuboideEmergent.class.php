@@ -2,6 +2,7 @@
 
 class CuboideEmergent 
 {
+    const CURRENT = 'BC';
     public function __construct ( $ColIDs, $Cuboide1, $Cuboide2 )
     {
         $this->Cuboide1 = $Cuboide1;
@@ -32,22 +33,25 @@ class CuboideEmergent
             $C1Found = ( FALSE !== $C1Key );
             $C2Found = ( FALSE !== $C2Key );
             
-            if ( $C1Found )
+            if ( $C1Found && $C2Found )
+            {
+                $this->ColIDsC1 [$ColID] = $C1Key;
+                $this->ColIDsC2 [$ColID] = $C2Key;
+            }
+            elseif ( $C1Found )
             {
                 $this->ColIDsC1 [$ColID] = $C1Key;
             }
-            
-            if ( $C2Found )
+            elseif ( $C2Found )
             {
                 $this->ColIDsC2 [$ColID] = $C2Key;
             }
-            
-            if ( ! $C1Found && ! $C2Found )
+            else 
             {
                 $ColsToRemove [] = $ColID;
             }
         }
-        
+
         foreach ( $ColsToRemove as $ColID )
         {
             unset ( $this->ColIDs [$ColID] );
@@ -69,6 +73,15 @@ class CuboideEmergent
         {
             foreach ( $this->ColIDs as $ColID => $ColHeader )
             {
+//                 if ( $this->ID == self::CURRENT ) echo '$RowID ' . print_r ( $RowID, TRUE ) . "<br>";
+//                 if ( $this->ID == self::CURRENT ) echo '$ColID ' . print_r ( $ColID, TRUE ) . "<br>";
+//                 if ( $this->ID == self::CURRENT ) echo '$this->ColIDsC1 [$ColID] \'' . print_r ( $this->ColIDsC1 [$ColID], TRUE ) . "'<br>";
+//                 if ( $this->ID == self::CURRENT ) echo '$this->ColIDsC2 [$ColID] \'' . print_r ( $this->ColIDsC2 [$ColID], TRUE ) . "'<br>";
+//                 if ( $this->ID == self::CURRENT ) echo '$DataSet1 [$RowID] [$this->ColIDsC1 [$ColID]] \'' . print_r ( $DataSet1 [$RowID] [$this->ColIDsC1 [$ColID]], TRUE ) . "'<br>";
+//                 if ( $this->ID == self::CURRENT ) echo '$DataSet1 [$RowID] [$this->ColIDsC2 [$ColID]] \'' . print_r ( $DataSet1 [$RowID] [$this->ColIDsC2 [$ColID]], TRUE ) . "'<br>";
+//                 if ( $this->ID == self::CURRENT ) echo '$DataSet1 [$RowID]  \'' . print_r ( $DataSet1 [$RowID] , TRUE ) . "'<br>";
+//                 if ( $this->ID == self::CURRENT ) echo '$DataSet2 [$RowID]  \'' . print_r ( $DataSet2 [$RowID] , TRUE ) . "'<br>";
+                
                 $TmpDataSet [$RowID] [$ColID] = $DataSet1 [$RowID] [$this->ColIDsC1 [$ColID]] ?? $DataSet1 [$RowID] [$this->ColIDsC2 [$ColID]] ?? '';
             }
         }
@@ -103,4 +116,4 @@ class CuboideEmergent
     protected $ColIDsC2; //** Table indexed by ColID of Cuboide2 ColIDs
 }
 
-Log::setDebug ( __FILE__ );
+//Log::setDebug ( __FILE__ );

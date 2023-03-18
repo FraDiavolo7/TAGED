@@ -26,6 +26,7 @@ class SkyCube
         $this->Cuboides = array ();
         $this->MinMax = $MinMax;
         $this->IsValid = TRUE;
+        $this->CurrentColID = self::MIN_COLID;
         $this->computeDataSet ( $Data, $RelationCols, $MeasureCols );
         
         $this->generateCuboideList ();
@@ -36,6 +37,9 @@ class SkyCube
     protected function generateCuboideListLvl ( $Level, $ColIDs, $Current = '' )
     {
         Log::fct_enter ( __METHOD__ );
+        Log::logVar ( '$Level', $Level );
+        Log::logVar ( '$ColIDs', $ColIDs );
+        Log::logVar ( '$Current', $Current );
         $Left = count ( $ColIDs );
         $Length = strlen ( $Current );
         $Needed = $Level - $Length;
@@ -81,9 +85,20 @@ class SkyCube
         Log::fct_exit ( __METHOD__ );
     }
     
+    protected function getColID ( $ColHeader, $MeasureCols )
+    {
+        $ColID = $this->CurrentColID++;
+        
+        Log::logVar ( '$ColID', $ColID );
+        
+        return $ColID;
+    }
+    
     protected function computeDataSet ( $Data, $RelationCols, $MeasureCols )
     {
         Log::fct_enter ( __METHOD__ );
+        Log::logVar ( '$RelationCols', $RelationCols );
+        Log::logVar ( '$MeasureCols', $MeasureCols );
         if ( is_array ( $Data ) )
         {
             $ColHeaders = array ();
@@ -100,6 +115,7 @@ class SkyCube
                     {
                         if ( ! isset ( $ColHeaders [$ColHeader] ) )
                         {
+                            $NextColID = $this->getColID ( $ColHeader, $MeasureCols );
                             $ColHeaders [$ColHeader] = $NextColID;
                             $this->ColIDs [$NextColID] = $ColHeader;
                             $NextColID++;
@@ -109,6 +125,7 @@ class SkyCube
                     }
                 }
             }
+            Log::logVar ( '$this->ColIDs', $this->ColIDs );
             
             $RowToRemove = array ();
             
@@ -167,6 +184,7 @@ class SkyCube
     protected $Cuboides; //** List of Cuboides indexed by their header placeholder combinaison
     protected $MinMax;
     protected $IsValid;
+    protected $CurrentColID; // used only during construction phase
 }
 
 Log::setDebug ( __FILE__ );

@@ -7,6 +7,8 @@ class Cuboide
     
     const TEST_ON = self::TO_MAX;
     
+    const CURRENT = 'BC';
+    
     public function __construct ( $CuboideID, $RawDataSet, $RawRowHeaders, $RawColIDs, $MinMax = self::TO_MAX )
     {
         $this->ID = $CuboideID;
@@ -35,17 +37,20 @@ class Cuboide
         foreach ( $RawDataSet as $RowID => $Row )
         {
             $Empty = TRUE;
+            
             foreach ( $Row as $ColID => $Value )
             {
                 if ( isset ( $this->ColIDs [$ColID] ) )
                 {
-                    if ( '' !== $Value )
+//                    if ( '' !== $Value )
+                    if ( ! empty ( $Value ) || ( 0 === $Value ) )
                     {
                         $Empty = FALSE;
                     }
                     $this->DataSet [$RowID] [$ColID] = $Value;
                 }
             }
+//             if ( $this->ID == self::CURRENT ) echo '$Row ' . print_r ( $Row, TRUE ) . "<br>";
             if ( $Empty )
             {
                 $RowsToRemove [] = $RowID;

@@ -25,6 +25,46 @@ class SkyCubeEmergent extends SkyCube
         Log::fct_exit ( __METHOD__ );
     }
     
+    protected function getColID ( $ColHeader, $MeasureCols )
+    {
+        static $CurrentColID = self::MIN_COLID;
+
+        static $Stock = array ();
+        
+        $ColID = $CurrentColID;
+
+        if ( isset ( $Stock [$ColHeader] ) ) 
+        {
+            $ColID = $Stock [$ColHeader];
+        }
+        else
+        {
+            $LastChar = substr ( $ColHeader, -1 );
+            $Col2 = substr_replace ( $ColHeader, 2, -1 );
+            $Col2Found = in_array ( $Col2, $MeasureCols );
+            
+            if ( ( $LastChar == 1 ) && ( $Col2Found ) )
+            {
+                $ColID  = $CurrentColID . '1';
+                $ColID2 = $CurrentColID . '2';
+                $CurrentColID++;
+                
+                $Stock [$ColHeader] = $ColID;
+                $Stock [$Col2] = $ColID2;
+            }
+            else
+            {
+                $ColID  = $CurrentColID;
+                $CurrentColID++;
+                $Stock [$ColHeader] = $ColID;
+            }
+        }
+        
+        Log::logVar ( '$ColID', $ColID );
+        
+        return $ColID;
+    }
+    
     protected function computeDataSet ( $Data, $RelationCols, $MeasureCols )
     {
         Log::fct_enter ( __METHOD__ );
@@ -33,7 +73,7 @@ class SkyCubeEmergent extends SkyCube
         $Ignore = array ();
         
 //         Log::logVar ( '$MeasureCols', $MeasureCols );
-        
+
         foreach ( $MeasureCols as $ColID )
         {
             $LastChar = substr ( $ColID, -1 );
@@ -50,6 +90,7 @@ class SkyCubeEmergent extends SkyCube
 //                     Log::logVar ( '$ColID 1', $ColID );
                     $Columns2 [] = $Col2;
                     $Ignore [] = $Col2;
+//                    $ThisColID = array_search ( $ColHeader, $this->ColIDs );
                 }
                 else
                 {
@@ -59,6 +100,10 @@ class SkyCubeEmergent extends SkyCube
         }
         
         parent::computeDataSet ( $Data, $RelationCols, $MeasureCols );
+        
+        Log::logVar ( '$this->ColIDs', $this->ColIDs );
+        Log::logVar ( '$Columns1', $Columns1 );
+        Log::logVar ( '$Columns2', $Columns2 );
         
         $SkyCubeClass = static::SKYCUBE;
         Log::logVar ( '$SkyCubeClass', $SkyCubeClass );
@@ -70,6 +115,7 @@ class SkyCubeEmergent extends SkyCube
     
     public function getCuboides ()
     {
+        Log::fct_enter ( __METHOD__ );
         $Cuboides1 = $this->SkyCube1->getCuboides ();
         $Cuboides2 = $this->SkyCube2->getCuboides ();
         
@@ -77,12 +123,15 @@ class SkyCubeEmergent extends SkyCube
         
         foreach ( $Cuboides1 as $Level => $Cuboides )
         {
+            Log::logVar ( '$Level', $Level );
             foreach ( $Cuboides as $ID => $Cuboide )
             {
+                Log::logVar ( '$ID', $ID );
                 $this->Cuboides [$Level] [$ID] = new CuboideEmergent ( $this->ColIDs, $Cuboide, $Cuboides2 [$Level] [$ID] );
             }
         }
         
+        Log::fct_exit ( __METHOD__ );
         return $this->Cuboides;
     }
     
