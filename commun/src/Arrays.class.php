@@ -276,5 +276,33 @@ abstract class Arrays
         
         return $Row;
     }
+    
+    /**
+     * Same behavior as array_merge_recursive, but numeric keys are considered as identical
+     * @return Array
+     */
+    public static function arrayMergeRecursive () 
+    {
+        $Arrays = func_get_args();
+        $Base = array_shift ( $Arrays );
+        
+        foreach ( $Arrays as $Array ) 
+        {
+            reset ( $Base ); //important
+            while ( list ( $Key, $Value ) = @each ( $Array ) ) 
+            {
+                if ( is_array ( $Value ) && @is_array ( $Base [$Key] ) ) 
+                {
+                    $Base [$Key] = static::arrayMergeRecursive ( $Base [$Key], $Value );
+                } 
+                else 
+                {
+                    $Base [$Key] = $Value;
+                }
+            }
+        }
+        
+        return $Base;
+    }
 }
 

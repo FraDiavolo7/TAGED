@@ -486,13 +486,17 @@ class HTML
         return $Args;
     }
     
-    public static function tableFull ( $Array, $Attributes = array () )
+    public static function tableFull ( $Array, $Attributes = array (), $ShowID = FALSE )
     {
         $TableContent = '';
         $TableContent .= self::startTR ();
         
         foreach ( $Array as $RowHeader => $Row )
         {
+            if ( $ShowID )
+            {
+                $TableContent .= self::td ( strval ( $RowHeader ) );
+            }
             if ( is_array ( $Row ) )
             {
                 $TRContent = '';

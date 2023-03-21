@@ -11,6 +11,9 @@
  */
 class SKDisplay
 {
+    
+    const ROW_ID = 'RowID';
+    
     public static function text ( $Object )
     {
         $Text = print_r ( $Object, TRUE );
@@ -43,9 +46,25 @@ class SKDisplay
     
     public static function htmlSkyCube ( $SkyCube )
     {
-        $String  = HTML::div ( HTML::tableFull ( $SkyCube->getRowHeaders (), array ( 'border' => '1' ) ) );
-        $String .= HTML::div ( HTML::tableFull ( $SkyCube->getColIDs     (), array ( 'border' => '1' ) ) );
-        $String .= HTML::div ( HTML::tableFull ( $SkyCube->getDataSet    (), array ( 'border' => '1' ) ) );
+        $RowHeaders = $SkyCube->getRowHeaders ();
+        $RowID = array ();
+        $ShowRowID = FALSE;
+        if ( ! isset ( $RowHeaders [0] [self::ROW_ID] ) )
+        {
+            $ShowRowID = TRUE;
+            $RowID [] = self::ROW_ID;
+        }
+        $HeadersRow = array_merge ( $RowID, array_keys ( $RowHeaders [0] ) );
+        $HeadersCol = array_values ( $SkyCube->getColIDs () );
+        $Headers = array_merge ( $HeadersRow, $HeadersCol );
+        $InitData = Arrays::arrayMergeRecursive ( $RowHeaders, $SkyCube->getDataSet    ());
+
+        $String = HTML::div ( HTML::tableFull ($Headers,  array ( 'border' => '1' ) ) );
+        $String .= HTML::div ( HTML::tableFull ($InitData, array ( 'border' => '1' ), $ShowRowID ) );
+        
+//         $String .= HTML::div ( HTML::tableFull ( $SkyCube->getRowHeaders (), array ( 'border' => '1' ) ) );
+//         $String .= HTML::div ( HTML::tableFull ( $SkyCube->getColIDs     (), array ( 'border' => '1' ) ) );
+//         $String .= HTML::div ( HTML::tableFull ( $SkyCube->getDataSet    (), array ( 'border' => '1' ) ) );
         
         $CuboidesContent = '';
         //foreach (  $this->Cuboides as $Level => $Cuboides )
@@ -73,7 +92,10 @@ class SKDisplay
 
     public static function htmlSkyCubeEmergent ( $SkyCubeEmergent )
     {
-        $String  = HTML::div ( HTML::tableFull ( $SkyCubeEmergent->getRowHeaders (), array ( 'border' => '1' ) ) );
+        $InitData = array_merge ( $SkyCubeEmergent->getRowHeaders (), $SkyCubeEmergent->getDataSet    ());
+        $String  = HTML::div ( HTML::tableFull ($InitData, array ( 'border' => '1' ), TRUE ) );
+        
+        $String .= HTML::div ( HTML::tableFull ( $SkyCubeEmergent->getRowHeaders (), array ( 'border' => '1' ) ) );
         $String .= HTML::div ( HTML::tableFull ( $SkyCubeEmergent->getColIDs     (), array ( 'border' => '1' ) ) );
         $String .= HTML::div ( HTML::tableFull ( $SkyCubeEmergent->getDataSet    (), array ( 'border' => '1' ) ) );
         
@@ -109,10 +131,24 @@ class SKDisplay
         $TableRows = '';
         $FirstRow = TRUE;
         $RowHeaders = $Cuboide->getRowHeaders ();
+        $ShowID = FALSE;
+        
+        if ( ! isset ( $RowHeaders [self::ROW_ID] ) )
+        {
+            $ShowID = TRUE;
+        }
         
         foreach ( $Cuboide->getDataSet () as $RowID => $Row )
         {
             $TableRow = '';
+            if ( $ShowID )
+            {
+                if ( $FirstRow )
+                {
+                    $TableHeaders .= HTML::th ( self::ROW_ID, array ( 'class' => 'row_header ' . strtolower ( self::ROW_ID ) ) );
+                }
+                $TableRow .= HTML::td ( strval ( $RowID ), array ( 'class' => 'row_header ' . strtolower ( self::ROW_ID ) ) );
+            }
             foreach ( $RowHeaders [$RowID] as $RowHeader => $HeaderValue )
             {
                 if ( $FirstRow )

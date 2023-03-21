@@ -15,6 +15,7 @@ class CuboideEmergent
         $this->mergeColumns ( );
         
         $this->mergeDataSets ( );
+        $this->IsValid = TRUE;
     }
     
     protected function mergeColumns ( )
@@ -81,8 +82,10 @@ class CuboideEmergent
 //                 if ( $this->ID == self::CURRENT ) echo '$DataSet1 [$RowID] [$this->ColIDsC2 [$ColID]] \'' . print_r ( $DataSet1 [$RowID] [$this->ColIDsC2 [$ColID]], TRUE ) . "'<br>";
 //                 if ( $this->ID == self::CURRENT ) echo '$DataSet1 [$RowID]  \'' . print_r ( $DataSet1 [$RowID] , TRUE ) . "'<br>";
 //                 if ( $this->ID == self::CURRENT ) echo '$DataSet2 [$RowID]  \'' . print_r ( $DataSet2 [$RowID] , TRUE ) . "'<br>";
+                $ColID1 = $this->ColIDsC1 [$ColID] ?? 123456789;
+                $ColID2 = $this->ColIDsC2 [$ColID] ?? 123456789;
                 
-                $TmpDataSet [$RowID] [$ColID] = $DataSet1 [$RowID] [$this->ColIDsC1 [$ColID]] ?? $DataSet1 [$RowID] [$this->ColIDsC2 [$ColID]] ?? '';
+                $TmpDataSet [$RowID] [$ColID] = $DataSet1 [$RowID] [$ColID1] ?? $DataSet1 [$RowID] [$ColID2] ?? '';
             }
         }
         
@@ -114,6 +117,7 @@ class CuboideEmergent
     protected $ColIDs; //** Table indexed by ColID of Measure identifiers
     protected $ColIDsC1; //** Table indexed by ColID of Cuboide1 ColIDs
     protected $ColIDsC2; //** Table indexed by ColID of Cuboide2 ColIDs
+    protected $IsValid;
 }
 
 //Log::setDebug ( __FILE__ );

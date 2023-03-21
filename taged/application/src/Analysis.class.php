@@ -238,6 +238,87 @@ class Analysis
         return $this->Result;
     }
  
+    protected function runCuboide ( $Cuboide, $Algorithm, $M, $N )
+    {
+        $DataSet    = $Cuboide->getDataSet ();
+        $RowHeaders = $Cuboide->getRowHeaders ();
+        $ColIDs     = array_flip ( $Cuboide->getColIDs () );
+        
+        $DataToProcess = array ();
+        $ColumnList = $this->getSkyCubeColumns ( );
+        
+        foreach ( $DataSet as $RowID => $Row )
+        {
+            foreach ( $ColumnList as $ColName => $ColIDList )
+            {
+                $Init = TRUE;
+                foreach ( $ColIDList as $ColHeader )
+                {
+                    if ( isset ( $ColIDs [ $ColHeader ] ) )
+                    {
+                        $ColID = $ColIDs [ $ColHeader ];
+                        if ( $Init )
+                        {
+                            $DataToProcess [$ColName] [$RowID] = $RowHeaders [$RowID];
+                            $Init = FALSE;
+                        }
+                        $DataToProcess [$ColName] [$RowID] [$ColID] = $DataSet [$RowID] [$ColID];
+                    }
+                }
+            }
+        }
+        
+        foreach ( $DataToProcess as $ColName => $Data )
+        {
+            echo "Data to Process : " . $Cuboide->getID ( ) . " " . $ColName . "<br>";
+            echo HTML::tableFull ( $Data,  array ( 'border' => '1' ) );
+        }
+    }
+    
+    public function runSkyCube ( $Algorithm, $M, $N, $MinMax = Cuboide::TO_MAX )
+    {
+        $SkyCube = $this->getSkyCube ( TRUE, $MinMax );
+        
+        if ( NULL != $SkyCube )
+        {
+            $SkCuboides = $SkyCube->getCuboides ();
+            foreach ( $SkCuboides as $Level => $Cuboides )
+            {
+                foreach ( $Cuboides as $Cuboide )
+                {
+                    $this->runCuboide ( $Cuboide, $Algorithm, $M, $N );
+                }
+            }
+        }
+    }
+    
+    public function getSkyCubeColumns ( )
+    {
+        $Names = array ();
+        $MesCols = explode ( ',', $this->getMeasureCols () );
+        $Ignore = array ();
+        foreach ( $MesCols as $ColHeader )
+        {
+            if ( ! in_array ( $ColHeader, $Ignore ) )
+            {
+                $LastChar = substr ( $ColHeader, -1 );
+                $Col2 = substr_replace ( $ColHeader, 2, -1 );
+                
+                if ( ( $LastChar == '1' ) && ( in_array ( $Col2, $MesCols ) ) )
+                {
+                    $Names  [substr ( $ColHeader, 0, -1 )] = array ( $ColHeader, $Col2 );
+                    $Ignore [] = $Col2;
+                }
+                else
+                {
+                    $Names  [$ColHeader] = array ( $ColHeader );
+                }
+            }
+        }
+        return $Names;
+    }
+    
+    
     public function getResult ()
     {
         return $this->Result;
@@ -281,6 +362,64 @@ class Analysis
     public function getAggregateFile ( $AsNumerics = FALSE )
     {
         return new AggregateFile ( $this->DBClass, AGGREGATE_FOLDER_REQUESTS . $this->RequestFile, $this->DBTable, $AsNumerics );
+    }
+    
+    protected function getTestData ()
+    {
+        $DataSet = array ();
+        $DataSet [] = array ( 'RowID' => 1, 'Type' => 'Feticheur', 'Propriete' => 'Vitesse', 'Parangon1' => 600, 'Rarete1' => 5,  'Gemmes1' => 30, 'Succes1' => 3,  'Parangon2' => 650, 'Rarete2' => 6,  'Gemmes2' => 40, 'Succes2' => 2 );
+        $DataSet [] = array ( 'RowID' => 2, 'Type' => 'Feticheur', 'Propriete' => 'Vitesse', 'Parangon1' => 900, 'Rarete1' => 5,  'Gemmes1' => 85, 'Succes1' => 7,  'Parangon2' => 950, 'Rarete2' => 6,  'Gemmes2' => 95, 'Succes2' => 6 );
+        $DataSet [] = array ( 'RowID' => 3, 'Type' => 'Sorciere',  'Propriete' => 'Chance',  'Parangon1' => 600, 'Rarete1' => 10, 'Gemmes1' => 50, 'Succes1' => 7,  'Parangon2' => 650, 'Rarete2' => 11, 'Gemmes2' => 60, 'Succes2' => 6 );
+        $DataSet [] = array ( 'RowID' => 4, 'Type' => 'Sorciere',  'Propriete' => 'Vitesse', 'Parangon1' => 100, 'Rarete1' => 10, 'Gemmes1' => 85, 'Succes1' => 5,  'Parangon2' => 150, 'Rarete2' => 11, 'Gemmes2' => 95, 'Succes2' => 4 );
+        $DataSet [] = array ( 'RowID' => 5, 'Type' => 'Croise',    'Propriete' => 'Chance',  'Parangon1' => 900, 'Rarete1' => 10, 'Gemmes1' => 50, 'Succes1' => 7,  'Parangon2' => 950, 'Rarete2' => 11, 'Gemmes2' => 60, 'Succes2' => 6 );
+        return $DataSet;
+    }
+    
+    protected function getTestMesCols ()
+    {
+        $MesCols = array ();
+        $MesCols [] = 'Parangon1';
+        $MesCols [] = 'Rarete1';
+        $MesCols [] = 'Gemmes1';
+        $MesCols [] = 'Succes1';
+        $MesCols [] = 'Parangon2';
+        $MesCols [] = 'Rarete2';
+        $MesCols [] = 'Gemmes2';
+        $MesCols [] = 'Succes2';
+        return $MesCols;
+    }
+    
+    protected function getTestRelCols ()
+    {
+        $RelCols = array ();
+        $RelCols [] = 'RowID';
+        $RelCols [] = 'Type';
+        $RelCols [] = 'Propriete';
+        return $RelCols;
+    }
+    
+    public function getSkyCube ( $AsNumerics = FALSE, $MinMax = Cuboide::TO_MAX, $Bidon = FALSE )
+    {
+        $SkyCube = NULL;
+        
+        $Aggregate = $this->getAggregateFile ( $AsNumerics ) ;
+        
+        if ( $Bidon )
+        {
+            $DataSet = $this->getTestData ();
+            $RelCols = $this->getTestRelCols ();
+            $MesCols = $this->getTestMesCols ();
+        }
+        else
+        {
+            $DataSet = $Aggregate->getData ();
+            $RelCols = explode ( ',', $this->getRelationCols () );
+            $MesCols = explode ( ',', $this->getMeasureCols () );
+        }
+        
+        $SkyCube = new SkyCubeEmergent ( $DataSet, $RelCols, $MesCols, $MinMax );
+        
+        return $SkyCube;
     }
     
     public function getRequestFile  () { return $this->RequestFile ; }

@@ -171,19 +171,20 @@ div.skycube div {
 	gap: 0.5rem;
 }
 
-div.skycube > div:nth-child(2) {
-	display: block;
-}
-
 div.skycube {
-	display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	padding: 1rem;
 }
 
+div.skycube > div > table {
+  width: 100%;
+    table-layout: fixed;
+}
+
+
 div.cuboides {
-    grid-column: 1 / span 3;
 	flex-direction: column;
 }
 

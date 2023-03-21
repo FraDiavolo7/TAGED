@@ -95,7 +95,8 @@ class CollParser {
         $this->currentPokemon2 = $matches[1];
         */
         /* Turns. */
-        $this->applyPattern ( '/\|turn\|([0-9]+)\n(.*)(?=\|turn\|)/sU', 'turnPreg' );
+        //$this->applyPattern ( '/\|turn\|([0-9]+)\n(.*)(?=\|turn\|)/sU', 'turnPreg' );
+        $this->applyPattern ( '/\|turn\|([0-9]+)\n/sU', 'turnPreg' );
         
         // Last turn.
         $this->turns[] = $this->ProcessedText;

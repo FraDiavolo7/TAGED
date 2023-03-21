@@ -14,15 +14,42 @@ class CuboideBlocNestedLoop extends Cuboide
 //             if ( $this->ID == self::CURRENT ) echo "ColID $ColID<br>";
 //             if ( $this->ID == self::CURRENT ) echo "[$RowID1]" . $this->DataSet [$RowID1] [$ColID] ."<br>";
 //             if ( $this->ID == self::CURRENT ) echo "[$RowID2]" . $this->DataSet [$RowID2] [$ColID] ."<br>";
+//             if ( ! isset ( $this->DataSet [$RowID1] ) )          echo __LINE__ . ' ' . $this->ID . ' $this->DataSet [' . $RowID1 . ']' . 'not set' ."<br>";
+//             if ( ! isset ( $this->DataSet [$RowID1] [$ColID] ) ) echo __LINE__ . ' ' . $this->ID . ' $this->DataSet [' . $RowID1 . '] [' . $ColID . ']' . 'not set' ."<br>";
+//             if ( ! isset ( $this->DataSet [$RowID2] ) )          echo __LINE__ . ' ' . $this->ID . ' $this->DataSet [' . $RowID2 . ']' . 'not set' ."<br>";
+//             if ( ! isset ( $this->DataSet [$RowID2] [$ColID] ) ) echo __LINE__ . ' ' . $this->ID . ' $this->DataSet [' . $RowID2 . '] [' . $ColID . ']' . 'not set' ."<br>";
+            
             if ( $this->MinMax == self::TO_MAX )
             {
-                $NbBetter += ( $this->DataSet [$RowID1] [$ColID] > $this->DataSet [$RowID2] [$ColID] ? 1 : 0 );
-                $NbWorse  += ( $this->DataSet [$RowID1] [$ColID] < $this->DataSet [$RowID2] [$ColID] ? 1 : 0 );
+                if ( ! isset ( $this->DataSet [$RowID1] [$ColID] ) )
+                {
+                    $NbWorse += 1;
+                }
+                elseif ( ! isset ( $this->DataSet [$RowID2] [$ColID] ) )
+                {
+                    $NbBetter += 1;
+                }
+                else 
+                {
+                    $NbBetter += ( $this->DataSet [$RowID1] [$ColID] > $this->DataSet [$RowID2] [$ColID] ? 1 : 0 );
+                    $NbWorse  += ( $this->DataSet [$RowID1] [$ColID] < $this->DataSet [$RowID2] [$ColID] ? 1 : 0 );
+                }
             }
             else
             {
-                $NbBetter += ( $this->DataSet [$RowID1] [$ColID] < $this->DataSet [$RowID2] [$ColID] ? 1 : 0 );
-                $NbWorse  += ( $this->DataSet [$RowID1] [$ColID] > $this->DataSet [$RowID2] [$ColID] ? 1 : 0 );
+                if ( ! isset ( $this->DataSet [$RowID1] [$ColID] ) )
+                {
+                    $NbBetter += 1;
+                }
+                elseif ( ! isset ( $this->DataSet [$RowID2] [$ColID] ) )
+                {
+                    $NbWorse += 1;
+                }
+                else
+                {
+                    $NbBetter += ( $this->DataSet [$RowID1] [$ColID] < $this->DataSet [$RowID2] [$ColID] ? 1 : 0 );
+                    $NbWorse  += ( $this->DataSet [$RowID1] [$ColID] > $this->DataSet [$RowID2] [$ColID] ? 1 : 0 );
+                }
             }
         }
     }
