@@ -7,7 +7,7 @@ class Cuboide
     
     const TEST_ON = self::TO_MAX;
     
-    const CURRENT = 'BC';
+    const CURRENT = '';
     
     public function __construct ( $CuboideID, $RawDataSet, $RawRowHeaders, $RawColIDs, $MinMax = self::TO_MAX )
     {

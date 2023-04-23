@@ -44,6 +44,60 @@ class SKDisplay
         return static::$Function ( $Object );
     }
     
+    public static function htmlInputData ( $SkyCube )
+    {
+        $RowHeaders = $SkyCube->getRowHeaders ();
+        $RowID = array ();
+        $ShowRowID = FALSE;
+        if ( ! isset ( $RowHeaders [0] [self::ROW_ID] ) )
+        {
+            $ShowRowID = TRUE;
+            $RowID [] = self::ROW_ID;
+        }
+        $HeadersRow = array_merge ( $RowID, array_keys ( $RowHeaders [0] ) );
+        $HeadersCol = array_values ( $SkyCube->getColIDs () );
+        $Headers = array_merge ( $HeadersRow, $HeadersCol );
+        $InitData = Arrays::arrayMergeRecursive ( $RowHeaders, $SkyCube->getDataSet    ());
+        
+        $String = HTML::div ( HTML::tableFull ($Headers,  array ( 'border' => '1' ) ) );
+        $String .= HTML::div ( HTML::tableFull ($InitData, array ( 'border' => '1' ), $ShowRowID ) );
+        return HTML::div ( $String, array ( 'class' => 'input_data' ) );
+    }
+
+    public static function htmlMultidimensionalSpace ( $SkyCube )
+    {
+        $String = '';
+        
+        return HTML::div ( $String, array ( 'class' => 'multidimensional_space' ) );
+    }
+        
+    public static function htmlEquivalenceClasses ( $SkyCube )
+    {
+        $String = '';
+        
+        $CuboidesContent = '';
+        //foreach (  $this->Cuboides as $Level => $Cuboides )
+        foreach (  $SkyCube->getCuboides () as $Level => $Cuboides )
+        {
+            $CurrentLevel = '';
+            
+            foreach ( $Cuboides as $Cuboide )
+            {
+                $CurrentLevel .= $Cuboide->getEquivalenceClasses ( $AsArray );
+            }
+            $CuboidesContent .= HTML::div (
+                HTML::div ( $Level, array ( 'class' => 'title' ) ) .
+                HTML::div ( print_r ( $CurrentLevel, TRUE )),
+                array ( 'class' => 'cuboides_lvl lvl_' . $Level ) );
+        }
+        
+        $String .= HTML::div (
+            HTML::div ( 'Cuboides', array ( 'class' => 'title' ) ) .
+            HTML::div ( $CuboidesContent ),
+            array ( 'class' => 'cuboides' ) );
+        return HTML::div ( $String, array ( 'class' => 'equivalence_classes' ) );
+    }
+    
     public static function htmlSkyCube ( $SkyCube )
     {
         $RowHeaders = $SkyCube->getRowHeaders ();
@@ -59,9 +113,6 @@ class SKDisplay
         $Headers = array_merge ( $HeadersRow, $HeadersCol );
         $InitData = Arrays::arrayMergeRecursive ( $RowHeaders, $SkyCube->getDataSet    ());
 
-        $String = HTML::div ( HTML::tableFull ($Headers,  array ( 'border' => '1' ) ) );
-        $String .= HTML::div ( HTML::tableFull ($InitData, array ( 'border' => '1' ), $ShowRowID ) );
-        
 //         $String .= HTML::div ( HTML::tableFull ( $SkyCube->getRowHeaders (), array ( 'border' => '1' ) ) );
 //         $String .= HTML::div ( HTML::tableFull ( $SkyCube->getColIDs     (), array ( 'border' => '1' ) ) );
 //         $String .= HTML::div ( HTML::tableFull ( $SkyCube->getDataSet    (), array ( 'border' => '1' ) ) );
