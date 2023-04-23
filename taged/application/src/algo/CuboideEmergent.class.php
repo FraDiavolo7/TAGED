@@ -2,7 +2,7 @@
 
 class CuboideEmergent 
 {
-    const CURRENT = 'BC';
+    const CURRENT = 'ABC';
     public function __construct ( $ColIDs, $Cuboide1, $Cuboide2 )
     {
         $this->Cuboide1 = $Cuboide1;
@@ -74,18 +74,23 @@ class CuboideEmergent
         {
             foreach ( $this->ColIDs as $ColID => $ColHeader )
             {
-//                 if ( $this->ID == self::CURRENT ) echo '$RowID ' . print_r ( $RowID, TRUE ) . "<br>";
-//                 if ( $this->ID == self::CURRENT ) echo '$ColID ' . print_r ( $ColID, TRUE ) . "<br>";
+                 if ( $this->ID == self::CURRENT ) echo '$RowID ' . print_r ( $RowID, TRUE ) . "<br>";
+                 if ( $this->ID == self::CURRENT ) echo '$ColID ' . print_r ( $ColID, TRUE ) . "<br>";
 //                 if ( $this->ID == self::CURRENT ) echo '$this->ColIDsC1 [$ColID] \'' . print_r ( $this->ColIDsC1 [$ColID], TRUE ) . "'<br>";
 //                 if ( $this->ID == self::CURRENT ) echo '$this->ColIDsC2 [$ColID] \'' . print_r ( $this->ColIDsC2 [$ColID], TRUE ) . "'<br>";
 //                 if ( $this->ID == self::CURRENT ) echo '$DataSet1 [$RowID] [$this->ColIDsC1 [$ColID]] \'' . print_r ( $DataSet1 [$RowID] [$this->ColIDsC1 [$ColID]], TRUE ) . "'<br>";
 //                 if ( $this->ID == self::CURRENT ) echo '$DataSet1 [$RowID] [$this->ColIDsC2 [$ColID]] \'' . print_r ( $DataSet1 [$RowID] [$this->ColIDsC2 [$ColID]], TRUE ) . "'<br>";
-//                 if ( $this->ID == self::CURRENT ) echo '$DataSet1 [$RowID]  \'' . print_r ( $DataSet1 [$RowID] , TRUE ) . "'<br>";
-//                 if ( $this->ID == self::CURRENT ) echo '$DataSet2 [$RowID]  \'' . print_r ( $DataSet2 [$RowID] , TRUE ) . "'<br>";
+                if ( $this->ID == self::CURRENT ) echo '$DataSet1 [$RowID]  \'' . print_r ( $DataSet1 [$RowID] , TRUE ) . "'<br>";
+                if ( $this->ID == self::CURRENT ) echo '$DataSet2 [$RowID]  \'' . print_r ( $DataSet2 [$RowID] , TRUE ) . "'<br>";
                 $ColID1 = $this->ColIDsC1 [$ColID] ?? 123456789;
                 $ColID2 = $this->ColIDsC2 [$ColID] ?? 123456789;
                 
-                $TmpDataSet [$RowID] [$ColID] = $DataSet1 [$RowID] [$ColID1] ?? $DataSet1 [$RowID] [$ColID2] ?? '';
+                $Val1 = $DataSet1 [$RowID] [$ColID1] ?? '';
+                $Val2 = $DataSet2 [$RowID] [$ColID2] ?? '';
+                
+                echo '$Val1 ' . $Val1 . ' = $DataSet1 [$RowID ' . $RowID . '] [$ColID1 ' . $ColID1 . ' ' . $ColID . '] ?? "";' . "<br>" ;
+                echo '$Val2 ' . $Val2 . ' = $DataSet2 [$RowID ' . $RowID . '] [$ColID2 ' . $ColID2 . ' ' . $ColID . '] ?? "";' . "<br>" ;
+                $TmpDataSet [$RowID] [$ColID] = ( $Val1 != '' ? $Val1 : ( $Val2 != '' ? $Val2 : '' ) );
             }
         }
         
@@ -93,7 +98,7 @@ class CuboideEmergent
         Log::fct_exit ( __METHOD__ );
     }
     
-    protected function computeCuboide ( )
+    public function computeCuboide ( )
     {
         Log::fct_enter ( __METHOD__ );
         // Merging

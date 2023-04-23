@@ -17,32 +17,12 @@ class Cuboide
         $this->ColIDs = array ();
         $this->MinMax = $MinMax;
         $this->IsValid = FALSE;
-        $this->EquivalenceClasses = array ();
         
         $this->computeDataSet ( $RawDataSet, $RawColIDs );
         
-        //$this->computeCuboide ( );
-    }
-
-    protected function isEquivalent ( $RawDataSet, $RowID )
-    {
-        foreach ( $this->EquivalenceClasses as $RowEq => $Parts )
-        {
-            if ( empty ( array_diff ( $RawDataSet [$RowEq], $RawDataSet [$RowID] ) ) )
-            {
-                return $RowEq;
-            }
-        }
-        return FALSE;
+        $this->computeCuboide ( );
     }
     
-    /**
-     * Prepares the data set
-     * Removes empty lines
-     * Computes Accords classes
-     * @param array $RawDataSet
-     * @param array $RawColIDs
-     */
     protected function computeDataSet ( $RawDataSet, $RawColIDs )
     {
         $CuboideCols = str_split ( $this->ID );
@@ -54,8 +34,6 @@ class Cuboide
         
         $RowsToRemove = array ();
         
-        $FirstRow = TRUE;
-        
         foreach ( $RawDataSet as $RowID => $Row )
         {
             $Empty = TRUE;
@@ -64,6 +42,7 @@ class Cuboide
             {
                 if ( isset ( $this->ColIDs [$ColID] ) )
                 {
+//                    if ( '' !== $Value )
                     if ( ! empty ( $Value ) || ( 0 === $Value ) )
                     {
                         $Empty = FALSE;
@@ -71,19 +50,7 @@ class Cuboide
                     $this->DataSet [$RowID] [$ColID] = $Value;
                 }
             }
-
-            $Equivalence = $this->isEquivalent ( $this->DataSet, $RowID );
-            
-            if ( $FirstRow || ( $Equivalence === FALSE ) )
-            {
-                $this->EquivalenceClasses [$RowID] = array ();
-            }
-            else
-            {
-                $this->EquivalenceClasses [$Equivalence][] = $RowID;
-            }
-            $FirstRow = FALSE;
-            
+//             if ( $this->ID == self::CURRENT ) echo '$Row ' . print_r ( $Row, TRUE ) . "<br>";
             if ( $Empty )
             {
                 $RowsToRemove [] = $RowID;
@@ -98,7 +65,7 @@ class Cuboide
         $this->IsValid = TRUE;
     }
     
-    public function computeCuboide ( )
+    protected function computeCuboide ( )
     {
         if ( $this->IsValid )
         {
@@ -129,27 +96,6 @@ class Cuboide
     public function getColIDs ( ) { return $this->ColIDs; }
     public function isValid ( ) { return $this->IsValid; }
     
-    public function getEquivalenceClasses ( $AsArray = FALSE )
-    {
-        $Result = '';
-        
-        if ( $AsArray )
-        {
-            $Result = $this->EquivalenceClasses;
-        }
-        else
-        {
-            $Sep = '{';
-            foreach ( $this->EquivalenceClasses as $RowIndex => $Parts )
-            {
-                $Result .= $Sep . $RowIndex . implode ( '', $Parts );
-                $Sep = ',';
-            }
-            $Result .= '}';
-        }
-        return $Result;
-    }
-    
     protected $ID; //** Cuboide ID is the combinaison of ColIDs
     protected $DataSet; //** Table indexed by RowID and ColID of Relation measures
     protected $RowHeaders; //** Table indexed by RowID of Relation identifiers
@@ -157,6 +103,4 @@ class Cuboide
     protected $MinMax;
     protected $IsValid;
     protected $MaxCols;
-    
-    protected $EquivalenceClasses; 
 }

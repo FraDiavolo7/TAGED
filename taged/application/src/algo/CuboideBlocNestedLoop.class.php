@@ -54,7 +54,7 @@ class CuboideBlocNestedLoop extends Cuboide
         }
     }
     
-    protected function computeCuboide ( )
+    public function computeCuboide ( )
     {
         $Skyline = array ( 0 => 0 );
         

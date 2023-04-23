@@ -3,7 +3,7 @@
 class CuboideBruteForce extends Cuboide
 {
     
-    protected function computeCuboide ( )
+    public function computeCuboide ( )
     {
         if ( $this->IsValid )
         {

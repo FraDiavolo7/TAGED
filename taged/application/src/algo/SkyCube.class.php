@@ -27,6 +27,7 @@ class SkyCube
         $this->MinMax = $MinMax;
         $this->IsValid = TRUE;
         $this->CurrentColID = self::MIN_COLID;
+        $this->SetsOfParts = array ();
         $this->computeDataSet ( $Data, $RelationCols, $MeasureCols );
         
         $this->generateCuboideList ();
@@ -48,7 +49,15 @@ class SkyCube
         {
             $CuboideClass = static::CUBOIDE;
             Log::logVar ( '$CuboideClass', $CuboideClass );
-            $this->Cuboides [$Level] [$Current] = new $CuboideClass ( $Current, $this->DataSet, $this->RowHeaders, $this->ColIDs, $this->MinMax );
+            $Cuboide = new $CuboideClass ( $Current, $this->DataSet, $this->RowHeaders, $this->ColIDs, $this->MinMax );
+            
+            $EquivalenceClasses = $Cuboide->getEquivalenceClasses ();
+            if ( ! in_array ( $EquivalenceClasses, $this->SetsOfParts ) )
+            {
+                $this->SetsOfParts [] = $EquivalenceClasses;
+                $Cuboide->computeCuboide ();
+                $this->Cuboides [$Level] [$Current] = $Cuboide;
+            }
         }
         else if ( $Left >= $Needed )
         {
@@ -72,7 +81,7 @@ class SkyCube
             
             if ( $NbCuboide <= self::MAX_CUBOIDE )
             {
-                for ( $i = 1 ; $i <= $IDCount ; ++$i )
+                for ( $i = $IDCount ; $i ; --$i )
                 {
                      $this->generateCuboideListLvl ( $i, array_keys ( $this->ColIDs ) );
                 }
@@ -185,6 +194,8 @@ class SkyCube
     protected $MinMax;
     protected $IsValid;
     protected $CurrentColID; // used only during construction phase
+    
+    protected $SetsOfParts;
 }
 
 Log::setDebug ( __FILE__ );

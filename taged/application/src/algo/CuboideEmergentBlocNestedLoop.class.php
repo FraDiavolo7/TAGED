@@ -76,7 +76,7 @@ class CuboideEmergent extends Cuboide
         $this->DataSet = $TmpDataSet;
     }
     
-    protected function computeCuboide ( )
+    public function computeCuboide ( )
     {
         // Merging
         // ColIDs => remove columns neither in Cuboide1 nor Cuboide2

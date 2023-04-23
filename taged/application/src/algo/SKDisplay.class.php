@@ -68,7 +68,7 @@ class SKDisplay
         
         $CuboidesContent = '';
         //foreach (  $this->Cuboides as $Level => $Cuboides )
-        foreach ( array_reverse ( $SkyCube->getCuboides (), TRUE ) as $Level => $Cuboides )
+        foreach (  $SkyCube->getCuboides () as $Level => $Cuboides )
         {
             $CurrentLevel = '';
             
