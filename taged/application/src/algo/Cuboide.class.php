@@ -131,7 +131,7 @@ class Cuboide
     
     public function getEquivalenceClasses ( $AsArray = FALSE )
     {
-        $Result = '';
+        $Result = ( $AsArray ? array () : '' );
         
         if ( $AsArray )
         {

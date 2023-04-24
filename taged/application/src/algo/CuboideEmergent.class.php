@@ -114,6 +114,12 @@ class CuboideEmergent
     public function getColIDs ( ) { return $this->ColIDs; }
     public function isValid ( ) { return $this->IsValid; }
     
+    public function getEquivalenceClasses ( $AsArray = FALSE )
+    {
+        $Result = ( $AsArray ? array () : '' ); 
+        return $Result;
+    }
+    
     protected $Cuboide1;
     protected $Cuboide2;
     protected $ID; //** Cuboide ID is the combinaison of ColIDs
