@@ -34,7 +34,7 @@ class SkyCube
 
         Log::fct_exit ( __METHOD__ );
     }
-
+    
     protected function generateCuboideListLvl ( $Level, $ColIDs, $Current = '' )
     {
         Log::fct_enter ( __METHOD__ );

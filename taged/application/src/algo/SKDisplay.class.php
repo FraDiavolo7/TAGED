@@ -70,24 +70,26 @@ class SKDisplay
         
         return HTML::div ( $String, array ( 'class' => 'multidimensional_space' ) );
     }
-        
+
+    
     public static function htmlEquivalenceClasses ( $SkyCube )
     {
         $String = '';
         
         $CuboidesContent = '';
         //foreach (  $this->Cuboides as $Level => $Cuboides )
-        foreach (  $SkyCube->getCuboides () as $Level => $Cuboides )
+        foreach ( $SkyCube->getCuboides () as $Level => $Cuboides )
         {
             $CurrentLevel = '';
             
             foreach ( $Cuboides as $Cuboide )
             {
-                $CurrentLevel .= $Cuboide->getEquivalenceClasses ( $AsArray );
+                $HTML = '(' . $Cuboide->getID () . ', ' .  $Cuboide->getEquivalenceClasses ( FALSE ) . ')';
+                $CurrentLevel .= HTML::div ( $HTML, array ( 'class' => 'cuboide' ) );
             }
             $CuboidesContent .= HTML::div (
                 HTML::div ( $Level, array ( 'class' => 'title' ) ) .
-                HTML::div ( print_r ( $CurrentLevel, TRUE )),
+                HTML::div ( $CurrentLevel ),
                 array ( 'class' => 'cuboides_lvl lvl_' . $Level ) );
         }
         
@@ -95,7 +97,7 @@ class SKDisplay
             HTML::div ( 'Cuboides', array ( 'class' => 'title' ) ) .
             HTML::div ( $CuboidesContent ),
             array ( 'class' => 'cuboides' ) );
-        return HTML::div ( $String, array ( 'class' => 'equivalence_classes' ) );
+        return HTML::div ( $String, array ( 'class' => 'skycube equivalence_classes' ) );
     }
     
     public static function htmlSkyCube ( $SkyCube )

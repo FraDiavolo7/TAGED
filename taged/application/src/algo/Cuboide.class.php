@@ -19,6 +19,9 @@ class Cuboide
         $this->IsValid = FALSE;
         $this->EquivalenceClasses = array ();
         
+        $this->RowIDsInput = array ();
+        $this->RowIDsFiltered = array ();
+        $this->RowIDsComputed = array ();
         $this->computeDataSet ( $RawDataSet, $RawColIDs );
         
         //$this->computeCuboide ( );
@@ -69,6 +72,7 @@ class Cuboide
                         $Empty = FALSE;
                     }
                     $this->DataSet [$RowID] [$ColID] = $Value;
+                    $this->RowIDsInput [$RowID] = $RowID;
                 }
             }
 
@@ -77,6 +81,7 @@ class Cuboide
             if ( $FirstRow || ( $Equivalence === FALSE ) )
             {
                 $this->EquivalenceClasses [$RowID] = array ();
+                $this->RowIDsAccord [$RowID] = $RowID;
             }
             else
             {
@@ -92,6 +97,8 @@ class Cuboide
         
         foreach ( $RowsToRemove as $RowID )
         {
+            unset ( $this->RowIDsAccord [$RowID] );
+            unset ( $this->RowIDsInput [$RowID] );
             unset ( $this->DataSet [$RowID] );
         }
 
@@ -102,18 +109,12 @@ class Cuboide
     {
         if ( $this->IsValid )
         {
-            $RowsToRemove = array ();
-            foreach ( $this->DataSet as $RowID => $Row )
+            foreach ( $this->RowIDsFiltered as $RowID )
             {
-                if ( ! $this->isInCuboide ( $RowID ) )
+                if ( $this->isInCuboide ( $RowID ) )
                 {
-                    $RowsToRemove [] = $RowID;
+                    $this->RowIDsComputed [$RowID] = $RowID;
                 }
-            }
-            
-            foreach ( $RowsToRemove as $RowID )
-            {
-                unset ( $this->DataSet [$RowID] );
             }
         }
     }
@@ -128,6 +129,26 @@ class Cuboide
     public function getRowHeaders ( ) { return $this->RowHeaders; }
     public function getColIDs ( ) { return $this->ColIDs; }
     public function isValid ( ) { return $this->IsValid; }
+
+    public function getDataSetFiltered ( ) 
+    { 
+        $Result = array ();
+        foreach ( $this->RowIDsFiltered as $RowID )
+        {
+            $Result [$RowID] = $this->DataSet [$RowID];
+        }
+        return $Result; 
+    }
+    
+    public function getDataSetComputed ( ) 
+    { 
+        $Result = array ();
+        foreach ( $this->RowIDsComputed as $RowID )
+        {
+            $Result [$RowID] = $this->DataSet [$RowID];
+        }
+        return $Result; 
+    }
     
     public function getEquivalenceClasses ( $AsArray = FALSE )
     {
@@ -157,6 +178,10 @@ class Cuboide
     protected $MinMax;
     protected $IsValid;
     protected $MaxCols;
+    
+    protected $RowIDsInput;
+    protected $RowIDsFiltered;
+    protected $RowIDsComputed; // Result of 
     
     protected $EquivalenceClasses; 
 }

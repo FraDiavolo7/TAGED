@@ -60,8 +60,9 @@ class CuboideBlocNestedLoop extends Cuboide
         
         if ( $this->ID == self::CURRENT ) echo "Skyline " . __LINE__  . " " . print_r ( $Skyline, TRUE ) . "<br>";
         
-        foreach ( $this->DataSet as $RowID => $Row )
+        foreach ( $this->RowIDsFiltered as $RowID )
         {
+            $Row = $this->DataSet [$RowID];
             if ( $RowID == 0 ) continue;
             if ( $this->ID == self::CURRENT ) echo "RowID $RowID<br>";
             
@@ -101,20 +102,14 @@ class CuboideBlocNestedLoop extends Cuboide
             if ( $this->ID == self::CURRENT ) echo "Skyline " . __LINE__  . " " . print_r ( $Skyline, TRUE ) . "<br>";
         }
 
-        $RowsToRemove = array ();
         if ( $this->ID == self::CURRENT ) echo "Skyline " . __LINE__  . " " . print_r ( $Skyline, TRUE ) . "<br>";
         
         foreach ( $this->DataSet as $RowID => $Row )
         {
-            if ( ! isset ( $Skyline [$RowID] ) )
+            if ( isset ( $Skyline [$RowID] ) )
             {
-                $RowsToRemove [] = $RowID;                                        
+                $this->RowIDsComputed [$RowID] = $RowID;
             }
-        }
-        
-        foreach ( $RowsToRemove as $RowToRemove )
-        {
-            unset ( $this->DataSet [$RowToRemove] );
         }
     }
 }

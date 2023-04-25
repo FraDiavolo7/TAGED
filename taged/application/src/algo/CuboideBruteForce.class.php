@@ -8,8 +8,9 @@ class CuboideBruteForce extends Cuboide
         if ( $this->IsValid )
         {
             $Transposed = array ();
-            foreach ( $this->DataSet as $RowID => $Row )
+            foreach ( $this->RowIDsFiltered as $RowID )
             {
+                $Row = $this->DataSet [$RowID];
                 foreach ( $Row as $ColID => $Value )
                 {
                     $Transposed[$ColID][$RowID] = $Value;
@@ -39,8 +40,9 @@ class CuboideBruteForce extends Cuboide
         
         $NbBetter = array ();
         
-        foreach ( $this->DataSet as $RowID => $Row )
+        foreach ( $this->RowIDsFiltered as $RowID )
         {
+            $Row = $this->DataSet [$RowID];
             $NbB = 0;
             foreach ( $Row as $ColID => $Value )
             {
