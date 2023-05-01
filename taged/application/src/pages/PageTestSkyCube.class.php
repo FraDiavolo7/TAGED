@@ -70,6 +70,8 @@ class PageTestSkyCube extends TagedPage
 
         $RelCols = array ();
         $RelCols [] = 'RowID';
+        $RelCols [] = 'Rar';
+        $RelCols [] = 'Dur';
         $MesCols = array ();
         $MesCols [] = 'Rar';
         $MesCols [] = 'Dur';
@@ -112,20 +114,28 @@ class PageTestSkyCube extends TagedPage
         
         $this->add ( HTML::startDiv ( array ( 'class' => 'testskycube' ) ) );
 	    
+        
 // 	    $this->add ( HTML::div ( HTML::tableFull ( $Test, array ( 'border' => '1' ) ) ) );
 // 	    $this->add ( HTML::div ( HTML::tableFull ( $RelCols, array ( 'border' => '1' ) ) ) );
 // 	    $this->add ( HTML::div ( HTML::tableFull ( $MesCols, array ( 'border' => '1' ) ) ) );
 	    
 	    $SkyCube = new SkyCubeBlocNestedLoop ( $Test, $RelCols, $MesCols, Cuboide::TO_MIN );
+
+	    
 //         $SkyCubePEC = new SkyCubeBlocNestedLoop ( $Test, $RelCols, $MesColsPEC, Cuboide::TO_MIN );
 //         $SkyCubePEV = new SkyCubeBlocNestedLoop ( $Test, $RelCols, $MesColsPEV, Cuboide::TO_MIN );
 //         $SkyCubePCV = new SkyCubeBlocNestedLoop ( $Test, $RelCols, $MesColsPCV, Cuboide::TO_MIN );
 //         $SkyCubeECV = new SkyCubeBlocNestedLoop ( $Test, $RelCols, $MesColsECV, Cuboide::TO_MIN );
-
+	    
 	    $this->add ( HTML::div ( SKDisplay::htmlInputData ( $SkyCube ) ) );
 	    $this->add ( HTML::div ( SKDisplay::htmlMultidimensionalSpace ( $SkyCube ) ) );
-	    $this->add ( HTML::div ( SKDisplay::htmlEquivalenceClasses ( $SkyCube ) ) );
-	    $this->add ( HTML::div ( SKDisplay::html ( $SkyCube ) ) );
+//	    $this->add ( HTML::div ( SKDisplay::htmlEquivalenceClasses ( $SkyCube ) ) );
+//	    $this->add ( HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_EQUIV_CLASS ) ) );
+	    //	    $this->add ( HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube ) ) );
+	    $this->add ( HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_EQUIV_CLASS | SKDisplay::SHOW_DATA_RAW ) ) );
+	    $this->add ( HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_EQUIV_CLASS | SKDisplay::SHOW_DATA_FILTERED ) ) );
+	    $this->add ( HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_EQUIV_CLASS | SKDisplay::SHOW_DATA_COMPUTED ) ) );
+	    //	    $this->add ( HTML::div ( SKDisplay::html ( $SkyCube ) ) );
 // 	    $this->add ( HTML::div ( $SkyCubePEC ) );
 // 	    $this->add ( HTML::div ( $SkyCubePEV ) );
 // 	    $this->add ( HTML::div ( $SkyCubePCV ) );

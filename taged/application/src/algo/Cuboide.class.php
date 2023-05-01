@@ -109,11 +109,11 @@ class Cuboide
     {
         if ( $this->IsValid )
         {
-            foreach ( $this->RowIDsFiltered as $RowID )
+            foreach ( $this->RowIDsInput as $RowID )
             {
                 if ( $this->isInCuboide ( $RowID ) )
                 {
-                    $this->RowIDsComputed [$RowID] = $RowID;
+                    $this->RowIDsFiltered [$RowID] = $RowID;
                 }
             }
         }
@@ -179,9 +179,9 @@ class Cuboide
     protected $IsValid;
     protected $MaxCols;
     
-    protected $RowIDsInput;
-    protected $RowIDsFiltered;
-    protected $RowIDsComputed; // Result of 
+    protected $RowIDsInput;    // Data as they were entered
+    protected $RowIDsFiltered; // Data after SkyLine
+    protected $RowIDsComputed; // Data after Taged
     
     protected $EquivalenceClasses; 
 }

@@ -1,6 +1,20 @@
-body {
-	background-color: black;
-	color: lightgrey;
+:root {
+	--base-color-white: white;
+	--base-color-black: black;
+	--base-color-red:   red;
+	--base-color-grey-dark: black;
+	--base-color-grey-light: lightgrey;
+	
+	--color-back-main: var(--base-color-black);
+	--color-front-main: var(--base-color-grey-light);
+
+	--border-default: 1px solid var(--color-front-main);
+	--border-strong: 2px solid var(--color-front-main);
+}
+
+body, * {
+	background-color: var(--base-color-black);
+	color: var(--color-front-main);
     font-size: 18px;
     font-family: Open Sans, sans-serif;
 }
@@ -201,8 +215,32 @@ div.cuboides_lvl > :nth-child(2) {
 }
 
 div.cuboide {
+    position: relative;
 	flex-direction: column;
 	padding: 0.25rem;
+}
+
+div.cuboide.removed {
+	--color-front-main: var(--base-color-red);
+	--border-default: 1px solid var(--color-front-main);
+	--border-strong: 2px solid var(--color-front-main);
+}
+
+div.cuboide.removed .title::before,
+div.cuboide.removed .title::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 4px; /* cross thickness */
+    background-color: red;
+}
+
+div.cuboide.removed .title::before {
+    transform: rotate(15deg);
+}
+
+div.cuboide.removed .title::after {
+    transform: rotate(-15deg);
 }
 
 div.cuboide .title{
@@ -211,13 +249,13 @@ div.cuboide .title{
 	align-items: flex-end;
 }
 
-div.cuboide .title :nth-child(2){
+div.cuboide .title .cuboide_validity{
 	font-size: 0.5rem;
 }
 
 table.cuboide {
-	border-top: 2px solid white;
-	border-bottom: 2px solid white;
+	border-top: var(--border-strong);
+	border-bottom: var(--border-strong);
 	padding: 0.25rem;
 	border-collapse: separate;
 	border-spacing: 0 0.4rem;
@@ -230,14 +268,14 @@ table.cuboide td {
 }
 
 table.cuboide tr > .rowid{
-	border-right: 1px solid white;
+	border-right: var(--border-default);
 }
 
 table.cuboide tr > .row_header + .row_value {
-	border-left: 1px solid white;
+	border-left: var(--border-default);
 }
 
 tr.headers th {
-	border-bottom: 1px solid white;
+	border-bottom: var(--border-default);
 	padding-bottom: 0.25rem;
 }

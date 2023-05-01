@@ -60,7 +60,7 @@ class CuboideBlocNestedLoop extends Cuboide
         
         if ( $this->ID == self::CURRENT ) echo "Skyline " . __LINE__  . " " . print_r ( $Skyline, TRUE ) . "<br>";
         
-        foreach ( $this->RowIDsFiltered as $RowID )
+        foreach ( $this->RowIDsInput as $RowID )
         {
             $Row = $this->DataSet [$RowID];
             if ( $RowID == 0 ) continue;
@@ -108,7 +108,7 @@ class CuboideBlocNestedLoop extends Cuboide
         {
             if ( isset ( $Skyline [$RowID] ) )
             {
-                $this->RowIDsComputed [$RowID] = $RowID;
+                $this->RowIDsFiltered [$RowID] = $RowID;
             }
         }
     }

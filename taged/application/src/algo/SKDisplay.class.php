@@ -14,6 +14,15 @@ class SKDisplay
     
     const ROW_ID = 'RowID';
     
+    const NO_FLAG = 0;
+    const SHOW_FILTERED      = 0x01;
+    const SHOW_REMOVED       = 0x02; // Filtered mais avec les tables supprimées
+    const SHOW_EQUIV_CLASS   = 0x04; //** Les classes sont présentées dans les titres
+    const SHOW_VALIDITY      = 0x08; //** La validité est présentée dans les titres
+    const SHOW_DATA_RAW      = 0x10; // Exclusif avec SHOW_DATA_xxx (RAW préféré si 2 sont présents)
+    const SHOW_DATA_FILTERED = 0x20; // Exclusif avec SHOW_DATA_xxx (RAW préféré si 2 sont présents)
+    const SHOW_DATA_COMPUTED = 0x40; // Exclusif avec SHOW_DATA_xxx (RAW préféré si 2 sont présents)
+    
     public static function text ( $Object )
     {
         $Text = print_r ( $Object, TRUE );
@@ -68,17 +77,111 @@ class SKDisplay
     {
         $String = '';
         
-        return HTML::div ( $String, array ( 'class' => 'multidimensional_space' ) );
+        $MultidimensionalSpace = $SkyCube->getMultidimensionalSpace ();
+        $FirstRow = TRUE;
+        $TableRows = '';
+        $TableHeaders = '';
+        
+        foreach ( $MultidimensionalSpace as $RowID => $Row )
+        {
+            $TableRow = '';
+            if ( $FirstRow )
+            {
+                $TableHeaders .= HTML::th ( self::ROW_ID, array ( 'class' => 'row_header ' . strtolower ( self::ROW_ID ) ) );
+            }
+            $TableRow .= HTML::td ( strval ( $RowID ), array ( 'class' => 'row_header ' . strtolower ( self::ROW_ID ) ) );
+
+            foreach ( $Row as $ColID => $Value )
+            {
+                if ( $FirstRow )
+                {
+                    $TableHeaders .= HTML::th ( $ColID, array ( 'class' => 'row_value' ) );
+                }
+                $TableRow .= HTML::td ( $Value, array ( 'class' => 'row_value' ) );
+            }
+            
+            $TableRows .= HTML::tr ( $TableRow );
+            $FirstRow = FALSE;
+        }
+        
+        
+        $HTML .= HTML::table (
+            HTML::tr ( $TableHeaders, array ( 'class' => 'headers' ) ) .
+            $TableRows,
+            array ( 'class' => 'cuboide' )
+            );
+        
+        return HTML::div ( $HTML, array ( 'class' => 'multidimensional_space' ) );
     }
 
+    public static function htmlSkyCubeParam ( $SkyCube, $Flags = self::NO_FLAG )
+    {
+        $RowHeaders = $SkyCube->getRowHeaders ();
+        $RowID = array ();
+        $ShowRowID = FALSE;
+        if ( ! isset ( $RowHeaders [0] [self::ROW_ID] ) )
+        {
+            $ShowRowID = TRUE;
+            $RowID [] = self::ROW_ID;
+        }
+        $HeadersRow = array_merge ( $RowID, array_keys ( $RowHeaders [0] ) );
+        $HeadersCol = array_values ( $SkyCube->getColIDs () );
+        $Headers = array_merge ( $HeadersRow, $HeadersCol );
+        $InitData = Arrays::arrayMergeRecursive ( $RowHeaders, $SkyCube->getDataSet    ());
+        
+        //         $String .= HTML::div ( HTML::tableFull ( $SkyCube->getRowHeaders (), array ( 'border' => '1' ) ) );
+        //         $String .= HTML::div ( HTML::tableFull ( $SkyCube->getColIDs     (), array ( 'border' => '1' ) ) );
+        //         $String .= HTML::div ( HTML::tableFull ( $SkyCube->getDataSet    (), array ( 'border' => '1' ) ) );
+        
+        $CuboidesContent = '';
+        //foreach (  $this->Cuboides as $Level => $Cuboides )
+        $OrderedCuboideIDs  = $SkyCube->getCuboideIDs ( FALSE );
+        $FilteredCuboideIDs = $SkyCube->getCuboideIDs ( TRUE  );
+        
+        $BaseList = $OrderedCuboideIDs;
+        
+        $ShowFiltered = $Flags & self::SHOW_FILTERED;
+        $ShowFilteredWithRemoved = ( $Flags & self::SHOW_FILTERED ) && ( $Flags & self::SHOW_REMOVED ); 
+        
+        foreach ( $OrderedCuboideIDs as $Level => $CuboideIDs )
+        {
+            $CurrentLevel = '';
+            
+            foreach ( $CuboideIDs as $CuboideID )
+            {
+                $Removed = ! isset ( $FilteredCuboideIDs [$Level] [$CuboideID] );
+                if (
+                     ( ! $ShowFiltered )
+                  || ( ( $ShowFiltered ) && ( ! $Removed ) )
+                  || ( ( $ShowFilteredWithRemoved ) )
+                    )
+                {
+                    $Cuboide = $SkyCube->getCuboide ( $CuboideID );
+                    $CurrentLevel .= static::htmlCuboideParam ( $Cuboide, $Flags, $Removed );
+                }
+                
+            }
+            $CuboidesContent .= HTML::div (
+                HTML::div ( $Level, array ( 'class' => 'title' ) ) .
+                HTML::div ( $CurrentLevel),
+                array ( 'class' => 'cuboides_lvl lvl_' . $Level ) );
+        }
+        
+        $String .= HTML::div (
+            HTML::div ( 'Cuboides', array ( 'class' => 'title' ) ) .
+            HTML::div ( $CuboidesContent ),
+            array ( 'class' => 'cuboides' ) );
+        
+        return HTML::div ( $String, array ( 'class' => 'skycube' ) );
+    }
     
-    public static function htmlEquivalenceClasses ( $SkyCube )
+    public static function htmlEquivalenceClasses ( $SkyCube, $Filtered = TRUE )
     {
         $String = '';
         
         $CuboidesContent = '';
         //foreach (  $this->Cuboides as $Level => $Cuboides )
-        foreach ( $SkyCube->getCuboides () as $Level => $Cuboides )
+        foreach (  $SkyCube->getCuboideIDs ($Filtered ) as $Level => $CuboideIDs )
         {
             $CurrentLevel = '';
             
@@ -100,7 +203,7 @@ class SKDisplay
         return HTML::div ( $String, array ( 'class' => 'skycube equivalence_classes' ) );
     }
     
-    public static function htmlSkyCube ( $SkyCube )
+    public static function htmlSkyCube ( $SkyCube, $Filtered = TRUE )
     {
         $RowHeaders = $SkyCube->getRowHeaders ();
         $RowID = array ();
@@ -121,12 +224,13 @@ class SKDisplay
         
         $CuboidesContent = '';
         //foreach (  $this->Cuboides as $Level => $Cuboides )
-        foreach (  $SkyCube->getCuboides () as $Level => $Cuboides )
+        foreach (  $SkyCube->getCuboideIDs ($Filtered ) as $Level => $CuboideIDs )
         {
             $CurrentLevel = '';
             
-            foreach ( $Cuboides as $Cuboide )
+            foreach ( $CuboideIDs as $CuboideID )
             {
+                $Cuboide = $SkyCube->getCuboide ( $CuboideID );
                 $CurrentLevel .= static::htmlCuboide ( $Cuboide );
             }
             $CuboidesContent .= HTML::div (
@@ -230,6 +334,92 @@ class SKDisplay
             );
         
         return HTML::div ( $HTML, array ( 'class' => 'cuboide' ) );
+        
+    }
+
+    public static function htmlCuboideParam ( $Cuboide, $Flags = self::NO_FLAG, $Removed = FALSE )
+    {
+        $CuboideClass = 'cuboide ' . ( $Removed ? 'removed' : '' );
+        $Title  = '';
+        $Title .= HTML::div ( $Cuboide->getID (), array ( 'class' => 'cuboide_id' ) );
+        
+        if ( $Flags & self::SHOW_VALIDITY )
+        {
+            $Title .= HTML::div ( $Cuboide->isValid () ? 'V' : 'I', array ( 'class' => 'cuboide_validity' ) );
+        }
+        
+        if ( $Flags & self::SHOW_EQUIV_CLASS )
+        {
+            $Title .= HTML::div ( $Cuboide->getEquivalenceClasses (), array ( 'class' => 'cuboide_equiv_class' ) );
+        }
+        
+        $HTML = HTML::div ( $Title , array ( 'class' => 'title' ) );
+        
+        $TableHeaders = '';
+        $TableRows = '';
+        $FirstRow = TRUE;
+        $RowHeaders = $Cuboide->getRowHeaders ();
+        $ShowID = FALSE;
+        
+        if ( ! isset ( $RowHeaders [self::ROW_ID] ) )
+        {
+            $ShowID = TRUE;
+        }
+        
+        $DataSet = array ();
+        
+        if ( $Flags & self::SHOW_DATA_RAW )
+        {
+            $DataSet = $Cuboide->getDataSet ();
+        }
+        elseif ( $Flags & self::SHOW_DATA_FILTERED )
+        {
+            $DataSet = $Cuboide->getDataSetFiltered ();
+        }
+        elseif ( $Flags & self::SHOW_DATA_COMPUTED )
+        {
+            $DataSet = $Cuboide->getDataSetComputed ();
+        }
+        
+        foreach ( $DataSet as $RowID => $Row )
+        {
+            $TableRow = '';
+            if ( $ShowID )
+            {
+                if ( $FirstRow )
+                {
+                    $TableHeaders .= HTML::th ( self::ROW_ID, array ( 'class' => 'row_header ' . strtolower ( self::ROW_ID ) ) );
+                }
+                $TableRow .= HTML::td ( strval ( $RowID ), array ( 'class' => 'row_header ' . strtolower ( self::ROW_ID ) ) );
+            }
+            foreach ( $RowHeaders [$RowID] as $RowHeader => $HeaderValue )
+            {
+                if ( $FirstRow )
+                {
+                    $TableHeaders .= HTML::th ( $RowHeader, array ( 'class' => 'row_header ' . strtolower ( $RowHeader ) ) );
+                }
+                $TableRow .= HTML::td ( $HeaderValue, array ( 'class' => 'row_header ' . strtolower ( $RowHeader ) ) );
+            }
+            foreach ( $Row as $ColID => $Value )
+            {
+                if ( $FirstRow )
+                {
+                    $TableHeaders .= HTML::th ( $ColID, array ( 'class' => 'row_value' ) );
+                }
+                $TableRow .= HTML::td ( $Value, array ( 'class' => 'row_value' ) );
+            }
+            
+            $TableRows .= HTML::tr ( $TableRow );
+            $FirstRow = FALSE;
+        }
+        
+        $HTML .= HTML::table (
+            HTML::tr ( $TableHeaders, array ( 'class' => 'headers' ) ) .
+            $TableRows,
+            array ( 'class' => 'cuboide' )
+            );
+        
+        return HTML::div ( $HTML, array ( 'class' => $CuboideClass ) );
         
     }
     
