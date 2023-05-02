@@ -135,6 +135,34 @@ class SkyCubeEmergent extends SkyCube
         return $this->Cuboides;
     }
     
+    public function getCuboideIDs ( $Filtered = TRUE )
+    {
+        if ( empty ( $this->OrderedCuboideIDs ))
+        {
+            $this->OrderedCuboideIDs = $this->SkyCube1->getCuboideIDs ( FALSE );
+        }
+        if ( empty ( $this->FilteredCuboideIDs ))
+        {
+            $this->FilteredCuboideIDs = $this->SkyCube1->getCuboideIDs ( TRUE );
+        }
+        return ( $Filtered ? $this->FilteredCuboideIDs : $this->OrderedCuboideIDs );
+    }
+    
+    public function getCuboide ( $ID )
+    {
+        $Cuboide1 = $this->SkyCube1->getCuboide ( $ID );
+        $Cuboide2 = $this->SkyCube2->getCuboide ( $ID );
+        
+        $Cuboide = new CuboideEmergent ( $this->ColIDs, $Cuboide1, $Cuboide2 );
+        
+        return $Cuboide;
+    }
+    
+    public function getMultidimensionalSpace ()
+    {
+        return  $this->SkyCube1->getMultidimensionalSpace ();
+    }
+    
     protected $SkyCube1; //** Table indexed by RowID and ColID of Relation measures
     protected $SkyCube2; //** Table indexed by RowID of Relation identifiers
     protected $MinMax;

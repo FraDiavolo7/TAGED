@@ -75,29 +75,41 @@ class SKDisplay
 
     public static function htmlMultidimensionalSpace ( $SkyCube )
     {
-        $String = '';
+        $HTML = '';
         
         $MultidimensionalSpace = $SkyCube->getMultidimensionalSpace ();
         $FirstRow = TRUE;
         $TableRows = '';
         $TableHeaders = '';
+        $ShowID = FALSE;
+        
+        if ( ! isset ( $MultidimensionalSpace [0][self::ROW_ID] ) )
+        {
+            $ShowID = TRUE;
+        }
         
         foreach ( $MultidimensionalSpace as $RowID => $Row )
         {
+            $FirstCol = TRUE;
             $TableRow = '';
-            if ( $FirstRow )
-            {
-                $TableHeaders .= HTML::th ( self::ROW_ID, array ( 'class' => 'row_header ' . strtolower ( self::ROW_ID ) ) );
-            }
-            $TableRow .= HTML::td ( strval ( $RowID ), array ( 'class' => 'row_header ' . strtolower ( self::ROW_ID ) ) );
-
+            
             foreach ( $Row as $ColID => $Value )
             {
                 if ( $FirstRow )
                 {
+                    if ( ( $FirstCol ) && ( $ShowID ) )
+                    {
+                        $TableHeaders .= HTML::th ( self::ROW_ID, array ( 'class' => 'row_header ' . strtolower ( self::ROW_ID ) ) );
+                    }
                     $TableHeaders .= HTML::th ( $ColID, array ( 'class' => 'row_value' ) );
                 }
+                
+                if ( ( $FirstCol ) && ( $ShowID ) )
+                {
+                    $TableRow .= HTML::td ( strval ( $RowID + 1 ), array ( 'class' => 'row_header ' . strtolower ( self::ROW_ID ) ) );
+                }
                 $TableRow .= HTML::td ( $Value, array ( 'class' => 'row_value' ) );
+                $FirstCol = FALSE;
             }
             
             $TableRows .= HTML::tr ( $TableRow );
@@ -117,6 +129,8 @@ class SKDisplay
     public static function htmlSkyCubeParam ( $SkyCube, $Flags = self::NO_FLAG )
     {
         $RowHeaders = $SkyCube->getRowHeaders ();
+        $String = '';
+            
         $RowID = array ();
         $ShowRowID = FALSE;
         if ( ! isset ( $RowHeaders [0] [self::ROW_ID] ) )
@@ -167,7 +181,7 @@ class SKDisplay
                 array ( 'class' => 'cuboides_lvl lvl_' . $Level ) );
         }
         
-        $String .= HTML::div (
+        $String .= HTML::div ( 
             HTML::div ( 'Cuboides', array ( 'class' => 'title' ) ) .
             HTML::div ( $CuboidesContent ),
             array ( 'class' => 'cuboides' ) );
@@ -359,9 +373,10 @@ class SKDisplay
         $TableRows = '';
         $FirstRow = TRUE;
         $RowHeaders = $Cuboide->getRowHeaders ();
+        $ColHeaders = $Cuboide->getColIDs ();
         $ShowID = FALSE;
         
-        if ( ! isset ( $RowHeaders [self::ROW_ID] ) )
+        if ( ! isset ( $RowHeaders [0][self::ROW_ID] ) )
         {
             $ShowID = TRUE;
         }
@@ -404,7 +419,9 @@ class SKDisplay
             {
                 if ( $FirstRow )
                 {
-                    $TableHeaders .= HTML::th ( $ColID, array ( 'class' => 'row_value' ) );
+                    $Header = $ColHeaders [$ColID] . " ($ColID)";
+                    
+                    $TableHeaders .= HTML::th ( $Header, array ( 'class' => 'row_value' ) );
                 }
                 $TableRow .= HTML::td ( $Value, array ( 'class' => 'row_value' ) );
             }

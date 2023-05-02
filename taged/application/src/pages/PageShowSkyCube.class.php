@@ -53,7 +53,7 @@ class PageShowSkyCube extends TagedPage
 	        
 	        if ( $Password == $this->Password )
 	        {
-	            $this->SkyCube = $this->AggregateObj->getSkyCube ( TRUE, Cuboide::TO_MIN );
+	            $this->SkyCube = $this->AggregateObj->getSkyCube ( FALSE, Cuboide::TO_MIN );
 	        }
 	    }
 	    
@@ -77,12 +77,41 @@ class PageShowSkyCube extends TagedPage
 	    
 	    if ( NULL != $this->SkyCube )
 	    {
-	        if ( $this->ShowInput     ) $Result .= HTML::div ( SKDisplay::htmlInputData             ( $this->SkyCube ), array ( 'class' => 'result result_input' ) );
-	        if ( $this->ShowEspace    ) $Result .= HTML::div ( SKDisplay::htmlMultidimensionalSpace ( $this->SkyCube ), array ( 'class' => 'result result_espace' ) );
-	        if ( $this->ShowAccords   ) $Result .= HTML::div ( SKDisplay::htmlEquivalenceClasses    ( $this->SkyCube ), array ( 'class' => 'result result_accords' ) );
-	        if ( $this->ShowDataCube  ) $Result .= HTML::div ( SKDisplay::html ( $this->SkyCube ), array ( 'class' => 'result result_datacube' ) );
-	        if ( $this->ShowSkyCube   ) $Result .= HTML::div ( SKDisplay::html ( $this->SkyCube ), array ( 'class' => 'result result_skycube' ) );
-	        if ( $this->ShowTagedCube ) $Result .= HTML::div ( SKDisplay::html ( $this->SkyCube ), array ( 'class' => 'result result_taged_cube' ) );
+	        if ( $this->ShowInput     ) 
+	        {
+	            $Result .= HTML::div ( HTML::title ( 'Entrée', 2 ), array ( 'class' => 'part_title' ) );
+	            $Result .= HTML::div ( SKDisplay::htmlInputData             ( $this->SkyCube ), array ( 'class' => 'result result_input' ) );
+	        }
+	        
+	        if ( $this->ShowEspace    ) 
+	        {
+	            $Result .= HTML::div ( HTML::title ( 'Espace multidimensionel', 2 ), array ( 'class' => 'part_title' ) );
+	            $Result .= HTML::div ( SKDisplay::htmlMultidimensionalSpace ( $this->SkyCube ), array ( 'class' => 'result result_espace' ) );
+	        }
+	        
+	        if ( $this->ShowAccords   ) 
+	        {
+	            $Result .= HTML::div ( HTML::title ( 'Classes d&apos;acccord', 2 ), array ( 'class' => 'part_title' ) );
+	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $this->SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_EQUIV_CLASS ), array ( 'class' => 'result result_accords' ) );
+	        }
+	        
+	        if ( $this->ShowDataCube  ) 
+	        {
+	            $Result .= HTML::div ( HTML::title ( 'DataCube', 2 ), array ( 'class' => 'part_title' ) );
+	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $this->SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_EQUIV_CLASS | SKDisplay::SHOW_DATA_RAW ), array ( 'class' => 'result result_datacube' ) );
+	        }
+	        
+	        if ( $this->ShowSkyCube   ) 
+	        {
+	            $Result .= HTML::div ( HTML::title ( 'SkyCube', 2 ), array ( 'class' => 'part_title' ) );
+	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $this->SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_EQUIV_CLASS | SKDisplay::SHOW_DATA_FILTERED ), array ( 'class' => 'result result_skycube' ) );
+	        }
+	        
+	        if ( $this->ShowTagedCube ) 
+	        {
+	            $Result .= HTML::div ( HTML::title ( 'TagedCube', 2 ), array ( 'class' => 'part_title' ) );
+	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $this->SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_EQUIV_CLASS | SKDisplay::SHOW_DATA_COMPUTED ), array ( 'class' => 'result result_taged_cube' ) );
+	        }
 	    }
 	    
 	    $Content = $Aggregate;

@@ -186,7 +186,8 @@ class SkyCube
         }
         else
         {
-            $CurrentKey = array_shift ( array_keys ( $List ) );
+            $Keys = array_keys ( $List );
+            $CurrentKey = array_shift ( $Keys );
             $Current = array_shift ( $List );
             foreach ( $Current as $Value )
             {
@@ -223,6 +224,7 @@ class SkyCube
         {
             foreach ( $Headers as $ColName => $Value )
             {
+                if ( $ColName != 'RowID' )
                 $ColumnValues [$ColName] [$Value] = $Value;
             }
         }

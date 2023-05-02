@@ -2,7 +2,7 @@
 
 class CuboideEmergent 
 {
-    const CURRENT = 'ABC';
+    const CURRENT = '';
     public function __construct ( $ColIDs, $Cuboide1, $Cuboide2 )
     {
         $this->Cuboide1 = $Cuboide1;
@@ -88,8 +88,8 @@ class CuboideEmergent
                 $Val1 = $DataSet1 [$RowID] [$ColID1] ?? '';
                 $Val2 = $DataSet2 [$RowID] [$ColID2] ?? '';
                 
-                echo '$Val1 ' . $Val1 . ' = $DataSet1 [$RowID ' . $RowID . '] [$ColID1 ' . $ColID1 . ' ' . $ColID . '] ?? "";' . "<br>" ;
-                echo '$Val2 ' . $Val2 . ' = $DataSet2 [$RowID ' . $RowID . '] [$ColID2 ' . $ColID2 . ' ' . $ColID . '] ?? "";' . "<br>" ;
+                if ( $this->ID == self::CURRENT ) echo '$Val1 ' . $Val1 . ' = $DataSet1 [$RowID ' . $RowID . '] [$ColID1 ' . $ColID1 . ' ' . $ColID . '] ?? "";' . "<br>" ;
+                if ( $this->ID == self::CURRENT ) echo '$Val2 ' . $Val2 . ' = $DataSet2 [$RowID ' . $RowID . '] [$ColID2 ' . $ColID2 . ' ' . $ColID . '] ?? "";' . "<br>" ;
                 $TmpDataSet [$RowID] [$ColID] = ( $Val1 != '' ? $Val1 : ( $Val2 != '' ? $Val2 : '' ) );
             }
         }

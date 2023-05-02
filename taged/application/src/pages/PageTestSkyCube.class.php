@@ -59,38 +59,38 @@ class PageTestSkyCube extends TagedPage
 	    
 	    
         $Test = array ();
-        $Test [] = array ( 'RowID' => 1, 'Rar' => 6, 'Dur' => 40, 'Ech' => 30 );
-        $Test [] = array ( 'RowID' => 2, 'Rar' => 4, 'Dur' => 60, 'Ech' => 50 );
-        $Test [] = array ( 'RowID' => 3, 'Rar' => 6, 'Dur' => 50, 'Ech' => 40 );
-        $Test [] = array ( 'RowID' => 4, 'Rar' => 2, 'Dur' => 70, 'Ech' => 40 );
-        $Test [] = array ( 'RowID' => 5, 'Rar' => 6, 'Dur' => 80, 'Ech' => 30 );
-        $Test [] = array ( 'RowID' => 6, 'Rar' => 9, 'Dur' => 50, 'Ech' => 50 );
-        $Test [] = array ( 'RowID' => 7, 'Rar' => 8, 'Dur' => 70, 'Ech' => 60 );
-        $Test [] = array ( 'RowID' => 8, 'Rar' => 9, 'Dur' => 80, 'Ech' => 70 );
+//         $Test [] = array ( 'RowID' => 1, 'Rar' => 6, 'Dur' => 40, 'Ech' => 30 );
+//         $Test [] = array ( 'RowID' => 2, 'Rar' => 4, 'Dur' => 60, 'Ech' => 50 );
+//         $Test [] = array ( 'RowID' => 3, 'Rar' => 6, 'Dur' => 50, 'Ech' => 40 );
+//         $Test [] = array ( 'RowID' => 4, 'Rar' => 2, 'Dur' => 70, 'Ech' => 40 );
+//         $Test [] = array ( 'RowID' => 5, 'Rar' => 6, 'Dur' => 80, 'Ech' => 30 );
+//         $Test [] = array ( 'RowID' => 6, 'Rar' => 9, 'Dur' => 50, 'Ech' => 50 );
+//         $Test [] = array ( 'RowID' => 7, 'Rar' => 8, 'Dur' => 70, 'Ech' => 60 );
+//         $Test [] = array ( 'RowID' => 8, 'Rar' => 9, 'Dur' => 80, 'Ech' => 70 );
 
-        $RelCols = array ();
-        $RelCols [] = 'RowID';
-        $RelCols [] = 'Rar';
-        $RelCols [] = 'Dur';
-        $MesCols = array ();
-        $MesCols [] = 'Rar';
-        $MesCols [] = 'Dur';
-        $MesCols [] = 'Ech';
-//         $Test [] = array ( 'RowID' => 1, 'Proprio' => 'Dupont',  'Ville' => 'Marseille', 'Prix' => 220, 'Eloignement' => 15, 'Conso' => 275, 'Voisins' => 5 );
-//         $Test [] = array ( 'RowID' => 2, 'Proprio' => 'Dupond',  'Ville' => 'Paris',     'Prix' => 100, 'Eloignement' => 15, 'Conso' =>  85, 'Voisins' => 1 );
-//         $Test [] = array ( 'RowID' => 3, 'Proprio' => 'Martin',  'Ville' => 'Marseille', 'Prix' => 220, 'Eloignement' =>  7, 'Conso' => 180, 'Voisins' => 1 );
-//         $Test [] = array ( 'RowID' => 4, 'Proprio' => 'Sanchez', 'Ville' => 'Aubagne',   'Prix' => 340, 'Eloignement' =>  7, 'Conso' =>  85, 'Voisins' => 3 );
-//         $Test [] = array ( 'RowID' => 5, 'Proprio' => 'Durand',  'Ville' => 'Paris',     'Prix' => 100, 'Eloignement' =>  7, 'Conso' => 180, 'Voisins' => 1 );
-        
 //         $RelCols = array ();
 //         $RelCols [] = 'RowID';
-//         $RelCols [] = 'Proprio';
-//         $RelCols [] = 'Ville';
+//         $RelCols [] = 'Rar';
+//         $RelCols [] = 'Dur';
 //         $MesCols = array ();
-//         $MesCols [] = 'Prix';
-//         $MesCols [] = 'Eloignement';
-//         $MesCols [] = 'Conso';
-//         $MesCols [] = 'Voisins';
+//         $MesCols [] = 'Rar';
+//         $MesCols [] = 'Dur';
+//         $MesCols [] = 'Ech';
+        $Test [] = array ( 'RowID' => 1, 'Proprio' => 'Dupont',  'Ville' => 'Marseille', 'Prix' => 220, 'Eloignement' => 15, 'Conso' => 275, 'Voisins' => 5 );
+        $Test [] = array ( 'RowID' => 2, 'Proprio' => 'Dupond',  'Ville' => 'Paris',     'Prix' => 100, 'Eloignement' => 15, 'Conso' =>  85, 'Voisins' => 1 );
+        $Test [] = array ( 'RowID' => 3, 'Proprio' => 'Martin',  'Ville' => 'Marseille', 'Prix' => 220, 'Eloignement' =>  7, 'Conso' => 180, 'Voisins' => 1 );
+        $Test [] = array ( 'RowID' => 4, 'Proprio' => 'Sanchez', 'Ville' => 'Aubagne',   'Prix' => 340, 'Eloignement' =>  7, 'Conso' =>  85, 'Voisins' => 3 );
+        $Test [] = array ( 'RowID' => 5, 'Proprio' => 'Durand',  'Ville' => 'Paris',     'Prix' => 100, 'Eloignement' =>  7, 'Conso' => 180, 'Voisins' => 1 );
+        
+        $RelCols = array ();
+        $RelCols [] = 'RowID';
+        $RelCols [] = 'Proprio';
+        $RelCols [] = 'Ville';
+        $MesCols = array ();
+        $MesCols [] = 'Prix';
+        $MesCols [] = 'Eloignement';
+        $MesCols [] = 'Conso';
+        $MesCols [] = 'Voisins';
 	   
 //         $MesColsPEC = array ();
 //         $MesColsPEC [] = 'Prix';
@@ -120,20 +120,32 @@ class PageTestSkyCube extends TagedPage
 // 	    $this->add ( HTML::div ( HTML::tableFull ( $MesCols, array ( 'border' => '1' ) ) ) );
 	    
 	    $SkyCube = new SkyCubeBlocNestedLoop ( $Test, $RelCols, $MesCols, Cuboide::TO_MIN );
-
 	    
 //         $SkyCubePEC = new SkyCubeBlocNestedLoop ( $Test, $RelCols, $MesColsPEC, Cuboide::TO_MIN );
 //         $SkyCubePEV = new SkyCubeBlocNestedLoop ( $Test, $RelCols, $MesColsPEV, Cuboide::TO_MIN );
 //         $SkyCubePCV = new SkyCubeBlocNestedLoop ( $Test, $RelCols, $MesColsPCV, Cuboide::TO_MIN );
 //         $SkyCubeECV = new SkyCubeBlocNestedLoop ( $Test, $RelCols, $MesColsECV, Cuboide::TO_MIN );
 	    
+	    $this->add ( HTML::div ( HTML::title ( 'Entrée', 2 ), array ( 'class' => 'part_title' ) ) );
 	    $this->add ( HTML::div ( SKDisplay::htmlInputData ( $SkyCube ) ) );
+	    
+	    $this->add ( HTML::div ( HTML::title ( 'Espace multidimensionel', 2 ), array ( 'class' => 'part_title' ) ) );
 	    $this->add ( HTML::div ( SKDisplay::htmlMultidimensionalSpace ( $SkyCube ) ) );
+	    
 //	    $this->add ( HTML::div ( SKDisplay::htmlEquivalenceClasses ( $SkyCube ) ) );
 //	    $this->add ( HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_EQUIV_CLASS ) ) );
-	    //	    $this->add ( HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube ) ) );
+// 	    $this->add ( HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube ) ) );
+	    
+	    $this->add ( HTML::div ( HTML::title ( 'Classes d&apos;acccord', 2 ), array ( 'class' => 'part_title' ) ) );
+	    $this->add ( HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_EQUIV_CLASS ) ) );
+	    
+	    $this->add ( HTML::div ( HTML::title ( 'Raw', 2 ), array ( 'class' => 'part_title' ) ) );
 	    $this->add ( HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_EQUIV_CLASS | SKDisplay::SHOW_DATA_RAW ) ) );
+	    
+	    $this->add ( HTML::div ( HTML::title ( 'Filtered', 2 ), array ( 'class' => 'part_title' ) ) );
 	    $this->add ( HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_EQUIV_CLASS | SKDisplay::SHOW_DATA_FILTERED ) ) );
+	    
+	    $this->add ( HTML::div ( HTML::title ( 'Computed', 2 ), array ( 'class' => 'part_title' ) ) );
 	    $this->add ( HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_EQUIV_CLASS | SKDisplay::SHOW_DATA_COMPUTED ) ) );
 	    //	    $this->add ( HTML::div ( SKDisplay::html ( $SkyCube ) ) );
 // 	    $this->add ( HTML::div ( $SkyCubePEC ) );

@@ -179,6 +179,17 @@ table.taged_stats td + td {
 	border: 1px solid white;
 }
 
+div.part_title {
+	text-align: center;
+	border-top: var(--border-strong);
+	border-bottom: var(--border-strong);
+}
+
+div.multidimensional_space {
+    display: flex;
+    justify-content: center;
+}
+
 div.skycube div {
 	display: flex;
 	justify-content: center;
