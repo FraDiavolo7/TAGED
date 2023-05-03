@@ -11,7 +11,11 @@ class CuboideEmergent
         $this->ID = $Cuboide1->getID ();
         $this->RowHeaders = $Cuboide1->getRowHeaders ();
         $this->ColIDs = $ColIDs;
+        $this->EquivalenceClasses = array ();
         
+        $this->RowIDsInput = array ();
+        $this->RowIDsFiltered = array ();
+        $this->RowIDsComputed = array ();
         $this->mergeColumns ( );
         
         $this->mergeDataSets ( );
@@ -95,6 +99,13 @@ class CuboideEmergent
         }
         
         $this->DataSet = $TmpDataSet;
+        
+        $RowIDsFiltered1 = $this->Cuboide1->getFilteredIDs ();
+        $RowIDsFiltered2 = $this->Cuboide2->getFilteredIDs ();
+        
+        $this->RowIDsFiltered = array_merge ( $RowIDsFiltered1, $RowIDsFiltered2 );
+        
+        
         Log::fct_exit ( __METHOD__ );
     }
     
@@ -120,6 +131,26 @@ class CuboideEmergent
         return $Result;
     }
     
+    public function getDataSetFiltered ( )
+    {
+        $Result = array ();
+        foreach ( $this->RowIDsFiltered as $RowID )
+        {
+            $Result [$RowID] = $this->DataSet [$RowID];
+        }
+        return $Result;
+    }
+    
+    public function getDataSetComputed ( )
+    {
+        $Result = array ();
+        foreach ( $this->RowIDsComputed as $RowID )
+        {
+            $Result [$RowID] = $this->DataSet [$RowID];
+        }
+        return $Result;
+    }
+    
     protected $Cuboide1;
     protected $Cuboide2;
     protected $ID; //** Cuboide ID is the combinaison of ColIDs
@@ -129,6 +160,11 @@ class CuboideEmergent
     protected $ColIDsC1; //** Table indexed by ColID of Cuboide1 ColIDs
     protected $ColIDsC2; //** Table indexed by ColID of Cuboide2 ColIDs
     protected $IsValid;
-}
+    
+    protected $RowIDsInput;    // Data as they were entered
+    protected $RowIDsFiltered; // Data after SkyLine
+    protected $RowIDsComputed; // Data after Taged
+    
+    protected $EquivalenceClasses; }
 
 //Log::setDebug ( __FILE__ );

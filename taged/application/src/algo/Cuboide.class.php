@@ -130,6 +130,9 @@ class Cuboide
     public function getColIDs ( ) { return $this->ColIDs; }
     public function isValid ( ) { return $this->IsValid; }
 
+    public function getFilteredIDs ( ) { return $this->RowIDsFiltered; }
+    public function getComputedIDs ( ) { return $this->RowIDsComputed; }
+    
     public function getDataSetFiltered ( ) 
     { 
         $Result = array ();

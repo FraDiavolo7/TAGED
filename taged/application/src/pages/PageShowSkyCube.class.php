@@ -98,19 +98,19 @@ class PageShowSkyCube extends TagedPage
 	        if ( $this->ShowDataCube  ) 
 	        {
 	            $Result .= HTML::div ( HTML::title ( 'DataCube', 2 ), array ( 'class' => 'part_title' ) );
-	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $this->SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_EQUIV_CLASS | SKDisplay::SHOW_DATA_RAW ), array ( 'class' => 'result result_datacube' ) );
+	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $this->SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_DATA_RAW ), array ( 'class' => 'result result_datacube' ) );
 	        }
 	        
 	        if ( $this->ShowSkyCube   ) 
 	        {
 	            $Result .= HTML::div ( HTML::title ( 'SkyCube', 2 ), array ( 'class' => 'part_title' ) );
-	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $this->SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_EQUIV_CLASS | SKDisplay::SHOW_DATA_FILTERED ), array ( 'class' => 'result result_skycube' ) );
+	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $this->SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_DATA_FILTERED ), array ( 'class' => 'result result_skycube' ) );
 	        }
 	        
 	        if ( $this->ShowTagedCube ) 
 	        {
 	            $Result .= HTML::div ( HTML::title ( 'TagedCube', 2 ), array ( 'class' => 'part_title' ) );
-	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $this->SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_EQUIV_CLASS | SKDisplay::SHOW_DATA_COMPUTED ), array ( 'class' => 'result result_taged_cube' ) );
+	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $this->SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_DATA_COMPUTED ), array ( 'class' => 'result result_taged_cube' ) );
 	        }
 	    }
 	    
