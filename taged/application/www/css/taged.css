@@ -145,6 +145,15 @@ table.taged_stats {
   border-collapse: collapse;
 }
 
+table.taged_stats thead, 
+table.taged_stats tbody, 
+table.taged_stats tr, 
+table.taged_stats th, 
+table.taged_stats td {
+  background: inherit;
+}
+
+
 table.taged_stats td, 
 table.taged_stats th {
   padding: 3px 2px;
