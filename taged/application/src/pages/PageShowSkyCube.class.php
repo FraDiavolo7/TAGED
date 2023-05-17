@@ -5,13 +5,15 @@ class PageShowSkyCube extends TagedPage
     const SHOW_AGGREGATE = 'sskc_aggregate';
     const SHOW_PASSWORD = 'sskc_password';
     const SHOW_SUBMIT = 'sskc_submit';
-
+    const SHOW_TEST = 'sskc_test';
+    
     const SHOW_INPUT = 'sskc_input';
     const SHOW_ESPACE = 'sskc_espace';
     const SHOW_ACCORDS = 'sskc_accords';
     const SHOW_DATACUBE = 'sskc_skycube';
     const SHOW_SKYCUBE = 'sskc_sc_red';
     const SHOW_TAGED_CUBE = 'sskc_sc_tag';
+    
     
     public function __construct ( $InputData = NULL )
 	{
@@ -23,7 +25,7 @@ class PageShowSkyCube extends TagedPage
 		$this->AggregateObj = NULL;
 		$this->SkyCube = NULL;
 		
-		$this->AggregateListObj = new AggregateList ();
+		$this->AggregateListObj = new AggregateList (); 
 		$this->AggregateList = array_merge ( array ( "" => 'Choisis' ), $this->AggregateListObj->getList () );
 		
 		$Switch = new Switcher ( $InputData );
@@ -33,14 +35,15 @@ class PageShowSkyCube extends TagedPage
 	
 	protected function handle ( $Data )
 	{
-	    $Submit = Form::getData ( self::SHOW_SUBMIT, '', $Data );
+	    $Submit              = Form::getData ( self::SHOW_SUBMIT,     '',    $Data );
 	    $this->ShowInput     = Form::getData ( self::SHOW_INPUT,      FALSE, $Data );
 	    $this->ShowEspace    = Form::getData ( self::SHOW_ESPACE,     FALSE, $Data );
 	    $this->ShowAccords   = Form::getData ( self::SHOW_ACCORDS,    FALSE, $Data );
 	    $this->ShowDataCube  = Form::getData ( self::SHOW_DATACUBE,   FALSE, $Data );
 	    $this->ShowSkyCube   = Form::getData ( self::SHOW_SKYCUBE,    FALSE, $Data );
 	    $this->ShowTagedCube = Form::getData ( self::SHOW_TAGED_CUBE, FALSE, $Data );
-	    $this->Aggregate = Form::getData ( self::SHOW_AGGREGATE, '', $Data );
+	    $this->Test          = Form::getData ( self::SHOW_TEST,       FALSE, $Data );
+	    $this->Aggregate     = Form::getData ( self::SHOW_AGGREGATE,  '',    $Data );
 	    $AggregateFile = NULL;
 	    
 	    if ( '' != $this->Aggregate )
@@ -53,7 +56,7 @@ class PageShowSkyCube extends TagedPage
 	        
 	        if ( $Password == $this->Password )
 	        {
-	            $this->SkyCube = $this->AggregateObj->getSkyCube ( FALSE, Cuboide::TO_MIN );
+	            $this->SkyCube = $this->AggregateObj->getSkyCube ( FALSE, Cuboide::TO_MIN, $this->Test );
 	        }
 	    }
 	    
@@ -62,16 +65,17 @@ class PageShowSkyCube extends TagedPage
 
 	protected function show ( )
 	{
-	    $Password = HTML::div ( HTML::inputPassword ( self::SHOW_PASSWORD, '' ), array ( 'class' => 'passwd' ) );
-	    $CheckBoxes = '';
+	    $Password    = HTML::div ( HTML::inputPassword ( self::SHOW_PASSWORD, '' ), array ( 'class' => 'passwd' ) );
+	    $CheckBoxes  = '';
+	    $CheckBoxes .= HTML::div ( HTML::checkbox ( self::SHOW_TEST, 1, 'Test', $this->Test ), array ( 'class' => 'checkbox' ) );
 	    $CheckBoxes .= HTML::div ( HTML::checkbox ( self::SHOW_INPUT, 1, 'Entr&eacute;e', $this->ShowInput ), array ( 'class' => 'checkbox' ) );
 	    $CheckBoxes .= HTML::div ( HTML::checkbox ( self::SHOW_ESPACE, 1, 'Espace Multidimensionnel', $this->ShowEspace ), array ( 'class' => 'checkbox' ) );
 	    $CheckBoxes .= HTML::div ( HTML::checkbox ( self::SHOW_ACCORDS, 1, 'Classes d&apos;accords', $this->ShowAccords ), array ( 'class' => 'checkbox' ) );
 	    $CheckBoxes .= HTML::div ( HTML::checkbox ( self::SHOW_DATACUBE, 1, 'DataCube', $this->ShowDataCube ), array ( 'class' => 'checkbox' ) );
 	    $CheckBoxes .= HTML::div ( HTML::checkbox ( self::SHOW_SKYCUBE, 1, 'SkyCube', $this->ShowSkyCube ), array ( 'class' => 'checkbox' ) );
 	    $CheckBoxes .= HTML::div ( HTML::checkbox ( self::SHOW_TAGED_CUBE, 1, 'R&eacute;sultat Taged', $this->ShowTagedCube ), array ( 'class' => 'checkbox' ) );
-	    $Aggregate = HTML::div ( HTML::select ( self::SHOW_AGGREGATE, $this->AggregateList, $this->Aggregate, array ( 'onchange' => 'this.form.submit()' ) ), array ( 'class' => 'aggregate' ) );
-	    $Submit = HTML::div ( HTML::submit( self::SHOW_SUBMIT, "Envoyer" ), array ( 'class' => 'submit' ) );
+	    $Aggregate   = HTML::div ( HTML::select ( self::SHOW_AGGREGATE, $this->AggregateList, $this->Aggregate, array ( 'onchange' => 'this.form.submit()' ) ), array ( 'class' => 'aggregate' ) );
+	    $Submit      = HTML::div ( HTML::submit ( self::SHOW_SUBMIT, "Envoyer" ), array ( 'class' => 'submit' ) );
 	    
 	    $Result = '';
 	    
@@ -131,6 +135,8 @@ class PageShowSkyCube extends TagedPage
 	protected $Password;
 	protected $Aggregate;
 	protected $AggregateObj;
+	
+	protected $Test;
 	
 	protected $ShowInput;
 	protected $ShowEspace;
