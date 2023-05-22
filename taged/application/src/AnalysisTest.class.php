@@ -2,6 +2,19 @@
 
 class AnalysisTest extends Analysis
 {
+    
+    /*
+     * Utilisation attendue :
+     * $Truc = new Analysis ( $FilePath, $IsTest )
+     * $Truc->setAlgorithm ( $Algo );
+     * $Truc->prepare (); // Generate the SkyCube to for computation
+     * $Truc->compute (); // TAGED run on Each attribute of each Cuboide => Sub functions...
+     *
+     * $Truc->getDataSet ();
+     * $Truc->getSkyCube ();
+     * 
+     */
+    
     public function __construct ( $DescFile )
     {
         $this->DescFile = $DescFile;
