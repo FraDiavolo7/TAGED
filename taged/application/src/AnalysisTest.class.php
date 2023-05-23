@@ -15,7 +15,7 @@ class AnalysisTest extends Analysis
      * 
      */
     
-    public function __construct ( $DescFile )
+    public function __construct ( $DescFile, $IsTest = FALSE )
     {
         $this->DescFile = $DescFile;
         $this->RequestFile  = NULL; 
@@ -25,17 +25,187 @@ class AnalysisTest extends Analysis
         $this->MeasureCols  = NULL;
         $this->Runnable     = FALSE;
         $this->DescFilePath = AGGREGATE_FOLDER_DESC . $this->DescFile;
-        
-        $this->load ();
+        $this->Algorithm    = NULL;
+        $this->DataSet      = NULL;
+        $this->IsTest       = $IsTest;
     }
     
     protected function load ()
     {
+        
+        if ( file_exists ( $this->DescFilePath ) )
+        {
+            $AnalysisData = parse_ini_file ( $this->DescFilePath );
+            
+            $this->RequestFile  = Arrays::getIfSet ( $AnalysisData, self::FILE,     NULL );
+            $this->DBTable      = Arrays::getIfSet ( $AnalysisData, self::TABLE,    NULL );
+            $this->DBClass      = Arrays::getIfSet ( $AnalysisData, self::DBCLASS,  NULL );
+            $RelationCols = Arrays::getIfSet ( $AnalysisData, self::REL_COLS, Arrays::EXPORT_COLUMN_NO_HEADER );
+            $MeasureCols  = Arrays::getIfSet ( $AnalysisData, self::MES_COLS, Arrays::EXPORT_COLUMN_NO_HEADER );
+            $this->RelationCols = self::explodeCols ( strtolower ( $RelationCols ) );
+            $this->MeasureCols  = self::explodeCols ( strtolower ( $MeasureCols  ) );
+            
+        }
     }
     
     protected function check ()
     {
-        $this->Runnable = TRUE;
+        $this->Runnable = FALSE;
+        
+        if ( ( NULL == $this->DBTable ) && ( NULL == $this->RequestFile ) )
+        {
+            Log::error ( "No Table or Request File defined for " . $this->DescFile . " cannot run analysis." );
+        }
+        
+        else if ( NULL == $this->DataSet )
+        {
+            Log::error ( "No DataSet defined for " . $this->DescFile . " cannot run analysis." );
+        }
+        
+        else if ( '' == $this->RelationCols )
+        {
+            Log::error ( "No Columns for relation defined for " . $this->DescFile . " cannot run analysis." );
+        }
+        
+        else if ( '' == $this->MeasureCols )
+        {
+            Log::error ( "No Columns for measures defined for " . $this->DescFile . " cannot run analysis." );
+        }
+        
+        else
+        {
+            $this->Runnable = TRUE;
+        }
+    }
+    
+    public function prepare ()
+    {
+        $this->Name = basename ( $this->DescFile, '.ini' );
+        
+        if ( $this->IsTest )
+        {
+            $this->Name .= '_Test';
+            $this->DataSet      = $this->getTestData ();
+            $this->RelationCols = $this->getTestRelCols ();
+            $this->MeasureCols  = $this->getTestMesCols ();
+            $this->DBTable = 'osef'; // To pass check
+        }
+        else
+        {
+            $this->load ();
+            
+            $TmpFolder = AGGREGATE_FOLDER_TMP . $Name . "/";
+            $ResultFolder = AGGREGATE_FOLDER_RESULTS . $Name . "/";
+            
+            if ( is_dir ( $TmpFolder ) )
+            {
+                shell_exec ( "rm -Rf $TmpFolder" );
+            }
+            
+            mkdir ( $TmpFolder );
+            
+            $AggregateFile = "$TmpFolder/aggregate";
+            
+            $Aggregate = $this->getAggregateFile ( TRUE ) ;
+            
+
+            $NbTuples = $Aggregate->getNbTuples ();
+            $NbAttributes = count ( $RelationCols );
+            
+            $this->DataSet = $Aggregate->getData ( );
+        }
+        
+        $this->check ();
+        
+        if ( $this->Runnable )
+        {
+            $this->SkyCube = new SkyCubeEmergent ( $this->DataSet, $this->RelationCols, $this->MeasureCols, $MinMax );
+        }
+    }
+    
+    protected function computeCuboideAttribute ( $CuboideID, $ColID, $Folder )
+    {
+        $FileName   = $CuboideID . '-' . $ColID;
+        $FilePath   = $Folder . $FileName;
+        $TupleFile  = $FilePath . '.nbtuple';
+        $AttrValues = $FilePath . '.attr.';
+        $RelPath    = $FilePath . '.rel';
+        $MesPath    = $FilePath . '.mes';
+        
+        $Cuboide = $this->SkyCube->getCuboide ( $CuboideID );
+        $InputDataSet = $Cuboide->getDataSetFiltered ( );
+
+        Arrays::exportAsCSV ( $InputDataSet, ' ', $Cuboide->getRowHeaders ( ), Arrays::EXPORT_ROW_NO_HEADER, $RelPath, array (), array (), ';' );
+        Arrays::exportAsCSV ( $InputDataSet, ' ', array ( $ColID . '1', $ColID . '2' ), Arrays::EXPORT_ROW_NO_HEADER, $MesPath, array (), array (), ';' );
+        
+        file_put_contents ( $TupleFile, count ( $InputDataSet ) . PHP_EOL );
+    }
+    
+    protected function computeCuboide ( $CuboideID, $Folder )
+    {
+        $Cuboide = $this->SkyCube->getCuboide ( $CuboideID );
+        $ColIDs = $Cuboide->getColIDs ();
+        
+        $AnalysisColIDs = array ();
+        $Ignore = array ();
+        
+        //         Log::logVar ( '$MeasureCols', $MeasureCols );
+        
+        foreach ( $ColIDs as $ColID )
+        {
+            $LastChar = substr ( $ColID, -1 );
+            $BaseCol = substr ( $ColID, 0, -1 );
+            $Col2 = substr_replace ( $ColID, 2, -1 );
+            
+            if ( ! in_array ( $ColID, $Ignore ) )
+            {
+                if ( ( $LastChar == '1' ) && ( in_array ( $Col2, $ColIDs ) ) )
+                {
+                    $AnalysisColIDs [] = $BaseCol;
+                    $Ignore [] = $Col2;
+                }
+            }
+        }
+        
+        foreach ( $AnalysisColIDs as $ColID )
+        {
+            $this->computeCuboideAttribute ( $CuboideID, $ColID, $Folder );
+        }
+    }
+    
+    public function compute ()
+    {
+        $Result = FALSE;
+        $this->Result = '';
+        $this->check ();
+        
+        if ( $this->Runnable )
+        {
+            $Message = "Computing analysis on " . $this->DescFile . " ($this->Algorithm)";
+            
+            Log::info ( $Message );
+            $this->Result .= $Message . PHP_EOL;
+            
+            $TmpFolder  = AGGREGATE_FOLDER_TMP . $this->Name . "/";
+            
+            if ( is_dir ( $TmpFolder ) )
+            {
+                shell_exec ( "rm -Rf $TmpFolder" );
+            }
+            
+            mkdir ( $TmpFolder );
+            
+            $Cuboides = $this->SkyCube->getCuboideIDs ( TRUE );
+            foreach ( $Cuboides as $Level => $CuboideIDs )
+            {
+                $CurrentLevel = '';
+                
+                foreach ( $CuboideIDs as $CuboideID )
+                {
+                    $this->computeCuboide ( $CuboideID, $TmpFolder );
+                }
+            }
+        }
     }
     
     public function run ( $Algorithm, $M, $N )
@@ -380,6 +550,7 @@ class AnalysisTest extends Analysis
     public function setRelationCols ( $NewValue ) { $this->RelationCols = $NewValue; }
     public function setMeasureCols  ( $NewValue ) { $this->MeasureCols  = $NewValue; }
     
+    public function setAlgorithm ( $Algo ) { $this->Algorithm = $Algo; }
     public function write ( )
     {
         $Content = '';
@@ -402,6 +573,8 @@ class AnalysisTest extends Analysis
     protected $MeasureCols;
     protected $Runnable;
     protected $Result;
+    protected $Algorithm;
+    protected $IsTest;
 }
 
 

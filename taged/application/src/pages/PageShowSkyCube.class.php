@@ -50,6 +50,7 @@ class PageShowSkyCube extends TagedPage
 	    {
 	        $this->AggregateObj = new Analysis ( $this->Aggregate . '.ini' );
 	    }
+	    
 	    if ( $Submit != '' )
 	    {
 	        $Password = Form::getData ( self::SHOW_PASSWORD, '', $Data );

@@ -57,7 +57,7 @@ class PageGestAggregate extends TagedPage
                     HTML::link ( Menu::buildGenLink ( 'ChangeAggregate', array ( PageChangeAggregate::CHANGE_AGGREGATE => $Name ) ), "Modifier" ) .
                     HTML::link ( Menu::buildGenLink ( 'GestAggregate', array ( self::GAG_AGGREGATE => $Name ) ), "Supprimer" ) .
                     HTML::link ( Menu::buildGenLink ( 'ShowSkyCube', array ( PageShowSkyCube::SHOW_AGGREGATE => $Name ) ), "SkyCube" ) .
-                    HTML::link ( Menu::buildGenLink ( 'RunSkyCubeAnalysis', array ( PageRunSkyCubeAnalysis::RAN_AGGREGATE => $Name ) ), "AnalyseSC" )
+                    HTML::link ( Menu::buildGenLink ( 'RunAnalysis2', array ( PageRunAnalysis2::RAN_AGGREGATE => $Name ) ), "AnalyseSC" )
                     )
                 );
         }
