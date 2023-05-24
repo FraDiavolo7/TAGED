@@ -27,6 +27,7 @@ class AnalysisTest extends Analysis
         $this->DescFilePath = AGGREGATE_FOLDER_DESC . $this->DescFile;
         $this->Algorithm    = NULL;
         $this->DataSet      = NULL;
+        $this->SkyCube      = NULL;
         $this->IsTest       = $IsTest;
     }
     
@@ -514,35 +515,13 @@ class AnalysisTest extends Analysis
         return $RelCols;
     }
     
-    public function getSkyCube ( $AsNumerics = FALSE, $MinMax = Cuboide::TO_MAX, $Bidon = FALSE )
-    {
-        $SkyCube = NULL;
-        
-        $Aggregate = $this->getAggregateFile ( $AsNumerics ) ;
-        
-        if ( $Bidon )
-        {
-            $DataSet = $this->getTestData ();
-            $RelCols = $this->getTestRelCols ();
-            $MesCols = $this->getTestMesCols ();
-        }
-        else
-        {
-            $DataSet = $Aggregate->getData ();
-            $RelCols = explode ( ',', $this->getRelationCols () );
-            $MesCols = explode ( ',', $this->getMeasureCols () );
-        }
-        
-        $SkyCube = new SkyCubeEmergent ( $DataSet, $RelCols, $MesCols, $MinMax );
-        
-        return $SkyCube;
-    }
-    
+   
     public function getRequestFile  () { return $this->RequestFile ; }
     public function getDBTable      () { return $this->DBTable     ; }
     public function getDBClass      () { return $this->DBClass     ; }
     public function getRelationCols () { return $this->RelationCols; }
     public function getMeasureCols  () { return $this->MeasureCols ; }
+    public function getSkyCube      () { return $this->SkyCube ; }
     
     public function setRequestFile  ( $NewValue ) { $this->RequestFile  = $NewValue; }
     public function setDBTable      ( $NewValue ) { $this->DBTable      = $NewValue; }
@@ -574,6 +553,7 @@ class AnalysisTest extends Analysis
     protected $Runnable;
     protected $Result;
     protected $Algorithm;
+    protected $SkyCube;
     protected $IsTest;
 }
 
