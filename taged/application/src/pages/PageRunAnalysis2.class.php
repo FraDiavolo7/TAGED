@@ -108,7 +108,7 @@ class PageRunAnalysis2 extends TagedPage
 	    
 	    if ( '' != $this->Result )
 	    {
-	        $SkyCube = $this->Aggregate->getSkyCube ();
+	        $SkyCube = $this->AggregateObj->getSkyCube ();
     	    $Result = HTML::div ( $this->Result, array ( 'class' => 'result_msg' ) );
     	    
     	    if ( NULL != $SkyCube )
