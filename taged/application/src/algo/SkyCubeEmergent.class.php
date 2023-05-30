@@ -133,9 +133,9 @@ class SkyCubeEmergent extends SkyCube
             $this->FilteredCuboideIDs [$Level] = array_merge ( $CuboideIDs1 [$Level], $CuboideIDs2 [$Level] );
         }
         
-        echo __FILE__ . ":" . __LINE__ . ' - $CuboideIDs1 ' . print_r ( $CuboideIDs1, TRUE ) . "<br>";
-        echo __FILE__ . ":" . __LINE__ . ' - $CuboideIDs2 ' . print_r ( $CuboideIDs2, TRUE ) . "<br>";
-        echo __FILE__ . ":" . __LINE__ . ' - $this->FilteredCuboideIDs ' . print_r ( $this->FilteredCuboideIDs, TRUE ) . "<br>";
+//         echo __FILE__ . ":" . __LINE__ . ' - $CuboideIDs1 ' . print_r ( $CuboideIDs1, TRUE ) . "<br>";
+//         echo __FILE__ . ":" . __LINE__ . ' - $CuboideIDs2 ' . print_r ( $CuboideIDs2, TRUE ) . "<br>";
+//         echo __FILE__ . ":" . __LINE__ . ' - $this->FilteredCuboideIDs ' . print_r ( $this->FilteredCuboideIDs, TRUE ) . "<br>";
         
         Log::fct_exit ( __METHOD__ );
     }

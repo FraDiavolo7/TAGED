@@ -484,34 +484,36 @@ class AnalysisTest extends Analysis
     protected function getTestData ()
     {
         $DataSet = array ();
-        $DataSet [] = array ( 'RowID' => 1, 'Type' => 'Feticheur', 'Propriete' => 'Vitesse', 'Parangon1' => 600, 'Rarete1' => 5,  'Gemmes1' => 30, 'Succes1' => 3,  'Parangon2' => 650, 'Rarete2' => 6,  'Gemmes2' => 40, 'Succes2' => 2 );
-        $DataSet [] = array ( 'RowID' => 2, 'Type' => 'Feticheur', 'Propriete' => 'Vitesse', 'Parangon1' => 900, 'Rarete1' => 5,  'Gemmes1' => 85, 'Succes1' => 7,  'Parangon2' => 950, 'Rarete2' => 6,  'Gemmes2' => 95, 'Succes2' => 6 );
-        $DataSet [] = array ( 'RowID' => 3, 'Type' => 'Sorciere',  'Propriete' => 'Chance',  'Parangon1' => 600, 'Rarete1' => 10, 'Gemmes1' => 50, 'Succes1' => 7,  'Parangon2' => 650, 'Rarete2' => 11, 'Gemmes2' => 60, 'Succes2' => 6 );
-        $DataSet [] = array ( 'RowID' => 4, 'Type' => 'Sorciere',  'Propriete' => 'Vitesse', 'Parangon1' => 100, 'Rarete1' => 10, 'Gemmes1' => 85, 'Succes1' => 5,  'Parangon2' => 150, 'Rarete2' => 11, 'Gemmes2' => 95, 'Succes2' => 4 );
-        $DataSet [] = array ( 'RowID' => 5, 'Type' => 'Croise',    'Propriete' => 'Chance',  'Parangon1' => 900, 'Rarete1' => 10, 'Gemmes1' => 50, 'Succes1' => 7,  'Parangon2' => 950, 'Rarete2' => 11, 'Gemmes2' => 60, 'Succes2' => 6 );
+        $DataSet [] = array ( 'RowId' => 1, 'Format' => 'Gen 1 OU', 'Joueur' => '065,103,065', 'Adversaire' => '065,143,065', 'Rarete' => 5, 'Duree1' => 20, 'Echec1' => 30, 'Duree2' => 20, 'Echec2' => 35 );
+        $DataSet [] = array ( 'RowId' => 2, 'Format' => 'Gen 1 OU', 'Joueur' => '065,113,143', 'Adversaire' => '065,103,065', 'Rarete' => 4, 'Duree1' => 60, 'Echec1' => 50, 'Duree2' => 60, 'Echec2' => 55 );
+        $DataSet [] = array ( 'RowId' => 3, 'Format' => 'Gen 1 OU', 'Joueur' => '121,113,121', 'Adversaire' => '065,103,065', 'Rarete' => 5, 'Duree1' => 30, 'Echec1' => 40, 'Duree2' => 30, 'Echec2' => 45 );
+        $DataSet [] = array ( 'RowId' => 4, 'Format' => 'Gen 1 OU', 'Joueur' => '065,143,065', 'Adversaire' => '121,113,143', 'Rarete' => 1, 'Duree1' => 85, 'Echec1' => 40, 'Duree2' => 80, 'Echec2' => 40 );
+        $DataSet [] = array ( 'RowId' => 5, 'Format' => 'Gen 1 OU', 'Joueur' => '121,113,128', 'Adversaire' => '121,113,121', 'Rarete' => 5, 'Duree1' => 90, 'Echec1' => 60, 'Duree2' => 90, 'Echec2' => 60 );
+        $DataSet [] = array ( 'RowId' => 6, 'Format' => 'Gen 1 OU', 'Joueur' => '121,113,103', 'Adversaire' => '121,113,121', 'Rarete' => 9, 'Duree1' => 30, 'Echec1' => 50, 'Duree2' => 30, 'Echec2' => 50 );
+        $DataSet [] = array ( 'RowId' => 7, 'Format' => 'Gen 1 OU', 'Joueur' => '065,113,143', 'Adversaire' => '065,113,143', 'Rarete' => 7, 'Duree1' => 80, 'Echec1' => 60, 'Duree2' => 80, 'Echec2' => 60 );
+        $DataSet [] = array ( 'RowId' => 8, 'Format' => 'Gen 1 OU', 'Joueur' => '121,113,080', 'Adversaire' => '065,143,065', 'Rarete' => 9, 'Duree1' => 90, 'Echec1' => 70, 'Duree2' => 90, 'Echec2' => 70 );
         return $DataSet;
     }
     
     protected function getTestMesCols ()
     {
         $MesCols = array ();
-        $MesCols [] = 'Parangon1';
         $MesCols [] = 'Rarete1';
-        $MesCols [] = 'Gemmes1';
-        $MesCols [] = 'Succes1';
-        $MesCols [] = 'Parangon2';
-        $MesCols [] = 'Rarete2';
-        $MesCols [] = 'Gemmes2';
-        $MesCols [] = 'Succes2';
+        $MesCols [] = 'Duree1';
+        $MesCols [] = 'Echec1';
+        $MesCols [] = 'Duree2';
+        $MesCols [] = 'Echec2';
         return $MesCols;
     }
     
     protected function getTestRelCols ()
     {
         $RelCols = array ();
-        $RelCols [] = 'RowID';
-        $RelCols [] = 'Type';
-        $RelCols [] = 'Propriete';
+        $RelCols [] = 'RowId';
+        $RelCols [] = 'Format';
+        $RelCols [] = 'Joueur';
+        $RelCols [] = 'Adversaire';
+        $RelCols [] = 'Adversaire';
         return $RelCols;
     }
     

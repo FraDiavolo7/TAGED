@@ -2,7 +2,7 @@
 
 class CuboideEmergent extends CuboideBase
 {
-    const CURRENT = 'AB';
+    const CURRENT = '';
     public function __construct ( $ColIDs, $Cuboide1, $Cuboide2 )
     {
         $this->Cuboide1 = $Cuboide1;
