@@ -61,14 +61,34 @@ abstract class CuboideBase
     public function getFilteredIDs ( ) { return $this->RowIDsFiltered; }
     public function getComputedIDs ( ) { return $this->RowIDsComputed; }
     
-    public function getDataSetFiltered ( ) 
+    public function getRowHeadersFiltered ( ) 
     { 
+        $Result = array ();
+        foreach ( $this->RowIDsFiltered as $RowID )
+        {
+            $Result [$RowID] = $this->RowHeaders [$RowID];
+        }
+        return $Result; 
+    }
+    
+    public function getDataSetFiltered ( )
+    {
         $Result = array ();
         foreach ( $this->RowIDsFiltered as $RowID )
         {
             $Result [$RowID] = $this->DataSet [$RowID];
         }
-        return $Result; 
+        return $Result;
+    }
+    
+    public function getRowHeadersComputed ( )
+    {
+        $Result = array ();
+        foreach ( $this->RowIDsComputed as $RowID )
+        {
+            $Result [$RowID] = $this->RowHeaders [$RowID];
+        }
+        return $Result;
     }
     
     public function getDataSetComputed ( ) 

@@ -12,7 +12,7 @@
 class SKDisplay
 {
     
-    const ROW_ID = 'RowID';
+    const ROW_ID = 'RowId';
     
     const NO_FLAG = 0;
     const SHOW_FILTERED      = 0x01;

@@ -224,8 +224,10 @@ class SkyCube
         {
             foreach ( $Headers as $ColName => $Value )
             {
-                if ( $ColName != 'RowID' )
-                $ColumnValues [$ColName] [$Value] = $Value;
+                if ( strtolower ( $ColName ) != 'rowid' )
+                {
+                    $ColumnValues [$ColName] [$Value] = $Value;
+                }
             }
         }
         

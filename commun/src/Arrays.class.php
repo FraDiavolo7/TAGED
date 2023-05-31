@@ -304,5 +304,49 @@ abstract class Arrays
         
         return $Base;
     }
+    
+    /**
+     * Same behavior as array_column, but multiple columns are supported
+     * @see https://www.php.net/manual/en/function.array-column.php
+     * @param array $Array A multi-dimensional array or an array of objects from which to pull a column of values from. 
+     * @param int|string|null $Columns The columns of values to return. 
+     * @param int|string|null $IndexKey The column to use as the index/keys for the returned array.
+     * @return array
+     */
+    public static function getColumns ( $Array, $Columns, $IndexKey = NULL )
+    {
+        $ResultArray = array ();
+        if ( is_string ( $Columns ) || is_numeric ( $Columns ) )
+        {
+            $Columns = array ( $Columns );
+        }
+        
+        if ( is_array ( $Columns ) )
+        {
+            foreach ( $Array as $RowID => $Row )
+            {
+                $NewRow = array ();
+                foreach ( $Columns as $Column )
+                {
+                    $NewRow [$Column] = $Row [$Column];
+                }
+                if ( !is_null ( $IndexKey ) )
+                {
+                    $NewIndex = $Row [$Column];
+                    $ResultArray [$NewIndex] = $NewRow;
+                }
+                else 
+                {
+                    $ResultArray [$RowID] = $NewRow;
+                }
+            }
+        }
+        elseif ( is_null ( $Columns ) )
+        {
+            $ResultArray = array_column ( $Array, NULL, $IndexKey );
+        }
+        
+        return $ResultArray;
+    }
 }
 

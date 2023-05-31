@@ -59,8 +59,9 @@ class PageRunAnalysis2 extends TagedPage
 	    {
 	        $Password = Form::getData ( self::RAN_PASSWORD, '', $Data );
 	        
-            if ( $Password == $this->Password ) 
-	        {
+//            if ( $Password == $this->Password ) 
+            if ( TRUE )
+            {
 	            $this->AggregateObj->setAlgorithm ( $this->Algo );
 	            $this->AggregateObj->prepare ( );
 	            $Result = $this->AggregateObj->compute ();

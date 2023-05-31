@@ -126,6 +126,7 @@ class AnalysisTest extends Analysis
     
     protected function computeCuboideAttribute ( $CuboideID, $ColID, $Folder )
     {
+        echo __FILE__ . ':' . __LINE__ . " $CuboideID $ColID<br>";
         $FileName   = $CuboideID . '-' . $ColID;
         $FilePath   = $Folder . $FileName;
         $TupleFile  = $FilePath . '.nbtuple';
@@ -135,15 +136,37 @@ class AnalysisTest extends Analysis
         
         $Cuboide = $this->SkyCube->getCuboide ( $CuboideID );
         $InputDataSet = $Cuboide->getDataSetFiltered ( );
-
-        Arrays::exportAsCSV ( $InputDataSet, ' ', $Cuboide->getRowHeaders ( ), Arrays::EXPORT_ROW_NO_HEADER, $RelPath, array (), array (), ';' );
-        Arrays::exportAsCSV ( $InputDataSet, ' ', array ( $ColID . '1', $ColID . '2' ), Arrays::EXPORT_ROW_NO_HEADER, $MesPath, array (), array (), ';' );
+        $InputRowHeaders = $Cuboide->getRowHeadersFiltered ( );
+        
+        $MeasureHeaders  = array ( $ColID . '1', $ColID . '2' );
+        $RelationHeaders = array_keys ( $InputRowHeaders [0] );
+        
+        foreach ( $RelationHeaders as $RowID => $ColumnName )
+        {
+            if ( strtolower ( $ColumnName ) == 'rowid' )
+            {
+                unset ( $RelationHeaders [$RowID] );
+            }
+        }
+        
+        $Measures  = Arrays::getColumns ( $InputDataSet,    $MeasureHeaders  );
+        $Relations = Arrays::getColumns ( $InputRowHeaders, $RelationHeaders );
+        
+        echo __FILE__ . ':' . __LINE__ . print_r ( $InputDataSet,  TRUE ) . " <br>";
+        echo __FILE__ . ':' . __LINE__ . print_r ( $MeasureHeaders,  TRUE ) . " <br>";
+        echo __FILE__ . ':' . __LINE__ . print_r ( $Measures,  TRUE ) . " <br>";
+        echo __FILE__ . ':' . __LINE__ . print_r ( $RelationHeaders, TRUE ) . " <br>";
+        echo __FILE__ . ':' . __LINE__ . print_r ( $Relations, TRUE ) . " <br>";
+        
+        Arrays::exportAsCSV ( $Relations, ' ', Arrays::EXPORT_COLUMN_NO_HEADER, Arrays::EXPORT_ROW_NO_HEADER, $RelPath, array (), array (), ';' );
+        Arrays::exportAsCSV ( $Measures,  ' ', Arrays::EXPORT_COLUMN_NO_HEADER, Arrays::EXPORT_ROW_NO_HEADER, $MesPath, array (), array (), ';' );
         
         file_put_contents ( $TupleFile, count ( $InputDataSet ) . PHP_EOL );
     }
     
     protected function computeCuboide ( $CuboideID, $Folder )
     {
+        echo __FILE__ . ':' . __LINE__ . " $CuboideID $Folder<br>";
         $Cuboide = $this->SkyCube->getCuboide ( $CuboideID );
         $ColIDs = $Cuboide->getColIDs ();
         
@@ -152,7 +175,7 @@ class AnalysisTest extends Analysis
         
         //         Log::logVar ( '$MeasureCols', $MeasureCols );
         
-        foreach ( $ColIDs as $ColID )
+        foreach ( $ColIDs as $ColID => $Osef )
         {
             $LastChar = substr ( $ColID, -1 );
             $BaseCol = substr ( $ColID, 0, -1 );
@@ -160,7 +183,7 @@ class AnalysisTest extends Analysis
             
             if ( ! in_array ( $ColID, $Ignore ) )
             {
-                if ( ( $LastChar == '1' ) && ( in_array ( $Col2, $ColIDs ) ) )
+                if ( ( $LastChar == '1' ) && ( isset ( $ColIDs [$Col2] ) ) )
                 {
                     $AnalysisColIDs [] = $BaseCol;
                     $Ignore [] = $Col2;
@@ -185,6 +208,9 @@ class AnalysisTest extends Analysis
             $Message = "Computing analysis on " . $this->DescFile . " ($this->Algorithm)";
             
             Log::info ( $Message );
+            
+            echo $Message . "<br>";
+            
             $this->Result .= $Message . PHP_EOL;
             
             $TmpFolder  = AGGREGATE_FOLDER_TMP . $this->Name . "/";
@@ -498,7 +524,7 @@ class AnalysisTest extends Analysis
     protected function getTestMesCols ()
     {
         $MesCols = array ();
-        $MesCols [] = 'Rarete1';
+        $MesCols [] = 'Rarete';
         $MesCols [] = 'Duree1';
         $MesCols [] = 'Echec1';
         $MesCols [] = 'Duree2';
