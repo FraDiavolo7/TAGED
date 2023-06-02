@@ -114,8 +114,6 @@ class Aggregate
                 }
             }
         }
-        
-        
 
         if ( $ExportNbTuples ) file_put_contents ( $TupleFile, $this->NbTuples . PHP_EOL );
        

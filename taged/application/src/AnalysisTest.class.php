@@ -124,6 +124,45 @@ class AnalysisTest extends Analysis
         }
     }
     
+    public function cleanData ( $Data )
+    {
+        return str_replace ( array (';', ',', ' '), '_', $Data );
+    }
+    
+    protected $AttributeValues;
+    protected $AttributeIgnored;
+    
+    protected function convertToNumerics ( $Value, $Attribute )
+    {
+        $Result = $Value;
+        
+        $Attr = rtrim ( $Attribute, "0123456789" );
+        if ( ! isset ( $this->AttributeValues [$Attr] ) )
+        {
+            if ( is_numeric ( $Value ) )
+            {
+                $this->AttributeIgnored [$Attr] = TRUE;
+            }
+            else
+            {
+                $this->AttributeValues [$Attr] = array ();
+                $Result = 1;
+            }
+        }
+        elseif ( ! isset ( $this->AttributeIgnored [$Attr] ) )
+        {
+            $Result = array_search ( $Value, $this->AttributeValues [$Attr] );
+            if ( FALSE === $Result )
+            {
+                $Result = count ( $this->AttributeValues [$Attr] ) + 1;
+            }
+        }
+        
+        $this->AttributeValues [$Attr] [$Result] = $Value;
+        
+        return $Result;
+    }
+    
     protected function computeCuboideAttribute ( $CuboideID, $ColID, $Folder )
     {
         echo __FILE__ . ':' . __LINE__ . " $CuboideID $ColID<br>";
@@ -150,18 +189,118 @@ class AnalysisTest extends Analysis
         }
         
         $Measures  = Arrays::getColumns ( $InputDataSet,    $MeasureHeaders  );
-        $Relations = Arrays::getColumns ( $InputRowHeaders, $RelationHeaders );
+        //$Relations = Arrays::getColumns ( $InputRowHeaders, $RelationHeaders );
+        /**/
+        $RelationsRaw = Arrays::getColumns ( $InputRowHeaders, $RelationHeaders );
+        $Relations = array ();
+         
+        // Anonymisation
+        foreach ( $RelationsRaw as $RowID => $Row )
+        {
+            foreach ( $Row as $Attr => $Value )
+            {
+                if ( ! is_numeric ( $Attr ) )
+                {
+                    if ( ! in_array ( $Attr, $this->Attributes ) ) $this->Attributes [] = $Attr;
+                    
+                    $Relations [ $RowID ] [ $Attr ] = $this->convertToNumerics ( $Value, $Attr );
+                }
+            }
+        }
+//        echo __FILE__ . ':' . __LINE__ . " <pre>" . print_r ( $this->AttributeValues, TRUE ) . "</pre> <br>";
         
-        echo __FILE__ . ':' . __LINE__ . print_r ( $InputDataSet,  TRUE ) . " <br>";
-        echo __FILE__ . ':' . __LINE__ . print_r ( $MeasureHeaders,  TRUE ) . " <br>";
-        echo __FILE__ . ':' . __LINE__ . print_r ( $Measures,  TRUE ) . " <br>";
-        echo __FILE__ . ':' . __LINE__ . print_r ( $RelationHeaders, TRUE ) . " <br>";
-        echo __FILE__ . ':' . __LINE__ . print_r ( $Relations, TRUE ) . " <br>";
+        // Export Anonymisation
+        foreach ( $RelationHeaders as $ColumnName )
+        {
+            $AttrValuesFile = $AttrValues . $ColumnName;
+            foreach ( $this->AttributeValues [$ColumnName] as $Key => $Val )
+            {
+                file_put_contents ( $AttrValuesFile, "$Key=$Val" . PHP_EOL, FILE_APPEND );
+            }
+        }
+        /**/
         
-        Arrays::exportAsCSV ( $Relations, ' ', Arrays::EXPORT_COLUMN_NO_HEADER, Arrays::EXPORT_ROW_NO_HEADER, $RelPath, array (), array (), ';' );
-        Arrays::exportAsCSV ( $Measures,  ' ', Arrays::EXPORT_COLUMN_NO_HEADER, Arrays::EXPORT_ROW_NO_HEADER, $MesPath, array (), array (), ';' );
+        // Conversion de 
+        // A B => X Y
+        // en 
+        // A B => X 0
+        // A B => 0 Y
         
-        file_put_contents ( $TupleFile, count ( $InputDataSet ) . PHP_EOL );
+        $TAGEDMeasures = array ();
+        $TAGEDRelations = array ();
+        
+        foreach ( $Measures as $RowID => $Row )
+        {
+            $NbAttr = 0;
+            $NbZeros = 0;
+            foreach ( $Row as $MeasureID => $Value )
+            {
+                ++$NbAttr;
+                if ( $Value === 0 )
+                {
+                    ++$NbZeros;
+                }
+            }
+            
+            $NbCopies = $NbAttr - $NbZeros;
+            
+            if ( $NbCopies > 1 )
+            {
+                $TmpMes = array ();
+                $TmpRel = array ();
+                $Current = 0;
+                foreach ( $Row as $MeasureID => $Value )
+                {
+                    for ( $i = 0 ; $i < $NbCopies ; ++$i )
+                    {
+                        $NewValue = 0;
+                        if ( ( $Value != 0 ) && ( $Current == $i ) )
+                        {
+                            $NewValue = $Value;
+                        }
+                        $TmpMes [$i][$MeasureID] = $NewValue;
+                    }
+                    ++$Current;
+                }
+                
+                foreach ( $TmpMes as $NewRow )
+                {
+                    $TAGEDMeasures [] = $NewRow;
+                    $TAGEDRelations [] = $Relations [$RowID];
+                }
+            }
+            else
+            {
+                $TAGEDMeasures [] = $Row;
+                $TAGEDRelations [] = $Relations [$RowID];
+            }
+        }
+        
+        
+//        $Relations = array_map ( array ( $this, 'cleanData' ), $RelationsRaw );
+//        echo __FILE__ . ':' . __LINE__ . " <pre>" . print_r ( $TAGEDMeasures, TRUE ) . "</pre> <br>";
+        
+        $NbTuples = count ( $TAGEDMeasures );
+        
+        Arrays::exportAsCSV ( $TAGEDRelations, ' ', Arrays::EXPORT_COLUMN_NO_HEADER, Arrays::EXPORT_ROW_NO_HEADER, $RelPath, array (), array (), ';' );
+        Arrays::exportAsCSV ( $TAGEDMeasures,  ' ', Arrays::EXPORT_COLUMN_NO_HEADER, Arrays::EXPORT_ROW_NO_HEADER, $MesPath, array (), array (), ';' );
+        
+        file_put_contents ( $TupleFile, $NbTuples . PHP_EOL );
+
+        $NbAttributes = count ( $RelationHeaders );
+        
+        $M = min ( min ( $Measures ) );
+        $N = max ( max ( $Measures ) );
+        
+        $AlgoOpt = " -m$M -n$N";
+        
+        $Command = "$this->Algorithm $FilePath $NbAttributes $NbTuples $AlgoOpt";
+        
+        echo __FILE__ . ':' . __LINE__ . " <pre>" . print_r ( $Command, TRUE ) . "</pre> <br>";
+        
+        $ShellResult = shell_exec ( $Command . ' 2>&1' ) . PHP_EOL;
+        
+        echo __FILE__ . ':' . __LINE__ . " <pre>" . print_r ( $ShellResult, TRUE ) . "</pre> <br>";
     }
     
     protected function computeCuboide ( $CuboideID, $Folder )
@@ -510,14 +649,14 @@ class AnalysisTest extends Analysis
     protected function getTestData ()
     {
         $DataSet = array ();
-        $DataSet [] = array ( 'RowId' => 1, 'Format' => 'Gen 1 OU', 'Joueur' => '065,103,065', 'Adversaire' => '065,143,065', 'Rarete' => 5, 'Duree1' => 20, 'Echec1' => 30, 'Duree2' => 20, 'Echec2' => 35 );
-        $DataSet [] = array ( 'RowId' => 2, 'Format' => 'Gen 1 OU', 'Joueur' => '065,113,143', 'Adversaire' => '065,103,065', 'Rarete' => 4, 'Duree1' => 60, 'Echec1' => 50, 'Duree2' => 60, 'Echec2' => 55 );
-        $DataSet [] = array ( 'RowId' => 3, 'Format' => 'Gen 1 OU', 'Joueur' => '121,113,121', 'Adversaire' => '065,103,065', 'Rarete' => 5, 'Duree1' => 30, 'Echec1' => 40, 'Duree2' => 30, 'Echec2' => 45 );
-        $DataSet [] = array ( 'RowId' => 4, 'Format' => 'Gen 1 OU', 'Joueur' => '065,143,065', 'Adversaire' => '121,113,143', 'Rarete' => 1, 'Duree1' => 85, 'Echec1' => 40, 'Duree2' => 80, 'Echec2' => 40 );
-        $DataSet [] = array ( 'RowId' => 5, 'Format' => 'Gen 1 OU', 'Joueur' => '121,113,128', 'Adversaire' => '121,113,121', 'Rarete' => 5, 'Duree1' => 90, 'Echec1' => 60, 'Duree2' => 90, 'Echec2' => 60 );
-        $DataSet [] = array ( 'RowId' => 6, 'Format' => 'Gen 1 OU', 'Joueur' => '121,113,103', 'Adversaire' => '121,113,121', 'Rarete' => 9, 'Duree1' => 30, 'Echec1' => 50, 'Duree2' => 30, 'Echec2' => 50 );
-        $DataSet [] = array ( 'RowId' => 7, 'Format' => 'Gen 1 OU', 'Joueur' => '065,113,143', 'Adversaire' => '065,113,143', 'Rarete' => 7, 'Duree1' => 80, 'Echec1' => 60, 'Duree2' => 80, 'Echec2' => 60 );
-        $DataSet [] = array ( 'RowId' => 8, 'Format' => 'Gen 1 OU', 'Joueur' => '121,113,080', 'Adversaire' => '065,143,065', 'Rarete' => 9, 'Duree1' => 90, 'Echec1' => 70, 'Duree2' => 90, 'Echec2' => 70 );
+        $DataSet [] = array ( 'RowId' => 1, 'Format' => 'Gen 1 OU', 'Joueur' => '065;103;065', 'Adversaire' => '065;143;065', 'Rarete' => 5, 'Duree1' => 20, 'Echec1' => 30, 'Duree2' => 25, 'Echec2' => 35 );
+        $DataSet [] = array ( 'RowId' => 2, 'Format' => 'Gen 1 OU', 'Joueur' => '065;113;143', 'Adversaire' => '065;103;065', 'Rarete' => 4, 'Duree1' => 60, 'Echec1' => 50, 'Duree2' => 65, 'Echec2' => 55 );
+        $DataSet [] = array ( 'RowId' => 3, 'Format' => 'Gen 1 OU', 'Joueur' => '121;113;121', 'Adversaire' => '065;103;065', 'Rarete' => 5, 'Duree1' => 30, 'Echec1' => 40, 'Duree2' => 35, 'Echec2' => 45 );
+        $DataSet [] = array ( 'RowId' => 4, 'Format' => 'Gen 1 OU', 'Joueur' => '065;143;065', 'Adversaire' => '121;113;143', 'Rarete' => 1, 'Duree1' => 80, 'Echec1' => 40, 'Duree2' => 85, 'Echec2' => 40 );
+        $DataSet [] = array ( 'RowId' => 5, 'Format' => 'Gen 1 OU', 'Joueur' => '121;113;128', 'Adversaire' => '121;113;121', 'Rarete' => 5, 'Duree1' => 90, 'Echec1' => 60, 'Duree2' => 95, 'Echec2' => 60 );
+        $DataSet [] = array ( 'RowId' => 6, 'Format' => 'Gen 1 OU', 'Joueur' => '121;113;103', 'Adversaire' => '121;113;121', 'Rarete' => 9, 'Duree1' => 30, 'Echec1' => 50, 'Duree2' => 35, 'Echec2' => 50 );
+        $DataSet [] = array ( 'RowId' => 7, 'Format' => 'Gen 1 OU', 'Joueur' => '065;113;143', 'Adversaire' => '065;113;143', 'Rarete' => 7, 'Duree1' => 80, 'Echec1' => 60, 'Duree2' => 85, 'Echec2' => 60 );
+        $DataSet [] = array ( 'RowId' => 8, 'Format' => 'Gen 1 OU', 'Joueur' => '121;113;080', 'Adversaire' => '065;143;065', 'Rarete' => 9, 'Duree1' => 90, 'Echec1' => 70, 'Duree2' => 95, 'Echec2' => 70 );
         return $DataSet;
     }
     
