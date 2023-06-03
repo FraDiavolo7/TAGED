@@ -167,6 +167,38 @@ class AnalysisTest extends Analysis
     {
         echo __FILE__ . ':' . __LINE__ . " $CuboideID $ColID<br>";
         $FileName   = $CuboideID . '-' . $ColID;
+        
+        $Cuboide = $this->SkyCube->getCuboide ( $CuboideID );
+        $InputDataSet = $Cuboide->getDataSetFiltered ( );
+        $InputRowHeaders = $Cuboide->getRowHeadersFiltered ( );
+        
+        $MeasureHeaders  = array ( $ColID . '1', $ColID . '2' );
+        $RelationHeaders = array_keys ( $InputRowHeaders [0] );
+        
+        foreach ( $RelationHeaders as $RowID => $ColumnName )
+        {
+            if ( strtolower ( $ColumnName ) == 'rowid' )
+            {
+                unset ( $RelationHeaders [$RowID] );
+            }
+        }
+        
+        $Measures  = Arrays::getColumns ( $InputDataSet,    $MeasureHeaders  );
+        $Relations = Arrays::getColumns ( $InputRowHeaders, $RelationHeaders );
+        
+        $AlgoAnalysis = new IDEA ( $FileName, $Folder );
+        
+        $AlgoAnalysis->setAlgorithm ( $this->Algorithm );
+        $AlgoAnalysis->setMeasures  ( $Measures  );
+        $AlgoAnalysis->setRelations ( $Relations );
+        
+        $AlgoAnalysis->run ();
+    }
+    
+    protected function computeCuboideAttribute_ ( $CuboideID, $ColID, $Folder )
+    {
+        echo __FILE__ . ':' . __LINE__ . " $CuboideID $ColID<br>";
+        $FileName   = $CuboideID . '-' . $ColID;
         $FilePath   = $Folder . $FileName;
         $TupleFile  = $FilePath . '.nbtuple';
         $AttrValues = $FilePath . '.attr.';
