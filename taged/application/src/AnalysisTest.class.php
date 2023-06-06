@@ -165,7 +165,7 @@ class AnalysisTest extends Analysis
     
     protected function computeCuboideAttribute ( $CuboideID, $ColID, $Folder )
     {
-        echo __FILE__ . ':' . __LINE__ . " $CuboideID $ColID<br>";
+//        echo __FILE__ . ':' . __LINE__ . " $CuboideID $ColID<br>";
         $FileName   = $CuboideID . '-' . $ColID;
         
         $Cuboide = $this->SkyCube->getCuboide ( $CuboideID );
@@ -189,15 +189,22 @@ class AnalysisTest extends Analysis
         $AlgoAnalysis = new IDEA ( $FileName, $Folder );
         
         $AlgoAnalysis->setAlgorithm ( $this->Algorithm );
+        $AlgoAnalysis->setMin ( 35 );
+        $AlgoAnalysis->setMax ( 90 );
         $AlgoAnalysis->setMeasures  ( $Measures  );
         $AlgoAnalysis->setRelations ( $Relations );
         
-        $AlgoAnalysis->run ();
+        $Results = $AlgoAnalysis->run ();
+        
+        foreach ( $Results as $Result )
+        {
+            $this->SkyCube->setEmergenceRatio ( $CuboideID, $ColID, $Result ['rel'], $Result ['ER'] );
+        }
     }
     
     protected function computeCuboideAttribute_ ( $CuboideID, $ColID, $Folder )
     {
-        echo __FILE__ . ':' . __LINE__ . " $CuboideID $ColID<br>";
+//        echo __FILE__ . ':' . __LINE__ . " $CuboideID $ColID<br>";
         $FileName   = $CuboideID . '-' . $ColID;
         $FilePath   = $Folder . $FileName;
         $TupleFile  = $FilePath . '.nbtuple';
@@ -337,7 +344,7 @@ class AnalysisTest extends Analysis
     
     protected function computeCuboide ( $CuboideID, $Folder )
     {
-        echo __FILE__ . ':' . __LINE__ . " $CuboideID $Folder<br>";
+//        echo __FILE__ . ':' . __LINE__ . " $CuboideID $Folder<br>";
         $Cuboide = $this->SkyCube->getCuboide ( $CuboideID );
         $ColIDs = $Cuboide->getColIDs ();
         
@@ -380,7 +387,7 @@ class AnalysisTest extends Analysis
             
             Log::info ( $Message );
             
-            echo $Message . "<br>";
+           // echo $Message . "<br>";
             
             $this->Result .= $Message . PHP_EOL;
             
@@ -681,14 +688,32 @@ class AnalysisTest extends Analysis
     protected function getTestData ()
     {
         $DataSet = array ();
-        $DataSet [] = array ( 'RowId' => 1, 'Format' => 'Gen 1 OU', 'Joueur' => '065;103;065', 'Adversaire' => '065;143;065', 'Rarete' => 5, 'Duree1' => 20, 'Echec1' => 30, 'Duree2' => 25, 'Echec2' => 35 );
-        $DataSet [] = array ( 'RowId' => 2, 'Format' => 'Gen 1 OU', 'Joueur' => '065;113;143', 'Adversaire' => '065;103;065', 'Rarete' => 4, 'Duree1' => 60, 'Echec1' => 50, 'Duree2' => 65, 'Echec2' => 55 );
-        $DataSet [] = array ( 'RowId' => 3, 'Format' => 'Gen 1 OU', 'Joueur' => '121;113;121', 'Adversaire' => '065;103;065', 'Rarete' => 5, 'Duree1' => 30, 'Echec1' => 40, 'Duree2' => 35, 'Echec2' => 45 );
-        $DataSet [] = array ( 'RowId' => 4, 'Format' => 'Gen 1 OU', 'Joueur' => '065;143;065', 'Adversaire' => '121;113;143', 'Rarete' => 1, 'Duree1' => 80, 'Echec1' => 40, 'Duree2' => 85, 'Echec2' => 40 );
-        $DataSet [] = array ( 'RowId' => 5, 'Format' => 'Gen 1 OU', 'Joueur' => '121;113;128', 'Adversaire' => '121;113;121', 'Rarete' => 5, 'Duree1' => 90, 'Echec1' => 60, 'Duree2' => 95, 'Echec2' => 60 );
-        $DataSet [] = array ( 'RowId' => 6, 'Format' => 'Gen 1 OU', 'Joueur' => '121;113;103', 'Adversaire' => '121;113;121', 'Rarete' => 9, 'Duree1' => 30, 'Echec1' => 50, 'Duree2' => 35, 'Echec2' => 50 );
-        $DataSet [] = array ( 'RowId' => 7, 'Format' => 'Gen 1 OU', 'Joueur' => '065;113;143', 'Adversaire' => '065;113;143', 'Rarete' => 7, 'Duree1' => 80, 'Echec1' => 60, 'Duree2' => 85, 'Echec2' => 60 );
-        $DataSet [] = array ( 'RowId' => 8, 'Format' => 'Gen 1 OU', 'Joueur' => '121;113;080', 'Adversaire' => '065;143;065', 'Rarete' => 9, 'Duree1' => 90, 'Echec1' => 70, 'Duree2' => 95, 'Echec2' => 70 );
+//         $DataSet [] = array ( 'RowId' => 1, 'Format' => 'Gen 1 OU', 'Joueur' => '065;103;065', 'Adversaire' => '065;143;065', 'Rarete' => 5, 'Duree1' => 20, 'Echec1' => 30, 'Duree2' => 22, 'Echec2' => 32 );
+//         $DataSet [] = array ( 'RowId' => 2, 'Format' => 'Gen 1 OU', 'Joueur' => '065;113;143', 'Adversaire' => '065;103;065', 'Rarete' => 4, 'Duree1' => 60, 'Echec1' => 50, 'Duree2' => 64, 'Echec2' => 53 );
+//         $DataSet [] = array ( 'RowId' => 3, 'Format' => 'Gen 1 OU', 'Joueur' => '121;113;121', 'Adversaire' => '065;103;065', 'Rarete' => 5, 'Duree1' => 30, 'Echec1' => 40, 'Duree2' => 33, 'Echec2' => 45 );
+//         $DataSet [] = array ( 'RowId' => 4, 'Format' => 'Gen 1 OU', 'Joueur' => '065;143;065', 'Adversaire' => '121;113;143', 'Rarete' => 1, 'Duree1' => 80, 'Echec1' => 40, 'Duree2' => 87, 'Echec2' => 44 );
+//         $DataSet [] = array ( 'RowId' => 5, 'Format' => 'Gen 1 OU', 'Joueur' => '121;113;128', 'Adversaire' => '121;113;121', 'Rarete' => 5, 'Duree1' => 90, 'Echec1' => 60, 'Duree2' => 98, 'Echec2' => 66 );
+//         $DataSet [] = array ( 'RowId' => 6, 'Format' => 'Gen 1 OU', 'Joueur' => '121;113;103', 'Adversaire' => '121;113;121', 'Rarete' => 9, 'Duree1' => 30, 'Echec1' => 50, 'Duree2' => 36, 'Echec2' => 54 );
+//         $DataSet [] = array ( 'RowId' => 7, 'Format' => 'Gen 1 OU', 'Joueur' => '065;113;143', 'Adversaire' => '065;113;143', 'Rarete' => 7, 'Duree1' => 80, 'Echec1' => 60, 'Duree2' => 81, 'Echec2' => 63 );
+//         $DataSet [] = array ( 'RowId' => 8, 'Format' => 'Gen 1 OU', 'Joueur' => '121;113;080', 'Adversaire' => '065;143;065', 'Rarete' => 9, 'Duree1' => 90, 'Echec1' => 70, 'Duree2' => 92, 'Echec2' => 75 );
+
+        $DataSet [] = array ( 'RowId' =>  1, 'Format' => 'Gen 1 OU', 'Joueur' => 'A', 'Adversaire' => 'D', 'Rarete' => 5, 'Duree1' => 20, 'Echec1' => 30, 'Duree2' => 25, 'Echec2' => 35 );
+        $DataSet [] = array ( 'RowId' =>  2, 'Format' => 'Gen 1 OU', 'Joueur' => 'B', 'Adversaire' => 'E', 'Rarete' => 4, 'Duree1' => 60, 'Echec1' => 50, 'Duree2' => 65, 'Echec2' => 55 );
+        $DataSet [] = array ( 'RowId' =>  3, 'Format' => 'Gen 1 OU', 'Joueur' => 'B', 'Adversaire' => 'F', 'Rarete' => 5, 'Duree1' => 30, 'Echec1' => 40, 'Duree2' => 35, 'Echec2' => 45 );
+        $DataSet [] = array ( 'RowId' =>  4, 'Format' => 'Gen 1 OU', 'Joueur' => 'B', 'Adversaire' => 'A', 'Rarete' => 1, 'Duree1' => 80, 'Echec1' => 40, 'Duree2' => 85, 'Echec2' => 45 );
+        $DataSet [] = array ( 'RowId' =>  5, 'Format' => 'Gen 1 OU', 'Joueur' => 'C', 'Adversaire' => 'A', 'Rarete' => 5, 'Duree1' => 90, 'Echec1' => 60, 'Duree2' => 95, 'Echec2' => 65 );
+        $DataSet [] = array ( 'RowId' =>  6, 'Format' => 'Gen 1 OU', 'Joueur' => 'C', 'Adversaire' => 'B', 'Rarete' => 9, 'Duree1' => 30, 'Echec1' => 50, 'Duree2' => 35, 'Echec2' => 55 );
+        $DataSet [] = array ( 'RowId' =>  7, 'Format' => 'Gen 1 OU', 'Joueur' => 'D', 'Adversaire' => 'B', 'Rarete' => 7, 'Duree1' => 80, 'Echec1' => 60, 'Duree2' => 85, 'Echec2' => 65 );
+        $DataSet [] = array ( 'RowId' =>  8, 'Format' => 'Gen 1 OU', 'Joueur' => 'D', 'Adversaire' => 'C', 'Rarete' => 9, 'Duree1' => 90, 'Echec1' => 70, 'Duree2' => 95, 'Echec2' => 75 );
+        
+        $DataSet [] = array ( 'RowId' =>  9, 'Format' => 'Gen 1 OU', 'Joueur' => 'E', 'Adversaire' => 'D', 'Rarete' => 5, 'Duree1' => 20, 'Echec1' => 50, 'Duree2' => 30, 'Echec2' => 55 );
+        $DataSet [] = array ( 'RowId' => 10, 'Format' => 'Gen 1 OU', 'Joueur' => 'E', 'Adversaire' => 'E', 'Rarete' => 4, 'Duree1' => 60, 'Echec1' => 30, 'Duree2' => 65, 'Echec2' => 40 );
+//         $DataSet [] = array ( 'RowId' => 11, 'Format' => 'Gen 1 OU', 'Joueur' => 'F', 'Adversaire' => 'A', 'Rarete' => 5, 'Duree1' => 30, 'Echec1' => 40, 'Duree2' => 35, 'Echec2' => 45 );
+//         $DataSet [] = array ( 'RowId' => 12, 'Format' => 'Gen 1 OU', 'Joueur' => 'F', 'Adversaire' => 'C', 'Rarete' => 1, 'Duree1' => 80, 'Echec1' => 40, 'Duree2' => 85, 'Echec2' => 45 );
+//         $DataSet [] = array ( 'RowId' => 13, 'Format' => 'Gen 1 OU', 'Joueur' => 'A', 'Adversaire' => 'A', 'Rarete' => 5, 'Duree1' => 90, 'Echec1' => 60, 'Duree2' => 95, 'Echec2' => 65 );
+//         $DataSet [] = array ( 'RowId' => 14, 'Format' => 'Gen 1 OU', 'Joueur' => 'B', 'Adversaire' => 'B', 'Rarete' => 9, 'Duree1' => 30, 'Echec1' => 50, 'Duree2' => 35, 'Echec2' => 55 );
+//         $DataSet [] = array ( 'RowId' => 15, 'Format' => 'Gen 1 OU', 'Joueur' => 'C', 'Adversaire' => 'C', 'Rarete' => 7, 'Duree1' => 80, 'Echec1' => 60, 'Duree2' => 85, 'Echec2' => 65 );
+//         $DataSet [] = array ( 'RowId' => 16, 'Format' => 'Gen 1 OU', 'Joueur' => 'D', 'Adversaire' => 'D', 'Rarete' => 9, 'Duree1' => 90, 'Echec1' => 70, 'Duree2' => 95, 'Echec2' => 75 );
         return $DataSet;
     }
     
@@ -709,7 +734,6 @@ class AnalysisTest extends Analysis
         $RelCols [] = 'RowId';
         $RelCols [] = 'Format';
         $RelCols [] = 'Joueur';
-        $RelCols [] = 'Adversaire';
         $RelCols [] = 'Adversaire';
         return $RelCols;
     }

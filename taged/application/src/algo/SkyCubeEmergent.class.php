@@ -20,6 +20,7 @@ class SkyCubeEmergent extends SkyCube
         $this->SkyCube2 = NULL;
         $this->MinMax = $MinMax;
         $this->IsValid = FALSE;
+        $this->Emergence = array ();
         $this->ComputeAccordCuboides = $ComputeAccordCuboides;
         
         $this->computeDataSet ( $Data, $RelationCols, $MeasureCols );
@@ -46,6 +47,7 @@ class SkyCubeEmergent extends SkyCube
             
             if ( ( $LastChar == 1 ) && ( $Col2Found ) )
             {
+                $this->DenumberedColIDs [$CurrentColID] = substr ( $ColHeader, 0, -1 );
                 $ColID  = $CurrentColID . '1';
                 $ColID2 = $CurrentColID . '2';
                 $CurrentColID++;
@@ -55,6 +57,7 @@ class SkyCubeEmergent extends SkyCube
             }
             else
             {
+                $this->DenumberedColIDs [$CurrentColID] = $ColHeader;
                 $ColID  = $CurrentColID;
                 $CurrentColID++;
                 $Stock [$ColHeader] = $ColID;
@@ -190,9 +193,34 @@ class SkyCubeEmergent extends SkyCube
         return  $this->SkyCube1->getMultidimensionalSpace ();
     }
     
+    public function getEmergence ()
+    {
+        return $this->Emergence;
+    }
+    
+    public function setEmergenceRatio ( $CuboideID, $MeasureID, $Relation, $EmergenceRatio )
+    {
+        $Key = implode ( ',', array_values ( $Relation ) );
+        if ( ! isset ( $this->Emergence [$Key] ) )
+        {
+            $this->Emergence [$Key] = $Relation;
+            foreach ( $this->DenumberedColIDs as $ColID => $ColName )
+            {
+                $this->Emergence [$Key] [$ColName] = '';
+            }
+        }
+        
+        $this->Emergence [$Key] [$this->DenumberedColIDs [$MeasureID]] = $EmergenceRatio;
+        
+    }
+    
     protected $SkyCube1; //** Table indexed by RowID and ColID of Relation measures
     protected $SkyCube2; //** Table indexed by RowID of Relation identifiers
     protected $ComputeAccordCuboides;
+    
+    protected $DenumberedColIDs;
+    
+    protected $Emergence;
 }
 
 Log::setDebug ( __FILE__ );

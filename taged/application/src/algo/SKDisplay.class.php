@@ -73,6 +73,17 @@ class SKDisplay
         return HTML::div ( $String, array ( 'class' => 'input_data' ) );
     }
 
+    public static function htmlEmergence ( $SkyCube )
+    {
+        $Emergence = $SkyCube->getEmergence ();
+        
+        $Headers = array_keys ( reset ( $Emergence ) );
+        
+        $String = HTML::div ( HTML::tableFull ($Headers,  array ( 'border' => '1' ) ) );
+        $String .= HTML::div ( HTML::tableFull ($Emergence, array ( 'border' => '1' ) ) );
+        return HTML::div ( $String, array ( 'class' => 'emergence_data' ) );
+    }
+    
     public static function htmlMultidimensionalSpace ( $SkyCube )
     {
         $HTML = '';

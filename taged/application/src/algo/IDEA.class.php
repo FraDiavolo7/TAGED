@@ -29,15 +29,16 @@ class IDEA
     {
         $this->prepare ();
         
-        $AlgoOpt = " -m$this->Min -n$this->Max";
+        $AlgoOpt = " -m" . $this->Max . " -n" . $this->Min;
         
         $Command = "$this->Algorithm $this->FilePath $this->NbAttributes $this->NbTuples $AlgoOpt";
         
-        echo __FILE__ . ':' . __LINE__ . ' - ' . __METHOD__ . " <pre>" . print_r ( $Command, TRUE ) . "</pre> <br>";
+        //echo __FILE__ . ':' . __LINE__ . ' - ' . __METHOD__ . " <pre>" . print_r ( $Command, TRUE ) . "</pre> <br>";
+        //echo " <pre>" . print_r ( $Command, TRUE ) . "</pre> <br>";
         
         $ShellResult = shell_exec ( $Command . ' 2>&1' ) . PHP_EOL;
         
-        $this->interpret ( $ShellResult );
+        return $this->interpret ( $ShellResult );
     }
     
     protected function prepare ()
@@ -56,8 +57,14 @@ class IDEA
         $this->WIPRelations = $this->InputRelations;
 
         $this->anonymize ();
+        
+        $this->countAttributes ();
     }
-
+    
+    protected function countAttributes ()
+    {
+        $this->NbAttributes = count ( reset ( $this->WIPRelations ) );
+    }
     
     protected function anonymize ()
     {
@@ -141,7 +148,7 @@ class IDEA
     protected function exportMeasures ()
     {
         $MesPath    = $this->FilePath . '.mes';
-        echo __FILE__ . ':' . __LINE__ . ' - ' . __METHOD__ . " <pre>" . print_r ( $this->PreparedMeasures, TRUE ) . "</pre> <br>";
+        //echo __FILE__ . ':' . __LINE__ . ' - ' . __METHOD__ . " <pre>" . print_r ( $this->PreparedMeasures, TRUE ) . "</pre> <br>";
         
         Arrays::exportAsCSV ( $this->PreparedMeasures,  ' ', Arrays::EXPORT_COLUMN_NO_HEADER, Arrays::EXPORT_ROW_NO_HEADER, $MesPath, array (), array (), ';' );
     }
@@ -150,19 +157,65 @@ class IDEA
     {
         $RelPath    = $this->FilePath . '.rel';
         
-        echo __FILE__ . ':' . __LINE__ . ' - ' . __METHOD__ . " <pre>" . print_r ( $this->PreparedRelations, TRUE ) . "</pre> <br>";
+        //echo __FILE__ . ':' . __LINE__ . ' - ' . __METHOD__ . " <pre>" . print_r ( $this->PreparedRelations, TRUE ) . "</pre> <br>";
         Arrays::exportAsCSV ( $this->PreparedRelations, ' ', Arrays::EXPORT_COLUMN_NO_HEADER, Arrays::EXPORT_ROW_NO_HEADER, $RelPath, array (), array (), ';' );
     }
     
     protected function computeMinMax ()
     {
-        if ( NULL === $this->Min ) $this->Min = min ( min ( $this->PreparedMeasures ) );
-        if ( NULL === $this->Max ) $this->Max = max ( max ( $this->PreparedMeasures ) );
+        if ( NULL === $this->Min ) $this->Min = min ( min ( $this->InputMeasures ) );
+        if ( NULL === $this->Max ) $this->Max = max ( max ( $this->InputMeasures ) );
     }
     
     protected function interpret ( $Results )
     {
-        echo __FILE__ . ':' . __LINE__ . ' - ' . __METHOD__ . " <pre>" . print_r ( $Results, TRUE ) . "</pre> <br>";
+        $TagedResult = array ();
+        $ResultPath    = $this->FilePath . '.cube.emergent';
+        
+        $Cube = file ( $ResultPath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES );
+        
+        foreach ( $Cube as $CubeEntry )
+        {
+            $Result = array ();
+            $Data = explode ( ' : ', $CubeEntry );
+            $CodedRelations = explode ( ' ', $Data [0] );
+            $Emergence = explode ( ' ', $Data [1] );
+            $EmergenceRatio = 0;
+            
+            if ( $Emergence [0] == 0 )
+            {
+                if ( $Emergence [1] != 0 )
+                {
+                    $EmergenceRatio = 'inf';
+                }
+            }
+            else
+            {
+                $EmergenceRatio = $Emergence [1] / $Emergence [0];
+            }
+            
+            $Relations = array ();
+            $i = 0;
+            foreach ( $this->AttributeValues as $Attr => $Corresp )
+            {
+                $CodedValue = $CodedRelations [$i++];
+                $Value = ( $CodedValue == 'ALL' ? 'ALL' : $Corresp [$CodedValue] );
+                $Relations [$Attr] = $Value;
+            }
+            //echo __FILE__ . ':' . __LINE__ . ' - ' . __METHOD__ . " <pre>" . print_r ( $CubeEntry, TRUE ) . "</pre> <br>";
+//             echo " <pre>" . print_r ( $CubeEntry, TRUE ) . "</pre> <br>";
+//             echo " <pre>" . print_r ( $Relations, TRUE ) . "</pre> <br>";
+            
+            $Result ['rel'] = $Relations;
+            $Result ['ER'] = $EmergenceRatio;
+            
+            if ( ! empty ( $Result ) )
+            {
+                $TagedResult [] = $Result;
+            }
+        }
+        
+        return $TagedResult;
     }
     
 

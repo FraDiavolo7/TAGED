@@ -212,7 +212,8 @@ div.skycube {
 	padding: 1rem;
 }
 
-div.input_data table {
+div.input_data table, 
+div.emergence_data table {
     width: 100%;
     table-layout: fixed;
 }

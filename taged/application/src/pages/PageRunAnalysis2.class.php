@@ -146,8 +146,8 @@ class PageRunAnalysis2 extends TagedPage
     	        
     	        if ( $this->ShowTagedCube )
     	        {
-    	            $Result .= HTML::div ( HTML::title ( 'TagedCube', 2 ), array ( 'class' => 'part_title' ) );
-    	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_DATA_COMPUTED ), array ( 'class' => 'result result_taged_cube' ) );
+    	            $Result .= HTML::div ( HTML::title ( 'Emergence', 2 ), array ( 'class' => 'part_title' ) );
+    	            $Result .= HTML::div ( SKDisplay::htmlEmergence ( $SkyCube ), array ( 'class' => 'result result_emergence' ) );
     	        }
     	    }
     	    $this->add ( HTML::div ( $Result, array ( 'class' => 'results' ) ) );
