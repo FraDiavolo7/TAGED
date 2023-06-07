@@ -105,7 +105,7 @@ class CuboideEmergent extends CuboideBase
         $RowIDsFiltered1 = $this->Cuboide1->getFilteredIDs ();
         $RowIDsFiltered2 = $this->Cuboide2->getFilteredIDs ();
         
-        $this->RowIDsFiltered = array_merge ( $RowIDsFiltered1, $RowIDsFiltered2 );
+        $this->RowIDsFiltered = array_unique ( array_merge ( $RowIDsFiltered1, $RowIDsFiltered2 ), SORT_NUMERIC );
         
         $FirstRow = TRUE;
         
@@ -119,6 +119,8 @@ class CuboideEmergent extends CuboideBase
             else
             {
                 $this->EquivalenceClasses [$Equivalence][] = $RowID;
+
+                if ( FALSE !== ( $Key = array_search  ( $RowID, $this->RowIDsFiltered ) ) ) unset ( $this->RowIDsFiltered [$Key] );
             }
             $FirstRow = FALSE;
         }

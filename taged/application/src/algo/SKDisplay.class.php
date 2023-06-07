@@ -375,7 +375,7 @@ class SKDisplay
         
         if ( $Flags & self::SHOW_EQUIV_CLASS )
         {
-            $Title .= HTML::div ( $Cuboide->getEquivalenceClasses (), array ( 'class' => 'cuboide_equiv_class' ) );
+            $Title .= HTML::div ( $Cuboide->getEquivalenceClasses ( FALSE, $Flags & self::SHOW_DATA_FILTERED ), array ( 'class' => 'cuboide_equiv_class' ) );
         }
         
         $HTML = HTML::div ( $Title , array ( 'class' => 'title' ) );

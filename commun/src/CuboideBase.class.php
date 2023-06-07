@@ -101,7 +101,7 @@ abstract class CuboideBase
         return $Result; 
     }
     
-    public function getEquivalenceClasses ( $AsArray = FALSE )
+    public function getEquivalenceClasses ( $AsArray = FALSE, $OnlyFiltered = FALSE )
     {
         $Result = ( $AsArray ? array () : '' );
         
@@ -114,8 +114,11 @@ abstract class CuboideBase
             $Sep = '{';
             foreach ( $this->EquivalenceClasses as $RowIndex => $Parts )
             {
-                $Result .= $Sep . $RowIndex . implode ( '', $Parts );
-                $Sep = ',';
+                if ( ! $OnlyFiltered || in_array ( $RowIndex, $this->RowIDsFiltered ) )
+                {
+                    $Result .= $Sep . $RowIndex . implode ( '', $Parts );
+                    $Sep = ',';
+                }
             }
             $Result .= '}';
         }

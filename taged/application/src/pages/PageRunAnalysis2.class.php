@@ -69,8 +69,11 @@ class PageRunAnalysis2 extends TagedPage
             if ( TRUE )
             {
 	            $this->AggregateObj->setAlgorithm ( $this->Algo );
-	            $this->AggregateObj->setMin ( $Min );
-	            $this->AggregateObj->setMax ( $Max );
+	            if ( ! $this->Test )
+	            {
+    	            $this->AggregateObj->setMin ( $Min );
+    	            $this->AggregateObj->setMax ( $Max );
+	            }
 	            $Result = $this->AggregateObj->compute ();
 	            
 	            if ( TRUE == $Result)
@@ -163,13 +166,13 @@ class PageRunAnalysis2 extends TagedPage
     	        if ( $this->ShowDataCube  )
     	        {
     	            $Result .= HTML::div ( HTML::title ( 'DataCube', 2 ), array ( 'class' => 'part_title' ) );
-    	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_DATA_RAW ), array ( 'class' => 'result result_datacube' ) );
+    	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_DATA_RAW ), array ( 'class' => 'result result_datacube' ) );
     	        }
     	        
     	        if ( $this->ShowSkyCube   )
     	        {
     	            $Result .= HTML::div ( HTML::title ( 'SkyCube', 2 ), array ( 'class' => 'part_title' ) );
-    	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_DATA_FILTERED ), array ( 'class' => 'result result_skycube' ) );
+    	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_DATA_FILTERED | SKDisplay::SHOW_EQUIV_CLASS ), array ( 'class' => 'result result_skycube' ) );
     	        }
     	        
     	        if ( $this->ShowTagedCube )
