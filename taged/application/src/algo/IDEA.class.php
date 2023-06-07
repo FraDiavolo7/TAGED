@@ -99,6 +99,7 @@ class IDEA
                 {
                     ++$NbZeros;
                 }
+                $Row [$MeasureID] = intval ( $Value );
             }
             
             $NbCopies = $NbAttr - $NbZeros;

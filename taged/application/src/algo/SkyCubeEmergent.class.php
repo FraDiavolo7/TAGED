@@ -198,6 +198,21 @@ class SkyCubeEmergent extends SkyCube
         return $this->Emergence;
     }
     
+    public function getCodedColumnName ( $FullName )
+    {
+        return array_flip ( $this->DenumberedColIDs ) [$FullName];
+    }
+    
+    public function getFullColumnName ( $CodedName )
+    {
+        return $this->DenumberedColIDs [$CodedName];
+    }
+    
+    public function getDenumberedColIDs ()
+    {
+        return $this->DenumberedColIDs;
+    }
+    
     public function setEmergenceRatio ( $CuboideID, $MeasureID, $Relation, $EmergenceRatio )
     {
         $Key = implode ( ',', array_values ( $Relation ) );
@@ -210,7 +225,7 @@ class SkyCubeEmergent extends SkyCube
             }
         }
         
-        $this->Emergence [$Key] [$this->DenumberedColIDs [$MeasureID]] = $EmergenceRatio;
+        $this->Emergence [$Key] [$this->getFullColumnName ($MeasureID)] = $EmergenceRatio;
         
     }
     

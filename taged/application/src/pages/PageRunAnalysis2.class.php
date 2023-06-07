@@ -7,6 +7,8 @@ class PageRunAnalysis2 extends TagedPage
     const RAN_ALGO = 'ran_algo';
     const RAN_SUBMIT = 'ran_submit';
     const SHOW_TEST = 'ran_test';
+    const RAN_MIN = 'ran_min';
+    const RAN_MAX = 'ran_max';
     
     const SHOW_INPUT = 'ran_input';
     const SHOW_ESPACE = 'ran_espace';
@@ -14,6 +16,7 @@ class PageRunAnalysis2 extends TagedPage
     const SHOW_DATACUBE = 'ran_skycube';
     const SHOW_SKYCUBE = 'ran_sc_red';
     const SHOW_TAGED_CUBE = 'ran_sc_tag';
+    
     
 	public function __construct ( $InputData = NULL )
 	{
@@ -48,11 +51,14 @@ class PageRunAnalysis2 extends TagedPage
     	$this->ShowSkyCube   = Form::getData ( self::SHOW_SKYCUBE,    FALSE, $Data );
     	$this->ShowTagedCube = Form::getData ( self::SHOW_TAGED_CUBE, FALSE, $Data );
     	$this->Test          = Form::getData ( self::SHOW_TEST,       FALSE, $Data );
+    	$Min           = Form::getData ( self::RAN_MIN,      array (), $Data );
+    	$Max           = Form::getData ( self::RAN_MAX,      array (), $Data );
     	$AggregateFile = NULL;
     	
     	if ( '' != $this->Aggregate )
     	{
     	    $this->AggregateObj = new AnalysisTest ( $this->Aggregate . '.ini', $this->Test );
+    	    $this->AggregateObj->prepare ( );
     	}
     	
 	    if ( $Submit != '' )
@@ -63,7 +69,8 @@ class PageRunAnalysis2 extends TagedPage
             if ( TRUE )
             {
 	            $this->AggregateObj->setAlgorithm ( $this->Algo );
-	            $this->AggregateObj->prepare ( );
+	            $this->AggregateObj->setMin ( $Min );
+	            $this->AggregateObj->setMax ( $Max );
 	            $Result = $this->AggregateObj->compute ();
 	            
 	            if ( TRUE == $Result)
@@ -82,10 +89,10 @@ class PageRunAnalysis2 extends TagedPage
 	
 	protected function show ( )
 	{
-	    $Password = HTML::div ( HTML::inputPassword ( self::RAN_PASSWORD, '' ), array ( 'class' => 'passwd' ) );
+	    $Password  = HTML::div ( HTML::inputPassword ( self::RAN_PASSWORD, '' ), array ( 'class' => 'passwd' ) );
 	    $Aggregate = HTML::div ( HTML::select ( self::RAN_AGGREGATE, $this->AggregateList, $this->Aggregate, array ( 'onchange' => 'this.form.submit()' ) ), array ( 'class' => 'aggregate' ) );
-	    $Algo = HTML::div ( HTML::select ( self::RAN_ALGO, $this->AlgoList, $this->Algo ), array ( 'class' => 'algo' ) );
-	    $Submit = HTML::div ( HTML::submit( self::RAN_SUBMIT, "Envoyer" ), array ( 'class' => 'submit' ) );
+	    $Algo      = HTML::div ( HTML::select ( self::RAN_ALGO, $this->AlgoList, $this->Algo ), array ( 'class' => 'algo' ) );
+	    $Submit    = HTML::div ( HTML::submit ( self::RAN_SUBMIT, "Envoyer" ), array ( 'class' => 'submit' ) );
 	    $CheckBoxes  = '';
 	    $CheckBoxes .= HTML::div ( HTML::checkbox ( self::SHOW_TEST, 1, 'Test', $this->Test ), array ( 'class' => 'checkbox' ) );
 	    $CheckBoxes .= HTML::div ( HTML::checkbox ( self::SHOW_INPUT, 1, 'Entr&eacute;e', $this->ShowInput ), array ( 'class' => 'checkbox' ) );
@@ -96,20 +103,41 @@ class PageRunAnalysis2 extends TagedPage
 	    $CheckBoxes .= HTML::div ( HTML::checkbox ( self::SHOW_TAGED_CUBE, 1, 'R&eacute;sultat Taged', $this->ShowTagedCube ), array ( 'class' => 'checkbox' ) );
 	    
         $Content = $Aggregate;
+        $SkyCube = NULL;
 
         if ( '' != $this->Aggregate )
         {
+            $SkyCube = $this->AggregateObj->getSkyCube ();
+            
+            $ColIDs = $SkyCube->getDenumberedColIDs ();
+            $MinMaxHeader = HTML::th ( '' );
+            $Min = HTML::th ( 'Min' );
+            $Max = HTML::th ( 'Max' );
+            
+            foreach ( $ColIDs as $Full => $Coded )
+            {
+                $MinMaxHeader .= HTML::th ( $Full );
+                $Min .= HTML::td ( HTML::inputText ( self::RAN_MIN . "[$Coded]", 0 ) );
+                $Max .= HTML::td ( HTML::inputText ( self::RAN_MAX . "[$Coded]", 0 ) );
+            }
+            
+            $MinMax = HTML::div ( HTML::table (
+                HTML::tr ( $MinMaxHeader ) . 
+                HTML::tr ( $Min ) .
+                HTML::tr ( $Max )
+                ) );
+            
             $Content .= $Password;
             $Content .= HTML::div ( $CheckBoxes, array ( 'class' => 'checkboxes' ) );
             $Content .= $Algo;
             $Content .= $Submit;
+            $Content .= $MinMax;
         }
          
 	    $this->add ( HTML::form ( $Content, array ( 'method' => 'POST',  'enctype' => 'multipart/form-data' ) ) );
 	    
 	    if ( '' != $this->Result )
 	    {
-	        $SkyCube = $this->AggregateObj->getSkyCube ();
     	    $Result = HTML::div ( $this->Result, array ( 'class' => 'result_msg' ) );
     	    
     	    if ( NULL != $SkyCube )
