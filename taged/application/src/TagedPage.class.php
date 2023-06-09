@@ -24,7 +24,7 @@ class TagedPage extends THPage
 		parent::__construct ( $InputData );
 		
 		$this->SiteTitle = 'TAGED';
-		$this->addCSS ( 'css/taged.css' );
+		$this->addCSS ( '/css/taged.css' );
 	}
 
 	public function showPageHeader ()

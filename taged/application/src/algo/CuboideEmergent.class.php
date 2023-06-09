@@ -78,6 +78,7 @@ class CuboideEmergent extends CuboideBase
         {
             foreach ( $this->ColIDs as $ColID => $ColHeader )
             {
+                
                 $this->logVar ( $RowID, '$RowID', TRUE, __FILE__, __LINE__ );
                 $this->logVar ( $ColID, '$ColID', TRUE, __FILE__, __LINE__ );
 //                 $this->logVar ( $this->ColIDsC1 [$ColID], '$this->ColIDsC1 [$ColID]', TRUE, __FILE__, __LINE__ );
@@ -92,6 +93,8 @@ class CuboideEmergent extends CuboideBase
                 
                 $Val1 = $DataSet1 [$RowID] [$ColID1] ?? '';
                 $Val2 = $DataSet2 [$RowID] [$ColID2] ?? '';
+                
+//                 echo __METHOD__ . ' ' . $this->ID . " $RowID $ColID '$Val1' '$Val2'<br>";
                 
                 $this->log ( '$Val1 ' . $Val1 . ' = $DataSet1 [$RowID ' . $RowID . '] [$ColID1 ' . $ColID1 . ' ' . $ColID . '] ?? "";', TRUE, __FILE__, __LINE__ );
                 $this->log ( '$Val2 ' . $Val2 . ' = $DataSet2 [$RowID ' . $RowID . '] [$ColID2 ' . $ColID2 . ' ' . $ColID . '] ?? "";', TRUE, __FILE__, __LINE__ );

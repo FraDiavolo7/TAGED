@@ -14,7 +14,7 @@ class THPage extends BasicPage
 		parent::__construct ( $InputData );
 		Session::start ();
 		
-		$this->addCSS ( self::TAGED_URL . 'css/th.css' );
+		$this->addCSS ( '/css/th.css' );
 	}
 
 	protected function links ()

@@ -213,6 +213,16 @@ class SkyCubeEmergent extends SkyCube
         return $this->DenumberedColIDs;
     }
     
+    public function getSkyCube1 ()
+    {
+        return $this->SkyCube1;
+    }
+    
+    public function getSkyCube2 ()
+    {
+        return $this->SkyCube2;
+    }
+    
     public function setEmergenceRatio ( $CuboideID, $MeasureID, $Relation, $EmergenceRatio )
     {
         $Key = implode ( ',', array_values ( $Relation ) );

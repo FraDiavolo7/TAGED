@@ -173,6 +173,10 @@ class PageRunAnalysis2 extends TagedPage
     	        {
     	            $Result .= HTML::div ( HTML::title ( 'SkyCube', 2 ), array ( 'class' => 'part_title' ) );
     	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_DATA_FILTERED | SKDisplay::SHOW_EQUIV_CLASS ), array ( 'class' => 'result result_skycube' ) );
+    	            $Result .= HTML::div ( HTML::title ( 'SkyCube 1', 2 ), array ( 'class' => 'part_title' ) );
+    	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube->getSkyCube1 (), SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_DATA_FILTERED | SKDisplay::SHOW_EQUIV_CLASS ), array ( 'class' => 'result result_skycube' ) );
+    	            $Result .= HTML::div ( HTML::title ( 'SkyCube 2', 2 ), array ( 'class' => 'part_title' ) );
+    	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube->getSkyCube2 (), SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_DATA_FILTERED | SKDisplay::SHOW_EQUIV_CLASS ), array ( 'class' => 'result result_skycube' ) );
     	        }
     	        
     	        if ( $this->ShowTagedCube )
