@@ -75,8 +75,16 @@ class SKDisplay
 
     public static function htmlEmergence ( $SkyCube )
     {
-        $Emergence = $SkyCube->getEmergence ();
+        $Emergences = $SkyCube->getEmergence ();
+        $Emergence = array ();
         
+        foreach ( $Emergences as $CuboideID => $ERCuboide )
+        {
+            foreach ( $ERCuboide as $Key => $ERValues )
+            {
+                $Emergence [] = $ERValues;
+            }
+        }
         $Headers = array_keys ( reset ( $Emergence ) );
         
         $String = HTML::div ( HTML::tableFull ($Headers,  array ( 'border' => '1' ) ) );

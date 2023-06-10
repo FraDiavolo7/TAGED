@@ -73,12 +73,20 @@ class CuboideEmergent extends CuboideBase
         $RowIDs = array_merge ( array_keys ( $DataSet1 ), array_keys ( $DataSet2 ) ); 
         
         $TmpDataSet = array ();
+        $FilteredDataSet = array ();
+        
+        $RowIDsFiltered1 = $this->Cuboide1->getFilteredIDs ();
+        $RowIDsFiltered2 = $this->Cuboide2->getFilteredIDs ();
         
         foreach ( $RowIDs as $RowID )
         {
+            $InF1 = in_array ( $RowID, $RowIDsFiltered1 );
+            $InF2 = in_array ( $RowID, $RowIDsFiltered2 );
+            
+            if ( $InF1 || $InF2 ) $this->RowIDsFiltered [] = $RowID;
+            
             foreach ( $this->ColIDs as $ColID => $ColHeader )
             {
-                
                 $this->logVar ( $RowID, '$RowID', TRUE, __FILE__, __LINE__ );
                 $this->logVar ( $ColID, '$ColID', TRUE, __FILE__, __LINE__ );
 //                 $this->logVar ( $this->ColIDsC1 [$ColID], '$this->ColIDsC1 [$ColID]', TRUE, __FILE__, __LINE__ );
@@ -100,15 +108,15 @@ class CuboideEmergent extends CuboideBase
                 $this->log ( '$Val2 ' . $Val2 . ' = $DataSet2 [$RowID ' . $RowID . '] [$ColID2 ' . $ColID2 . ' ' . $ColID . '] ?? "";', TRUE, __FILE__, __LINE__ );
 
                 $TmpDataSet [$RowID] [$ColID] = ( $Val1 != '' ? $Val1 : ( $Val2 != '' ? $Val2 : '' ) );
+                
+                if ( $InF1 || $InF2 ) $FilteredDataSet [$RowID] [$ColID] = ( $InF1 && $Val1 != '' ? $Val1 : ( $InF2 && $Val2 != '' ? $Val2 : '' ) );
             }
         }
         
         $this->DataSet = $TmpDataSet;
+        $this->FilteredDataSet = $FilteredDataSet;
         
-        $RowIDsFiltered1 = $this->Cuboide1->getFilteredIDs ();
-        $RowIDsFiltered2 = $this->Cuboide2->getFilteredIDs ();
-        
-        $this->RowIDsFiltered = array_unique ( array_merge ( $RowIDsFiltered1, $RowIDsFiltered2 ), SORT_NUMERIC );
+        //$this->RowIDsFiltered = array_unique ( array_merge ( $RowIDsFiltered1, $RowIDsFiltered2 ), SORT_NUMERIC );
         
         $FirstRow = TRUE;
         
@@ -145,6 +153,12 @@ class CuboideEmergent extends CuboideBase
         Log::fct_exit ( __METHOD__ );
     }
     
+    
+    public function getDataSetFiltered ( )
+    {
+        return $this->FilteredDataSet;
+    }
+    
 //     public function getID ( ) { return $this->ID; }
 //     public function getDataSet ( ) { return $this->DataSet; }
 //     public function getRowHeaders ( ) { return $this->RowHeaders; }
@@ -177,6 +191,8 @@ class CuboideEmergent extends CuboideBase
 //         return $Result;
 //     }
     
+    protected $FilteredDataSet;
+
     protected $Cuboide1;
     protected $Cuboide2;
 //     protected $ID; //** Cuboide ID is the combinaison of ColIDs

@@ -228,14 +228,14 @@ class SkyCubeEmergent extends SkyCube
         $Key = implode ( ',', array_values ( $Relation ) );
         if ( ! isset ( $this->Emergence [$Key] ) )
         {
-            $this->Emergence [$Key] = $Relation;
+            $this->Emergence [$CuboideID][$Key] = $Relation;
             foreach ( $this->DenumberedColIDs as $ColID => $ColName )
             {
-                $this->Emergence [$Key] [$ColName] = '';
+                $this->Emergence [$CuboideID] [$Key] [$ColName] = '';
             }
         }
         
-        $this->Emergence [$Key] [$this->getFullColumnName ($MeasureID)] = $EmergenceRatio;
+        $this->Emergence [$CuboideID] [$Key] [$this->getFullColumnName ($MeasureID)] = $EmergenceRatio;
         
     }
     

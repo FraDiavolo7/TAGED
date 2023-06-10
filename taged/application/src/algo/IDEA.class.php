@@ -181,7 +181,7 @@ class IDEA
             $Data = explode ( ' : ', $CubeEntry );
             $CodedRelations = explode ( ' ', $Data [0] );
             $Emergence = explode ( ' ', $Data [1] );
-            $EmergenceRatio = 0;
+            $EmergenceRatio = 'zero';
             
             if ( $Emergence [0] == 0 )
             {
