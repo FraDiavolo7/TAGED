@@ -22,6 +22,7 @@ class SKDisplay
     const SHOW_DATA_RAW      = 0x10; // Exclusif avec SHOW_DATA_xxx (RAW préféré si 2 sont présents)
     const SHOW_DATA_FILTERED = 0x20; // Exclusif avec SHOW_DATA_xxx (RAW préféré si 2 sont présents)
     const SHOW_DATA_COMPUTED = 0x40; // Exclusif avec SHOW_DATA_xxx (RAW préféré si 2 sont présents)
+    const SHOW_EQUIV_CLASS_FILTERED = 0x80; //** Les classes sont présentées dans les titres
     
     public static function text ( $Object )
     {
@@ -381,9 +382,9 @@ class SKDisplay
             $Title .= HTML::div ( $Cuboide->isValid () ? 'V' : 'I', array ( 'class' => 'cuboide_validity' ) );
         }
         
-        if ( $Flags & self::SHOW_EQUIV_CLASS )
+        if ( $Flags & self::SHOW_EQUIV_CLASS || $Flags & self::SHOW_EQUIV_CLASS_FILTERED )
         {
-            $Title .= HTML::div ( $Cuboide->getEquivalenceClasses ( FALSE/*, $Flags & self::SHOW_DATA_FILTERED*/ ), array ( 'class' => 'cuboide_equiv_class' ) );
+            $Title .= HTML::div ( $Cuboide->getEquivalenceClasses ( FALSE, $Flags & self::SHOW_EQUIV_CLASS_FILTERED ), array ( 'class' => 'cuboide_equiv_class' ) );
         }
         
         $HTML = HTML::div ( $Title , array ( 'class' => 'title' ) );

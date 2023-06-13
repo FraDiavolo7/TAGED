@@ -454,11 +454,11 @@ class AnalysisTest extends Analysis
 //         $DataSet [] = array ( 'RowId' =>  8, 'Format' => 'Gen 1 OU', 'Joueur' => '065, 113, 143', 'Adversaire' => '121, 113, 080', 'Rarete' => 9, 'Duree1' => 80, 'Echec1' => 70, 'Duree2' => 95, 'Echec2' => 70 );
 //         $DataSet [] = array ( 'RowId' =>  9, 'Format' => 'Gen 1 OU', 'Joueur' => '065, 143, 065', 'Adversaire' => '065, 113, 143', 'Rarete' => 7, 'Duree1' => 20, 'Echec1' => 50, 'Duree2' => 25, 'Echec2' => 30 );
 //         $DataSet [] = array ( 'RowId' => 10, 'Format' => 'Gen 1 OU', 'Joueur' => '065, 143, 065', 'Adversaire' => '065, 143, 065', 'Rarete' => 7, 'Duree1' => 60, 'Echec1' => 30, 'Duree2' => 65, 'Echec2' => 45 );
-        $A = 'A'; // '121, 113, 128'
+        $A = 'A'; // '121, 113, 006'
         $B = 'B'; // '065, 103, 065'
         $C = 'C'; // '121, 113, 080'
         $D = 'D'; // '065, 113, 143'
-        $E = 'E'; // '065, 143, 065'
+        $E = 'E'; // '065, 040, 065'
         $F = 'F'; // '121, 113, 121'
 
         

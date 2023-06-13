@@ -87,14 +87,14 @@ class CuboideEmergent extends CuboideBase
             
             foreach ( $this->ColIDs as $ColID => $ColHeader )
             {
-                $this->logVar ( $RowID, '$RowID', TRUE, __FILE__, __LINE__ );
-                $this->logVar ( $ColID, '$ColID', TRUE, __FILE__, __LINE__ );
+//                 $this->logVar ( $RowID, '$RowID', TRUE, __FILE__, __LINE__ );
+//                 $this->logVar ( $ColID, '$ColID', TRUE, __FILE__, __LINE__ );
 //                 $this->logVar ( $this->ColIDsC1 [$ColID], '$this->ColIDsC1 [$ColID]', TRUE, __FILE__, __LINE__ );
 //                 $this->logVar ( $this->ColIDsC2 [$ColID], '$this->ColIDsC2 [$ColID]', TRUE, __FILE__, __LINE__ );
 //                 $this->logVar ( $DataSet1 [$RowID] [$this->ColIDsC1 [$ColID]], '$DataSet1 [$RowID] [$this->ColIDsC1 [$ColID]]', TRUE, __FILE__, __LINE__ );
 //                 $this->logVar ( $DataSet2 [$RowID] [$this->ColIDsC2 [$ColID]], '$DataSet2 [$RowID] [$this->ColIDsC2 [$ColID]]', TRUE, __FILE__, __LINE__ );
-                $this->logVar ( $DataSet1 [$RowID], '$DataSet1 [$RowID]', TRUE, __FILE__, __LINE__ );
-                $this->logVar ( $DataSet2 [$RowID], '$DataSet2 [$RowID]', TRUE, __FILE__, __LINE__ );
+//                 $this->logVar ( $DataSet1 [$RowID], '$DataSet1 [$RowID]', TRUE, __FILE__, __LINE__ );
+//                 $this->logVar ( $DataSet2 [$RowID], '$DataSet2 [$RowID]', TRUE, __FILE__, __LINE__ );
 
                 $ColID1 = $this->ColIDsC1 [$ColID] ?? 123456789;
                 $ColID2 = $this->ColIDsC2 [$ColID] ?? 123456789;
@@ -104,8 +104,8 @@ class CuboideEmergent extends CuboideBase
                 
 //                 echo __METHOD__ . ' ' . $this->ID . " $RowID $ColID '$Val1' '$Val2'<br>";
                 
-                $this->log ( '$Val1 ' . $Val1 . ' = $DataSet1 [$RowID ' . $RowID . '] [$ColID1 ' . $ColID1 . ' ' . $ColID . '] ?? "";', TRUE, __FILE__, __LINE__ );
-                $this->log ( '$Val2 ' . $Val2 . ' = $DataSet2 [$RowID ' . $RowID . '] [$ColID2 ' . $ColID2 . ' ' . $ColID . '] ?? "";', TRUE, __FILE__, __LINE__ );
+//                 $this->log ( '$Val1 ' . $Val1 . ' = $DataSet1 [$RowID ' . $RowID . '] [$ColID1 ' . $ColID1 . ' ' . $ColID . '] ?? "";', TRUE, __FILE__, __LINE__ );
+//                 $this->log ( '$Val2 ' . $Val2 . ' = $DataSet2 [$RowID ' . $RowID . '] [$ColID2 ' . $ColID2 . ' ' . $ColID . '] ?? "";', TRUE, __FILE__, __LINE__ );
 
                 $TmpDataSet [$RowID] [$ColID] = ( $Val1 != '' ? $Val1 : ( $Val2 != '' ? $Val2 : '' ) );
                 
@@ -136,9 +136,9 @@ class CuboideEmergent extends CuboideBase
             $FirstRow = FALSE;
         }
         
-        $this->logVar ( $this->getEquivalenceClasses ( FALSE ), 'EquivalenceClasses ', TRUE, __FILE__, __LINE__ );
-        $this->logVar ( $this->Cuboide1->getEquivalenceClasses ( FALSE ), 'EquivalenceClasses1', TRUE, __FILE__, __LINE__ );
-        $this->logVar ( $this->Cuboide2->getEquivalenceClasses ( FALSE ), 'EquivalenceClasses2', TRUE, __FILE__, __LINE__ );
+//         $this->logVar ( $this->getEquivalenceClasses ( FALSE ), 'EquivalenceClasses ', TRUE, __FILE__, __LINE__ );
+//         $this->logVar ( $this->Cuboide1->getEquivalenceClasses ( FALSE ), 'EquivalenceClasses1', TRUE, __FILE__, __LINE__ );
+//         $this->logVar ( $this->Cuboide2->getEquivalenceClasses ( FALSE ), 'EquivalenceClasses2', TRUE, __FILE__, __LINE__ );
         
         Log::fct_exit ( __METHOD__ );
     }
