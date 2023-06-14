@@ -51,8 +51,8 @@ class PageRunAnalysis2 extends TagedPage
     	$this->ShowSkyCube   = Form::getData ( self::SHOW_SKYCUBE,    FALSE, $Data );
     	$this->ShowTagedCube = Form::getData ( self::SHOW_TAGED_CUBE, FALSE, $Data );
     	$this->Test          = Form::getData ( self::SHOW_TEST,       FALSE, $Data );
-    	$Min           = Form::getData ( self::RAN_MIN,      array (), $Data );
-    	$Max           = Form::getData ( self::RAN_MAX,      array (), $Data );
+    	$this->Min           = Form::getData ( self::RAN_MIN,      array (), $Data );
+    	$this->Max           = Form::getData ( self::RAN_MAX,      array (), $Data );
     	$AggregateFile = NULL;
     	
     	if ( '' != $this->Aggregate )
@@ -71,8 +71,8 @@ class PageRunAnalysis2 extends TagedPage
 	            $this->AggregateObj->setAlgorithm ( $this->Algo );
 	            if ( ! $this->Test )
 	            {
-    	            $this->AggregateObj->setMin ( $Min );
-    	            $this->AggregateObj->setMax ( $Max );
+	                $this->AggregateObj->setMin ( $this->Min );
+	                $this->AggregateObj->setMax ( $this->Max );
 	            }
 	            $Result = $this->AggregateObj->compute ();
 	            
@@ -120,8 +120,8 @@ class PageRunAnalysis2 extends TagedPage
             foreach ( $ColIDs as $Full => $Coded )
             {
                 $MinMaxHeader .= HTML::th ( $Full );
-                $Min .= HTML::td ( HTML::inputText ( self::RAN_MIN . "[$Coded]", 0 ) );
-                $Max .= HTML::td ( HTML::inputText ( self::RAN_MAX . "[$Coded]", 0 ) );
+                $Min .= HTML::td ( HTML::inputText ( self::RAN_MIN . "[$Coded]", $this->Min [$Coded] ?? 0 ) );
+                $Max .= HTML::td ( HTML::inputText ( self::RAN_MAX . "[$Coded]", $this->Max [$Coded] ?? 0 ) );
             }
             
             $MinMax = HTML::div ( HTML::table (
@@ -214,6 +214,8 @@ class PageRunAnalysis2 extends TagedPage
 	protected $AggregateList;
 	
 	protected $Test;
+	protected $Min;
+	protected $Max;
 	
 	protected $ShowInput;
 	protected $ShowEspace;

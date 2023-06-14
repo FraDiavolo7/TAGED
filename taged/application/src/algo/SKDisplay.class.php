@@ -193,8 +193,8 @@ class SKDisplay
                     $Cuboide = $SkyCube->getCuboide ( $CuboideID );
                     $CurrentLevel .= static::htmlCuboideParam ( $Cuboide, $Flags, $Removed );
                 }
-                
             }
+            
             $CuboidesContent .= HTML::div (
                 HTML::div ( $Level, array ( 'class' => 'title' ) ) .
                 HTML::div ( $CurrentLevel),

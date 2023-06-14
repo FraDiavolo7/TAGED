@@ -180,13 +180,51 @@ class SkyCubeEmergent extends SkyCube
     
     public function getCuboide ( $ID )
     {
-        $Cuboide1 = $this->SkyCube1->getCuboide ( $ID );
-        $Cuboide2 = $this->SkyCube2->getCuboide ( $ID );
-        
-        $Cuboide = new CuboideEmergent ( $this->ColIDs, $Cuboide1, $Cuboide2 );
+        $Cuboide = NULL;
+        $Level = strlen ( $ID );
+        if ( isset ( $this->Cuboides [$Level] [$ID] ) )
+        {
+            $Cuboide = $this->Cuboides [$Level] [$ID];
+        }
+        else
+        {
+            $Cuboide1 = $this->SkyCube1->getCuboide ( $ID );
+            $Cuboide2 = $this->SkyCube2->getCuboide ( $ID );
+            
+            $Cuboide = new CuboideEmergent ( $this->ColIDs, $Cuboide1, $Cuboide2 );
+            
+            $this->Cuboides [$Level] [$ID] = $Cuboide;
+        }
         
         return $Cuboide;
     }
+    
+    public function getCuboideIDs ( $Filtered = TRUE )
+    {
+        if ( $Filtered && empty ( $this->SetsOfParts ) )
+        {
+            // Computing Filtered list because it is not initialized
+            $this->FilteredCuboideIDs = array ();
+            foreach ( $this->OrderedCuboideIDs as $Level => $Cuboides )
+            {
+                foreach ( $Cuboides as $ID => $CuboideID )
+                {
+                    $Cuboide = $this->getCuboide ( $ID );
+                    $EquivalenceClasses = $Cuboide->getEquivalenceClasses ();
+                    
+                    if ( ! in_array ( $EquivalenceClasses, $this->SetsOfParts ) )
+                    {
+                        $this->SetsOfParts [] = $EquivalenceClasses;
+                        $this->FilteredCuboideIDs [$Level] [$CuboideID] = $CuboideID;
+                    }
+                }
+            }
+            
+        }
+        
+        return ( $Filtered ? $this->FilteredCuboideIDs : $this->OrderedCuboideIDs );
+    }
+    
     
     public function getMultidimensionalSpace ()
     {
