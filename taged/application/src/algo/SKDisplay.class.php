@@ -145,7 +145,103 @@ class SKDisplay
         
         return HTML::div ( $HTML, array ( 'class' => 'multidimensional_space' ) );
     }
-
+    
+    public static function htmlSkyCubeFusion ( $SkyCube, $Flags = self::NO_FLAG )
+    {
+        $RowHeaders = $SkyCube->getRowHeaders ();
+        $String = '';
+        
+        $RowID = array ();
+        $ShowRowID = FALSE;
+        if ( ! isset ( $RowHeaders [0] [self::ROW_ID] ) )
+        {
+            $ShowRowID = TRUE;
+            $RowID [] = self::ROW_ID;
+        }
+        $HeadersRow = array_merge ( $RowID, array_keys ( $RowHeaders [0] ) );
+        $HeadersCol = array_values ( $SkyCube->getColIDs () );
+        $Headers = array_merge ( $HeadersRow, $HeadersCol );
+        $InitData = Arrays::arrayMergeRecursive ( $RowHeaders, $SkyCube->getDataSet    ());
+        
+//                  $String .= HTML::div ( HTML::tableFull ( $SkyCube->getRowHeaders (), array ( 'border' => '1' ) ) );
+//                  $String .= HTML::div ( HTML::tableFull ( $SkyCube->getColIDs     (), array ( 'border' => '1' ) ) );
+//                  $String .= HTML::div ( HTML::tableFull ( $SkyCube->getDataSet    (), array ( 'border' => '1' ) ) );
+//         $String .= HTML::div ( HTML::tableFull ( $HeadersRow, array ( 'border' => '1' ) ) );
+//         $String .= HTML::div ( HTML::tableFull ( $HeadersCol, array ( 'border' => '1' ) ) );
+//         $String .= HTML::div ( HTML::tableFull ( $Headers, array ( 'border' => '1' ) ) );
+        
+        $CuboidesContent = '';
+        //foreach (  $this->Cuboides as $Level => $Cuboides )
+        $OrderedCuboideIDs  = $SkyCube->getCuboideIDs ( FALSE );
+        $FilteredCuboideIDs = $SkyCube->getCuboideIDs ( TRUE  );
+        
+        $BaseList = $OrderedCuboideIDs;
+        
+        $ShowFiltered = $Flags & self::SHOW_FILTERED;
+        $ShowFilteredWithRemoved = ( $Flags & self::SHOW_FILTERED ) && ( $Flags & self::SHOW_REMOVED );
+        
+        $TableHeaders = '';
+        $TableContent = '';
+        $EmptyRow = '';
+        
+        if ( $ShowRowID )
+        {
+            $TableHeaders .= HTML::th ( self::ROW_ID, array ( 'class' => 'row_header ' . strtolower ( self::ROW_ID ) ) );
+            $EmptyRow .= HTML::td ( '', array ( 'class' => 'row_header ' . strtolower ( self::ROW_ID ) ) );
+        }
+        foreach ( $HeadersRow as $Header )
+        {
+            $TableHeaders .= HTML::th ( $Header, array ( 'class' => 'row_header ' . strtolower ( $Header ) ) );
+            $EmptyRow .= HTML::td ( '', array ( 'class' => 'row_header ' . strtolower ( $Header ) ) );
+        }
+        foreach ( $HeadersCol as $Header )
+        {
+            $TableHeaders .= HTML::th ( $Header, array ( 'class' => 'row_value ' . strtolower ( $Header ) ) );
+            $EmptyRow .= HTML::td ( '', array ( 'class' => 'row_value ' . strtolower ( $Header ) ) );
+        }
+        
+        
+        foreach ( $OrderedCuboideIDs as $Level => $CuboideIDs )
+        {
+            $CurrentLevel = '';
+            
+            foreach ( $CuboideIDs as $CuboideID )
+            {
+                $Cuboide = $SkyCube->getCuboide ( $CuboideID );
+                $RowHeaders = $Cuboide->getRowHeaders ();
+                $DataSet = $Cuboide->getDataSetFiltered ();
+                
+                foreach ( $DataSet as $RowID => $Row )
+                {
+                    $TableRow = '';
+    
+                    if ( $ShowRowID )
+                    {
+                        $TableRow .= HTML::td ( strval ( $RowID ), array ( 'class' => 'row_header ' . strtolower ( self::ROW_ID ) ) );
+                    }
+                    
+                    foreach ( $RowHeaders [$RowID] as $RowHeader => $HeaderValue )
+                    {
+                        $TableRow .= HTML::td ( $HeaderValue, array ( 'class' => 'row_header ' . strtolower ( $RowHeader ) ) );
+                    }
+                    
+                    foreach ( $Row as $ColID => $Value )
+                    {
+                        $TableRow .= HTML::td ( ( '' == $Value ? 'ALL' : $Value ), array ( 'class' => 'row_value ' . strtolower ( $ColID ) ) );
+                    }
+                    $TableContent .= HTML::tr ( $TableRow );
+                }
+                $TableContent .= HTML::tr ( $EmptyRow, array ( 'class' => 'empty' ) );
+            }
+        }
+        
+        $String .= HTML::table ( 
+            HTML::tr ( $TableHeaders, array ( 'class' => 'headers' ) ) .
+            $TableContent, array ( 'class' => 'relation_fusionnee cuboide' ) );
+        
+        return HTML::div ( $String, array ( 'class' => 'skycube fusion' ) );
+    }
+    
     public static function htmlSkyCubeParam ( $SkyCube, $Flags = self::NO_FLAG )
     {
         $RowHeaders = $SkyCube->getRowHeaders ();

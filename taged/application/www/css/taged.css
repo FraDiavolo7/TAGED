@@ -296,6 +296,10 @@ table.cuboide tr > .row_header + .row_value {
 	border-left: var(--border-default);
 }
 
+table.cuboide tr.empty td {
+	border-bottom: var(--border-default);
+}
+
 tr.headers th {
 	border-bottom: var(--border-default);
 	padding-bottom: 0.25rem;
