@@ -177,12 +177,36 @@ class SKDisplay
         
         $BaseList = $OrderedCuboideIDs;
         
-        $ShowFiltered = $Flags & self::SHOW_FILTERED;
-        $ShowFilteredWithRemoved = ( $Flags & self::SHOW_FILTERED ) && ( $Flags & self::SHOW_REMOVED );
+        $ShowFiltered = $Flags & self::SHOW_FILTERED; // Relation Fusionnee Abregee
         
         $TableHeaders = '';
         $TableContent = '';
         $EmptyRow = '';
+
+        $Ignore = array ();
+        $MustMatch = array ();
+        
+        if ( $ShowFiltered )
+        {
+            // Establish list of checked columns
+            foreach ( $HeadersCol as $Header )
+            {
+                $LastChar = substr ( $Header, -1 );
+                $Col1 = substr_replace ( $Header, 1, -1 );
+                if ( (  $LastChar != 1 ) || (  $LastChar != 2 ) )
+                {
+                    // Remove invariant columns
+                    $Ignore [$Header] = $Header;
+                }
+                elseif (  $LastChar == 2 )
+                {
+                    if ( in_array ( $Col1, $HeadersCol ) )
+                    {
+                        $MustMatch [$Header] == $Header;
+                    }
+                }
+            }
+        }
         
         if ( $ShowRowID )
         {
@@ -196,10 +220,10 @@ class SKDisplay
         }
         foreach ( $HeadersCol as $Header )
         {
+            if ( $ShowFiltered && in_array ( $Header, $Ignore ) ) continue;
             $TableHeaders .= HTML::th ( $Header, array ( 'class' => 'row_value ' . strtolower ( $Header ) ) );
             $EmptyRow .= HTML::td ( '', array ( 'class' => 'row_value ' . strtolower ( $Header ) ) );
         }
-        
         
         foreach ( $OrderedCuboideIDs as $Level => $CuboideIDs )
         {
@@ -208,6 +232,10 @@ class SKDisplay
             foreach ( $CuboideIDs as $CuboideID )
             {
                 $Cuboide = $SkyCube->getCuboide ( $CuboideID );
+                $ColIDs = array_flip ( $Cuboide->getColIDs () );
+                $Matches = TRUE;
+                $CuboideContent = '';
+                
                 $RowHeaders = $Cuboide->getRowHeaders ();
                 $DataSet = $Cuboide->getDataSetFiltered ();
                 
@@ -225,13 +253,30 @@ class SKDisplay
                         $TableRow .= HTML::td ( $HeaderValue, array ( 'class' => 'row_header ' . strtolower ( $RowHeader ) ) );
                     }
                     
-                    foreach ( $Row as $ColID => $Value )
+                    foreach ( $HeadersCol as $Header )
                     {
+                        if ( $ShowFiltered )
+                        {
+                            if ( in_array ( $Header, $Ignore ) ) continue;
+                            
+                            if ( in_array ( $Header, $MustMatch ) )
+                            {
+                                if ( ( ! isset ( $Row [$ColIDs [$Header]] ) ) || ( '' == $Row [$ColIDs [$Header]] ) )
+                                {
+                                    $Matches = FALSE;
+                                }
+                            }
+                        }
+                        $Value = ( isset ( $ColIDs [$Header] ) ? $Row [$ColIDs [$Header]] : 'ALL' );
                         $TableRow .= HTML::td ( ( '' == $Value ? 'ALL' : $Value ), array ( 'class' => 'row_value ' . strtolower ( $ColID ) ) );
                     }
-                    $TableContent .= HTML::tr ( $TableRow );
+                    $CuboideContent .= HTML::tr ( $TableRow );
                 }
-                $TableContent .= HTML::tr ( $EmptyRow, array ( 'class' => 'empty' ) );
+                if ( $Matches ) 
+                {
+                    $TableContent .= $CuboideContent;
+                    $TableContent .= HTML::tr ( $EmptyRow, array ( 'class' => 'empty' ) );
+                }
             }
         }
         
@@ -467,6 +512,11 @@ class SKDisplay
         
     }
 
+    public static function htmlCuboideFusion ( $Cuboide, $Flags = self::NO_FLAG, $ShowID = TRUE )
+    {
+        
+    }
+    
     public static function htmlCuboideParam ( $Cuboide, $Flags = self::NO_FLAG, $Removed = FALSE )
     {
         $CuboideClass = 'cuboide ' . ( $Removed ? 'removed' : '' );
