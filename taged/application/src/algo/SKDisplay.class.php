@@ -193,7 +193,7 @@ class SKDisplay
             {
                 $LastChar = substr ( $Header, -1 );
                 $Col1 = substr_replace ( $Header, 1, -1 );
-                if ( (  $LastChar != 1 ) || (  $LastChar != 2 ) )
+                if ( (  $LastChar != 1 ) && (  $LastChar != 2 ) )
                 {
                     // Remove invariant columns
                     $Ignore [$Header] = $Header;
@@ -202,7 +202,7 @@ class SKDisplay
                 {
                     if ( in_array ( $Col1, $HeadersCol ) )
                     {
-                        $MustMatch [$Header] == $Header;
+                        $MustMatch [$Header] = $Header;
                     }
                 }
             }
@@ -225,6 +225,8 @@ class SKDisplay
             $EmptyRow .= HTML::td ( '', array ( 'class' => 'row_value ' . strtolower ( $Header ) ) );
         }
         
+        $NbMustMatch = count ( $MustMatch );
+        
         foreach ( $OrderedCuboideIDs as $Level => $CuboideIDs )
         {
             $CurrentLevel = '';
@@ -233,7 +235,7 @@ class SKDisplay
             {
                 $Cuboide = $SkyCube->getCuboide ( $CuboideID );
                 $ColIDs = array_flip ( $Cuboide->getColIDs () );
-                $Matches = TRUE;
+                $Matches = ( $NbMustMatch == 0 );
                 $CuboideContent = '';
                 
                 $RowHeaders = $Cuboide->getRowHeaders ();
@@ -242,6 +244,7 @@ class SKDisplay
                 foreach ( $DataSet as $RowID => $Row )
                 {
                     $TableRow = '';
+                    $NbMatches = 0;
     
                     if ( $ShowRowID )
                     {
@@ -261,15 +264,17 @@ class SKDisplay
                             
                             if ( in_array ( $Header, $MustMatch ) )
                             {
-                                if ( ( ! isset ( $Row [$ColIDs [$Header]] ) ) || ( '' == $Row [$ColIDs [$Header]] ) )
+                                if ( ( isset ( $Row [$ColIDs [$Header]] ) ) && ( '' != $Row [$ColIDs [$Header]] ) )
                                 {
-                                    $Matches = FALSE;
+                                    $NbMatches += 1;
                                 }
                             }
                         }
                         $Value = ( isset ( $ColIDs [$Header] ) ? $Row [$ColIDs [$Header]] : 'ALL' );
                         $TableRow .= HTML::td ( ( '' == $Value ? 'ALL' : $Value ), array ( 'class' => 'row_value ' . strtolower ( $ColID ) ) );
                     }
+                    
+                    if ( $NbMatches == $NbMustMatch ) $Matches = TRUE;
                     $CuboideContent .= HTML::tr ( $TableRow );
                 }
                 if ( $Matches ) 
