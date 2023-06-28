@@ -283,6 +283,10 @@ table.cuboide {
 	text-align: center;
 }
 
+.emergence_data sub {
+    font-style: italic;
+}
+
 table.cuboide th,
 table.cuboide td {
 	padding: 0 0.5rem;;

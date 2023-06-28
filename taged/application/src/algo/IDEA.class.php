@@ -187,7 +187,7 @@ class IDEA
             {
                 if ( $Emergence [1] != 0 )
                 {
-                    $EmergenceRatio = 'inf';
+                    $EmergenceRatio = '&infin;';
                 }
             }
             else

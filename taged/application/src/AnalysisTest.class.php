@@ -462,16 +462,16 @@ class AnalysisTest extends Analysis
         $F = 'F'; // '121, 113, 121'
 
         
-        $DataSet [] = array ( 'RowId' =>  1, 'Joueur' => $A, 'Adversaire' => $D, 'Rarete' => 5, 'Duree1' => 25, 'Echec1' => 30, 'Duree2' => 20, 'Echec2' => 30 );
-        $DataSet [] = array ( 'RowId' =>  2, 'Joueur' => $B, 'Adversaire' => $E, 'Rarete' => 4, 'Duree1' => 65, 'Echec1' => 50, 'Duree2' => 60, 'Echec2' => 45 );
-        $DataSet [] = array ( 'RowId' =>  3, 'Joueur' => $B, 'Adversaire' => $F, 'Rarete' => 4, 'Duree1' => 35, 'Echec1' => 40, 'Duree2' => 30, 'Echec2' => 30 );
-        $DataSet [] = array ( 'RowId' =>  4, 'Joueur' => $B, 'Adversaire' => $A, 'Rarete' => 4, 'Duree1' => 85, 'Echec1' => 40, 'Duree2' => 80, 'Echec2' => 50 );
-        $DataSet [] = array ( 'RowId' =>  5, 'Joueur' => $C, 'Adversaire' => $A, 'Rarete' => 1, 'Duree1' => 95, 'Echec1' => 60, 'Duree2' => 90, 'Echec2' => 70 );
-        $DataSet [] = array ( 'RowId' =>  6, 'Joueur' => $C, 'Adversaire' => $B, 'Rarete' => 1, 'Duree1' => 35, 'Echec1' => 50, 'Duree2' => 30, 'Echec2' => 30 );
-        $DataSet [] = array ( 'RowId' =>  7, 'Joueur' => $D, 'Adversaire' => $B, 'Rarete' => 9, 'Duree1' => 85, 'Echec1' => 60, 'Duree2' => 80, 'Echec2' => 50 );
-        $DataSet [] = array ( 'RowId' =>  8, 'Joueur' => $D, 'Adversaire' => $C, 'Rarete' => 9, 'Duree1' => 85, 'Echec1' => 70, 'Duree2' => 90, 'Echec2' => 70 );
-        $DataSet [] = array ( 'RowId' =>  9, 'Joueur' => $E, 'Adversaire' => $D, 'Rarete' => 7, 'Duree1' => 25, 'Echec1' => 50, 'Duree2' => 20, 'Echec2' => 30 );
-        $DataSet [] = array ( 'RowId' => 10, 'Joueur' => $E, 'Adversaire' => $E, 'Rarete' => 7, 'Duree1' => 65, 'Echec1' => 30, 'Duree2' => 60, 'Echec2' => 45 );
+        $DataSet [] = array ( 'RowId' =>  1, 'Format' => 'UU', 'Joueur' => $A, 'Adversaire' => $D, 'Rarete' => 5, 'Duree1' => 25, 'Echec1' => 30, 'Duree2' => 20, 'Echec2' => 30 );
+        $DataSet [] = array ( 'RowId' =>  2, 'Format' => 'OU', 'Joueur' => $B, 'Adversaire' => $E, 'Rarete' => 4, 'Duree1' => 65, 'Echec1' => 50, 'Duree2' => 60, 'Echec2' => 45 );
+        $DataSet [] = array ( 'RowId' =>  3, 'Format' => 'OU', 'Joueur' => $B, 'Adversaire' => $F, 'Rarete' => 4, 'Duree1' => 35, 'Echec1' => 40, 'Duree2' => 30, 'Echec2' => 30 );
+        $DataSet [] = array ( 'RowId' =>  4, 'Format' => 'OU', 'Joueur' => $B, 'Adversaire' => $A, 'Rarete' => 4, 'Duree1' => 85, 'Echec1' => 40, 'Duree2' => 80, 'Echec2' => 50 );
+        $DataSet [] = array ( 'RowId' =>  5, 'Format' => 'OU', 'Joueur' => $C, 'Adversaire' => $A, 'Rarete' => 1, 'Duree1' => 95, 'Echec1' => 60, 'Duree2' => 90, 'Echec2' => 70 );
+        $DataSet [] = array ( 'RowId' =>  6, 'Format' => 'OU', 'Joueur' => $C, 'Adversaire' => $B, 'Rarete' => 1, 'Duree1' => 35, 'Echec1' => 50, 'Duree2' => 30, 'Echec2' => 30 );
+        $DataSet [] = array ( 'RowId' =>  7, 'Format' => 'OU', 'Joueur' => $D, 'Adversaire' => $B, 'Rarete' => 9, 'Duree1' => 85, 'Echec1' => 60, 'Duree2' => 80, 'Echec2' => 50 );
+        $DataSet [] = array ( 'RowId' =>  8, 'Format' => 'OU', 'Joueur' => $D, 'Adversaire' => $C, 'Rarete' => 9, 'Duree1' => 85, 'Echec1' => 70, 'Duree2' => 90, 'Echec2' => 70 );
+        $DataSet [] = array ( 'RowId' =>  9, 'Format' => 'UU', 'Joueur' => $E, 'Adversaire' => $D, 'Rarete' => 7, 'Duree1' => 25, 'Echec1' => 50, 'Duree2' => 20, 'Echec2' => 30 );
+        $DataSet [] = array ( 'RowId' => 10, 'Format' => 'UU', 'Joueur' => $E, 'Adversaire' => $E, 'Rarete' => 7, 'Duree1' => 65, 'Echec1' => 30, 'Duree2' => 60, 'Echec2' => 45 );
         
         return $DataSet;
     }

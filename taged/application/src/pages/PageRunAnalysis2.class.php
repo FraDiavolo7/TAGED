@@ -15,6 +15,8 @@ class PageRunAnalysis2 extends TagedPage
     const SHOW_ACCORDS = 'ran_accords';
     const SHOW_DATACUBE = 'ran_skycube';
     const SHOW_SKYCUBE = 'ran_sc_red';
+    const SHOW_FUSION = 'ran_fusion';
+    const SHOW_FUS_ABREGE = 'ran_fus_abr';
     const SHOW_TAGED_CUBE = 'ran_sc_tag';
     
     
@@ -44,15 +46,17 @@ class PageRunAnalysis2 extends TagedPage
 	    
     	$this->Aggregate = Form::getData ( self::RAN_AGGREGATE, '', $Data );
     	$this->Algo = Form::getData ( self::RAN_ALGO, '', $Data );
-    	$this->ShowInput     = Form::getData ( self::SHOW_INPUT,      FALSE, $Data );
-    	$this->ShowEspace    = Form::getData ( self::SHOW_ESPACE,     FALSE, $Data );
-    	$this->ShowAccords   = Form::getData ( self::SHOW_ACCORDS,    FALSE, $Data );
-    	$this->ShowDataCube  = Form::getData ( self::SHOW_DATACUBE,   FALSE, $Data );
-    	$this->ShowSkyCube   = Form::getData ( self::SHOW_SKYCUBE,    FALSE, $Data );
-    	$this->ShowTagedCube = Form::getData ( self::SHOW_TAGED_CUBE, FALSE, $Data );
-    	$this->Test          = Form::getData ( self::SHOW_TEST,       FALSE, $Data );
-    	$this->Min           = Form::getData ( self::RAN_MIN,      array (), $Data );
-    	$this->Max           = Form::getData ( self::RAN_MAX,      array (), $Data );
+    	$this->ShowInput         = Form::getData ( self::SHOW_INPUT,      FALSE, $Data );
+    	$this->ShowEspace        = Form::getData ( self::SHOW_ESPACE,     FALSE, $Data );
+    	$this->ShowAccords       = Form::getData ( self::SHOW_ACCORDS,    FALSE, $Data );
+    	$this->ShowDataCube      = Form::getData ( self::SHOW_DATACUBE,   FALSE, $Data );
+    	$this->ShowSkyCube       = Form::getData ( self::SHOW_SKYCUBE,    FALSE, $Data );
+    	$this->ShowFusion        = Form::getData ( self::SHOW_FUSION,     FALSE, $Data );
+    	$this->ShowFusionAbregee = Form::getData ( self::SHOW_FUS_ABREGE, FALSE, $Data );
+    	$this->ShowTagedCube     = Form::getData ( self::SHOW_TAGED_CUBE, FALSE, $Data );
+    	$this->Test              = Form::getData ( self::SHOW_TEST,       FALSE, $Data );
+    	$this->Min               = Form::getData ( self::RAN_MIN,      array (), $Data );
+    	$this->Max               = Form::getData ( self::RAN_MAX,      array (), $Data );
     	$AggregateFile = NULL;
     	
     	if ( '' != $this->Aggregate )
@@ -103,6 +107,8 @@ class PageRunAnalysis2 extends TagedPage
 	    $CheckBoxes .= HTML::div ( HTML::checkbox ( self::SHOW_ACCORDS, 1, 'Classes d&apos;accords', $this->ShowAccords ), array ( 'class' => 'checkbox' ) );
 //	    $CheckBoxes .= HTML::div ( HTML::checkbox ( self::SHOW_DATACUBE, 1, 'DataCube', $this->ShowDataCube ), array ( 'class' => 'checkbox' ) );
 	    $CheckBoxes .= HTML::div ( HTML::checkbox ( self::SHOW_SKYCUBE, 1, 'SkyCube', $this->ShowSkyCube ), array ( 'class' => 'checkbox' ) );
+	    $CheckBoxes .= HTML::div ( HTML::checkbox ( self::SHOW_FUSION, 1, 'Relation Fusionn&eacute;e', $this->ShowFusion ), array ( 'class' => 'checkbox' ) );
+	    $CheckBoxes .= HTML::div ( HTML::checkbox ( self::SHOW_FUS_ABREGE, 1, 'Relation Fusionn&eacute;e abr&eacute;g&eacute;e', $this->ShowFusionAbregee ), array ( 'class' => 'checkbox' ) );
 	    $CheckBoxes .= HTML::div ( HTML::checkbox ( self::SHOW_TAGED_CUBE, 1, 'R&eacute;sultat Taged', $this->ShowTagedCube ), array ( 'class' => 'checkbox' ) );
 	    
         $Content = $Aggregate;
@@ -193,10 +199,16 @@ class PageRunAnalysis2 extends TagedPage
     	        {
     	            $Result .= HTML::div ( HTML::title ( 'SkyCube', 2 ), array ( 'class' => 'part_title' ) );
     	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_DATA_FILTERED | SKDisplay::SHOW_EQUIV_CLASS ), array ( 'class' => 'result result_skycube' ) );
+    	        }
     	        
+    	        if ( $this->ShowFusion   )
+    	        {
     	            $Result .= HTML::div ( HTML::title ( 'Relation Fusionn&eacute;e', 2 ), array ( 'class' => 'part_title' ) );
     	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeFusion ( $SkyCube ), array ( 'class' => 'result result_skycube' ) );
-    	            
+    	        }
+    	        
+    	        if ( $this->ShowFusionAbregee   )
+    	        {
     	            $Result .= HTML::div ( HTML::title ( 'Relation Fusionn&eacute;e Abr&eacute;g&eacute;e', 2 ), array ( 'class' => 'part_title' ) );
     	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeFusion ( $SkyCube, SKDisplay::SHOW_FILTERED ), array ( 'class' => 'result result_skycube' ) );
     	        }
@@ -228,5 +240,7 @@ class PageRunAnalysis2 extends TagedPage
 	protected $ShowAccords;
 	protected $ShowDataCube;
 	protected $ShowSkyCube;
+	protected $ShowFusion;
+	protected $ShowFusionAbregee;
 	protected $ShowTagedCube;
 } // PageRunAnalysis2

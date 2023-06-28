@@ -78,18 +78,52 @@ class SKDisplay
     {
         $Emergences = $SkyCube->getEmergence ();
         $Emergence = array ();
+        $CubeHeaders = $SkyCube->getRowHeaders ();
+        $FilteredHeaders = array_keys ( reset ( $CubeHeaders ) );
+        $KeyHeader = 'Tuple &eacute;mergent';
+        $First = TRUE;
+        $String = '';
+        
+        $TableContent = '';
+        $TableHeaders = '';
+        $EmptyRow = '';
+        $TableHeaders .= HTML::th ( $KeyHeader, array ( 'class' => 'row_header ' . strtolower ( $KeyHeader ) ) );
+        $EmptyRowContent .= HTML::td ( '', array ( 'class' => 'row_header ' . strtolower ( $KeyHeader ) ) );
         
         foreach ( $Emergences as $CuboideID => $ERCuboide )
         {
             foreach ( $ERCuboide as $Key => $ERValues )
             {
-                $Emergence [] = $ERValues;
+                $TableRow = '';
+                $TableRow .= HTML::th ( '(' . $Key . ')', array ( 'class' => 'row_header ' . strtolower ( $KeyHeader ) ) );
+                foreach ( $ERValues as $K => $V )
+                {
+                    if ( ! in_array ( $K, $FilteredHeaders ) )
+                    {
+                        if ( $First )
+                        {
+                            $Label = 'ER<sub>' . $K . '</sub>';
+                            $EmptyRowContent .= HTML::td ( '', array ( 'class' => 'row_value ' . strtolower ( $K ) ) );
+                            $TableHeaders .= HTML::th ( $Label, array ( 'class' => 'row_value ' . strtolower ( $K ) ) );
+                        }
+
+                        $Value = ( is_numeric ( $V ) ? round ( $V, 2 ) : $V );
+                        $TableRow .= HTML::td ( $Value, array ( 'class' => 'row_value ' . strtolower ( $K ) ) );
+                    }
+                }
+                if ( $First )
+                {
+                    $First = FALSE;
+                    $EmptyRow = HTML::tr ( $EmptyRowContent, array ( 'class' => 'empty' ) );
+                }
+                $TableContent .= HTML::tr ( $TableRow );
             }
+            $TableContent .= $EmptyRow;
         }
-        $Headers = array_keys ( reset ( $Emergence ) );
+        $String .= HTML::table (
+            HTML::tr ( $TableHeaders, array ( 'class' => 'headers' ) ) .
+            $TableContent, array ( 'class' => 'emergence_data cuboide' ) );
         
-        $String = HTML::div ( HTML::tableFull ($Headers,  array ( 'border' => '1' ) ) );
-        $String .= HTML::div ( HTML::tableFull ($Emergence, array ( 'border' => '1' ) ) );
         return HTML::div ( $String, array ( 'class' => 'emergence_data' ) );
     }
     
