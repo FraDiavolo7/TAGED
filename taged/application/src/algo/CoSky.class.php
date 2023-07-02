@@ -17,18 +17,23 @@ class CoSky
     
     protected function prepare ()
     {
-        for ( $Attr = 0; $Attr < 5 ; ++$Attr )
+		$this->Data ['R'] = array ( 6 =>  1, 1 =>  5 );
+		$this->Data ['D'] = array ( 6 => 35, 1 => 25 );
+		$this->Data ['E'] = array ( 6 => 25, 1 => 40 );
+		
+		$this->AwaitedScores = array ( 6 => 0.973, 1 => 0.892 );
+
+//		$this->Data ['R'] = array ( 6 =>  1, 1 =>  5);
+//		$this->Data ['D'] = array ( 6 => 30, 1 => 30);
+//		$this->Data ['E'] = array ( 6 => 20, 1 => 30);
+
+//		$this->AwaitedScores = array ( 6 => 0.980, 1 => 0.883 );
+
+        foreach ( $this->Data as $Attr => $Values )
         {
-            $this->MinMax [$Attr] = ( $Attr % 2 ? 'min' : 'max' );
-            $this->Ideal [$Attr] = ( $Attr % 2 ? 1000 : 0 );
-            
-            for ( $Tuple = 0; $Tuple < 10 ; ++$Tuple )
-            {
-                if ( ! isset ( $this->Tuples [$Tuple] ) ) $this->Tuples [$Tuple] = $Tuple;
-                $Value = rand ( 5, 10 );
-                $this->Data [$Attr] [$Tuple] = $Value;
-                $this->SumAttr [$Attr] += $Value;
-            }
+            $this->MinMax  [$Attr] = 'min';
+            $this->Ideal   [$Attr] = 0;
+            $this->SumAttr [$Attr] = array_sum ( $Values );
         }
     }
     
