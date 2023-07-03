@@ -2,8 +2,10 @@
 
 class CoSky
 {
-    public function __construct ( $SkyCube )
+    public function __construct ( $SkyCube, $k = 2 )
     {
+        $this->SkyCube = $SkyCube;
+        $this->k = $k;
     }
     
     public function run ()
@@ -17,26 +19,35 @@ class CoSky
     
     protected function prepare ()
     {
-		$this->Data ['R'] = array ( 6 =>  1, 1 =>  5 );
-		$this->Data ['D'] = array ( 6 => 35, 1 => 25 );
-		$this->Data ['E'] = array ( 6 => 25, 1 => 40 );
-		
-		$this->AwaitedScores = array ( 6 => 0.973, 1 => 0.892 );
-
-//		$this->Data ['R'] = array ( 6 =>  1, 1 =>  5);
-//		$this->Data ['D'] = array ( 6 => 30, 1 => 30);
-//		$this->Data ['E'] = array ( 6 => 20, 1 => 30);
-
-//		$this->AwaitedScores = array ( 6 => 0.980, 1 => 0.883 );
-
+        $CuboidesIDs  = $this->SkyCube->getCuboideIDs ( FALSE );
+        $CuboideLevel = reset ( $CuboidesIDs  );
+        $CuboideID    = reset ( $CuboideLevel );
+        
+        $Cuboide = $this->SkyCube->getCuboide ( $CuboideID );
+        $DataSet = $Cuboide->getDataSetFiltered ();
+        $ColIDs = $Cuboide->getColIDs ();
+        $HeadersCol = array_values ( $this->SkyCube->getColIDs () );
+        
+        foreach ( $DataSet as $RowID => $Row )
+        {
+            foreach ( $Row as $ColID => $Value )
+            {
+                $this->Data [$ColIDs [$ColID]] [$RowID + 1] = $Value;
+            }
+            $this->Tuples [] = $RowID + 1;
+        }
+        
         foreach ( $this->Data as $Attr => $Values )
         {
+            $this->Ideal   [$Attr] = 100;
             $this->MinMax  [$Attr] = 'min';
-            $this->Ideal   [$Attr] = 0;
             $this->SumAttr [$Attr] = array_sum ( $Values );
         }
     }
     
+    /**
+     * Do not read, not yet unpublished
+     */
     protected function interpret ( $Results )
     {
         foreach ( $this->Tuples as $Tuple )
@@ -96,11 +107,53 @@ class CoSky
         }
     }
     
-    public function getScore ( $Tuple )
+    protected function sortScores ( $EntryA, $EntryB )
     {
-        return $this->Score  [$Tuple];
+        $ValueA = $EntryA ['Score'] ?? 0;
+        $ValueB = $EntryB ['Score'] ?? 0;
+        
+        return ( $EntryA == $EntryB ? 0 : ( $EntryA < $EntryB ? 1 : -1 ) );
     }
     
+    public function getScores ( )
+    {
+        $Scores = array ();
+        
+        foreach ( $this->Tuples as $Tuple )
+        {
+            $Scores [$Tuple] ['RowId'] = $Tuple;
+            
+            foreach ( $this->Data as $Attr => $Data )
+            {
+                $Scores [$Tuple] [$Attr] = $Data [$Tuple];
+            }
+            $Scores [$Tuple] ['Score'] = $this->Score [$Tuple];
+        }
+        
+        usort ( $Scores, array ( $this, 'sortScores' ) );
+
+        return array_slice ( $Scores, 0, $this->k );
+    }
+
+    public function getData ( )
+    {
+        return $this->Data;
+    }
+    public function getN                  () { return $this->N                 ; }
+    public function getGini               () { return $this->Gini              ; }
+    public function getW                  () { return $this->W                 ; }
+    public function getP                  () { return $this->P                 ; }
+    public function getIdeal              () { return $this->Ideal             ; }
+    public function getSumAttr            () { return $this->SumAttr           ; }
+    public function getSumNSquare         () { return $this->SumNSquare        ; }
+    public function getSumPSquare         () { return $this->SumPSquare        ; }
+    public function getSumIdealSquare     () { return $this->SumIdealSquare    ; }
+    public function getSumGini            () { return $this->SumGini           ; }
+    public function getSqrtSumPSquare     () { return $this->SqrtSumPSquare    ; }
+    public function getSqrtSumIdealSquare () { return $this->SqrtSumIdealSquare; }
+    
+    protected $k;
+    protected $SkyCube;
     protected $Data;
     protected $Tuples;
     protected $MinMax;

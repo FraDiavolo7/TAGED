@@ -218,6 +218,11 @@ div.emergence_data table {
     table-layout: fixed;
 }
 
+div.cosky_data {
+	display: flex;
+    justify-content: space-around;
+	
+} 
 
 div.cuboides {
 	flex-direction: column;

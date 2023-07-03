@@ -17,6 +17,7 @@ class PageRunAnalysis2 extends TagedPage
     const SHOW_SKYCUBE = 'ran_sc_red';
     const SHOW_FUSION = 'ran_fusion';
     const SHOW_FUS_ABREGE = 'ran_fus_abr';
+    const SHOW_COSKY = 'ran_cosky';
     const SHOW_TAGED_CUBE = 'ran_sc_tag';
     
     
@@ -53,6 +54,7 @@ class PageRunAnalysis2 extends TagedPage
     	$this->ShowSkyCube       = Form::getData ( self::SHOW_SKYCUBE,    FALSE, $Data );
     	$this->ShowFusion        = Form::getData ( self::SHOW_FUSION,     FALSE, $Data );
     	$this->ShowFusionAbregee = Form::getData ( self::SHOW_FUS_ABREGE, FALSE, $Data );
+    	$this->ShowCoSky         = Form::getData ( self::SHOW_COSKY,      FALSE, $Data );
     	$this->ShowTagedCube     = Form::getData ( self::SHOW_TAGED_CUBE, FALSE, $Data );
     	$this->Test              = Form::getData ( self::SHOW_TEST,       FALSE, $Data );
     	$this->Min               = Form::getData ( self::RAN_MIN,      array (), $Data );
@@ -78,16 +80,25 @@ class PageRunAnalysis2 extends TagedPage
 	                $this->AggregateObj->setMin ( $this->Min );
 	                $this->AggregateObj->setMax ( $this->Max );
 	            }
-	            $Result = $this->AggregateObj->compute ();
+	            $this->AggregateObj->compute ();
 	            
-	            if ( TRUE == $Result)
+	            if ( $this->ShowCoSky ) 
 	            {
-	                $this->Result = $this->AggregateObj->formatResult ();
+	                $this->CoSky1 = new CoSky ( $this->AggregateObj->getSkyCube ()->getSkyCube1 () );
+	                $this->CoSky2 = new CoSky ( $this->AggregateObj->getSkyCube ()->getSkyCube2 () );
+	                
+	                $this->CoSky1->run ();
+	                $this->CoSky2->run ();
 	            }
-	            else
-	            {
-	                $this->Result = $this->AggregateObj->getResult ();
-	            }
+	            
+// 	            if ( TRUE == $Result)
+// 	            {
+// 	                $this->Result = $this->AggregateObj->formatResult ();
+// 	            }
+// 	            else
+// 	            {
+ 	                $this->Result = $this->AggregateObj->getResult ();
+// 	            }
 	        }
 	    }
 	    
@@ -109,6 +120,7 @@ class PageRunAnalysis2 extends TagedPage
 	    $CheckBoxes .= HTML::div ( HTML::checkbox ( self::SHOW_SKYCUBE, 1, 'SkyCube', $this->ShowSkyCube ), array ( 'class' => 'checkbox' ) );
 	    $CheckBoxes .= HTML::div ( HTML::checkbox ( self::SHOW_FUSION, 1, 'Relation Fusionn&eacute;e', $this->ShowFusion ), array ( 'class' => 'checkbox' ) );
 	    $CheckBoxes .= HTML::div ( HTML::checkbox ( self::SHOW_FUS_ABREGE, 1, 'Relation Fusionn&eacute;e abr&eacute;g&eacute;e', $this->ShowFusionAbregee ), array ( 'class' => 'checkbox' ) );
+	    $CheckBoxes .= HTML::div ( HTML::checkbox ( self::SHOW_COSKY, 1, 'Classement des Skyline (CoSky)', $this->ShowCoSky ), array ( 'class' => 'checkbox' ) );
 	    $CheckBoxes .= HTML::div ( HTML::checkbox ( self::SHOW_TAGED_CUBE, 1, 'R&eacute;sultat Taged', $this->ShowTagedCube ), array ( 'class' => 'checkbox' ) );
 	    
         $Content = $Aggregate;
@@ -198,7 +210,7 @@ class PageRunAnalysis2 extends TagedPage
     	        if ( $this->ShowSkyCube   )
     	        {
     	            $Result .= HTML::div ( HTML::title ( 'SkyCube', 2 ), array ( 'class' => 'part_title' ) );
-    	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_DATA_FILTERED | SKDisplay::SHOW_EQUIV_CLASS ), array ( 'class' => 'result result_skycube' ) );
+    	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_DATA_FILTERED ), array ( 'class' => 'result result_skycube' ) );
     	        }
     	        
     	        if ( $this->ShowFusion   )
@@ -211,6 +223,14 @@ class PageRunAnalysis2 extends TagedPage
     	        {
     	            $Result .= HTML::div ( HTML::title ( 'Relation Fusionn&eacute;e Abr&eacute;g&eacute;e', 2 ), array ( 'class' => 'part_title' ) );
     	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeFusion ( $SkyCube, SKDisplay::SHOW_FILTERED ), array ( 'class' => 'result result_skycube' ) );
+    	        }
+
+    	        if ( $this->ShowCoSky )
+    	        {
+    	            $Result .= HTML::div ( HTML::title ( 'Classement des Skylines 1 (CoSky)', 2 ), array ( 'class' => 'part_title' ) );
+    	            $Result .= HTML::div ( SKDisplay::htmlCoSky ( $this->CoSky1 ), array ( 'class' => 'result result_cosky' ) );
+    	            $Result .= HTML::div ( HTML::title ( 'Classement des Skylines 2 (CoSky)', 2 ), array ( 'class' => 'part_title' ) );
+    	            $Result .= HTML::div ( SKDisplay::htmlCoSky ( $this->CoSky2 ), array ( 'class' => 'result result_cosky' ) );
     	        }
     	        
     	        if ( $this->ShowTagedCube )
@@ -235,6 +255,9 @@ class PageRunAnalysis2 extends TagedPage
 	protected $Min;
 	protected $Max;
 	
+	protected $CoSky1;
+	protected $CoSky2;
+	
 	protected $ShowInput;
 	protected $ShowEspace;
 	protected $ShowAccords;
@@ -242,5 +265,6 @@ class PageRunAnalysis2 extends TagedPage
 	protected $ShowSkyCube;
 	protected $ShowFusion;
 	protected $ShowFusionAbregee;
+	protected $ShowCoSky;
 	protected $ShowTagedCube;
 } // PageRunAnalysis2

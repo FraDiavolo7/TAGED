@@ -34,7 +34,7 @@ class IDEA
         $Command = "$this->Algorithm $this->FilePath $this->NbAttributes $this->NbTuples $AlgoOpt";
         
         //echo __FILE__ . ':' . __LINE__ . ' - ' . __METHOD__ . " <pre>" . print_r ( $Command, TRUE ) . "</pre> <br>";
-        echo " <pre>" . print_r ( $Command, TRUE ) . "</pre> <br>";
+        //echo " <pre>" . print_r ( $Command, TRUE ) . "</pre> <br>";
         
         $ShellResult = shell_exec ( $Command . ' 2>&1' ) . PHP_EOL;
         

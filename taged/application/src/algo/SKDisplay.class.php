@@ -74,6 +74,34 @@ class SKDisplay
         return HTML::div ( $String, array ( 'class' => 'input_data' ) );
     }
 
+    public static function htmlCoSky ( $CoSky )
+    {
+        $Scores = $CoSky->getScores ();
+        
+        $TableContent = '';
+        $TableHeaders = '';
+        $FirstLine = TRUE;
+        
+        foreach ( $Scores as $Row )
+        {
+            $TableRow = '';
+            foreach ( $Row as $Attr => $Value )
+            {
+                $Class = 'row_value';
+                if ( $Attr == 'RowId' ) $Class = 'row_header';
+                if ( $FirstLine ) $TableHeaders .= HTML::th ( $Attr, array ( 'class' => 'row_header ' . strtolower ( $Attr ) ) );
+                $TableRow .= HTML::td ( $Value, array ( 'class' => $Class . ' ' . strtolower ( $Attr ) ) );
+            }
+            $TableContent .= HTML::tr ( $TableRow );
+            $FirstLine = FALSE;
+        }
+        
+        $String = HTML::table (
+            HTML::tr ( $TableHeaders, array ( 'class' => 'headers' ) ) .
+            $TableContent, array ( 'class' => 'co_sky cuboide' ) );
+        return HTML::div ( $String, array ( 'class' => 'cosky_data' ) );
+    }
+    
     public static function htmlEmergence ( $SkyCube )
     {
         $Emergences = $SkyCube->getEmergence ();
