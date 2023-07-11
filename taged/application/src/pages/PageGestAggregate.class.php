@@ -43,27 +43,26 @@ class PageGestAggregate extends TagedPage
 	    $AggregateList = $AggregateListObj->getList ();
 	    
         $TableContent = HTML::tr ( 
-            HTML::th ( 'Aggregat' ) .
-            HTML::th ( 'Actions' )
+            HTML::th ( 'Aggregat', array ( 'class' => 'agg_label' ) ) .
+            HTML::th ( 'Actions', array ( 'class' => 'agg_actions' ) )
             );
 
         foreach ( $AggregateList as $Name => $Label )
         {
             $TableContent .= HTML::tr (
-                HTML::td ( $Label ) .
+                HTML::td ( $Label, array ( 'class' => 'agg_label' ) ) .
                 HTML::td ( 
                     HTML::link ( Menu::buildGenLink ( 'RunAnalysis', array ( PageRunAnalysis::RAN_AGGREGATE => $Name ) ), "Analyser" ) .
                     HTML::link ( Menu::buildGenLink ( 'ShowAggregate', array ( PageShowAggregate::SHOW_AGGREGATE => $Name ) ), "Afficher" ) .
                     HTML::link ( Menu::buildGenLink ( 'ChangeAggregate', array ( PageChangeAggregate::CHANGE_AGGREGATE => $Name ) ), "Modifier" ) .
-                    HTML::link ( Menu::buildGenLink ( 'GestAggregate', array ( self::GAG_AGGREGATE => $Name ) ), "Supprimer" ) .
-                    HTML::link ( Menu::buildGenLink ( 'ShowSkyCube', array ( PageShowSkyCube::SHOW_AGGREGATE => $Name ) ), "SkyCube" ) .
-                    HTML::link ( Menu::buildGenLink ( 'RunAnalysis2', array ( PageRunAnalysis2::RAN_AGGREGATE => $Name ) ), "AnalyseSC" )
+                    HTML::link ( Menu::buildGenLink ( 'GestAggregate', array ( self::GAG_AGGREGATE => $Name ) ), "Supprimer" ), 
+                    array ( 'class' => 'agg_actions' )
                     )
                 );
         }
         
         $this->add ( HTML::link ( Menu::buildGenLink ( 'NewAggregate' ), "Ajouter" ) );
-        $this->add ( HTML::div ( HTML::table ( $TableContent ) , array ( 'class' => 'taged_stats' ) ) ); 
+        $this->add ( HTML::div ( HTML::table ( $TableContent ) , array ( 'class' => 'taged_gest_aggregates' ) ) ); 
 	}
 
 	protected $AggregateList;

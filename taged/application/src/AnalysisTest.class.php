@@ -111,7 +111,7 @@ class AnalysisTest extends Analysis
             
             $AggregateFile = "$TmpFolder/aggregate";
             
-            $Aggregate = $this->getAggregateFile ( TRUE ) ;
+            $Aggregate = $this->getAggregateFile ( FALSE ) ;
             
 
             $NbTuples = $Aggregate->getNbTuples ();
@@ -124,7 +124,7 @@ class AnalysisTest extends Analysis
         
         if ( $this->Runnable )
         {
-            $this->SkyCube = new SkyCubeEmergent ( $this->DataSet, $this->RelationCols, $this->MeasureCols, $MinMax );
+            $this->SkyCube = new SkyCubeEmergent ( $this->DataSet, $this->RelationCols, $this->MeasureCols, Cuboide::TO_MIN );
         }
     }
     

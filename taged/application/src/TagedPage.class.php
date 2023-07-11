@@ -7,17 +7,17 @@ class TagedPage extends THPage
 	const PAGE_LIST = array (
 		'Accueil' => 'Accueil',
 	    'Match 3' => 'Match3',
+	    'Collection Data' => 'CollData',
+	    'Hack&apos;n Slash Data' => 'HnSData',
+	    'Gestion Aggregations' => 'GestAggregate',
+// 	    'Aggregations' => 'ChangeAggregate',
+// 	    'Show Aggregations' => 'ShowAggregate'
 //	    'Test' => 'Test',
-        'TestCoSky' => 'TestCoSky',
+//        'TestCoSky' => 'TestCoSky',
 // 	    'Test Accords' => 'TestAccords',
 //  	    'Test SkyCube' => 'TestSkyCube',
 // 	    'Test SkyCube Emergent' => 'TestSkyCubeEmergent',
-	    'Collection Data' => 'CollData',
 //	    'Collection Aggregate' => 'CollAggregate',
-	    'Hack&apos;n Slash Data' => 'HnSData',
-	    'Gestion Aggregations' => 'GestAggregate',
-	    'Aggregations' => 'ChangeAggregate',
-	    'Show Aggregations' => 'ShowAggregate'
 	);
     	
 	public function __construct ( $InputData = NULL )
