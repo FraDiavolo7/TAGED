@@ -118,6 +118,7 @@ class AnalysisTest extends Analysis
             $NbAttributes = count ( $RelationCols );
             
             $this->DataSet = $Aggregate->getData ( );
+            
         }
         
         $this->check ();

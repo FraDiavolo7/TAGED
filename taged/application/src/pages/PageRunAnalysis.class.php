@@ -116,7 +116,7 @@ class PageRunAnalysis extends TagedPage
 	    $CheckBoxes .= HTML::div ( HTML::checkbox ( self::SHOW_INPUT, 1, 'Entr&eacute;e', $this->ShowInput ), array ( 'class' => 'checkbox' ) );
 	    $CheckBoxes .= HTML::div ( HTML::checkbox ( self::SHOW_ESPACE, 1, 'Espace Multidimensionnel', $this->ShowEspace ), array ( 'class' => 'checkbox' ) );
 	    $CheckBoxes .= HTML::div ( HTML::checkbox ( self::SHOW_ACCORDS, 1, 'Classes d&apos;accords', $this->ShowAccords ), array ( 'class' => 'checkbox' ) );
-//	    $CheckBoxes .= HTML::div ( HTML::checkbox ( self::SHOW_DATACUBE, 1, 'DataCube', $this->ShowDataCube ), array ( 'class' => 'checkbox' ) );
+	    $CheckBoxes .= HTML::div ( HTML::checkbox ( self::SHOW_DATACUBE, 1, 'DataCube', $this->ShowDataCube ), array ( 'class' => 'checkbox' ) );
 	    $CheckBoxes .= HTML::div ( HTML::checkbox ( self::SHOW_SKYCUBE, 1, 'SkyCube', $this->ShowSkyCube ), array ( 'class' => 'checkbox' ) );
 	    $CheckBoxes .= HTML::div ( HTML::checkbox ( self::SHOW_FUSION, 1, 'Relation Fusionn&eacute;e', $this->ShowFusion ), array ( 'class' => 'checkbox' ) );
 	    $CheckBoxes .= HTML::div ( HTML::checkbox ( self::SHOW_FUS_ABREGE, 1, 'Relation Fusionn&eacute;e abr&eacute;g&eacute;e', $this->ShowFusionAbregee ), array ( 'class' => 'checkbox' ) );
@@ -174,13 +174,23 @@ class PageRunAnalysis extends TagedPage
     	            $Result .= HTML::div ( HTML::title ( 'Espace multidimensionel', 2 ), array ( 'class' => 'part_title' ) );
     	            $Result .= HTML::div ( SKDisplay::htmlMultidimensionalSpace ( $SkyCube ), array ( 'class' => 'result result_espace' ) );
     	        }
-
+    	        
+    	        if ( $this->ShowDataCube  )
+    	        {
+    	            $Result .= HTML::div ( HTML::title ( 'DataCube', 2 ), array ( 'class' => 'part_title' ) );
+    	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_DATA_RAW ), array ( 'class' => 'result result_datacube' ) );
+    	            $Result .= HTML::div ( HTML::title ( 'DataCube 1', 2 ), array ( 'class' => 'part_title' ) );
+    	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube->getSkyCube1 (), SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_DATA_RAW | SKDisplay::SHOW_REMOVED ), array ( 'class' => 'result result_datacube' ) );
+    	            $Result .= HTML::div ( HTML::title ( 'DataCube 2', 2 ), array ( 'class' => 'part_title' ) );
+    	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube->getSkyCube2 (), SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_DATA_RAW | SKDisplay::SHOW_REMOVED ), array ( 'class' => 'result result_datacube' ) );
+    	        }
+    	        
     	        if ( $this->ShowSkyCube   )
     	        {
     	            $Result .= HTML::div ( HTML::title ( 'Trellis du SkyCube 1', 2 ), array ( 'class' => 'part_title' ) );
-    	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube->getSkyCube1 (), SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_DATA_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_EQUIV_CLASS ), array ( 'class' => 'result result_skycube' ) );
+    	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube->getSkyCube1 (), SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_DATA_FILTERED | SKDisplay::SHOW_REMOVED /* | SKDisplay::SHOW_EQUIV_CLASS */ ), array ( 'class' => 'result result_skycube' ) );
     	            $Result .= HTML::div ( HTML::title ( 'Trellis du SkyCube 2', 2 ), array ( 'class' => 'part_title' ) );
-    	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube->getSkyCube2 (), SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_DATA_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_EQUIV_CLASS ), array ( 'class' => 'result result_skycube' ) );
+    	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube->getSkyCube2 (), SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_DATA_FILTERED | SKDisplay::SHOW_REMOVED /* | SKDisplay::SHOW_EQUIV_CLASS */ ), array ( 'class' => 'result result_skycube' ) );
     	        }
     	        
     	        if ( $this->ShowAccords   )
@@ -193,12 +203,6 @@ class PageRunAnalysis extends TagedPage
     	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube->getSkyCube1 (), SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_EQUIV_CLASS_FILTERED ), array ( 'class' => 'result result_accords' ) );
     	            $Result .= HTML::div ( HTML::title ( 'Concepts Skylines SkyCube 2', 2 ), array ( 'class' => 'part_title' ) );
     	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube->getSkyCube2 (), SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_EQUIV_CLASS_FILTERED ), array ( 'class' => 'result result_accords' ) );
-    	        }
-    	        
-    	        if ( $this->ShowDataCube  )
-    	        {
-    	            $Result .= HTML::div ( HTML::title ( 'DataCube', 2 ), array ( 'class' => 'part_title' ) );
-    	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube, SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_DATA_RAW ), array ( 'class' => 'result result_datacube' ) );
     	        }
     	        
     	        if ( $this->ShowAccords   )
