@@ -126,7 +126,7 @@ JOIN vw_equipes Q2 on E2.Id_Equipe = Q2.Id_Equipe;
 CREATE VIEW vw_combat_L3 AS 
 SELECT C.id_combat, gagnant, tier, rules, classe, tours, 
 U1.nom as Nom1, E1.elo as elo1, Q1.id_equipe as Eq1, Q1.Liste3 as Liste1, Q1.Drop_Rate3 as Drop_Rate1,
-U2.nom as Nom2, E2.elo as elo2, Q2.id_equipe as Eq2, Q2.Liste3 as Liste2, Q1.Drop_Rate3 as Drop_Rate2
+U2.nom as Nom2, E2.elo as elo2, Q2.id_equipe as Eq2, Q2.Liste3 as Liste2, Q2.Drop_Rate3 as Drop_Rate2
 FROM combat C 
 JOIN engage E1 ON C.Id_Combat = E1.Id_Combat AND E1.Numero = 1
 JOIN utilisateur U1 on E1.Nom = U1.Nom
@@ -137,7 +137,7 @@ JOIN equipe Q2 on E2.Id_Equipe = Q2.Id_Equipe
 UNION
 SELECT C.id_combat, CASE WHEN (resultat = '1') THEN 2 WHEN (resultat = '2') THEN 1 ELSE 0 END as gagnant, tier, rules, classe, tours, 
 U2.nom as Nom1, E2.elo as elo1, Q2.id_equipe as Eq1, Q1.Liste3 as Liste1, Q1.Drop_Rate3 as Drop_Rate1,
-U1.nom as Nom2, E1.elo as elo2, Q1.id_equipe as Eq2, Q2.Liste3 as Liste2, Q1.Drop_Rate3 as Drop_Rate2
+U1.nom as Nom2, E1.elo as elo2, Q1.id_equipe as Eq2, Q2.Liste3 as Liste2, Q2.Drop_Rate3 as Drop_Rate2
 FROM combat C 
 JOIN engage E1 ON C.Id_Combat = E1.Id_Combat AND E1.Numero = 1
 JOIN utilisateur U1 on E1.Nom = U1.Nom
@@ -170,9 +170,9 @@ JOIN utilisateur U2 on E2.Nom = U2.Nom
 JOIN vw_equipes Q2 on E2.Id_Equipe = Q2.Id_Equipe;
 
 CREATE VIEW vw_combat_L3 AS 
-SELECT C.id_combat, gagnant, tier, rules, classe, 
-U1.nom as Nom1, E1.elo as elo1, Q1.id_equipe as Eq1, Q1.Liste3 as Liste1,
-U2.nom as Nom2, E2.elo as elo2, Q2.id_equipe as Eq2, Q2.Liste3 as Liste2
+SELECT C.id_combat, gagnant, tier, rules, classe, tours, 
+U1.nom as Nom1, E1.elo as elo1, Q1.id_equipe as Eq1, Q1.Liste3 as Liste1, Q1.Drop_Rate3 as Drop_Rate1,
+U2.nom as Nom2, E2.elo as elo2, Q2.id_equipe as Eq2, Q2.Liste3 as Liste2, Q2.Drop_Rate3 as Drop_Rate2
 FROM combat C 
 JOIN engage E1 ON C.Id_Combat = E1.Id_Combat AND E1.Numero = 1
 JOIN utilisateur U1 on E1.Nom = U1.Nom
@@ -180,17 +180,21 @@ JOIN vw_equipes Q1 on E1.Id_Equipe = Q1.Id_Equipe
 JOIN engage E2 ON C.Id_Combat = E2.Id_Combat AND E2.Numero = 2
 JOIN utilisateur U2 on E2.Nom = U2.Nom
 JOIN vw_equipes Q2 on E2.Id_Equipe = Q2.Id_Equipe
+WHERE Q1.nombre > 2
+AND   Q2.nombre > 2
 UNION
-SELECT C.id_combat, CASE WHEN (resultat = '1') THEN 2 WHEN (resultat = '2') THEN 1 ELSE 0 END as gagnant, tier, rules, classe, 
-U2.nom as Nom1, E2.elo as elo1, Q2.id_equipe as Eq1, Q2.Liste3 as Liste1,
-U1.nom as Nom2, E1.elo as elo2, Q1.id_equipe as Eq2, Q1.Liste3 as Liste2
+SELECT C.id_combat, CASE WHEN (resultat = '1') THEN 2 WHEN (resultat = '2') THEN 1 ELSE 0 END as gagnant, tier, rules, classe, tours, 
+U2.nom as Nom1, E2.elo as elo1, Q2.id_equipe as Eq1, Q2.Liste3 as Liste1, Q1.Drop_Rate3 as Drop_Rate1,
+U1.nom as Nom2, E1.elo as elo2, Q1.id_equipe as Eq2, Q1.Liste3 as Liste2, Q2.Drop_Rate3 as Drop_Rate2
 FROM combat C 
 JOIN engage E1 ON C.Id_Combat = E1.Id_Combat AND E1.Numero = 1
 JOIN utilisateur U1 on E1.Nom = U1.Nom
 JOIN vw_equipes Q1 on E1.Id_Equipe = Q1.Id_Equipe
 JOIN engage E2 ON C.Id_Combat = E2.Id_Combat AND E2.Numero = 2
 JOIN utilisateur U2 on E2.Nom = U2.Nom
-JOIN vw_equipes Q2 on E2.Id_Equipe = Q2.Id_Equipe;
+JOIN vw_equipes Q2 on E2.Id_Equipe = Q2.Id_Equipe
+WHERE Q1.nombre > 2
+AND   Q2.nombre > 2;
 
 CREATE VIEW vw_combat_L4 AS 
 SELECT C.id_combat, gagnant, tier, rules, classe, 

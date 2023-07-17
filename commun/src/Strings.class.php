@@ -91,7 +91,7 @@ class Strings {
   * Ex: strContains ("toto", "t") or strContains ("toto", array ("t", "hio"))
   * @param string $in The string to search in
   * @param string|array $that The string to search or an array on string to search
-  * @return bollean
+  * @return boolean
 */
 public static function contains ($in, $that)
 {
@@ -139,13 +139,19 @@ public static function replace ($it, $by, $in, $nth=0, $nb=1)
 
 /**
   * Generate a random string of a given length (excluding prefix)
-  * @param integer|10 $length Size of string to generate
+  * @param integer $length Size of string to generate
   * @param string|"" $prefix Optional prefix of generated strings
   * @return string
 */
-public static function generateRandom($length=10, $prefix="")
+public static function generateRandom ( $Length = 10, $Prefix = "" )
 {
-    return $prefix.substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, $length);
+    $Seed= '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $SeedLength = strlen ( $Seed );
+    if ( $SeedLength < $Length )
+    {
+        $Seed = str_repeat ( $Seed, ceil ( $Length / $SeedLength ) );
+    }
+    return $Prefix . substr ( str_shuffle ( $Seed ), 0, $Length );
 } # generateRandom
 
 
@@ -163,7 +169,7 @@ public static function enclose ($that, $before='"', $after=NULL)
 }
 
 /**
- * Convets a text to pure ASCII characters
+ * Converts a text to pure ASCII characters
  * @param string $String The String to convert
  * @return string
  * @note Converts only Cyrilic for now

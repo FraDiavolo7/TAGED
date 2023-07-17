@@ -1,0 +1,7 @@
+Temps
+Forme du groupe (horizontal, vertical, mixte, autre)
+Points
+ - directs
+ - indirects
+ - bonus
+Couleur (ou forme)
