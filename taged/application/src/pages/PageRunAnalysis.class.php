@@ -193,7 +193,7 @@ class PageRunAnalysis extends TagedPage
     	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube->getSkyCube2 (), SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_DATA_FILTERED | SKDisplay::SHOW_REMOVED /* | SKDisplay::SHOW_EQUIV_CLASS */ ), array ( 'class' => 'result result_skycube' ) );
     	        }
     	        
-    	        if ( $this->ShowAccords   )
+    	        if ( $this->ShowAccords   ) 
     	        {
     	            $Result .= HTML::div ( HTML::title ( 'Concepts Acccords SkyCube 1', 2 ), array ( 'class' => 'part_title' ) );
     	            $Result .= HTML::div ( SKDisplay::htmlSkyCubeParam ( $SkyCube->getSkyCube1 (), SKDisplay::SHOW_FILTERED | SKDisplay::SHOW_REMOVED | SKDisplay::SHOW_EQUIV_CLASS ), array ( 'class' => 'result result_accords' ) );
