@@ -1,0 +1,44 @@
+WITH
+TNbCombat AS (
+    SELECT CASE WHEN (TC.elo1 <= 1100) THEN 'Novice' ELSE 'Expert' END AS Elo,
+    TC.Liste1 AS Liste1,
+    TC.Liste2 AS Liste2,
+    Classe,
+    AVG (Tours) as Tours, 
+    COUNT(*) AS NbCombat
+    FROM vw_combat_L3 TC
+    GROUP BY Elo, Liste1, Liste2, Classe
+ HAVING COUNT(*) > 3 
+), 
+TNbVictoire AS (
+    SELECT CASE WHEN (TC.elo1 <= 1100) THEN 'Novice' ELSE 'Expert' END AS Elo,
+    TC.Liste1 AS Liste1,
+    TC.Liste2 AS Liste2,
+    Classe,
+    AVG (Tours) as Tours, 
+    COUNT(*) AS NbVictoire
+    FROM vw_combat_L3 TC
+    WHERE TC.gagnant IN (0, 1)
+    GROUP BY Elo, Liste1, Liste2, Classe
+ ), 
+TMain AS (
+    SELECT 
+    TNCN.Classe,
+ TNCN.Tours AS Tours1,
+ TNCE.Tours AS Tours2,
+    TNCN.Liste1 AS Seq1,
+    TNCN.Liste2 AS Seq2, 
+    100 - ( CAST(ROUND(CAST(TNVN.NbVictoire AS DECIMAL) / CAST(TNCN.NbCombat AS DECIMAL), 2) * 100 AS INTEGER) ) AS TxVictoire1,
+    100 - ( CAST(ROUND(CAST(TNVE.NbVictoire AS DECIMAL) / CAST(TNCE.NbCombat AS DECIMAL), 2) * 100 AS INTEGER) ) AS TxVictoire2
+    FROM
+  (SELECT * FROM TNbCombat WHERE Elo = 'Novice') TNCN
+  FULL OUTER JOIN (SELECT * FROM TNbVictoire WHERE Elo = 'Novice') TNVN ON TNVN.Liste1 = TNCN.Liste1 AND TNVN.Liste2 = TNCN.Liste2
+  FULL OUTER JOIN (SELECT * FROM TNbCombat WHERE Elo = 'Expert') TNCE ON COALESCE(TNVN.Liste1, TNCN.Liste1) = TNCE.Liste1 AND COALESCE(TNVN.Liste2, TNCN.Liste2) = TNCE.Liste2
+     FULL OUTER JOIN (SELECT * FROM TNbVictoire WHERE Elo = 'Expert') TNVE ON COALESCE(TNCN.Liste1, TNVN.Liste1, TNCE.Liste1) = TNVE.Liste1 AND COALESCE(TNCN.Liste2, TNVN.Liste2, TNCE.Liste2) = TNVE.Liste2
+    GROUP BY TNCN.Classe, Tours1, Tours2, Seq1, Seq2, TxVictoire1, TxVictoire2
+)
+SELECT TMain.Classe as Format, Seq1 as Joueur, Seq2 as Adversaire, Drop_Rate1 as Rarete, Tours1 as Duree1, Tours2 as Duree2, TxVictoire1 as Echec1, TxVictoire2 as Echec2
+FROM TMain, vw_combat_L3
+WHERE Seq1 = Liste1
+GROUP BY TMain.Classe, Joueur, Adversaire, Rarete, Duree1, Duree2, Echec1, Echec2
+ORDER BY Joueur, Adversaire;
