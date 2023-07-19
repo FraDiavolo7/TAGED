@@ -1,5 +1,9 @@
 <?php
 
+/**
+ *
+ * @package Commun
+ */
 class System {
 
     public static function isDirEmpty ( $Dir ) 

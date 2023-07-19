@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Class computing a Cuboide using a Brute Force strategy (not meant to be exact or fast)
+ * @package TAGED\Algo
+ */
 class CuboideBruteForce extends Cuboide
 {
     

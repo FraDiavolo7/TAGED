@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * 
+ * @package Commun
+ */
 class Aggregate
 {
     protected static $Table = "aggregate";

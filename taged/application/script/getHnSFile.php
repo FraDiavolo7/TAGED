@@ -1,5 +1,8 @@
 #!/usr/bin/php
 <?php
+/**
+ * @package TAGED\Scripts
+ */
 # This script takes the first folder from HNS TMP ADDR and fetches all files contents
 
 include '../src/define.php';

@@ -2,6 +2,7 @@
 
 /**
  * Basic features of a Page on this framework
+ * @package Commun
  */
 abstract class BasicPage
 {

@@ -1,5 +1,8 @@
 #!/usr/bin/php
 <?php
+/**
+ * @package TAGED\Scripts
+ */
 # This script is meant to process all Files from data storage
 
 $ProcessFolderScr = './processHnSFolder.php';

@@ -1,5 +1,9 @@
 <?php
 
+/**
+ *
+ * @package TAGED\Pages
+ */
 class PageNewAggregate extends TagedPage
 {
     const NAG_AGGREGATE = 'nag_aggregate';

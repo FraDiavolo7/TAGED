@@ -1,7 +1,10 @@
 <?php
 
-// Cette classe sert à gérer les sessions.
 
+/**
+ * Cette classe sert à gérer les sessions.
+ * @package Commun
+ */
 class Session
 {
 	public static function start ( )

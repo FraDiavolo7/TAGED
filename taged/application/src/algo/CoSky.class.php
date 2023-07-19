@@ -1,5 +1,10 @@
 <?php
 
+
+/**
+ * Computes the CoSky algorithm
+ * @package TAGED\Algo
+ */
 class CoSky
 {
     public function __construct ( $SkyCube, $k = 2 )

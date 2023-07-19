@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Collection Team Data
+ * @package TAGED\Models\Collection
+ */
 class CollTeam 
 {
     const TABLE = 'equipe';

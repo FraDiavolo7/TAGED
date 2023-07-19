@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Match 3 Stroke Data
+ * @package TAGED\Models\Match3
+ */
 class M3Stroke
 {
     const TABLE = 'coup';

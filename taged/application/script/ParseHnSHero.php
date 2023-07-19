@@ -1,6 +1,9 @@
 #!/usr/bin/php
-# This script is meant to process a Hero URL file and DL the 
 <?php
+/**
+ * This script is meant to process a Hero URL file and DL the 
+ * @package TAGED\Scripts
+ */
 
 $File=$argv[1];
 

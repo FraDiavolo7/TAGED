@@ -1,5 +1,9 @@
 <?php
 
+/**
+ *
+ * @package TAGED\Aggregates
+ */
 class AggregateList
 {
     protected static $Folder = AGGREGATE_FOLDER_DESC;

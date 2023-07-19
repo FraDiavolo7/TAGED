@@ -1,7 +1,10 @@
 <?php
 
-// Cette classe sert à basculer du mode maintenance au mode production.
 
+/**
+ * Cette classe sert a basculer du mode maintenance au mode production.
+ * @package Commun
+ */
 class Switcher
 {
 	public function __construct ( $InputData = NULL )

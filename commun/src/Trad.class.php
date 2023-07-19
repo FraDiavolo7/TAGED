@@ -1,5 +1,9 @@
 <?php
 
+/**
+ *
+ * @package Commun
+ */
 class Trad
 {
     const CTXT_GENERAL = "general";

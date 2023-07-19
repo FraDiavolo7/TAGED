@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @deprecated
+ * @package Deprecated
+ */
 class PageRunAnalysis extends TagedPage
 {
     const RAN_AGGREGATE = 'ran_aggregate';
@@ -41,7 +45,7 @@ class PageRunAnalysis extends TagedPage
     	
     	if ( '' != $this->Aggregate )
     	{
-    	    $this->AggregateObj = new Analysis ( $this->Aggregate . '.ini' );
+    	    $this->AggregateObj = new Analysis_old ( $this->Aggregate . '.ini' );
     	}
     	
 	    if ( $Submit != '' )

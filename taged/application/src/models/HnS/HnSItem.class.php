@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Hack'N Slash Item Data
+ * @package TAGED\Models\HackNSlash
+ */
 class HnsItem 
 {
     const TABLE = 'equip';

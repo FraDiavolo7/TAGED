@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Hack'N Slash Table presentation
+ * @package TAGED\Models\HackNSlash
+ */
 class HnSTable
 {
     protected $ListeHeros;

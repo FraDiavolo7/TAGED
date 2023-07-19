@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Match 3 Main
+ * @package TAGED\Models\Match3
+ */
 class Match3
 {
     protected $ListGames;

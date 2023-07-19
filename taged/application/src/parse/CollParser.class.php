@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Parser Collection ( Pokemon Showdown )
+ * @package TAGED\Parser\Collection
+ */
 class CollParser {
 
     private $turns;

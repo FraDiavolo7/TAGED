@@ -1,4 +1,8 @@
 <?php
+/**
+ * @package TAGED
+ */
+
 $NewPath = get_include_path();
 $NewPath .= PATH_SEPARATOR . '.';
 $NewPath .= PATH_SEPARATOR . '../src';

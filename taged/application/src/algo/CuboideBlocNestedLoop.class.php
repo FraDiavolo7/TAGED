@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Class computing a Cuboide using the BNL algorithm
+ * @package TAGED\Algo
+ */
 class CuboideBlocNestedLoop extends Cuboide
 {
     const CURRENT = '';

@@ -1,5 +1,9 @@
 <?php
 
+/**
+ *
+ * @package Commun
+ */
 class HTML
 {
     const PAGE_SELECTOR = 'sel';

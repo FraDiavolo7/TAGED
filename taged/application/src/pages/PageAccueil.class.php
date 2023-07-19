@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * 
+ * @package TAGED\Pages
+ */
 class PageAccueil extends TagedPage
 {
 	public function __construct ( $InputData = NULL )

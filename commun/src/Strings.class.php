@@ -4,6 +4,7 @@
 // ========================================================================== //
 /**
  * Class Strings manages common handlings of string variables to oncrease language capabilities
+ * @package Commun
  */
 class Strings {
 
@@ -140,7 +141,7 @@ public static function replace ($it, $by, $in, $nth=0, $nb=1)
 /**
   * Generate a random string of a given length (excluding prefix)
   * @param integer $length Size of string to generate
-  * @param string|"" $prefix Optional prefix of generated strings
+  * @param string $prefix Optional prefix of generated strings
   * @return string
 */
 public static function generateRandom ( $Length = 10, $Prefix = "" )
@@ -158,7 +159,7 @@ public static function generateRandom ( $Length = 10, $Prefix = "" )
 /**
   * Enclose a string with enclosure
   * @param string $that String to process
-  * @param string|'"' $before The string to add before
+  * @param string $before The string to add before
   * @param string|NULL $after The string to add after. If not given then after=before
   * @return string
 */

@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Match 3 Match Data
+ * @package TAGED\Models\Match3
+ */
 class M3Match
 {
     const TABLE = 'beam';

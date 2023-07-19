@@ -1,5 +1,9 @@
 <?php
 
+/**
+ *
+ * @package TAGED\Pages
+ */
 class PageHnSParse extends TagedPage
 {
     const PARSER_FILE = 'parser_file';

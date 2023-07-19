@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Hack'N Slash Hero Data
+ * @package TAGED\Models\HackNSlash
+ */
 class Hero 
 {
     const VIEW       = 'vw_hero';

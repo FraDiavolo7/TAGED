@@ -1,5 +1,9 @@
 <?php
 
+/**
+ *
+ * @package TAGED\Pages
+ */
 class PageChangeAggregate extends TagedPage
 {
     const CHANGE_AGGREGATE = 'change_aggregate';

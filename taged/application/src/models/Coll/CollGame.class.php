@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Collection Game Data
+ * @package TAGED\Models\Collection
+ */
 class CollGame
 {
     const TABLE = 'combat';

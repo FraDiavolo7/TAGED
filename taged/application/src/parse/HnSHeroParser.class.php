@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Hero Parser for Hack'N Slash  ( Diablo 3 )
+ * @package TAGED\Parser\HackNSlash
+ */
 class HnSHeroParser {
 
     private $FullText;

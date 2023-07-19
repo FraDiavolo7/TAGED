@@ -1,5 +1,9 @@
 <?php
 
+/**
+ *
+ * @package Commun
+ */
 abstract class CuboideBase
 {
     const CURRENT = '';

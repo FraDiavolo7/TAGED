@@ -1,5 +1,9 @@
 <?php
 
+/**
+ *
+ * @package Commun
+ */
 class Page
 {
 	public static function handle ( $PageName, $Data = NULL )

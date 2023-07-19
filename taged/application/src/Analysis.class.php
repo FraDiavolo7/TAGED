@@ -1,20 +1,37 @@
 <?php
 
-class Analysis
+/**
+ * Main analysis class
+ * @package TAGED
+ */
+class Analysis 
 {
+    
+    /*
+     * Utilisation attendue :
+     * $Truc = new Analysis ( $FilePath, $IsTest )
+     * $Truc->setAlgorithm ( $Algo );
+     * $Truc->prepare (); // Generate the SkyCube to for computation
+     * $Truc->compute (); // TAGED run on Each attribute of each Cuboide => Sub functions...
+     *
+     * $Truc->getDataSet ();
+     * $Truc->getSkyCube ();
+     * 
+     */
+    
     const FILE     = 'AggregateFile';
     const TABLE    = 'AggregateTable';
     const DBCLASS  = 'DBClass';
     const REL_COLS = 'RelationCols';
     const MES_COLS = 'MeasureCols';
     
-    const GAME_DB = array ( 
-        APP_NAME_COLLECTION   => 'TagedDBColl', 
+    const GAME_DB = array (
+        APP_NAME_COLLECTION   => 'TagedDBColl',
         APP_NAME_MATCH3       => 'TagedDBMatch3',
         APP_NAME_HACK_N_SLASH => 'TagedDBHnS'
     );
     
-    public function __construct ( $DescFile )
+    public function __construct ( $DescFile, $IsTest = FALSE )
     {
         $this->DescFile = $DescFile;
         $this->RequestFile  = NULL; 
@@ -24,8 +41,12 @@ class Analysis
         $this->MeasureCols  = NULL;
         $this->Runnable     = FALSE;
         $this->DescFilePath = AGGREGATE_FOLDER_DESC . $this->DescFile;
-        
-        $this->load ();
+        $this->Algorithm    = NULL;
+        $this->DataSet      = NULL;
+        $this->SkyCube      = NULL;
+        $this->Min          = array ();
+        $this->Max          = array ();
+        $this->IsTest       = $IsTest;
     }
     
     protected function load ()
@@ -38,39 +59,11 @@ class Analysis
             $this->RequestFile  = Arrays::getIfSet ( $AnalysisData, self::FILE,     NULL );
             $this->DBTable      = Arrays::getIfSet ( $AnalysisData, self::TABLE,    NULL );
             $this->DBClass      = Arrays::getIfSet ( $AnalysisData, self::DBCLASS,  NULL );
-            $this->RelationCols = Arrays::getIfSet ( $AnalysisData, self::REL_COLS, Arrays::EXPORT_COLUMN_NO_HEADER );
-            $this->MeasureCols  = Arrays::getIfSet ( $AnalysisData, self::MES_COLS, Arrays::EXPORT_COLUMN_NO_HEADER );
+            $RelationCols = Arrays::getIfSet ( $AnalysisData, self::REL_COLS, Arrays::EXPORT_COLUMN_NO_HEADER );
+            $MeasureCols  = Arrays::getIfSet ( $AnalysisData, self::MES_COLS, Arrays::EXPORT_COLUMN_NO_HEADER );
+            $this->RelationCols = self::explodeCols ( strtolower ( $RelationCols ) );
+            $this->MeasureCols  = self::explodeCols ( strtolower ( $MeasureCols  ) );
             
-        }
-    }
-    
-    protected function check ()
-    {
-        $this->Runnable = FALSE;
-        
-        if ( NULL == $this->DBClass )
-        {
-            Log::error ( "No DB defined for " . $this->DescFile . " cannot run analysis." );
-        }
-        
-        else if ( ( NULL == $this->DBTable ) && ( NULL == $this->RequestFile ) ) 
-        {
-            Log::error ( "No Table or Request File defined for " . $this->DescFile . " cannot run analysis." );
-        }
-        
-        else if ( '' == $this->RelationCols )
-        {
-            Log::error ( "No Columns for relation defined for " . $this->DescFile . " cannot run analysis." );
-        }
-        
-        else if ( '' == $this->MeasureCols )
-        {
-            Log::error ( "No Columns for measures defined for " . $this->DescFile . " cannot run analysis." );
-        }
-        
-        else
-        {
-            $this->Runnable = TRUE;
         }
     }
     
@@ -92,24 +85,58 @@ class Analysis
         return $Result;
     }
     
-    public function run ( $Algorithm, $M, $N )
+    protected function check ()
     {
-        $Result = FALSE;
-        $this->Result = '';
-        $this->check ();
+        $this->Runnable = FALSE;
         
-        if ( $this->Runnable )
+        if ( ( NULL == $this->DBTable ) && ( NULL == $this->RequestFile ) )
         {
-            $Message = "Executing analysis on " . $this->DescFile . " ($Algorithm)";
+            Log::error ( "No Table or Request File defined for " . $this->DescFile . " cannot run analysis." );
+        }
+        
+        else if ( NULL == $this->DataSet )
+        {
+            Log::error ( "No DataSet defined for " . $this->DescFile . " cannot run analysis." );
+        }
+        
+        else if ( '' == $this->RelationCols )
+        {
+            Log::error ( "No Columns for relation defined for " . $this->DescFile . " cannot run analysis." );
+        }
+        
+        else if ( '' == $this->MeasureCols )
+        {
+            Log::error ( "No Columns for measures defined for " . $this->DescFile . " cannot run analysis." );
+        }
+        
+        else
+        {
+            $this->Runnable = TRUE;
+        }
+    }
+    
+    public function prepare ()
+    {
+        $this->Name = basename ( $this->DescFile, '.ini' );
+        
+        if ( $this->IsTest )
+        {
+            $this->Name .= '_Test';
+            $this->DataSet      = $this->getTestData ();
+            $this->RelationCols = $this->getTestRelCols ();
+            $this->MeasureCols  = $this->getTestMesCols ();
+            $this->Min  = $this->getTestMin ();
+            $this->Max  = $this->getTestMax ();
+            $this->DBTable = 'osef'; // To pass check
+        }
+        else
+        {
+            $this->load ();
             
-            Log::info ( $Message );
-            $this->Result .= $Message . PHP_EOL;
-            
-            $Name = basename ( $this->DescFile, '.ini' ); 
             $TmpFolder = AGGREGATE_FOLDER_TMP . $Name . "/";
             $ResultFolder = AGGREGATE_FOLDER_RESULTS . $Name . "/";
             
-            if ( is_dir ( $TmpFolder ) ) 
+            if ( is_dir ( $TmpFolder ) )
             {
                 shell_exec ( "rm -Rf $TmpFolder" );
             }
@@ -118,207 +145,240 @@ class Analysis
             
             $AggregateFile = "$TmpFolder/aggregate";
             
-            $Aggregate = $this->getAggregateFile ( TRUE ) ;
-
-            $RelationCols = self::explodeCols ( strtolower ( $this->RelationCols ) );
-            $MeasureCols  = self::explodeCols ( strtolower ( $this->MeasureCols  ) );
+            $Aggregate = $this->getAggregateFile ( FALSE ) ;
             
+
             $NbTuples = $Aggregate->getNbTuples ();
             $NbAttributes = count ( $RelationCols );
             
-            $Aggregate->export ( $AggregateFile, $RelationCols, $MeasureCols, false );
+            $this->DataSet = $Aggregate->getData ( );
             
-            shell_exec ( "sed -i '1d' $AggregateFile.rel" );
-            shell_exec ( "sed -i '1d' $AggregateFile.mes" );
-            
-            $AlgoOpt = " -m$M -n$N"; 
-            
-            $Command = "$Algorithm $AggregateFile $NbAttributes $NbTuples $AlgoOpt";
-            
-            $this->Result .= shell_exec ( $Command . ' 2>&1' ) . PHP_EOL;
-
-            shell_exec ( "rm -Rf $ResultFolder" );
-            shell_exec ( "mv $TmpFolder $ResultFolder" );
-            
-            $Result = TRUE;
         }
-        else 
+        
+        $this->check ();
+        
+        if ( $this->Runnable )
         {
-            $this->Result = 'Analyse non valide' . PHP_EOL;
-            $Result = FALSE;
+            $this->SkyCube = new SkyCubeEmergent ( $this->DataSet, $this->RelationCols, $this->MeasureCols, Cuboide::TO_MIN );
         }
+    }
+    
+    public function cleanData ( $Data )
+    {
+        return str_replace ( array (';', ',', ' '), '_', $Data );
+    }
+    
+    protected $AttributeValues;
+    protected $AttributeIgnored;
+    
+    protected function convertToNumerics ( $Value, $Attribute )
+    {
+        $Result = $Value;
+        
+        $Attr = rtrim ( $Attribute, "0123456789" );
+        if ( ! isset ( $this->AttributeValues [$Attr] ) )
+        {
+            if ( is_numeric ( $Value ) )
+            {
+                $this->AttributeIgnored [$Attr] = TRUE;
+            }
+            else
+            {
+                $this->AttributeValues [$Attr] = array ();
+                $Result = 1;
+            }
+        }
+        elseif ( ! isset ( $this->AttributeIgnored [$Attr] ) )
+        {
+            $Result = array_search ( $Value, $this->AttributeValues [$Attr] );
+            if ( FALSE === $Result )
+            {
+                $Result = count ( $this->AttributeValues [$Attr] ) + 1;
+            }
+        }
+        
+        $this->AttributeValues [$Attr] [$Result] = $Value;
         
         return $Result;
     }
     
-    public function formatResult ()
+    protected function computeCuboideAttribute ( $CuboideID, $ColID, $Folder )
     {
-        $Name = basename ( $this->DescFile, '.ini' );
-        $ResultFolder = AGGREGATE_FOLDER_RESULTS . $Name . "/";
+//        echo __FILE__ . ':' . __LINE__ . " $CuboideID $ColID<br>";
+        $FileName   = $CuboideID . '-' . $ColID;
         
-        $FileBase = 'aggregate';
+        $Cuboide = $this->SkyCube->getCuboide ( $CuboideID );
+        $InputDataSet = $Cuboide->getDataSetFiltered ( );
+        $InputRowHeaders = $Cuboide->getRowHeadersFiltered ( );
         
-        $AggregateFile = "$ResultFolder/$FileBase";
+        $MeasureHeaders  = array ( $ColID . '1', $ColID . '2' );
+        $RelationHeaders = array_keys ( $InputRowHeaders [0] );
         
-        $CubeFile = "$AggregateFile.cube.emergent";
-        
-        clearstatcache (); // to prevent cache of file size
-        if ( file_exists ( $CubeFile ) && filesize ( $CubeFile ) )  // if file is not empty
+        foreach ( $RelationHeaders as $RowID => $ColumnName )
         {
-            // Load Field Translation
-            $Files = scandir ( $ResultFolder );
-            $TradFields = array ();
-            
-            foreach ( $Files as $File )
+            if ( strtolower ( $ColumnName ) == 'rowid' )
             {
-                $Attr = "$FileBase.attr.";
-                if ( Strings::compareSameSize ( $File, $Attr ) )
-                {
-                    $FieldName = substr ( $File, strlen ( $Attr ) );
-                    $TradFields [$FieldName] = parse_ini_file ( "$ResultFolder/$File" );
-                }
-            }
-            
-            //         echo '$TradFields ' . print_r ( $TradFields, TRUE ) . "<br>";
-            
-            // Get Fields
-            $RelFields = explode ( ',', $this->RelationCols );
-            $MesFields = explode ( ',', $this->MeasureCols  );
-            
-            $FieldNames = array_merge ( $RelFields, $MesFields );
-            
-            //         echo '$FieldNames ' . print_r ( $FieldNames, TRUE ) . "<br>";
-            
-            $this->Result  = HTML::startTable ( array ( 'class' => 'taged_stats' ));
-            $this->Result .= HTML::startTR ();
-            
-            // Compute an array of translation indexed by ordered fields
-            $Fields = array ();
-            foreach ( $FieldNames as $FieldName )
-            {
-                $Array = array ();
-                
-                $this->Result .= HTML::th ( $FieldName );
-                
-                $FieldName = rtrim ( $FieldName, "0123456789" );
-                
-                if ( isset ( $TradFields [$FieldName] ) ) $Array = $TradFields [$FieldName];
-                
-                $Fields [] = $Array;
-            }
-            $this->Result .= HTML::endTR ();
-            
-            //         echo '$Fields ' . print_r ( $Fields, TRUE ) . "<br>";
-            
-            // For each line of Cube, convert relevant fields
-            $CubeFile = fopen ( "$AggregateFile.cube.emergent", "r" );
-            if ( $CubeFile )
-            {
-                while ( ( $Line = fgets ( $CubeFile ) ) !== false )
-                {
-                    $Entries = explode ( ' ', $Line );
-                    $this->Result .= HTML::startTR ();
-                    
-                    foreach ( $Entries as $Num => $Entry )
-                    {
-                        $OutEntry = $Entry;
-                        if ( isset ( $Fields [$Num] [$Entry] ) ) $OutEntry = $Fields [$Num] [$Entry];
-                        
-                        if ( ':' != $OutEntry ) $this->Result .= HTML::td ( $OutEntry );
-                    }
-                    $this->Result .= HTML::endTR ();
-                }
-                
-                fclose ( $CubeFile );
-            }
-            
-            $this->Result .= HTML::endTable ();
-        }
-        
-        return $this->Result;
-    }
- 
-    protected function runCuboide ( $Cuboide, $Algorithm, $M, $N )
-    {
-        $DataSet    = $Cuboide->getDataSet ();
-        $RowHeaders = $Cuboide->getRowHeaders ();
-        $ColIDs     = array_flip ( $Cuboide->getColIDs () );
-        
-        $DataToProcess = array ();
-        $ColumnList = $this->getSkyCubeColumns ( );
-        
-        foreach ( $DataSet as $RowID => $Row )
-        {
-            foreach ( $ColumnList as $ColName => $ColIDList )
-            {
-                $Init = TRUE;
-                foreach ( $ColIDList as $ColHeader )
-                {
-                    if ( isset ( $ColIDs [ $ColHeader ] ) )
-                    {
-                        $ColID = $ColIDs [ $ColHeader ];
-                        if ( $Init )
-                        {
-                            $DataToProcess [$ColName] [$RowID] = $RowHeaders [$RowID];
-                            $Init = FALSE;
-                        }
-                        $DataToProcess [$ColName] [$RowID] [$ColID] = $DataSet [$RowID] [$ColID];
-                    }
-                }
+                unset ( $RelationHeaders [$RowID] );
             }
         }
         
-        foreach ( $DataToProcess as $ColName => $Data )
+        $Measures  = Arrays::getColumns ( $InputDataSet,    $MeasureHeaders  );
+        $Relations = Arrays::getColumns ( $InputRowHeaders, $RelationHeaders );
+        
+        $AlgoAnalysis = new IDEA ( $FileName, $Folder );
+        
+        $AlgoAnalysis->setAlgorithm ( $this->Algorithm );
+        
+        $AlgoAnalysis->setMin ( $this->Min [$ColID] ?? NULL );
+        $AlgoAnalysis->setMax ( $this->Max [$ColID] ?? NULL );
+        
+//         $AlgoAnalysis->setMin ( 35 );
+//         $AlgoAnalysis->setMax ( 90 );
+        $AlgoAnalysis->setMeasures  ( $Measures  );
+        $AlgoAnalysis->setRelations ( $Relations );
+        
+        $Results = $AlgoAnalysis->run ();
+        
+        foreach ( $Results as $Result )
         {
-            echo "Data to Process : " . $Cuboide->getID ( ) . " " . $ColName . "<br>";
-            echo HTML::tableFull ( $Data,  array ( 'border' => '1' ) );
+            $this->SkyCube->setEmergenceRatio ( $CuboideID, $ColID, $Result ['rel'], $Result ['ER'] );
         }
     }
-    
-    public function runSkyCube ( $Algorithm, $M, $N, $MinMax = Cuboide::TO_MAX )
-    {
-        $SkyCube = $this->getSkyCube ( TRUE, $MinMax );
         
-        if ( NULL != $SkyCube )
-        {
-            $SkCuboides = $SkyCube->getCuboides ();
-            foreach ( $SkCuboides as $Level => $Cuboides )
-            {
-                foreach ( $Cuboides as $Cuboide )
-                {
-                    $this->runCuboide ( $Cuboide, $Algorithm, $M, $N );
-                }
-            }
-        }
-    }
-    
-    public function getSkyCubeColumns ( )
+    protected function computeCuboide ( $CuboideID, $Folder )
     {
-        $Names = array ();
-        $MesCols = explode ( ',', $this->getMeasureCols () );
+//        echo __FILE__ . ':' . __LINE__ . " $CuboideID $Folder<br>";
+        $Cuboide = $this->SkyCube->getCuboide ( $CuboideID );
+        $ColIDs = $Cuboide->getColIDs ();
+        
+        $AnalysisColIDs = array ();
         $Ignore = array ();
-        foreach ( $MesCols as $ColHeader )
+        
+        //         Log::logVar ( '$MeasureCols', $MeasureCols );
+        
+        foreach ( $ColIDs as $ColID => $Osef )
         {
-            if ( ! in_array ( $ColHeader, $Ignore ) )
+            $LastChar = substr ( $ColID, -1 );
+            $BaseCol = substr ( $ColID, 0, -1 );
+            $Col2 = substr_replace ( $ColID, 2, -1 );
+            
+            if ( ! in_array ( $ColID, $Ignore ) )
             {
-                $LastChar = substr ( $ColHeader, -1 );
-                $Col2 = substr_replace ( $ColHeader, 2, -1 );
-                
-                if ( ( $LastChar == '1' ) && ( in_array ( $Col2, $MesCols ) ) )
+                if ( ( $LastChar == '1' ) && ( isset ( $ColIDs [$Col2] ) ) )
                 {
-                    $Names  [substr ( $ColHeader, 0, -1 )] = array ( $ColHeader, $Col2 );
+                    $AnalysisColIDs [] = $BaseCol;
                     $Ignore [] = $Col2;
                 }
-                else
+            }
+        }
+        
+        foreach ( $AnalysisColIDs as $ColID )
+        {
+            $this->computeCuboideAttribute ( $CuboideID, $ColID, $Folder );
+        }
+    }
+    
+    protected function generateAlgoInput ()
+    {
+        // Process all cuboides
+        // For each Tuple, insert into InputData with NULL to fill the blanks
+
+        $AlgoInputMeasures = array ();
+        $AlgoInputRelations = array ();
+        
+        // 1 list all columns
+        
+        // 2 for each Cuboide, fetch each row
+        
+        // If Row does not existe, create
+        
+        // If Row exists fill the blanks only
+        
+        
+        $Cuboides = $this->SkyCube->getCuboideIDs ( TRUE );
+        foreach ( $Cuboides as $Level => $CuboideIDs )
+        {
+            $CurrentLevel = '';
+            
+            foreach ( $CuboideIDs as $CuboideID )
+            {
+                $Cuboide = $this->SkyCube->getCuboide ( $CuboideID );
+                $InputDataSet = $Cuboide->getDataSetFiltered ( );
+                $InputRowHeaders = $Cuboide->getRowHeadersFiltered ( );
+                
+                //$MeasureHeaders  = array ( $ColID . '1', $ColID . '2' );
+                $RelationHeaders = array_keys ( $InputRowHeaders [0] );
+                
+                foreach ( $RelationHeaders as $RowID => $ColumnName )
                 {
-                    $Names  [$ColHeader] = array ( $ColHeader );
+                    if ( strtolower ( $ColumnName ) == 'rowid' )
+                    {
+                        unset ( $RelationHeaders [$RowID] );
+                    }
+                }
+                
+                //$Measures  = Arrays::getColumns ( $InputDataSet,    $MeasureHeaders  );
+                $Relations = Arrays::getColumns ( $InputRowHeaders, $RelationHeaders );
+                echo __METHOD__ . ' $InputDataSet ' . print_r ( $InputDataSet, TRUE ) . "<br>";
+                
+                foreach ( $InputDataSet as $RowID => $Row )
+                {
+                    foreach ( $Row as $ColID => $Measure )
+                    {
+                        if ( ! isset ( $AlgoInputMeasures [$RowID][$ColID] ) )
+                        {
+                            $AlgoInputMeasures [$RowID][$ColID] = $Measure;
+                            $AlgoInputRelations [$RowID] = $Relations[$RowID];
+                        }
+                    }
                 }
             }
         }
-        return $Names;
+        
+        echo __METHOD__ . ' Algo Input <pre>' . print_r ( $AlgoInputMeasures, TRUE ) . "</pre><br>";
+        echo __METHOD__ . ' Algo Input <pre>' . print_r ( $AlgoInputRelations, TRUE ) . "</pre><br>";
     }
     
-    
+    public function compute ()
+    {
+        $Result = FALSE;
+        $this->Result = '';
+        $this->check ();
+        
+        if ( $this->Runnable )
+        {
+            $Message = "Computing analysis on " . $this->DescFile . " ($this->Algorithm)";
+            
+            Log::info ( $Message );
+            
+           // echo $Message . "<br>";
+            
+            $this->Result .= $Message . PHP_EOL;
+            
+            $TmpFolder  = AGGREGATE_FOLDER_TMP . $this->Name . "/";
+            
+            if ( is_dir ( $TmpFolder ) )
+            {
+                shell_exec ( "rm -Rf $TmpFolder" );
+            }
+            
+            mkdir ( $TmpFolder );
+            
+          //  $this->generateAlgoInput ();
+            
+            $Cuboides = $this->SkyCube->getCuboideIDs ( TRUE );
+            foreach ( $Cuboides as $Level => $CuboideIDs )
+            {
+                $CurrentLevel = '';
+                
+                foreach ( $CuboideIDs as $CuboideID )
+                {
+                    $this->computeCuboide ( $CuboideID, $TmpFolder );
+                }
+            }
+        }
+    }
+        
     public function getResult ()
     {
         return $this->Result;
@@ -367,66 +427,128 @@ class Analysis
     protected function getTestData ()
     {
         $DataSet = array ();
-        $DataSet [] = array ( 'RowID' => 1, 'Type' => 'Feticheur', 'Propriete' => 'Vitesse', 'Parangon1' => 600, 'Rarete1' => 5,  'Gemmes1' => 30, 'Succes1' => 3,  'Parangon2' => 650, 'Rarete2' => 6,  'Gemmes2' => 40, 'Succes2' => 2 );
-        $DataSet [] = array ( 'RowID' => 2, 'Type' => 'Feticheur', 'Propriete' => 'Vitesse', 'Parangon1' => 900, 'Rarete1' => 5,  'Gemmes1' => 85, 'Succes1' => 7,  'Parangon2' => 950, 'Rarete2' => 6,  'Gemmes2' => 95, 'Succes2' => 6 );
-        $DataSet [] = array ( 'RowID' => 3, 'Type' => 'Sorciere',  'Propriete' => 'Chance',  'Parangon1' => 600, 'Rarete1' => 10, 'Gemmes1' => 50, 'Succes1' => 7,  'Parangon2' => 650, 'Rarete2' => 11, 'Gemmes2' => 60, 'Succes2' => 6 );
-        $DataSet [] = array ( 'RowID' => 4, 'Type' => 'Sorciere',  'Propriete' => 'Vitesse', 'Parangon1' => 100, 'Rarete1' => 10, 'Gemmes1' => 85, 'Succes1' => 5,  'Parangon2' => 150, 'Rarete2' => 11, 'Gemmes2' => 95, 'Succes2' => 4 );
-        $DataSet [] = array ( 'RowID' => 5, 'Type' => 'Croise',    'Propriete' => 'Chance',  'Parangon1' => 900, 'Rarete1' => 10, 'Gemmes1' => 50, 'Succes1' => 7,  'Parangon2' => 950, 'Rarete2' => 11, 'Gemmes2' => 60, 'Succes2' => 6 );
+//         $DataSet [] = array ( 'RowId' => 1, 'Format' => 'Gen 1 OU', 'Joueur' => '065;103;065', 'Adversaire' => '065;143;065', 'Rarete' => 5, 'Duree1' => 20, 'Echec1' => 30, 'Duree2' => 22, 'Echec2' => 32 );
+//         $DataSet [] = array ( 'RowId' => 2, 'Format' => 'Gen 1 OU', 'Joueur' => '065;113;143', 'Adversaire' => '065;103;065', 'Rarete' => 4, 'Duree1' => 60, 'Echec1' => 50, 'Duree2' => 64, 'Echec2' => 53 );
+//         $DataSet [] = array ( 'RowId' => 3, 'Format' => 'Gen 1 OU', 'Joueur' => '121;113;121', 'Adversaire' => '065;103;065', 'Rarete' => 5, 'Duree1' => 30, 'Echec1' => 40, 'Duree2' => 33, 'Echec2' => 45 );
+//         $DataSet [] = array ( 'RowId' => 4, 'Format' => 'Gen 1 OU', 'Joueur' => '065;143;065', 'Adversaire' => '121;113;143', 'Rarete' => 1, 'Duree1' => 80, 'Echec1' => 40, 'Duree2' => 87, 'Echec2' => 44 );
+//         $DataSet [] = array ( 'RowId' => 5, 'Format' => 'Gen 1 OU', 'Joueur' => '121;113;128', 'Adversaire' => '121;113;121', 'Rarete' => 5, 'Duree1' => 90, 'Echec1' => 60, 'Duree2' => 98, 'Echec2' => 66 );
+//         $DataSet [] = array ( 'RowId' => 6, 'Format' => 'Gen 1 OU', 'Joueur' => '121;113;103', 'Adversaire' => '121;113;121', 'Rarete' => 9, 'Duree1' => 30, 'Echec1' => 50, 'Duree2' => 36, 'Echec2' => 54 );
+//         $DataSet [] = array ( 'RowId' => 7, 'Format' => 'Gen 1 OU', 'Joueur' => '065;113;143', 'Adversaire' => '065;113;143', 'Rarete' => 7, 'Duree1' => 80, 'Echec1' => 60, 'Duree2' => 81, 'Echec2' => 63 );
+//         $DataSet [] = array ( 'RowId' => 8, 'Format' => 'Gen 1 OU', 'Joueur' => '121;113;080', 'Adversaire' => '065;143;065', 'Rarete' => 9, 'Duree1' => 90, 'Echec1' => 70, 'Duree2' => 92, 'Echec2' => 75 );
+
+//         $DataSet [] = array ( 'RowId' =>  1, 'Format' => 'Gen 1 OU', 'Joueur' => 'A', 'Adversaire' => 'D', 'Rarete' => 5, 'Duree1' => 20, 'Echec1' => 30, 'Duree2' => 25, 'Echec2' => 35 );
+//         $DataSet [] = array ( 'RowId' =>  2, 'Format' => 'Gen 1 OU', 'Joueur' => 'B', 'Adversaire' => 'E', 'Rarete' => 4, 'Duree1' => 60, 'Echec1' => 50, 'Duree2' => 65, 'Echec2' => 55 );
+//         $DataSet [] = array ( 'RowId' =>  3, 'Format' => 'Gen 1 OU', 'Joueur' => 'B', 'Adversaire' => 'F', 'Rarete' => 5, 'Duree1' => 30, 'Echec1' => 40, 'Duree2' => 35, 'Echec2' => 45 );
+//         $DataSet [] = array ( 'RowId' =>  4, 'Format' => 'Gen 1 OU', 'Joueur' => 'B', 'Adversaire' => 'A', 'Rarete' => 1, 'Duree1' => 80, 'Echec1' => 40, 'Duree2' => 85, 'Echec2' => 45 );
+//         $DataSet [] = array ( 'RowId' =>  5, 'Format' => 'Gen 1 OU', 'Joueur' => 'C', 'Adversaire' => 'A', 'Rarete' => 5, 'Duree1' => 90, 'Echec1' => 60, 'Duree2' => 95, 'Echec2' => 65 );
+//         $DataSet [] = array ( 'RowId' =>  6, 'Format' => 'Gen 1 OU', 'Joueur' => 'C', 'Adversaire' => 'B', 'Rarete' => 9, 'Duree1' => 30, 'Echec1' => 50, 'Duree2' => 35, 'Echec2' => 55 );
+//         $DataSet [] = array ( 'RowId' =>  7, 'Format' => 'Gen 1 OU', 'Joueur' => 'D', 'Adversaire' => 'B', 'Rarete' => 7, 'Duree1' => 80, 'Echec1' => 60, 'Duree2' => 85, 'Echec2' => 65 );
+//         $DataSet [] = array ( 'RowId' =>  8, 'Format' => 'Gen 1 OU', 'Joueur' => 'D', 'Adversaire' => 'C', 'Rarete' => 9, 'Duree1' => 90, 'Echec1' => 70, 'Duree2' => 95, 'Echec2' => 75 );
+        
+//         $DataSet [] = array ( 'RowId' =>  9, 'Format' => 'Gen 1 OU', 'Joueur' => 'E', 'Adversaire' => 'D', 'Rarete' => 5, 'Duree1' => 20, 'Echec1' => 50, 'Duree2' => 30, 'Echec2' => 55 );
+//         $DataSet [] = array ( 'RowId' => 10, 'Format' => 'Gen 1 OU', 'Joueur' => 'E', 'Adversaire' => 'E', 'Rarete' => 4, 'Duree1' => 60, 'Echec1' => 30, 'Duree2' => 65, 'Echec2' => 40 );
+// C        065;143;065 1
+// B        065;103;065 4
+// A        121;113;128 5
+// E        065;113;143 7
+// D        121;113;080 9
+        
+// F        121;113;121 5
+//         121;113;103 9
+        
+//         $DataSet [] = array ( 'RowId' =>  1, 'Format' => 'Gen 1 OU', 'Joueur' => 'A', 'Adversaire' => 'D', 'Rarete' => 5, 'Duree1' => 20, 'Echec1' => 30, 'Duree2' => 25, 'Echec2' => 35 );
+//         $DataSet [] = array ( 'RowId' =>  2, 'Format' => 'Gen 1 OU', 'Joueur' => 'B', 'Adversaire' => 'E', 'Rarete' => 4, 'Duree1' => 60, 'Echec1' => 50, 'Duree2' => 65, 'Echec2' => 55 );
+//         $DataSet [] = array ( 'RowId' =>  3, 'Format' => 'Gen 1 OU', 'Joueur' => 'B', 'Adversaire' => 'F', 'Rarete' => 4, 'Duree1' => 30, 'Echec1' => 40, 'Duree2' => 35, 'Echec2' => 45 );
+//         $DataSet [] = array ( 'RowId' =>  4, 'Format' => 'Gen 1 OU', 'Joueur' => 'B', 'Adversaire' => 'A', 'Rarete' => 4, 'Duree1' => 80, 'Echec1' => 40, 'Duree2' => 85, 'Echec2' => 45 );
+//         $DataSet [] = array ( 'RowId' =>  5, 'Format' => 'Gen 1 OU', 'Joueur' => 'C', 'Adversaire' => 'A', 'Rarete' => 1, 'Duree1' => 90, 'Echec1' => 60, 'Duree2' => 95, 'Echec2' => 65 );
+//         $DataSet [] = array ( 'RowId' =>  6, 'Format' => 'Gen 1 OU', 'Joueur' => 'C', 'Adversaire' => 'B', 'Rarete' => 1, 'Duree1' => 30, 'Echec1' => 50, 'Duree2' => 35, 'Echec2' => 55 );
+//         $DataSet [] = array ( 'RowId' =>  7, 'Format' => 'Gen 1 OU', 'Joueur' => 'D', 'Adversaire' => 'B', 'Rarete' => 9, 'Duree1' => 80, 'Echec1' => 60, 'Duree2' => 85, 'Echec2' => 65 );
+//         $DataSet [] = array ( 'RowId' =>  8, 'Format' => 'Gen 1 OU', 'Joueur' => 'D', 'Adversaire' => 'C', 'Rarete' => 9, 'Duree1' => 90, 'Echec1' => 70, 'Duree2' => 95, 'Echec2' => 75 );
+        
+//         $DataSet [] = array ( 'RowId' =>  9, 'Format' => 'Gen 1 OU', 'Joueur' => 'E', 'Adversaire' => 'D', 'Rarete' => 7, 'Duree1' => 20, 'Echec1' => 50, 'Duree2' => 30, 'Echec2' => 55 );
+//         $DataSet [] = array ( 'RowId' => 10, 'Format' => 'Gen 1 OU', 'Joueur' => 'E', 'Adversaire' => 'E', 'Rarete' => 7, 'Duree1' => 60, 'Echec1' => 30, 'Duree2' => 65, 'Echec2' => 40 );
+// A D 5 => 121, 113, 128
+// B E 4 => 065, 103, 065
+// B F 4 => 065, 103, 065
+// B A 4 => 065, 103, 065
+// C A 1 => 121, 113, 080
+// C B 1 => 121, 113, 080
+// D B 9 => 065, 113, 143
+// D C 9 => 065, 113, 143
+// E D 7 => 065, 143, 065
+// E E 7 => 065, 143, 065
+        
+        
+//         $DataSet [] = array ( 'RowId' =>  1, 'Format' => 'Gen 1 OU', 'Joueur' => '121, 113, 128', 'Adversaire' => '065, 113, 143', 'Rarete' => 5, 'Duree1' => 20, 'Echec1' => 30, 'Duree2' => 25, 'Echec2' => 30 );
+//         $DataSet [] = array ( 'RowId' =>  2, 'Format' => 'Gen 1 OU', 'Joueur' => '065, 103, 065', 'Adversaire' => '065, 143, 065', 'Rarete' => 4, 'Duree1' => 60, 'Echec1' => 50, 'Duree2' => 65, 'Echec2' => 45 );
+//         $DataSet [] = array ( 'RowId' =>  3, 'Format' => 'Gen 1 OU', 'Joueur' => '065, 103, 065', 'Adversaire' => '121, 113, 121', 'Rarete' => 4, 'Duree1' => 30, 'Echec1' => 40, 'Duree2' => 35, 'Echec2' => 30 );
+//         $DataSet [] = array ( 'RowId' =>  4, 'Format' => 'Gen 1 OU', 'Joueur' => '065, 103, 065', 'Adversaire' => '121, 113, 128', 'Rarete' => 4, 'Duree1' => 80, 'Echec1' => 40, 'Duree2' => 85, 'Echec2' => 50 );
+//         $DataSet [] = array ( 'RowId' =>  5, 'Format' => 'Gen 1 OU', 'Joueur' => '121, 113, 080', 'Adversaire' => '121, 113, 128', 'Rarete' => 1, 'Duree1' => 90, 'Echec1' => 60, 'Duree2' => 95, 'Echec2' => 70 );
+//         $DataSet [] = array ( 'RowId' =>  6, 'Format' => 'Gen 1 OU', 'Joueur' => '121, 113, 080', 'Adversaire' => '065, 103, 065', 'Rarete' => 1, 'Duree1' => 30, 'Echec1' => 50, 'Duree2' => 35, 'Echec2' => 30 );
+//         $DataSet [] = array ( 'RowId' =>  7, 'Format' => 'Gen 1 OU', 'Joueur' => '065, 113, 143', 'Adversaire' => '065, 103, 065', 'Rarete' => 9, 'Duree1' => 80, 'Echec1' => 60, 'Duree2' => 85, 'Echec2' => 50 );
+//         $DataSet [] = array ( 'RowId' =>  8, 'Format' => 'Gen 1 OU', 'Joueur' => '065, 113, 143', 'Adversaire' => '121, 113, 080', 'Rarete' => 9, 'Duree1' => 80, 'Echec1' => 70, 'Duree2' => 95, 'Echec2' => 70 );
+//         $DataSet [] = array ( 'RowId' =>  9, 'Format' => 'Gen 1 OU', 'Joueur' => '065, 143, 065', 'Adversaire' => '065, 113, 143', 'Rarete' => 7, 'Duree1' => 20, 'Echec1' => 50, 'Duree2' => 25, 'Echec2' => 30 );
+//         $DataSet [] = array ( 'RowId' => 10, 'Format' => 'Gen 1 OU', 'Joueur' => '065, 143, 065', 'Adversaire' => '065, 143, 065', 'Rarete' => 7, 'Duree1' => 60, 'Echec1' => 30, 'Duree2' => 65, 'Echec2' => 45 );
+        $A = 'A'; // '121, 113, 006'
+        $B = 'B'; // '065, 103, 065'
+        $C = 'C'; // '121, 113, 080'
+        $D = 'D'; // '065, 113, 143'
+        $E = 'E'; // '065, 040, 065'
+        $F = 'F'; // '121, 113, 121'
+
+        
+        $DataSet [] = array ( 'RowId' =>  1, 'Format' => 'UU', 'Joueur' => $A, 'Adversaire' => $D, 'Rarete' => 5, 'Duree1' => 25, 'Echec1' => 30, 'Duree2' => 20, 'Echec2' => 30 );
+        $DataSet [] = array ( 'RowId' =>  2, 'Format' => 'OU', 'Joueur' => $B, 'Adversaire' => $E, 'Rarete' => 4, 'Duree1' => 65, 'Echec1' => 50, 'Duree2' => 60, 'Echec2' => 45 );
+        $DataSet [] = array ( 'RowId' =>  3, 'Format' => 'OU', 'Joueur' => $B, 'Adversaire' => $F, 'Rarete' => 4, 'Duree1' => 35, 'Echec1' => 40, 'Duree2' => 30, 'Echec2' => 30 );
+        $DataSet [] = array ( 'RowId' =>  4, 'Format' => 'OU', 'Joueur' => $B, 'Adversaire' => $A, 'Rarete' => 4, 'Duree1' => 85, 'Echec1' => 40, 'Duree2' => 80, 'Echec2' => 50 );
+        $DataSet [] = array ( 'RowId' =>  5, 'Format' => 'OU', 'Joueur' => $C, 'Adversaire' => $A, 'Rarete' => 1, 'Duree1' => 95, 'Echec1' => 60, 'Duree2' => 90, 'Echec2' => 70 );
+        $DataSet [] = array ( 'RowId' =>  6, 'Format' => 'OU', 'Joueur' => $C, 'Adversaire' => $B, 'Rarete' => 1, 'Duree1' => 35, 'Echec1' => 50, 'Duree2' => 30, 'Echec2' => 30 );
+        $DataSet [] = array ( 'RowId' =>  7, 'Format' => 'OU', 'Joueur' => $D, 'Adversaire' => $B, 'Rarete' => 9, 'Duree1' => 85, 'Echec1' => 60, 'Duree2' => 80, 'Echec2' => 50 );
+        $DataSet [] = array ( 'RowId' =>  8, 'Format' => 'OU', 'Joueur' => $D, 'Adversaire' => $C, 'Rarete' => 9, 'Duree1' => 85, 'Echec1' => 70, 'Duree2' => 90, 'Echec2' => 70 );
+        $DataSet [] = array ( 'RowId' =>  9, 'Format' => 'UU', 'Joueur' => $E, 'Adversaire' => $D, 'Rarete' => 7, 'Duree1' => 25, 'Echec1' => 50, 'Duree2' => 20, 'Echec2' => 30 );
+        $DataSet [] = array ( 'RowId' => 10, 'Format' => 'UU', 'Joueur' => $E, 'Adversaire' => $E, 'Rarete' => 7, 'Duree1' => 65, 'Echec1' => 30, 'Duree2' => 60, 'Echec2' => 45 );
+        
         return $DataSet;
     }
     
     protected function getTestMesCols ()
     {
         $MesCols = array ();
-        $MesCols [] = 'Parangon1';
-        $MesCols [] = 'Rarete1';
-        $MesCols [] = 'Gemmes1';
-        $MesCols [] = 'Succes1';
-        $MesCols [] = 'Parangon2';
-        $MesCols [] = 'Rarete2';
-        $MesCols [] = 'Gemmes2';
-        $MesCols [] = 'Succes2';
+        $MesCols [] = 'Rarete';
+        $MesCols [] = 'Duree1';
+        $MesCols [] = 'Echec1';
+        $MesCols [] = 'Duree2';
+        $MesCols [] = 'Echec2';
         return $MesCols;
     }
     
     protected function getTestRelCols ()
     {
         $RelCols = array ();
-        $RelCols [] = 'RowID';
-        $RelCols [] = 'Type';
-        $RelCols [] = 'Propriete';
+        $RelCols [] = 'RowId';
+        $RelCols [] = 'Format';
+        $RelCols [] = 'Joueur';
+        $RelCols [] = 'Adversaire';
         return $RelCols;
     }
     
-    public function getSkyCube ( $AsNumerics = FALSE, $MinMax = Cuboide::TO_MAX, $Bidon = FALSE )
+    protected function getTestMin ()
     {
-        $SkyCube = NULL;
-        
-        $Aggregate = $this->getAggregateFile ( $AsNumerics ) ;
-        
-        if ( $Bidon )
-        {
-            $DataSet = $this->getTestData ();
-            $RelCols = $this->getTestRelCols ();
-            $MesCols = $this->getTestMesCols ();
-        }
-        else
-        {
-            $DataSet = $Aggregate->getData ();
-            $RelCols = explode ( ',', $this->getRelationCols () );
-            $MesCols = explode ( ',', $this->getMeasureCols () );
-        }
-        
-        $SkyCube = new SkyCubeEmergent ( $DataSet, $RelCols, $MesCols, $MinMax );
-        
-        return $SkyCube;
+        return array ( 'B' => 0, 'C' => 0 );
     }
     
+    protected function getTestMax ()
+    {
+        return array ( 'B' => 700, 'C' => 500 );
+    }
+    
+   
     public function getRequestFile  () { return $this->RequestFile ; }
     public function getDBTable      () { return $this->DBTable     ; }
     public function getDBClass      () { return $this->DBClass     ; }
     public function getRelationCols () { return $this->RelationCols; }
     public function getMeasureCols  () { return $this->MeasureCols ; }
+    public function getSkyCube      () { return $this->SkyCube ; }
     
     public function setRequestFile  ( $NewValue ) { $this->RequestFile  = $NewValue; }
     public function setDBTable      ( $NewValue ) { $this->DBTable      = $NewValue; }
@@ -434,6 +556,10 @@ class Analysis
     public function setRelationCols ( $NewValue ) { $this->RelationCols = $NewValue; }
     public function setMeasureCols  ( $NewValue ) { $this->MeasureCols  = $NewValue; }
     
+    public function setMin ( $NewValue ) { $this->Min = $NewValue; }
+    public function setMax ( $NewValue ) { $this->Max = $NewValue; }
+    
+    public function setAlgorithm ( $Algo ) { $this->Algorithm = $Algo; }
     public function write ( )
     {
         $Content = '';
@@ -456,6 +582,11 @@ class Analysis
     protected $MeasureCols;
     protected $Runnable;
     protected $Result;
+    protected $Algorithm;
+    protected $SkyCube;
+    protected $Min;
+    protected $Max;
+    protected $IsTest;
 }
 
 

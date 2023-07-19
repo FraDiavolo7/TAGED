@@ -1,5 +1,9 @@
 <?php
 
+/**
+ *
+ * @package TAGED\Pages
+ */
 class PageRunAnalysis extends TagedPage
 {
     const RAN_AGGREGATE = 'ran_aggregate';
@@ -63,7 +67,7 @@ class PageRunAnalysis extends TagedPage
     	
     	if ( '' != $this->Aggregate )
     	{
-    	    $this->AggregateObj = new AnalysisTest ( $this->Aggregate . '.ini', $this->Test );
+    	    $this->AggregateObj = new Analysis ( $this->Aggregate . '.ini', $this->Test );
     	    $this->AggregateObj->prepare ( );
     	}
     	

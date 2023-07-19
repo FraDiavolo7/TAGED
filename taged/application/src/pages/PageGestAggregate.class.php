@@ -1,5 +1,9 @@
 <?php
 
+/**
+ *
+ * @package TAGED\Pages
+ */
 class PageGestAggregate extends TagedPage
 {
     const GAG_AGGREGATE = 'gag_aggregate';

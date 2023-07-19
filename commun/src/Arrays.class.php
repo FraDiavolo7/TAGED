@@ -1,7 +1,8 @@
 <?php
 
-/** 
- * 
+/**
+ *
+ * @package Commun
  */
 abstract class Arrays  
 {

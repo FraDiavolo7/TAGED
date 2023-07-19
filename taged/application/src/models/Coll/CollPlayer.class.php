@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Collection Player Data
+ * @package TAGED\Models\Collection
+ */
 class CollPlayer 
 {
     const TABLE  = 'utilisateur';

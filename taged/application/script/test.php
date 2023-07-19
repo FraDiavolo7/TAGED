@@ -1,5 +1,8 @@
 #!/usr/bin/php
 <?php
+/**
+ * @package TAGED\Scripts
+ */
 
 include '/opt/taged/taged/commun/src/Arrays.class.php';
 

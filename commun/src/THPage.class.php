@@ -1,5 +1,9 @@
 <?php
 
+/**
+ *
+ * @package Commun
+ */
 class THPage extends BasicPage
 {
     use Connection;
