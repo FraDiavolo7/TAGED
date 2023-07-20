@@ -1,5 +1,9 @@
 <?php
 
+/**
+ *
+ * @package Commun
+ */
 class THWS extends BasicWS
 {
     use Connection;

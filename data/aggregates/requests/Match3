@@ -1,0 +1,44 @@
+WITH
+TOM3 AS (
+    SELECT CASE WHEN (TD.Heure <= 8) THEN 'Nuit' ELSE 'Jour' END AS Classement,
+	TD.BeamParCoup AS BeamParCoup,
+    TD.CouleurJouee AS CouleurJouee,
+    ROUND ( AVG (TD.ScoreParCoup) ) as ScoreParCoup, 
+    ROUND ( AVG (TD.Duree)) AS Duree
+    FROM vw_match3 TD
+    GROUP BY Classement, BeamParCoup, CouleurJouee
+	HAVING COUNT(*) > 1
+),
+TNovice AS ( 
+SELECT 
+	TDN.BeamParCoup AS BeamParCoup,
+    TDN.CouleurJouee AS CouleurJouee, 
+	TDN.ScoreParCoup AS ScoreParCoup1,
+	TDN.Duree AS Duree1
+FROM (SELECT * FROM TOM3 WHERE Classement = 'Jour') TDN
+GROUP BY BeamParCoup, CouleurJouee, ScoreParCoup1, Duree1
+),
+TExpert AS (
+SELECT 
+	TDN.BeamParCoup AS BeamParCoup,
+	TDN.CouleurJouee AS CouleurJouee,
+    TDN.ScoreParCoup AS ScoreParCoup2, 
+	TDN.Duree AS Duree2
+FROM (SELECT * FROM TOM3 WHERE Classement = 'Nuit') TDN
+GROUP BY BeamParCoup, CouleurJouee, ScoreParCoup2, Duree2
+),
+TMain AS (
+SELECT 
+    COALESCE (TNovice.BeamParCoup, TExpert.BeamParCoup) AS BeamParCoup,
+    COALESCE (TNovice.CouleurJouee, TExpert.CouleurJouee) AS CouleurJouee,
+	ScoreParCoup1,
+	ScoreParCoup2,
+	Duree1,
+	Duree2
+FROM TNovice FULL OUTER JOIN TExpert ON TNovice.BeamParCoup = TExpert.BeamParCoup AND TNovice.CouleurJouee = TExpert.CouleurJouee
+GROUP BY TNovice.BeamParCoup, TNovice.CouleurJouee, TExpert.BeamParCoup, TExpert.CouleurJouee, ScoreParCoup1, ScoreParCoup2, Duree1, Duree2
+)
+SELECT TMain.BeamParCoup, TMain.CouleurJouee, ScoreParCoup1, ScoreParCoup2, Duree1, Duree2
+FROM TMain INNER JOIN vw_match3 ON TMain.BeamParCoup = vw_match3.BeamParCoup
+GROUP BY TMain.BeamParCoup, TMain.CouleurJouee, ScoreParCoup1, ScoreParCoup2, Duree1, Duree2
+ORDER BY TMain.BeamParCoup, TMain.CouleurJouee;

@@ -1,5 +1,9 @@
 <?php
 
+/**
+ *
+ * @package Commun
+ */
 class Form
 {
 	public static function getData ( $Name, $Default = '', $Data = NULL )

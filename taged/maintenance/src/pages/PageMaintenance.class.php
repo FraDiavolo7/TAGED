@@ -1,5 +1,9 @@
 <?php
 
+/**
+ *
+ * @package TAGED\Maintenance
+ */
 class PageMaintenance extends BasicPage
 {
 	const PAGE_SELECTOR = 'sel';

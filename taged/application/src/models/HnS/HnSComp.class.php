@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Hack'N Slash Competence Data
+ * @package TAGED\Models\HackNSlash
+ */
 class HnsComp 
 {
     const TABLE = 'comp';

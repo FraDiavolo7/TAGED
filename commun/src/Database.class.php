@@ -1,8 +1,8 @@
 <?php
 
-/** 
- * @author uidq3545
+/**
  * 
+ * @package Commun
  */
 abstract class Database
 {

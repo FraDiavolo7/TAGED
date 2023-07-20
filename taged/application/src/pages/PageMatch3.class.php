@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Redirection to Match 3 game
+ * @package TAGED\Pages
+ */
 class PageMatch3 extends TagedPage
 {
 	public function __construct ( $InputData = NULL )

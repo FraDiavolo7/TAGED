@@ -1,5 +1,8 @@
 #!/bin/php
 <?php
+/**
+ * @package TAGED\Scripts
+ */
 
 // Lancé avec comme argument quelle ensemble de données doit être utlisé. 
 // Ce nom correspond à un fichier dans le dossier analysis

@@ -11,6 +11,8 @@
 
 /**
  * @author Mickaël Martin-Nevot
+ * @deprecated
+ * @package Deprecated
  */
 
 class ReplayParser {

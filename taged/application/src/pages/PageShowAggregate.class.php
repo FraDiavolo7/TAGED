@@ -1,5 +1,9 @@
 <?php
 
+/**
+ *
+ * @package TAGED\Pages
+ */
 class PageShowAggregate extends TagedPage
 {
     const SHOW_AGGREGATE = 'change_aggregate';

@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Basic page for a Taged WebService
+ * @package TAGED
+ */
 class TagedWS extends THWS
 {
 	const WS_SELECTOR = 'sel';

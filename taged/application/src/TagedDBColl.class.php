@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * @package TAGED
+ */
 class TagedDBColl extends Database
 {
     protected static $DBserver = "pgsql:host=localhost;port=5432;dbname=taged_collection";

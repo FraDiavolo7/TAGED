@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Default WebService (doing nothing)
+ * @package TAGED\WebServices
+ */
 class WSDefault extends TagedWS
 {
 	public function __construct ( $InputData = NULL )

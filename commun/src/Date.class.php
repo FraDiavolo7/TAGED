@@ -1,5 +1,9 @@
 <?php
 
+/**
+ *
+ * @package Commun
+ */
 class Date
 {
     public static function getDateHTML ( )

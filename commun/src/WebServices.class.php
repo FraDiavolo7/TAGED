@@ -1,5 +1,9 @@
 <?php
 
+/**
+ *
+ * @package Commun
+ */
 class WebServices
 {
 	public static function handle ( $WSName, $Data = NULL )

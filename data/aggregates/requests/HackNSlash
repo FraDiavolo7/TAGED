@@ -1,0 +1,53 @@
+WITH
+TDiablo3 AS (
+    SELECT CASE WHEN (TD.Parangon <= 4000) THEN 'Novice' ELSE 'Expert' END AS Classement,
+ TD.Serveur AS Serveur,
+    TD.Classe AS Classe,
+    TD.Build AS Build,
+    AVG (TD.Rang) as Rang, 
+    AVG (TD.Faille) AS Faille,
+ AVG (TD.TempsFaille) AS TempsFaille
+    FROM vw_diablo3 TD
+    GROUP BY Classement, Serveur, Classe, Build
+ HAVING COUNT(*) > 1
+),
+TNovice as ( 
+SELECT 
+ TDN.Serveur AS Serveur,
+ TDN.Classe AS Classe,
+    TDN.Build AS Build, 
+ TDN.Rang AS Rang1,
+ TDN.Faille AS Faille1,
+ TDN.TempsFaille AS TempsFaille1
+FROM (SELECT * FROM TDiablo3 WHERE Classement = 'Novice') TDN
+GROUP BY Serveur, Classe, Build, Rang1, Faille1, TempsFaille1
+),
+TExpert as (
+SELECT 
+ TDN.Serveur AS Serveur,
+ TDN.Classe AS Classe,
+    TDN.Build AS Build, 
+ TDN.Rang AS Rang2,
+ TDN.Faille AS Faille2,
+ TDN.TempsFaille AS TempsFaille2
+FROM (SELECT * FROM TDiablo3 WHERE Classement = 'Expert') TDN
+GROUP BY Serveur, Classe, Build, Rang2, Faille2, TempsFaille2
+),
+TMain AS (
+SELECT 
+    COALESCE (TNovice.Serveur, TExpert.Serveur) AS Serveur,
+    COALESCE (TNovice.Classe, TExpert.Classe) AS Classe,
+    COALESCE (TNovice.Build, TExpert.Build) AS Build,
+ Rang1,
+ Rang2,
+ Faille1,
+ Faille2,
+ TempsFaille1,
+ TempsFaille2
+FROM TNovice FULL OUTER JOIN TExpert ON TNovice.Serveur = TExpert.Serveur AND TNovice.Classe = TExpert.Classe AND TNovice.Build = TExpert.Build
+GROUP BY TNovice.Serveur, TNovice.Classe, TNovice.Build, TExpert.Serveur, TExpert.Classe, TExpert.Build, Rang1, Rang2, Faille1, Faille2, TempsFaille1, TempsFaille2
+)
+SELECT TMain.Serveur, TMain.Classe, TMain.Build, Rang1, Rang2, Faille1, Faille2, TempsFaille1, TempsFaille2
+FROM TMain INNER JOIN vw_diablo3 ON TMain.Build = vw_diablo3.Build
+GROUP BY TMain.Serveur, TMain.Classe, TMain.Build, Rang1, Rang2, Faille1, Faille2, TempsFaille1, TempsFaille2
+ORDER BY TMain.Serveur, TMain.Classe, TMain.Build;

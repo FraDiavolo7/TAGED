@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Handling all Cuboide related computation
+ * @package TAGED\Algo
+ */
 class Cuboide extends CuboideBase
 {
     const TO_MAX = 'max';

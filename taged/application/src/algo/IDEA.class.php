@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Handles the IDEA program running and results
+ * @package TAGED\Algo
+ */
 class IDEA
 {
     public function __construct ( $Name, $Folder )

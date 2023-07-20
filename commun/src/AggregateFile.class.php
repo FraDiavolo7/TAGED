@@ -1,5 +1,9 @@
 <?php
 
+/**
+ *
+ * @package Commun
+ */
 class AggregateFile extends Aggregate
 {
     protected static $Folder = AGGREGATE_FOLDER_REQUESTS;

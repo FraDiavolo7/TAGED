@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Match3 WebService
+ * 
+ * Handle all Match 3 data comming from Match 3
+ * @package TAGED\WebServices
+ */
 class WSMatch3 extends TagedWS
 {
     const WS_M3_DATA = 'data';

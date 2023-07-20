@@ -1,5 +1,9 @@
 <?php
 
+/**
+ *
+ * @package TAGED\Pages
+ */
 class PageShowSkyCube extends TagedPage
 {
     const SHOW_AGGREGATE = 'sskc_aggregate';

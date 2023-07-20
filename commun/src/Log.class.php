@@ -1,5 +1,9 @@
 <?php
 
+/**
+ *
+ * @package Commun
+ */
 class Log
 {
 	const ERROR   = 'ERROR  ';

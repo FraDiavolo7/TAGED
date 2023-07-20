@@ -1,5 +1,8 @@
 #!/bin/php
 <?php
+/**
+ * @package TAGED\Scripts
+ */
 # This script retrieves all Hero URL from le Diablo 3 Ladder for each servers and each class
 
 include '../src/define.php';

@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Class handling an Emergent Cuboide
+ *
+ * Composed of 2 Cuboide, presenting the initial state and the final state of the data
+ * @package TAGED\Algo
+ */
 class CuboideEmergent extends CuboideBase
 {
     const CURRENT = '';

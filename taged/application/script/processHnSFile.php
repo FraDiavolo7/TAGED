@@ -1,5 +1,8 @@
 #!/usr/bin/php
 <?php
+/**
+ * @package TAGED\Scripts
+ */
 # This script is meant to process a Hero URL file and DL the 
 
 $File=realpath ( $argv[1] ); // absolute path

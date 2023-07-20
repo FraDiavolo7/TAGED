@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Class computing a Cuboide using the BNL algorithm
+ * @package TAGED\Algo
+ */
 class CuboideBlocNestedLoop extends Cuboide
 {
     const CURRENT = '';
@@ -56,15 +60,16 @@ class CuboideBlocNestedLoop extends Cuboide
     
     public function computeCuboide ( )
     {
-        $Skyline = array ( 0 => 0 );
+        $FirstID = array_key_first ( $this->RowIDsInput );
+        $Skyline = array ( $FirstID => $FirstID );
         
         if ( $this->ID == self::CURRENT ) echo "Skyline " . __LINE__  . " " . print_r ( $Skyline, TRUE ) . "<br>";
         
         foreach ( $this->RowIDsInput as $RowID )
         {
             $Row = $this->DataSet [$RowID];
-            if ( $RowID == 0 ) continue;
-            if ( $this->ID == self::CURRENT ) echo "RowID $RowID<br>";
+            if ( $RowID == $FirstID ) continue;
+//             if ( $this->ID == self::CURRENT ) echo "RowID $RowID<br>";
             
             $RowsToRemove = array ();
             
@@ -75,9 +80,9 @@ class CuboideBlocNestedLoop extends Cuboide
                 $NbBetter = 0;
                 $NbWorse = 0;
                 $this->countDifferences ( $RowID, $SLRowID, $NbBetter, $NbWorse );
-                if ( $this->ID == self::CURRENT ) echo "SLRowID $SLRowID<br>";
-                if ( $this->ID == self::CURRENT ) echo "NbBetter $NbBetter<br>";
-                if ( $this->ID == self::CURRENT ) echo "NbWorse $NbWorse<br>";
+//                 if ( $this->ID == self::CURRENT ) echo "SLRowID $SLRowID<br>";
+//                 if ( $this->ID == self::CURRENT ) echo "NbBetter $NbBetter<br>";
+//                 if ( $this->ID == self::CURRENT ) echo "NbWorse $NbWorse<br>";
                 
                 if ( ( $NbWorse > 0 ) && ( $NbBetter == 0 ) )
                 {
@@ -91,10 +96,15 @@ class CuboideBlocNestedLoop extends Cuboide
                 }
             }
             
-            if ( $IsWorse ) continue;
+            if ( $IsWorse ) 
+            {
+                if ( $this->ID == self::CURRENT ) echo "Skyline " . __LINE__  . " row $RowID is worse, skipping " . print_r ( $Row, TRUE ) . "<br>";
+                continue;
+            }
             
             foreach ( $RowsToRemove as $RowToRemove )
             {
+                if ( $this->ID == self::CURRENT ) echo "Skyline " . __LINE__  . " removing " . $RowToRemove . " " . print_r ( $this->DataSet [$RowToRemove], TRUE ). "<br>";
                 unset ( $Skyline [$RowToRemove] );
             }
             
@@ -111,5 +121,6 @@ class CuboideBlocNestedLoop extends Cuboide
                 $this->RowIDsFiltered [$RowID] = $RowID;
             }
         }
+        if ( $this->ID == self::CURRENT ) echo "Skyline " . __LINE__  . " end " . print_r ( $this->RowIDsFiltered, TRUE ) . "<br>";
     }
 }

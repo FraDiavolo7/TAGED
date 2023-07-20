@@ -1,5 +1,9 @@
 <?php
 
+/**
+ *
+ * @package Commun
+ */
 trait Connection
 {
     protected static $RES_NO_CONNEC = 0;

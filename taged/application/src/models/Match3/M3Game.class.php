@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Match 3 Game Data
+ * @package TAGED\Models\Match3
+ */
 class M3Game
 {
     const TABLE_PLAYER = 'joueur';

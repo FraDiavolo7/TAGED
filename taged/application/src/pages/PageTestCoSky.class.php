@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Test page
+ * @package TAGED\Pages\Test
+ */
 class PageTestCoSky extends TagedPage
 {
 	public function __construct ( $InputData = NULL )

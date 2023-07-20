@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Hack'N Slash Player Data
+ * @package TAGED\Models\HackNSlash
+ */
 class HnSPlayer 
 {
 

@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Basic page for a Taged page
+ * @package TAGED
+ */
 class TagedPage extends THPage
 {
 	const PAGE_SELECTOR = 'sel';

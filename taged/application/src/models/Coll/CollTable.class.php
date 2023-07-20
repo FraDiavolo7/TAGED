@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Collection Table presentation
+ * @package TAGED\Models\Collection
+ */
 class CollTable
 {
     const VIEW_STAT = 'vw_coll_stat';

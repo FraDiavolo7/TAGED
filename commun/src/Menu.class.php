@@ -1,5 +1,9 @@
 <?php
 
+/**
+ *
+ * @package Commun
+ */
 class Menu
 {
     const PAGE_SELECTOR = 'sel';

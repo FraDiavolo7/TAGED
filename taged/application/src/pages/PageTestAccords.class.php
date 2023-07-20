@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Test page for Accords
+ * @package TAGED\Pages\Test
+ */
 class PageTestAccords extends TagedPage
 {
 	public function __construct ( $InputData = NULL )
