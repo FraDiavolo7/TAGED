@@ -42,16 +42,20 @@ La recherche d'un bon équilibre dans un jeu vidéo est un concept central car i
 TAGED offre un large panel d'usages dans l'équilibrage en conception de jeu vidéo. Son utilisation par les concepteurs de jeux peut se faire durant toute la durée de vie d'un dispositif ludique : qu'il soit en conception, en développement ou en production.
 
 Voici la schématisation du principe de fonctionnement de TAGED :
+<!--- 
 <p align="center">
 	<img src="how-taged-works.png" alt="Principe de fonctionnement de TAGED" width="800">
 </p>
-<!--- ![Principe de fonctionnement de TAGED](how-taged-works.png) --->
+ --->
+![Principe de fonctionnement de TAGED](how-taged-works.png)
 
 Et voici la présentation détaillée de TAGED :
+<!--- 
 <p align="center">
-	<img src="taged-method.png" alt="Principe de fonctionnement de TAGED" width="0">
+	<img src="taged-method.png" alt="Principe de fonctionnement de TAGED" width="800">
 </p>
-<!--- ![Présentation détaillée de TAGED](taged-method.png) --->
+ --->
+![Présentation détaillée de TAGED](taged-method.png)
 
 TAGED est un outil d'extraction de données qui peut s'utiliser avec des données brutes d'entrée, réelles ou modélisées, intrinsèques au jeu vidéo, comme celles issues des mécaniques, dynamiques ou esthétiques de jeu [@books/lib/SalenZ04], ou bien extrinsèques comme celles extraites des *verbatims* des comportements de joueurs, déviants ou atypiques, et des informations de parties, solo ou multijoueur.
 
