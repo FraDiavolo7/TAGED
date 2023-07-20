@@ -13,6 +13,15 @@ class Cuboide extends CuboideBase
     
     const CURRENT = '';
     
+    /**
+     * Cuboide constructor.
+     *
+     * @param string $CuboideID The Cuboide ID.
+     * @param array $RawDataSet The raw data set.
+     * @param array $RawRowHeaders The raw row headers.
+     * @param array $RawColIDs The raw column IDs.
+     * @param string $MinMax The minimum or maximum value type (TO_MAX or TO_MIN).
+     */
     public function __construct ( $CuboideID, $RawDataSet, $RawRowHeaders, $RawColIDs, $MinMax = self::TO_MAX )
     {
         parent::__construct ( $CuboideID );
@@ -25,6 +34,7 @@ class Cuboide extends CuboideBase
 
     /**
      * Prepares the data set
+     * 
      * Removes empty lines
      * Computes Accords classes
      * @param array $RawDataSet
@@ -87,6 +97,9 @@ class Cuboide extends CuboideBase
         $this->IsValid = TRUE;
     }
     
+    /**
+     * Computes the Cuboide.
+     */
     public function computeCuboide ( )
     {
         if ( $this->IsValid )
@@ -101,71 +114,17 @@ class Cuboide extends CuboideBase
         }
     }
 
+    /**
+     * Checks if a given row is in the Cuboide.
+     *
+     * @param mixed $ConsideredRowID The row ID to consider.
+     * @return bool Returns true if the row is in the Cuboide, otherwise false.
+     */
     protected function isInCuboide ( $ConsideredRowID )
     {
         return TRUE;
     }
     
-//     public function getID ( ) { return $this->ID; }
-//     public function getDataSet ( ) { return $this->DataSet; }
-//     public function getRowHeaders ( ) { return $this->RowHeaders; }
-//     public function getColIDs ( ) { return $this->ColIDs; }
-//     public function isValid ( ) { return $this->IsValid; }
-
-//     public function getFilteredIDs ( ) { return $this->RowIDsFiltered; }
-//     public function getComputedIDs ( ) { return $this->RowIDsComputed; }
-    
-//     public function getDataSetFiltered ( ) 
-//     { 
-//         $Result = array ();
-//         foreach ( $this->RowIDsFiltered as $RowID )
-//         {
-//             $Result [$RowID] = $this->DataSet [$RowID];
-//         }
-//         return $Result; 
-//     }
-    
-//     public function getDataSetComputed ( ) 
-//     { 
-//         $Result = array ();
-//         foreach ( $this->RowIDsComputed as $RowID )
-//         {
-//             $Result [$RowID] = $this->DataSet [$RowID];
-//         }
-//         return $Result; 
-//     }
-    
-//     public function getEquivalenceClasses ( $AsArray = FALSE )
-//     {
-//         $Result = ( $AsArray ? array () : '' );
-        
-//         if ( $AsArray )
-//         {
-//             $Result = $this->EquivalenceClasses;
-//         }
-//         else
-//         {
-//             $Sep = '{';
-//             foreach ( $this->EquivalenceClasses as $RowIndex => $Parts )
-//             {
-//                 $Result .= $Sep . $RowIndex . implode ( '', $Parts );
-//                 $Sep = ',';
-//             }
-//             $Result .= '}';
-//         }
-//         return $Result;
-//     }
-    
-//     protected $ID; //** Cuboide ID is the combinaison of ColIDs
-//     protected $DataSet; //** Table indexed by RowID and ColID of Relation measures
-//     protected $RowHeaders; //** Table indexed by RowID of Relation identifiers
-//     protected $ColIDs; //** Table indexed by ColID of Measure identifiers
     protected $MinMax;
-//     protected $IsValid;
-    
-//     protected $RowIDsInput;    // Data as they were entered
-//     protected $RowIDsFiltered; // Data after SkyLine
-//     protected $RowIDsComputed; // Data after Taged
-    
-//     protected $EquivalenceClasses; 
+
 }

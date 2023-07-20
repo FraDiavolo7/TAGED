@@ -6,19 +6,63 @@
  */
 class SKDisplay
 {
-    
+
+    /**
+     * The column name representing the Row ID in the data set.
+     */
     const ROW_ID = 'RowId';
     
+    /**
+     * Constant flag value to indicate no special behavior.
+     */
     const NO_FLAG = 0;
-    const SHOW_FILTERED      = 0x01;
-    const SHOW_REMOVED       = 0x02; // Filtered mais avec les tables supprimées
-    const SHOW_EQUIV_CLASS   = 0x04; //** Les classes sont présentées dans les titres
-    const SHOW_VALIDITY      = 0x08; //** La validité est présentée dans les titres
-    const SHOW_DATA_RAW      = 0x10; // Exclusif avec SHOW_DATA_xxx (RAW préféré si 2 sont présents)
-    const SHOW_DATA_FILTERED = 0x20; // Exclusif avec SHOW_DATA_xxx (RAW préféré si 2 sont présents)
-    const SHOW_DATA_COMPUTED = 0x40; // Exclusif avec SHOW_DATA_xxx (RAW préféré si 2 sont présents)
-    const SHOW_EQUIV_CLASS_FILTERED = 0x80; //** Les classes sont présentées dans les titres
     
+    /**
+     * Flag to show filtered data only (without removed data) in the presentation.
+     */
+    const SHOW_FILTERED = 0x01;
+    
+    /**
+     * Flag to show filtered data along with removed data in the presentation.
+     */
+    const SHOW_REMOVED = 0x02;
+    
+    /**
+     * Flag to show equivalence classes in the presentation titles.
+     */
+    const SHOW_EQUIV_CLASS = 0x04;
+    
+    /**
+     * Flag to show validity information in the presentation titles.
+     */
+    const SHOW_VALIDITY = 0x08;
+    
+    /**
+     * Flag to show raw data in the presentation (exclusive with SHOW_DATA_FILTERED and SHOW_DATA_COMPUTED).
+     */
+    const SHOW_DATA_RAW = 0x10;
+    
+    /**
+     * Flag to show filtered data in the presentation (exclusive with SHOW_DATA_RAW and SHOW_DATA_COMPUTED).
+     */
+    const SHOW_DATA_FILTERED = 0x20;
+    
+    /**
+     * Flag to show computed data in the presentation (exclusive with SHOW_DATA_RAW and SHOW_DATA_FILTERED).
+     */
+    const SHOW_DATA_COMPUTED = 0x40;
+    
+    /**
+     * Flag to show equivalence classes in the presentation titles for filtered data.
+     */
+    const SHOW_EQUIV_CLASS_FILTERED = 0x80;
+    
+    /**
+     * Convertit l'objet en texte en utilisant la fonction print_r.
+     *
+     * @param mixed $Object L'objet à convertir en texte.
+     * @return string Le texte représentant l'objet.
+     */
     public static function text ( $Object )
     {
         $Text = print_r ( $Object, TRUE );
@@ -26,6 +70,13 @@ class SKDisplay
         return $Text;
     }
     
+    /**
+     * Convertit l'objet en format HTML en utilisant une fonction spécifique en fonction du type d'objet.
+     * 
+     * Si le type d'objet n'est pas reconnu, la fonction text() est utilisée.
+     * @param mixed $Object L'objet à convertir en format HTML.
+     * @return string Le contenu HTML représentant l'objet.
+     */
     public static function html ( $Object )
     {
         $Function = 'text';
@@ -49,6 +100,12 @@ class SKDisplay
         return static::$Function ( $Object );
     }
     
+    /**
+     * Convertit le SkyCube en format HTML représentant les données d'entrée.
+     *
+     * @param SkyCube $SkyCube Le SkyCube contenant les données à convertir.
+     * @return string Le contenu HTML représentant les données d'entrée.
+     */
     public static function htmlInputData ( $SkyCube )
     {
         $RowHeaders = $SkyCube->getRowHeaders ();
@@ -69,6 +126,12 @@ class SKDisplay
         return HTML::div ( $String, array ( 'class' => 'input_data' ) );
     }
 
+    /**
+     * Convertit le CoSky en format HTML.
+     *
+     * @param CoSky $CoSky Le CoSky contenant les scores à convertir.
+     * @return string Le contenu HTML représentant le CoSky.
+     */
     public static function htmlCoSky ( $CoSky )
     {
         $Scores = $CoSky->getScores ();
@@ -97,6 +160,12 @@ class SKDisplay
         return HTML::div ( $String, array ( 'class' => 'cosky_data' ) );
     }
     
+    /**
+     * Convertit le SkyCube en format HTML représentant les émergences.
+     *
+     * @param SkyCube $SkyCube Le SkyCube contenant les émergences à convertir.
+     * @return string Le contenu HTML représentant les émergences.
+     */
     public static function htmlEmergence ( $SkyCube )
     {
         $Emergences = $SkyCube->getEmergence ();
@@ -150,6 +219,12 @@ class SKDisplay
         return HTML::div ( $String, array ( 'class' => 'emergence_data' ) );
     }
     
+    /**
+     * Convertit le SkyCube en format HTML représentant l'espace multidimensionnel.
+     *
+     * @param SkyCube $SkyCube Le SkyCube contenant l'espace multidimensionnel à convertir.
+     * @return string Le contenu HTML représentant l'espace multidimensionnel.
+     */
     public static function htmlMultidimensionalSpace ( $SkyCube )
     {
         $HTML = '';
@@ -203,6 +278,13 @@ class SKDisplay
         return HTML::div ( $HTML, array ( 'class' => 'multidimensional_space' ) );
     }
     
+    /**
+     * Convertit le SkyCube en format HTML représentant la fusion des Cuboides (Relation fusionnée).
+     *
+     * @param SkyCube $SkyCube Le SkyCube contenant les Cuboides à fusionner.
+     * @param int $Flags Les drapeaux pour contrôler l'affichage des Cuboides fusionnées.
+     * @return string Le contenu HTML représentant la fusion des Cuboides.
+     */
     public static function htmlSkyCubeFusion ( $SkyCube, $Flags = self::NO_FLAG )
     {
         $RowHeaders = $SkyCube->getRowHeaders ();
@@ -349,6 +431,13 @@ class SKDisplay
         return HTML::div ( $String, array ( 'class' => 'skycube fusion' ) );
     }
     
+    /**
+     * Convertit le SkyCube en format HTML représentant les Cuboides avec des paramètres spécifiques.
+     *
+     * @param SkyCube $SkyCube Le SkyCube contenant les Cuboides à afficher.
+     * @param int $Flags Les drapeaux pour contrôler l'affichage des Cuboides.
+     * @return string Le contenu HTML représentant les Cuboides avec les paramètres spécifiques.
+     */
     public static function htmlSkyCubeParam ( $SkyCube, $Flags = self::NO_FLAG )
     {
         $RowHeaders = $SkyCube->getRowHeaders ();
@@ -412,6 +501,13 @@ class SKDisplay
         return HTML::div ( $String, array ( 'class' => 'skycube' ) );
     }
     
+    /**
+     * Convertit le SkyCube en format HTML représentant les classes d'équivalence.
+     *
+     * @param SkyCube $SkyCube Le SkyCube contenant les classes d'équivalence à afficher.
+     * @param bool $Filtered Indique si les classes d'équivalence doivent être filtrées (par défaut TRUE).
+     * @return string Le contenu HTML représentant les classes d'équivalence.
+     */
     public static function htmlEquivalenceClasses ( $SkyCube, $Filtered = TRUE )
     {
         $String = '';
@@ -440,6 +536,13 @@ class SKDisplay
         return HTML::div ( $String, array ( 'class' => 'skycube equivalence_classes' ) );
     }
     
+    /**
+     * Convertit le SkyCube en format HTML représentant les Cuboides.
+     *
+     * @param SkyCube $SkyCube Le SkyCube contenant les Cuboides à afficher.
+     * @param bool $Filtered Indique si les Cuboides doivent être filtrés (par défaut TRUE).
+     * @return string Le contenu HTML représentant les Cuboides.
+     */
     public static function htmlSkyCube ( $SkyCube, $Filtered = TRUE )
     {
         $RowHeaders = $SkyCube->getRowHeaders ();
@@ -484,6 +587,12 @@ class SKDisplay
         return HTML::div ( $String, array ( 'class' => 'skycube' ) );
     }
 
+    /**
+     * Convertit le SkyCubeEmergent en format HTML représentant les Cuboides émergents.
+     *
+     * @param SkyCubeEmergent $SkyCubeEmergent Le SkyCubeEmergent contenant les Cuboides émergents à afficher.
+     * @return string Le contenu HTML représentant les Cuboides émergents.
+     */
     public static function htmlSkyCubeEmergent ( $SkyCubeEmergent )
     {
         $InitData = array_merge ( $SkyCubeEmergent->getRowHeaders (), $SkyCubeEmergent->getDataSet    ());
@@ -517,6 +626,12 @@ class SKDisplay
         return HTML::div ( $String, array ( 'class' => 'skycube' ) );
     }
     
+    /**
+     * Convertit le Cuboide en format HTML.
+     *
+     * @param Cuboide $Cuboide Le Cuboide à afficher.
+     * @return string Le contenu HTML représentant le Cuboide.
+     */
     public static function htmlCuboide ( $Cuboide )
     {
         $HTML = HTML::div ( HTML::div ( $Cuboide->getID () ) . HTML::div ( '(' . ( $Cuboide->isValid () ? 'V' : 'I' ) . ')' ), array ( 'class' => 'title' ) );
@@ -574,11 +689,14 @@ class SKDisplay
         
     }
 
-    public static function htmlCuboideFusion ( $Cuboide, $Flags = self::NO_FLAG, $ShowID = TRUE )
-    {
-        
-    }
-    
+    /**
+     * Convertit le Cuboide en format HTML avec des paramètres personnalisables.
+     *
+     * @param Cuboide $Cuboide Le Cuboide à afficher.
+     * @param int $Flags Les indicateurs pour afficher différentes parties du Cuboide (par défaut self::NO_FLAG).
+     * @param bool $Removed Indique si le Cuboide a été supprimé (par défaut FALSE).
+     * @return string Le contenu HTML représentant le Cuboide.
+     */
     public static function htmlCuboideParam ( $Cuboide, $Flags = self::NO_FLAG, $Removed = FALSE )
     {
         $CuboideClass = 'cuboide ' . ( $Removed ? 'removed' : '' );
@@ -668,39 +786,79 @@ class SKDisplay
         
     }
     
+    /**
+     * Convertit le CuboideEmergent en format HTML.
+     *
+     * @param CuboideEmergent $CuboideEmergent Le CuboideEmergent à afficher.
+     * @return string Le contenu HTML représentant le CuboideEmergent.
+     */
     public static function htmlCuboideEmergent ( $CuboideEmergent )
     {
         $Text = __METHOD__;
         
         return $Text;
     }
-   
+    
+    /**
+     * Génère la représentation LaTeX pour l'objet fourni.
+     *
+     * @param mixed $Object L'objet pour lequel générer la représentation LaTeX.
+     * @return string La représentation LaTeX.
+     */
     public static function latex ( $Object )
     {
         
     }
     
+    /**
+     * Génère la représentation LaTeX pour le SkyCube fourni.
+     *
+     * @param SkyCube $SkyCube Le SkyCube pour lequel générer la représentation LaTeX.
+     * @return string La représentation LaTeX du SkyCube.
+     */
     public static function latexSkyCube ( $SkyCube )
     {
         
     }
     
+    /**
+     * Génère la représentation LaTeX pour le SkyCubeEmergent fourni.
+     *
+     * @param SkyCubeEmergent $SkyCubeEmergent Le SkyCubeEmergent pour lequel générer la représentation LaTeX.
+     * @return string La représentation LaTeX du SkyCubeEmergent.
+     */
     public static function latexSkyCubeEmergent ( $SkyCubeEmergent )
     {
         
     }
     
+    /**
+     * Génère la représentation LaTeX pour le Cuboide fourni.
+     *
+     * @param Cuboide $Cuboide Le Cuboide pour lequel générer la représentation LaTeX.
+     * @return string La représentation LaTeX du Cuboide.
+     */
     public static function latexCuboide ( $Cuboide )
     {
         
     }
     
+    /**
+     * Génère la représentation LaTeX pour le CuboideEmergent fourni.
+     *
+     * @param CuboideEmergent $CuboideEmergent Le CuboideEmergent pour lequel générer la représentation LaTeX.
+     * @return string La représentation LaTeX du CuboideEmergent.
+     */
     public static function latexCuboideEmergent ( $CuboideEmergent )
     {
         
     }
     
-    
+    /**
+     * Génère la représentation LaTeX pour le SkyCube actuel.
+     *
+     * @return string La représentation LaTeX du SkyCube.
+     */
     public function toLaTex ()
     {
         $CuboideLaTeX = '\begin{figure}[htbp]
@@ -772,6 +930,11 @@ class SKDisplay
         
     }
     
+    /**
+     * Génère une représentation sous forme de chaîne de caractères pour le SkyCube actuel.
+     *
+     * @return string La représentation du SkyCube sous forme de chaîne de caractères.
+     */
     public function __toString ()
     {
         $String  = HTML::div ( HTML::tableFull ( $this->RowHeaders, array ( 'border' => '1' ) ) );
@@ -805,7 +968,13 @@ class SKDisplay
         return HTML::div ( $String, array ( 'class' => 'skycube' ) );
     }
     
-    
+    /**
+     * Génère une liste de Cuboides pour le niveau donné en utilisant la récursivité.
+     *
+     * @param int $Level Le niveau pour lequel générer les Cuboides.
+     * @param array $ColIDs La liste des identifiants de colonnes.
+     * @param string $Current Le préfixe actuel pour les Cuboides.
+     */
     protected function generateCuboideListLvl ( $Level, $ColIDs, $Current = '' )
     {
 //         echo "Level $Level <br>\n";
@@ -834,6 +1003,9 @@ class SKDisplay
         }
     }
     
+    /**
+     * Génère la liste complète des Cuboides.
+     */
     protected function generateCuboideList ()
     {
         if ( $this->IsValid )
@@ -857,6 +1029,13 @@ class SKDisplay
         }
     }
     
+    /**
+     * Calcule le DataSet à partir des données fournies en utilisant les colonnes de relation et de mesure.
+     *
+     * @param array $Data Les données brutes pour le DataSet.
+     * @param array $RelationCols Les colonnes de relation.
+     * @param array $MeasureCols Les colonnes de mesure.
+     */
     protected function computeDataSet ( $Data, $RelationCols, $MeasureCols )
     {
         if ( is_array ( $Data ) )
@@ -915,27 +1094,78 @@ class SKDisplay
         }
     }
     
+    /**
+     * Récupère le DataSet actuel du SkyCube.
+     *
+     * @return array Le DataSet actuel.
+     */
     public function getDataSet ()
     {
         return $this->DataSet;
     }
     
+    /**
+     * Récupère les en-têtes de ligne actuels du SkyCube.
+     *
+     * @return array Les en-têtes de ligne actuels.
+     */
     public function getRowHeaders ()
     {
         return $this->RowHeaders;
     }
     
+    /**
+     * Récupère les identifiants de colonnes actuels du SkyCube.
+     *
+     * @return array Les identifiants de colonnes actuels.
+     */
     public function getColIDs ()
     {
         return $this->ColIDs;
     }
     
-    protected $DataSet; //** Table indexed by RowID and ColID of Relation measures
-    protected $RowHeaders; //** Table indexed by RowID of Relation identifiers
-    protected $ColIDs; //** Table indexed by ColID of Measure identifiers
-    protected $Cuboides; //** List of Cuboides indexed by their header placeholder combinaison
+    /**
+     * Tableau associatif indexé par RowID et ColID représentant les mesures de la relation.
+     *
+     * @var array
+     */
+    protected $DataSet;
+    
+    /**
+     * Tableau associatif indexé par RowID représentant les identifiants de la relation.
+     *
+     * @var array
+     */
+    protected $RowHeaders;
+    
+    /**
+     * Tableau associatif indexé par ColID représentant les identifiants de mesure.
+     *
+     * @var array
+     */
+    protected $ColIDs;
+    
+    /**
+     * Liste des Cuboides indexés par leur combinaison d'en-tête de placeholder.
+     *
+     * @var array
+     */
+    protected $Cuboides;
+    
+    /**
+     * Tableau contenant les valeurs minimales et maximales pour le calcul.
+     *
+     * @var array
+     */
     protected $MinMax;
+    
+    /**
+     * Indique si les données de la relation sont valides.
+     *
+     * @var bool
+     */
     protected $IsValid;
+    
 }
 
 

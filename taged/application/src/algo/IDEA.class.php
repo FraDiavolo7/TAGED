@@ -6,6 +6,12 @@
  */
 class IDEA
 {
+    /**
+     * The constructor of the IDEA class.
+     *
+     * @param string $Name The name of the IDEA file.
+     * @param string $Folder The folder where the IDEA file is located.
+     */
     public function __construct ( $Name, $Folder )
     {
         $this->FilePath   = $Folder . $Name;
@@ -29,6 +35,11 @@ class IDEA
         $this->AttributeIgnored = array ();
     }
     
+    /**
+     * Runs the IDEA program and interprets the results.
+     *
+     * @return array An array representing the interpreted results.
+     */
     public function run ()
     {
         $this->prepare ();
@@ -45,6 +56,9 @@ class IDEA
         return $this->interpret ( $ShellResult );
     }
     
+    /**
+     * Prepares the data for IDEA execution by calling various internal methods.
+     */
     protected function prepare ()
     {
         $this->prepareRelations ();
@@ -56,6 +70,10 @@ class IDEA
         $this->computeMinMax ();
     }
     
+    /**
+     * Prepares the relations data for IDEA execution.
+     * Handles anonymization, attribute counting, and value conversion.
+     */
     protected function prepareRelations ()
     {
         $this->WIPRelations = $this->InputRelations;
@@ -65,11 +83,17 @@ class IDEA
         $this->countAttributes ();
     }
     
+    /**
+     * Counts the number of attributes (columns) in the data set.
+     */
     protected function countAttributes ()
     {
         $this->NbAttributes = count ( reset ( $this->WIPRelations ) );
     }
     
+    /**
+     * Anonymizes the attribute values in the relations data.
+     */
     protected function anonymize ()
     {
         $TmpRelations = array ();
@@ -88,6 +112,10 @@ class IDEA
         $this->WIPRelations = $TmpRelations;
     }
     
+    /**
+     * Prepares the measures data for IDEA execution.
+     * Handles duplicating rows for multiple measures and value conversions.
+     */
     protected function prepareMeasures ()
     {
         $this->WIPMeasures = $this->InputMeasures;
@@ -141,6 +169,9 @@ class IDEA
         }
     }
     
+    /**
+     * Prepares the tuple file required for IDEA execution.
+     */
     protected function prepareTupleFile ()
     {
         $TupleFile  = $this->FilePath . '.nbtuple';
@@ -150,6 +181,9 @@ class IDEA
         file_put_contents ( $TupleFile, $this->NbTuples . PHP_EOL );
     }
     
+    /**
+     * Exports the prepared measures data to a CSV file.
+     */
     protected function exportMeasures ()
     {
         $MesPath    = $this->FilePath . '.mes';
@@ -158,6 +192,9 @@ class IDEA
         Arrays::exportAsCSV ( $this->PreparedMeasures,  ' ', Arrays::EXPORT_COLUMN_NO_HEADER, Arrays::EXPORT_ROW_NO_HEADER, $MesPath, array (), array (), ';' );
     }
     
+    /**
+     * Exports the prepared relations data to a CSV file.
+     */
     protected function exportRelations ()
     {
         $RelPath    = $this->FilePath . '.rel';
@@ -166,12 +203,22 @@ class IDEA
         Arrays::exportAsCSV ( $this->PreparedRelations, ' ', Arrays::EXPORT_COLUMN_NO_HEADER, Arrays::EXPORT_ROW_NO_HEADER, $RelPath, array (), array (), ';' );
     }
     
+    /**
+     * Computes the minimum and maximum values for IDEA computation.
+     * If Min and Max values are not set, computes them from the input measures.
+     */
     protected function computeMinMax ()
     {
         if ( NULL === $this->Min ) $this->Min = min ( min ( $this->InputMeasures ) );
         if ( NULL === $this->Max ) $this->Max = max ( max ( $this->InputMeasures ) );
     }
     
+    /**
+     * Interprets the IDEA results from the generated output file.
+     *
+     * @param string $Results The raw shell output from IDEA execution.
+     * @return array An array representing the interpreted results.
+     */
     protected function interpret ( $Results )
     {
         $TagedResult = array ();
@@ -223,7 +270,13 @@ class IDEA
         return $TagedResult;
     }
     
-
+    /**
+     * Converts the given attribute value to a numeric representation.
+     *
+     * @param mixed $Value The attribute value to be converted.
+     * @param string $Attribute The name of the attribute.
+     * @return mixed The numeric representation of the attribute value.
+     */
     protected function convertToNumerics ( $Value, $Attribute )
     {
         $Result = $Value;
@@ -255,29 +308,113 @@ class IDEA
         return $Result;
     }
     
+    /**
+     * Sets the algorithm used by IDEA.
+     *
+     * @param string $NewValue The name of the algorithm.
+     */
     public function setAlgorithm ( $NewValue ) { $this->Algorithm      = $NewValue; }
+    
+    /**
+     * Sets the input measures data for IDEA execution.
+     *
+     * @param array $NewValue An associative array representing input measures.
+     */
     public function setMeasures  ( $NewValue ) { $this->InputMeasures  = $NewValue; }
+    
+    /**
+     * Sets the input relations data for IDEA execution.
+     *
+     * @param array $NewValue An associative array representing input relations.
+     */
     public function setRelations ( $NewValue ) { $this->InputRelations = $NewValue; }
+        
+    /**
+     * Sets the minimum value for IDEA computation.
+     *
+     * @param int|null $NewValue The minimum value for IDEA computation.
+     */
     public function setMin ( $NewValue ) { $this->Min = $NewValue; }
+    
+    /**
+     * Sets the maximum value for IDEA computation.
+     *
+     * @param int|null $NewValue The maximum value for IDEA computation.
+     */
     public function setMax ( $NewValue ) { $this->Max = $NewValue; }
     
+    /**
+     * @var string The name of the algorithm used by IDEA.
+     */
     protected $Algorithm;
+    
+    /**
+     * @var string The full file path of the IDEA file.
+     */
     protected $FilePath;
+    
+    /**
+     * @var int|null The minimum value for IDEA computation.
+     */
     protected $Min;
+    
+    /**
+     * @var int|null The maximum value for IDEA computation.
+     */
     protected $Max;
-    protected $NbAttributes; 
-    protected $NbTuples; 
-
+    
+    /**
+     * @var int The number of attributes (columns) in the data set.
+     */
+    protected $NbAttributes;
+    
+    /**
+     * @var int The number of tuples (rows) in the data set.
+     */
+    protected $NbTuples;
+    
+    /**
+     * @var array The input measures for IDEA.
+     */
     protected $InputMeasures;
+    
+    /**
+     * @var array The input relations for IDEA.
+     */
     protected $InputRelations;
-
+    
+    /**
+     * @var array The working in-progress measures for IDEA.
+     */
     protected $WIPMeasures;
+    
+    /**
+     * @var array The working in-progress relations for IDEA.
+     */
     protected $WIPRelations;
     
+    /**
+     * @var array The prepared measures for export.
+     */
     protected $PreparedMeasures;
+    
+    /**
+     * @var array The prepared relations for export.
+     */
     protected $PreparedRelations;
-
+    
+    /**
+     * @var array The attribute names.
+     */
     protected $Attributes;
+    
+    /**
+     * @var array The attribute values with their numeric correspondence.
+     */
     protected $AttributeValues;
+    
+    /**
+     * @var array The ignored attribute names.
+     */
     protected $AttributeIgnored;
 }

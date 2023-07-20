@@ -6,7 +6,9 @@
  */
 class CuboideBruteForce extends Cuboide
 {
-    
+    /**
+     * Computes the Cuboide using the Brute Force strategy.
+     */
     public function computeCuboide ( )
     {
         if ( $this->IsValid )
@@ -30,6 +32,12 @@ class CuboideBruteForce extends Cuboide
         }
     }
     
+    /**
+     * Checks if the given row is in the Cuboide SkyLine based on comparisons with other rows.
+     *
+     * @param mixed $ConsideredRowID The row ID of the considered row.
+     * @return bool Returns true if the row is in the Cuboide SkyLine, otherwise false.
+     */
     protected function isInCuboide ( $ConsideredRowID )
     {
         // Compares this Row to each other to test if it is better or not (keep the best)

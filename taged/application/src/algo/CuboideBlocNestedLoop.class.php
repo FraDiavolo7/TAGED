@@ -8,6 +8,14 @@ class CuboideBlocNestedLoop extends Cuboide
 {
     const CURRENT = '';
     
+    /**
+     * Counts the differences between two rows and updates the number of better and worse comparisons.
+     *
+     * @param mixed $RowID1 The first row ID to compare.
+     * @param mixed $RowID2 The second row ID to compare.
+     * @param int $NbBetter The number of better comparisons (output parameter).
+     * @param int $NbWorse The number of worse comparisons (output parameter).
+     */
     protected function countDifferences ( $RowID1, $RowID2, &$NbBetter, &$NbWorse )
     {
         $NbBetter = 0;
@@ -58,6 +66,9 @@ class CuboideBlocNestedLoop extends Cuboide
         }
     }
     
+    /**
+     * Computes the Cuboide using the Block Nested Loop algorithm.
+     */
     public function computeCuboide ( )
     {
         $FirstID = array_key_first ( $this->RowIDsInput );

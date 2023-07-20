@@ -9,6 +9,14 @@
 class CuboideEmergent extends CuboideBase
 {
     const CURRENT = '';
+    
+    /**
+     * CuboideEmergent constructor.
+     *
+     * @param array $ColIDs The column IDs of the Cuboide.
+     * @param Cuboide $Cuboide1 The first Cuboide object.
+     * @param Cuboide $Cuboide2 The second Cuboide object.
+     */
     public function __construct ( $ColIDs, $Cuboide1, $Cuboide2 )
     {
         $this->Cuboide1 = $Cuboide1;
@@ -28,6 +36,9 @@ class CuboideEmergent extends CuboideBase
         $this->IsValid = TRUE;
     }
     
+    /**
+     * Merges columns from Cuboide1 and Cuboide2 to create the new set of column IDs.
+     */
     protected function mergeColumns ( )
     {
         Log::fct_enter ( __METHOD__ );
@@ -70,6 +81,9 @@ class CuboideEmergent extends CuboideBase
         Log::fct_exit ( __METHOD__ );
     }
     
+    /**
+     * Merges data sets from Cuboide1 and Cuboide2 to create the new data set.
+     */
     protected function mergeDataSets ()
     {
         Log::fct_enter ( __METHOD__ );
@@ -149,6 +163,9 @@ class CuboideEmergent extends CuboideBase
         Log::fct_exit ( __METHOD__ );
     }
     
+    /**
+     * Computes the Cuboide for the Emergent Cuboide.
+     */
     public function computeCuboide ( )
     {
         Log::fct_enter ( __METHOD__ );
@@ -159,61 +176,22 @@ class CuboideEmergent extends CuboideBase
         Log::fct_exit ( __METHOD__ );
     }
     
-    
+    /**
+     * Gets the filtered data set of the Emergent Cuboide.
+     *
+     * @return array The filtered data set.
+     */
     public function getDataSetFiltered ( )
     {
         return $this->FilteredDataSet;
     }
     
-//     public function getID ( ) { return $this->ID; }
-//     public function getDataSet ( ) { return $this->DataSet; }
-//     public function getRowHeaders ( ) { return $this->RowHeaders; }
-//     public function getColIDs ( ) { return $this->ColIDs; }
-//     public function isValid ( ) { return $this->IsValid; }
-    
-//     public function getEquivalenceClasses ( $AsArray = FALSE )
-//     {
-//         $Result = ( $AsArray ? array () : '' ); 
-//         return $Result;
-//     }
-    
-//     public function getDataSetFiltered ( )
-//     {
-//         $Result = array ();
-//         foreach ( $this->RowIDsFiltered as $RowID )
-//         {
-//             $Result [$RowID] = $this->DataSet [$RowID];
-//         }
-//         return $Result;
-//     }
-    
-//     public function getDataSetComputed ( )
-//     {
-//         $Result = array ();
-//         foreach ( $this->RowIDsComputed as $RowID )
-//         {
-//             $Result [$RowID] = $this->DataSet [$RowID];
-//         }
-//         return $Result;
-//     }
-    
     protected $FilteredDataSet;
 
     protected $Cuboide1;
     protected $Cuboide2;
-//     protected $ID; //** Cuboide ID is the combinaison of ColIDs
-//     protected $DataSet; //** Table indexed by RowID and ColID of Relation measures
-//     protected $RowHeaders; //** Table indexed by RowID of Relation identifiers
-//     protected $ColIDs; //** Table indexed by ColID of Measure identifiers
     protected $ColIDsC1; //** Table indexed by ColID of Cuboide1 ColIDs
     protected $ColIDsC2; //** Table indexed by ColID of Cuboide2 ColIDs
-//     protected $IsValid;
-    
-//     protected $RowIDsInput;    // Data as they were entered
-//     protected $RowIDsFiltered; // Data after SkyLine
-//     protected $RowIDsComputed; // Data after Taged
-    
-//     protected $EquivalenceClasses; 
 }
 
 //Log::setDebug ( __FILE__ );

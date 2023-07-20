@@ -12,11 +12,30 @@
  */
 class SkyCube
 {
+    /**
+     * Le nombre maximal de Cuboides autorisé.
+     */
     const MAX_CUBOIDE = 128;
+    
+    /**
+     * L'ID de la première colonne de données.
+     */
     const MIN_COLID = 'A';
     
+    /**
+     * Le nom de la classe Cuboide utilisée pour la construction des Cuboides.
+     */
     const CUBOIDE = 'Cuboide';
     
+    /**
+     * Constructeur de la classe SkyCube.
+     *
+     * @param array $Data Les données brutes à utiliser dans l'espace multidimensionnel.
+     * @param array $RelationCols Les colonnes d'identification de relation.
+     * @param array $MeasureCols Les colonnes d'identification d'attribut (mesure).
+     * @param int $MinMax Indicateur pour la valeur maximale ou minimale lors de la construction des Cuboides.
+     * @param bool $ComputeAccordCuboides Indicateur pour calculer les Cuboides en accord.
+     */
     public function __construct ( $Data, $RelationCols, $MeasureCols, $MinMax = Cuboide::TO_MAX, $ComputeAccordCuboides = FALSE )
     {
         Log::fct_enter ( __METHOD__ );
@@ -38,6 +57,14 @@ class SkyCube
         Log::fct_exit ( __METHOD__ );
     }
     
+    /**
+     * Méthode protégée pour générer la liste des Cuboides pour un niveau donné.
+     *
+     * @param int $Level Le niveau du Cuboide.
+     * @param array $ColIDs Les IDs des colonnes à utiliser pour générer les Cuboides.
+     * @param bool $ComputeAccordCuboides Indicateur pour calculer les Cuboides en accord.
+     * @param string $Current La combinaison d'en-têtes actuelle pour le Cuboide.
+     */
     protected function generateCuboideListLvl ( $Level, $ColIDs, $ComputeAccordCuboides = FALSE, $Current = '' )
     {
         Log::fct_enter ( __METHOD__ );
@@ -80,6 +107,14 @@ class SkyCube
         Log::fct_exit ( __METHOD__ );
     }
     
+    /**
+     * Méthode protégée pour générer la liste des Cuboides pour un niveau donné.
+     *
+     * @param int $Level Le niveau du Cuboide.
+     * @param array $ColIDs Les IDs des colonnes à utiliser pour générer les Cuboides.
+     * @param bool $ComputeAccordCuboides Indicateur pour calculer les Cuboides en accord.
+     * @param string $Current La combinaison d'en-têtes actuelle pour le Cuboide.
+     */
     protected function generateCuboideList ( $ComputeAccordCuboides = FALSE )
     {
         Log::fct_enter ( __METHOD__ );
@@ -104,6 +139,13 @@ class SkyCube
         Log::fct_exit ( __METHOD__ );
     }
     
+    /**
+     * Méthode protégée pour obtenir l'ID d'une colonne.
+     *
+     * @param string $ColHeader Le nom de la colonne.
+     * @param array $MeasureCols Les colonnes d'identification d'attribut (mesure).
+     * @return string L'ID de la colonne.
+     */
     protected function getColID ( $ColHeader, $MeasureCols )
     {
         $ColID = $this->CurrentColID++;
@@ -113,6 +155,13 @@ class SkyCube
         return $ColID;
     }
     
+    /**
+     * Méthode protégée pour calculer le DataSet à partir des données brutes, des colonnes de relation et des colonnes d'attribut.
+     *
+     * @param array $Data Les données brutes à utiliser dans l'espace multidimensionnel.
+     * @param array $RelationCols Les colonnes d'identification de relation.
+     * @param array $MeasureCols Les colonnes d'identification d'attribut (mesure).
+     */
     protected function computeDataSet ( $Data, $RelationCols, $MeasureCols )
     {
         Log::fct_enter ( __METHOD__ );
@@ -177,6 +226,13 @@ class SkyCube
         Log::fct_exit ( __METHOD__ );
     }
     
+    /**
+     * Méthode protégée pour générer des combinaisons de valeurs.
+     *
+     * @param array $List Le tableau de valeurs à combiner.
+     * @param array $Begin La combinaison actuelle en cours de construction.
+     * @return array Les combinaisons générées.
+     */
     protected function generateCombinatorial ( $List, $Begin = array () )
     {
 //        echo 'generateCombinatorial ' . print_r ( $List, TRUE ) . ' ' . print_r ( $Begin, TRUE ) . "<br>\n";
@@ -202,6 +258,11 @@ class SkyCube
         return $Combinatorial;
     }
     
+    
+    /**
+     * Méthode de test pour générer des combinaisons et afficher le résultat.
+     * Utilisée uniquement à des fins de test.
+     */
     public function testCombinatorial ()
     {
         $Test = array ();
@@ -213,6 +274,11 @@ class SkyCube
         echo 'Combi ' . print_r ( $Combi, TRUE ) . "<br>\n";
     }
     
+    /**
+     * Méthode pour obtenir l'espace multidimensionnel généré par le Skycube.
+     *
+     * @return array L'espace multidimensionnel.
+     */
     public function getMultidimensionalSpace ()
     {
         $MultidimensionalSpace = array ();
@@ -268,48 +334,137 @@ class SkyCube
         return $MultidimensionalSpace;
     }
     
+    /**
+     * Méthode pour obtenir le DataSet du Skycube.
+     *
+     * @return array Le DataSet du Skycube.
+     */
     public function getDataSet ()
     {
         return $this->DataSet;
     }
     
+    /**
+     * Méthode pour obtenir les en-têtes de lignes du Skycube.
+     *
+     * @return array Les en-têtes de lignes du Skycube.
+     */
     public function getRowHeaders ()
     {
         return $this->RowHeaders;
     }
     
+    /**
+     * Méthode pour obtenir les en-têtes de colonnes (ColIDs) du Skycube.
+     *
+     * @return array Les en-têtes de colonnes (ColIDs) du Skycube.
+     */
     public function getColIDs ()
     {
         return $this->ColIDs;
     }
     
+    /**
+     * Méthode pour obtenir la liste des Cuboides du Skycube.
+     *
+     * @return array La liste des Cuboides du Skycube.
+     */
     public function getCuboides ()
     {
         return $this->Cuboides;
     }
     
+    /**
+     * Méthode pour obtenir les IDs des Cuboides, filtrés ou non, indexés par leur niveau et leur ID.
+     *
+     * @param bool $Filtered Indicateur pour obtenir les Cuboides filtrés ou non.
+     * @return array Les IDs des Cuboides, filtrés ou non, indexés par leur niveau et leur ID.
+     */
     public function getCuboideIDs ( $Filtered = TRUE )
     {
         return ( $Filtered ? $this->FilteredCuboideIDs : $this->OrderedCuboideIDs );
     }
     
+    /**
+     * Méthode pour obtenir un Cuboide spécifique en fonction de son ID.
+     *
+     * @param string $ID L'ID du Cuboide recherché.
+     * @return Cuboide|null Le Cuboide correspondant à l'ID ou NULL si non trouvé.
+     */
     public function getCuboide ( $ID )
     {
         return $this->Cuboides [$ID] ?? NULL;
     }
     
-    protected $DataSet; //** Table indexed by RowID and ColID of Relation measures
-    protected $RowHeaders; //** Table indexed by RowID of Relation identifiers
-    protected $ColIDs; //** Table indexed by ColID of Measure identifiers
-    protected $MinMax;
-    protected $IsValid;
-    protected $CurrentColID; // used only during construction phase
+    /**
+     * Tableau des données brutes indexées par RowID et ColID de Relation measures.
+     *
+     * @var array
+     */
+    protected $DataSet;
     
+    /**
+     * Tableau des en-têtes de lignes indexé par RowID de Relation identifiers.
+     *
+     * @var array
+     */
+    protected $RowHeaders;
+    
+    /**
+     * Tableau des en-têtes de colonnes indexé par ColID de Measure identifiers.
+     *
+     * @var array
+     */
+    protected $ColIDs;
+    
+    /**
+     * Indicateur pour la valeur maximale ou minimale lors de la construction des Cuboides.
+     *
+     * @var int
+     */
+    protected $MinMax;
+    
+    /**
+     * Indicateur pour déterminer si l'instance de SkyCube est valide.
+     *
+     * @var bool
+     */
+    protected $IsValid;
+    
+    /**
+     * ID de colonne actuel utilisé uniquement pendant la phase de construction.
+     *
+     * @var string
+     */
+    protected $CurrentColID;
+    
+    /**
+     * Tableau des ensembles de parties utilisé pour le calcul des Cuboides.
+     *
+     * @var array
+     */
     protected $SetsOfParts;
-
-    protected $Cuboides; //** List of Cuboides indexed by their header placeholder combinaison
-    protected $OrderedCuboideIDs; //** List of Cuboide IDs indexed by their Level and their ID
-    protected $FilteredCuboideIDs; //** List of Filtered Cuboide IDs indexed by their Level and their ID
+    
+    /**
+     * Tableau des Cuboides indexé par leur combinaison d'en-têtes.
+     *
+     * @var array
+     */
+    protected $Cuboides;
+    
+    /**
+     * Tableau des Cuboide IDs indexé par leur niveau et leur ID.
+     *
+     * @var array
+     */
+    protected $OrderedCuboideIDs;
+    
+    /**
+     * Tableau des Cuboide IDs filtrés indexé par leur niveau et leur ID.
+     *
+     * @var array
+     */
+    protected $FilteredCuboideIDs;
 }
 
 Log::setDebug ( __FILE__ );
