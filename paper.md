@@ -64,6 +64,7 @@ TAGED est un outil d'extraction de données qui peut s'utiliser avec des donnée
 Les connaissances acquises grâce à TAGED permettent d'équilibrer le *gameplay* de jeux vidéo, en influençant notamment l'ajout ou la suppression de briques de *gameplay* [@Alvarez2018] dans le but de garantir au mieux l'état de *flow* [@books/Csikszentmihalyi09].
 
 TAGED s'appuie sur les théories fondamentales suivantes :
+
 - Skyline [@icde/BorzsonyiKS01] et Skycube [@vldb/YuanLLWYZ05]
 
 - Cube de données [@datamine/GrayCBLRVPP97] et cube de données émergent [@dawak/NedjarCCL07]
@@ -73,6 +74,7 @@ TAGED s'appuie sur les théories fondamentales suivantes :
 L'approche Skycube alliée à celle de cube de données émergent donne celle de Skycube émergent. Après classement, nous obtenons un Skycube émergent ordonné.
 
 TAGED utilise les algorithmes :
+
 - BNL : block-nested loop is used to compute SKyline
 
 - IDEA : la plateforme algorithmique IDEA, et notamment les algorithmes E-IDEA et F-IDEA, eux-même basés sur l'algorithme BUC [@sigmod/BeyerR99], et comptible avec C-IDEA [@martinnevot:hal-02446921]
