@@ -21,7 +21,7 @@ affiliations:
    index: 1
  - name: SATT Sud-Est & ACTIVUS Group, France
    index: 2
-   
+
 date: [@...] [@...] 2023
 bibliography: paper.bib
 europar-doi: [@...]
@@ -54,7 +54,7 @@ Les connaissances acquises grâce à TAGED permettent d'équilibrer le *gameplay
 
 TAGED s'appuie sur les théories fondamentales suivantes :
 - Skyline [@icde/BorzsonyiKS01] et Skycube [@vldb/YuanLLWYZ05]
-- Cube de données [@icde/BorzsonyiKS01] et cube de données émergent [@dawak/NedjarCCL07]
+- Cube de données [@datamine/GrayCBLRVPP97] et cube de données émergent [@dawak/NedjarCCL07]
 - Cosky et Top-*k* [@Yiu:2007:Ongoing]
 
 L'approche Skycube alliée à celle de cube de données émergent donne celle de Skycube émergent. Après classement, nous obtenons un Skycube émergent ordonné.
