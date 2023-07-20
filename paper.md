@@ -22,10 +22,9 @@ affiliations:
  - name: SATT Sud-Est & ACTIVUS Group, France
    index: 2
 
-date: [@...] [@...] 2023
+date: ... ... 2023
 bibliography: paper.bib
-europar-doi: [@...]
-
+europar-doi: ...
 ---
 
 # Summary
