@@ -4,6 +4,7 @@ Folder=${1:-/opt/taged/taged}
 
 User=`whoami`
 History=/home/$User/crontab/history
+GenDoc=/opt/taged/taged/genereateDoc.sh
 LogFile=$History/`basename $0`_`date +%Y%m%d`.log
 ErrFile=$History/GIT.error
 RunTime=`date +"%F %T"` 
@@ -22,6 +23,9 @@ then
     then 
         Err=true 
     fi
+
+    $GenDoc
+
     git add -A &>>$LogFile
     if [ $? -ne 0 ] 
     then 
