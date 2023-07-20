@@ -1,0 +1,10 @@
+name: GitHub Actions
+
+on: [push]
+
+jobs:
+  GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open Journals PDF Generator
+        uses: openjournals/openjournals-draft-action@v.1.0
