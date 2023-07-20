@@ -1,0 +1,4 @@
+TagedAlgo/lib/** -linguist-vendored
+Match3/w*.js -linguist-vendored
+Match3/j*.js -linguist-vendored
+taged/application/www/js/** -linguist-vendored
