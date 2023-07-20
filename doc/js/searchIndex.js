@@ -508,22 +508,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Cuboide\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Cuboide\u0020constructor.",
             "url": "classes/Cuboide.html#method___construct"
         },                {
             "fqsen": "\\Cuboide\u003A\u003AcomputeDataSet\u0028\u0029",
             "name": "computeDataSet",
-            "summary": "Prepares\u0020the\u0020data\u0020set\nRemoves\u0020empty\u0020lines\nComputes\u0020Accords\u0020classes",
+            "summary": "Prepares\u0020the\u0020data\u0020set",
             "url": "classes/Cuboide.html#method_computeDataSet"
         },                {
             "fqsen": "\\Cuboide\u003A\u003AcomputeCuboide\u0028\u0029",
             "name": "computeCuboide",
-            "summary": "",
+            "summary": "Computes\u0020the\u0020Cuboide.",
             "url": "classes/Cuboide.html#method_computeCuboide"
         },                {
             "fqsen": "\\Cuboide\u003A\u003AisInCuboide\u0028\u0029",
             "name": "isInCuboide",
-            "summary": "",
+            "summary": "Checks\u0020if\u0020a\u0020given\u0020row\u0020is\u0020in\u0020the\u0020Cuboide.",
             "url": "classes/Cuboide.html#method_isInCuboide"
         },                {
             "fqsen": "\\Cuboide\u003A\u003ATO_MAX",
@@ -558,12 +558,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CuboideBlocNestedLoop\u003A\u003AcountDifferences\u0028\u0029",
             "name": "countDifferences",
-            "summary": "",
+            "summary": "Counts\u0020the\u0020differences\u0020between\u0020two\u0020rows\u0020and\u0020updates\u0020the\u0020number\u0020of\u0020better\u0020and\u0020worse\u0020comparisons.",
             "url": "classes/CuboideBlocNestedLoop.html#method_countDifferences"
         },                {
             "fqsen": "\\CuboideBlocNestedLoop\u003A\u003AcomputeCuboide\u0028\u0029",
             "name": "computeCuboide",
-            "summary": "",
+            "summary": "Computes\u0020the\u0020Cuboide\u0020using\u0020the\u0020Block\u0020Nested\u0020Loop\u0020algorithm.",
             "url": "classes/CuboideBlocNestedLoop.html#method_computeCuboide"
         },                {
             "fqsen": "\\CuboideBlocNestedLoop\u003A\u003ACURRENT",
@@ -578,12 +578,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CuboideBruteForce\u003A\u003AcomputeCuboide\u0028\u0029",
             "name": "computeCuboide",
-            "summary": "",
+            "summary": "Computes\u0020the\u0020Cuboide\u0020using\u0020the\u0020Brute\u0020Force\u0020strategy.",
             "url": "classes/CuboideBruteForce.html#method_computeCuboide"
         },                {
             "fqsen": "\\CuboideBruteForce\u003A\u003AisInCuboide\u0028\u0029",
             "name": "isInCuboide",
-            "summary": "",
+            "summary": "Checks\u0020if\u0020the\u0020given\u0020row\u0020is\u0020in\u0020the\u0020Cuboide\u0020SkyLine\u0020based\u0020on\u0020comparisons\u0020with\u0020other\u0020rows.",
             "url": "classes/CuboideBruteForce.html#method_isInCuboide"
         },                {
             "fqsen": "\\CuboideEmergent",
@@ -593,7 +593,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CuboideEmergent\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "CuboideEmergent\u0020constructor.",
             "url": "classes/CuboideEmergent.html#method___construct"
         },                {
             "fqsen": "\\CuboideEmergent\u003A\u003AmergeColumns\u0028\u0029",
@@ -608,12 +608,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CuboideEmergent\u003A\u003AcomputeCuboide\u0028\u0029",
             "name": "computeCuboide",
-            "summary": "",
+            "summary": "Computes\u0020the\u0020Cuboide.",
             "url": "classes/CuboideEmergent.html#method_computeCuboide"
         },                {
             "fqsen": "\\CuboideEmergent\u003A\u003AgetDataSetFiltered\u0028\u0029",
             "name": "getDataSetFiltered",
-            "summary": "",
+            "summary": "Gets\u0020the\u0020filtered\u0020data\u0020set\u0020of\u0020the\u0020Emergent\u0020Cuboide.",
             "url": "classes/CuboideEmergent.html#method_getDataSetFiltered"
         },                {
             "fqsen": "\\CuboideEmergent\u003A\u003ACURRENT",
@@ -653,92 +653,92 @@ Search.appendIndex(
         },                {
             "fqsen": "\\IDEA\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "The\u0020constructor\u0020of\u0020the\u0020IDEA\u0020class.",
             "url": "classes/IDEA.html#method___construct"
         },                {
             "fqsen": "\\IDEA\u003A\u003Arun\u0028\u0029",
             "name": "run",
-            "summary": "",
+            "summary": "Runs\u0020the\u0020IDEA\u0020program\u0020and\u0020interprets\u0020the\u0020results.",
             "url": "classes/IDEA.html#method_run"
         },                {
             "fqsen": "\\IDEA\u003A\u003Aprepare\u0028\u0029",
             "name": "prepare",
-            "summary": "",
+            "summary": "Prepares\u0020the\u0020data\u0020for\u0020IDEA\u0020execution\u0020by\u0020calling\u0020various\u0020internal\u0020methods.",
             "url": "classes/IDEA.html#method_prepare"
         },                {
             "fqsen": "\\IDEA\u003A\u003AprepareRelations\u0028\u0029",
             "name": "prepareRelations",
-            "summary": "",
+            "summary": "Prepares\u0020the\u0020relations\u0020data\u0020for\u0020IDEA\u0020execution.",
             "url": "classes/IDEA.html#method_prepareRelations"
         },                {
             "fqsen": "\\IDEA\u003A\u003AcountAttributes\u0028\u0029",
             "name": "countAttributes",
-            "summary": "",
+            "summary": "Counts\u0020the\u0020number\u0020of\u0020attributes\u0020\u0028columns\u0029\u0020in\u0020the\u0020data\u0020set.",
             "url": "classes/IDEA.html#method_countAttributes"
         },                {
             "fqsen": "\\IDEA\u003A\u003Aanonymize\u0028\u0029",
             "name": "anonymize",
-            "summary": "",
+            "summary": "Anonymizes\u0020the\u0020attribute\u0020values\u0020in\u0020the\u0020relations\u0020data.",
             "url": "classes/IDEA.html#method_anonymize"
         },                {
             "fqsen": "\\IDEA\u003A\u003AprepareMeasures\u0028\u0029",
             "name": "prepareMeasures",
-            "summary": "",
+            "summary": "Prepares\u0020the\u0020measures\u0020data\u0020for\u0020IDEA\u0020execution.",
             "url": "classes/IDEA.html#method_prepareMeasures"
         },                {
             "fqsen": "\\IDEA\u003A\u003AprepareTupleFile\u0028\u0029",
             "name": "prepareTupleFile",
-            "summary": "",
+            "summary": "Prepares\u0020the\u0020tuple\u0020file\u0020required\u0020for\u0020IDEA\u0020execution.",
             "url": "classes/IDEA.html#method_prepareTupleFile"
         },                {
             "fqsen": "\\IDEA\u003A\u003AexportMeasures\u0028\u0029",
             "name": "exportMeasures",
-            "summary": "",
+            "summary": "Exports\u0020the\u0020prepared\u0020measures\u0020data\u0020to\u0020a\u0020CSV\u0020file.",
             "url": "classes/IDEA.html#method_exportMeasures"
         },                {
             "fqsen": "\\IDEA\u003A\u003AexportRelations\u0028\u0029",
             "name": "exportRelations",
-            "summary": "",
+            "summary": "Exports\u0020the\u0020prepared\u0020relations\u0020data\u0020to\u0020a\u0020CSV\u0020file.",
             "url": "classes/IDEA.html#method_exportRelations"
         },                {
             "fqsen": "\\IDEA\u003A\u003AcomputeMinMax\u0028\u0029",
             "name": "computeMinMax",
-            "summary": "",
+            "summary": "Computes\u0020the\u0020minimum\u0020and\u0020maximum\u0020values\u0020for\u0020IDEA\u0020computation.",
             "url": "classes/IDEA.html#method_computeMinMax"
         },                {
             "fqsen": "\\IDEA\u003A\u003Ainterpret\u0028\u0029",
             "name": "interpret",
-            "summary": "",
+            "summary": "Interprets\u0020the\u0020IDEA\u0020results\u0020from\u0020the\u0020generated\u0020output\u0020file.",
             "url": "classes/IDEA.html#method_interpret"
         },                {
             "fqsen": "\\IDEA\u003A\u003AconvertToNumerics\u0028\u0029",
             "name": "convertToNumerics",
-            "summary": "",
+            "summary": "Converts\u0020the\u0020given\u0020attribute\u0020value\u0020to\u0020a\u0020numeric\u0020representation.",
             "url": "classes/IDEA.html#method_convertToNumerics"
         },                {
             "fqsen": "\\IDEA\u003A\u003AsetAlgorithm\u0028\u0029",
             "name": "setAlgorithm",
-            "summary": "",
+            "summary": "Sets\u0020the\u0020algorithm\u0020used\u0020by\u0020IDEA.",
             "url": "classes/IDEA.html#method_setAlgorithm"
         },                {
             "fqsen": "\\IDEA\u003A\u003AsetMeasures\u0028\u0029",
             "name": "setMeasures",
-            "summary": "",
+            "summary": "Sets\u0020the\u0020input\u0020measures\u0020data\u0020for\u0020IDEA\u0020execution.",
             "url": "classes/IDEA.html#method_setMeasures"
         },                {
             "fqsen": "\\IDEA\u003A\u003AsetRelations\u0028\u0029",
             "name": "setRelations",
-            "summary": "",
+            "summary": "Sets\u0020the\u0020input\u0020relations\u0020data\u0020for\u0020IDEA\u0020execution.",
             "url": "classes/IDEA.html#method_setRelations"
         },                {
             "fqsen": "\\IDEA\u003A\u003AsetMin\u0028\u0029",
             "name": "setMin",
-            "summary": "",
+            "summary": "Sets\u0020the\u0020minimum\u0020value\u0020for\u0020IDEA\u0020computation.",
             "url": "classes/IDEA.html#method_setMin"
         },                {
             "fqsen": "\\IDEA\u003A\u003AsetMax\u0028\u0029",
             "name": "setMax",
-            "summary": "",
+            "summary": "Sets\u0020the\u0020maximum\u0020value\u0020for\u0020IDEA\u0020computation.",
             "url": "classes/IDEA.html#method_setMax"
         },                {
             "fqsen": "\\IDEA\u003A\u003A\u0024Algorithm",
@@ -823,222 +823,217 @@ Search.appendIndex(
         },                {
             "fqsen": "\\SKDisplay\u003A\u003Atext\u0028\u0029",
             "name": "text",
-            "summary": "",
+            "summary": "Convertit\u0020l\u0027objet\u0020en\u0020texte\u0020en\u0020utilisant\u0020la\u0020fonction\u0020print_r.",
             "url": "classes/SKDisplay.html#method_text"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003Ahtml\u0028\u0029",
             "name": "html",
-            "summary": "",
+            "summary": "Convertit\u0020l\u0027objet\u0020en\u0020format\u0020HTML\u0020en\u0020utilisant\u0020une\u0020fonction\u0020sp\u00E9cifique\u0020en\u0020fonction\u0020du\u0020type\u0020d\u0027objet.",
             "url": "classes/SKDisplay.html#method_html"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003AhtmlInputData\u0028\u0029",
             "name": "htmlInputData",
-            "summary": "",
+            "summary": "Convertit\u0020le\u0020SkyCube\u0020en\u0020format\u0020HTML\u0020repr\u00E9sentant\u0020les\u0020donn\u00E9es\u0020d\u0027entr\u00E9e.",
             "url": "classes/SKDisplay.html#method_htmlInputData"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003AhtmlCoSky\u0028\u0029",
             "name": "htmlCoSky",
-            "summary": "",
+            "summary": "Convertit\u0020le\u0020CoSky\u0020en\u0020format\u0020HTML.",
             "url": "classes/SKDisplay.html#method_htmlCoSky"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003AhtmlEmergence\u0028\u0029",
             "name": "htmlEmergence",
-            "summary": "",
+            "summary": "Convertit\u0020le\u0020SkyCube\u0020en\u0020format\u0020HTML\u0020repr\u00E9sentant\u0020les\u0020\u00E9mergences.",
             "url": "classes/SKDisplay.html#method_htmlEmergence"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003AhtmlMultidimensionalSpace\u0028\u0029",
             "name": "htmlMultidimensionalSpace",
-            "summary": "",
+            "summary": "Convertit\u0020le\u0020SkyCube\u0020en\u0020format\u0020HTML\u0020repr\u00E9sentant\u0020l\u0027espace\u0020multidimensionnel.",
             "url": "classes/SKDisplay.html#method_htmlMultidimensionalSpace"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003AhtmlSkyCubeFusion\u0028\u0029",
             "name": "htmlSkyCubeFusion",
-            "summary": "",
+            "summary": "Convertit\u0020le\u0020SkyCube\u0020en\u0020format\u0020HTML\u0020repr\u00E9sentant\u0020la\u0020fusion\u0020des\u0020Cuboides\u0020\u0028Relation\u0020fusionn\u00E9e\u0029.",
             "url": "classes/SKDisplay.html#method_htmlSkyCubeFusion"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003AhtmlSkyCubeParam\u0028\u0029",
             "name": "htmlSkyCubeParam",
-            "summary": "",
+            "summary": "Convertit\u0020le\u0020SkyCube\u0020en\u0020format\u0020HTML\u0020repr\u00E9sentant\u0020les\u0020Cuboides\u0020avec\u0020des\u0020param\u00E8tres\u0020sp\u00E9cifiques.",
             "url": "classes/SKDisplay.html#method_htmlSkyCubeParam"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003AhtmlEquivalenceClasses\u0028\u0029",
             "name": "htmlEquivalenceClasses",
-            "summary": "",
+            "summary": "Convertit\u0020le\u0020SkyCube\u0020en\u0020format\u0020HTML\u0020repr\u00E9sentant\u0020les\u0020classes\u0020d\u0027\u00E9quivalence.",
             "url": "classes/SKDisplay.html#method_htmlEquivalenceClasses"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003AhtmlSkyCube\u0028\u0029",
             "name": "htmlSkyCube",
-            "summary": "",
+            "summary": "Convertit\u0020le\u0020SkyCube\u0020en\u0020format\u0020HTML\u0020repr\u00E9sentant\u0020les\u0020Cuboides.",
             "url": "classes/SKDisplay.html#method_htmlSkyCube"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003AhtmlSkyCubeEmergent\u0028\u0029",
             "name": "htmlSkyCubeEmergent",
-            "summary": "",
+            "summary": "Convertit\u0020le\u0020SkyCubeEmergent\u0020en\u0020format\u0020HTML\u0020repr\u00E9sentant\u0020les\u0020Cuboides\u0020\u00E9mergents.",
             "url": "classes/SKDisplay.html#method_htmlSkyCubeEmergent"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003AhtmlCuboide\u0028\u0029",
             "name": "htmlCuboide",
-            "summary": "",
+            "summary": "Convertit\u0020le\u0020Cuboide\u0020en\u0020format\u0020HTML.",
             "url": "classes/SKDisplay.html#method_htmlCuboide"
-        },                {
-            "fqsen": "\\SKDisplay\u003A\u003AhtmlCuboideFusion\u0028\u0029",
-            "name": "htmlCuboideFusion",
-            "summary": "",
-            "url": "classes/SKDisplay.html#method_htmlCuboideFusion"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003AhtmlCuboideParam\u0028\u0029",
             "name": "htmlCuboideParam",
-            "summary": "",
+            "summary": "Convertit\u0020le\u0020Cuboide\u0020en\u0020format\u0020HTML\u0020avec\u0020des\u0020param\u00E8tres\u0020personnalisables.",
             "url": "classes/SKDisplay.html#method_htmlCuboideParam"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003AhtmlCuboideEmergent\u0028\u0029",
             "name": "htmlCuboideEmergent",
-            "summary": "",
+            "summary": "Convertit\u0020le\u0020CuboideEmergent\u0020en\u0020format\u0020HTML.",
             "url": "classes/SKDisplay.html#method_htmlCuboideEmergent"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003Alatex\u0028\u0029",
             "name": "latex",
-            "summary": "",
+            "summary": "G\u00E9n\u00E8re\u0020la\u0020repr\u00E9sentation\u0020LaTeX\u0020pour\u0020l\u0027objet\u0020fourni.",
             "url": "classes/SKDisplay.html#method_latex"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003AlatexSkyCube\u0028\u0029",
             "name": "latexSkyCube",
-            "summary": "",
+            "summary": "G\u00E9n\u00E8re\u0020la\u0020repr\u00E9sentation\u0020LaTeX\u0020pour\u0020le\u0020SkyCube\u0020fourni.",
             "url": "classes/SKDisplay.html#method_latexSkyCube"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003AlatexSkyCubeEmergent\u0028\u0029",
             "name": "latexSkyCubeEmergent",
-            "summary": "",
+            "summary": "G\u00E9n\u00E8re\u0020la\u0020repr\u00E9sentation\u0020LaTeX\u0020pour\u0020le\u0020SkyCubeEmergent\u0020fourni.",
             "url": "classes/SKDisplay.html#method_latexSkyCubeEmergent"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003AlatexCuboide\u0028\u0029",
             "name": "latexCuboide",
-            "summary": "",
+            "summary": "G\u00E9n\u00E8re\u0020la\u0020repr\u00E9sentation\u0020LaTeX\u0020pour\u0020le\u0020Cuboide\u0020fourni.",
             "url": "classes/SKDisplay.html#method_latexCuboide"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003AlatexCuboideEmergent\u0028\u0029",
             "name": "latexCuboideEmergent",
-            "summary": "",
+            "summary": "G\u00E9n\u00E8re\u0020la\u0020repr\u00E9sentation\u0020LaTeX\u0020pour\u0020le\u0020CuboideEmergent\u0020fourni.",
             "url": "classes/SKDisplay.html#method_latexCuboideEmergent"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003AtoLaTex\u0028\u0029",
             "name": "toLaTex",
-            "summary": "",
+            "summary": "G\u00E9n\u00E8re\u0020la\u0020repr\u00E9sentation\u0020LaTeX\u0020pour\u0020le\u0020SkyCube\u0020actuel.",
             "url": "classes/SKDisplay.html#method_toLaTex"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003A__toString\u0028\u0029",
             "name": "__toString",
-            "summary": "",
+            "summary": "G\u00E9n\u00E8re\u0020une\u0020repr\u00E9sentation\u0020sous\u0020forme\u0020de\u0020cha\u00EEne\u0020de\u0020caract\u00E8res\u0020pour\u0020le\u0020SkyCube\u0020actuel.",
             "url": "classes/SKDisplay.html#method___toString"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003AgenerateCuboideListLvl\u0028\u0029",
             "name": "generateCuboideListLvl",
-            "summary": "",
+            "summary": "G\u00E9n\u00E8re\u0020une\u0020liste\u0020de\u0020Cuboides\u0020pour\u0020le\u0020niveau\u0020donn\u00E9\u0020en\u0020utilisant\u0020la\u0020r\u00E9cursivit\u00E9.",
             "url": "classes/SKDisplay.html#method_generateCuboideListLvl"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003AgenerateCuboideList\u0028\u0029",
             "name": "generateCuboideList",
-            "summary": "",
+            "summary": "G\u00E9n\u00E8re\u0020la\u0020liste\u0020compl\u00E8te\u0020des\u0020Cuboides.",
             "url": "classes/SKDisplay.html#method_generateCuboideList"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003AcomputeDataSet\u0028\u0029",
             "name": "computeDataSet",
-            "summary": "",
+            "summary": "Calcule\u0020le\u0020DataSet\u0020\u00E0\u0020partir\u0020des\u0020donn\u00E9es\u0020fournies\u0020en\u0020utilisant\u0020les\u0020colonnes\u0020de\u0020relation\u0020et\u0020de\u0020mesure.",
             "url": "classes/SKDisplay.html#method_computeDataSet"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003AgetDataSet\u0028\u0029",
             "name": "getDataSet",
-            "summary": "",
+            "summary": "R\u00E9cup\u00E8re\u0020le\u0020DataSet\u0020actuel\u0020du\u0020SkyCube.",
             "url": "classes/SKDisplay.html#method_getDataSet"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003AgetRowHeaders\u0028\u0029",
             "name": "getRowHeaders",
-            "summary": "",
+            "summary": "R\u00E9cup\u00E8re\u0020les\u0020en\u002Dt\u00EAtes\u0020de\u0020ligne\u0020actuels\u0020du\u0020SkyCube.",
             "url": "classes/SKDisplay.html#method_getRowHeaders"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003AgetColIDs\u0028\u0029",
             "name": "getColIDs",
-            "summary": "",
+            "summary": "R\u00E9cup\u00E8re\u0020les\u0020identifiants\u0020de\u0020colonnes\u0020actuels\u0020du\u0020SkyCube.",
             "url": "classes/SKDisplay.html#method_getColIDs"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003AROW_ID",
             "name": "ROW_ID",
-            "summary": "",
+            "summary": "The\u0020column\u0020name\u0020representing\u0020the\u0020Row\u0020ID\u0020in\u0020the\u0020data\u0020set.",
             "url": "classes/SKDisplay.html#constant_ROW_ID"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003ANO_FLAG",
             "name": "NO_FLAG",
-            "summary": "",
+            "summary": "Constant\u0020flag\u0020value\u0020to\u0020indicate\u0020no\u0020special\u0020behavior.",
             "url": "classes/SKDisplay.html#constant_NO_FLAG"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003ASHOW_FILTERED",
             "name": "SHOW_FILTERED",
-            "summary": "",
+            "summary": "Flag\u0020to\u0020show\u0020filtered\u0020data\u0020only\u0020\u0028without\u0020removed\u0020data\u0029\u0020in\u0020the\u0020presentation.",
             "url": "classes/SKDisplay.html#constant_SHOW_FILTERED"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003ASHOW_REMOVED",
             "name": "SHOW_REMOVED",
-            "summary": "",
+            "summary": "Flag\u0020to\u0020show\u0020filtered\u0020data\u0020along\u0020with\u0020removed\u0020data\u0020in\u0020the\u0020presentation.",
             "url": "classes/SKDisplay.html#constant_SHOW_REMOVED"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003ASHOW_EQUIV_CLASS",
             "name": "SHOW_EQUIV_CLASS",
-            "summary": "",
+            "summary": "Flag\u0020to\u0020show\u0020equivalence\u0020classes\u0020in\u0020the\u0020presentation\u0020titles.",
             "url": "classes/SKDisplay.html#constant_SHOW_EQUIV_CLASS"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003ASHOW_VALIDITY",
             "name": "SHOW_VALIDITY",
-            "summary": "",
+            "summary": "Flag\u0020to\u0020show\u0020validity\u0020information\u0020in\u0020the\u0020presentation\u0020titles.",
             "url": "classes/SKDisplay.html#constant_SHOW_VALIDITY"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003ASHOW_DATA_RAW",
             "name": "SHOW_DATA_RAW",
-            "summary": "",
+            "summary": "Flag\u0020to\u0020show\u0020raw\u0020data\u0020in\u0020the\u0020presentation\u0020\u0028exclusive\u0020with\u0020SHOW_DATA_FILTERED\u0020and\u0020SHOW_DATA_COMPUTED\u0029.",
             "url": "classes/SKDisplay.html#constant_SHOW_DATA_RAW"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003ASHOW_DATA_FILTERED",
             "name": "SHOW_DATA_FILTERED",
-            "summary": "",
+            "summary": "Flag\u0020to\u0020show\u0020filtered\u0020data\u0020in\u0020the\u0020presentation\u0020\u0028exclusive\u0020with\u0020SHOW_DATA_RAW\u0020and\u0020SHOW_DATA_COMPUTED\u0029.",
             "url": "classes/SKDisplay.html#constant_SHOW_DATA_FILTERED"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003ASHOW_DATA_COMPUTED",
             "name": "SHOW_DATA_COMPUTED",
-            "summary": "",
+            "summary": "Flag\u0020to\u0020show\u0020computed\u0020data\u0020in\u0020the\u0020presentation\u0020\u0028exclusive\u0020with\u0020SHOW_DATA_RAW\u0020and\u0020SHOW_DATA_FILTERED\u0029.",
             "url": "classes/SKDisplay.html#constant_SHOW_DATA_COMPUTED"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003ASHOW_EQUIV_CLASS_FILTERED",
             "name": "SHOW_EQUIV_CLASS_FILTERED",
-            "summary": "",
+            "summary": "Flag\u0020to\u0020show\u0020equivalence\u0020classes\u0020in\u0020the\u0020presentation\u0020titles\u0020for\u0020filtered\u0020data.",
             "url": "classes/SKDisplay.html#constant_SHOW_EQUIV_CLASS_FILTERED"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003A\u0024DataSet",
             "name": "DataSet",
-            "summary": "",
+            "summary": "Tableau\u0020associatif\u0020index\u00E9\u0020par\u0020RowID\u0020et\u0020ColID\u0020repr\u00E9sentant\u0020les\u0020mesures\u0020de\u0020la\u0020relation.",
             "url": "classes/SKDisplay.html#property_DataSet"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003A\u0024RowHeaders",
             "name": "RowHeaders",
-            "summary": "",
+            "summary": "Tableau\u0020associatif\u0020index\u00E9\u0020par\u0020RowID\u0020repr\u00E9sentant\u0020les\u0020identifiants\u0020de\u0020la\u0020relation.",
             "url": "classes/SKDisplay.html#property_RowHeaders"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003A\u0024ColIDs",
             "name": "ColIDs",
-            "summary": "",
+            "summary": "Tableau\u0020associatif\u0020index\u00E9\u0020par\u0020ColID\u0020repr\u00E9sentant\u0020les\u0020identifiants\u0020de\u0020mesure.",
             "url": "classes/SKDisplay.html#property_ColIDs"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003A\u0024Cuboides",
             "name": "Cuboides",
-            "summary": "",
+            "summary": "Liste\u0020des\u0020Cuboides\u0020index\u00E9s\u0020par\u0020leur\u0020combinaison\u0020d\u0027en\u002Dt\u00EAte\u0020de\u0020placeholder.",
             "url": "classes/SKDisplay.html#property_Cuboides"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003A\u0024MinMax",
             "name": "MinMax",
-            "summary": "",
+            "summary": "Tableau\u0020contenant\u0020les\u0020valeurs\u0020minimales\u0020et\u0020maximales\u0020pour\u0020le\u0020calcul.",
             "url": "classes/SKDisplay.html#property_MinMax"
         },                {
             "fqsen": "\\SKDisplay\u003A\u003A\u0024IsValid",
             "name": "IsValid",
-            "summary": "",
+            "summary": "Indique\u0020si\u0020les\u0020donn\u00E9es\u0020de\u0020la\u0020relation\u0020sont\u0020valides.",
             "url": "classes/SKDisplay.html#property_IsValid"
         },                {
             "fqsen": "\\SkyCube",
@@ -1048,137 +1043,137 @@ Search.appendIndex(
         },                {
             "fqsen": "\\SkyCube\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020SkyCube.",
             "url": "classes/SkyCube.html#method___construct"
         },                {
             "fqsen": "\\SkyCube\u003A\u003AgenerateCuboideListLvl\u0028\u0029",
             "name": "generateCuboideListLvl",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020prot\u00E9g\u00E9e\u0020pour\u0020g\u00E9n\u00E9rer\u0020la\u0020liste\u0020des\u0020Cuboides\u0020pour\u0020un\u0020niveau\u0020donn\u00E9.",
             "url": "classes/SkyCube.html#method_generateCuboideListLvl"
         },                {
             "fqsen": "\\SkyCube\u003A\u003AgenerateCuboideList\u0028\u0029",
             "name": "generateCuboideList",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020prot\u00E9g\u00E9e\u0020pour\u0020g\u00E9n\u00E9rer\u0020la\u0020liste\u0020des\u0020Cuboides\u0020pour\u0020un\u0020niveau\u0020donn\u00E9.",
             "url": "classes/SkyCube.html#method_generateCuboideList"
         },                {
             "fqsen": "\\SkyCube\u003A\u003AgetColID\u0028\u0029",
             "name": "getColID",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020prot\u00E9g\u00E9e\u0020pour\u0020obtenir\u0020l\u0027ID\u0020d\u0027une\u0020colonne.",
             "url": "classes/SkyCube.html#method_getColID"
         },                {
             "fqsen": "\\SkyCube\u003A\u003AcomputeDataSet\u0028\u0029",
             "name": "computeDataSet",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020prot\u00E9g\u00E9e\u0020pour\u0020calculer\u0020le\u0020DataSet\u0020\u00E0\u0020partir\u0020des\u0020donn\u00E9es\u0020brutes,\u0020des\u0020colonnes\u0020de\u0020relation\u0020et\u0020des\u0020colonnes\u0020d\u0027attribut.",
             "url": "classes/SkyCube.html#method_computeDataSet"
         },                {
             "fqsen": "\\SkyCube\u003A\u003AgenerateCombinatorial\u0028\u0029",
             "name": "generateCombinatorial",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020prot\u00E9g\u00E9e\u0020pour\u0020g\u00E9n\u00E9rer\u0020des\u0020combinaisons\u0020de\u0020valeurs.",
             "url": "classes/SkyCube.html#method_generateCombinatorial"
         },                {
             "fqsen": "\\SkyCube\u003A\u003AtestCombinatorial\u0028\u0029",
             "name": "testCombinatorial",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020de\u0020test\u0020pour\u0020g\u00E9n\u00E9rer\u0020des\u0020combinaisons\u0020et\u0020afficher\u0020le\u0020r\u00E9sultat.",
             "url": "classes/SkyCube.html#method_testCombinatorial"
         },                {
             "fqsen": "\\SkyCube\u003A\u003AgetMultidimensionalSpace\u0028\u0029",
             "name": "getMultidimensionalSpace",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020pour\u0020obtenir\u0020l\u0027espace\u0020multidimensionnel\u0020g\u00E9n\u00E9r\u00E9\u0020par\u0020le\u0020Skycube.",
             "url": "classes/SkyCube.html#method_getMultidimensionalSpace"
         },                {
             "fqsen": "\\SkyCube\u003A\u003AgetDataSet\u0028\u0029",
             "name": "getDataSet",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020pour\u0020obtenir\u0020le\u0020DataSet\u0020du\u0020Skycube.",
             "url": "classes/SkyCube.html#method_getDataSet"
         },                {
             "fqsen": "\\SkyCube\u003A\u003AgetRowHeaders\u0028\u0029",
             "name": "getRowHeaders",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020pour\u0020obtenir\u0020les\u0020en\u002Dt\u00EAtes\u0020de\u0020lignes\u0020du\u0020Skycube.",
             "url": "classes/SkyCube.html#method_getRowHeaders"
         },                {
             "fqsen": "\\SkyCube\u003A\u003AgetColIDs\u0028\u0029",
             "name": "getColIDs",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020pour\u0020obtenir\u0020les\u0020en\u002Dt\u00EAtes\u0020de\u0020colonnes\u0020\u0028ColIDs\u0029\u0020du\u0020Skycube.",
             "url": "classes/SkyCube.html#method_getColIDs"
         },                {
             "fqsen": "\\SkyCube\u003A\u003AgetCuboides\u0028\u0029",
             "name": "getCuboides",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020pour\u0020obtenir\u0020la\u0020liste\u0020des\u0020Cuboides\u0020du\u0020Skycube.",
             "url": "classes/SkyCube.html#method_getCuboides"
         },                {
             "fqsen": "\\SkyCube\u003A\u003AgetCuboideIDs\u0028\u0029",
             "name": "getCuboideIDs",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020pour\u0020obtenir\u0020les\u0020IDs\u0020des\u0020Cuboides,\u0020filtr\u00E9s\u0020ou\u0020non,\u0020index\u00E9s\u0020par\u0020leur\u0020niveau\u0020et\u0020leur\u0020ID.",
             "url": "classes/SkyCube.html#method_getCuboideIDs"
         },                {
             "fqsen": "\\SkyCube\u003A\u003AgetCuboide\u0028\u0029",
             "name": "getCuboide",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020pour\u0020obtenir\u0020un\u0020Cuboide\u0020sp\u00E9cifique\u0020en\u0020fonction\u0020de\u0020son\u0020ID.",
             "url": "classes/SkyCube.html#method_getCuboide"
         },                {
             "fqsen": "\\SkyCube\u003A\u003AMAX_CUBOIDE",
             "name": "MAX_CUBOIDE",
-            "summary": "",
+            "summary": "Le\u0020nombre\u0020maximal\u0020de\u0020Cuboides\u0020autoris\u00E9.",
             "url": "classes/SkyCube.html#constant_MAX_CUBOIDE"
         },                {
             "fqsen": "\\SkyCube\u003A\u003AMIN_COLID",
             "name": "MIN_COLID",
-            "summary": "",
+            "summary": "L\u0027ID\u0020de\u0020la\u0020premi\u00E8re\u0020colonne\u0020de\u0020donn\u00E9es.",
             "url": "classes/SkyCube.html#constant_MIN_COLID"
         },                {
             "fqsen": "\\SkyCube\u003A\u003ACUBOIDE",
             "name": "CUBOIDE",
-            "summary": "",
+            "summary": "Le\u0020nom\u0020de\u0020la\u0020classe\u0020Cuboide\u0020utilis\u00E9e\u0020pour\u0020la\u0020construction\u0020des\u0020Cuboides.",
             "url": "classes/SkyCube.html#constant_CUBOIDE"
         },                {
             "fqsen": "\\SkyCube\u003A\u003A\u0024DataSet",
             "name": "DataSet",
-            "summary": "",
+            "summary": "Tableau\u0020des\u0020donn\u00E9es\u0020brutes\u0020index\u00E9es\u0020par\u0020RowID\u0020et\u0020ColID\u0020de\u0020Relation\u0020measures.",
             "url": "classes/SkyCube.html#property_DataSet"
         },                {
             "fqsen": "\\SkyCube\u003A\u003A\u0024RowHeaders",
             "name": "RowHeaders",
-            "summary": "",
+            "summary": "Tableau\u0020des\u0020en\u002Dt\u00EAtes\u0020de\u0020lignes\u0020index\u00E9\u0020par\u0020RowID\u0020de\u0020Relation\u0020identifiers.",
             "url": "classes/SkyCube.html#property_RowHeaders"
         },                {
             "fqsen": "\\SkyCube\u003A\u003A\u0024ColIDs",
             "name": "ColIDs",
-            "summary": "",
+            "summary": "Tableau\u0020des\u0020en\u002Dt\u00EAtes\u0020de\u0020colonnes\u0020index\u00E9\u0020par\u0020ColID\u0020de\u0020Measure\u0020identifiers.",
             "url": "classes/SkyCube.html#property_ColIDs"
         },                {
             "fqsen": "\\SkyCube\u003A\u003A\u0024MinMax",
             "name": "MinMax",
-            "summary": "",
+            "summary": "Indicateur\u0020pour\u0020la\u0020valeur\u0020maximale\u0020ou\u0020minimale\u0020lors\u0020de\u0020la\u0020construction\u0020des\u0020Cuboides.",
             "url": "classes/SkyCube.html#property_MinMax"
         },                {
             "fqsen": "\\SkyCube\u003A\u003A\u0024IsValid",
             "name": "IsValid",
-            "summary": "",
+            "summary": "Indicateur\u0020pour\u0020d\u00E9terminer\u0020si\u0020l\u0027instance\u0020de\u0020SkyCube\u0020est\u0020valide.",
             "url": "classes/SkyCube.html#property_IsValid"
         },                {
             "fqsen": "\\SkyCube\u003A\u003A\u0024CurrentColID",
             "name": "CurrentColID",
-            "summary": "",
+            "summary": "ID\u0020de\u0020colonne\u0020actuel\u0020utilis\u00E9\u0020uniquement\u0020pendant\u0020la\u0020phase\u0020de\u0020construction.",
             "url": "classes/SkyCube.html#property_CurrentColID"
         },                {
             "fqsen": "\\SkyCube\u003A\u003A\u0024SetsOfParts",
             "name": "SetsOfParts",
-            "summary": "",
+            "summary": "Tableau\u0020des\u0020ensembles\u0020de\u0020parties\u0020utilis\u00E9\u0020pour\u0020le\u0020calcul\u0020des\u0020Cuboides.",
             "url": "classes/SkyCube.html#property_SetsOfParts"
         },                {
             "fqsen": "\\SkyCube\u003A\u003A\u0024Cuboides",
             "name": "Cuboides",
-            "summary": "",
+            "summary": "Tableau\u0020des\u0020Cuboides\u0020index\u00E9\u0020par\u0020leur\u0020combinaison\u0020d\u0027en\u002Dt\u00EAtes.",
             "url": "classes/SkyCube.html#property_Cuboides"
         },                {
             "fqsen": "\\SkyCube\u003A\u003A\u0024OrderedCuboideIDs",
             "name": "OrderedCuboideIDs",
-            "summary": "",
+            "summary": "Tableau\u0020des\u0020Cuboide\u0020IDs\u0020index\u00E9\u0020par\u0020leur\u0020niveau\u0020et\u0020leur\u0020ID.",
             "url": "classes/SkyCube.html#property_OrderedCuboideIDs"
         },                {
             "fqsen": "\\SkyCube\u003A\u003A\u0024FilteredCuboideIDs",
             "name": "FilteredCuboideIDs",
-            "summary": "",
+            "summary": "Tableau\u0020des\u0020Cuboide\u0020IDs\u0020filtr\u00E9s\u0020index\u00E9\u0020par\u0020leur\u0020niveau\u0020et\u0020leur\u0020ID.",
             "url": "classes/SkyCube.html#property_FilteredCuboideIDs"
         },                {
             "fqsen": "\\SkyCubeBlocNestedLoop",
@@ -1188,7 +1183,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\SkyCubeBlocNestedLoop\u003A\u003ACUBOIDE",
             "name": "CUBOIDE",
-            "summary": "",
+            "summary": "Le\u0020nom\u0020de\u0020la\u0020classe\u0020Cuboide\u0020utilis\u00E9e\u0020pour\u0020la\u0020construction\u0020des\u0020Cuboides.",
             "url": "classes/SkyCubeBlocNestedLoop.html#constant_CUBOIDE"
         },                {
             "fqsen": "\\SkyCubeBruteForce",
@@ -1198,7 +1193,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\SkyCubeBruteForce\u003A\u003ACUBOIDE",
             "name": "CUBOIDE",
-            "summary": "",
+            "summary": "Le\u0020nom\u0020de\u0020la\u0020classe\u0020Cuboide\u0020utilis\u00E9e\u0020pour\u0020la\u0020construction\u0020des\u0020Cuboides.",
             "url": "classes/SkyCubeBruteForce.html#constant_CUBOIDE"
         },                {
             "fqsen": "\\SkyCubeEmergent",
@@ -1208,17 +1203,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\SkyCubeEmergent\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020SkyCube.",
             "url": "classes/SkyCubeEmergent.html#method___construct"
         },                {
             "fqsen": "\\SkyCubeEmergent\u003A\u003AgetColID\u0028\u0029",
             "name": "getColID",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020prot\u00E9g\u00E9e\u0020pour\u0020obtenir\u0020l\u0027ID\u0020d\u0027une\u0020colonne.",
             "url": "classes/SkyCubeEmergent.html#method_getColID"
         },                {
             "fqsen": "\\SkyCubeEmergent\u003A\u003AcomputeDataSet\u0028\u0029",
             "name": "computeDataSet",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020prot\u00E9g\u00E9e\u0020pour\u0020calculer\u0020le\u0020DataSet\u0020\u00E0\u0020partir\u0020des\u0020donn\u00E9es\u0020brutes,\u0020des\u0020colonnes\u0020de\u0020relation\u0020et\u0020des\u0020colonnes\u0020d\u0027attribut.",
             "url": "classes/SkyCubeEmergent.html#method_computeDataSet"
         },                {
             "fqsen": "\\SkyCubeEmergent\u003A\u003AmergeCuboideLists\u0028\u0029",
@@ -1228,22 +1223,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\SkyCubeEmergent\u003A\u003AgetCuboides\u0028\u0029",
             "name": "getCuboides",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020pour\u0020obtenir\u0020la\u0020liste\u0020des\u0020Cuboides\u0020du\u0020Skycube.",
             "url": "classes/SkyCubeEmergent.html#method_getCuboides"
         },                {
             "fqsen": "\\SkyCubeEmergent\u003A\u003AgetCuboide\u0028\u0029",
             "name": "getCuboide",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020pour\u0020obtenir\u0020un\u0020Cuboide\u0020sp\u00E9cifique\u0020en\u0020fonction\u0020de\u0020son\u0020ID.",
             "url": "classes/SkyCubeEmergent.html#method_getCuboide"
         },                {
             "fqsen": "\\SkyCubeEmergent\u003A\u003AgetCuboideIDs\u0028\u0029",
             "name": "getCuboideIDs",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020pour\u0020obtenir\u0020les\u0020IDs\u0020des\u0020Cuboides,\u0020filtr\u00E9s\u0020ou\u0020non,\u0020index\u00E9s\u0020par\u0020leur\u0020niveau\u0020et\u0020leur\u0020ID.",
             "url": "classes/SkyCubeEmergent.html#method_getCuboideIDs"
         },                {
             "fqsen": "\\SkyCubeEmergent\u003A\u003AgetMultidimensionalSpace\u0028\u0029",
             "name": "getMultidimensionalSpace",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020pour\u0020obtenir\u0020l\u0027espace\u0020multidimensionnel\u0020g\u00E9n\u00E9r\u00E9\u0020par\u0020le\u0020Skycube.",
             "url": "classes/SkyCubeEmergent.html#method_getMultidimensionalSpace"
         },                {
             "fqsen": "\\SkyCubeEmergent\u003A\u003AgetEmergence\u0028\u0029",
@@ -7598,7 +7593,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CuboideEmergent\u003A\u003AcomputeDataSet\u0028\u0029",
             "name": "computeDataSet",
-            "summary": "Prepares\u0020the\u0020data\u0020set\nRemoves\u0020empty\u0020lines\nComputes\u0020Accords\u0020classes",
+            "summary": "Prepares\u0020the\u0020data\u0020set",
             "url": "classes/CuboideEmergent.html#method_computeDataSet"
         },                {
             "fqsen": "\\CuboideEmergent\u003A\u003AgetID\u0028\u0029",

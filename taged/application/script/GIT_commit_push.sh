@@ -4,7 +4,7 @@ Folder=${1:-/opt/taged/taged}
 
 User=`whoami`
 History=/home/$User/crontab/history
-GenDoc=/opt/taged/taged/genereateDoc.sh
+GenDoc=/opt/taged/taged/generateDoc.sh
 LogFile=$History/`basename $0`_`date +%Y%m%d`.log
 ErrFile=$History/GIT.error
 RunTime=`date +"%F %T"` 
