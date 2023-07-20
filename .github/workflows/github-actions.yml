@@ -1,6 +1,6 @@
 name: GitHub Actions
 
-on: [push]
+on: [release]
 
 jobs:
   GitHub-Actions:
