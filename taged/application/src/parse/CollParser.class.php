@@ -4,14 +4,14 @@
  * Parser Collection ( Pokemon Showdown )
  * @package TAGED\Parser\Collection
  */
-class CollParser {
-
-    private $turns;
+class CollParser 
+{
     
-    private $FullText;
-    private $ProcessedText;
-    private $Game;
-    
+    /**
+     * Construit un nouvel objet CollParser.
+     * 
+     * @param string $TextToParse Le texte brut à analyser.
+     */
     public function __construct ( $TextToParse ) 
     {
         $this->FullText = $TextToParse;
@@ -26,9 +26,8 @@ class CollParser {
     }
 
     /**
-     * @brief Clean the $this->FullText member variable of all undesirables characters.
-     * Use because PCRE pattern modifier m (PCRE_MULTILINE) have to use "\n" characters in a subject string to match
-     * multiline group (particularly useful for lists).
+     * Nettoie le contenu de $this->FullText de tous les caractères indésirables.
+     * Utilise le modificateur d'expression régulière m (PCRE_MULTILINE) pour utiliser des caractères "\n" dans une chaîne de sujet afin de faire correspondre des groupes multilignes (particulièrement utile pour les listes).
      */
     private function clean () 
     {
@@ -39,6 +38,13 @@ class CollParser {
         $this->ProcessedText  = preg_replace('/^.*\<script type="text\/plain" class="battle-log-data"\>(.*)\<\/script\>.*$/sU', '$1', $tmp);
     }
 
+    /**
+     * Applique un motif (pattern) avec une fonction de rappel sur le texte traité.
+     * 
+     * @param string $Pattern Le motif (pattern) d'expression régulière à appliquer.
+     * @param string $Callback La fonction de rappel à appeler pour chaque correspondance.
+     * @param int $Count Le nombre de fois que le motif doit être appliqué (facultatif, par défaut 1).
+     */
     protected function applyPattern ( $Pattern, $Callback, $Count = 1 )
     {
         // TOTO @CDE Tester utilité.
@@ -50,8 +56,12 @@ class CollParser {
     }
 
     /**
-     *  @brief Parse (with PCRE) the $this->text member variable.
-     *  @throws Exception
+     * Analyse le texte traité (ProcessedText) avec des expressions régulières (PCRE).
+     * 
+     * Cette méthode parcourt le texte et utilise des motifs d'expression régulière pour extraire des informations spécifiques.
+     * Elle appelle les fonctions de rappel appropriées pour traiter les correspondances trouvées.
+     * 
+     * @throws Exception En cas de problème lors de l'analyse.
      */
     public function parse () 
     {
@@ -121,6 +131,11 @@ class CollParser {
         Log::fct_exit ( __METHOD__ );
     }
     
+    /**
+     * Convertit l'objet CollParser en une chaîne de caractères pour l'affichage.
+     * 
+     * @return string La représentation de l'objet sous forme de chaîne de caractères.
+     */
     public function __toString ()
     {
         $String = '';
@@ -129,6 +144,12 @@ class CollParser {
         return $String;
     }
     
+    /**
+     * Affiche les informations analysées pour le débogage.
+     * 
+     * Cette méthode affiche les différentes propriétés et informations analysées par la classe pour le débogage.
+     * Elle permet de vérifier que les données ont été correctement extraites et organisées.
+     */
     public function display ()
     {
         /* ******************************** Traces. ******************************** */
@@ -161,8 +182,9 @@ class CollParser {
     /* Preg functions. */
 
     /**
-     *  @brief Handles the description of a Player
-     *  @param [in] $Match The list of arguments read from the text
+     * Gère la description d'un Pokémon dans le texte traité.
+     * 
+     * @param array $Match Le tableau des arguments lus depuis le texte.
      */
     protected function gameIdPreg ( $Match )
     {
@@ -177,8 +199,9 @@ class CollParser {
     }
     
     /**
-     *  @brief Handles the description of a Player
-     *  @param [in] $Match The list of arguments read from the text
+     * Gère la description d'un joueur (Player) dans le texte traité.
+     * 
+     * @param array $Match Le tableau des arguments lus depuis le texte.
      */
     protected function playerPreg ( $Match ) 
     {
@@ -193,9 +216,11 @@ class CollParser {
         Log::fct_exit ( __METHOD__ );
     }
 
+
     /**
-     *  @brief Handles the description of a Team
-     *  @param [in] $Match The list of arguments read from the Text
+     * Gère la description d'une équipe (Team) dans le texte traité.
+     * 
+     * @param array $Match Le tableau des arguments lus depuis le texte.
      */
     protected function teamSizePreg ( $Match ) 
     {
@@ -208,6 +233,11 @@ class CollParser {
         Log::fct_exit ( __METHOD__ );
     }
 
+    /**
+     * Gère la description du type de jeu (Game Type) dans le texte traité.
+     * 
+     * @param array $Match Le tableau des arguments lus depuis le texte.
+     */
     protected function gameTypePreg ( $Match ) 
     {
         Log::fct_enter ( __METHOD__ );
@@ -217,6 +247,11 @@ class CollParser {
         Log::fct_exit ( __METHOD__ );
     }
 
+    /**
+     * Gère la description de la génération (Gen) dans le texte traité.
+     * 
+     * @param array $Match Le tableau des arguments lus depuis le texte.
+     */
     protected function genPreg ( $Match ) 
     {
         Log::fct_enter ( __METHOD__ );
@@ -226,6 +261,11 @@ class CollParser {
         Log::fct_exit ( __METHOD__ );
     }
 
+    /**
+     * Gère la description du tier dans le texte traité.
+     * 
+     * @param array $Match Le tableau des arguments lus depuis le texte.
+     */
     protected function tierPreg ( $Match ) 
     {
         Log::fct_enter ( __METHOD__ );
@@ -235,6 +275,11 @@ class CollParser {
         Log::fct_exit ( __METHOD__ );
     }
 
+    /**
+     * Gère la description d'une partie notée (Rated) dans le texte traité.
+     * 
+     * @param array $Match Le tableau des arguments lus depuis le texte.
+     */
     protected function ratedPreg ( $Match ) 
     {
         Log::fct_enter ( __METHOD__ );
@@ -245,6 +290,11 @@ class CollParser {
         Log::fct_exit ( __METHOD__ );
     }
     
+    /**
+     * Gère la description d'un switch du joueur 1 (P1) dans le texte traité.
+     * 
+     * @param array $Match Le tableau des arguments lus depuis le texte.
+     */
     protected function switchP1 ( $Match )
     {
         Log::fct_enter ( __METHOD__ );
@@ -254,6 +304,11 @@ class CollParser {
         Log::fct_exit ( __METHOD__ );
     }
 
+    /**
+     * Gère la description d'un switch du joueur 2 (P2) dans le texte traité.
+     * 
+     * @param array $Match Le tableau des arguments lus depuis le texte.
+     */
     protected function switchP2 ( $Match )
     {
         Log::fct_enter ( __METHOD__ );
@@ -263,16 +318,33 @@ class CollParser {
         Log::fct_exit ( __METHOD__ );
     }
     
+    /**
+     * Gère la description d'une règle (Rule) dans le texte traité.
+     * 
+     * @param array $Match Le tableau des arguments lus depuis le texte.
+	 * @deprecated
+     */
     protected function rulePreg ( $Match ) 
     {
 //         return $this->matchFunc1($match, 'rule');
     }
 
+    /**
+     * Gère la description d'un Pokémon lors du choix des équipes (Team Preview) dans le texte traité.
+     * 
+     * @param array $Match Le tableau des arguments lus depuis le texte.
+	 * @deprecated
+     */
     protected function teamPreviewPokemonPreg ( $Match ) 
     {
 //         return $this->matchFunc3($match, 'teamPreviewPokemon');
     }
 
+    /**
+     * Gère la description d'un tour (Turn) dans le texte traité.
+     * 
+     * @param array $Match Le tableau des arguments lus depuis le texte.
+     */
     protected function turnPreg ( $Match ) 
     {
         Log::fct_enter ( __METHOD__ );
@@ -281,16 +353,31 @@ class CollParser {
         Log::fct_exit ( __METHOD__ );
     }
 
+    /**
+     * Gère la description d'un mouvement (Move) lors d'un switch dans le texte traité.
+     * 
+     * @param array $Match Le tableau des arguments lus depuis le texte.
+     */
     protected function move1Preg ( $Match ) 
     {
 //         return $this->matchFunc3($match, 'move1');
     }
 
+    /**
+     * Gère la description d'un mouvement (Move) lors d'un switch dans le texte traité.
+     * 
+     * @param array $Match Le tableau des arguments lus depuis le texte.
+     */
     protected function move2Preg ( $Match ) 
     {
 //         return $this->matchFunc3($match, 'move2');
     }
 
+    /**
+     * Gère la description du gagnant (Winner) dans le texte traité.
+     * 
+     * @param array $Match Le tableau des arguments lus depuis le texte.
+     */
     protected function winnerPreg ( $Match ) 
     {
         Log::fct_enter ( __METHOD__ );
@@ -300,7 +387,12 @@ class CollParser {
         Log::fct_exit ( __METHOD__ );
     }
 
-    protected function tiePreg ( $Match ) 
+     /**
+     * Gère la description d'une égalité (Tie) dans le texte traité.
+     * 
+     * @param array $Match Le tableau des arguments lus depuis le texte.
+     */
+   protected function tiePreg ( $Match ) 
     {
         Log::fct_enter ( __METHOD__ );
         Log::info ( json_encode ( $Match ) );
@@ -312,15 +404,51 @@ class CollParser {
 
     /* Wrapper functions. */
 
+    /**
+     * Gère la description d'un mouvement (Move) d'un Pokémon dans le texte traité.
+     * 
+     * @param string $pokemon Le nom du Pokémon.
+     * @param string $move Le nom du mouvement (Move).
+     * @param string $effect L'effet du mouvement (Move).
+     */
     protected function move1 ( $pokemon, $move, $effect ) 
     {
 //         return $this->move('1', $pokemon, $move, $effect);
     }
 
+    /**
+     * Gère la description d'un mouvement (Move) d'un Pokémon dans le texte traité.
+     * 
+     * @param string $pokemon Le nom du Pokémon.
+     * @param string $move Le nom du mouvement (Move).
+     * @param string $effect L'effet du mouvement (Move).
+     */
     protected function move2 ( $pokemon, $move, $effect ) 
     {
 //         return $this->move('2', $pokemon, $move, $effect);
     }
+	
+	
+	/**
+     * @var int Le nombre de tours.
+     */
+    private $turns;
+
+    /**
+     * @var string Le texte brut complet à analyser.
+     */
+    private $FullText;
+
+    /**
+     * @var string Le texte traité après nettoyage.
+     */
+    private $ProcessedText;
+
+    /**
+     * @var CollGame L'objet CollGame associé aux données analysées.
+     */
+    private $Game;
+
 }
 
 // Log::setDebug ( __FILE__ );
