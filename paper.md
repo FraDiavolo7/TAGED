@@ -41,6 +41,8 @@ La recherche d'un bon équilibre dans un jeu vidéo est un concept central car i
 
 TAGED offre un large panel d'usages dans l'équilibrage en conception de jeu vidéo. Son utilisation par les concepteurs de jeux peut se faire durant toute la durée de vie d'un dispositif ludique : qu'il soit en conception, en développement ou en production.
 
+TAGED est actuellement d'un TRL 5. Il porte pour le moment sur trois jeux vidéo de types très populaires et différents : jeu vidéo de collection pour Pokémon Showdown!, Hack 'n' slash pour Diablo III: Reaper of Souls et jeu vidéo *puzzle-game* de type Match 3 pour Open Match 3. Cette diversité sert de véritable démonstrateur à notre proposition, et ce même pour des jeux vidéo qui semblent avoir peu en commun.
+
 Voici la schématisation du principe de fonctionnement de TAGED :
 <!--- 
 <p align="center">
