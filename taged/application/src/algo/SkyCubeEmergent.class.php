@@ -8,8 +8,20 @@
  */
 class SkyCubeEmergent extends SkyCube
 {
+    /**
+     * Le nom de la classe Skycube utilisée pour la construction des SkyCubes internes.
+     */
     const SKYCUBE = 'SkyCubeBlocNestedLoop';
     
+	    /**
+     * Constructeur de la classe SkyCubeEmergent.
+     *
+     * @param array $Data Les données brutes à utiliser dans l'espace multidimensionnel.
+     * @param array $RelationCols Les colonnes d'identification de relation.
+     * @param array $MeasureCols Les colonnes d'identification d'attribut (mesure).
+     * @param int $MinMax Indicateur pour la valeur maximale ou minimale lors de la construction des Cuboides.
+     * @param bool $ComputeAccordCuboides Indicateur pour calculer les Cuboides en accord.
+     */
     public function __construct ( $Data, $RelationCols, $MeasureCols, $MinMax = Cuboide::TO_MAX, $ComputeAccordCuboides = FALSE )
     {
         Log::fct_enter ( __METHOD__ );
@@ -24,6 +36,13 @@ class SkyCubeEmergent extends SkyCube
         Log::fct_exit ( __METHOD__ );
     }
     
+	    /**
+     * Méthode protégée pour obtenir l'ID d'une colonne.
+     *
+     * @param string $ColHeader Le nom de la colonne.
+     * @param array $MeasureCols Les colonnes d'identification d'attribut (mesure).
+     * @return string L'ID de la colonne.
+     */
     protected function getColID ( $ColHeader, $MeasureCols )
     {
         static $CurrentColID = self::MIN_COLID;
@@ -66,6 +85,13 @@ class SkyCubeEmergent extends SkyCube
         return $ColID;
     }
     
+	    /**
+     * Méthode protégée pour calculer le DataSet à partir des données brutes, des colonnes de relation et des colonnes d'attribut.
+     *
+     * @param array $Data Les données brutes à utiliser dans l'espace multidimensionnel.
+     * @param array $RelationCols Les colonnes d'identification de relation.
+     * @param array $MeasureCols Les colonnes d'identification d'attribut (mesure).
+     */
     protected function computeDataSet ( $Data, $RelationCols, $MeasureCols )
     {
         Log::fct_enter ( __METHOD__ );
@@ -116,6 +142,9 @@ class SkyCubeEmergent extends SkyCube
         Log::fct_exit ( __METHOD__ );
     }
     
+	/**
+     * Méthode protégée pour fusionner les listes de Cuboides de SkyCube1 et SkyCube2.
+     */
     protected function mergeCuboideLists ()
     {
         Log::fct_enter ( __METHOD__ );
@@ -140,6 +169,11 @@ class SkyCubeEmergent extends SkyCube
         Log::fct_exit ( __METHOD__ );
     }
     
+	    /**
+     * Méthode pour obtenir la liste des Cuboides du SkyCubeEmergent.
+     *
+     * @return array La liste des Cuboides du SkyCubeEmergent.
+     */
     public function getCuboides ()
     {
         Log::fct_enter ( __METHOD__ );
@@ -162,19 +196,12 @@ class SkyCubeEmergent extends SkyCube
         return $this->Cuboides;
     }
     
-//     public function getCuboideIDs ( $Filtered = TRUE )
-//     {
-//         if ( empty ( $this->OrderedCuboideIDs ))
-//         {
-//             $this->OrderedCuboideIDs = $this->SkyCube1->getCuboideIDs ( FALSE );
-//         }
-//         if ( empty ( $this->FilteredCuboideIDs ))
-//         {
-//             $this->FilteredCuboideIDs = $this->SkyCube1->getCuboideIDs ( TRUE );
-//         }
-//         return ( $Filtered ? $this->FilteredCuboideIDs : $this->OrderedCuboideIDs );
-//     }
-    
+    /**
+     * Méthode pour obtenir un Cuboide spécifique en fonction de son ID.
+     *
+     * @param string $ID L'ID du Cuboide recherché.
+     * @return CuboideEmergent|null Le Cuboide correspondant à l'ID ou NULL si non trouvé.
+     */
     public function getCuboide ( $ID )
     {
         $Cuboide = NULL;
@@ -196,6 +223,12 @@ class SkyCubeEmergent extends SkyCube
         return $Cuboide;
     }
     
+	/**
+     * Méthode pour obtenir les IDs des Cuboides, filtrés ou non, indexés par leur niveau et leur ID.
+     *
+     * @param bool $Filtered Indicateur pour obtenir les Cuboides filtrés ou non.
+     * @return array Les IDs des Cuboides, filtrés ou non, indexés par leur niveau et leur ID.
+     */
     public function getCuboideIDs ( $Filtered = TRUE )
     {
         if ( $Filtered && empty ( $this->SetsOfParts ) )
@@ -222,42 +255,86 @@ class SkyCubeEmergent extends SkyCube
         return ( $Filtered ? $this->FilteredCuboideIDs : $this->OrderedCuboideIDs );
     }
     
-    
+	/**
+     * Méthode pour obtenir l'espace multidimensionnel généré par le SkyCubeEmergent.
+     *
+     * @return array L'espace multidimensionnel.
+     */
     public function getMultidimensionalSpace ()
     {
         return  $this->SkyCube1->getMultidimensionalSpace ();
     }
     
+    /**
+     * Méthode pour obtenir l'ensemble des informations d'émergence.
+     *
+     * @return array L'ensemble des informations d'émergence.
+     */
     public function getEmergence ()
     {
         return $this->Emergence;
     }
     
+    /**
+     * Méthode pour obtenir le nom de colonne encodé à partir du nom complet.
+     *
+     * @param string $FullName Le nom complet de la colonne encodée.
+     * @return string Le nom de colonne encodé.
+     */
     public function getCodedColumnName ( $FullName )
     {
         return array_flip ( $this->DenumberedColIDs ) [$FullName];
     }
     
+    /**
+     * Méthode pour obtenir le nom complet d'une colonne à partir du nom de colonne encodé.
+     *
+     * @param string $CodedName Le nom de colonne encodé.
+     * @return string Le nom complet de la colonne.
+     */
     public function getFullColumnName ( $CodedName )
     {
         return $this->DenumberedColIDs [$CodedName];
     }
     
+    /**
+     * Méthode pour obtenir la liste des identifiants de colonnes dénumérotées.
+     *
+     * @return array La liste des identifiants de colonnes dénumérotées.
+     */
     public function getDenumberedColIDs ()
     {
         return $this->DenumberedColIDs;
     }
     
+    /**
+     * Méthode pour obtenir le premier SkyCube utilisé dans le SkyCubeEmergent.
+     *
+     * @return SkyCube Le premier SkyCube utilisé dans le SkyCubeEmergent.
+     */
     public function getSkyCube1 ()
     {
         return $this->SkyCube1;
     }
     
+     /**
+     * Méthode pour obtenir le deuxième SkyCube utilisé dans le SkyCubeEmergent.
+     *
+     * @return SkyCube Le deuxième SkyCube utilisé dans le SkyCubeEmergent.
+     */
     public function getSkyCube2 ()
     {
         return $this->SkyCube2;
     }
     
+    /**
+     * Méthode pour définir le ratio d'émergence pour un Cuboide spécifique.
+     *
+     * @param string $CuboideID L'ID du Cuboide pour lequel définir le ratio d'émergence.
+     * @param string $MeasureID L'ID de la mesure concernée.
+     * @param array $Relation Les identifiants de relation pour le Cuboide.
+     * @param float $EmergenceRatio Le ratio d'émergence à définir.
+     */
     public function setEmergenceRatio ( $CuboideID, $MeasureID, $Relation, $EmergenceRatio )
     {
         $Key = implode ( ',', array_values ( $Relation ) );
@@ -274,12 +351,39 @@ class SkyCubeEmergent extends SkyCube
         
     }
     
-    protected $SkyCube1; //** Table indexed by RowID and ColID of Relation measures
-    protected $SkyCube2; //** Table indexed by RowID of Relation identifiers
+    /**
+     * Tableau contenant le premier SkyCube.
+     *
+     * @var SkyCube|null
+     */
+    protected $SkyCube1;
+
+    /**
+     * Tableau contenant le deuxième SkyCube.
+     *
+     * @var SkyCube|null
+     */
+    protected $SkyCube2;
+
+    /**
+     * Indicateur pour calculer les Cuboides en accord.
+     *
+     * @var bool
+     */
     protected $ComputeAccordCuboides;
-    
+
+    /**
+     * Tableau pour stocker les noms de colonnes dénumérotées.
+     *
+     * @var array
+     */
     protected $DenumberedColIDs;
-    
+
+    /**
+     * Tableau pour stocker les informations d'émergence.
+     *
+     * @var array
+     */
     protected $Emergence;
 }
 

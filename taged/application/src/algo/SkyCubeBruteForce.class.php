@@ -6,6 +6,9 @@
  */
 class SkyCubeBruteForce extends SkyCube
 {
+    /**
+     * Le nom de la classe Cuboide utilisée pour la construction des Cuboides.
+     */
     const CUBOIDE = 'CuboideBruteForce';
 }
 
