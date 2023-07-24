@@ -1,12 +1,18 @@
 <?php
 
 /**
- * Test page
+ * Cette classe représente une page de test des classes SkyCube.
+ * 
  * @package TAGED\Pages\Test
  */
 class PageTestSkyCube extends TagedPage
 {
-	public function __construct ( $InputData = NULL )
+    /**
+     * Initialise l'objet PageTestSkyCube.
+     *
+     * @param mixed $InputData Les données d'entrée pour initialiser la page. Si null, les données $_REQUEST seront utilisées.
+     */
+    public function __construct ( $InputData = NULL )
 	{
 		parent::__construct ( $InputData );
 		$Data = ( NULL == $InputData ? $_REQUEST : $InputData );
@@ -18,6 +24,11 @@ class PageTestSkyCube extends TagedPage
 		$this->handle ( $Data );
 	}
 	
+	/**
+	 * Gère la soumission du formulaire et traite les données d'entrée.
+	 *
+	 * @param mixed $Data Les données d'entrée à traiter.
+	 */
 	protected function handle ( $Data )
 	{
 // 	    $Test = array ();
@@ -162,4 +173,4 @@ class PageTestSkyCube extends TagedPage
 	}
 
 	
-} // PageCollParse
+} // PageTestSkyCube

@@ -1,31 +1,113 @@
 <?php
 
 /**
+ * Page de base pour le lancement d'analyse dans TAGED.
  *
  * @package TAGED\Pages
  */
 class PageRunAnalysis extends TagedPage
 {
+    /**
+     * Clé pour l'agrégation sélectionnée.
+     * @var string
+     */
     const RAN_AGGREGATE = 'ran_aggregate';
+    
+    /**
+     * Clé pour le mot de passe saisi.
+     * @var string
+     */
     const RAN_PASSWORD = 'ran_password';
+    
+    /**
+     * Clé pour l'algorithme sélectionné.
+     * @var string
+     */
     const RAN_ALGO = 'ran_algo';
+    
+    /**
+     * Clé pour le bouton de soumission.
+     * @var string
+     */
     const RAN_SUBMIT = 'ran_submit';
+    
+    /**
+     * Clé pour afficher le test.
+     * @var string
+     */
     const SHOW_TEST = 'ran_test';
+    
+    /**
+     * Clé pour la valeur minimale.
+     * @var string
+     */
     const RAN_MIN = 'ran_min';
+    
+    /**
+     * Clé pour la valeur maximale.
+     * @var string
+     */
     const RAN_MAX = 'ran_max';
     
+    /**
+     * Clé pour afficher l'entrée.
+     * @var string
+     */
     const SHOW_INPUT = 'ran_input';
+    
+    /**
+     * Clé pour afficher l'espace multidimensionnel.
+     * @var string
+     */
     const SHOW_ESPACE = 'ran_espace';
+    
+    /**
+     * Clé pour afficher les accords.
+     * @var string
+     */
     const SHOW_ACCORDS = 'ran_accords';
+    
+    /**
+     * Clé pour afficher le DataCube.
+     * @var string
+     */
     const SHOW_DATACUBE = 'ran_skycube';
+    
+    /**
+     * Clé pour afficher le SkyCube.
+     * @var string
+     */
     const SHOW_SKYCUBE = 'ran_sc_red';
+    
+    /**
+     * Clé pour afficher la relation fusionnée.
+     * @var string
+     */
     const SHOW_FUSION = 'ran_fusion';
+    
+    /**
+     * Clé pour afficher la relation fusionnée abrégée.
+     * @var string
+     */
     const SHOW_FUS_ABREGE = 'ran_fus_abr';
+    
+    /**
+     * Clé pour afficher le classement des Skyline (CoSky).
+     * @var string
+     */
     const SHOW_COSKY = 'ran_cosky';
+    
+    /**
+     * Clé pour afficher le résultat Taged.
+     * @var string
+     */
     const SHOW_TAGED_CUBE = 'ran_sc_tag';
     
-    
-	public function __construct ( $InputData = NULL )
+    /**
+     * Constructeur de la classe PageRunAnalysis.
+     * @param mixed $InputData Données d'entrée pour la page.
+     */
+    public function __construct ( $InputData = NULL )
 	{
 		parent::__construct ( $InputData );
 		$Data = ( NULL == $InputData ? $_REQUEST : $InputData );
@@ -45,6 +127,10 @@ class PageRunAnalysis extends TagedPage
 		$this->handle ( $Data );
 	}
 
+	/**
+	 * Gère les données d'entrée et le lancement de l'analyse.
+	 * @param array $Data Données d'entrée.
+	 */
 	protected function handle ( $Data )
 	{
     	$Submit = Form::getData ( self::RAN_SUBMIT, '', $Data );
@@ -95,20 +181,16 @@ class PageRunAnalysis extends TagedPage
 	                $this->CoSky2->run ();
 	            }
 	            
-// 	            if ( TRUE == $Result)
-// 	            {
-// 	                $this->Result = $this->AggregateObj->formatResult ();
-// 	            }
-// 	            else
-// 	            {
- 	                $this->Result = $this->AggregateObj->getResult ();
-// 	            }
+                $this->Result = $this->AggregateObj->getResult ();
 	        }
 	    }
 	    
 	    $this->show ();
 	}
 	
+	/**
+	 * Affiche le contenu de la page.
+	 */
 	protected function show ( )
 	{
 	    $Password  = HTML::div ( HTML::inputPassword ( self::RAN_PASSWORD, '' ), array ( 'class' => 'passwd' ) );
@@ -252,27 +334,137 @@ class PageRunAnalysis extends TagedPage
 	    
 	}
 	
+	/**
+	 * Clé pour récupérer le mot de passe entré par l'utilisateur.
+	 *
+	 * @var string
+	 */
 	protected $Password;
+	
+	/**
+	 * Clé pour récupérer l'agrégat sélectionné par l'utilisateur.
+	 *
+	 * @var string
+	 */
 	protected $Aggregate;
+	
+	/**
+	 * Objet Analysis associé à l'agrégat sélectionné.
+	 *
+	 * @var Analysis|null
+	 */
 	protected $AggregateObj;
 	
+	/**
+	 * Liste des agrégats disponibles.
+	 *
+	 * @var AggregateList
+	 */
 	protected $AggregateListObj;
+	
+	/**
+	 * Tableau associatif des agrégats disponibles avec leurs identifiants.
+	 *
+	 * @var array
+	 */
 	protected $AggregateList;
 	
+	/**
+	 * Indicateur pour activer ou désactiver la section de test dans les résultats.
+	 *
+	 * @var bool
+	 */
 	protected $Test;
+	
+	/**
+	 * Tableau associatif des valeurs minimales pour les colonnes de l'agrégat.
+	 *
+	 * @var array
+	 */
 	protected $Min;
+	
+	/**
+	 * Tableau associatif des valeurs maximales pour les colonnes de l'agrégat.
+	 *
+	 * @var array
+	 */
 	protected $Max;
 	
+	/**
+	 * Objet CoSky pour le classement des Skylines du SkyCube 1.
+	 *
+	 * @var CoSky|null
+	 */
 	protected $CoSky1;
+	
+	/**
+	 * Objet CoSky pour le classement des Skylines du SkyCube 2.
+	 *
+	 * @var CoSky|null
+	 */
 	protected $CoSky2;
 	
+	/**
+	 * Indicateur pour activer ou désactiver l'affichage de la section "Entrée" dans les résultats.
+	 *
+	 * @var bool
+	 */
 	protected $ShowInput;
+	
+	/**
+	 * Indicateur pour activer ou désactiver l'affichage de la section "Espace Multidimensionnel" dans les résultats.
+	 *
+	 * @var bool
+	 */
 	protected $ShowEspace;
+	
+	/**
+	 * Indicateur pour activer ou désactiver l'affichage de la section "Classes d'accords" dans les résultats.
+	 *
+	 * @var bool
+	 */
 	protected $ShowAccords;
+	
+	/**
+	 * Indicateur pour activer ou désactiver l'affichage de la section "DataCube" dans les résultats.
+	 *
+	 * @var bool
+	 */
 	protected $ShowDataCube;
+	
+	/**
+	 * Indicateur pour activer ou désactiver l'affichage de la section "SkyCube" dans les résultats.
+	 *
+	 * @var bool
+	 */
 	protected $ShowSkyCube;
+	
+	/**
+	 * Indicateur pour activer ou désactiver l'affichage de la section "Relation Fusionnée" dans les résultats.
+	 *
+	 * @var bool
+	 */
 	protected $ShowFusion;
+	
+	/**
+	 * Indicateur pour activer ou désactiver l'affichage de la section "Relation Fusionnée abrégée" dans les résultats.
+	 *
+	 * @var bool
+	 */
 	protected $ShowFusionAbregee;
+	
+	/**
+	 * Indicateur pour activer ou désactiver l'affichage de la section "Classement des Skyline (CoSky)" dans les résultats.
+	 *
+	 * @var bool
+	 */
 	protected $ShowCoSky;
+	
+	/**
+	 * Indicateur pour activer ou désactiver l'affichage de la section "Résultat Taged" dans les résultats.
+	 *
+	 * @var bool
+	 */
 	protected $ShowTagedCube;
+	
 } // PageRunAnalysis

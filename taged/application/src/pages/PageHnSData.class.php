@@ -1,12 +1,18 @@
 <?php
 
 /**
+ * Classe représentant la page de données Hack'n Slash.
  *
  * @package TAGED\Pages
  */
 class PageHnSData extends TagedPage
 {
-	public function __construct ( $InputData = NULL )
+    /**
+     * Constructeur de la classe PageHnSData.
+     *
+     * @param mixed $InputData Les données d'entrée pour la page.
+     */
+    public function __construct ( $InputData = NULL )
 	{
 		parent::__construct ( $InputData );
 		$Data = ( NULL == $InputData ? $_REQUEST : $InputData );

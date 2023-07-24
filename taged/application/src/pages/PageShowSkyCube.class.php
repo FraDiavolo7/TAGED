@@ -1,24 +1,87 @@
 <?php
 
 /**
+ * Cette classe représente une page pour afficher une agrégation en SkyCube Emergent.
  *
  * @package TAGED\Pages
  */
 class PageShowSkyCube extends TagedPage
 {
+    /**
+     * Constante pour définir la clé permettant de récupérer la valeur d'agrégation sélectionnée à partir des données d'entrée de l'utilisateur.
+     *
+     * @var string
+     */
     const SHOW_AGGREGATE = 'sskc_aggregate';
+    
+    /**
+     * Constante pour définir la clé permettant de récupérer le mot de passe saisi par l'utilisateur.
+     *
+     * @var string
+     */
     const SHOW_PASSWORD = 'sskc_password';
+    
+    /**
+     * Constante pour définir la clé pour soumettre les données du formulaire.
+     *
+     * @var string
+     */
     const SHOW_SUBMIT = 'sskc_submit';
+    
+    /**
+     * Constante pour définir la clé pour afficher le test.
+     *
+     * @var string
+     */
     const SHOW_TEST = 'sskc_test';
     
+    /**
+     * Constante pour définir la clé pour afficher l'entrée.
+     *
+     * @var string
+     */
     const SHOW_INPUT = 'sskc_input';
+    
+    /**
+     * Constante pour définir la clé pour afficher l'espace multidimensionnel.
+     *
+     * @var string
+     */
     const SHOW_ESPACE = 'sskc_espace';
+    
+    /**
+     * Constante pour définir la clé pour afficher les classes d'accords.
+     *
+     * @var string
+     */
     const SHOW_ACCORDS = 'sskc_accords';
+    
+    /**
+     * Constante pour définir la clé pour afficher le DataCube.
+     *
+     * @var string
+     */
     const SHOW_DATACUBE = 'sskc_skycube';
+    
+    /**
+     * Constante pour définir la clé pour afficher le SkyCube.
+     *
+     * @var string
+     */
     const SHOW_SKYCUBE = 'sskc_sc_red';
+    
+    /**
+     * Constante pour définir la clé pour afficher le résultat TagedCube.
+     *
+     * @var string
+     */
     const SHOW_TAGED_CUBE = 'sskc_sc_tag';
     
-    
+    /**
+     * Initialise l'objet PageShowSkyCube.
+     *
+     * @param mixed $InputData Les données d'entrée pour initialiser la page. Si null, les données $_REQUEST seront utilisées.
+     */
     public function __construct ( $InputData = NULL )
 	{
 		parent::__construct ( $InputData );
@@ -37,6 +100,11 @@ class PageShowSkyCube extends TagedPage
 		$this->handle ( $Data ); 
 	} 
 	
+	/**
+	 * Gère la soumission du formulaire et traite les données d'entrée.
+	 *
+	 * @param mixed $Data Les données d'entrée à traiter.
+	 */
 	protected function handle ( $Data )
 	{
 	    $Submit              = Form::getData ( self::SHOW_SUBMIT,     '',    $Data );
@@ -68,6 +136,9 @@ class PageShowSkyCube extends TagedPage
 	    $this->show ();
 	}
 
+	/**
+	 * Affiche le contenu de la page.
+	 */
 	protected function show ( )
 	{
 	    $Password    = HTML::div ( HTML::inputPassword ( self::SHOW_PASSWORD, '' ), array ( 'class' => 'passwd' ) );
@@ -136,20 +207,94 @@ class PageShowSkyCube extends TagedPage
 	    $this->add ( HTML::form ( $Content, array ( 'method' => 'POST',  'enctype' => 'multipart/form-data' ) ) );
 	}
 	
+	/**
+	 * Le cube SkyCube résultant.
+	 *
+	 * @var mixed|null
+	 */
 	protected $SkyCube;
+	
+	/**
+	 * Le mot de passe pour accéder à la page.
+	 *
+	 * @var string
+	 */
 	protected $Password;
+	
+	/**
+	 * L'agrégation sélectionnée.
+	 *
+	 * @var string
+	 */
 	protected $Aggregate;
+	
+	/**
+	 * L'objet d'agrégation associé à l'agrégation sélectionnée.
+	 *
+	 * @var Analysis|null
+	 */
 	protected $AggregateObj;
 	
+	/**
+	 * Indique si le test doit être affiché ou non.
+	 *
+	 * @var bool
+	 */
 	protected $Test;
 	
+	/**
+	 * Indique si l'entrée doit être affichée ou non.
+	 *
+	 * @var bool
+	 */
 	protected $ShowInput;
+	
+	/**
+	 * Indique si l'espace multidimensionnel doit être affiché ou non.
+	 *
+	 * @var bool
+	 */
 	protected $ShowEspace;
+	
+	/**
+	 * Indique si les classes d'accords doivent être affichées ou non.
+	 *
+	 * @var bool
+	 */
 	protected $ShowAccords;
+	
+	/**
+	 * Indique si le DataCube doit être affiché ou non.
+	 *
+	 * @var bool
+	 */
 	protected $ShowDataCube;
+	
+	/**
+	 * Indique si le SkyCube doit être affiché ou non.
+	 *
+	 * @var bool
+	 */
 	protected $ShowSkyCube;
+	
+	/**
+	 * Indique si le résultat TagedCube doit être affiché ou non.
+	 *
+	 * @var bool
+	 */
 	protected $ShowTagedCube;
 	
+	/**
+	 * L'objet AggregateList contenant la liste des agrégations.
+	 *
+	 * @var AggregateList
+	 */
 	protected $AggregateListObj;
+	
+	/**
+	 * La liste des agrégations.
+	 *
+	 * @var array
+	 */
 	protected $AggregateList;
 } // PageShowSkyCube

@@ -1,19 +1,48 @@
 <?php
 
 /**
+ * Classe représentant la page de modification des agrégations.
  *
  * @package TAGED\Pages
  */
 class PageChangeAggregate extends TagedPage
 {
+    /**
+     * Constante représentant l'action "Modifier Aggregation".
+     */
     const CHANGE_AGGREGATE = 'change_aggregate';
+    
+    /**
+     * Constante représentant l'action "Modifier Mot de passe".
+     */
     const CHANGE_PASSWORD = 'change_password';
+    
+    /**
+     * Constante représentant l'action "Modifier la Requête".
+     */
     const CHANGE_REQUEST = 'change_request';
+    
+    /**
+     * Constante représentant l'action "Modifier les Colonnes de Relation".
+     */
     const CHANGE_REL_COLS  = 'change_relation_cols';
+    
+    /**
+     * Constante représentant l'action "Modifier les Colonnes de Mesure".
+     */
     const CHANGE_MES_COLS  = 'change_measure_cols';
+    
+    /**
+     * Constante représentant l'action "Envoyer les Modifications".
+     */
     const CHANGE_SUBMIT = 'change_submit';
     
-	public function __construct ( $InputData = NULL )
+    /**
+     * Constructeur de la classe PageChangeAggregate.
+     *
+     * @param mixed $InputData Les données d'entrée pour la page.
+     */
+    public function __construct ( $InputData = NULL )
 	{
 		parent::__construct ( $InputData );
 		$Data = ( NULL == $InputData ? $_REQUEST : $InputData );
@@ -31,6 +60,11 @@ class PageChangeAggregate extends TagedPage
 		$this->handle ( $Data );
 	}
 
+	/**
+	 * Gère les actions de la page.
+	 *
+	 * @param array $Data Les données de la requête.
+	 */
 	protected function handle ( $Data )
 	{
 // 	    $this->add ( HTML::div ( print_r ( $Data, true ) ) );
@@ -65,6 +99,9 @@ class PageChangeAggregate extends TagedPage
 	    $this->show ();
 	}
 	
+	/**
+	 * Affiche le contenu de la page.
+	 */
 	protected function show ( )
 	{
 	    if ( '' == $this->Request ) $this->Request = ' ' ;
@@ -98,11 +135,45 @@ class PageChangeAggregate extends TagedPage
 	    $this->add ( HTML::form ( $Content, array ( 'method' => 'POST',  'enctype' => 'multipart/form-data' ) ) );
 	}
 
+	/**
+	 * La requête.
+	 *
+	 * @var string $Request La requête à modifier.
+	 */
 	protected $Request;
+	
+	/**
+	 * Le mot de passe.
+	 *
+	 * @var string $Password Le mot de passe de vérification.
+	 */
 	protected $Password;
+	
+	/**
+	 * Le nom de l'agrégation sélectionnée.
+	 *
+	 * @var string $Aggregate Le nom de l'agrégation sélectionnée.
+	 */
 	protected $Aggregate;
+	
+	/**
+	 * L'objet de l'agrégation sélectionnée.
+	 *
+	 * @var Analysis|null $AggregateObj L'objet de l'agrégation sélectionnée.
+	 */
 	protected $AggregateObj;
 	
+	/**
+	 * L'objet de la liste des agrégations.
+	 *
+	 * @var AggregateList $AggregateListObj L'objet de la liste des agrégations.
+	 */
 	protected $AggregateListObj;
+	
+	/**
+	 * La liste des agrégations.
+	 *
+	 * @var array $AggregateList La liste des agrégations.
+	 */
 	protected $AggregateList;
 } // PageChangeAggregate

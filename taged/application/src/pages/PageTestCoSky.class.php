@@ -1,12 +1,18 @@
 <?php
 
 /**
- * Test page
+ * Cette classe représente une page de test de la classe CoSky.
+ * 
  * @package TAGED\Pages\Test
  */
 class PageTestCoSky extends TagedPage
 {
-	public function __construct ( $InputData = NULL )
+    /**
+     * Initialise l'objet PageTestCoSky.
+     *
+     * @param mixed $InputData Les données d'entrée pour initialiser la page. Si null, les données $_REQUEST seront utilisées.
+     */
+    public function __construct ( $InputData = NULL )
 	{
 		parent::__construct ( $InputData );
 		$Data = ( NULL == $InputData ? $_REQUEST : $InputData );
@@ -17,6 +23,11 @@ class PageTestCoSky extends TagedPage
 		$this->handle ( $Data );
 	}
 	
+	/**
+	 * Gère la soumission du formulaire et traite les données d'entrée.
+	 *
+	 * @param mixed $Data Les données d'entrée à traiter.
+	 */
 	protected function handle ( $Data )
 	{
 	    $CoSky = new CoSky ( NULL );

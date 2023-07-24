@@ -148,11 +148,11 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/pages/PageNewAggregate.class.php"><a href="files/application-src-pages-pagenewaggregate-class.html"><abbr title="application/src/pages/PageNewAggregate.class.php">PageNewAggregate.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">7</span>
+    <span class="phpdocumentor-element-found-in__line">8</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Basic page for a Taged page</p>
+            <p class="phpdocumentor-summary">Classe représentant une page permettant de créer une agrégation de données.</p>
 
 
 
@@ -180,70 +180,70 @@
     <span>
         &nbsp;= &#039;nag_aggregate&#039;                            </span>
 </dt>
-<dd></dd>
+<dd>Clé pour récupérer le nom de l&#039;agrégation à créer.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/PageNewAggregate.html#constant_NAG_DB">NAG_DB</a>
     <span>
         &nbsp;= &#039;nag_game&#039;                            </span>
 </dt>
-<dd></dd>
+<dd>Clé pour récupérer le nom de la base de données de jeu à utiliser.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/PageNewAggregate.html#constant_NAG_MES_COLS">NAG_MES_COLS</a>
     <span>
         &nbsp;= &#039;nag_measure_cols&#039;                            </span>
 </dt>
-<dd></dd>
+<dd>Clé pour récupérer les attributs de mesure à associer à l&#039;agrégation.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/PageNewAggregate.html#constant_NAG_PASSWORD">NAG_PASSWORD</a>
     <span>
         &nbsp;= &#039;nag_password&#039;                            </span>
 </dt>
-<dd></dd>
+<dd>Clé pour récupérer le mot de passe nécessaire pour créer l&#039;agrégation.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/PageNewAggregate.html#constant_NAG_REL_COLS">NAG_REL_COLS</a>
     <span>
         &nbsp;= &#039;nag_relation_cols&#039;                            </span>
 </dt>
-<dd></dd>
+<dd>Clé pour récupérer les attributs de relation à associer à l&#039;agrégation.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/PageNewAggregate.html#constant_NAG_SUBMIT">NAG_SUBMIT</a>
     <span>
         &nbsp;= &#039;nag_submit&#039;                            </span>
 </dt>
-<dd></dd>
+<dd>Clé pour récupérer le nom de l&#039;agrégation à créer lors de la soumission du formulaire.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/PageNewAggregate.html#constant_NAG_TABLE">NAG_TABLE</a>
     <span>
         &nbsp;= &#039;nag_table&#039;                            </span>
 </dt>
-<dd></dd>
+<dd>Clé pour récupérer le nom de la table en base de données à utiliser.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/TagedPage.html#constant_PAGE_DEFAULT">PAGE_DEFAULT</a>
     <span>
         &nbsp;= &#039;Accueil&#039;                            </span>
 </dt>
-<dd></dd>
+<dd>Nom de la page par défaut.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/TagedPage.html#constant_PAGE_LIST">PAGE_LIST</a>
     <span>
         &nbsp;= array(&#039;Accueil&#039; =&gt; &#039;Accueil&#039;, &#039;Match 3&#039; =&gt; &#039;Match3&#039;, &#039;Collection Data&#039; =&gt; &#039;CollData&#039;, &#039;Hack&amp;apos;n Slash Data&#039; =&gt; &#039;HnSData&#039;, &#039;Gestion Aggregations&#039; =&gt; &#039;GestAggregate&#039;)                            </span>
 </dt>
-<dd></dd>
+<dd>Liste des pages disponibles avec leurs noms affichés.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/TagedPage.html#constant_PAGE_SELECTOR">PAGE_SELECTOR</a>
     <span>
         &nbsp;= &#039;sel&#039;                            </span>
 </dt>
-<dd></dd>
+<dd>Clé pour le sélecteur de page.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/THPage.html#constant_TAGED_URL">TAGED_URL</a>
@@ -253,11 +253,11 @@
 <dd></dd>
 
                     <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/PageNewAggregate.html#property_AggregateList">$AggregateList</a>
+    <a href="classes/PageNewAggregate.html#property_Aggregate">$Aggregate</a>
     <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: string            </span>
 </dt>
-<dd></dd>
+<dd>Nom de l&#039;agrégation en cours de création.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Connection.html#property_BUTTON_SIGN_UP_LABEL">$BUTTON_SIGN_UP_LABEL</a>
@@ -307,6 +307,13 @@
                         &nbsp;: mixed            </span>
 </dt>
 <dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/PageNewAggregate.html#property_Games">$Games</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd>Liste des jeux disponibles pour créer une agrégation.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/BasicPage.html#property_HTMLContent">$HTMLContent</a>
@@ -365,6 +372,13 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/PageNewAggregate.html#property_Password">$Password</a>
+    <span>
+                        &nbsp;: string            </span>
+</dt>
+<dd>Le mot de passe requis pour créer une agrégation.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/BasicPage.html#property_RedirectURL">$RedirectURL</a>
     <span>
                         &nbsp;: mixed            </span>
@@ -404,7 +418,7 @@
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
+<dd>Constructeur de la classe PageNewAggregate.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/BasicPage.html#method___destruct">__destruct()</a>
@@ -523,7 +537,7 @@
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
+<dd>Gère les données entrées dans le formulaire pour créer une agrégation.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/THPage.html#method_links">links()</a>
@@ -537,7 +551,7 @@
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
+<dd>Affiche le formulaire pour créer une agrégation de données.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/BasicPage.html#method_showFoot">showFoot()</a>
@@ -594,23 +608,22 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/pages/PageNewAggregate.class.php"><a href="files/application-src-pages-pagenewaggregate-class.html"><abbr title="application/src/pages/PageNewAggregate.class.php">PageNewAggregate.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">9</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Clé pour récupérer le nom de l&#039;agrégation à créer.</p>
+
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">NAG_AGGREGATE</span>
     = <span class="phpdocumentor-signature__default-value">&#039;nag_aggregate&#039;</span>
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -627,19 +640,18 @@
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Clé pour récupérer le nom de la base de données de jeu à utiliser.</p>
+
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">NAG_DB</span>
     = <span class="phpdocumentor-signature__default-value">&#039;nag_game&#039;</span>
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -652,23 +664,22 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/pages/PageNewAggregate.class.php"><a href="files/application-src-pages-pagenewaggregate-class.html"><abbr title="application/src/pages/PageNewAggregate.class.php">PageNewAggregate.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">11</span>
+    <span class="phpdocumentor-element-found-in__line">38</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Clé pour récupérer les attributs de mesure à associer à l&#039;agrégation.</p>
+
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">NAG_MES_COLS</span>
     = <span class="phpdocumentor-signature__default-value">&#039;nag_measure_cols&#039;</span>
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -681,23 +692,22 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/pages/PageNewAggregate.class.php"><a href="files/application-src-pages-pagenewaggregate-class.html"><abbr title="application/src/pages/PageNewAggregate.class.php">PageNewAggregate.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Clé pour récupérer le mot de passe nécessaire pour créer l&#039;agrégation.</p>
+
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">NAG_PASSWORD</span>
     = <span class="phpdocumentor-signature__default-value">&#039;nag_password&#039;</span>
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -710,23 +720,22 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/pages/PageNewAggregate.class.php"><a href="files/application-src-pages-pagenewaggregate-class.html"><abbr title="application/src/pages/PageNewAggregate.class.php">PageNewAggregate.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">10</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Clé pour récupérer les attributs de relation à associer à l&#039;agrégation.</p>
+
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">NAG_REL_COLS</span>
     = <span class="phpdocumentor-signature__default-value">&#039;nag_relation_cols&#039;</span>
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -739,23 +748,22 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/pages/PageNewAggregate.class.php"><a href="files/application-src-pages-pagenewaggregate-class.html"><abbr title="application/src/pages/PageNewAggregate.class.php">PageNewAggregate.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">15</span>
+    <span class="phpdocumentor-element-found-in__line">50</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Clé pour récupérer le nom de l&#039;agrégation à créer lors de la soumission du formulaire.</p>
+
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">NAG_SUBMIT</span>
     = <span class="phpdocumentor-signature__default-value">&#039;nag_submit&#039;</span>
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -768,23 +776,22 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/pages/PageNewAggregate.class.php"><a href="files/application-src-pages-pagenewaggregate-class.html"><abbr title="application/src/pages/PageNewAggregate.class.php">PageNewAggregate.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Clé pour récupérer le nom de la table en base de données à utiliser.</p>
+
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">NAG_TABLE</span>
     = <span class="phpdocumentor-signature__default-value">&#039;nag_table&#039;</span>
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -797,23 +804,22 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/TagedPage.class.php"><a href="files/application-src-tagedpage-class.html"><abbr title="application/src/TagedPage.class.php">TagedPage.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">10</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Nom de la page par défaut.</p>
+
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">PAGE_DEFAULT</span>
     = <span class="phpdocumentor-signature__default-value">&#039;Accueil&#039;</span>
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -826,23 +832,22 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/TagedPage.class.php"><a href="files/application-src-tagedpage-class.html"><abbr title="application/src/TagedPage.class.php">TagedPage.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">11</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Liste des pages disponibles avec leurs noms affichés.</p>
+
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">PAGE_LIST</span>
     = <span class="phpdocumentor-signature__default-value">array(&#039;Accueil&#039; =&gt; &#039;Accueil&#039;, &#039;Match 3&#039; =&gt; &#039;Match3&#039;, &#039;Collection Data&#039; =&gt; &#039;CollData&#039;, &#039;Hack&amp;apos;n Slash Data&#039; =&gt; &#039;HnSData&#039;, &#039;Gestion Aggregations&#039; =&gt; &#039;GestAggregate&#039;)</span>
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -855,23 +860,22 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/TagedPage.class.php"><a href="files/application-src-tagedpage-class.html"><abbr title="application/src/TagedPage.class.php">TagedPage.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">9</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Clé pour le sélecteur de page.</p>
+
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">PAGE_SELECTOR</span>
     = <span class="phpdocumentor-signature__default-value">&#039;sel&#039;</span>
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -919,30 +923,29 @@
             -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_AggregateList">
-        $AggregateList
-        <a href="classes/PageNewAggregate.html#property_AggregateList" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_Aggregate">
+        $Aggregate
+        <a href="classes/PageNewAggregate.html#property_Aggregate" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/pages/PageNewAggregate.class.php"><a href="files/application-src-pages-pagenewaggregate-class.html"><abbr title="application/src/pages/PageNewAggregate.class.php">PageNewAggregate.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">112</span>
+    <span class="phpdocumentor-element-found-in__line">179</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Nom de l&#039;agrégation en cours de création.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">$AggregateList</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$Aggregate</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -1181,6 +1184,39 @@
 
         <section class="phpdocumentor-description"></section>
 
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_Games">
+        $Games
+        <a href="classes/PageNewAggregate.html#property_Games" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/pages/PageNewAggregate.class.php"><a href="files/application-src-pages-pagenewaggregate-class.html"><abbr title="application/src/pages/PageNewAggregate.class.php">PageNewAggregate.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">165</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Liste des jeux disponibles pour créer une agrégation.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$Games</span>
+    </code>
+
+    
+    
     
 
 </article>
@@ -1463,6 +1499,39 @@
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_Password">
+        $Password
+        <a href="classes/PageNewAggregate.html#property_Password" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/pages/PageNewAggregate.class.php"><a href="files/application-src-pages-pagenewaggregate-class.html"><abbr title="application/src/pages/PageNewAggregate.class.php">PageNewAggregate.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">172</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Le mot de passe requis pour créer une agrégation.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$Password</span>
+    </code>
+
+    
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_RedirectURL">
         $RedirectURL
         <a href="classes/BasicPage.html#property_RedirectURL" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1646,17 +1715,17 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/pages/PageNewAggregate.class.php"><a href="files/application-src-pages-pagenewaggregate-class.html"><abbr title="application/src/pages/PageNewAggregate.class.php">PageNewAggregate.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Constructeur de la classe PageNewAggregate.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$InputData</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">NULL</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1664,7 +1733,8 @@
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">NULL</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Les données d'entrée pour la page.</p>
+</section>
 
             </dd>
             </dl>
@@ -2355,17 +2425,17 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/pages/PageNewAggregate.class.php"><a href="files/application-src-pages-pagenewaggregate-class.html"><abbr title="application/src/pages/PageNewAggregate.class.php">PageNewAggregate.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">83</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Gère les données entrées dans le formulaire pour créer une agrégation.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
                 <span class="phpdocumentor-signature__name">handle</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2373,7 +2443,8 @@
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Les données du formulaire.</p>
+</section>
 
             </dd>
             </dl>
@@ -2432,17 +2503,17 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/pages/PageNewAggregate.class.php"><a href="files/application-src-pages-pagenewaggregate-class.html"><abbr title="application/src/pages/PageNewAggregate.class.php">PageNewAggregate.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">89</span>
+    <span class="phpdocumentor-element-found-in__line">137</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Affiche le formulaire pour créer une agrégation de données.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
                 <span class="phpdocumentor-signature__name">show</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 

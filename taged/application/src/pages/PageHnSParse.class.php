@@ -1,15 +1,28 @@
 <?php
 
 /**
+ * Classe représentant la page de parsing Hack'n Slash.
  *
  * @package TAGED\Pages
  */
 class PageHnSParse extends TagedPage
 {
+    /**
+     * Nom de la propriété représentant le nom du fichier à parser.
+     */
     const PARSER_FILE = 'parser_file';
+    
+    /**
+     * Nom de la propriété représentant le bouton de soumission pour le parsing.
+     */
     const PARSER_SUBMIT = 'parser_submit';
     
-	public function __construct ( $InputData = NULL )
+    /**
+     * Constructeur de la classe PageHnSParse.
+     *
+     * @param mixed $InputData Les données d'entrée pour la page.
+     */
+    public function __construct ( $InputData = NULL )
 	{
 		parent::__construct ( $InputData );
 		$Data = ( NULL == $InputData ? $_REQUEST : $InputData );
@@ -21,6 +34,11 @@ class PageHnSParse extends TagedPage
 		$this->handle ( $Data );
 	}
 
+	/**
+	 * Gère les actions en fonction des données d'entrée.
+	 *
+	 * @param mixed $Data Les données d'entrée pour le traitement.
+	 */
 	protected function handle ( $Data )
 	{
 // 	    $this->add ( HTML::div ( print_r ( $Data, true ) ) );
@@ -43,6 +61,9 @@ class PageHnSParse extends TagedPage
 	    $this->show ();
 	}
 	
+	/**
+	 * Affiche le contenu de la page.
+	 */
 	protected function show ( )
 	{
 	    $File = HTML::inputFile ( self::PARSER_FILE );
@@ -51,6 +72,9 @@ class PageHnSParse extends TagedPage
 	    $this->add ( HTML::form ( $File . $Submit, array ( 'method' => 'POST',  'enctype' => 'multipart/form-data' ) ) );
 	}
 	
+	/**
+	 * Parse le contenu du fichier spécifié et affiche le résultat du parsing.
+	 */
 	protected function parse ()
 	{
 	    $Content = '';
@@ -73,5 +97,10 @@ class PageHnSParse extends TagedPage
 	    $this->add ( HTML::div ( $Content ) );
 	}
 	
-	protected $FileToParse; //!< The file to parse 
-} // PageParse
+	/**
+	 * Propriété représentant le nom du fichier à parser.
+	 *
+	 * @var string|null $FileToParse
+	 */
+	protected $FileToParse;
+} // PageHnSParse
