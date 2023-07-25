@@ -10,7 +10,7 @@ class Algo
     const FOLDER = '/home/taged/data/aggregates/algo/'; // Folder full path to the algorithms executables
     
     /**
-     * @brief Generates the list of available algorithms
+     * Generates the list of available algorithms
      * @return unknown[]
      */
     public static function generateList ( )

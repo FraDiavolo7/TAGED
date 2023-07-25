@@ -1,7 +1,6 @@
 <?php
 
 /**
- * Main analysis class
  * @package TAGED
  */
 class Analysis 
@@ -19,18 +18,52 @@ class Analysis
      * 
      */
     
-    const FILE     = 'AggregateFile';
-    const TABLE    = 'AggregateTable';
-    const DBCLASS  = 'DBClass';
-    const REL_COLS = 'RelationCols';
-    const MES_COLS = 'MeasureCols';
+	/**
+	 * Chemin du fichier de description.
+	 */
+	const DESC_FILE_PATH = '/chemin/vers/le/fichier_de_description.txt';
+
+	/**
+	 * Clé pour la classe de base de données.
+	 */
+	const DBCLASS = 'DbClass';
+
+	/**
+	 * Clé pour le nom de la table de base de données.
+	 */
+	const TABLE = 'Table';
+
+	/**
+	 * Clé pour le nom du fichier de requête.
+	 */
+	const FILE = 'File';
+
+	/**
+	 * Clé pour les colonnes de relation dans les données de test.
+	 */
+	const REL_COLS = 'RelationCols';
+
+	/**
+	 * Clé pour les colonnes à mesurer dans les données de test.
+	 */
+	const MES_COLS = 'MeasureCols';
     
-    const GAME_DB = array (
+	/**
+	 * Tableau associatif contenant les noms de base de données du jeu.
+	 *
+	 * Chaque clé représente le nom d'une application spécifique du jeu,
+	 * et chaque valeur est le nom de la base de données correspondante.
+	 */    const GAME_DB = array (
         APP_NAME_COLLECTION   => 'TagedDBColl',
         APP_NAME_MATCH3       => 'TagedDBMatch3',
         APP_NAME_HACK_N_SLASH => 'TagedDBHnS'
     );
     
+    /**
+     * Constructeur de l'analyse.
+     * @param string $DescFile Chemin vers le fichier de description.
+     * @param bool $IsTest Indique si l'analyse est à des fins de test.
+     */
     public function __construct ( $DescFile, $IsTest = FALSE )
     {
         $this->DescFile = $DescFile;
@@ -49,6 +82,9 @@ class Analysis
         $this->IsTest       = $IsTest;
     }
     
+    /**
+     * Charge les données à partir du fichier de description.
+     */
     protected function load ()
     {
         
@@ -67,6 +103,11 @@ class Analysis
         }
     }
     
+    /**
+     * Explose une chaîne de colonnes en un tableau.
+     * @param string $Cols Les colonnes sous forme de chaîne séparée par des virgules.
+     * @return array Les colonnes sous forme de tableau associatif.
+     */
     protected static function explodeCols ( $Cols )
     {
         $Result = $Cols;
@@ -85,6 +126,9 @@ class Analysis
         return $Result;
     }
     
+    /**
+     * Vérifie si l'analyse est prête pour le calcul.
+     */
     protected function check ()
     {
         $this->Runnable = FALSE;
@@ -115,6 +159,9 @@ class Analysis
         }
     }
     
+    /**
+     * Prépare l'analyse en chargeant les données et en créant l'instance de SkyCube.
+     */
     public function prepare ()
     {
         $this->Name = basename ( $this->DescFile, '.ini' );
@@ -163,14 +210,23 @@ class Analysis
         }
     }
     
+    /**
+     * Nettoie les données en remplaçant les caractères spéciaux par des underscores.
+     * @param string $Data Les données à nettoyer.
+     * @return string Les données nettoyées.
+     */
     public function cleanData ( $Data )
     {
         return str_replace ( array (';', ',', ' '), '_', $Data );
     }
     
-    protected $AttributeValues;
-    protected $AttributeIgnored;
-    
+
+    /**
+     * Convertit une valeur en numérique et conserve une correspondance des valeurs d'attribut.
+     * @param mixed $Value La valeur à convertir en numérique.
+     * @param string $Attribute Le nom de l'attribut.
+     * @return mixed La valeur numérique convertie.
+     */
     protected function convertToNumerics ( $Value, $Attribute )
     {
         $Result = $Value;
@@ -202,6 +258,12 @@ class Analysis
         return $Result;
     }
     
+     /**
+     * Calcule l'attribut Cuboide et définit le taux d'émergence dans SkyCube.
+     * @param int $CuboideID L'ID du Cuboide.
+     * @param string $ColID L'ID de la colonne.
+     * @param string $Folder Le chemin du dossier.
+     */
     protected function computeCuboideAttribute ( $CuboideID, $ColID, $Folder )
     {
 //        echo __FILE__ . ':' . __LINE__ . " $CuboideID $ColID<br>";
@@ -245,6 +307,11 @@ class Analysis
         }
     }
         
+    /**
+     * Calcule le Cuboide complet et ses attributs.
+     * @param int $CuboideID L'ID du Cuboide.
+     * @param string $Folder Le chemin du dossier.
+     */
     protected function computeCuboide ( $CuboideID, $Folder )
     {
 //        echo __FILE__ . ':' . __LINE__ . " $CuboideID $Folder<br>";
@@ -278,6 +345,9 @@ class Analysis
         }
     }
     
+    /**
+     * Génère l'entrée pour l'algorithme en traitant tous les Cuboides.
+     */
     protected function generateAlgoInput ()
     {
         // Process all cuboides
@@ -339,6 +409,9 @@ class Analysis
         echo __METHOD__ . ' Algo Input <pre>' . print_r ( $AlgoInputRelations, TRUE ) . "</pre><br>";
     }
     
+    /**
+     * Effectue l'analyse en utilisant l'algorithme sélectionné.
+     */
     public function compute ()
     {
         $Result = FALSE;
@@ -379,11 +452,24 @@ class Analysis
         }
     }
         
+    /**
+     * Obtient le résultat de l'analyse.
+     * @return string Le résultat de l'analyse.
+     */
     public function getResult ()
     {
         return $this->Result;
     }
     
+    /**
+     * Crée une nouvelle instance d'analyse avec les paramètres spécifiés et l'écrit dans le fichier de description.
+     * @param string $Name Le nom de l'analyse.
+     * @param string $Game Le jeu pour lequel l'analyse est créée.
+     * @param string $RelationCols Les colonnes utilisées pour les relations.
+     * @param string $MeasureCols Les colonnes utilisées pour les mesures.
+     * @param string|null $File Le chemin du fichier de requête.
+     * @param string|null $Table Le nom de la table de base de données.
+     */
     public static function create ( $Name, $Game, $RelationCols, $MeasureCols, $File = NULL, $Table = NULL )
     {
         $DescFile = new Analysis ( $Name . '.ini' );
@@ -402,6 +488,10 @@ class Analysis
         
     }
     
+    /**
+     * Supprime une instance d'analyse existante par son nom.
+     * @param string $Name Le nom de l'analyse à supprimer.
+     */
     public static function delete ( $Name )
     {
         $FilePath = AGGREGATE_FOLDER_DESC . $Name . '.ini';
@@ -424,6 +514,11 @@ class Analysis
         return new AggregateFile ( $this->DBClass, AGGREGATE_FOLDER_REQUESTS . $this->RequestFile, $this->DBTable, $AsNumerics );
     }
     
+	/**
+	 * Récupère les données de test pour l'analyse.
+	 *
+	 * @return array Les données de test sous forme de tableau.
+	 */
     protected function getTestData ()
     {
         $DataSet = array ();
@@ -511,6 +606,11 @@ class Analysis
         return $DataSet;
     }
     
+	/**
+	 * Récupère les colonnes à mesurer dans les données de test.
+	 *
+	 * @return array Les colonnes à mesurer.
+	 */
     protected function getTestMesCols ()
     {
         $MesCols = array ();
@@ -522,6 +622,11 @@ class Analysis
         return $MesCols;
     }
     
+	/**
+	 * Récupère les colonnes de relation dans les données de test.
+	 *
+	 * @return array Les colonnes de relation.
+	 */
     protected function getTestRelCols ()
     {
         $RelCols = array ();
@@ -532,35 +637,127 @@ class Analysis
         return $RelCols;
     }
     
+	/**
+	 * Récupère les valeurs minimales pour chaque colonne.
+	 *
+	 * @return array Les valeurs minimales par colonne.
+	 */
     protected function getTestMin ()
     {
         return array ( 'B' => 0, 'C' => 0 );
     }
     
+	/**
+	 * Récupère les valeurs maximales pour chaque colonne.
+	 *
+	 * @return array Les valeurs maximales par colonne.
+	 */
     protected function getTestMax ()
     {
         return array ( 'B' => 700, 'C' => 500 );
     }
     
    
+	/**
+	 * Récupère le nom du fichier de requête.
+	 *
+	 * @return string Le nom du fichier de requête.
+	 */
     public function getRequestFile  () { return $this->RequestFile ; }
+	/**
+	 * Récupère le nom de la table de base de données.
+	 *
+	 * @return string Le nom de la table de base de données.
+	 */
     public function getDBTable      () { return $this->DBTable     ; }
+	/**
+	 * Récupère le nom de la classe de base de données.
+	 *
+	 * @return string Le nom de la classe de base de données.
+	 */
     public function getDBClass      () { return $this->DBClass     ; }
+
+	/**
+	 * Récupère les colonnes de relation pour l'analyse.
+	 *
+	 * @return array Les colonnes de relation.
+	 */
     public function getRelationCols () { return $this->RelationCols; }
+
+	/**
+	 * Récupère les colonnes à mesurer pour l'analyse.
+	 *
+	 * @return array Les colonnes à mesurer.
+	 */
     public function getMeasureCols  () { return $this->MeasureCols ; }
+
+	/**
+	 * Récupère le cube de données multidimensionnel SkyCube.
+	 *
+	 * @return SkyCube Le cube de données multidimensionnel.
+	 */
     public function getSkyCube      () { return $this->SkyCube ; }
     
+	/**
+	 * Définit le nom du fichier de requête.
+	 *
+	 * @param string $NewValue Le nouveau nom du fichier de requête.
+	 */
     public function setRequestFile  ( $NewValue ) { $this->RequestFile  = $NewValue; }
+
+	/**
+	 * Définit le nom de la table de base de données.
+	 *
+	 * @param string $NewValue Le nouveau nom de la table de base de données.
+	 */
     public function setDBTable      ( $NewValue ) { $this->DBTable      = $NewValue; }
+
+	/**
+	 * Définit le nom de la classe de base de données.
+	 *
+	 * @param string $NewValue Le nouveau nom de la classe de base de données.
+	 */
     public function setDBClass      ( $NewValue ) { $this->DBClass      = $NewValue; }
+
+	/**
+	 * Définit les colonnes de relation pour l'analyse.
+	 *
+	 * @param array $NewValue Les nouvelles colonnes de relation.
+	 */
     public function setRelationCols ( $NewValue ) { $this->RelationCols = $NewValue; }
+
+	/**
+	 * Définit les colonnes à mesurer pour l'analyse.
+	 *
+	 * @param array $NewValue Les nouvelles colonnes à mesurer.
+	 */
     public function setMeasureCols  ( $NewValue ) { $this->MeasureCols  = $NewValue; }
     
+	/**
+	 * Définit les valeurs minimales pour chaque colonne.
+	 *
+	 * @param array $NewValue Les nouvelles valeurs minimales par colonne.
+	 */
     public function setMin ( $NewValue ) { $this->Min = $NewValue; }
+
+	/**
+	 * Définit les valeurs maximales pour chaque colonne.
+	 *
+	 * @param array $NewValue Les nouvelles valeurs maximales par colonne.
+	 */
     public function setMax ( $NewValue ) { $this->Max = $NewValue; }
     
+	/**
+	 * Définit l'algorithme utilisé pour l'analyse.
+	 *
+	 * @param string $Algo Le nom de l'algorithme à utiliser.
+	 */
     public function setAlgorithm ( $Algo ) { $this->Algorithm = $Algo; }
-    public function write ( )
+
+	/**
+	 * Écrit les paramètres d'analyse dans le fichier de description.
+	 */    
+	public function write ( )
     {
         $Content = '';
         
@@ -572,21 +769,86 @@ class Analysis
         
         file_put_contents ( $this->DescFilePath, $Content );
     }
+	/**
+	 * @var array Tableau associatif contenant les valeurs des attributs pour les tests.
+	 */
+	protected $AttributeValues;
+
+	/**
+	 * @var array Tableau contenant les attributs ignorés lors des tests.
+	 */
+	protected $AttributeIgnored;
     
+    /**
+     * @var string|null Chemin vers le fichier de description.
+     */
     protected $DescFile;
-    protected $DescFilePath;
+
+    /**
+     * @var string|null Chemin vers le fichier de requête.
+     */
     protected $RequestFile;
+
+    /**
+     * @var string|null Nom de la table de base de données.
+     */
     protected $DBTable;
+
+    /**
+     * @var string|null Nom de la classe de base de données.
+     */
     protected $DBClass;
+
+    /**
+     * @var array|null Colonnes utilisées pour les relations.
+     */
     protected $RelationCols;
+
+    /**
+     * @var array|null Colonnes utilisées pour les mesures.
+     */
     protected $MeasureCols;
+
+    /**
+     * @var bool Indique si l'analyse peut être exécutée.
+     */
     protected $Runnable;
-    protected $Result;
+
+    /**
+     * @var string Chemin vers le fichier de description.
+     */
+    protected $DescFilePath;
+
+    /**
+     * @var string|null Algorithme utilisé pour l'analyse.
+     */
     protected $Algorithm;
+
+    /**
+     * @var array|null Jeu de données utilisé pour l'analyse.
+     */
+    protected $DataSet;
+
+    /**
+     * @var SkyCubeEmergent|null Instance de SkyCube utilisée pour l'analyse.
+     */
     protected $SkyCube;
+
+    /**
+     * @var array Un tableau pour stocker les valeurs minimales de chaque colonne.
+     */
     protected $Min;
+
+    /**
+     * @var array Un tableau pour stocker les valeurs maximales de chaque colonne.
+     */
     protected $Max;
+
+    /**
+     * @var bool Indique si l'analyse est à des fins de test.
+     */
     protected $IsTest;
+
 }
 
 

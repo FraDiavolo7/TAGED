@@ -1,13 +1,22 @@
 <?php
 
 /**
+ * Classe HTML pour générer des balises HTML de manière simplifiée.
  *
  * @package Commun
  */
 class HTML
 {
+	/**
+	 * Constante pour le sélecteur de page utilisé dans les liens internes
+	 */
     const PAGE_SELECTOR = 'sel';
     
+    /**
+     * Affiche l'en-tête HTML avec le titre de la page spécifiée.
+     *
+     * @param string $Current Le nom de la page actuelle.
+     */
     public static function showHeader ( $Current = '' )
     {
         $Page = PAGE_DEFAULT;
@@ -31,17 +40,29 @@ class HTML
         self::showMenu ( $Current );
     }
 
-
-
+    /**
+     * Affiche le pied de page HTML.
+     */
     public static function showFooter ()
     {
         self::tag ( 'footer', ' ' );
     }
 
+    /**
+     * Affiche le menu de navigation.
+     *
+     * @param string $Current Le nom de la page actuelle.
+     */
     public static function showMenu ( $Current = '' )
     {
     }
 
+    /**
+     * Redirige vers une autre URL avec une pause de temps optionnelle.
+     *
+     * @param string $URL L'URL de destination.
+     * @param int $Time Le temps en secondes avant la redirection.
+     */
     public static function redirect ( $URL, $Time = 0 )
     {
        self::tag ( '!DOCTYPE html' );
@@ -52,6 +73,12 @@ class HTML
        self::tag ( '/html' );
     }
     
+    /**
+     * Affiche une redirection automatique vers une autre URL avec une pause de temps optionnelle.
+     *
+     * @param string $URL L'URL de destination.
+     * @param int $Time Le temps en secondes avant la redirection.
+     */
     public static function showRedirect ( $URL, $Time = 0 )
     {
         echo self::redirect ( $URL, $Time );

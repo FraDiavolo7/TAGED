@@ -1,11 +1,17 @@
 <?php
 
 /**
+ * Classe Date pour gérer les opérations liées à la date.
  *
  * @package Commun
  */
 class Date
 {
+    /**
+     * Récupère la date actuelle au format HTML (jj/mm/aa hh:mm:ss).
+     *
+     * @return string La date au format HTML.
+     */
     public static function getDateHTML ( )
 	{
 		$Result = '01/01/70 00:00:00';
@@ -23,4 +29,4 @@ class Date
 		return $Result;
 	}
 	
-}
+} // Date
