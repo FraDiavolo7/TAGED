@@ -1,0 +1,14 @@
+<map id="HnSHeroParser\parseAttrP" name="HnSHeroParser\parseAttrP">
+<area shape="rect" id="node2" href="$class_hero.html#a4936f4afc1324ed3ae4a90a91fd16eb1" title="Hero\\setAttr" alt="" coords="244,233,345,260"/>
+<area shape="rect" id="node3" href="$class_hero.html#a401e3a4a65354c605fa0958c725be87a" title="Hero\\setDegats" alt="" coords="407,5,530,32"/>
+<area shape="rect" id="node4" href="$class_hero.html#afc3941d527fd4cf15f6018f8b962ec0e" title="Hero\\setDex" alt="" coords="417,56,520,83"/>
+<area shape="rect" id="node5" href="$class_hero.html#a4ecce0522ff9c6eb513531a05d7fea8a" title="Hero\\setFor" alt="" coords="420,107,517,133"/>
+<area shape="rect" id="node6" href="$class_hero.html#a460f54cd686a39877ea25d4ba9ef27f2" title="Hero\\setIntel" alt="" coords="415,157,522,184"/>
+<area shape="rect" id="node7" href="$class_hero.html#a591551873c61bc27e203eca5e4b4a989" title="Hero\\setRegen" alt="" coords="410,208,527,235"/>
+<area shape="rect" id="node8" href="$class_hero.html#a136f0b99dae0a4f99d9e30193ee3972a" title="Hero\\setResources" alt="" coords="397,309,540,336"/>
+<area shape="rect" id="node9" href="$class_hero.html#ab322ecf2edd6cec527d0d2715a1cfa1c" title="Hero\\setRessource1" alt="" coords="592,259,743,285"/>
+<area shape="rect" id="node11" href="$class_hero.html#abfb17e0fc088df407d18bb6a83a5ee36" title="Hero\\setRobustesse" alt="" coords="393,360,544,387"/>
+<area shape="rect" id="node12" href="$class_hero.html#a0f2eba73b403fad9079877dd64a08e65" title="Hero\\setVie" alt="" coords="419,411,518,437"/>
+<area shape="rect" id="node13" href="$class_hero.html#aa83218c340bb49f69ee5d537974be752" title="Hero\\setVita" alt="" coords="417,461,520,488"/>
+<area shape="rect" id="node10" href="$class_hero.html#a11a02ea8b3c6109f3951fac1c37288ec" title="Hero\\setRessource2" alt="" coords="592,309,743,336"/>
+</map>

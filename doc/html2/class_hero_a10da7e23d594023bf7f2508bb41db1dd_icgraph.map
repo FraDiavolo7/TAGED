@@ -1,0 +1,4 @@
+<map id="Hero\setHeroname" name="Hero\setHeroname">
+<area shape="rect" id="node2" href="$class_hero.html#a8f3b4b60f444d9df9015dd01c9d594d9" title="Hero constructor. " alt="" coords="229,5,359,32"/>
+<area shape="rect" id="node3" href="$class_hn_s_hero_parser.html#af577e30965cb36431463df160e913ff8" title="HnSHeroParser\\parseHero" alt="" coords="199,56,389,83"/>
+</map>

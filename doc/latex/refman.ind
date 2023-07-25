@@ -1,0 +1,3544 @@
+\begin{theindex}
+
+  \item {\$N}
+    \subitem {Co\+Sky}, \hyperpage{110}
+  \item {\$P}
+    \subitem {Co\+Sky}, \hyperpage{110}
+  \item {\$W}
+    \subitem {Co\+Sky}, \hyperpage{112}
+  \item {\$\+Affix}
+    \subitem {Hns\+Item}, \hyperpage{210}
+  \item {\$\+Aggregate}
+    \subitem {Page\+Change\+Aggregate}, \hyperpage{286}
+    \subitem {Page\+New\+Aggregate}, \hyperpage{315}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{322}
+    \subitem {Page\+Run\+Sky\+Cube\+Analysis}, \hyperpage{332}
+    \subitem {Page\+Show\+Aggregate}, \hyperpage{338}
+    \subitem {Page\+Show\+Sky\+Cube}, \hyperpage{344}
+  \item {\$\+Aggregate\+List}
+    \subitem {Page\+Change\+Aggregate}, \hyperpage{286}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{323}
+    \subitem {Page\+Run\+Sky\+Cube\+Analysis}, \hyperpage{332}
+    \subitem {Page\+Show\+Aggregate}, \hyperpage{338}
+    \subitem {Page\+Show\+Sky\+Cube}, \hyperpage{344}
+  \item {\$\+Aggregate\+List\+Obj}
+    \subitem {Page\+Change\+Aggregate}, \hyperpage{287}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{323}
+    \subitem {Page\+Run\+Sky\+Cube\+Analysis}, \hyperpage{333}
+    \subitem {Page\+Show\+Aggregate}, \hyperpage{338}
+    \subitem {Page\+Show\+Sky\+Cube}, \hyperpage{344}
+  \item {\$\+Aggregate\+Obj}
+    \subitem {Page\+Change\+Aggregate}, \hyperpage{287}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{323}
+    \subitem {Page\+Run\+Sky\+Cube\+Analysis}, \hyperpage{333}
+    \subitem {Page\+Show\+Aggregate}, \hyperpage{338}
+    \subitem {Page\+Show\+Sky\+Cube}, \hyperpage{344}
+  \item {\$\+Algo}
+    \subitem {analysis.\+php}, \hyperpage{462}
+  \item {\$\+Algorithm}
+    \subitem {Analysis}, \hyperpage{50}
+    \subitem {I\+D\+EA}, \hyperpage{239}
+  \item {\$\+Analysis}
+    \subitem {analysis.\+php}, \hyperpage{462}
+  \item {\$\+Attribute\+Ignored}
+    \subitem {Analysis}, \hyperpage{50}
+    \subitem {I\+D\+EA}, \hyperpage{239}
+  \item {\$\+Attribute\+Values}
+    \subitem {Analysis}, \hyperpage{50}
+    \subitem {I\+D\+EA}, \hyperpage{239}
+  \item {\$\+Attributes}
+    \subitem {I\+D\+EA}, \hyperpage{239}
+  \item {\$\+Avatar}
+    \subitem {Coll\+Player}, \hyperpage{83}
+  \item {\$\+Base\+U\+RL}
+    \subitem {Hn\+S\+Parser}, \hyperpage{218}
+  \item {\$\+Beam}
+    \subitem {M3\+Match}, \hyperpage{258}
+  \item {\$\+Children}
+    \subitem {process\+Hn\+S.\+php}, \hyperpage{467}
+  \item {\$\+Clan}
+    \subitem {Hn\+S\+Player}, \hyperpage{225}
+  \item {\$\+Class}
+    \subitem {Hero}, \hyperpage{171}
+  \item {\$\+Classes}
+    \subitem {get\+Diablo.\+php}, \hyperpage{463}
+  \item {\$\+Co\+Sky1}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{323}
+  \item {\$\+Co\+Sky2}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{323}
+  \item {\$\+Col\+I\+Ds}
+    \subitem {Display\+Cuboide}, \hyperpage{133}
+    \subitem {Display\+Sky\+Cube}, \hyperpage{139}
+    \subitem {S\+K\+Display}, \hyperpage{401}
+    \subitem {Sky\+Cube}, \hyperpage{414}
+  \item {\$\+Col\+I\+Ds\+C1}
+    \subitem {Cuboide\+Emergent}, \hyperpage{128}
+  \item {\$\+Col\+I\+Ds\+C2}
+    \subitem {Cuboide\+Emergent}, \hyperpage{128}
+  \item {\$\+Color}
+    \subitem {M3\+Match}, \hyperpage{258}
+  \item {\$\+Cols}
+    \subitem {Page\+Accueil}, \hyperpage{282}
+  \item {\$\+Comps}
+    \subitem {Hero}, \hyperpage{171}
+  \item {\$\+Compute\+Accord\+Cuboides}
+    \subitem {Sky\+Cube\+Emergent}, \hyperpage{428}
+  \item {\$\+Cote}
+    \subitem {Hns\+Item}, \hyperpage{211}
+  \item {\$\+Cuboide1}
+    \subitem {Cuboide\+Emergent}, \hyperpage{128}
+  \item {\$\+Cuboide2}
+    \subitem {Cuboide\+Emergent}, \hyperpage{129}
+  \item {\$\+Cuboides}
+    \subitem {Display\+Sky\+Cube}, \hyperpage{139}
+    \subitem {S\+K\+Display}, \hyperpage{402}
+    \subitem {Sky\+Cube}, \hyperpage{414}
+  \item {\$\+Current\+Col\+ID}
+    \subitem {Sky\+Cube}, \hyperpage{415}
+  \item {\$\+Current\+Item}
+    \subitem {Hero}, \hyperpage{172}
+    \subitem {Hn\+S\+Hero\+Parser}, \hyperpage{202}
+  \item {\$\+D\+B\+Class}
+    \subitem {Agg\+Coll\+Requete}, \hyperpage{16}
+    \subitem {Agg\+Coll\+V\+W\+Combat}, \hyperpage{17}
+    \subitem {Analysis}, \hyperpage{50}
+  \item {\$\+D\+B\+Table}
+    \subitem {Analysis}, \hyperpage{51}
+  \item {\$\+D\+Bpwd}
+    \subitem {Taged\+D\+B\+Coll}, \hyperpage{430}
+    \subitem {Taged\+D\+B\+HnS}, \hyperpage{432}
+    \subitem {Taged\+D\+B\+Match3}, \hyperpage{434}
+  \item {\$\+D\+Bserver}
+    \subitem {Taged\+D\+B\+Coll}, \hyperpage{430}
+    \subitem {Taged\+D\+B\+HnS}, \hyperpage{432}
+    \subitem {Taged\+D\+B\+Match3}, \hyperpage{434}
+  \item {\$\+D\+Buser}
+    \subitem {Taged\+D\+B\+Coll}, \hyperpage{430}
+    \subitem {Taged\+D\+B\+HnS}, \hyperpage{432}
+    \subitem {Taged\+D\+B\+Match3}, \hyperpage{434}
+  \item {\$\+Data}
+    \subitem {Co\+Sky}, \hyperpage{109}
+    \subitem {process\+Hn\+S.\+php}, \hyperpage{467}
+  \item {\$\+Data\+Set}
+    \subitem {Analysis}, \hyperpage{50}
+    \subitem {Display\+Cuboide}, \hyperpage{133}
+    \subitem {Display\+Sky\+Cube}, \hyperpage{139}
+    \subitem {S\+K\+Display}, \hyperpage{402}
+    \subitem {Sky\+Cube}, \hyperpage{415}
+  \item {\$\+Degats}
+    \subitem {Hero}, \hyperpage{172}
+  \item {\$\+Denumbered\+Col\+I\+Ds}
+    \subitem {Sky\+Cube\+Emergent}, \hyperpage{428}
+  \item {\$\+Desc\+File}
+    \subitem {Analysis}, \hyperpage{51}
+  \item {\$\+Desc\+File\+Path}
+    \subitem {Analysis}, \hyperpage{51}
+  \item {\$\+Dest\+Folder}
+    \subitem {get\+Hn\+S\+File.\+php}, \hyperpage{464}
+  \item {\$\+Dex}
+    \subitem {Hero}, \hyperpage{172}
+  \item {\$\+Drop\+Rate}
+    \subitem {Coll\+Team}, \hyperpage{95}
+  \item {\$\+Duration}
+    \subitem {M3\+Stroke}, \hyperpage{269}
+  \item {\$\+Emergence}
+    \subitem {Sky\+Cube\+Emergent}, \hyperpage{428}
+  \item {\$\+File}
+    \subitem {Agg\+Coll\+Requete}, \hyperpage{16}
+    \subitem {Parse\+Hn\+S\+Hero.\+php}, \hyperpage{464}
+    \subitem {process\+Coll\+Entry.\+php}, \hyperpage{466}
+    \subitem {process\+Hn\+S\+File.\+php}, \hyperpage{469}
+  \item {\$\+File\+Path}
+    \subitem {I\+D\+EA}, \hyperpage{240}
+  \item {\$\+File\+To\+Parse}
+    \subitem {Page\+Coll\+Parse}, \hyperpage{296}
+    \subitem {Page\+Hn\+S\+Parse}, \hyperpage{306}
+  \item {\$\+Filename\+Items}
+    \subitem {Parse\+Hn\+S\+Hero.\+php}, \hyperpage{465}
+  \item {\$\+Filtered\+Cuboide\+I\+Ds}
+    \subitem {Sky\+Cube}, \hyperpage{415}
+  \item {\$\+Filtered\+Data\+Set}
+    \subitem {Cuboide\+Emergent}, \hyperpage{129}
+  \item {\$\+Folder}
+    \subitem {Aggregate\+List}, \hyperpage{20}
+    \subitem {process\+Hn\+S\+Folder.\+php}, \hyperpage{469}
+  \item {\$\+For}
+    \subitem {Hero}, \hyperpage{172}
+  \item {\$\+Full\+Text}
+    \subitem {Coll\+Parser}, \hyperpage{77}
+    \subitem {Hn\+S\+Hero\+Parser}, \hyperpage{202}
+    \subitem {Hn\+S\+Parser}, \hyperpage{218}
+  \item {\$\+G\+L\+O\+B\+A\+LS}
+    \subitem {application/src/define.\+php}, \hyperpage{475}
+  \item {\$\+Game}
+    \subitem {Coll\+Parser}, \hyperpage{77}
+    \subitem {Hn\+S\+Hero\+Parser}, \hyperpage{203}
+    \subitem {Hn\+S\+Parser}, \hyperpage{218}
+  \item {\$\+Game\+Date}
+    \subitem {M3\+Game}, \hyperpage{248}
+  \item {\$\+Game\+ID}
+    \subitem {M3\+Game}, \hyperpage{248}
+  \item {\$\+Game\+Type}
+    \subitem {Game\+Type}, \hyperpage{143}
+  \item {\$\+Games}
+    \subitem {Page\+New\+Aggregate}, \hyperpage{315}
+  \item {\$\+Gen}
+    \subitem {Gen}, \hyperpage{145}
+  \item {\$\+Gini}
+    \subitem {Co\+Sky}, \hyperpage{109}
+  \item {\$\+Hero\+Class}
+    \subitem {Hn\+S\+Parser}, \hyperpage{219}
+  \item {\$\+Heroname}
+    \subitem {Hero}, \hyperpage{172}
+  \item {\$\+ID}
+    \subitem {Display\+Cuboide}, \hyperpage{133}
+  \item {\$\+I\+D\+Combat}
+    \subitem {Coll\+Game}, \hyperpage{63}
+  \item {\$\+I\+D\+Equipe}
+    \subitem {Coll\+Team}, \hyperpage{96}
+  \item {\$\+I\+D\+Match}
+    \subitem {M3\+Match}, \hyperpage{258}
+  \item {\$\+I\+D\+Stroke}
+    \subitem {M3\+Stroke}, \hyperpage{269}
+  \item {\$\+Id}
+    \subitem {Hero}, \hyperpage{173}
+    \subitem {Hn\+S\+Player}, \hyperpage{225}
+    \subitem {Hns\+Comp}, \hyperpage{190}
+    \subitem {Hns\+Item}, \hyperpage{211}
+  \item {\$\+Id\+Porte}
+    \subitem {Hns\+Item}, \hyperpage{211}
+  \item {\$\+Ideal}
+    \subitem {Co\+Sky}, \hyperpage{109}
+  \item {\$\+Image}
+    \subitem {Hns\+Item}, \hyperpage{211}
+  \item {\$\+Input\+Data}
+    \subitem {W\+S\+Match3}, \hyperpage{456}
+  \item {\$\+Input\+Measures}
+    \subitem {I\+D\+EA}, \hyperpage{240}
+  \item {\$\+Input\+Relations}
+    \subitem {I\+D\+EA}, \hyperpage{240}
+  \item {\$\+Intel}
+    \subitem {Hero}, \hyperpage{173}
+  \item {\$\+Is\+Test}
+    \subitem {Analysis}, \hyperpage{51}
+  \item {\$\+Is\+Valid}
+    \subitem {Display\+Cuboide}, \hyperpage{133}
+    \subitem {Display\+Sky\+Cube}, \hyperpage{139}
+    \subitem {S\+K\+Display}, \hyperpage{402}
+    \subitem {Sky\+Cube}, \hyperpage{415}
+  \item {\$\+Item\+List}
+    \subitem {Hn\+S\+Hero\+Parser}, \hyperpage{203}
+  \item {\$\+Items}
+    \subitem {Hero}, \hyperpage{173}
+  \item {\$\+Length}
+    \subitem {M3\+Match}, \hyperpage{258}
+  \item {\$\+Level}
+    \subitem {Hero}, \hyperpage{173}
+  \item {\$\+List}
+    \subitem {Aggregate\+List}, \hyperpage{21}
+  \item {\$\+List\+Games}
+    \subitem {Match3}, \hyperpage{273}
+  \item {\$\+Liste\+Combats}
+    \subitem {Coll\+Table}, \hyperpage{88}
+  \item {\$\+Liste\+Heros}
+    \subitem {Hn\+S\+Table}, \hyperpage{229}
+  \item {\$\+Main\+Folder}
+    \subitem {get\+Hn\+S\+File.\+php}, \hyperpage{464}
+  \item {\$\+Match\+Num}
+    \subitem {M3\+Match}, \hyperpage{258}
+  \item {\$\+Matches}
+    \subitem {M3\+Stroke}, \hyperpage{269}
+  \item {\$\+Max}
+    \subitem {Analysis}, \hyperpage{51}
+    \subitem {I\+D\+EA}, \hyperpage{240}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{324}
+  \item {\$\+Max\+Cols}
+    \subitem {Display\+Cuboide}, \hyperpage{134}
+  \item {\$\+Measure\+Cols}
+    \subitem {Analysis}, \hyperpage{52}
+  \item {\$\+Message}
+    \subitem {Rated}, \hyperpage{366}
+  \item {\$\+Min}
+    \subitem {Analysis}, \hyperpage{52}
+    \subitem {I\+D\+EA}, \hyperpage{240}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{324}
+  \item {\$\+Min\+Max}
+    \subitem {Co\+Sky}, \hyperpage{109}
+    \subitem {Cuboide}, \hyperpage{116}
+    \subitem {Display\+Cuboide}, \hyperpage{134}
+    \subitem {Display\+Sky\+Cube}, \hyperpage{139}
+    \subitem {S\+K\+Display}, \hyperpage{402}
+    \subitem {Sky\+Cube}, \hyperpage{415}
+  \item {\$\+Name}
+    \subitem {Hns\+Item}, \hyperpage{211}
+  \item {\$\+Nb\+Attributes}
+    \subitem {I\+D\+EA}, \hyperpage{240}
+  \item {\$\+Nb\+Tuples}
+    \subitem {I\+D\+EA}, \hyperpage{241}
+  \item {\$\+New\+Path}
+    \subitem {application/src/define.\+php}, \hyperpage{475}
+  \item {\$\+Order}
+    \subitem {Hns\+Comp}, \hyperpage{191}
+  \item {\$\+Ordered\+Cuboide\+I\+Ds}
+    \subitem {Sky\+Cube}, \hyperpage{416}
+  \item {\$\+P\+DO}
+    \subitem {Taged\+D\+B\+Coll}, \hyperpage{431}
+    \subitem {Taged\+D\+B\+HnS}, \hyperpage{433}
+    \subitem {Taged\+D\+B\+Match3}, \hyperpage{435}
+  \item {\$\+P\+D\+O\+Statement}
+    \subitem {Taged\+D\+B\+Coll}, \hyperpage{431}
+    \subitem {Taged\+D\+B\+HnS}, \hyperpage{433}
+    \subitem {Taged\+D\+B\+Match3}, \hyperpage{435}
+  \item {\$\+Page}
+    \subitem {maintenance/www/index.\+php}, \hyperpage{492}
+  \item {\$\+Parangon}
+    \subitem {Hero}, \hyperpage{173}
+  \item {\$\+Parser}
+    \subitem {Parse\+Hn\+S\+Hero.\+php}, \hyperpage{465}
+    \subitem {process\+Coll\+Entry.\+php}, \hyperpage{466}
+  \item {\$\+Password}
+    \subitem {Page\+Change\+Aggregate}, \hyperpage{287}
+    \subitem {Page\+Gest\+Aggregate}, \hyperpage{300}
+    \subitem {Page\+New\+Aggregate}, \hyperpage{315}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{324}
+    \subitem {Page\+Run\+Sky\+Cube\+Analysis}, \hyperpage{333}
+    \subitem {Page\+Show\+Aggregate}, \hyperpage{339}
+    \subitem {Page\+Show\+Sky\+Cube}, \hyperpage{344}
+  \item {\$\+Place}
+    \subitem {Hns\+Item}, \hyperpage{212}
+  \item {\$\+Player}
+    \subitem {Coll\+Player}, \hyperpage{83}
+    \subitem {Coll\+Team}, \hyperpage{96}
+    \subitem {Hero}, \hyperpage{174}
+  \item {\$\+Player1}
+    \subitem {Coll\+Game}, \hyperpage{63}
+  \item {\$\+Player2}
+    \subitem {Coll\+Game}, \hyperpage{64}
+  \item {\$\+Player\+ID}
+    \subitem {M3\+Game}, \hyperpage{248}
+  \item {\$\+Player\+IP}
+    \subitem {M3\+Game}, \hyperpage{248}
+  \item {\$\+Pokemons}
+    \subitem {Coll\+Team}, \hyperpage{96}
+  \item {\$\+Pool\+Size}
+    \subitem {process\+Hn\+S.\+php}, \hyperpage{468}
+  \item {\$\+Position}
+    \subitem {Hns\+Item}, \hyperpage{212}
+  \item {\$\+Prepared\+Measures}
+    \subitem {I\+D\+EA}, \hyperpage{241}
+  \item {\$\+Prepared\+Relations}
+    \subitem {I\+D\+EA}, \hyperpage{241}
+  \item {\$\+Process\+File\+Scr}
+    \subitem {process\+Hn\+S\+Folder.\+php}, \hyperpage{470}
+  \item {\$\+Process\+Folder\+Scr}
+    \subitem {process\+Hn\+S.\+php}, \hyperpage{468}
+  \item {\$\+Processed\+Text}
+    \subitem {Coll\+Parser}, \hyperpage{78}
+    \subitem {Hn\+S\+Hero\+Parser}, \hyperpage{203}
+    \subitem {Hn\+S\+Parser}, \hyperpage{219}
+  \item {\$\+Rank}
+    \subitem {Hero}, \hyperpage{174}
+  \item {\$\+Rated}
+    \subitem {Rated}, \hyperpage{366}
+  \item {\$\+Rating}
+    \subitem {Coll\+Game}, \hyperpage{64}
+    \subitem {Coll\+Player}, \hyperpage{83}
+  \item {\$\+Regen}
+    \subitem {Hero}, \hyperpage{174}
+  \item {\$\+Relation\+Cols}
+    \subitem {Analysis}, \hyperpage{52}
+  \item {\$\+Request}
+    \subitem {Page\+Change\+Aggregate}, \hyperpage{287}
+  \item {\$\+Request\+File}
+    \subitem {Analysis}, \hyperpage{52}
+  \item {\$\+Ressource1}
+    \subitem {Hero}, \hyperpage{174}
+  \item {\$\+Ressource2}
+    \subitem {Hero}, \hyperpage{174}
+  \item {\$\+Result}
+    \subitem {Analysis}, \hyperpage{52}
+    \subitem {Coll\+Game}, \hyperpage{64}
+    \subitem {Page\+Show\+Aggregate}, \hyperpage{339}
+    \subitem {process\+Coll\+Entry.\+php}, \hyperpage{466}
+    \subitem {test.\+php}, \hyperpage{470}
+  \item {\$\+Rift}
+    \subitem {Hero}, \hyperpage{175}
+  \item {\$\+Robustesse}
+    \subitem {Hero}, \hyperpage{175}
+  \item {\$\+Round\+Date}
+    \subitem {M3\+Game}, \hyperpage{248}
+  \item {\$\+Round\+Num}
+    \subitem {M3\+Game}, \hyperpage{248}
+  \item {\$\+Row\+Headers}
+    \subitem {Display\+Cuboide}, \hyperpage{134}
+    \subitem {Display\+Sky\+Cube}, \hyperpage{140}
+    \subitem {S\+K\+Display}, \hyperpage{402}
+    \subitem {Sky\+Cube}, \hyperpage{416}
+  \item {\$\+Rules}
+    \subitem {Coll\+Game}, \hyperpage{64}
+  \item {\$\+Rune}
+    \subitem {Hns\+Comp}, \hyperpage{191}
+  \item {\$\+Runnable}
+    \subitem {Analysis}, \hyperpage{53}
+  \item {\$\+Score}
+    \subitem {Co\+Sky}, \hyperpage{110}
+    \subitem {M3\+Match}, \hyperpage{258}
+  \item {\$\+Score\+Total}
+    \subitem {M3\+Match}, \hyperpage{259}
+  \item {\$\+Server}
+    \subitem {Hero}, \hyperpage{175}
+    \subitem {Hn\+S\+Parser}, \hyperpage{219}
+  \item {\$\+Servers}
+    \subitem {get\+Diablo.\+php}, \hyperpage{463}
+  \item {\$\+Sets\+Of\+Parts}
+    \subitem {Sky\+Cube}, \hyperpage{416}
+  \item {\$\+Shape}
+    \subitem {M3\+Match}, \hyperpage{259}
+  \item {\$\+Show\+Accords}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{324}
+    \subitem {Page\+Show\+Sky\+Cube}, \hyperpage{344}
+  \item {\$\+Show\+Co\+Sky}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{324}
+  \item {\$\+Show\+Data\+Cube}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{325}
+    \subitem {Page\+Show\+Sky\+Cube}, \hyperpage{345}
+  \item {\$\+Show\+Espace}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{325}
+    \subitem {Page\+Show\+Sky\+Cube}, \hyperpage{345}
+  \item {\$\+Show\+Fusion}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{325}
+  \item {\$\+Show\+Fusion\+Abregee}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{325}
+  \item {\$\+Show\+Input}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{325}
+    \subitem {Page\+Show\+Sky\+Cube}, \hyperpage{345}
+  \item {\$\+Show\+Sky\+Cube}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{325}
+    \subitem {Page\+Show\+Sky\+Cube}, \hyperpage{345}
+  \item {\$\+Show\+Taged\+Cube}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{326}
+    \subitem {Page\+Show\+Sky\+Cube}, \hyperpage{345}
+  \item {\$\+Size}
+    \subitem {Coll\+Team}, \hyperpage{96}
+  \item {\$\+Skill}
+    \subitem {Hns\+Comp}, \hyperpage{191}
+  \item {\$\+Sky\+Cube}
+    \subitem {Analysis}, \hyperpage{53}
+    \subitem {Co\+Sky}, \hyperpage{110}
+    \subitem {Page\+Show\+Sky\+Cube}, \hyperpage{345}
+  \item {\$\+Sky\+Cube1}
+    \subitem {Sky\+Cube\+Emergent}, \hyperpage{428}
+  \item {\$\+Sky\+Cube2}
+    \subitem {Sky\+Cube\+Emergent}, \hyperpage{429}
+  \item {\$\+Special\+Four}
+    \subitem {M3\+Match}, \hyperpage{259}
+  \item {\$\+Sqrt\+Sum\+Ideal\+Square}
+    \subitem {Co\+Sky}, \hyperpage{110}
+  \item {\$\+Sqrt\+Sum\+P\+Square}
+    \subitem {Co\+Sky}, \hyperpage{111}
+  \item {\$\+Stroke\+Num}
+    \subitem {M3\+Stroke}, \hyperpage{269}
+  \item {\$\+Strokes}
+    \subitem {M3\+Game}, \hyperpage{249}
+  \item {\$\+Sum\+Attr}
+    \subitem {Co\+Sky}, \hyperpage{111}
+  \item {\$\+Sum\+Gini}
+    \subitem {Co\+Sky}, \hyperpage{111}
+  \item {\$\+Sum\+Ideal\+Square}
+    \subitem {Co\+Sky}, \hyperpage{111}
+  \item {\$\+Sum\+N\+Square}
+    \subitem {Co\+Sky}, \hyperpage{111}
+  \item {\$\+Sum\+P\+Square}
+    \subitem {Co\+Sky}, \hyperpage{112}
+  \item {\$\+Table}
+    \subitem {Agg\+Coll\+Requete}, \hyperpage{16}
+    \subitem {Agg\+Coll\+V\+W\+Combat}, \hyperpage{18}
+  \item {\$\+Tag}
+    \subitem {Hn\+S\+Player}, \hyperpage{225}
+  \item {\$\+Target}
+    \subitem {analysis.\+php}, \hyperpage{462}
+  \item {\$\+Team1}
+    \subitem {Coll\+Game}, \hyperpage{64}
+  \item {\$\+Team2}
+    \subitem {Coll\+Game}, \hyperpage{65}
+  \item {\$\+Team\+Drop\+Rate}
+    \subitem {Coll\+Team}, \hyperpage{96}
+  \item {\$\+Test}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{326}
+    \subitem {Page\+Show\+Sky\+Cube}, \hyperpage{346}
+  \item {\$\+Text\+To\+Parse}
+    \subitem {Parse\+Hn\+S\+Hero.\+php}, \hyperpage{465}
+    \subitem {process\+Coll\+Entry.\+php}, \hyperpage{466}
+  \item {\$\+Tier}
+    \subitem {Coll\+Game}, \hyperpage{65}
+    \subitem {Tier}, \hyperpage{443}
+  \item {\$\+Time}
+    \subitem {Hero}, \hyperpage{175}
+    \subitem {M3\+Match}, \hyperpage{259}
+    \subitem {M3\+Stroke}, \hyperpage{269}
+  \item {\$\+Time\+In\+Game}
+    \subitem {M3\+Match}, \hyperpage{259}
+  \item {\$\+Time\+Left}
+    \subitem {M3\+Match}, \hyperpage{260}
+  \item {\$\+Time\+Str}
+    \subitem {Hero}, \hyperpage{175}
+  \item {\$\+Tuples}
+    \subitem {Co\+Sky}, \hyperpage{112}
+  \item {\$\+Turns}
+    \subitem {Coll\+Game}, \hyperpage{65}
+  \item {\$\+Type}
+    \subitem {Coll\+Game}, \hyperpage{65}
+    \subitem {Hns\+Comp}, \hyperpage{191}
+  \item {\$\+U\+RL}
+    \subitem {Hero}, \hyperpage{176}
+    \subitem {Hn\+S\+Parser}, \hyperpage{219}
+  \item {\$\+U\+R\+Lpattern}
+    \subitem {get\+Diablo.\+php}, \hyperpage{463}
+  \item {\$\+User}
+    \subitem {Winner}, \hyperpage{449}
+  \item {\$\+Username}
+    \subitem {Coll\+Player}, \hyperpage{83}
+    \subitem {Hn\+S\+Player}, \hyperpage{225}
+  \item {\$\+Vie}
+    \subitem {Hero}, \hyperpage{176}
+  \item {\$\+Vita}
+    \subitem {Hero}, \hyperpage{176}
+  \item {\$\+W\+I\+P\+Measures}
+    \subitem {I\+D\+EA}, \hyperpage{241}
+  \item {\$\+W\+I\+P\+Relations}
+    \subitem {I\+D\+EA}, \hyperpage{241}
+  \item {\$current\+Pokemon1}
+    \subitem {Replay\+Parser}, \hyperpage{384}
+  \item {\$current\+Pokemon2}
+    \subitem {Replay\+Parser}, \hyperpage{384}
+  \item {\$current\+Turn}
+    \subitem {Replay\+Parser}, \hyperpage{385}
+  \item {\$filename}
+    \subitem {Hn\+S\+Parser}, \hyperpage{218}
+    \subitem {Replay\+Parser}, \hyperpage{385}
+  \item {\$game\+Type}
+    \subitem {Replay\+Parser}, \hyperpage{385}
+  \item {\$gen}
+    \subitem {Replay\+Parser}, \hyperpage{385}
+  \item {\$head}
+    \subitem {Hn\+S\+Parser}, \hyperpage{218}
+    \subitem {Replay\+Parser}, \hyperpage{385}
+  \item {\$k}
+    \subitem {Co\+Sky}, \hyperpage{109}
+  \item {\$p1\+Move}
+    \subitem {Turn}, \hyperpage{446}
+  \item {\$p2\+Move}
+    \subitem {Turn}, \hyperpage{446}
+  \item {\$player1}
+    \subitem {Replay\+Parser}, \hyperpage{385}
+  \item {\$player2}
+    \subitem {Replay\+Parser}, \hyperpage{386}
+  \item {\$rated}
+    \subitem {Replay\+Parser}, \hyperpage{386}
+  \item {\$rules}
+    \subitem {Replay\+Parser}, \hyperpage{386}
+  \item {\$team1}
+    \subitem {Replay\+Parser}, \hyperpage{386}
+  \item {\$team2}
+    \subitem {Replay\+Parser}, \hyperpage{386}
+  \item {\$team\+Preview}
+    \subitem {Replay\+Parser}, \hyperpage{386}
+  \item {\$text}
+    \subitem {Hn\+S\+Parser}, \hyperpage{219}
+    \subitem {Replay\+Parser}, \hyperpage{387}
+  \item {\$tie}
+    \subitem {Replay\+Parser}, \hyperpage{387}
+  \item {\$turn}
+    \subitem {Turn}, \hyperpage{446}
+  \item {\$turns}
+    \subitem {Coll\+Parser}, \hyperpage{78}
+    \subitem {Replay\+Parser}, \hyperpage{387}
+  \item {\$winner}
+    \subitem {Replay\+Parser}, \hyperpage{387}
+  \item {\+\_\+\+\_\+construct}
+    \subitem {Aggregate\+List}, \hyperpage{18}
+    \subitem {Analysis}, \hyperpage{25}
+    \subitem {Co\+Sky}, \hyperpage{101}
+    \subitem {Coll\+Game}, \hyperpage{56}
+    \subitem {Coll\+Parser}, \hyperpage{68}
+    \subitem {Coll\+Player}, \hyperpage{79}
+    \subitem {Coll\+Table}, \hyperpage{86}
+    \subitem {Coll\+Team}, \hyperpage{90}
+    \subitem {Cuboide}, \hyperpage{114}
+    \subitem {Cuboide\+Emergent}, \hyperpage{124}
+    \subitem {Display\+Cuboide}, \hyperpage{130}
+    \subitem {Display\+Sky\+Cube}, \hyperpage{136}
+    \subitem {Game\+Type}, \hyperpage{141}
+    \subitem {Gen}, \hyperpage{143}
+    \subitem {Hero}, \hyperpage{148}
+    \subitem {Hn\+S\+Hero\+Parser}, \hyperpage{194}
+    \subitem {Hn\+S\+Parser}, \hyperpage{214}
+    \subitem {Hn\+S\+Player}, \hyperpage{220}
+    \subitem {Hn\+S\+Table}, \hyperpage{227}
+    \subitem {Hns\+Comp}, \hyperpage{185}
+    \subitem {Hns\+Item}, \hyperpage{205}
+    \subitem {I\+D\+EA}, \hyperpage{231}
+    \subitem {M3\+Game}, \hyperpage{243}
+    \subitem {M3\+Match}, \hyperpage{255}
+    \subitem {M3\+Stroke}, \hyperpage{265}
+    \subitem {Match3}, \hyperpage{272}
+    \subitem {Page\+Accueil}, \hyperpage{275}
+    \subitem {Page\+Change\+Aggregate}, \hyperpage{284}
+    \subitem {Page\+Coll\+Aggregate}, \hyperpage{290}
+    \subitem {Page\+Coll\+Data}, \hyperpage{292}
+    \subitem {Page\+Coll\+Parse}, \hyperpage{293}
+    \subitem {Page\+Gest\+Aggregate}, \hyperpage{298}
+    \subitem {Page\+Hn\+S\+Data}, \hyperpage{302}
+    \subitem {Page\+Hn\+S\+Parse}, \hyperpage{304}
+    \subitem {Page\+Maintenance}, \hyperpage{308}
+    \subitem {Page\+Match3}, \hyperpage{311}
+    \subitem {Page\+New\+Aggregate}, \hyperpage{313}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{319}
+    \subitem {Page\+Run\+Sky\+Cube\+Analysis}, \hyperpage{331}
+    \subitem {Page\+Show\+Aggregate}, \hyperpage{336}
+    \subitem {Page\+Show\+Sky\+Cube}, \hyperpage{341}
+    \subitem {Page\+Test}, \hyperpage{349}
+    \subitem {Page\+Test\+Accords}, \hyperpage{353}
+    \subitem {Page\+Test\+Co\+Sky}, \hyperpage{356}
+    \subitem {Page\+Test\+Sky\+Cube}, \hyperpage{358}
+    \subitem {Page\+Test\+Sky\+Cube\+Emergent}, \hyperpage{361}
+    \subitem {Rated}, \hyperpage{363}
+    \subitem {Replay\+Parser}, \hyperpage{368}
+    \subitem {Sky\+Cube}, \hyperpage{406}
+    \subitem {Sky\+Cube\+Emergent}, \hyperpage{421}
+    \subitem {Taged\+Page}, \hyperpage{437}
+    \subitem {Taged\+WS}, \hyperpage{440}
+    \subitem {Tier}, \hyperpage{441}
+    \subitem {Turn}, \hyperpage{444}
+    \subitem {W\+S\+Default}, \hyperpage{451}
+    \subitem {W\+S\+Match3}, \hyperpage{453}
+    \subitem {Winner}, \hyperpage{447}
+  \item {\+\_\+\+\_\+destruct}
+    \subitem {Coll\+Game}, \hyperpage{56}
+    \subitem {Coll\+Parser}, \hyperpage{69}
+    \subitem {Coll\+Table}, \hyperpage{86}
+    \subitem {Hn\+S\+Hero\+Parser}, \hyperpage{195}
+    \subitem {Hn\+S\+Parser}, \hyperpage{215}
+    \subitem {Hn\+S\+Table}, \hyperpage{228}
+    \subitem {M3\+Game}, \hyperpage{243}
+    \subitem {M3\+Match}, \hyperpage{255}
+    \subitem {M3\+Stroke}, \hyperpage{265}
+    \subitem {Match3}, \hyperpage{272}
+  \item {\+\_\+\+\_\+to\+String}
+    \subitem {Coll\+Game}, \hyperpage{57}
+    \subitem {Coll\+Parser}, \hyperpage{69}
+    \subitem {Coll\+Player}, \hyperpage{80}
+    \subitem {Coll\+Table}, \hyperpage{86}
+    \subitem {Coll\+Team}, \hyperpage{90}
+    \subitem {Display\+Cuboide}, \hyperpage{131}
+    \subitem {Display\+Sky\+Cube}, \hyperpage{136}
+    \subitem {Game\+Type}, \hyperpage{141}
+    \subitem {Gen}, \hyperpage{144}
+    \subitem {Hero}, \hyperpage{149}
+    \subitem {Hn\+S\+Hero\+Parser}, \hyperpage{195}
+    \subitem {Hn\+S\+Parser}, \hyperpage{215}
+    \subitem {Hn\+S\+Player}, \hyperpage{221}
+    \subitem {Hn\+S\+Table}, \hyperpage{228}
+    \subitem {Hns\+Comp}, \hyperpage{186}
+    \subitem {Hns\+Item}, \hyperpage{206}
+    \subitem {M3\+Game}, \hyperpage{244}
+    \subitem {M3\+Match}, \hyperpage{256}
+    \subitem {M3\+Stroke}, \hyperpage{265}
+    \subitem {Match3}, \hyperpage{272}
+    \subitem {Rated}, \hyperpage{364}
+    \subitem {S\+K\+Display}, \hyperpage{389}
+    \subitem {Tier}, \hyperpage{442}
+    \subitem {Winner}, \hyperpage{448}
+
+  \indexspace
+
+  \item {A\+G\+G\+R\+E\+G\+A\+T\+E\+\_\+\+F\+O\+L\+D\+E\+R\+\_\+\+D\+E\+SC}
+    \subitem {application/src/define.\+php}, \hyperpage{475}
+  \item {A\+G\+G\+R\+E\+G\+A\+T\+E\+\_\+\+F\+O\+L\+D\+E\+R\+\_\+\+R\+E\+Q\+U\+E\+S\+TS}
+    \subitem {application/src/define.\+php}, \hyperpage{475}
+  \item {A\+G\+G\+R\+E\+G\+A\+T\+E\+\_\+\+F\+O\+L\+D\+E\+R\+\_\+\+R\+E\+S\+U\+L\+TS}
+    \subitem {application/src/define.\+php}, \hyperpage{476}
+  \item {A\+G\+G\+R\+E\+G\+A\+T\+E\+\_\+\+F\+O\+L\+D\+E\+R\+\_\+\+T\+MP}
+    \subitem {application/src/define.\+php}, \hyperpage{476}
+  \item {A\+N\+A\+L\+Y\+S\+I\+S\+\_\+\+A\+L\+GO}
+    \subitem {application/src/define.\+php}, \hyperpage{476}
+  \item {A\+N\+A\+L\+Y\+S\+I\+S\+\_\+\+P\+A\+R\+A\+M\+\_\+M}
+    \subitem {application/src/define.\+php}, \hyperpage{476}
+  \item {A\+N\+A\+L\+Y\+S\+I\+S\+\_\+\+P\+A\+R\+A\+M\+\_\+N}
+    \subitem {application/src/define.\+php}, \hyperpage{476}
+  \item {A\+P\+P\+\_\+\+L\+I\+ST}
+    \subitem {application/src/define.\+php}, \hyperpage{477}
+  \item {A\+P\+P\+\_\+\+N\+A\+M\+E\+\_\+\+C\+O\+L\+L\+E\+C\+T\+I\+ON}
+    \subitem {application/src/define.\+php}, \hyperpage{477}
+  \item {A\+P\+P\+\_\+\+N\+A\+M\+E\+\_\+\+H\+A\+C\+K\+\_\+\+N\+\_\+\+S\+L\+A\+SH}
+    \subitem {application/src/define.\+php}, \hyperpage{477}
+  \item {A\+P\+P\+\_\+\+N\+A\+M\+E\+\_\+\+M\+A\+T\+C\+H3}
+    \subitem {application/src/define.\+php}, \hyperpage{477}
+  \item {A\+P\+P\+\_\+\+N\+A\+M\+ES}
+    \subitem {application/src/define.\+php}, \hyperpage{478}
+  \item {A\+P\+P\+\_\+\+N\+A\+ME}
+    \subitem {application/src/define.\+php}, \hyperpage{477}
+  \item {A\+T\+T\+R\+\_\+\+D\+E\+G\+A\+TS}
+    \subitem {Hero}, \hyperpage{176}
+  \item {A\+T\+T\+R\+\_\+\+D\+EX}
+    \subitem {Hero}, \hyperpage{176}
+  \item {A\+T\+T\+R\+\_\+\+F\+OR}
+    \subitem {Hero}, \hyperpage{177}
+  \item {A\+T\+T\+R\+\_\+\+I\+N\+T\+EL}
+    \subitem {Hero}, \hyperpage{177}
+  \item {A\+T\+T\+R\+\_\+\+R\+E\+G\+EN}
+    \subitem {Hero}, \hyperpage{177}
+  \item {A\+T\+T\+R\+\_\+\+R\+E\+S\+\_\+\+DH}
+    \subitem {Hero}, \hyperpage{177}
+  \item {A\+T\+T\+R\+\_\+\+R\+E\+S\+\_\+\+WD}
+    \subitem {Hero}, \hyperpage{178}
+  \item {A\+T\+T\+R\+\_\+\+R\+E\+S\+\_\+B}
+    \subitem {Hero}, \hyperpage{177}
+  \item {A\+T\+T\+R\+\_\+\+R\+E\+S\+\_\+C}
+    \subitem {Hero}, \hyperpage{177}
+  \item {A\+T\+T\+R\+\_\+\+R\+E\+S\+\_\+M}
+    \subitem {Hero}, \hyperpage{178}
+  \item {A\+T\+T\+R\+\_\+\+R\+E\+S\+\_\+N}
+    \subitem {Hero}, \hyperpage{178}
+  \item {A\+T\+T\+R\+\_\+\+R\+E\+S\+\_\+W}
+    \subitem {Hero}, \hyperpage{178}
+  \item {A\+T\+T\+R\+\_\+\+R\+O\+B\+U\+S\+T\+E\+S\+SE}
+    \subitem {Hero}, \hyperpage{178}
+  \item {A\+T\+T\+R\+\_\+\+V\+I\+TA}
+    \subitem {Hero}, \hyperpage{179}
+  \item {A\+T\+T\+R\+\_\+\+V\+IE}
+    \subitem {Hero}, \hyperpage{178}
+  \item {A\+V\+A\+T\+AR}
+    \subitem {Coll\+Player}, \hyperpage{84}
+  \item {add\+Affix}
+    \subitem {Hero}, \hyperpage{149}
+    \subitem {Hns\+Item}, \hyperpage{206}
+  \item {add\+Comp}
+    \subitem {Hero}, \hyperpage{149}
+  \item {add\+Item}
+    \subitem {Hero}, \hyperpage{150}
+  \item {add\+Match}
+    \subitem {M3\+Stroke}, \hyperpage{266}
+  \item {add\+Pokemon}
+    \subitem {Coll\+Team}, \hyperpage{91}
+  \item {add\+Stat}
+    \subitem {Page\+Accueil}, \hyperpage{276}
+  \item {add\+Stats}
+    \subitem {Page\+Accueil}, \hyperpage{277}
+  \item {add\+Stroke}
+    \subitem {M3\+Game}, \hyperpage{244}
+  \item {add\+Turn}
+    \subitem {Coll\+Game}, \hyperpage{57}
+  \item {affecte}
+    \subitem {Hns\+Comp}, \hyperpage{186}
+  \item {Agg\+Coll\+Requete}, \hyperpage{15}
+    \subitem {\$\+D\+B\+Class}, \hyperpage{16}
+    \subitem {\$\+File}, \hyperpage{16}
+    \subitem {\$\+Table}, \hyperpage{16}
+  \item {Agg\+Coll\+V\+W\+Combat}, \hyperpage{17}
+    \subitem {\$\+D\+B\+Class}, \hyperpage{17}
+    \subitem {\$\+Table}, \hyperpage{18}
+  \item {Aggregate\+List}, \hyperpage{18}
+    \subitem {\$\+Folder}, \hyperpage{20}
+    \subitem {\$\+List}, \hyperpage{21}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{18}
+    \subitem {get\+File\+Content}, \hyperpage{19}
+    \subitem {get\+File\+Field}, \hyperpage{19}
+    \subitem {get\+List}, \hyperpage{20}
+  \item {Algo}, \hyperpage{21}
+    \subitem {F\+O\+L\+D\+ER}, \hyperpage{22}
+    \subitem {generate\+List}, \hyperpage{21}
+  \item {aligne\+Pokemon}
+    \subitem {Coll\+Team}, \hyperpage{91}
+  \item {Analysis}, \hyperpage{23}
+    \subitem {\$\+Algorithm}, \hyperpage{50}
+    \subitem {\$\+Attribute\+Ignored}, \hyperpage{50}
+    \subitem {\$\+Attribute\+Values}, \hyperpage{50}
+    \subitem {\$\+D\+B\+Class}, \hyperpage{50}
+    \subitem {\$\+D\+B\+Table}, \hyperpage{51}
+    \subitem {\$\+Data\+Set}, \hyperpage{50}
+    \subitem {\$\+Desc\+File}, \hyperpage{51}
+    \subitem {\$\+Desc\+File\+Path}, \hyperpage{51}
+    \subitem {\$\+Is\+Test}, \hyperpage{51}
+    \subitem {\$\+Max}, \hyperpage{51}
+    \subitem {\$\+Measure\+Cols}, \hyperpage{52}
+    \subitem {\$\+Min}, \hyperpage{52}
+    \subitem {\$\+Relation\+Cols}, \hyperpage{52}
+    \subitem {\$\+Request\+File}, \hyperpage{52}
+    \subitem {\$\+Result}, \hyperpage{52}
+    \subitem {\$\+Runnable}, \hyperpage{53}
+    \subitem {\$\+Sky\+Cube}, \hyperpage{53}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{25}
+    \subitem {check}, \hyperpage{26}
+    \subitem {clean\+Data}, \hyperpage{26}
+    \subitem {compute}, \hyperpage{27}
+    \subitem {compute\+Cuboide}, \hyperpage{27}
+    \subitem {compute\+Cuboide\+Attribute}, \hyperpage{28}
+    \subitem {convert\+To\+Numerics}, \hyperpage{29}
+    \subitem {create}, \hyperpage{29, 30}
+    \subitem {D\+B\+C\+L\+A\+SS}, \hyperpage{53}
+    \subitem {D\+E\+S\+C\+\_\+\+F\+I\+L\+E\+\_\+\+P\+A\+TH}, 
+		\hyperpage{53}
+    \subitem {delete}, \hyperpage{30, 31}
+    \subitem {explode\+Cols}, \hyperpage{31}
+    \subitem {F\+I\+LE}, \hyperpage{53}
+    \subitem {format\+Result}, \hyperpage{32}
+    \subitem {G\+A\+M\+E\+\_\+\+DB}, \hyperpage{54}
+    \subitem {generate\+Algo\+Input}, \hyperpage{32}
+    \subitem {get\+Aggregate\+File}, \hyperpage{32, 33}
+    \subitem {get\+D\+B\+Class}, \hyperpage{33}
+    \subitem {get\+D\+B\+Table}, \hyperpage{34}
+    \subitem {get\+Measure\+Cols}, \hyperpage{34}
+    \subitem {get\+Relation\+Cols}, \hyperpage{35}
+    \subitem {get\+Request\+File}, \hyperpage{35, 36}
+    \subitem {get\+Result}, \hyperpage{36}
+    \subitem {get\+Sky\+Cube}, \hyperpage{36, 37}
+    \subitem {get\+Sky\+Cube\+Columns}, \hyperpage{38}
+    \subitem {get\+Test\+Data}, \hyperpage{38, 39}
+    \subitem {get\+Test\+Max}, \hyperpage{39}
+    \subitem {get\+Test\+Mes\+Cols}, \hyperpage{40}
+    \subitem {get\+Test\+Min}, \hyperpage{41}
+    \subitem {get\+Test\+Rel\+Cols}, \hyperpage{41, 42}
+    \subitem {load}, \hyperpage{42}
+    \subitem {M\+E\+S\+\_\+\+C\+O\+LS}, \hyperpage{54}
+    \subitem {prepare}, \hyperpage{43}
+    \subitem {R\+E\+L\+\_\+\+C\+O\+LS}, \hyperpage{54}
+    \subitem {run}, \hyperpage{44}
+    \subitem {run\+Cuboide}, \hyperpage{45}
+    \subitem {run\+Sky\+Cube}, \hyperpage{45}
+    \subitem {set\+Algorithm}, \hyperpage{46}
+    \subitem {set\+D\+B\+Class}, \hyperpage{46}
+    \subitem {set\+D\+B\+Table}, \hyperpage{47}
+    \subitem {set\+Max}, \hyperpage{47}
+    \subitem {set\+Measure\+Cols}, \hyperpage{47, 48}
+    \subitem {set\+Min}, \hyperpage{48}
+    \subitem {set\+Relation\+Cols}, \hyperpage{48}
+    \subitem {set\+Request\+File}, \hyperpage{49}
+    \subitem {T\+A\+B\+LE}, \hyperpage{54}
+    \subitem {write}, \hyperpage{49}
+  \item {analysis.\+php}
+    \subitem {\$\+Algo}, \hyperpage{462}
+    \subitem {\$\+Analysis}, \hyperpage{462}
+    \subitem {\$\+Target}, \hyperpage{462}
+  \item {anonymize}
+    \subitem {I\+D\+EA}, \hyperpage{231}
+  \item {application/src/define.\+php}
+    \subitem {\$\+G\+L\+O\+B\+A\+LS}, \hyperpage{475}
+    \subitem {\$\+New\+Path}, \hyperpage{475}
+    \subitem {A\+G\+G\+R\+E\+G\+A\+T\+E\+\_\+\+F\+O\+L\+D\+E\+R\+\_\+\+D\+E\+SC}, 
+		\hyperpage{475}
+    \subitem {A\+G\+G\+R\+E\+G\+A\+T\+E\+\_\+\+F\+O\+L\+D\+E\+R\+\_\+\+R\+E\+Q\+U\+E\+S\+TS}, 
+		\hyperpage{475}
+    \subitem {A\+G\+G\+R\+E\+G\+A\+T\+E\+\_\+\+F\+O\+L\+D\+E\+R\+\_\+\+R\+E\+S\+U\+L\+TS}, 
+		\hyperpage{476}
+    \subitem {A\+G\+G\+R\+E\+G\+A\+T\+E\+\_\+\+F\+O\+L\+D\+E\+R\+\_\+\+T\+MP}, 
+		\hyperpage{476}
+    \subitem {A\+N\+A\+L\+Y\+S\+I\+S\+\_\+\+A\+L\+GO}, \hyperpage{476}
+    \subitem {A\+N\+A\+L\+Y\+S\+I\+S\+\_\+\+P\+A\+R\+A\+M\+\_\+M}, 
+		\hyperpage{476}
+    \subitem {A\+N\+A\+L\+Y\+S\+I\+S\+\_\+\+P\+A\+R\+A\+M\+\_\+N}, 
+		\hyperpage{476}
+    \subitem {A\+P\+P\+\_\+\+L\+I\+ST}, \hyperpage{477}
+    \subitem {A\+P\+P\+\_\+\+N\+A\+M\+E\+\_\+\+C\+O\+L\+L\+E\+C\+T\+I\+ON}, 
+		\hyperpage{477}
+    \subitem {A\+P\+P\+\_\+\+N\+A\+M\+E\+\_\+\+H\+A\+C\+K\+\_\+\+N\+\_\+\+S\+L\+A\+SH}, 
+		\hyperpage{477}
+    \subitem {A\+P\+P\+\_\+\+N\+A\+M\+E\+\_\+\+M\+A\+T\+C\+H3}, 
+		\hyperpage{477}
+    \subitem {A\+P\+P\+\_\+\+N\+A\+M\+ES}, \hyperpage{478}
+    \subitem {A\+P\+P\+\_\+\+N\+A\+ME}, \hyperpage{477}
+    \subitem {C\+O\+N\+F\+I\+G\+\_\+\+H\+O\+ME}, \hyperpage{478}
+    \subitem {D\+A\+T\+A\+\_\+\+A\+R\+C\+H\+I\+V\+E\+\_\+\+H\+NS}, 
+		\hyperpage{478}
+    \subitem {D\+A\+T\+A\+\_\+\+E\+R\+R\+O\+R\+S\+\_\+\+H\+NS}, 
+		\hyperpage{478}
+    \subitem {D\+A\+T\+A\+\_\+\+H\+O\+ME}, \hyperpage{478}
+    \subitem {D\+A\+T\+A\+\_\+\+T\+M\+P\+\_\+\+H\+N\+S\+\_\+\+A\+D\+DR}, 
+		\hyperpage{479}
+    \subitem {D\+A\+T\+A\+\_\+\+T\+M\+P\+\_\+\+H\+N\+S\+\_\+\+F\+I\+L\+ES}, 
+		\hyperpage{479}
+    \subitem {D\+A\+T\+A\+\_\+\+T\+M\+P\+\_\+\+H\+NS}, \hyperpage{479}
+    \subitem {L\+O\+G\+\_\+\+F\+I\+LE}, \hyperpage{479}
+    \subitem {L\+O\+G\+\_\+\+H\+O\+ME}, \hyperpage{479}
+    \subitem {S\+C\+R\+I\+P\+T\+\_\+\+H\+O\+ME}, \hyperpage{479}
+    \subitem {S\+T\+A\+T\+S\+\_\+\+C\+O\+LS}, \hyperpage{480}
+    \subitem {S\+T\+A\+T\+S\+\_\+\+D\+A\+TA}, \hyperpage{480}
+    \subitem {S\+T\+A\+T\+S\+\_\+\+DB}, \hyperpage{480}
+    \subitem {S\+T\+A\+T\+S\+\_\+\+F\+I\+LE}, \hyperpage{480}
+    \subitem {S\+T\+A\+T\+S\+\_\+\+G\+E\+T\+\_\+\+S\+C\+R\+I\+PT}, 
+		\hyperpage{480}
+    \subitem {S\+T\+A\+T\+S\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR}, 
+		\hyperpage{481}
+  \item {apply\+Pattern}
+    \subitem {Coll\+Parser}, \hyperpage{69}
+    \subitem {Hn\+S\+Parser}, \hyperpage{215}
+
+  \indexspace
+
+  \item {B\+E\+AM}
+    \subitem {M3\+Match}, \hyperpage{260}
+  \item {build}
+    \subitem {M3\+Game}, \hyperpage{244}
+    \subitem {M3\+Match}, \hyperpage{256}
+    \subitem {M3\+Stroke}, \hyperpage{266}
+
+  \indexspace
+
+  \item {C\+H\+A\+N\+G\+E\+\_\+\+A\+G\+G\+R\+E\+G\+A\+TE}
+    \subitem {Page\+Change\+Aggregate}, \hyperpage{287}
+  \item {C\+H\+A\+N\+G\+E\+\_\+\+M\+E\+S\+\_\+\+C\+O\+LS}
+    \subitem {Page\+Change\+Aggregate}, \hyperpage{288}
+  \item {C\+H\+A\+N\+G\+E\+\_\+\+P\+A\+S\+S\+W\+O\+RD}
+    \subitem {Page\+Change\+Aggregate}, \hyperpage{288}
+  \item {C\+H\+A\+N\+G\+E\+\_\+\+R\+E\+L\+\_\+\+C\+O\+LS}
+    \subitem {Page\+Change\+Aggregate}, \hyperpage{288}
+  \item {C\+H\+A\+N\+G\+E\+\_\+\+R\+E\+Q\+U\+E\+ST}
+    \subitem {Page\+Change\+Aggregate}, \hyperpage{288}
+  \item {C\+H\+A\+N\+G\+E\+\_\+\+S\+U\+B\+M\+IT}
+    \subitem {Page\+Change\+Aggregate}, \hyperpage{288}
+  \item {C\+L\+A\+S\+SE}
+    \subitem {Coll\+Game}, \hyperpage{65}
+    \subitem {Hero}, \hyperpage{179}
+  \item {C\+L\+AN}
+    \subitem {Hn\+S\+Player}, \hyperpage{226}
+  \item {C\+O\+L\+OR}
+    \subitem {M3\+Match}, \hyperpage{260}
+  \item {C\+O\+N\+F\+I\+G\+\_\+\+H\+O\+ME}
+    \subitem {application/src/define.\+php}, \hyperpage{478}
+  \item {C\+O\+T\+E\+\_\+\+L\+E\+FT}
+    \subitem {Hns\+Item}, \hyperpage{212}
+  \item {C\+O\+T\+E\+\_\+\+R\+I\+G\+HT}
+    \subitem {Hns\+Item}, \hyperpage{212}
+  \item {C\+O\+TE}
+    \subitem {Hns\+Item}, \hyperpage{212}
+  \item {C\+O\+U\+N\+T\+\_\+\+C\+O\+M\+B\+AT}
+    \subitem {Coll\+Table}, \hyperpage{88}
+  \item {C\+O\+U\+N\+T\+\_\+\+E\+Q\+U\+I\+PE}
+    \subitem {Coll\+Table}, \hyperpage{88}
+  \item {C\+O\+U\+N\+T\+\_\+\+G\+A\+ME}
+    \subitem {M3\+Game}, \hyperpage{249}
+  \item {C\+O\+U\+N\+T\+\_\+\+H\+E\+RO}
+    \subitem {Hero}, \hyperpage{179}
+  \item {C\+O\+U\+N\+T\+\_\+\+M\+A\+T\+CH}
+    \subitem {M3\+Game}, \hyperpage{249}
+  \item {C\+O\+U\+N\+T\+\_\+\+P\+L\+A\+Y\+ER}
+    \subitem {M3\+Game}, \hyperpage{249}
+  \item {C\+O\+U\+N\+T\+\_\+\+P\+O\+K\+E\+M\+ON}
+    \subitem {Coll\+Table}, \hyperpage{88}
+  \item {C\+O\+U\+N\+T\+\_\+\+S\+T\+R\+O\+KE}
+    \subitem {M3\+Game}, \hyperpage{249}
+  \item {C\+O\+U\+N\+T\+\_\+\+T\+R\+AD}
+    \subitem {Coll\+Table}, \hyperpage{88}
+    \subitem {Hero}, \hyperpage{179}
+    \subitem {M3\+Game}, \hyperpage{249}
+  \item {C\+O\+U\+N\+T\+\_\+\+U\+T\+I\+L\+I\+S\+A\+T\+E\+UR}
+    \subitem {Coll\+Table}, \hyperpage{88}
+  \item {C\+U\+B\+O\+I\+DE}
+    \subitem {Cuboide\+Emergent}, \hyperpage{129}
+    \subitem {Display\+Sky\+Cube}, \hyperpage{140}
+    \subitem {Sky\+Cube}, \hyperpage{416}
+    \subitem {Sky\+Cube\+Bloc\+Nested\+Loop}, \hyperpage{418}
+    \subitem {Sky\+Cube\+Brute\+Force}, \hyperpage{419}
+  \item {C\+U\+R\+R\+E\+NT}
+    \subitem {Cuboide}, \hyperpage{116}
+    \subitem {Cuboide\+Bloc\+Nested\+Loop}, \hyperpage{120}
+    \subitem {Cuboide\+Emergent}, \hyperpage{129}
+  \item {catch}
+    \subitem {process\+Coll\+Entry.\+php}, \hyperpage{466}
+  \item {check}
+    \subitem {Analysis}, \hyperpage{26}
+    \subitem {Coll\+Game}, \hyperpage{57}
+  \item {clean}
+    \subitem {Coll\+Parser}, \hyperpage{70}
+    \subitem {Hn\+S\+Hero\+Parser}, \hyperpage{196}
+    \subitem {Hn\+S\+Parser}, \hyperpage{216}
+  \item {clean\+Data}
+    \subitem {Analysis}, \hyperpage{26}
+  \item {cleaner}
+    \subitem {Replay\+Parser}, \hyperpage{369}
+  \item {Co\+Sky}, \hyperpage{100}
+    \subitem {\$N}, \hyperpage{110}
+    \subitem {\$P}, \hyperpage{110}
+    \subitem {\$W}, \hyperpage{112}
+    \subitem {\$\+Data}, \hyperpage{109}
+    \subitem {\$\+Gini}, \hyperpage{109}
+    \subitem {\$\+Ideal}, \hyperpage{109}
+    \subitem {\$\+Min\+Max}, \hyperpage{109}
+    \subitem {\$\+Score}, \hyperpage{110}
+    \subitem {\$\+Sky\+Cube}, \hyperpage{110}
+    \subitem {\$\+Sqrt\+Sum\+Ideal\+Square}, \hyperpage{110}
+    \subitem {\$\+Sqrt\+Sum\+P\+Square}, \hyperpage{111}
+    \subitem {\$\+Sum\+Attr}, \hyperpage{111}
+    \subitem {\$\+Sum\+Gini}, \hyperpage{111}
+    \subitem {\$\+Sum\+Ideal\+Square}, \hyperpage{111}
+    \subitem {\$\+Sum\+N\+Square}, \hyperpage{111}
+    \subitem {\$\+Sum\+P\+Square}, \hyperpage{112}
+    \subitem {\$\+Tuples}, \hyperpage{112}
+    \subitem {\$k}, \hyperpage{109}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{101}
+    \subitem {get\+Data}, \hyperpage{102}
+    \subitem {get\+Gini}, \hyperpage{102}
+    \subitem {get\+Ideal}, \hyperpage{102}
+    \subitem {get\+Scores}, \hyperpage{103}
+    \subitem {get\+Sqrt\+Sum\+Ideal\+Square}, \hyperpage{103}
+    \subitem {get\+Sqrt\+Sum\+P\+Square}, \hyperpage{104}
+    \subitem {get\+Sum\+Attr}, \hyperpage{104}
+    \subitem {get\+Sum\+Gini}, \hyperpage{104}
+    \subitem {get\+Sum\+Ideal\+Square}, \hyperpage{105}
+    \subitem {get\+Sum\+N\+Square}, \hyperpage{105}
+    \subitem {get\+Sum\+P\+Square}, \hyperpage{105}
+    \subitem {getN}, \hyperpage{102}
+    \subitem {getP}, \hyperpage{103}
+    \subitem {getW}, \hyperpage{106}
+    \subitem {interpret}, \hyperpage{106}
+    \subitem {prepare}, \hyperpage{107}
+    \subitem {run}, \hyperpage{107}
+    \subitem {sort\+Scores}, \hyperpage{108}
+  \item {Coll\+Game}, \hyperpage{55}
+    \subitem {\$\+I\+D\+Combat}, \hyperpage{63}
+    \subitem {\$\+Player1}, \hyperpage{63}
+    \subitem {\$\+Player2}, \hyperpage{64}
+    \subitem {\$\+Rating}, \hyperpage{64}
+    \subitem {\$\+Result}, \hyperpage{64}
+    \subitem {\$\+Rules}, \hyperpage{64}
+    \subitem {\$\+Team1}, \hyperpage{64}
+    \subitem {\$\+Team2}, \hyperpage{65}
+    \subitem {\$\+Tier}, \hyperpage{65}
+    \subitem {\$\+Turns}, \hyperpage{65}
+    \subitem {\$\+Type}, \hyperpage{65}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{56}
+    \subitem {\+\_\+\+\_\+destruct}, \hyperpage{56}
+    \subitem {\+\_\+\+\_\+to\+String}, \hyperpage{57}
+    \subitem {add\+Turn}, \hyperpage{57}
+    \subitem {C\+L\+A\+S\+SE}, \hyperpage{65}
+    \subitem {check}, \hyperpage{57}
+    \subitem {fill}, \hyperpage{57}
+    \subitem {G\+A\+G\+N\+A\+NT}, \hyperpage{65}
+    \subitem {ID}, \hyperpage{66}
+    \subitem {R\+E\+S\+U\+LT}, \hyperpage{66}
+    \subitem {R\+U\+L\+ES}, \hyperpage{66}
+    \subitem {save}, \hyperpage{58}
+    \subitem {save\+Game}, \hyperpage{58}
+    \subitem {save\+Player\+Engaged}, \hyperpage{59}
+    \subitem {set\+Gen}, \hyperpage{59}
+    \subitem {set\+ID}, \hyperpage{60}
+    \subitem {set\+Player}, \hyperpage{60}
+    \subitem {set\+Rated}, \hyperpage{60}
+    \subitem {set\+Team}, \hyperpage{60}
+    \subitem {set\+Tie}, \hyperpage{61}
+    \subitem {set\+Tier}, \hyperpage{61}
+    \subitem {set\+Type}, \hyperpage{61}
+    \subitem {set\+Winner}, \hyperpage{61}
+    \subitem {show\+As\+Table\+Entry}, \hyperpage{62}
+    \subitem {show\+Table\+Footer}, \hyperpage{62}
+    \subitem {show\+Table\+Header}, \hyperpage{62}
+    \subitem {switch}, \hyperpage{63}
+    \subitem {T\+A\+B\+L\+E\+\_\+\+E\+N\+G\+A\+GE}, \hyperpage{66}
+    \subitem {T\+A\+B\+LE}, \hyperpage{66}
+    \subitem {T\+I\+ER}, \hyperpage{67}
+    \subitem {T\+U\+R\+NS}, \hyperpage{67}
+    \subitem {V\+I\+EW}, \hyperpage{67}
+  \item {Coll\+Parser}, \hyperpage{67}
+    \subitem {\$\+Full\+Text}, \hyperpage{77}
+    \subitem {\$\+Game}, \hyperpage{77}
+    \subitem {\$\+Processed\+Text}, \hyperpage{78}
+    \subitem {\$turns}, \hyperpage{78}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{68}
+    \subitem {\+\_\+\+\_\+destruct}, \hyperpage{69}
+    \subitem {\+\_\+\+\_\+to\+String}, \hyperpage{69}
+    \subitem {apply\+Pattern}, \hyperpage{69}
+    \subitem {clean}, \hyperpage{70}
+    \subitem {display}, \hyperpage{70}
+    \subitem {game\+Id\+Preg}, \hyperpage{71}
+    \subitem {game\+Type\+Preg}, \hyperpage{71}
+    \subitem {gen\+Preg}, \hyperpage{71}
+    \subitem {move1}, \hyperpage{72}
+    \subitem {move1\+Preg}, \hyperpage{72}
+    \subitem {move2}, \hyperpage{72}
+    \subitem {move2\+Preg}, \hyperpage{73}
+    \subitem {parse}, \hyperpage{73}
+    \subitem {player\+Preg}, \hyperpage{74}
+    \subitem {rated\+Preg}, \hyperpage{74}
+    \subitem {rule\+Preg}, \hyperpage{74}
+    \subitem {switch\+P1}, \hyperpage{75}
+    \subitem {switch\+P2}, \hyperpage{75}
+    \subitem {team\+Preview\+Pokemon\+Preg}, \hyperpage{75}
+    \subitem {team\+Size\+Preg}, \hyperpage{76}
+    \subitem {tie\+Preg}, \hyperpage{76}
+    \subitem {tier\+Preg}, \hyperpage{76}
+    \subitem {turn\+Preg}, \hyperpage{77}
+    \subitem {winner\+Preg}, \hyperpage{77}
+  \item {Coll\+Player}, \hyperpage{78}
+    \subitem {\$\+Avatar}, \hyperpage{83}
+    \subitem {\$\+Player}, \hyperpage{83}
+    \subitem {\$\+Rating}, \hyperpage{83}
+    \subitem {\$\+Username}, \hyperpage{83}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{79}
+    \subitem {\+\_\+\+\_\+to\+String}, \hyperpage{80}
+    \subitem {A\+V\+A\+T\+AR}, \hyperpage{84}
+    \subitem {get\+Avatar}, \hyperpage{80}
+    \subitem {get\+Player}, \hyperpage{80}
+    \subitem {get\+Rating}, \hyperpage{80}
+    \subitem {get\+Username}, \hyperpage{81}
+    \subitem {N\+OM}, \hyperpage{84}
+    \subitem {N\+U\+M\+E\+RO}, \hyperpage{84}
+    \subitem {R\+A\+T\+I\+NG}, \hyperpage{84}
+    \subitem {save}, \hyperpage{81}
+    \subitem {set\+Avatar}, \hyperpage{81}
+    \subitem {set\+Player}, \hyperpage{81}
+    \subitem {set\+Rating}, \hyperpage{82}
+    \subitem {set\+Username}, \hyperpage{82}
+    \subitem {T\+A\+B\+LE}, \hyperpage{84}
+    \subitem {V\+I\+C\+T\+O\+I\+RE}, \hyperpage{85}
+  \item {Coll\+Table}, \hyperpage{85}
+    \subitem {\$\+Liste\+Combats}, \hyperpage{88}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{86}
+    \subitem {\+\_\+\+\_\+destruct}, \hyperpage{86}
+    \subitem {\+\_\+\+\_\+to\+String}, \hyperpage{86}
+    \subitem {C\+O\+U\+N\+T\+\_\+\+C\+O\+M\+B\+AT}, \hyperpage{88}
+    \subitem {C\+O\+U\+N\+T\+\_\+\+E\+Q\+U\+I\+PE}, \hyperpage{88}
+    \subitem {C\+O\+U\+N\+T\+\_\+\+P\+O\+K\+E\+M\+ON}, \hyperpage{88}
+    \subitem {C\+O\+U\+N\+T\+\_\+\+T\+R\+AD}, \hyperpage{88}
+    \subitem {C\+O\+U\+N\+T\+\_\+\+U\+T\+I\+L\+I\+S\+A\+T\+E\+UR}, 
+		\hyperpage{88}
+    \subitem {get\+Games}, \hyperpage{87}
+    \subitem {get\+Stats}, \hyperpage{87}
+    \subitem {show}, \hyperpage{87}
+    \subitem {V\+I\+E\+W\+\_\+\+S\+T\+AT}, \hyperpage{89}
+  \item {Coll\+Team}, \hyperpage{89}
+    \subitem {\$\+Drop\+Rate}, \hyperpage{95}
+    \subitem {\$\+I\+D\+Equipe}, \hyperpage{96}
+    \subitem {\$\+Player}, \hyperpage{96}
+    \subitem {\$\+Pokemons}, \hyperpage{96}
+    \subitem {\$\+Size}, \hyperpage{96}
+    \subitem {\$\+Team\+Drop\+Rate}, \hyperpage{96}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{90}
+    \subitem {\+\_\+\+\_\+to\+String}, \hyperpage{90}
+    \subitem {add\+Pokemon}, \hyperpage{91}
+    \subitem {aligne\+Pokemon}, \hyperpage{91}
+    \subitem {D\+R\+O\+P\+\_\+\+R\+A\+T\+E2}, \hyperpage{97}
+    \subitem {D\+R\+O\+P\+\_\+\+R\+A\+T\+E3}, \hyperpage{97}
+    \subitem {D\+R\+O\+P\+\_\+\+R\+A\+T\+E4}, \hyperpage{97}
+    \subitem {D\+R\+O\+P\+\_\+\+R\+A\+T\+E5}, \hyperpage{97}
+    \subitem {D\+R\+O\+P\+\_\+\+R\+A\+TE}, \hyperpage{97}
+    \subitem {G\+E\+N\+E\+R\+A\+T\+I\+ON}, \hyperpage{97}
+    \subitem {get\+Drop\+Rate}, \hyperpage{92}
+    \subitem {get\+ID}, \hyperpage{92}
+    \subitem {get\+Player}, \hyperpage{92}
+    \subitem {get\+Pokemon}, \hyperpage{92}
+    \subitem {get\+Pokemon\+List}, \hyperpage{93}
+    \subitem {get\+Size}, \hyperpage{93}
+    \subitem {ID}, \hyperpage{98}
+    \subitem {L\+I\+S\+T\+E2}, \hyperpage{98}
+    \subitem {L\+I\+S\+T\+E3}, \hyperpage{98}
+    \subitem {L\+I\+S\+T\+E4}, \hyperpage{98}
+    \subitem {L\+I\+S\+T\+E5}, \hyperpage{98}
+    \subitem {L\+I\+S\+TE}, \hyperpage{98}
+    \subitem {N\+O\+M\+B\+RE}, \hyperpage{99}
+    \subitem {N\+OM}, \hyperpage{99}
+    \subitem {O\+R\+D\+RE}, \hyperpage{99}
+    \subitem {P\+O\+K\+E\+D\+EX}, \hyperpage{99}
+    \subitem {R\+A\+R\+E\+TE}, \hyperpage{99}
+    \subitem {save}, \hyperpage{93}
+    \subitem {save\+Pokemon}, \hyperpage{94}
+    \subitem {set\+Player}, \hyperpage{94}
+    \subitem {set\+Size}, \hyperpage{95}
+    \subitem {switch}, \hyperpage{95}
+    \subitem {T\+A\+B\+L\+E\+\_\+\+A\+L\+I\+G\+NE}, \hyperpage{100}
+    \subitem {T\+A\+B\+L\+E\+\_\+\+P\+O\+K\+E\+M\+ON}, \hyperpage{100}
+    \subitem {T\+A\+B\+LE}, \hyperpage{99}
+  \item {compare\+Res}
+    \subitem {Page\+Test}, \hyperpage{349}
+  \item {compute}
+    \subitem {Analysis}, \hyperpage{27}
+  \item {compute\+All\+Stats}
+    \subitem {Page\+Accueil}, \hyperpage{277}
+  \item {compute\+Cuboide}
+    \subitem {Analysis}, \hyperpage{27}
+    \subitem {Cuboide}, \hyperpage{114}
+    \subitem {Cuboide\+Bloc\+Nested\+Loop}, \hyperpage{119}
+    \subitem {Cuboide\+Brute\+Force}, \hyperpage{122}
+    \subitem {Cuboide\+Emergent}, \hyperpage{125}
+    \subitem {Display\+Cuboide}, \hyperpage{131}
+  \item {compute\+Cuboide\+Attribute}
+    \subitem {Analysis}, \hyperpage{28}
+  \item {compute\+Data\+Set}
+    \subitem {Cuboide}, \hyperpage{115}
+    \subitem {Cuboide\+Emergent}, \hyperpage{125}
+    \subitem {Display\+Cuboide}, \hyperpage{132}
+    \subitem {Display\+Sky\+Cube}, \hyperpage{136}
+    \subitem {S\+K\+Display}, \hyperpage{389}
+    \subitem {Sky\+Cube}, \hyperpage{407}
+    \subitem {Sky\+Cube\+Emergent}, \hyperpage{422}
+  \item {compute\+Min\+Max}
+    \subitem {I\+D\+EA}, \hyperpage{232}
+  \item {compute\+Stats}
+    \subitem {Page\+Accueil}, \hyperpage{278}
+  \item {compute\+Stats\+DB}
+    \subitem {Page\+Accueil}, \hyperpage{279}
+  \item {compute\+Stats\+Files}
+    \subitem {Page\+Accueil}, \hyperpage{280}
+  \item {convert\+To\+Numerics}
+    \subitem {Analysis}, \hyperpage{29}
+    \subitem {I\+D\+EA}, \hyperpage{232}
+  \item {count\+Attributes}
+    \subitem {I\+D\+EA}, \hyperpage{233}
+  \item {count\+Differences}
+    \subitem {Cuboide\+Bloc\+Nested\+Loop}, \hyperpage{119}
+  \item {create}
+    \subitem {Analysis}, \hyperpage{29, 30}
+    \subitem {Game\+Type}, \hyperpage{142}
+    \subitem {Gen}, \hyperpage{144}
+    \subitem {Rated}, \hyperpage{364}
+    \subitem {Tier}, \hyperpage{442}
+    \subitem {Winner}, \hyperpage{448}
+  \item {Cuboide}, \hyperpage{113}
+    \subitem {\$\+Min\+Max}, \hyperpage{116}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{114}
+    \subitem {C\+U\+R\+R\+E\+NT}, \hyperpage{116}
+    \subitem {compute\+Cuboide}, \hyperpage{114}
+    \subitem {compute\+Data\+Set}, \hyperpage{115}
+    \subitem {is\+In\+Cuboide}, \hyperpage{116}
+    \subitem {T\+E\+S\+T\+\_\+\+ON}, \hyperpage{117}
+    \subitem {T\+O\+\_\+\+M\+AX}, \hyperpage{117}
+    \subitem {T\+O\+\_\+\+M\+IN}, \hyperpage{117}
+  \item {Cuboide\+Bloc\+Nested\+Loop}, \hyperpage{118}
+    \subitem {C\+U\+R\+R\+E\+NT}, \hyperpage{120}
+    \subitem {compute\+Cuboide}, \hyperpage{119}
+    \subitem {count\+Differences}, \hyperpage{119}
+  \item {Cuboide\+Brute\+Force}, \hyperpage{121}
+    \subitem {compute\+Cuboide}, \hyperpage{122}
+    \subitem {is\+In\+Cuboide}, \hyperpage{122}
+  \item {Cuboide\+Emergent}, \hyperpage{123}
+    \subitem {\$\+Col\+I\+Ds\+C1}, \hyperpage{128}
+    \subitem {\$\+Col\+I\+Ds\+C2}, \hyperpage{128}
+    \subitem {\$\+Cuboide1}, \hyperpage{128}
+    \subitem {\$\+Cuboide2}, \hyperpage{129}
+    \subitem {\$\+Filtered\+Data\+Set}, \hyperpage{129}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{124}
+    \subitem {C\+U\+B\+O\+I\+DE}, \hyperpage{129}
+    \subitem {C\+U\+R\+R\+E\+NT}, \hyperpage{129}
+    \subitem {compute\+Cuboide}, \hyperpage{125}
+    \subitem {compute\+Data\+Set}, \hyperpage{125}
+    \subitem {get\+Col\+I\+Ds}, \hyperpage{126}
+    \subitem {get\+Data\+Set}, \hyperpage{126}
+    \subitem {get\+Data\+Set\+Filtered}, \hyperpage{126}
+    \subitem {get\+ID}, \hyperpage{126}
+    \subitem {get\+Row\+Headers}, \hyperpage{126}
+    \subitem {is\+Valid}, \hyperpage{127}
+    \subitem {merge\+Columns}, \hyperpage{127}
+    \subitem {merge\+Data\+Sets}, \hyperpage{127, 128}
+
+  \indexspace
+
+  \item {D\+A\+T\+A\+\_\+\+A\+R\+C\+H\+I\+V\+E\+\_\+\+H\+NS}
+    \subitem {application/src/define.\+php}, \hyperpage{478}
+  \item {D\+A\+T\+A\+\_\+\+E\+R\+R\+O\+R\+S\+\_\+\+H\+NS}
+    \subitem {application/src/define.\+php}, \hyperpage{478}
+  \item {D\+A\+T\+A\+\_\+\+H\+O\+ME}
+    \subitem {application/src/define.\+php}, \hyperpage{478}
+  \item {D\+A\+T\+A\+\_\+\+T\+M\+P\+\_\+\+H\+N\+S\+\_\+\+A\+D\+DR}
+    \subitem {application/src/define.\+php}, \hyperpage{479}
+  \item {D\+A\+T\+A\+\_\+\+T\+M\+P\+\_\+\+H\+N\+S\+\_\+\+F\+I\+L\+ES}
+    \subitem {application/src/define.\+php}, \hyperpage{479}
+  \item {D\+A\+T\+A\+\_\+\+T\+M\+P\+\_\+\+H\+NS}
+    \subitem {application/src/define.\+php}, \hyperpage{479}
+  \item {D\+A\+T\+E\+\_\+\+G\+A\+ME}
+    \subitem {M3\+Game}, \hyperpage{250}
+  \item {D\+A\+T\+E\+\_\+\+R\+O\+U\+ND}
+    \subitem {M3\+Game}, \hyperpage{250}
+  \item {D\+B\+C\+L\+A\+SS}
+    \subitem {Analysis}, \hyperpage{53}
+  \item {D\+E\+G\+A\+TS}
+    \subitem {Hero}, \hyperpage{179}
+  \item {D\+E\+S\+C\+\_\+\+F\+I\+L\+E\+\_\+\+P\+A\+TH}
+    \subitem {Analysis}, \hyperpage{53}
+  \item {D\+EX}
+    \subitem {Hero}, \hyperpage{180}
+  \item {D\+R\+O\+P\+\_\+\+R\+A\+T\+E2}
+    \subitem {Coll\+Team}, \hyperpage{97}
+  \item {D\+R\+O\+P\+\_\+\+R\+A\+T\+E3}
+    \subitem {Coll\+Team}, \hyperpage{97}
+  \item {D\+R\+O\+P\+\_\+\+R\+A\+T\+E4}
+    \subitem {Coll\+Team}, \hyperpage{97}
+  \item {D\+R\+O\+P\+\_\+\+R\+A\+T\+E5}
+    \subitem {Coll\+Team}, \hyperpage{97}
+  \item {D\+R\+O\+P\+\_\+\+R\+A\+TE}
+    \subitem {Coll\+Team}, \hyperpage{97}
+  \item {D\+U\+R\+A\+T\+I\+ON}
+    \subitem {M3\+Stroke}, \hyperpage{269}
+  \item {delete}
+    \subitem {Analysis}, \hyperpage{30, 31}
+  \item {Deprecated}, \hyperpage{11}
+  \item {display}
+    \subitem {Coll\+Parser}, \hyperpage{70}
+  \item {Display\+Cuboide}, \hyperpage{130}
+    \subitem {\$\+Col\+I\+Ds}, \hyperpage{133}
+    \subitem {\$\+Data\+Set}, \hyperpage{133}
+    \subitem {\$\+ID}, \hyperpage{133}
+    \subitem {\$\+Is\+Valid}, \hyperpage{133}
+    \subitem {\$\+Max\+Cols}, \hyperpage{134}
+    \subitem {\$\+Min\+Max}, \hyperpage{134}
+    \subitem {\$\+Row\+Headers}, \hyperpage{134}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{130}
+    \subitem {\+\_\+\+\_\+to\+String}, \hyperpage{131}
+    \subitem {compute\+Cuboide}, \hyperpage{131}
+    \subitem {compute\+Data\+Set}, \hyperpage{132}
+    \subitem {get\+La\+Te\+X\+Header}, \hyperpage{132}
+    \subitem {is\+In\+Cuboide}, \hyperpage{132}
+    \subitem {T\+E\+S\+T\+\_\+\+ON}, \hyperpage{134}
+    \subitem {T\+O\+\_\+\+M\+AX}, \hyperpage{134}
+    \subitem {T\+O\+\_\+\+M\+IN}, \hyperpage{134}
+    \subitem {to\+H\+T\+ML}, \hyperpage{132}
+    \subitem {to\+La\+TeX}, \hyperpage{133}
+  \item {Display\+Sky\+Cube}, \hyperpage{135}
+    \subitem {\$\+Col\+I\+Ds}, \hyperpage{139}
+    \subitem {\$\+Cuboides}, \hyperpage{139}
+    \subitem {\$\+Data\+Set}, \hyperpage{139}
+    \subitem {\$\+Is\+Valid}, \hyperpage{139}
+    \subitem {\$\+Min\+Max}, \hyperpage{139}
+    \subitem {\$\+Row\+Headers}, \hyperpage{140}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{136}
+    \subitem {\+\_\+\+\_\+to\+String}, \hyperpage{136}
+    \subitem {C\+U\+B\+O\+I\+DE}, \hyperpage{140}
+    \subitem {compute\+Data\+Set}, \hyperpage{136}
+    \subitem {generate\+Cuboide\+List}, \hyperpage{137}
+    \subitem {generate\+Cuboide\+List\+Lvl}, \hyperpage{137}
+    \subitem {get\+Col\+I\+Ds}, \hyperpage{138}
+    \subitem {get\+Data\+Set}, \hyperpage{138}
+    \subitem {get\+Row\+Headers}, \hyperpage{138}
+    \subitem {M\+A\+X\+\_\+\+C\+U\+B\+O\+I\+DE}, \hyperpage{140}
+    \subitem {M\+I\+N\+\_\+\+C\+O\+L\+ID}, \hyperpage{140}
+    \subitem {to\+La\+Tex}, \hyperpage{138}
+  \item {do\+Stat\+Head}
+    \subitem {Page\+Accueil}, \hyperpage{280}
+  \item {do\+Stat\+Line}
+    \subitem {Page\+Accueil}, \hyperpage{281}
+  \item {do\+Stats}
+    \subitem {Page\+Accueil}, \hyperpage{281}
+
+  \indexspace
+
+  \item {effect}
+    \subitem {Replay\+Parser}, \hyperpage{369}
+  \item {explode\+Cols}
+    \subitem {Analysis}, \hyperpage{31}
+  \item {export\+Measures}
+    \subitem {I\+D\+EA}, \hyperpage{233}
+  \item {export\+Relations}
+    \subitem {I\+D\+EA}, \hyperpage{233}
+
+  \indexspace
+
+  \item {F\+I\+LE}
+    \subitem {Analysis}, \hyperpage{53}
+  \item {F\+O\+L\+D\+ER}
+    \subitem {Algo}, \hyperpage{22}
+  \item {F\+OR}
+    \subitem {Hero}, \hyperpage{180}
+  \item {fetch\+Game\+Id}
+    \subitem {M3\+Game}, \hyperpage{245}
+  \item {fetch\+Id}
+    \subitem {Hero}, \hyperpage{150}
+    \subitem {Hn\+S\+Player}, \hyperpage{221}
+    \subitem {Hns\+Comp}, \hyperpage{186}
+    \subitem {Hns\+Item}, \hyperpage{206}
+    \subitem {M3\+Match}, \hyperpage{256}
+    \subitem {M3\+Stroke}, \hyperpage{267}
+  \item {fill}
+    \subitem {Coll\+Game}, \hyperpage{57}
+    \subitem {M3\+Game}, \hyperpage{245}
+    \subitem {M3\+Match}, \hyperpage{256}
+    \subitem {M3\+Stroke}, \hyperpage{267}
+  \item {format\+Result}
+    \subitem {Analysis}, \hyperpage{32}
+
+  \indexspace
+
+  \item {G\+A\+G\+\_\+\+A\+G\+G\+R\+E\+G\+A\+TE}
+    \subitem {Page\+Gest\+Aggregate}, \hyperpage{300}
+  \item {G\+A\+G\+\_\+\+P\+A\+S\+S\+W\+O\+RD}
+    \subitem {Page\+Gest\+Aggregate}, \hyperpage{300}
+  \item {G\+A\+G\+\_\+\+S\+U\+B\+M\+IT}
+    \subitem {Page\+Gest\+Aggregate}, \hyperpage{300}
+  \item {G\+A\+G\+N\+A\+NT}
+    \subitem {Coll\+Game}, \hyperpage{65}
+  \item {G\+A\+M\+E\+\_\+\+DB}
+    \subitem {Analysis}, \hyperpage{54}
+  \item {G\+E\+N\+E\+R\+A\+T\+I\+ON}
+    \subitem {Coll\+Team}, \hyperpage{97}
+  \item {game\+Id\+Preg}
+    \subitem {Coll\+Parser}, \hyperpage{71}
+  \item {game\+Over}
+    \subitem {W\+S\+Match3}, \hyperpage{453}
+  \item {Game\+Type}, \hyperpage{141}
+    \subitem {\$\+Game\+Type}, \hyperpage{143}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{141}
+    \subitem {\+\_\+\+\_\+to\+String}, \hyperpage{141}
+    \subitem {create}, \hyperpage{142}
+    \subitem {get\+Game\+Type}, \hyperpage{142}
+    \subitem {set\+Game\+Type}, \hyperpage{142}
+  \item {game\+Type}
+    \subitem {Replay\+Parser}, \hyperpage{369}
+  \item {game\+Type\+Preg}
+    \subitem {Coll\+Parser}, \hyperpage{71}
+    \subitem {Replay\+Parser}, \hyperpage{369}
+  \item {Gen}, \hyperpage{143}
+    \subitem {\$\+Gen}, \hyperpage{145}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{143}
+    \subitem {\+\_\+\+\_\+to\+String}, \hyperpage{144}
+    \subitem {create}, \hyperpage{144}
+    \subitem {get\+Gen}, \hyperpage{144}
+    \subitem {set\+Gen}, \hyperpage{145}
+  \item {gen}
+    \subitem {Replay\+Parser}, \hyperpage{370}
+  \item {gen\+Preg}
+    \subitem {Coll\+Parser}, \hyperpage{71}
+    \subitem {Replay\+Parser}, \hyperpage{370}
+  \item {generate\+Algo\+Input}
+    \subitem {Analysis}, \hyperpage{32}
+  \item {generate\+Combinatorial}
+    \subitem {Sky\+Cube}, \hyperpage{408}
+  \item {generate\+Cuboide\+List}
+    \subitem {Display\+Sky\+Cube}, \hyperpage{137}
+    \subitem {S\+K\+Display}, \hyperpage{390}
+    \subitem {Sky\+Cube}, \hyperpage{409}
+  \item {generate\+Cuboide\+List\+Lvl}
+    \subitem {Display\+Sky\+Cube}, \hyperpage{137}
+    \subitem {S\+K\+Display}, \hyperpage{390}
+    \subitem {Sky\+Cube}, \hyperpage{410}
+  \item {generate\+List}
+    \subitem {Algo}, \hyperpage{21}
+  \item {get\+Affix}
+    \subitem {Hns\+Item}, \hyperpage{207}
+  \item {get\+Aggregate\+File}
+    \subitem {Analysis}, \hyperpage{32, 33}
+  \item {get\+Avatar}
+    \subitem {Coll\+Player}, \hyperpage{80}
+  \item {get\+Clan}
+    \subitem {Hn\+S\+Player}, \hyperpage{222}
+  \item {get\+Class}
+    \subitem {Hero}, \hyperpage{151}
+  \item {get\+Coded\+Column\+Name}
+    \subitem {Sky\+Cube\+Emergent}, \hyperpage{423}
+  \item {get\+Col\+I\+Ds}
+    \subitem {Cuboide\+Emergent}, \hyperpage{126}
+    \subitem {Display\+Sky\+Cube}, \hyperpage{138}
+    \subitem {S\+K\+Display}, \hyperpage{391}
+    \subitem {Sky\+Cube}, \hyperpage{411}
+  \item {get\+Col\+ID}
+    \subitem {Sky\+Cube}, \hyperpage{410}
+    \subitem {Sky\+Cube\+Emergent}, \hyperpage{423}
+  \item {get\+Comps}
+    \subitem {Hero}, \hyperpage{151}
+  \item {get\+Cuboide}
+    \subitem {Sky\+Cube}, \hyperpage{411}
+    \subitem {Sky\+Cube\+Emergent}, \hyperpage{423}
+  \item {get\+Cuboide\+I\+Ds}
+    \subitem {Sky\+Cube}, \hyperpage{412}
+    \subitem {Sky\+Cube\+Emergent}, \hyperpage{424}
+  \item {get\+Cuboides}
+    \subitem {Sky\+Cube}, \hyperpage{413}
+    \subitem {Sky\+Cube\+Emergent}, \hyperpage{425}
+  \item {get\+Cur\+Item}
+    \subitem {Hero}, \hyperpage{151}
+  \item {get\+D\+B\+Class}
+    \subitem {Analysis}, \hyperpage{33}
+  \item {get\+D\+B\+Table}
+    \subitem {Analysis}, \hyperpage{34}
+  \item {get\+Data}
+    \subitem {Co\+Sky}, \hyperpage{102}
+  \item {get\+Data\+Set}
+    \subitem {Cuboide\+Emergent}, \hyperpage{126}
+    \subitem {Display\+Sky\+Cube}, \hyperpage{138}
+    \subitem {S\+K\+Display}, \hyperpage{391}
+    \subitem {Sky\+Cube}, \hyperpage{413}
+  \item {get\+Data\+Set\+Filtered}
+    \subitem {Cuboide\+Emergent}, \hyperpage{126}
+  \item {get\+Degats}
+    \subitem {Hero}, \hyperpage{151}
+  \item {get\+Denumbered\+Col\+I\+Ds}
+    \subitem {Sky\+Cube\+Emergent}, \hyperpage{425}
+  \item {get\+Dex}
+    \subitem {Hero}, \hyperpage{152}
+  \item {get\+Diablo.\+php}
+    \subitem {\$\+Classes}, \hyperpage{463}
+    \subitem {\$\+Servers}, \hyperpage{463}
+    \subitem {\$\+U\+R\+Lpattern}, \hyperpage{463}
+  \item {get\+Drop\+Rate}
+    \subitem {Coll\+Team}, \hyperpage{92}
+  \item {get\+Emergence}
+    \subitem {Sky\+Cube\+Emergent}, \hyperpage{425}
+  \item {get\+File\+Content}
+    \subitem {Aggregate\+List}, \hyperpage{19}
+  \item {get\+File\+Field}
+    \subitem {Aggregate\+List}, \hyperpage{19}
+  \item {get\+For}
+    \subitem {Hero}, \hyperpage{152}
+  \item {get\+Full\+Column\+Name}
+    \subitem {Sky\+Cube\+Emergent}, \hyperpage{425}
+  \item {get\+Game\+Type}
+    \subitem {Game\+Type}, \hyperpage{142}
+  \item {get\+Games}
+    \subitem {Coll\+Table}, \hyperpage{87}
+    \subitem {Match3}, \hyperpage{272}
+  \item {get\+Gen}
+    \subitem {Gen}, \hyperpage{144}
+  \item {get\+Gini}
+    \subitem {Co\+Sky}, \hyperpage{102}
+  \item {get\+Heroname}
+    \subitem {Hero}, \hyperpage{152}
+  \item {get\+Heros}
+    \subitem {Hn\+S\+Table}, \hyperpage{228}
+  \item {get\+Hn\+S\+File.\+php}
+    \subitem {\$\+Dest\+Folder}, \hyperpage{464}
+    \subitem {\$\+Main\+Folder}, \hyperpage{464}
+  \item {get\+ID}
+    \subitem {Coll\+Team}, \hyperpage{92}
+    \subitem {Cuboide\+Emergent}, \hyperpage{126}
+  \item {get\+Id}
+    \subitem {Hero}, \hyperpage{152}
+    \subitem {Hn\+S\+Player}, \hyperpage{222}
+    \subitem {Hns\+Comp}, \hyperpage{187}
+    \subitem {Hns\+Item}, \hyperpage{207}
+  \item {get\+Ideal}
+    \subitem {Co\+Sky}, \hyperpage{102}
+  \item {get\+Image}
+    \subitem {Hns\+Item}, \hyperpage{207}
+  \item {get\+Intel}
+    \subitem {Hero}, \hyperpage{152}
+  \item {get\+Item}
+    \subitem {Hero}, \hyperpage{153}
+  \item {get\+Items}
+    \subitem {Hero}, \hyperpage{153}
+  \item {get\+La\+Te\+X\+Header}
+    \subitem {Display\+Cuboide}, \hyperpage{132}
+  \item {get\+Level}
+    \subitem {Hero}, \hyperpage{153}
+  \item {get\+List}
+    \subitem {Aggregate\+List}, \hyperpage{20}
+  \item {get\+M3\+Selector}
+    \subitem {W\+S\+Match3}, \hyperpage{453}
+  \item {get\+Measure\+Cols}
+    \subitem {Analysis}, \hyperpage{34}
+  \item {get\+Message}
+    \subitem {Rated}, \hyperpage{364}
+  \item {get\+Multidimensional\+Space}
+    \subitem {Sky\+Cube}, \hyperpage{413}
+    \subitem {Sky\+Cube\+Emergent}, \hyperpage{426}
+  \item {get\+Name}
+    \subitem {Hns\+Item}, \hyperpage{208}
+  \item {get\+Num}
+    \subitem {M3\+Match}, \hyperpage{257}
+    \subitem {M3\+Stroke}, \hyperpage{268}
+  \item {get\+Order}
+    \subitem {Hns\+Comp}, \hyperpage{187}
+  \item {get\+P1\+Move}
+    \subitem {Turn}, \hyperpage{444}
+  \item {get\+P2\+Move}
+    \subitem {Turn}, \hyperpage{444}
+  \item {get\+Page}
+    \subitem {Replay\+Parser}, \hyperpage{371}
+  \item {get\+Parangon}
+    \subitem {Hero}, \hyperpage{153}
+  \item {get\+Player}
+    \subitem {Coll\+Player}, \hyperpage{80}
+    \subitem {Coll\+Team}, \hyperpage{92}
+    \subitem {Hero}, \hyperpage{153}
+  \item {get\+Pokemon}
+    \subitem {Coll\+Team}, \hyperpage{92}
+  \item {get\+Pokemon\+List}
+    \subitem {Coll\+Team}, \hyperpage{93}
+  \item {get\+Position}
+    \subitem {Hns\+Item}, \hyperpage{208}
+  \item {get\+Rank}
+    \subitem {Hero}, \hyperpage{154}
+  \item {get\+Rated}
+    \subitem {Rated}, \hyperpage{365}
+  \item {get\+Rating}
+    \subitem {Coll\+Player}, \hyperpage{80}
+  \item {get\+Regen}
+    \subitem {Hero}, \hyperpage{154}
+  \item {get\+Relation\+Cols}
+    \subitem {Analysis}, \hyperpage{35}
+  \item {get\+Request\+File}
+    \subitem {Analysis}, \hyperpage{35, 36}
+  \item {get\+Ressource1}
+    \subitem {Hero}, \hyperpage{154}
+  \item {get\+Ressource2}
+    \subitem {Hero}, \hyperpage{154}
+  \item {get\+Result}
+    \subitem {Analysis}, \hyperpage{36}
+  \item {get\+Rift}
+    \subitem {Hero}, \hyperpage{155}
+  \item {get\+Robustesse}
+    \subitem {Hero}, \hyperpage{155}
+  \item {get\+Row\+Headers}
+    \subitem {Cuboide\+Emergent}, \hyperpage{126}
+    \subitem {Display\+Sky\+Cube}, \hyperpage{138}
+    \subitem {S\+K\+Display}, \hyperpage{391}
+    \subitem {Sky\+Cube}, \hyperpage{413}
+  \item {get\+Rune}
+    \subitem {Hns\+Comp}, \hyperpage{187}
+  \item {get\+Scores}
+    \subitem {Co\+Sky}, \hyperpage{103}
+  \item {get\+Selector}
+    \subitem {Taged\+WS}, \hyperpage{440}
+  \item {get\+Server}
+    \subitem {Hero}, \hyperpage{155}
+  \item {get\+Size}
+    \subitem {Coll\+Team}, \hyperpage{93}
+  \item {get\+Skill}
+    \subitem {Hns\+Comp}, \hyperpage{188}
+  \item {get\+Sky\+Cube}
+    \subitem {Analysis}, \hyperpage{36, 37}
+  \item {get\+Sky\+Cube1}
+    \subitem {Sky\+Cube\+Emergent}, \hyperpage{426}
+  \item {get\+Sky\+Cube2}
+    \subitem {Sky\+Cube\+Emergent}, \hyperpage{426}
+  \item {get\+Sky\+Cube\+Columns}
+    \subitem {Analysis}, \hyperpage{38}
+  \item {get\+Sqrt\+Sum\+Ideal\+Square}
+    \subitem {Co\+Sky}, \hyperpage{103}
+  \item {get\+Sqrt\+Sum\+P\+Square}
+    \subitem {Co\+Sky}, \hyperpage{104}
+  \item {get\+Stats}
+    \subitem {Coll\+Table}, \hyperpage{87}
+    \subitem {Hero}, \hyperpage{155}
+    \subitem {M3\+Game}, \hyperpage{246}
+  \item {get\+Sum\+Attr}
+    \subitem {Co\+Sky}, \hyperpage{104}
+  \item {get\+Sum\+Gini}
+    \subitem {Co\+Sky}, \hyperpage{104}
+  \item {get\+Sum\+Ideal\+Square}
+    \subitem {Co\+Sky}, \hyperpage{105}
+  \item {get\+Sum\+N\+Square}
+    \subitem {Co\+Sky}, \hyperpage{105}
+  \item {get\+Sum\+P\+Square}
+    \subitem {Co\+Sky}, \hyperpage{105}
+  \item {get\+Tag}
+    \subitem {Hn\+S\+Player}, \hyperpage{222}
+  \item {get\+Test\+Data}
+    \subitem {Analysis}, \hyperpage{38, 39}
+  \item {get\+Test\+Max}
+    \subitem {Analysis}, \hyperpage{39}
+  \item {get\+Test\+Mes\+Cols}
+    \subitem {Analysis}, \hyperpage{40}
+  \item {get\+Test\+Min}
+    \subitem {Analysis}, \hyperpage{41}
+  \item {get\+Test\+Rel\+Cols}
+    \subitem {Analysis}, \hyperpage{41, 42}
+  \item {get\+Tier}
+    \subitem {Tier}, \hyperpage{442}
+  \item {get\+Time}
+    \subitem {Hero}, \hyperpage{155}
+  \item {get\+Turn}
+    \subitem {Turn}, \hyperpage{445}
+  \item {get\+Type}
+    \subitem {Hns\+Comp}, \hyperpage{188}
+  \item {get\+U\+RL}
+    \subitem {Hero}, \hyperpage{156}
+  \item {get\+User}
+    \subitem {Winner}, \hyperpage{448}
+  \item {get\+Username}
+    \subitem {Coll\+Player}, \hyperpage{81}
+    \subitem {Hn\+S\+Player}, \hyperpage{223}
+  \item {get\+Vie}
+    \subitem {Hero}, \hyperpage{156}
+  \item {get\+Vita}
+    \subitem {Hero}, \hyperpage{156}
+  \item {getN}
+    \subitem {Co\+Sky}, \hyperpage{102}
+  \item {getP}
+    \subitem {Co\+Sky}, \hyperpage{103}
+  \item {getW}
+    \subitem {Co\+Sky}, \hyperpage{106}
+
+  \indexspace
+
+  \item {handle}
+    \subitem {Page\+Change\+Aggregate}, \hyperpage{285}
+    \subitem {Page\+Coll\+Parse}, \hyperpage{294}
+    \subitem {Page\+Gest\+Aggregate}, \hyperpage{298}
+    \subitem {Page\+Hn\+S\+Parse}, \hyperpage{304}
+    \subitem {Page\+New\+Aggregate}, \hyperpage{313}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{320}
+    \subitem {Page\+Run\+Sky\+Cube\+Analysis}, \hyperpage{331}
+    \subitem {Page\+Show\+Aggregate}, \hyperpage{337}
+    \subitem {Page\+Show\+Sky\+Cube}, \hyperpage{342}
+    \subitem {Page\+Test}, \hyperpage{350}
+    \subitem {Page\+Test\+Accords}, \hyperpage{353}
+    \subitem {Page\+Test\+Co\+Sky}, \hyperpage{356}
+    \subitem {Page\+Test\+Sky\+Cube}, \hyperpage{359}
+    \subitem {Page\+Test\+Sky\+Cube\+Emergent}, \hyperpage{362}
+  \item {Hero}, \hyperpage{145}
+    \subitem {\$\+Class}, \hyperpage{171}
+    \subitem {\$\+Comps}, \hyperpage{171}
+    \subitem {\$\+Current\+Item}, \hyperpage{172}
+    \subitem {\$\+Degats}, \hyperpage{172}
+    \subitem {\$\+Dex}, \hyperpage{172}
+    \subitem {\$\+For}, \hyperpage{172}
+    \subitem {\$\+Heroname}, \hyperpage{172}
+    \subitem {\$\+Id}, \hyperpage{173}
+    \subitem {\$\+Intel}, \hyperpage{173}
+    \subitem {\$\+Items}, \hyperpage{173}
+    \subitem {\$\+Level}, \hyperpage{173}
+    \subitem {\$\+Parangon}, \hyperpage{173}
+    \subitem {\$\+Player}, \hyperpage{174}
+    \subitem {\$\+Rank}, \hyperpage{174}
+    \subitem {\$\+Regen}, \hyperpage{174}
+    \subitem {\$\+Ressource1}, \hyperpage{174}
+    \subitem {\$\+Ressource2}, \hyperpage{174}
+    \subitem {\$\+Rift}, \hyperpage{175}
+    \subitem {\$\+Robustesse}, \hyperpage{175}
+    \subitem {\$\+Server}, \hyperpage{175}
+    \subitem {\$\+Time}, \hyperpage{175}
+    \subitem {\$\+Time\+Str}, \hyperpage{175}
+    \subitem {\$\+U\+RL}, \hyperpage{176}
+    \subitem {\$\+Vie}, \hyperpage{176}
+    \subitem {\$\+Vita}, \hyperpage{176}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{148}
+    \subitem {\+\_\+\+\_\+to\+String}, \hyperpage{149}
+    \subitem {A\+T\+T\+R\+\_\+\+D\+E\+G\+A\+TS}, \hyperpage{176}
+    \subitem {A\+T\+T\+R\+\_\+\+D\+EX}, \hyperpage{176}
+    \subitem {A\+T\+T\+R\+\_\+\+F\+OR}, \hyperpage{177}
+    \subitem {A\+T\+T\+R\+\_\+\+I\+N\+T\+EL}, \hyperpage{177}
+    \subitem {A\+T\+T\+R\+\_\+\+R\+E\+G\+EN}, \hyperpage{177}
+    \subitem {A\+T\+T\+R\+\_\+\+R\+E\+S\+\_\+\+DH}, \hyperpage{177}
+    \subitem {A\+T\+T\+R\+\_\+\+R\+E\+S\+\_\+\+WD}, \hyperpage{178}
+    \subitem {A\+T\+T\+R\+\_\+\+R\+E\+S\+\_\+B}, \hyperpage{177}
+    \subitem {A\+T\+T\+R\+\_\+\+R\+E\+S\+\_\+C}, \hyperpage{177}
+    \subitem {A\+T\+T\+R\+\_\+\+R\+E\+S\+\_\+M}, \hyperpage{178}
+    \subitem {A\+T\+T\+R\+\_\+\+R\+E\+S\+\_\+N}, \hyperpage{178}
+    \subitem {A\+T\+T\+R\+\_\+\+R\+E\+S\+\_\+W}, \hyperpage{178}
+    \subitem {A\+T\+T\+R\+\_\+\+R\+O\+B\+U\+S\+T\+E\+S\+SE}, 
+		\hyperpage{178}
+    \subitem {A\+T\+T\+R\+\_\+\+V\+I\+TA}, \hyperpage{179}
+    \subitem {A\+T\+T\+R\+\_\+\+V\+IE}, \hyperpage{178}
+    \subitem {add\+Affix}, \hyperpage{149}
+    \subitem {add\+Comp}, \hyperpage{149}
+    \subitem {add\+Item}, \hyperpage{150}
+    \subitem {C\+L\+A\+S\+SE}, \hyperpage{179}
+    \subitem {C\+O\+U\+N\+T\+\_\+\+H\+E\+RO}, \hyperpage{179}
+    \subitem {C\+O\+U\+N\+T\+\_\+\+T\+R\+AD}, \hyperpage{179}
+    \subitem {D\+E\+G\+A\+TS}, \hyperpage{179}
+    \subitem {D\+EX}, \hyperpage{180}
+    \subitem {F\+OR}, \hyperpage{180}
+    \subitem {fetch\+Id}, \hyperpage{150}
+    \subitem {get\+Class}, \hyperpage{151}
+    \subitem {get\+Comps}, \hyperpage{151}
+    \subitem {get\+Cur\+Item}, \hyperpage{151}
+    \subitem {get\+Degats}, \hyperpage{151}
+    \subitem {get\+Dex}, \hyperpage{152}
+    \subitem {get\+For}, \hyperpage{152}
+    \subitem {get\+Heroname}, \hyperpage{152}
+    \subitem {get\+Id}, \hyperpage{152}
+    \subitem {get\+Intel}, \hyperpage{152}
+    \subitem {get\+Item}, \hyperpage{153}
+    \subitem {get\+Items}, \hyperpage{153}
+    \subitem {get\+Level}, \hyperpage{153}
+    \subitem {get\+Parangon}, \hyperpage{153}
+    \subitem {get\+Player}, \hyperpage{153}
+    \subitem {get\+Rank}, \hyperpage{154}
+    \subitem {get\+Regen}, \hyperpage{154}
+    \subitem {get\+Ressource1}, \hyperpage{154}
+    \subitem {get\+Ressource2}, \hyperpage{154}
+    \subitem {get\+Rift}, \hyperpage{155}
+    \subitem {get\+Robustesse}, \hyperpage{155}
+    \subitem {get\+Server}, \hyperpage{155}
+    \subitem {get\+Stats}, \hyperpage{155}
+    \subitem {get\+Time}, \hyperpage{155}
+    \subitem {get\+U\+RL}, \hyperpage{156}
+    \subitem {get\+Vie}, \hyperpage{156}
+    \subitem {get\+Vita}, \hyperpage{156}
+    \subitem {I\+N\+T\+EL}, \hyperpage{180}
+    \subitem {ID}, \hyperpage{180}
+    \subitem {L\+E\+V\+EL}, \hyperpage{180}
+    \subitem {mark4\+DL}, \hyperpage{156}
+    \subitem {N\+OM}, \hyperpage{181}
+    \subitem {P\+A\+R\+A\+N\+G\+ON}, \hyperpage{181}
+    \subitem {R\+A\+NK}, \hyperpage{181}
+    \subitem {R\+E\+G\+EN}, \hyperpage{181}
+    \subitem {R\+E\+S1}, \hyperpage{181}
+    \subitem {R\+E\+S2}, \hyperpage{182}
+    \subitem {R\+I\+FT}, \hyperpage{182}
+    \subitem {R\+O\+B\+U\+S\+T\+E\+S\+SE}, \hyperpage{182}
+    \subitem {S\+E\+R\+V\+ER}, \hyperpage{182}
+    \subitem {save}, \hyperpage{157}
+    \subitem {save\+Comps}, \hyperpage{157}
+    \subitem {save\+Items}, \hyperpage{158}
+    \subitem {set\+Attr}, \hyperpage{158}
+    \subitem {set\+Class}, \hyperpage{160}
+    \subitem {set\+Degats}, \hyperpage{160}
+    \subitem {set\+Dex}, \hyperpage{161}
+    \subitem {set\+For}, \hyperpage{161}
+    \subitem {set\+Heroname}, \hyperpage{162}
+    \subitem {set\+Id}, \hyperpage{162}
+    \subitem {set\+Intel}, \hyperpage{162}
+    \subitem {set\+Level}, \hyperpage{163}
+    \subitem {set\+Parangon}, \hyperpage{163}
+    \subitem {set\+Rank}, \hyperpage{164}
+    \subitem {set\+Regen}, \hyperpage{164}
+    \subitem {set\+Resources}, \hyperpage{165}
+    \subitem {set\+Ressource1}, \hyperpage{166}
+    \subitem {set\+Ressource2}, \hyperpage{166}
+    \subitem {set\+Rift}, \hyperpage{167}
+    \subitem {set\+Robustesse}, \hyperpage{167}
+    \subitem {set\+Server}, \hyperpage{168}
+    \subitem {set\+Time}, \hyperpage{168}
+    \subitem {set\+U\+RL}, \hyperpage{169}
+    \subitem {set\+Vie}, \hyperpage{169}
+    \subitem {set\+Vita}, \hyperpage{170}
+    \subitem {show\+As\+Table\+Entry}, \hyperpage{170}
+    \subitem {show\+Table\+Footer}, \hyperpage{170}
+    \subitem {show\+Table\+Header}, \hyperpage{171}
+    \subitem {T\+A\+B\+LE}, \hyperpage{182}
+    \subitem {T\+I\+ME}, \hyperpage{183}
+    \subitem {V\+I\+E\+W\+\_\+\+S\+T\+AT}, \hyperpage{183}
+    \subitem {V\+I\+EW}, \hyperpage{183}
+    \subitem {V\+I\+TA}, \hyperpage{183}
+    \subitem {V\+IE}, \hyperpage{183}
+  \item {Hn\+S\+Hero\+Parser}, \hyperpage{193}
+    \subitem {\$\+Current\+Item}, \hyperpage{202}
+    \subitem {\$\+Full\+Text}, \hyperpage{202}
+    \subitem {\$\+Game}, \hyperpage{203}
+    \subitem {\$\+Item\+List}, \hyperpage{203}
+    \subitem {\$\+Processed\+Text}, \hyperpage{203}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{194}
+    \subitem {\+\_\+\+\_\+destruct}, \hyperpage{195}
+    \subitem {\+\_\+\+\_\+to\+String}, \hyperpage{195}
+    \subitem {clean}, \hyperpage{196}
+    \subitem {I\+T\+E\+M\+\_\+\+A\+F\+F\+IX}, \hyperpage{203}
+    \subitem {I\+T\+E\+M\+\_\+\+I\+MG}, \hyperpage{203}
+    \subitem {I\+T\+E\+M\+\_\+\+N\+A\+ME}, \hyperpage{203}
+    \subitem {I\+T\+E\+M\+\_\+\+P\+OS}, \hyperpage{204}
+    \subitem {parse}, \hyperpage{196}
+    \subitem {parse\+Act}, \hyperpage{197}
+    \subitem {parse\+Active}, \hyperpage{197}
+    \subitem {parse\+Attributes}, \hyperpage{197}
+    \subitem {parse\+AttrP}, \hyperpage{197}
+    \subitem {parse\+AttrR}, \hyperpage{198}
+    \subitem {parse\+AttrS}, \hyperpage{199}
+    \subitem {parse\+Hero}, \hyperpage{200}
+    \subitem {parse\+Item}, \hyperpage{200}
+    \subitem {parse\+Items}, \hyperpage{200}
+    \subitem {parse\+Params}, \hyperpage{201}
+    \subitem {parse\+Pass}, \hyperpage{201}
+    \subitem {parse\+Passive}, \hyperpage{201}
+    \subitem {parse\+User}, \hyperpage{202}
+    \subitem {parse\+User\+Details}, \hyperpage{202}
+  \item {Hn\+S\+Parser}, \hyperpage{214}
+    \subitem {\$\+Base\+U\+RL}, \hyperpage{218}
+    \subitem {\$\+Full\+Text}, \hyperpage{218}
+    \subitem {\$\+Game}, \hyperpage{218}
+    \subitem {\$\+Hero\+Class}, \hyperpage{219}
+    \subitem {\$\+Processed\+Text}, \hyperpage{219}
+    \subitem {\$\+Server}, \hyperpage{219}
+    \subitem {\$\+U\+RL}, \hyperpage{219}
+    \subitem {\$filename}, \hyperpage{218}
+    \subitem {\$head}, \hyperpage{218}
+    \subitem {\$text}, \hyperpage{219}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{214}
+    \subitem {\+\_\+\+\_\+destruct}, \hyperpage{215}
+    \subitem {\+\_\+\+\_\+to\+String}, \hyperpage{215}
+    \subitem {apply\+Pattern}, \hyperpage{215}
+    \subitem {clean}, \hyperpage{216}
+    \subitem {parse}, \hyperpage{216}
+    \subitem {parse\+Hero}, \hyperpage{217}
+    \subitem {parse\+Hero\+Data}, \hyperpage{217}
+  \item {Hn\+S\+Player}, \hyperpage{220}
+    \subitem {\$\+Clan}, \hyperpage{225}
+    \subitem {\$\+Id}, \hyperpage{225}
+    \subitem {\$\+Tag}, \hyperpage{225}
+    \subitem {\$\+Username}, \hyperpage{225}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{220}
+    \subitem {\+\_\+\+\_\+to\+String}, \hyperpage{221}
+    \subitem {C\+L\+AN}, \hyperpage{226}
+    \subitem {fetch\+Id}, \hyperpage{221}
+    \subitem {get\+Clan}, \hyperpage{222}
+    \subitem {get\+Id}, \hyperpage{222}
+    \subitem {get\+Tag}, \hyperpage{222}
+    \subitem {get\+Username}, \hyperpage{223}
+    \subitem {ID}, \hyperpage{226}
+    \subitem {N\+OM}, \hyperpage{226}
+    \subitem {save}, \hyperpage{223}
+    \subitem {set\+Clan}, \hyperpage{223}
+    \subitem {set\+Id}, \hyperpage{224}
+    \subitem {set\+Tag}, \hyperpage{224}
+    \subitem {set\+Username}, \hyperpage{224}
+    \subitem {T\+A\+B\+LE}, \hyperpage{226}
+    \subitem {T\+AG}, \hyperpage{226}
+  \item {Hn\+S\+Table}, \hyperpage{227}
+    \subitem {\$\+Liste\+Heros}, \hyperpage{229}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{227}
+    \subitem {\+\_\+\+\_\+destruct}, \hyperpage{228}
+    \subitem {\+\_\+\+\_\+to\+String}, \hyperpage{228}
+    \subitem {get\+Heros}, \hyperpage{228}
+    \subitem {show}, \hyperpage{229}
+  \item {Hns\+Comp}, \hyperpage{184}
+    \subitem {\$\+Id}, \hyperpage{190}
+    \subitem {\$\+Order}, \hyperpage{191}
+    \subitem {\$\+Rune}, \hyperpage{191}
+    \subitem {\$\+Skill}, \hyperpage{191}
+    \subitem {\$\+Type}, \hyperpage{191}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{185}
+    \subitem {\+\_\+\+\_\+to\+String}, \hyperpage{186}
+    \subitem {affecte}, \hyperpage{186}
+    \subitem {fetch\+Id}, \hyperpage{186}
+    \subitem {get\+Id}, \hyperpage{187}
+    \subitem {get\+Order}, \hyperpage{187}
+    \subitem {get\+Rune}, \hyperpage{187}
+    \subitem {get\+Skill}, \hyperpage{188}
+    \subitem {get\+Type}, \hyperpage{188}
+    \subitem {ID}, \hyperpage{191}
+    \subitem {N\+OM}, \hyperpage{192}
+    \subitem {O\+R\+D\+RE}, \hyperpage{192}
+    \subitem {R\+U\+NE}, \hyperpage{192}
+    \subitem {save}, \hyperpage{188}
+    \subitem {set\+Order}, \hyperpage{188}
+    \subitem {set\+Rune}, \hyperpage{189}
+    \subitem {set\+Skill}, \hyperpage{189}
+    \subitem {set\+Type}, \hyperpage{190}
+    \subitem {T\+A\+B\+L\+E\+\_\+\+A\+F\+F\+E\+C\+TE}, \hyperpage{192}
+    \subitem {T\+A\+B\+LE}, \hyperpage{192}
+    \subitem {T\+Y\+P\+E\+\_\+\+A\+C\+T\+I\+VE}, \hyperpage{193}
+    \subitem {T\+Y\+P\+E\+\_\+\+P\+A\+S\+S\+I\+VE}, \hyperpage{193}
+    \subitem {T\+Y\+PE}, \hyperpage{192}
+  \item {Hns\+Item}, \hyperpage{204}
+    \subitem {\$\+Affix}, \hyperpage{210}
+    \subitem {\$\+Cote}, \hyperpage{211}
+    \subitem {\$\+Id}, \hyperpage{211}
+    \subitem {\$\+Id\+Porte}, \hyperpage{211}
+    \subitem {\$\+Image}, \hyperpage{211}
+    \subitem {\$\+Name}, \hyperpage{211}
+    \subitem {\$\+Place}, \hyperpage{212}
+    \subitem {\$\+Position}, \hyperpage{212}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{205}
+    \subitem {\+\_\+\+\_\+to\+String}, \hyperpage{206}
+    \subitem {add\+Affix}, \hyperpage{206}
+    \subitem {C\+O\+T\+E\+\_\+\+L\+E\+FT}, \hyperpage{212}
+    \subitem {C\+O\+T\+E\+\_\+\+R\+I\+G\+HT}, \hyperpage{212}
+    \subitem {C\+O\+TE}, \hyperpage{212}
+    \subitem {fetch\+Id}, \hyperpage{206}
+    \subitem {get\+Affix}, \hyperpage{207}
+    \subitem {get\+Id}, \hyperpage{207}
+    \subitem {get\+Image}, \hyperpage{207}
+    \subitem {get\+Name}, \hyperpage{208}
+    \subitem {get\+Position}, \hyperpage{208}
+    \subitem {I\+D\+\_\+\+P\+O\+R\+TE}, \hyperpage{213}
+    \subitem {ID}, \hyperpage{212}
+    \subitem {N\+OM}, \hyperpage{213}
+    \subitem {P\+L\+A\+CE}, \hyperpage{213}
+    \subitem {porte}, \hyperpage{208}
+    \subitem {save}, \hyperpage{208}
+    \subitem {set\+Affix}, \hyperpage{209}
+    \subitem {set\+Image}, \hyperpage{209}
+    \subitem {set\+Name}, \hyperpage{209}
+    \subitem {set\+Position}, \hyperpage{210}
+    \subitem {T\+A\+B\+L\+E\+\_\+\+P\+O\+R\+TE}, \hyperpage{213}
+    \subitem {T\+A\+B\+LE}, \hyperpage{213}
+  \item {html}
+    \subitem {S\+K\+Display}, \hyperpage{392}
+  \item {html\+Co\+Sky}
+    \subitem {S\+K\+Display}, \hyperpage{392}
+  \item {html\+Cuboide}
+    \subitem {S\+K\+Display}, \hyperpage{393}
+  \item {html\+Cuboide\+Emergent}
+    \subitem {S\+K\+Display}, \hyperpage{393}
+  \item {html\+Cuboide\+Param}
+    \subitem {S\+K\+Display}, \hyperpage{394}
+  \item {html\+Emergence}
+    \subitem {S\+K\+Display}, \hyperpage{394}
+  \item {html\+Equivalence\+Classes}
+    \subitem {S\+K\+Display}, \hyperpage{395}
+  \item {html\+Input\+Data}
+    \subitem {S\+K\+Display}, \hyperpage{395}
+  \item {html\+Multidimensional\+Space}
+    \subitem {S\+K\+Display}, \hyperpage{396}
+  \item {html\+Sky\+Cube}
+    \subitem {S\+K\+Display}, \hyperpage{397}
+  \item {html\+Sky\+Cube\+Emergent}
+    \subitem {S\+K\+Display}, \hyperpage{397}
+  \item {html\+Sky\+Cube\+Fusion}
+    \subitem {S\+K\+Display}, \hyperpage{398}
+  \item {html\+Sky\+Cube\+Param}
+    \subitem {S\+K\+Display}, \hyperpage{398}
+
+  \indexspace
+
+  \item {I\+D\+\_\+\+G\+A\+ME}
+    \subitem {M3\+Game}, \hyperpage{250}
+  \item {I\+D\+\_\+\+P\+L\+A\+Y\+ER}
+    \subitem {M3\+Game}, \hyperpage{250}
+  \item {I\+D\+\_\+\+P\+O\+R\+TE}
+    \subitem {Hns\+Item}, \hyperpage{213}
+  \item {I\+D\+EA}, \hyperpage{230}
+    \subitem {\$\+Algorithm}, \hyperpage{239}
+    \subitem {\$\+Attribute\+Ignored}, \hyperpage{239}
+    \subitem {\$\+Attribute\+Values}, \hyperpage{239}
+    \subitem {\$\+Attributes}, \hyperpage{239}
+    \subitem {\$\+File\+Path}, \hyperpage{240}
+    \subitem {\$\+Input\+Measures}, \hyperpage{240}
+    \subitem {\$\+Input\+Relations}, \hyperpage{240}
+    \subitem {\$\+Max}, \hyperpage{240}
+    \subitem {\$\+Min}, \hyperpage{240}
+    \subitem {\$\+Nb\+Attributes}, \hyperpage{240}
+    \subitem {\$\+Nb\+Tuples}, \hyperpage{241}
+    \subitem {\$\+Prepared\+Measures}, \hyperpage{241}
+    \subitem {\$\+Prepared\+Relations}, \hyperpage{241}
+    \subitem {\$\+W\+I\+P\+Measures}, \hyperpage{241}
+    \subitem {\$\+W\+I\+P\+Relations}, \hyperpage{241}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{231}
+    \subitem {anonymize}, \hyperpage{231}
+    \subitem {compute\+Min\+Max}, \hyperpage{232}
+    \subitem {convert\+To\+Numerics}, \hyperpage{232}
+    \subitem {count\+Attributes}, \hyperpage{233}
+    \subitem {export\+Measures}, \hyperpage{233}
+    \subitem {export\+Relations}, \hyperpage{233}
+    \subitem {interpret}, \hyperpage{234}
+    \subitem {prepare}, \hyperpage{235}
+    \subitem {prepare\+Measures}, \hyperpage{235}
+    \subitem {prepare\+Relations}, \hyperpage{236}
+    \subitem {prepare\+Tuple\+File}, \hyperpage{236}
+    \subitem {run}, \hyperpage{237}
+    \subitem {set\+Algorithm}, \hyperpage{237}
+    \subitem {set\+Max}, \hyperpage{238}
+    \subitem {set\+Measures}, \hyperpage{238}
+    \subitem {set\+Min}, \hyperpage{238}
+    \subitem {set\+Relations}, \hyperpage{239}
+  \item {I\+N\+\_\+\+G\+A\+M\+E\+\_\+\+T\+I\+ME}
+    \subitem {M3\+Match}, \hyperpage{260}
+  \item {I\+N\+T\+EL}
+    \subitem {Hero}, \hyperpage{180}
+  \item {I\+P\+\_\+\+A\+D\+DR}
+    \subitem {M3\+Game}, \hyperpage{250}
+  \item {I\+T\+E\+M\+\_\+\+A\+F\+F\+IX}
+    \subitem {Hn\+S\+Hero\+Parser}, \hyperpage{203}
+  \item {I\+T\+E\+M\+\_\+\+I\+MG}
+    \subitem {Hn\+S\+Hero\+Parser}, \hyperpage{203}
+  \item {I\+T\+E\+M\+\_\+\+N\+A\+ME}
+    \subitem {Hn\+S\+Hero\+Parser}, \hyperpage{203}
+  \item {I\+T\+E\+M\+\_\+\+P\+OS}
+    \subitem {Hn\+S\+Hero\+Parser}, \hyperpage{204}
+  \item {ID}
+    \subitem {Coll\+Game}, \hyperpage{66}
+    \subitem {Coll\+Team}, \hyperpage{98}
+    \subitem {Hero}, \hyperpage{180}
+    \subitem {Hn\+S\+Player}, \hyperpage{226}
+    \subitem {Hns\+Comp}, \hyperpage{191}
+    \subitem {Hns\+Item}, \hyperpage{212}
+    \subitem {M3\+Match}, \hyperpage{260}
+    \subitem {M3\+Stroke}, \hyperpage{270}
+  \item {intermediate}
+    \subitem {W\+S\+Match3}, \hyperpage{454}
+  \item {interpret}
+    \subitem {Co\+Sky}, \hyperpage{106}
+    \subitem {I\+D\+EA}, \hyperpage{234}
+  \item {is\+In\+Cuboide}
+    \subitem {Cuboide}, \hyperpage{116}
+    \subitem {Cuboide\+Brute\+Force}, \hyperpage{122}
+    \subitem {Display\+Cuboide}, \hyperpage{132}
+  \item {is\+Valid}
+    \subitem {Cuboide\+Emergent}, \hyperpage{127}
+
+  \indexspace
+
+  \item {L\+E\+N\+G\+TH}
+    \subitem {M3\+Match}, \hyperpage{260}
+  \item {L\+E\+V\+EL}
+    \subitem {Hero}, \hyperpage{180}
+  \item {L\+I\+S\+T\+E2}
+    \subitem {Coll\+Team}, \hyperpage{98}
+  \item {L\+I\+S\+T\+E3}
+    \subitem {Coll\+Team}, \hyperpage{98}
+  \item {L\+I\+S\+T\+E4}
+    \subitem {Coll\+Team}, \hyperpage{98}
+  \item {L\+I\+S\+T\+E5}
+    \subitem {Coll\+Team}, \hyperpage{98}
+  \item {L\+I\+S\+TE}
+    \subitem {Coll\+Team}, \hyperpage{98}
+  \item {L\+O\+G\+\_\+\+F\+I\+LE}
+    \subitem {application/src/define.\+php}, \hyperpage{479}
+  \item {L\+O\+G\+\_\+\+H\+O\+ME}
+    \subitem {application/src/define.\+php}, \hyperpage{479}
+  \item {latex}
+    \subitem {S\+K\+Display}, \hyperpage{399}
+  \item {latex\+Cuboide}
+    \subitem {S\+K\+Display}, \hyperpage{399}
+  \item {latex\+Cuboide\+Emergent}
+    \subitem {S\+K\+Display}, \hyperpage{400}
+  \item {latex\+Sky\+Cube}
+    \subitem {S\+K\+Display}, \hyperpage{400}
+  \item {latex\+Sky\+Cube\+Emergent}
+    \subitem {S\+K\+Display}, \hyperpage{400}
+  \item {load}
+    \subitem {Analysis}, \hyperpage{42}
+
+  \indexspace
+
+  \item {M3\+Game}, \hyperpage{242}
+    \subitem {\$\+Game\+Date}, \hyperpage{248}
+    \subitem {\$\+Game\+ID}, \hyperpage{248}
+    \subitem {\$\+Player\+ID}, \hyperpage{248}
+    \subitem {\$\+Player\+IP}, \hyperpage{248}
+    \subitem {\$\+Round\+Date}, \hyperpage{248}
+    \subitem {\$\+Round\+Num}, \hyperpage{248}
+    \subitem {\$\+Strokes}, \hyperpage{249}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{243}
+    \subitem {\+\_\+\+\_\+destruct}, \hyperpage{243}
+    \subitem {\+\_\+\+\_\+to\+String}, \hyperpage{244}
+    \subitem {add\+Stroke}, \hyperpage{244}
+    \subitem {build}, \hyperpage{244}
+    \subitem {C\+O\+U\+N\+T\+\_\+\+G\+A\+ME}, \hyperpage{249}
+    \subitem {C\+O\+U\+N\+T\+\_\+\+M\+A\+T\+CH}, \hyperpage{249}
+    \subitem {C\+O\+U\+N\+T\+\_\+\+P\+L\+A\+Y\+ER}, \hyperpage{249}
+    \subitem {C\+O\+U\+N\+T\+\_\+\+S\+T\+R\+O\+KE}, \hyperpage{249}
+    \subitem {C\+O\+U\+N\+T\+\_\+\+T\+R\+AD}, \hyperpage{249}
+    \subitem {D\+A\+T\+E\+\_\+\+G\+A\+ME}, \hyperpage{250}
+    \subitem {D\+A\+T\+E\+\_\+\+R\+O\+U\+ND}, \hyperpage{250}
+    \subitem {fetch\+Game\+Id}, \hyperpage{245}
+    \subitem {fill}, \hyperpage{245}
+    \subitem {get\+Stats}, \hyperpage{246}
+    \subitem {I\+D\+\_\+\+G\+A\+ME}, \hyperpage{250}
+    \subitem {I\+D\+\_\+\+P\+L\+A\+Y\+ER}, \hyperpage{250}
+    \subitem {I\+P\+\_\+\+A\+D\+DR}, \hyperpage{250}
+    \subitem {N\+U\+M\+\_\+\+R\+O\+U\+ND}, \hyperpage{251}
+    \subitem {save}, \hyperpage{246}
+    \subitem {save\+Game}, \hyperpage{246}
+    \subitem {save\+Player}, \hyperpage{247}
+    \subitem {T\+A\+B\+L\+E\+\_\+\+G\+A\+ME}, \hyperpage{251}
+    \subitem {T\+A\+B\+L\+E\+\_\+\+P\+L\+A\+Y\+ER}, \hyperpage{251}
+    \subitem {V\+I\+E\+W\+\_\+\+D\+A\+TA}, \hyperpage{251}
+    \subitem {V\+I\+E\+W\+\_\+\+S\+T\+AT}, \hyperpage{251}
+    \subitem {W\+S\+\_\+\+G\+A\+M\+E\+\_\+\+D\+A\+TE}, \hyperpage{252}
+    \subitem {W\+S\+\_\+\+G\+A\+ME}, \hyperpage{251}
+    \subitem {W\+S\+\_\+\+P\+L\+A\+Y\+E\+R\+\_\+\+A\+D\+DR}, 
+		\hyperpage{252}
+    \subitem {W\+S\+\_\+\+P\+L\+A\+Y\+E\+R\+\_\+\+ID}, \hyperpage{252}
+    \subitem {W\+S\+\_\+\+P\+L\+A\+Y\+ER}, \hyperpage{252}
+    \subitem {W\+S\+\_\+\+R\+O\+U\+N\+D\+\_\+\+D\+A\+TE}, 
+		\hyperpage{252}
+    \subitem {W\+S\+\_\+\+R\+O\+U\+N\+D\+\_\+\+N\+UM}, \hyperpage{253}
+    \subitem {W\+S\+\_\+\+R\+O\+U\+ND}, \hyperpage{252}
+    \subitem {W\+S\+\_\+\+S\+T\+R\+O\+KE}, \hyperpage{253}
+  \item {M3\+Match}, \hyperpage{253}
+    \subitem {\$\+Beam}, \hyperpage{258}
+    \subitem {\$\+Color}, \hyperpage{258}
+    \subitem {\$\+I\+D\+Match}, \hyperpage{258}
+    \subitem {\$\+Length}, \hyperpage{258}
+    \subitem {\$\+Match\+Num}, \hyperpage{258}
+    \subitem {\$\+Score}, \hyperpage{258}
+    \subitem {\$\+Score\+Total}, \hyperpage{259}
+    \subitem {\$\+Shape}, \hyperpage{259}
+    \subitem {\$\+Special\+Four}, \hyperpage{259}
+    \subitem {\$\+Time}, \hyperpage{259}
+    \subitem {\$\+Time\+In\+Game}, \hyperpage{259}
+    \subitem {\$\+Time\+Left}, \hyperpage{260}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{255}
+    \subitem {\+\_\+\+\_\+destruct}, \hyperpage{255}
+    \subitem {\+\_\+\+\_\+to\+String}, \hyperpage{256}
+    \subitem {B\+E\+AM}, \hyperpage{260}
+    \subitem {build}, \hyperpage{256}
+    \subitem {C\+O\+L\+OR}, \hyperpage{260}
+    \subitem {fetch\+Id}, \hyperpage{256}
+    \subitem {fill}, \hyperpage{256}
+    \subitem {get\+Num}, \hyperpage{257}
+    \subitem {I\+N\+\_\+\+G\+A\+M\+E\+\_\+\+T\+I\+ME}, \hyperpage{260}
+    \subitem {ID}, \hyperpage{260}
+    \subitem {L\+E\+N\+G\+TH}, \hyperpage{260}
+    \subitem {N\+UM}, \hyperpage{261}
+    \subitem {S\+C\+O\+R\+E\+\_\+\+T\+O\+T\+AL}, \hyperpage{261}
+    \subitem {S\+C\+O\+RE}, \hyperpage{261}
+    \subitem {S\+H\+A\+PE}, \hyperpage{261}
+    \subitem {save}, \hyperpage{257}
+    \subitem {T\+A\+B\+LE}, \hyperpage{261}
+    \subitem {T\+I\+M\+E\+\_\+\+L\+E\+FT}, \hyperpage{262}
+    \subitem {T\+I\+ME}, \hyperpage{261}
+    \subitem {W\+S\+\_\+\+B\+E\+AM}, \hyperpage{262}
+    \subitem {W\+S\+\_\+\+C\+O\+L\+OR}, \hyperpage{262}
+    \subitem {W\+S\+\_\+\+I\+N\+\_\+\+G\+A\+M\+E\+\_\+\+T\+I\+ME}, 
+		\hyperpage{262}
+    \subitem {W\+S\+\_\+\+L\+E\+N\+G\+TH}, \hyperpage{262}
+    \subitem {W\+S\+\_\+\+M\+A\+T\+C\+H\+\_\+\+N\+UM}, \hyperpage{262}
+    \subitem {W\+S\+\_\+\+S\+C\+O\+R\+E\+\_\+\+T\+O\+T\+AL}, 
+		\hyperpage{263}
+    \subitem {W\+S\+\_\+\+S\+C\+O\+RE}, \hyperpage{263}
+    \subitem {W\+S\+\_\+\+S\+H\+A\+PE}, \hyperpage{263}
+    \subitem {W\+S\+\_\+\+S\+P\+E\+C\+I\+A\+L\+\_\+\+F\+O\+UR}, 
+		\hyperpage{263}
+    \subitem {W\+S\+\_\+\+T\+I\+M\+E\+\_\+\+L\+E\+FT}, \hyperpage{263}
+    \subitem {W\+S\+\_\+\+T\+I\+ME}, \hyperpage{263}
+  \item {M3\+Stroke}, \hyperpage{264}
+    \subitem {\$\+Duration}, \hyperpage{269}
+    \subitem {\$\+I\+D\+Stroke}, \hyperpage{269}
+    \subitem {\$\+Matches}, \hyperpage{269}
+    \subitem {\$\+Stroke\+Num}, \hyperpage{269}
+    \subitem {\$\+Time}, \hyperpage{269}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{265}
+    \subitem {\+\_\+\+\_\+destruct}, \hyperpage{265}
+    \subitem {\+\_\+\+\_\+to\+String}, \hyperpage{265}
+    \subitem {add\+Match}, \hyperpage{266}
+    \subitem {build}, \hyperpage{266}
+    \subitem {D\+U\+R\+A\+T\+I\+ON}, \hyperpage{269}
+    \subitem {fetch\+Id}, \hyperpage{267}
+    \subitem {fill}, \hyperpage{267}
+    \subitem {get\+Num}, \hyperpage{268}
+    \subitem {ID}, \hyperpage{270}
+    \subitem {N\+UM}, \hyperpage{270}
+    \subitem {save}, \hyperpage{268}
+    \subitem {T\+A\+B\+LE}, \hyperpage{270}
+    \subitem {T\+I\+ME}, \hyperpage{270}
+    \subitem {W\+S\+\_\+\+D\+U\+R\+A\+T\+I\+ON}, \hyperpage{270}
+    \subitem {W\+S\+\_\+\+M\+A\+T\+CH}, \hyperpage{270}
+    \subitem {W\+S\+\_\+\+S\+T\+R\+O\+K\+E\+\_\+\+N\+UM}, 
+		\hyperpage{271}
+    \subitem {W\+S\+\_\+\+T\+I\+ME}, \hyperpage{271}
+  \item {M\+A\+X\+\_\+\+C\+U\+B\+O\+I\+DE}
+    \subitem {Display\+Sky\+Cube}, \hyperpage{140}
+    \subitem {Sky\+Cube}, \hyperpage{416}
+  \item {M\+E\+S\+\_\+\+C\+O\+LS}
+    \subitem {Analysis}, \hyperpage{54}
+  \item {M\+I\+N\+\_\+\+C\+O\+L\+ID}
+    \subitem {Display\+Sky\+Cube}, \hyperpage{140}
+    \subitem {Sky\+Cube}, \hyperpage{417}
+  \item {maintenance/www/index.\+php}
+    \subitem {\$\+Page}, \hyperpage{492}
+  \item {mark4\+DL}
+    \subitem {Hero}, \hyperpage{156}
+  \item {Match3}, \hyperpage{271}
+    \subitem {\$\+List\+Games}, \hyperpage{273}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{272}
+    \subitem {\+\_\+\+\_\+destruct}, \hyperpage{272}
+    \subitem {\+\_\+\+\_\+to\+String}, \hyperpage{272}
+    \subitem {get\+Games}, \hyperpage{272}
+    \subitem {show}, \hyperpage{273}
+  \item {match\+Func0}
+    \subitem {Replay\+Parser}, \hyperpage{371}
+  \item {match\+Func1}
+    \subitem {Replay\+Parser}, \hyperpage{372}
+  \item {match\+Func2}
+    \subitem {Replay\+Parser}, \hyperpage{372}
+  \item {match\+Func3}
+    \subitem {Replay\+Parser}, \hyperpage{373}
+  \item {match\+Func4}
+    \subitem {Replay\+Parser}, \hyperpage{373}
+  \item {match\+Func5}
+    \subitem {Replay\+Parser}, \hyperpage{374}
+  \item {match\+Func6}
+    \subitem {Replay\+Parser}, \hyperpage{374}
+  \item {merge\+Columns}
+    \subitem {Cuboide\+Emergent}, \hyperpage{127}
+  \item {merge\+Cuboide\+Lists}
+    \subitem {Sky\+Cube\+Emergent}, \hyperpage{427}
+  \item {merge\+Data\+Sets}
+    \subitem {Cuboide\+Emergent}, \hyperpage{127, 128}
+  \item {move}
+    \subitem {Replay\+Parser}, \hyperpage{374}
+  \item {move1}
+    \subitem {Coll\+Parser}, \hyperpage{72}
+    \subitem {Replay\+Parser}, \hyperpage{375}
+  \item {move1\+Preg}
+    \subitem {Coll\+Parser}, \hyperpage{72}
+    \subitem {Replay\+Parser}, \hyperpage{375}
+  \item {move2}
+    \subitem {Coll\+Parser}, \hyperpage{72}
+    \subitem {Replay\+Parser}, \hyperpage{376}
+  \item {move2\+Preg}
+    \subitem {Coll\+Parser}, \hyperpage{73}
+    \subitem {Replay\+Parser}, \hyperpage{376}
+  \item {move\+File}
+    \subitem {process\+Hn\+S\+File.\+php}, \hyperpage{469}
+
+  \indexspace
+
+  \item {N\+A\+G\+\_\+\+A\+G\+G\+R\+E\+G\+A\+TE}
+    \subitem {Page\+New\+Aggregate}, \hyperpage{315}
+  \item {N\+A\+G\+\_\+\+DB}
+    \subitem {Page\+New\+Aggregate}, \hyperpage{315}
+  \item {N\+A\+G\+\_\+\+M\+E\+S\+\_\+\+C\+O\+LS}
+    \subitem {Page\+New\+Aggregate}, \hyperpage{315}
+  \item {N\+A\+G\+\_\+\+P\+A\+S\+S\+W\+O\+RD}
+    \subitem {Page\+New\+Aggregate}, \hyperpage{316}
+  \item {N\+A\+G\+\_\+\+R\+E\+L\+\_\+\+C\+O\+LS}
+    \subitem {Page\+New\+Aggregate}, \hyperpage{316}
+  \item {N\+A\+G\+\_\+\+S\+U\+B\+M\+IT}
+    \subitem {Page\+New\+Aggregate}, \hyperpage{316}
+  \item {N\+A\+G\+\_\+\+T\+A\+B\+LE}
+    \subitem {Page\+New\+Aggregate}, \hyperpage{316}
+  \item {N\+O\+\_\+\+F\+L\+AG}
+    \subitem {S\+K\+Display}, \hyperpage{403}
+  \item {N\+O\+M\+B\+RE}
+    \subitem {Coll\+Team}, \hyperpage{99}
+  \item {N\+OM}
+    \subitem {Coll\+Player}, \hyperpage{84}
+    \subitem {Coll\+Team}, \hyperpage{99}
+    \subitem {Hero}, \hyperpage{181}
+    \subitem {Hn\+S\+Player}, \hyperpage{226}
+    \subitem {Hns\+Comp}, \hyperpage{192}
+    \subitem {Hns\+Item}, \hyperpage{213}
+  \item {N\+U\+M\+\_\+\+R\+O\+U\+ND}
+    \subitem {M3\+Game}, \hyperpage{251}
+  \item {N\+U\+M\+E\+RO}
+    \subitem {Coll\+Player}, \hyperpage{84}
+  \item {N\+UM}
+    \subitem {M3\+Match}, \hyperpage{261}
+    \subitem {M3\+Stroke}, \hyperpage{270}
+  \item {new\+Game}
+    \subitem {W\+S\+Match3}, \hyperpage{454}
+
+  \indexspace
+
+  \item {O\+R\+D\+RE}
+    \subitem {Coll\+Team}, \hyperpage{99}
+    \subitem {Hns\+Comp}, \hyperpage{192}
+
+  \indexspace
+
+  \item {P\+A\+G\+E\+\_\+\+D\+E\+F\+A\+U\+LT}
+    \subitem {Page\+Maintenance}, \hyperpage{309}
+    \subitem {Taged\+Page}, \hyperpage{438}
+  \item {P\+A\+G\+E\+\_\+\+L\+I\+ST}
+    \subitem {Page\+Maintenance}, \hyperpage{309}
+    \subitem {Taged\+Page}, \hyperpage{438}
+  \item {P\+A\+G\+E\+\_\+\+S\+E\+L\+E\+C\+T\+OR}
+    \subitem {Page\+Maintenance}, \hyperpage{309}
+    \subitem {Taged\+Page}, \hyperpage{438}
+  \item {P\+A\+R\+A\+N\+G\+ON}
+    \subitem {Hero}, \hyperpage{181}
+  \item {P\+A\+R\+S\+E\+R\+\_\+\+F\+I\+LE}
+    \subitem {Page\+Coll\+Parse}, \hyperpage{296}
+    \subitem {Page\+Hn\+S\+Parse}, \hyperpage{306}
+  \item {P\+A\+R\+S\+E\+R\+\_\+\+S\+U\+B\+M\+IT}
+    \subitem {Page\+Coll\+Parse}, \hyperpage{296}
+    \subitem {Page\+Hn\+S\+Parse}, \hyperpage{307}
+  \item {P\+L\+A\+CE}
+    \subitem {Hns\+Item}, \hyperpage{213}
+  \item {P\+O\+K\+E\+D\+EX}
+    \subitem {Coll\+Team}, \hyperpage{99}
+  \item {Page\+Accueil}, \hyperpage{274}
+    \subitem {\$\+Cols}, \hyperpage{282}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{275}
+    \subitem {add\+Stat}, \hyperpage{276}
+    \subitem {add\+Stats}, \hyperpage{277}
+    \subitem {compute\+All\+Stats}, \hyperpage{277}
+    \subitem {compute\+Stats}, \hyperpage{278}
+    \subitem {compute\+Stats\+DB}, \hyperpage{279}
+    \subitem {compute\+Stats\+Files}, \hyperpage{280}
+    \subitem {do\+Stat\+Head}, \hyperpage{280}
+    \subitem {do\+Stat\+Line}, \hyperpage{281}
+    \subitem {do\+Stats}, \hyperpage{281}
+  \item {Page\+Change\+Aggregate}, \hyperpage{283}
+    \subitem {\$\+Aggregate}, \hyperpage{286}
+    \subitem {\$\+Aggregate\+List}, \hyperpage{286}
+    \subitem {\$\+Aggregate\+List\+Obj}, \hyperpage{287}
+    \subitem {\$\+Aggregate\+Obj}, \hyperpage{287}
+    \subitem {\$\+Password}, \hyperpage{287}
+    \subitem {\$\+Request}, \hyperpage{287}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{284}
+    \subitem {C\+H\+A\+N\+G\+E\+\_\+\+A\+G\+G\+R\+E\+G\+A\+TE}, 
+		\hyperpage{287}
+    \subitem {C\+H\+A\+N\+G\+E\+\_\+\+M\+E\+S\+\_\+\+C\+O\+LS}, 
+		\hyperpage{288}
+    \subitem {C\+H\+A\+N\+G\+E\+\_\+\+P\+A\+S\+S\+W\+O\+RD}, 
+		\hyperpage{288}
+    \subitem {C\+H\+A\+N\+G\+E\+\_\+\+R\+E\+L\+\_\+\+C\+O\+LS}, 
+		\hyperpage{288}
+    \subitem {C\+H\+A\+N\+G\+E\+\_\+\+R\+E\+Q\+U\+E\+ST}, 
+		\hyperpage{288}
+    \subitem {C\+H\+A\+N\+G\+E\+\_\+\+S\+U\+B\+M\+IT}, \hyperpage{288}
+    \subitem {handle}, \hyperpage{285}
+    \subitem {show}, \hyperpage{286}
+  \item {Page\+Coll\+Aggregate}, \hyperpage{289}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{290}
+  \item {Page\+Coll\+Data}, \hyperpage{291}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{292}
+  \item {Page\+Coll\+Parse}, \hyperpage{292}
+    \subitem {\$\+File\+To\+Parse}, \hyperpage{296}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{293}
+    \subitem {handle}, \hyperpage{294}
+    \subitem {P\+A\+R\+S\+E\+R\+\_\+\+F\+I\+LE}, \hyperpage{296}
+    \subitem {P\+A\+R\+S\+E\+R\+\_\+\+S\+U\+B\+M\+IT}, \hyperpage{296}
+    \subitem {parse}, \hyperpage{295}
+    \subitem {show}, \hyperpage{295}
+  \item {Page\+Gest\+Aggregate}, \hyperpage{297}
+    \subitem {\$\+Password}, \hyperpage{300}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{298}
+    \subitem {G\+A\+G\+\_\+\+A\+G\+G\+R\+E\+G\+A\+TE}, \hyperpage{300}
+    \subitem {G\+A\+G\+\_\+\+P\+A\+S\+S\+W\+O\+RD}, \hyperpage{300}
+    \subitem {G\+A\+G\+\_\+\+S\+U\+B\+M\+IT}, \hyperpage{300}
+    \subitem {handle}, \hyperpage{298}
+    \subitem {show}, \hyperpage{299}
+  \item {Page\+Hn\+S\+Data}, \hyperpage{301}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{302}
+  \item {Page\+Hn\+S\+Parse}, \hyperpage{303}
+    \subitem {\$\+File\+To\+Parse}, \hyperpage{306}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{304}
+    \subitem {handle}, \hyperpage{304}
+    \subitem {P\+A\+R\+S\+E\+R\+\_\+\+F\+I\+LE}, \hyperpage{306}
+    \subitem {P\+A\+R\+S\+E\+R\+\_\+\+S\+U\+B\+M\+IT}, \hyperpage{307}
+    \subitem {parse}, \hyperpage{305}
+    \subitem {show}, \hyperpage{306}
+  \item {Page\+Maintenance}, \hyperpage{307}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{308}
+    \subitem {P\+A\+G\+E\+\_\+\+D\+E\+F\+A\+U\+LT}, \hyperpage{309}
+    \subitem {P\+A\+G\+E\+\_\+\+L\+I\+ST}, \hyperpage{309}
+    \subitem {P\+A\+G\+E\+\_\+\+S\+E\+L\+E\+C\+T\+OR}, \hyperpage{309}
+    \subitem {show\+Page\+Footer}, \hyperpage{308}
+    \subitem {show\+Page\+Header}, \hyperpage{308}
+  \item {Page\+Match3}, \hyperpage{310}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{311}
+  \item {Page\+New\+Aggregate}, \hyperpage{311}
+    \subitem {\$\+Aggregate}, \hyperpage{315}
+    \subitem {\$\+Games}, \hyperpage{315}
+    \subitem {\$\+Password}, \hyperpage{315}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{313}
+    \subitem {handle}, \hyperpage{313}
+    \subitem {N\+A\+G\+\_\+\+A\+G\+G\+R\+E\+G\+A\+TE}, \hyperpage{315}
+    \subitem {N\+A\+G\+\_\+\+DB}, \hyperpage{315}
+    \subitem {N\+A\+G\+\_\+\+M\+E\+S\+\_\+\+C\+O\+LS}, \hyperpage{315}
+    \subitem {N\+A\+G\+\_\+\+P\+A\+S\+S\+W\+O\+RD}, \hyperpage{316}
+    \subitem {N\+A\+G\+\_\+\+R\+E\+L\+\_\+\+C\+O\+LS}, \hyperpage{316}
+    \subitem {N\+A\+G\+\_\+\+S\+U\+B\+M\+IT}, \hyperpage{316}
+    \subitem {N\+A\+G\+\_\+\+T\+A\+B\+LE}, \hyperpage{316}
+    \subitem {show}, \hyperpage{314}
+  \item {Page\+Run\+Analysis}, \hyperpage{317}
+    \subitem {\$\+Aggregate}, \hyperpage{322}
+    \subitem {\$\+Aggregate\+List}, \hyperpage{323}
+    \subitem {\$\+Aggregate\+List\+Obj}, \hyperpage{323}
+    \subitem {\$\+Aggregate\+Obj}, \hyperpage{323}
+    \subitem {\$\+Co\+Sky1}, \hyperpage{323}
+    \subitem {\$\+Co\+Sky2}, \hyperpage{323}
+    \subitem {\$\+Max}, \hyperpage{324}
+    \subitem {\$\+Min}, \hyperpage{324}
+    \subitem {\$\+Password}, \hyperpage{324}
+    \subitem {\$\+Show\+Accords}, \hyperpage{324}
+    \subitem {\$\+Show\+Co\+Sky}, \hyperpage{324}
+    \subitem {\$\+Show\+Data\+Cube}, \hyperpage{325}
+    \subitem {\$\+Show\+Espace}, \hyperpage{325}
+    \subitem {\$\+Show\+Fusion}, \hyperpage{325}
+    \subitem {\$\+Show\+Fusion\+Abregee}, \hyperpage{325}
+    \subitem {\$\+Show\+Input}, \hyperpage{325}
+    \subitem {\$\+Show\+Sky\+Cube}, \hyperpage{325}
+    \subitem {\$\+Show\+Taged\+Cube}, \hyperpage{326}
+    \subitem {\$\+Test}, \hyperpage{326}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{319}
+    \subitem {handle}, \hyperpage{320}
+    \subitem {R\+A\+N\+\_\+\+A\+G\+G\+R\+E\+G\+A\+TE}, \hyperpage{326}
+    \subitem {R\+A\+N\+\_\+\+A\+L\+GO}, \hyperpage{326}
+    \subitem {R\+A\+N\+\_\+\+M\+AX}, \hyperpage{326}
+    \subitem {R\+A\+N\+\_\+\+M\+I\+N1}, \hyperpage{327}
+    \subitem {R\+A\+N\+\_\+\+M\+I\+N2}, \hyperpage{327}
+    \subitem {R\+A\+N\+\_\+\+M\+IN}, \hyperpage{326}
+    \subitem {R\+A\+N\+\_\+\+P\+A\+S\+S\+W\+O\+RD}, \hyperpage{327}
+    \subitem {R\+A\+N\+\_\+\+S\+U\+B\+M\+IT}, \hyperpage{327}
+    \subitem {S\+H\+O\+W\+\_\+\+A\+C\+C\+O\+R\+DS}, \hyperpage{327}
+    \subitem {S\+H\+O\+W\+\_\+\+C\+O\+S\+KY}, \hyperpage{327}
+    \subitem {S\+H\+O\+W\+\_\+\+D\+A\+T\+A\+C\+U\+BE}, \hyperpage{328}
+    \subitem {S\+H\+O\+W\+\_\+\+E\+S\+P\+A\+CE}, \hyperpage{328}
+    \subitem {S\+H\+O\+W\+\_\+\+F\+U\+S\+\_\+\+A\+B\+R\+E\+GE}, 
+		\hyperpage{328}
+    \subitem {S\+H\+O\+W\+\_\+\+F\+U\+S\+I\+ON}, \hyperpage{328}
+    \subitem {S\+H\+O\+W\+\_\+\+I\+N\+P\+UT}, \hyperpage{328}
+    \subitem {S\+H\+O\+W\+\_\+\+S\+K\+Y\+C\+U\+BE}, \hyperpage{328}
+    \subitem {S\+H\+O\+W\+\_\+\+T\+A\+G\+E\+D\+\_\+\+C\+U\+BE}, 
+		\hyperpage{329}
+    \subitem {S\+H\+O\+W\+\_\+\+T\+E\+ST}, \hyperpage{329}
+    \subitem {show}, \hyperpage{321}
+  \item {Page\+Run\+Sky\+Cube\+Analysis}, \hyperpage{329}
+    \subitem {\$\+Aggregate}, \hyperpage{332}
+    \subitem {\$\+Aggregate\+List}, \hyperpage{332}
+    \subitem {\$\+Aggregate\+List\+Obj}, \hyperpage{333}
+    \subitem {\$\+Aggregate\+Obj}, \hyperpage{333}
+    \subitem {\$\+Password}, \hyperpage{333}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{331}
+    \subitem {handle}, \hyperpage{331}
+    \subitem {R\+A\+N\+\_\+\+A\+G\+G\+R\+E\+G\+A\+TE}, \hyperpage{333}
+    \subitem {R\+A\+N\+\_\+\+A\+L\+GO}, \hyperpage{333}
+    \subitem {R\+A\+N\+\_\+\+M\+I\+N1}, \hyperpage{333}
+    \subitem {R\+A\+N\+\_\+\+M\+I\+N2}, \hyperpage{334}
+    \subitem {R\+A\+N\+\_\+\+P\+A\+S\+S\+W\+O\+RD}, \hyperpage{334}
+    \subitem {R\+A\+N\+\_\+\+S\+U\+B\+M\+IT}, \hyperpage{334}
+    \subitem {show}, \hyperpage{332}
+  \item {Page\+Show\+Aggregate}, \hyperpage{335}
+    \subitem {\$\+Aggregate}, \hyperpage{338}
+    \subitem {\$\+Aggregate\+List}, \hyperpage{338}
+    \subitem {\$\+Aggregate\+List\+Obj}, \hyperpage{338}
+    \subitem {\$\+Aggregate\+Obj}, \hyperpage{338}
+    \subitem {\$\+Password}, \hyperpage{339}
+    \subitem {\$\+Result}, \hyperpage{339}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{336}
+    \subitem {handle}, \hyperpage{337}
+    \subitem {S\+H\+O\+W\+\_\+\+A\+G\+G\+R\+E\+G\+A\+TE}, 
+		\hyperpage{339}
+    \subitem {S\+H\+O\+W\+\_\+\+P\+A\+S\+S\+W\+O\+RD}, \hyperpage{339}
+    \subitem {S\+H\+O\+W\+\_\+\+S\+U\+B\+M\+IT}, \hyperpage{339}
+    \subitem {show}, \hyperpage{337}
+  \item {Page\+Show\+Sky\+Cube}, \hyperpage{340}
+    \subitem {\$\+Aggregate}, \hyperpage{344}
+    \subitem {\$\+Aggregate\+List}, \hyperpage{344}
+    \subitem {\$\+Aggregate\+List\+Obj}, \hyperpage{344}
+    \subitem {\$\+Aggregate\+Obj}, \hyperpage{344}
+    \subitem {\$\+Password}, \hyperpage{344}
+    \subitem {\$\+Show\+Accords}, \hyperpage{344}
+    \subitem {\$\+Show\+Data\+Cube}, \hyperpage{345}
+    \subitem {\$\+Show\+Espace}, \hyperpage{345}
+    \subitem {\$\+Show\+Input}, \hyperpage{345}
+    \subitem {\$\+Show\+Sky\+Cube}, \hyperpage{345}
+    \subitem {\$\+Show\+Taged\+Cube}, \hyperpage{345}
+    \subitem {\$\+Sky\+Cube}, \hyperpage{345}
+    \subitem {\$\+Test}, \hyperpage{346}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{341}
+    \subitem {handle}, \hyperpage{342}
+    \subitem {S\+H\+O\+W\+\_\+\+A\+C\+C\+O\+R\+DS}, \hyperpage{346}
+    \subitem {S\+H\+O\+W\+\_\+\+A\+G\+G\+R\+E\+G\+A\+TE}, 
+		\hyperpage{346}
+    \subitem {S\+H\+O\+W\+\_\+\+D\+A\+T\+A\+C\+U\+BE}, \hyperpage{346}
+    \subitem {S\+H\+O\+W\+\_\+\+E\+S\+P\+A\+CE}, \hyperpage{346}
+    \subitem {S\+H\+O\+W\+\_\+\+I\+N\+P\+UT}, \hyperpage{346}
+    \subitem {S\+H\+O\+W\+\_\+\+P\+A\+S\+S\+W\+O\+RD}, \hyperpage{347}
+    \subitem {S\+H\+O\+W\+\_\+\+S\+K\+Y\+C\+U\+BE}, \hyperpage{347}
+    \subitem {S\+H\+O\+W\+\_\+\+S\+U\+B\+M\+IT}, \hyperpage{347}
+    \subitem {S\+H\+O\+W\+\_\+\+T\+A\+G\+E\+D\+\_\+\+C\+U\+BE}, 
+		\hyperpage{347}
+    \subitem {S\+H\+O\+W\+\_\+\+T\+E\+ST}, \hyperpage{347}
+    \subitem {show}, \hyperpage{343}
+  \item {Page\+Test}, \hyperpage{348}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{349}
+    \subitem {compare\+Res}, \hyperpage{349}
+    \subitem {handle}, \hyperpage{350}
+    \subitem {test\+Case}, \hyperpage{350}
+    \subitem {test\+Export\+C\+SV}, \hyperpage{351}
+    \subitem {test\+Strings\+Convert\+Case}, \hyperpage{351}
+  \item {Page\+Test\+Accords}, \hyperpage{352}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{353}
+    \subitem {handle}, \hyperpage{353}
+  \item {Page\+Test\+Co\+Sky}, \hyperpage{355}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{356}
+    \subitem {handle}, \hyperpage{356}
+  \item {Page\+Test\+Sky\+Cube}, \hyperpage{357}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{358}
+    \subitem {handle}, \hyperpage{359}
+  \item {Page\+Test\+Sky\+Cube\+Emergent}, \hyperpage{360}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{361}
+    \subitem {handle}, \hyperpage{362}
+  \item {parse}
+    \subitem {Coll\+Parser}, \hyperpage{73}
+    \subitem {Hn\+S\+Hero\+Parser}, \hyperpage{196}
+    \subitem {Hn\+S\+Parser}, \hyperpage{216}
+    \subitem {Page\+Coll\+Parse}, \hyperpage{295}
+    \subitem {Page\+Hn\+S\+Parse}, \hyperpage{305}
+  \item {parse\+Act}
+    \subitem {Hn\+S\+Hero\+Parser}, \hyperpage{197}
+  \item {parse\+Active}
+    \subitem {Hn\+S\+Hero\+Parser}, \hyperpage{197}
+  \item {parse\+Attributes}
+    \subitem {Hn\+S\+Hero\+Parser}, \hyperpage{197}
+  \item {parse\+AttrP}
+    \subitem {Hn\+S\+Hero\+Parser}, \hyperpage{197}
+  \item {parse\+AttrR}
+    \subitem {Hn\+S\+Hero\+Parser}, \hyperpage{198}
+  \item {parse\+AttrS}
+    \subitem {Hn\+S\+Hero\+Parser}, \hyperpage{199}
+  \item {parse\+Hero}
+    \subitem {Hn\+S\+Hero\+Parser}, \hyperpage{200}
+    \subitem {Hn\+S\+Parser}, \hyperpage{217}
+  \item {parse\+Hero\+Data}
+    \subitem {Hn\+S\+Parser}, \hyperpage{217}
+  \item {Parse\+Hn\+S\+Hero.\+php}
+    \subitem {\$\+File}, \hyperpage{464}
+    \subitem {\$\+Filename\+Items}, \hyperpage{465}
+    \subitem {\$\+Parser}, \hyperpage{465}
+    \subitem {\$\+Text\+To\+Parse}, \hyperpage{465}
+  \item {parse\+Item}
+    \subitem {Hn\+S\+Hero\+Parser}, \hyperpage{200}
+  \item {parse\+Items}
+    \subitem {Hn\+S\+Hero\+Parser}, \hyperpage{200}
+  \item {parse\+Params}
+    \subitem {Hn\+S\+Hero\+Parser}, \hyperpage{201}
+  \item {parse\+Pass}
+    \subitem {Hn\+S\+Hero\+Parser}, \hyperpage{201}
+  \item {parse\+Passive}
+    \subitem {Hn\+S\+Hero\+Parser}, \hyperpage{201}
+  \item {parse\+User}
+    \subitem {Hn\+S\+Hero\+Parser}, \hyperpage{202}
+  \item {parse\+User\+Details}
+    \subitem {Hn\+S\+Hero\+Parser}, \hyperpage{202}
+  \item {parser}
+    \subitem {Replay\+Parser}, \hyperpage{377}
+  \item {player}
+    \subitem {Replay\+Parser}, \hyperpage{378}
+  \item {player\+Preg}
+    \subitem {Coll\+Parser}, \hyperpage{74}
+    \subitem {Replay\+Parser}, \hyperpage{378}
+  \item {porte}
+    \subitem {Hns\+Item}, \hyperpage{208}
+  \item {prepare}
+    \subitem {Analysis}, \hyperpage{43}
+    \subitem {Co\+Sky}, \hyperpage{107}
+    \subitem {I\+D\+EA}, \hyperpage{235}
+  \item {prepare\+Measures}
+    \subitem {I\+D\+EA}, \hyperpage{235}
+  \item {prepare\+Relations}
+    \subitem {I\+D\+EA}, \hyperpage{236}
+  \item {prepare\+Tuple\+File}
+    \subitem {I\+D\+EA}, \hyperpage{236}
+  \item {process\+Coll\+Entry.\+php}
+    \subitem {\$\+File}, \hyperpage{466}
+    \subitem {\$\+Parser}, \hyperpage{466}
+    \subitem {\$\+Result}, \hyperpage{466}
+    \subitem {\$\+Text\+To\+Parse}, \hyperpage{466}
+    \subitem {catch}, \hyperpage{466}
+    \subitem {try}, \hyperpage{467}
+  \item {process\+Hn\+S.\+php}
+    \subitem {\$\+Children}, \hyperpage{467}
+    \subitem {\$\+Data}, \hyperpage{467}
+    \subitem {\$\+Pool\+Size}, \hyperpage{468}
+    \subitem {\$\+Process\+Folder\+Scr}, \hyperpage{468}
+  \item {process\+Hn\+S\+File.\+php}
+    \subitem {\$\+File}, \hyperpage{469}
+    \subitem {move\+File}, \hyperpage{469}
+  \item {process\+Hn\+S\+Folder.\+php}
+    \subitem {\$\+Folder}, \hyperpage{469}
+    \subitem {\$\+Process\+File\+Scr}, \hyperpage{470}
+
+  \indexspace
+
+  \item {R\+A\+N\+\_\+\+A\+G\+G\+R\+E\+G\+A\+TE}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{326}
+    \subitem {Page\+Run\+Sky\+Cube\+Analysis}, \hyperpage{333}
+  \item {R\+A\+N\+\_\+\+A\+L\+GO}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{326}
+    \subitem {Page\+Run\+Sky\+Cube\+Analysis}, \hyperpage{333}
+  \item {R\+A\+N\+\_\+\+M\+AX}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{326}
+  \item {R\+A\+N\+\_\+\+M\+I\+N1}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{327}
+    \subitem {Page\+Run\+Sky\+Cube\+Analysis}, \hyperpage{333}
+  \item {R\+A\+N\+\_\+\+M\+I\+N2}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{327}
+    \subitem {Page\+Run\+Sky\+Cube\+Analysis}, \hyperpage{334}
+  \item {R\+A\+N\+\_\+\+M\+IN}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{326}
+  \item {R\+A\+N\+\_\+\+P\+A\+S\+S\+W\+O\+RD}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{327}
+    \subitem {Page\+Run\+Sky\+Cube\+Analysis}, \hyperpage{334}
+  \item {R\+A\+N\+\_\+\+S\+U\+B\+M\+IT}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{327}
+    \subitem {Page\+Run\+Sky\+Cube\+Analysis}, \hyperpage{334}
+  \item {R\+A\+NK}
+    \subitem {Hero}, \hyperpage{181}
+  \item {R\+A\+R\+E\+TE}
+    \subitem {Coll\+Team}, \hyperpage{99}
+  \item {R\+A\+T\+I\+NG}
+    \subitem {Coll\+Player}, \hyperpage{84}
+  \item {R\+E\+G\+EN}
+    \subitem {Hero}, \hyperpage{181}
+  \item {R\+E\+L\+\_\+\+C\+O\+LS}
+    \subitem {Analysis}, \hyperpage{54}
+  \item {R\+E\+P\+L\+A\+Y\+S\+\_\+\+P\+A\+TH}
+    \subitem {Replay\+Parser}, \hyperpage{387}
+  \item {R\+E\+S1}
+    \subitem {Hero}, \hyperpage{181}
+  \item {R\+E\+S2}
+    \subitem {Hero}, \hyperpage{182}
+  \item {R\+E\+S\+U\+LT}
+    \subitem {Coll\+Game}, \hyperpage{66}
+  \item {R\+I\+FT}
+    \subitem {Hero}, \hyperpage{182}
+  \item {R\+O\+B\+U\+S\+T\+E\+S\+SE}
+    \subitem {Hero}, \hyperpage{182}
+  \item {R\+O\+W\+\_\+\+ID}
+    \subitem {S\+K\+Display}, \hyperpage{403}
+  \item {R\+U\+L\+ES}
+    \subitem {Coll\+Game}, \hyperpage{66}
+  \item {R\+U\+NE}
+    \subitem {Hns\+Comp}, \hyperpage{192}
+  \item {Rated}, \hyperpage{363}
+    \subitem {\$\+Message}, \hyperpage{366}
+    \subitem {\$\+Rated}, \hyperpage{366}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{363}
+    \subitem {\+\_\+\+\_\+to\+String}, \hyperpage{364}
+    \subitem {create}, \hyperpage{364}
+    \subitem {get\+Message}, \hyperpage{364}
+    \subitem {get\+Rated}, \hyperpage{365}
+    \subitem {set\+Message}, \hyperpage{365}
+    \subitem {set\+Rated}, \hyperpage{365}
+  \item {rated}
+    \subitem {Replay\+Parser}, \hyperpage{378}
+  \item {rated\+Preg}
+    \subitem {Coll\+Parser}, \hyperpage{74}
+    \subitem {Replay\+Parser}, \hyperpage{379}
+  \item {Replay\+Parser}, \hyperpage{367}
+    \subitem {\$current\+Pokemon1}, \hyperpage{384}
+    \subitem {\$current\+Pokemon2}, \hyperpage{384}
+    \subitem {\$current\+Turn}, \hyperpage{385}
+    \subitem {\$filename}, \hyperpage{385}
+    \subitem {\$game\+Type}, \hyperpage{385}
+    \subitem {\$gen}, \hyperpage{385}
+    \subitem {\$head}, \hyperpage{385}
+    \subitem {\$player1}, \hyperpage{385}
+    \subitem {\$player2}, \hyperpage{386}
+    \subitem {\$rated}, \hyperpage{386}
+    \subitem {\$rules}, \hyperpage{386}
+    \subitem {\$team1}, \hyperpage{386}
+    \subitem {\$team2}, \hyperpage{386}
+    \subitem {\$team\+Preview}, \hyperpage{386}
+    \subitem {\$text}, \hyperpage{387}
+    \subitem {\$tie}, \hyperpage{387}
+    \subitem {\$turns}, \hyperpage{387}
+    \subitem {\$winner}, \hyperpage{387}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{368}
+    \subitem {cleaner}, \hyperpage{369}
+    \subitem {effect}, \hyperpage{369}
+    \subitem {game\+Type}, \hyperpage{369}
+    \subitem {game\+Type\+Preg}, \hyperpage{369}
+    \subitem {gen}, \hyperpage{370}
+    \subitem {gen\+Preg}, \hyperpage{370}
+    \subitem {get\+Page}, \hyperpage{371}
+    \subitem {match\+Func0}, \hyperpage{371}
+    \subitem {match\+Func1}, \hyperpage{372}
+    \subitem {match\+Func2}, \hyperpage{372}
+    \subitem {match\+Func3}, \hyperpage{373}
+    \subitem {match\+Func4}, \hyperpage{373}
+    \subitem {match\+Func5}, \hyperpage{374}
+    \subitem {match\+Func6}, \hyperpage{374}
+    \subitem {move}, \hyperpage{374}
+    \subitem {move1}, \hyperpage{375}
+    \subitem {move1\+Preg}, \hyperpage{375}
+    \subitem {move2}, \hyperpage{376}
+    \subitem {move2\+Preg}, \hyperpage{376}
+    \subitem {parser}, \hyperpage{377}
+    \subitem {player}, \hyperpage{378}
+    \subitem {player\+Preg}, \hyperpage{378}
+    \subitem {R\+E\+P\+L\+A\+Y\+S\+\_\+\+P\+A\+TH}, \hyperpage{387}
+    \subitem {rated}, \hyperpage{378}
+    \subitem {rated\+Preg}, \hyperpage{379}
+    \subitem {rule}, \hyperpage{379}
+    \subitem {rule\+Preg}, \hyperpage{379}
+    \subitem {team\+Preview\+Pokemon}, \hyperpage{380}
+    \subitem {team\+Preview\+Pokemon\+Preg}, \hyperpage{380}
+    \subitem {team\+Size}, \hyperpage{380}
+    \subitem {team\+Size\+Preg}, \hyperpage{381}
+    \subitem {tie}, \hyperpage{381}
+    \subitem {tie\+Preg}, \hyperpage{381}
+    \subitem {tier}, \hyperpage{382}
+    \subitem {tier\+Preg}, \hyperpage{382}
+    \subitem {turn}, \hyperpage{383}
+    \subitem {turn\+Preg}, \hyperpage{383}
+    \subitem {winner}, \hyperpage{383}
+    \subitem {winner\+Preg}, \hyperpage{384}
+  \item {rule}
+    \subitem {Replay\+Parser}, \hyperpage{379}
+  \item {rule\+Preg}
+    \subitem {Coll\+Parser}, \hyperpage{74}
+    \subitem {Replay\+Parser}, \hyperpage{379}
+  \item {run}
+    \subitem {Analysis}, \hyperpage{44}
+    \subitem {Co\+Sky}, \hyperpage{107}
+    \subitem {I\+D\+EA}, \hyperpage{237}
+  \item {run\+Cuboide}
+    \subitem {Analysis}, \hyperpage{45}
+  \item {run\+Sky\+Cube}
+    \subitem {Analysis}, \hyperpage{45}
+
+  \indexspace
+
+  \item {S\+C\+O\+R\+E\+\_\+\+T\+O\+T\+AL}
+    \subitem {M3\+Match}, \hyperpage{261}
+  \item {S\+C\+O\+RE}
+    \subitem {M3\+Match}, \hyperpage{261}
+  \item {S\+C\+R\+I\+P\+T\+\_\+\+H\+O\+ME}
+    \subitem {application/src/define.\+php}, \hyperpage{479}
+  \item {S\+E\+R\+V\+ER}
+    \subitem {Hero}, \hyperpage{182}
+  \item {S\+H\+A\+PE}
+    \subitem {M3\+Match}, \hyperpage{261}
+  \item {S\+H\+O\+W\+\_\+\+A\+C\+C\+O\+R\+DS}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{327}
+    \subitem {Page\+Show\+Sky\+Cube}, \hyperpage{346}
+  \item {S\+H\+O\+W\+\_\+\+A\+G\+G\+R\+E\+G\+A\+TE}
+    \subitem {Page\+Show\+Aggregate}, \hyperpage{339}
+    \subitem {Page\+Show\+Sky\+Cube}, \hyperpage{346}
+  \item {S\+H\+O\+W\+\_\+\+C\+O\+S\+KY}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{327}
+  \item {S\+H\+O\+W\+\_\+\+D\+A\+T\+A\+\_\+\+C\+O\+M\+P\+U\+T\+ED}
+    \subitem {S\+K\+Display}, \hyperpage{403}
+  \item {S\+H\+O\+W\+\_\+\+D\+A\+T\+A\+\_\+\+F\+I\+L\+T\+E\+R\+ED}
+    \subitem {S\+K\+Display}, \hyperpage{403}
+  \item {S\+H\+O\+W\+\_\+\+D\+A\+T\+A\+\_\+\+R\+AW}
+    \subitem {S\+K\+Display}, \hyperpage{403}
+  \item {S\+H\+O\+W\+\_\+\+D\+A\+T\+A\+C\+U\+BE}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{328}
+    \subitem {Page\+Show\+Sky\+Cube}, \hyperpage{346}
+  \item {S\+H\+O\+W\+\_\+\+E\+Q\+U\+I\+V\+\_\+\+C\+L\+A\+S\+S\+\_\+\+F\+I\+L\+T\+E\+R\+ED}
+    \subitem {S\+K\+Display}, \hyperpage{404}
+  \item {S\+H\+O\+W\+\_\+\+E\+Q\+U\+I\+V\+\_\+\+C\+L\+A\+SS}
+    \subitem {S\+K\+Display}, \hyperpage{404}
+  \item {S\+H\+O\+W\+\_\+\+E\+S\+P\+A\+CE}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{328}
+    \subitem {Page\+Show\+Sky\+Cube}, \hyperpage{346}
+  \item {S\+H\+O\+W\+\_\+\+F\+I\+L\+T\+E\+R\+ED}
+    \subitem {S\+K\+Display}, \hyperpage{404}
+  \item {S\+H\+O\+W\+\_\+\+F\+U\+S\+\_\+\+A\+B\+R\+E\+GE}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{328}
+  \item {S\+H\+O\+W\+\_\+\+F\+U\+S\+I\+ON}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{328}
+  \item {S\+H\+O\+W\+\_\+\+I\+N\+P\+UT}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{328}
+    \subitem {Page\+Show\+Sky\+Cube}, \hyperpage{346}
+  \item {S\+H\+O\+W\+\_\+\+P\+A\+S\+S\+W\+O\+RD}
+    \subitem {Page\+Show\+Aggregate}, \hyperpage{339}
+    \subitem {Page\+Show\+Sky\+Cube}, \hyperpage{347}
+  \item {S\+H\+O\+W\+\_\+\+R\+E\+M\+O\+V\+ED}
+    \subitem {S\+K\+Display}, \hyperpage{404}
+  \item {S\+H\+O\+W\+\_\+\+S\+K\+Y\+C\+U\+BE}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{328}
+    \subitem {Page\+Show\+Sky\+Cube}, \hyperpage{347}
+  \item {S\+H\+O\+W\+\_\+\+S\+U\+B\+M\+IT}
+    \subitem {Page\+Show\+Aggregate}, \hyperpage{339}
+    \subitem {Page\+Show\+Sky\+Cube}, \hyperpage{347}
+  \item {S\+H\+O\+W\+\_\+\+T\+A\+G\+E\+D\+\_\+\+C\+U\+BE}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{329}
+    \subitem {Page\+Show\+Sky\+Cube}, \hyperpage{347}
+  \item {S\+H\+O\+W\+\_\+\+T\+E\+ST}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{329}
+    \subitem {Page\+Show\+Sky\+Cube}, \hyperpage{347}
+  \item {S\+H\+O\+W\+\_\+\+V\+A\+L\+I\+D\+I\+TY}
+    \subitem {S\+K\+Display}, \hyperpage{405}
+  \item {S\+K\+Display}, \hyperpage{388}
+    \subitem {\$\+Col\+I\+Ds}, \hyperpage{401}
+    \subitem {\$\+Cuboides}, \hyperpage{402}
+    \subitem {\$\+Data\+Set}, \hyperpage{402}
+    \subitem {\$\+Is\+Valid}, \hyperpage{402}
+    \subitem {\$\+Min\+Max}, \hyperpage{402}
+    \subitem {\$\+Row\+Headers}, \hyperpage{402}
+    \subitem {\+\_\+\+\_\+to\+String}, \hyperpage{389}
+    \subitem {compute\+Data\+Set}, \hyperpage{389}
+    \subitem {generate\+Cuboide\+List}, \hyperpage{390}
+    \subitem {generate\+Cuboide\+List\+Lvl}, \hyperpage{390}
+    \subitem {get\+Col\+I\+Ds}, \hyperpage{391}
+    \subitem {get\+Data\+Set}, \hyperpage{391}
+    \subitem {get\+Row\+Headers}, \hyperpage{391}
+    \subitem {html}, \hyperpage{392}
+    \subitem {html\+Co\+Sky}, \hyperpage{392}
+    \subitem {html\+Cuboide}, \hyperpage{393}
+    \subitem {html\+Cuboide\+Emergent}, \hyperpage{393}
+    \subitem {html\+Cuboide\+Param}, \hyperpage{394}
+    \subitem {html\+Emergence}, \hyperpage{394}
+    \subitem {html\+Equivalence\+Classes}, \hyperpage{395}
+    \subitem {html\+Input\+Data}, \hyperpage{395}
+    \subitem {html\+Multidimensional\+Space}, \hyperpage{396}
+    \subitem {html\+Sky\+Cube}, \hyperpage{397}
+    \subitem {html\+Sky\+Cube\+Emergent}, \hyperpage{397}
+    \subitem {html\+Sky\+Cube\+Fusion}, \hyperpage{398}
+    \subitem {html\+Sky\+Cube\+Param}, \hyperpage{398}
+    \subitem {latex}, \hyperpage{399}
+    \subitem {latex\+Cuboide}, \hyperpage{399}
+    \subitem {latex\+Cuboide\+Emergent}, \hyperpage{400}
+    \subitem {latex\+Sky\+Cube}, \hyperpage{400}
+    \subitem {latex\+Sky\+Cube\+Emergent}, \hyperpage{400}
+    \subitem {N\+O\+\_\+\+F\+L\+AG}, \hyperpage{403}
+    \subitem {R\+O\+W\+\_\+\+ID}, \hyperpage{403}
+    \subitem {S\+H\+O\+W\+\_\+\+D\+A\+T\+A\+\_\+\+C\+O\+M\+P\+U\+T\+ED}, 
+		\hyperpage{403}
+    \subitem {S\+H\+O\+W\+\_\+\+D\+A\+T\+A\+\_\+\+F\+I\+L\+T\+E\+R\+ED}, 
+		\hyperpage{403}
+    \subitem {S\+H\+O\+W\+\_\+\+D\+A\+T\+A\+\_\+\+R\+AW}, 
+		\hyperpage{403}
+    \subitem {S\+H\+O\+W\+\_\+\+E\+Q\+U\+I\+V\+\_\+\+C\+L\+A\+S\+S\+\_\+\+F\+I\+L\+T\+E\+R\+ED}, 
+		\hyperpage{404}
+    \subitem {S\+H\+O\+W\+\_\+\+E\+Q\+U\+I\+V\+\_\+\+C\+L\+A\+SS}, 
+		\hyperpage{404}
+    \subitem {S\+H\+O\+W\+\_\+\+F\+I\+L\+T\+E\+R\+ED}, \hyperpage{404}
+    \subitem {S\+H\+O\+W\+\_\+\+R\+E\+M\+O\+V\+ED}, \hyperpage{404}
+    \subitem {S\+H\+O\+W\+\_\+\+V\+A\+L\+I\+D\+I\+TY}, \hyperpage{405}
+    \subitem {text}, \hyperpage{401}
+    \subitem {to\+La\+Tex}, \hyperpage{401}
+  \item {S\+K\+Y\+C\+U\+BE}
+    \subitem {Sky\+Cube\+Emergent}, \hyperpage{429}
+  \item {S\+T\+A\+T\+S\+\_\+\+C\+O\+LS}
+    \subitem {application/src/define.\+php}, \hyperpage{480}
+  \item {S\+T\+A\+T\+S\+\_\+\+D\+A\+TA}
+    \subitem {application/src/define.\+php}, \hyperpage{480}
+  \item {S\+T\+A\+T\+S\+\_\+\+DB}
+    \subitem {application/src/define.\+php}, \hyperpage{480}
+  \item {S\+T\+A\+T\+S\+\_\+\+F\+I\+LE}
+    \subitem {application/src/define.\+php}, \hyperpage{480}
+  \item {S\+T\+A\+T\+S\+\_\+\+G\+E\+T\+\_\+\+S\+C\+R\+I\+PT}
+    \subitem {application/src/define.\+php}, \hyperpage{480}
+  \item {S\+T\+A\+T\+S\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR}
+    \subitem {application/src/define.\+php}, \hyperpage{481}
+  \item {save}
+    \subitem {Coll\+Game}, \hyperpage{58}
+    \subitem {Coll\+Player}, \hyperpage{81}
+    \subitem {Coll\+Team}, \hyperpage{93}
+    \subitem {Hero}, \hyperpage{157}
+    \subitem {Hn\+S\+Player}, \hyperpage{223}
+    \subitem {Hns\+Comp}, \hyperpage{188}
+    \subitem {Hns\+Item}, \hyperpage{208}
+    \subitem {M3\+Game}, \hyperpage{246}
+    \subitem {M3\+Match}, \hyperpage{257}
+    \subitem {M3\+Stroke}, \hyperpage{268}
+  \item {save\+Comps}
+    \subitem {Hero}, \hyperpage{157}
+  \item {save\+Game}
+    \subitem {Coll\+Game}, \hyperpage{58}
+    \subitem {M3\+Game}, \hyperpage{246}
+  \item {save\+Items}
+    \subitem {Hero}, \hyperpage{158}
+  \item {save\+Player}
+    \subitem {M3\+Game}, \hyperpage{247}
+  \item {save\+Player\+Engaged}
+    \subitem {Coll\+Game}, \hyperpage{59}
+  \item {save\+Pokemon}
+    \subitem {Coll\+Team}, \hyperpage{94}
+  \item {serve}
+    \subitem {W\+S\+Match3}, \hyperpage{455}
+  \item {set\+Affix}
+    \subitem {Hns\+Item}, \hyperpage{209}
+  \item {set\+Algorithm}
+    \subitem {Analysis}, \hyperpage{46}
+    \subitem {I\+D\+EA}, \hyperpage{237}
+  \item {set\+Attr}
+    \subitem {Hero}, \hyperpage{158}
+  \item {set\+Avatar}
+    \subitem {Coll\+Player}, \hyperpage{81}
+  \item {set\+Clan}
+    \subitem {Hn\+S\+Player}, \hyperpage{223}
+  \item {set\+Class}
+    \subitem {Hero}, \hyperpage{160}
+  \item {set\+D\+B\+Class}
+    \subitem {Analysis}, \hyperpage{46}
+  \item {set\+D\+B\+Table}
+    \subitem {Analysis}, \hyperpage{47}
+  \item {set\+Degats}
+    \subitem {Hero}, \hyperpage{160}
+  \item {set\+Dex}
+    \subitem {Hero}, \hyperpage{161}
+  \item {set\+Emergence\+Ratio}
+    \subitem {Sky\+Cube\+Emergent}, \hyperpage{427}
+  \item {set\+For}
+    \subitem {Hero}, \hyperpage{161}
+  \item {set\+Game\+Type}
+    \subitem {Game\+Type}, \hyperpage{142}
+  \item {set\+Gen}
+    \subitem {Coll\+Game}, \hyperpage{59}
+    \subitem {Gen}, \hyperpage{145}
+  \item {set\+Heroname}
+    \subitem {Hero}, \hyperpage{162}
+  \item {set\+ID}
+    \subitem {Coll\+Game}, \hyperpage{60}
+  \item {set\+Id}
+    \subitem {Hero}, \hyperpage{162}
+    \subitem {Hn\+S\+Player}, \hyperpage{224}
+  \item {set\+Image}
+    \subitem {Hns\+Item}, \hyperpage{209}
+  \item {set\+Intel}
+    \subitem {Hero}, \hyperpage{162}
+  \item {set\+Level}
+    \subitem {Hero}, \hyperpage{163}
+  \item {set\+Max}
+    \subitem {Analysis}, \hyperpage{47}
+    \subitem {I\+D\+EA}, \hyperpage{238}
+  \item {set\+Measure\+Cols}
+    \subitem {Analysis}, \hyperpage{47, 48}
+  \item {set\+Measures}
+    \subitem {I\+D\+EA}, \hyperpage{238}
+  \item {set\+Message}
+    \subitem {Rated}, \hyperpage{365}
+  \item {set\+Min}
+    \subitem {Analysis}, \hyperpage{48}
+    \subitem {I\+D\+EA}, \hyperpage{238}
+  \item {set\+Name}
+    \subitem {Hns\+Item}, \hyperpage{209}
+  \item {set\+Order}
+    \subitem {Hns\+Comp}, \hyperpage{188}
+  \item {set\+P1\+Move}
+    \subitem {Turn}, \hyperpage{445}
+  \item {set\+P2\+Move}
+    \subitem {Turn}, \hyperpage{445}
+  \item {set\+Parangon}
+    \subitem {Hero}, \hyperpage{163}
+  \item {set\+Player}
+    \subitem {Coll\+Game}, \hyperpage{60}
+    \subitem {Coll\+Player}, \hyperpage{81}
+    \subitem {Coll\+Team}, \hyperpage{94}
+  \item {set\+Position}
+    \subitem {Hns\+Item}, \hyperpage{210}
+  \item {set\+Rank}
+    \subitem {Hero}, \hyperpage{164}
+  \item {set\+Rated}
+    \subitem {Coll\+Game}, \hyperpage{60}
+    \subitem {Rated}, \hyperpage{365}
+  \item {set\+Rating}
+    \subitem {Coll\+Player}, \hyperpage{82}
+  \item {set\+Regen}
+    \subitem {Hero}, \hyperpage{164}
+  \item {set\+Relation\+Cols}
+    \subitem {Analysis}, \hyperpage{48}
+  \item {set\+Relations}
+    \subitem {I\+D\+EA}, \hyperpage{239}
+  \item {set\+Request\+File}
+    \subitem {Analysis}, \hyperpage{49}
+  \item {set\+Resources}
+    \subitem {Hero}, \hyperpage{165}
+  \item {set\+Ressource1}
+    \subitem {Hero}, \hyperpage{166}
+  \item {set\+Ressource2}
+    \subitem {Hero}, \hyperpage{166}
+  \item {set\+Rift}
+    \subitem {Hero}, \hyperpage{167}
+  \item {set\+Robustesse}
+    \subitem {Hero}, \hyperpage{167}
+  \item {set\+Rune}
+    \subitem {Hns\+Comp}, \hyperpage{189}
+  \item {set\+Server}
+    \subitem {Hero}, \hyperpage{168}
+  \item {set\+Size}
+    \subitem {Coll\+Team}, \hyperpage{95}
+  \item {set\+Skill}
+    \subitem {Hns\+Comp}, \hyperpage{189}
+  \item {set\+Tag}
+    \subitem {Hn\+S\+Player}, \hyperpage{224}
+  \item {set\+Team}
+    \subitem {Coll\+Game}, \hyperpage{60}
+  \item {set\+Tie}
+    \subitem {Coll\+Game}, \hyperpage{61}
+  \item {set\+Tier}
+    \subitem {Coll\+Game}, \hyperpage{61}
+    \subitem {Tier}, \hyperpage{443}
+  \item {set\+Time}
+    \subitem {Hero}, \hyperpage{168}
+  \item {set\+Turn}
+    \subitem {Turn}, \hyperpage{446}
+  \item {set\+Type}
+    \subitem {Coll\+Game}, \hyperpage{61}
+    \subitem {Hns\+Comp}, \hyperpage{190}
+  \item {set\+U\+RL}
+    \subitem {Hero}, \hyperpage{169}
+  \item {set\+User}
+    \subitem {Winner}, \hyperpage{449}
+  \item {set\+Username}
+    \subitem {Coll\+Player}, \hyperpage{82}
+    \subitem {Hn\+S\+Player}, \hyperpage{224}
+  \item {set\+Vie}
+    \subitem {Hero}, \hyperpage{169}
+  \item {set\+Vita}
+    \subitem {Hero}, \hyperpage{170}
+  \item {set\+Winner}
+    \subitem {Coll\+Game}, \hyperpage{61}
+  \item {show}
+    \subitem {Coll\+Table}, \hyperpage{87}
+    \subitem {Hn\+S\+Table}, \hyperpage{229}
+    \subitem {Match3}, \hyperpage{273}
+    \subitem {Page\+Change\+Aggregate}, \hyperpage{286}
+    \subitem {Page\+Coll\+Parse}, \hyperpage{295}
+    \subitem {Page\+Gest\+Aggregate}, \hyperpage{299}
+    \subitem {Page\+Hn\+S\+Parse}, \hyperpage{306}
+    \subitem {Page\+New\+Aggregate}, \hyperpage{314}
+    \subitem {Page\+Run\+Analysis}, \hyperpage{321}
+    \subitem {Page\+Run\+Sky\+Cube\+Analysis}, \hyperpage{332}
+    \subitem {Page\+Show\+Aggregate}, \hyperpage{337}
+    \subitem {Page\+Show\+Sky\+Cube}, \hyperpage{343}
+  \item {show\+As\+Table\+Entry}
+    \subitem {Coll\+Game}, \hyperpage{62}
+    \subitem {Hero}, \hyperpage{170}
+  \item {show\+Page\+Footer}
+    \subitem {Page\+Maintenance}, \hyperpage{308}
+    \subitem {Taged\+Page}, \hyperpage{438}
+  \item {show\+Page\+Header}
+    \subitem {Page\+Maintenance}, \hyperpage{308}
+    \subitem {Taged\+Page}, \hyperpage{438}
+  \item {show\+Table\+Footer}
+    \subitem {Coll\+Game}, \hyperpage{62}
+    \subitem {Hero}, \hyperpage{170}
+  \item {show\+Table\+Header}
+    \subitem {Coll\+Game}, \hyperpage{62}
+    \subitem {Hero}, \hyperpage{171}
+  \item {Sky\+Cube}, \hyperpage{405}
+    \subitem {\$\+Col\+I\+Ds}, \hyperpage{414}
+    \subitem {\$\+Cuboides}, \hyperpage{414}
+    \subitem {\$\+Current\+Col\+ID}, \hyperpage{415}
+    \subitem {\$\+Data\+Set}, \hyperpage{415}
+    \subitem {\$\+Filtered\+Cuboide\+I\+Ds}, \hyperpage{415}
+    \subitem {\$\+Is\+Valid}, \hyperpage{415}
+    \subitem {\$\+Min\+Max}, \hyperpage{415}
+    \subitem {\$\+Ordered\+Cuboide\+I\+Ds}, \hyperpage{416}
+    \subitem {\$\+Row\+Headers}, \hyperpage{416}
+    \subitem {\$\+Sets\+Of\+Parts}, \hyperpage{416}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{406}
+    \subitem {C\+U\+B\+O\+I\+DE}, \hyperpage{416}
+    \subitem {compute\+Data\+Set}, \hyperpage{407}
+    \subitem {generate\+Combinatorial}, \hyperpage{408}
+    \subitem {generate\+Cuboide\+List}, \hyperpage{409}
+    \subitem {generate\+Cuboide\+List\+Lvl}, \hyperpage{410}
+    \subitem {get\+Col\+I\+Ds}, \hyperpage{411}
+    \subitem {get\+Col\+ID}, \hyperpage{410}
+    \subitem {get\+Cuboide}, \hyperpage{411}
+    \subitem {get\+Cuboide\+I\+Ds}, \hyperpage{412}
+    \subitem {get\+Cuboides}, \hyperpage{413}
+    \subitem {get\+Data\+Set}, \hyperpage{413}
+    \subitem {get\+Multidimensional\+Space}, \hyperpage{413}
+    \subitem {get\+Row\+Headers}, \hyperpage{413}
+    \subitem {M\+A\+X\+\_\+\+C\+U\+B\+O\+I\+DE}, \hyperpage{416}
+    \subitem {M\+I\+N\+\_\+\+C\+O\+L\+ID}, \hyperpage{417}
+    \subitem {test\+Combinatorial}, \hyperpage{414}
+  \item {Sky\+Cube\+Bloc\+Nested\+Loop}, \hyperpage{417}
+    \subitem {C\+U\+B\+O\+I\+DE}, \hyperpage{418}
+  \item {Sky\+Cube\+Brute\+Force}, \hyperpage{418}
+    \subitem {C\+U\+B\+O\+I\+DE}, \hyperpage{419}
+  \item {Sky\+Cube\+Emergent}, \hyperpage{420}
+    \subitem {\$\+Compute\+Accord\+Cuboides}, \hyperpage{428}
+    \subitem {\$\+Denumbered\+Col\+I\+Ds}, \hyperpage{428}
+    \subitem {\$\+Emergence}, \hyperpage{428}
+    \subitem {\$\+Sky\+Cube1}, \hyperpage{428}
+    \subitem {\$\+Sky\+Cube2}, \hyperpage{429}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{421}
+    \subitem {compute\+Data\+Set}, \hyperpage{422}
+    \subitem {get\+Coded\+Column\+Name}, \hyperpage{423}
+    \subitem {get\+Col\+ID}, \hyperpage{423}
+    \subitem {get\+Cuboide}, \hyperpage{423}
+    \subitem {get\+Cuboide\+I\+Ds}, \hyperpage{424}
+    \subitem {get\+Cuboides}, \hyperpage{425}
+    \subitem {get\+Denumbered\+Col\+I\+Ds}, \hyperpage{425}
+    \subitem {get\+Emergence}, \hyperpage{425}
+    \subitem {get\+Full\+Column\+Name}, \hyperpage{425}
+    \subitem {get\+Multidimensional\+Space}, \hyperpage{426}
+    \subitem {get\+Sky\+Cube1}, \hyperpage{426}
+    \subitem {get\+Sky\+Cube2}, \hyperpage{426}
+    \subitem {merge\+Cuboide\+Lists}, \hyperpage{427}
+    \subitem {S\+K\+Y\+C\+U\+BE}, \hyperpage{429}
+    \subitem {set\+Emergence\+Ratio}, \hyperpage{427}
+  \item {sort\+Scores}
+    \subitem {Co\+Sky}, \hyperpage{108}
+  \item {store}
+    \subitem {W\+S\+Match3}, \hyperpage{455}
+  \item {switch}
+    \subitem {Coll\+Game}, \hyperpage{63}
+    \subitem {Coll\+Team}, \hyperpage{95}
+  \item {switch\+P1}
+    \subitem {Coll\+Parser}, \hyperpage{75}
+  \item {switch\+P2}
+    \subitem {Coll\+Parser}, \hyperpage{75}
+
+  \indexspace
+
+  \item {T\+A\+B\+L\+E\+\_\+\+A\+F\+F\+E\+C\+TE}
+    \subitem {Hns\+Comp}, \hyperpage{192}
+  \item {T\+A\+B\+L\+E\+\_\+\+A\+L\+I\+G\+NE}
+    \subitem {Coll\+Team}, \hyperpage{100}
+  \item {T\+A\+B\+L\+E\+\_\+\+E\+N\+G\+A\+GE}
+    \subitem {Coll\+Game}, \hyperpage{66}
+  \item {T\+A\+B\+L\+E\+\_\+\+G\+A\+ME}
+    \subitem {M3\+Game}, \hyperpage{251}
+  \item {T\+A\+B\+L\+E\+\_\+\+P\+L\+A\+Y\+ER}
+    \subitem {M3\+Game}, \hyperpage{251}
+  \item {T\+A\+B\+L\+E\+\_\+\+P\+O\+K\+E\+M\+ON}
+    \subitem {Coll\+Team}, \hyperpage{100}
+  \item {T\+A\+B\+L\+E\+\_\+\+P\+O\+R\+TE}
+    \subitem {Hns\+Item}, \hyperpage{213}
+  \item {T\+A\+B\+LE}
+    \subitem {Analysis}, \hyperpage{54}
+    \subitem {Coll\+Game}, \hyperpage{66}
+    \subitem {Coll\+Player}, \hyperpage{84}
+    \subitem {Coll\+Team}, \hyperpage{99}
+    \subitem {Hero}, \hyperpage{182}
+    \subitem {Hn\+S\+Player}, \hyperpage{226}
+    \subitem {Hns\+Comp}, \hyperpage{192}
+    \subitem {Hns\+Item}, \hyperpage{213}
+    \subitem {M3\+Match}, \hyperpage{261}
+    \subitem {M3\+Stroke}, \hyperpage{270}
+  \item {T\+A\+G\+ED}, \hyperpage{12}
+  \item {T\+AG}
+    \subitem {Hn\+S\+Player}, \hyperpage{226}
+  \item {T\+E\+S\+T\+\_\+\+ON}
+    \subitem {Cuboide}, \hyperpage{117}
+    \subitem {Display\+Cuboide}, \hyperpage{134}
+  \item {T\+I\+ER}
+    \subitem {Coll\+Game}, \hyperpage{67}
+  \item {T\+I\+M\+E\+\_\+\+L\+E\+FT}
+    \subitem {M3\+Match}, \hyperpage{262}
+  \item {T\+I\+ME}
+    \subitem {Hero}, \hyperpage{183}
+    \subitem {M3\+Match}, \hyperpage{261}
+    \subitem {M3\+Stroke}, \hyperpage{270}
+  \item {T\+O\+\_\+\+M\+AX}
+    \subitem {Cuboide}, \hyperpage{117}
+    \subitem {Display\+Cuboide}, \hyperpage{134}
+  \item {T\+O\+\_\+\+M\+IN}
+    \subitem {Cuboide}, \hyperpage{117}
+    \subitem {Display\+Cuboide}, \hyperpage{134}
+  \item {T\+U\+R\+NS}
+    \subitem {Coll\+Game}, \hyperpage{67}
+  \item {T\+Y\+P\+E\+\_\+\+A\+C\+T\+I\+VE}
+    \subitem {Hns\+Comp}, \hyperpage{193}
+  \item {T\+Y\+P\+E\+\_\+\+P\+A\+S\+S\+I\+VE}
+    \subitem {Hns\+Comp}, \hyperpage{193}
+  \item {T\+Y\+PE}
+    \subitem {Hns\+Comp}, \hyperpage{192}
+  \item {taged/application/old/\+Coll/\+Agg\+Coll\+Requete.\+class.\+php}, 
+		\hyperpage{459}
+  \item {taged/application/old/\+Coll/\+Agg\+Coll\+V\+W\+Combat.\+class.\+php}, 
+		\hyperpage{459}
+  \item {taged/application/old/\+Cuboide\+Emergent\+Bloc\+Nested\+Loop.\+class.\+php}, 
+		\hyperpage{459}
+  \item {taged/application/old/\+Display\+Cuboide.\+class.\+php}, 
+		\hyperpage{460}
+  \item {taged/application/old/\+Display\+Sky\+Cube.\+class.\+php}, 
+		\hyperpage{460}
+  \item {taged/application/old/\+Game\+Type.\+class.\+php}, 
+		\hyperpage{460}
+  \item {taged/application/old/\+Gen.\+class.\+php}, \hyperpage{460}
+  \item {taged/application/old/\+Rated.\+class.\+php}, \hyperpage{461}
+  \item {taged/application/old/\+Replay\+Parser.\+class.\+php}, 
+		\hyperpage{461}
+  \item {taged/application/old/\+Tier.\+class.\+php}, \hyperpage{461}
+  \item {taged/application/old/\+Turn.\+php}, \hyperpage{461}
+  \item {taged/application/old/\+Winner.\+class.\+php}, \hyperpage{462}
+  \item {taged/application/script/\+Parse\+Hn\+S\+Hero.\+php}, 
+		\hyperpage{464}
+  \item {taged/application/script/analysis.\+php}, \hyperpage{462}
+  \item {taged/application/script/get\+Diablo.\+php}, \hyperpage{463}
+  \item {taged/application/script/get\+Hn\+S\+File.\+php}, 
+		\hyperpage{464}
+  \item {taged/application/script/process\+Coll\+Entry.\+php}, 
+		\hyperpage{465}
+  \item {taged/application/script/process\+Hn\+S.\+php}, 
+		\hyperpage{467}
+  \item {taged/application/script/process\+Hn\+S\+File.\+php}, 
+		\hyperpage{468}
+  \item {taged/application/script/process\+Hn\+S\+Folder.\+php}, 
+		\hyperpage{469}
+  \item {taged/application/script/test.\+php}, \hyperpage{470}
+  \item {taged/application/src/\+Algo.\+class.\+php}, \hyperpage{471}
+  \item {taged/application/src/\+Analysis.\+class.\+php}, 
+		\hyperpage{474}
+  \item {taged/application/src/\+Analysis\+\_\+old.\+class.\+php}, 
+		\hyperpage{474}
+  \item {taged/application/src/\+Taged\+D\+B\+Coll.\+class.\+php}, 
+		\hyperpage{490}
+  \item {taged/application/src/\+Taged\+D\+B\+Hn\+S.\+class.\+php}, 
+		\hyperpage{490}
+  \item {taged/application/src/\+Taged\+D\+B\+Match3.\+class.\+php}, 
+		\hyperpage{491}
+  \item {taged/application/src/\+Taged\+Page.\+class.\+php}, 
+		\hyperpage{491}
+  \item {taged/application/src/\+Taged\+W\+S.\+class.\+php}, 
+		\hyperpage{491}
+  \item {taged/application/src/aggregates/\+Aggregate\+List.\+class.\+php}, 
+		\hyperpage{470}
+  \item {taged/application/src/algo/\+Co\+Sky.\+class.\+php}, 
+		\hyperpage{471}
+  \item {taged/application/src/algo/\+Cuboide.\+class.\+php}, 
+		\hyperpage{471}
+  \item {taged/application/src/algo/\+Cuboide\+Bloc\+Nested\+Loop.\+class.\+php}, 
+		\hyperpage{471}
+  \item {taged/application/src/algo/\+Cuboide\+Brute\+Force.\+class.\+php}, 
+		\hyperpage{472}
+  \item {taged/application/src/algo/\+Cuboide\+Emergent.\+class.\+php}, 
+		\hyperpage{472}
+  \item {taged/application/src/algo/\+I\+D\+E\+A.\+class.\+php}, 
+		\hyperpage{472}
+  \item {taged/application/src/algo/\+S\+K\+Display.\+class.\+php}, 
+		\hyperpage{472}
+  \item {taged/application/src/algo/\+Sky\+Cube.\+class.\+php}, 
+		\hyperpage{473}
+  \item {taged/application/src/algo/\+Sky\+Cube\+Bloc\+Nested\+Loop.\+class.\+php}, 
+		\hyperpage{473}
+  \item {taged/application/src/algo/\+Sky\+Cube\+Brute\+Force.\+class.\+php}, 
+		\hyperpage{473}
+  \item {taged/application/src/algo/\+Sky\+Cube\+Emergent.\+class.\+php}, 
+		\hyperpage{473}
+  \item {taged/application/src/define.\+php}, \hyperpage{474}
+  \item {taged/application/src/models/\+Coll/\+Coll\+Game.\+class.\+php}, 
+		\hyperpage{481}
+  \item {taged/application/src/models/\+Coll/\+Coll\+Player.\+class.\+php}, 
+		\hyperpage{481}
+  \item {taged/application/src/models/\+Coll/\+Coll\+Table.\+class.\+php}, 
+		\hyperpage{482}
+  \item {taged/application/src/models/\+Coll/\+Coll\+Team.\+class.\+php}, 
+		\hyperpage{482}
+  \item {taged/application/src/models/\+Hn\+S/\+Hero.\+class.\+php}, 
+		\hyperpage{482}
+  \item {taged/application/src/models/\+Hn\+S/\+Hn\+S\+Comp.\+class.\+php}, 
+		\hyperpage{482}
+  \item {taged/application/src/models/\+Hn\+S/\+Hn\+S\+Item.\+class.\+php}, 
+		\hyperpage{483}
+  \item {taged/application/src/models/\+Hn\+S/\+Hn\+S\+Player.\+class.\+php}, 
+		\hyperpage{483}
+  \item {taged/application/src/models/\+Hn\+S/\+Hn\+S\+Table.\+class.\+php}, 
+		\hyperpage{483}
+  \item {taged/application/src/models/\+Match3/\+M3\+Game.\+class.\+php}, 
+		\hyperpage{483}
+  \item {taged/application/src/models/\+Match3/\+M3\+Match.\+class.\+php}, 
+		\hyperpage{484}
+  \item {taged/application/src/models/\+Match3/\+M3\+Stroke.\+class.\+php}, 
+		\hyperpage{484}
+  \item {taged/application/src/models/\+Match3/\+Match3.\+class.\+php}, 
+		\hyperpage{484}
+  \item {taged/application/src/pages/\+Page\+Accueil.\+class.\+php}, 
+		\hyperpage{484}
+  \item {taged/application/src/pages/\+Page\+Change\+Aggregate.\+class.\+php}, 
+		\hyperpage{485}
+  \item {taged/application/src/pages/\+Page\+Coll\+Aggregate.\+class.\+php}, 
+		\hyperpage{485}
+  \item {taged/application/src/pages/\+Page\+Coll\+Data.\+class.\+php}, 
+		\hyperpage{485}
+  \item {taged/application/src/pages/\+Page\+Coll\+Parse.\+class.\+php}, 
+		\hyperpage{485}
+  \item {taged/application/src/pages/\+Page\+Gest\+Aggregate.\+class.\+php}, 
+		\hyperpage{486}
+  \item {taged/application/src/pages/\+Page\+Hn\+S\+Data.\+class.\+php}, 
+		\hyperpage{486}
+  \item {taged/application/src/pages/\+Page\+Hn\+S\+Parse.\+class.\+php}, 
+		\hyperpage{486}
+  \item {taged/application/src/pages/\+Page\+Match3.\+class.\+php}, 
+		\hyperpage{486}
+  \item {taged/application/src/pages/\+Page\+New\+Aggregate.\+class.\+php}, 
+		\hyperpage{487}
+  \item {taged/application/src/pages/\+Page\+Run\+Analysis.\+class.\+php}, 
+		\hyperpage{487}
+  \item {taged/application/src/pages/\+Page\+Run\+Analysis\+\_\+old.\+class.\+php}, 
+		\hyperpage{487}
+  \item {taged/application/src/pages/\+Page\+Run\+Sky\+Cube\+Analysis.\+class.\+php}, 
+		\hyperpage{487}
+  \item {taged/application/src/pages/\+Page\+Show\+Aggregate.\+class.\+php}, 
+		\hyperpage{488}
+  \item {taged/application/src/pages/\+Page\+Show\+Sky\+Cube.\+class.\+php}, 
+		\hyperpage{488}
+  \item {taged/application/src/pages/\+Page\+Test.\+class.\+php}, 
+		\hyperpage{488}
+  \item {taged/application/src/pages/\+Page\+Test\+Accords.\+class.\+php}, 
+		\hyperpage{488}
+  \item {taged/application/src/pages/\+Page\+Test\+Co\+Sky.\+class.\+php}, 
+		\hyperpage{489}
+  \item {taged/application/src/pages/\+Page\+Test\+Sky\+Cube.\+class.\+php}, 
+		\hyperpage{489}
+  \item {taged/application/src/pages/\+Page\+Test\+Sky\+Cube\+Emergent.\+class.\+php}, 
+		\hyperpage{489}
+  \item {taged/application/src/parse/\+Coll\+Parser.\+class.\+php}, 
+		\hyperpage{489}
+  \item {taged/application/src/parse/\+Hn\+S\+Hero\+Parser.\+class.\+php}, 
+		\hyperpage{490}
+  \item {taged/application/src/parse/\+Hn\+S\+Parser.\+class.\+php}, 
+		\hyperpage{490}
+  \item {taged/application/src/ws/\+W\+S\+Default.\+class.\+php}, 
+		\hyperpage{491}
+  \item {taged/application/src/ws/\+W\+S\+Match3.\+class.\+php}, 
+		\hyperpage{492}
+  \item {taged/application/www/index.\+php}, \hyperpage{492}
+  \item {taged/application/www/phpinfo.\+php}, \hyperpage{492}
+  \item {taged/application/www/ws.\+php}, \hyperpage{492}
+  \item {taged/maintenance/src/define.\+php}, \hyperpage{481}
+  \item {taged/maintenance/src/pages/\+Page\+Maintenance.\+class.\+php}, 
+		\hyperpage{492}
+  \item {taged/maintenance/www/index.\+php}, \hyperpage{492}
+  \item {Taged\+D\+B\+Coll}, \hyperpage{429}
+    \subitem {\$\+D\+Bpwd}, \hyperpage{430}
+    \subitem {\$\+D\+Bserver}, \hyperpage{430}
+    \subitem {\$\+D\+Buser}, \hyperpage{430}
+    \subitem {\$\+P\+DO}, \hyperpage{431}
+    \subitem {\$\+P\+D\+O\+Statement}, \hyperpage{431}
+  \item {Taged\+D\+B\+HnS}, \hyperpage{431}
+    \subitem {\$\+D\+Bpwd}, \hyperpage{432}
+    \subitem {\$\+D\+Bserver}, \hyperpage{432}
+    \subitem {\$\+D\+Buser}, \hyperpage{432}
+    \subitem {\$\+P\+DO}, \hyperpage{433}
+    \subitem {\$\+P\+D\+O\+Statement}, \hyperpage{433}
+  \item {Taged\+D\+B\+Match3}, \hyperpage{433}
+    \subitem {\$\+D\+Bpwd}, \hyperpage{434}
+    \subitem {\$\+D\+Bserver}, \hyperpage{434}
+    \subitem {\$\+D\+Buser}, \hyperpage{434}
+    \subitem {\$\+P\+DO}, \hyperpage{435}
+    \subitem {\$\+P\+D\+O\+Statement}, \hyperpage{435}
+  \item {Taged\+Page}, \hyperpage{436}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{437}
+    \subitem {P\+A\+G\+E\+\_\+\+D\+E\+F\+A\+U\+LT}, \hyperpage{438}
+    \subitem {P\+A\+G\+E\+\_\+\+L\+I\+ST}, \hyperpage{438}
+    \subitem {P\+A\+G\+E\+\_\+\+S\+E\+L\+E\+C\+T\+OR}, \hyperpage{438}
+    \subitem {show\+Page\+Footer}, \hyperpage{438}
+    \subitem {show\+Page\+Header}, \hyperpage{438}
+  \item {Taged\+WS}, \hyperpage{439}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{440}
+    \subitem {get\+Selector}, \hyperpage{440}
+    \subitem {W\+S\+\_\+\+D\+E\+F\+A\+U\+LT}, \hyperpage{440}
+    \subitem {W\+S\+\_\+\+L\+I\+ST}, \hyperpage{440}
+    \subitem {W\+S\+\_\+\+S\+E\+L\+E\+C\+T\+OR}, \hyperpage{441}
+  \item {team\+Preview\+Pokemon}
+    \subitem {Replay\+Parser}, \hyperpage{380}
+  \item {team\+Preview\+Pokemon\+Preg}
+    \subitem {Coll\+Parser}, \hyperpage{75}
+    \subitem {Replay\+Parser}, \hyperpage{380}
+  \item {team\+Size}
+    \subitem {Replay\+Parser}, \hyperpage{380}
+  \item {team\+Size\+Preg}
+    \subitem {Coll\+Parser}, \hyperpage{76}
+    \subitem {Replay\+Parser}, \hyperpage{381}
+  \item {test.\+php}
+    \subitem {\$\+Result}, \hyperpage{470}
+  \item {test\+Case}
+    \subitem {Page\+Test}, \hyperpage{350}
+  \item {test\+Combinatorial}
+    \subitem {Sky\+Cube}, \hyperpage{414}
+  \item {test\+Export\+C\+SV}
+    \subitem {Page\+Test}, \hyperpage{351}
+  \item {test\+Strings\+Convert\+Case}
+    \subitem {Page\+Test}, \hyperpage{351}
+  \item {text}
+    \subitem {S\+K\+Display}, \hyperpage{401}
+  \item {tie}
+    \subitem {Replay\+Parser}, \hyperpage{381}
+  \item {tie\+Preg}
+    \subitem {Coll\+Parser}, \hyperpage{76}
+    \subitem {Replay\+Parser}, \hyperpage{381}
+  \item {Tier}, \hyperpage{441}
+    \subitem {\$\+Tier}, \hyperpage{443}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{441}
+    \subitem {\+\_\+\+\_\+to\+String}, \hyperpage{442}
+    \subitem {create}, \hyperpage{442}
+    \subitem {get\+Tier}, \hyperpage{442}
+    \subitem {set\+Tier}, \hyperpage{443}
+  \item {tier}
+    \subitem {Replay\+Parser}, \hyperpage{382}
+  \item {tier\+Preg}
+    \subitem {Coll\+Parser}, \hyperpage{76}
+    \subitem {Replay\+Parser}, \hyperpage{382}
+  \item {to\+H\+T\+ML}
+    \subitem {Display\+Cuboide}, \hyperpage{132}
+  \item {to\+La\+TeX}
+    \subitem {Display\+Cuboide}, \hyperpage{133}
+  \item {to\+La\+Tex}
+    \subitem {Display\+Sky\+Cube}, \hyperpage{138}
+    \subitem {S\+K\+Display}, \hyperpage{401}
+  \item {try}
+    \subitem {process\+Coll\+Entry.\+php}, \hyperpage{467}
+  \item {Turn}, \hyperpage{443}
+    \subitem {\$p1\+Move}, \hyperpage{446}
+    \subitem {\$p2\+Move}, \hyperpage{446}
+    \subitem {\$turn}, \hyperpage{446}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{444}
+    \subitem {get\+P1\+Move}, \hyperpage{444}
+    \subitem {get\+P2\+Move}, \hyperpage{444}
+    \subitem {get\+Turn}, \hyperpage{445}
+    \subitem {set\+P1\+Move}, \hyperpage{445}
+    \subitem {set\+P2\+Move}, \hyperpage{445}
+    \subitem {set\+Turn}, \hyperpage{446}
+  \item {turn}
+    \subitem {Replay\+Parser}, \hyperpage{383}
+  \item {turn\+Preg}
+    \subitem {Coll\+Parser}, \hyperpage{77}
+    \subitem {Replay\+Parser}, \hyperpage{383}
+
+  \indexspace
+
+  \item {V\+I\+C\+T\+O\+I\+RE}
+    \subitem {Coll\+Player}, \hyperpage{85}
+  \item {V\+I\+E\+W\+\_\+\+D\+A\+TA}
+    \subitem {M3\+Game}, \hyperpage{251}
+  \item {V\+I\+E\+W\+\_\+\+S\+T\+AT}
+    \subitem {Coll\+Table}, \hyperpage{89}
+    \subitem {Hero}, \hyperpage{183}
+    \subitem {M3\+Game}, \hyperpage{251}
+  \item {V\+I\+EW}
+    \subitem {Coll\+Game}, \hyperpage{67}
+    \subitem {Hero}, \hyperpage{183}
+  \item {V\+I\+TA}
+    \subitem {Hero}, \hyperpage{183}
+  \item {V\+IE}
+    \subitem {Hero}, \hyperpage{183}
+
+  \indexspace
+
+  \item {W\+S\+\_\+\+B\+E\+AM}
+    \subitem {M3\+Match}, \hyperpage{262}
+  \item {W\+S\+\_\+\+C\+O\+L\+OR}
+    \subitem {M3\+Match}, \hyperpage{262}
+  \item {W\+S\+\_\+\+D\+E\+F\+A\+U\+LT}
+    \subitem {Taged\+WS}, \hyperpage{440}
+  \item {W\+S\+\_\+\+D\+U\+R\+A\+T\+I\+ON}
+    \subitem {M3\+Stroke}, \hyperpage{270}
+  \item {W\+S\+\_\+\+G\+A\+M\+E\+\_\+\+D\+A\+TE}
+    \subitem {M3\+Game}, \hyperpage{252}
+  \item {W\+S\+\_\+\+G\+A\+ME}
+    \subitem {M3\+Game}, \hyperpage{251}
+  \item {W\+S\+\_\+\+I\+N\+\_\+\+G\+A\+M\+E\+\_\+\+T\+I\+ME}
+    \subitem {M3\+Match}, \hyperpage{262}
+  \item {W\+S\+\_\+\+L\+E\+N\+G\+TH}
+    \subitem {M3\+Match}, \hyperpage{262}
+  \item {W\+S\+\_\+\+L\+I\+ST}
+    \subitem {Taged\+WS}, \hyperpage{440}
+  \item {W\+S\+\_\+\+M3\+\_\+\+D\+A\+TA}
+    \subitem {W\+S\+Match3}, \hyperpage{456}
+  \item {W\+S\+\_\+\+M3\+\_\+\+D\+E\+F\+A\+U\+LT}
+    \subitem {W\+S\+Match3}, \hyperpage{457}
+  \item {W\+S\+\_\+\+M3\+\_\+\+L\+I\+ST}
+    \subitem {W\+S\+Match3}, \hyperpage{457}
+  \item {W\+S\+\_\+\+M3\+\_\+\+S\+E\+L\+E\+C\+T\+OR}
+    \subitem {W\+S\+Match3}, \hyperpage{457}
+  \item {W\+S\+\_\+\+M\+A\+T\+C\+H\+\_\+\+N\+UM}
+    \subitem {M3\+Match}, \hyperpage{262}
+  \item {W\+S\+\_\+\+M\+A\+T\+CH}
+    \subitem {M3\+Stroke}, \hyperpage{270}
+  \item {W\+S\+\_\+\+P\+L\+A\+Y\+E\+R\+\_\+\+A\+D\+DR}
+    \subitem {M3\+Game}, \hyperpage{252}
+  \item {W\+S\+\_\+\+P\+L\+A\+Y\+E\+R\+\_\+\+ID}
+    \subitem {M3\+Game}, \hyperpage{252}
+  \item {W\+S\+\_\+\+P\+L\+A\+Y\+ER}
+    \subitem {M3\+Game}, \hyperpage{252}
+  \item {W\+S\+\_\+\+R\+O\+U\+N\+D\+\_\+\+D\+A\+TE}
+    \subitem {M3\+Game}, \hyperpage{252}
+  \item {W\+S\+\_\+\+R\+O\+U\+N\+D\+\_\+\+N\+UM}
+    \subitem {M3\+Game}, \hyperpage{253}
+  \item {W\+S\+\_\+\+R\+O\+U\+ND}
+    \subitem {M3\+Game}, \hyperpage{252}
+  \item {W\+S\+\_\+\+S\+C\+O\+R\+E\+\_\+\+T\+O\+T\+AL}
+    \subitem {M3\+Match}, \hyperpage{263}
+  \item {W\+S\+\_\+\+S\+C\+O\+RE}
+    \subitem {M3\+Match}, \hyperpage{263}
+  \item {W\+S\+\_\+\+S\+E\+L\+E\+C\+T\+OR}
+    \subitem {Taged\+WS}, \hyperpage{441}
+  \item {W\+S\+\_\+\+S\+H\+A\+PE}
+    \subitem {M3\+Match}, \hyperpage{263}
+  \item {W\+S\+\_\+\+S\+P\+E\+C\+I\+A\+L\+\_\+\+F\+O\+UR}
+    \subitem {M3\+Match}, \hyperpage{263}
+  \item {W\+S\+\_\+\+S\+T\+R\+O\+K\+E\+\_\+\+N\+UM}
+    \subitem {M3\+Stroke}, \hyperpage{271}
+  \item {W\+S\+\_\+\+S\+T\+R\+O\+KE}
+    \subitem {M3\+Game}, \hyperpage{253}
+  \item {W\+S\+\_\+\+T\+I\+M\+E\+\_\+\+L\+E\+FT}
+    \subitem {M3\+Match}, \hyperpage{263}
+  \item {W\+S\+\_\+\+T\+I\+ME}
+    \subitem {M3\+Match}, \hyperpage{263}
+    \subitem {M3\+Stroke}, \hyperpage{271}
+  \item {W\+S\+Default}, \hyperpage{450}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{451}
+  \item {W\+S\+Match3}, \hyperpage{451}
+    \subitem {\$\+Input\+Data}, \hyperpage{456}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{453}
+    \subitem {game\+Over}, \hyperpage{453}
+    \subitem {get\+M3\+Selector}, \hyperpage{453}
+    \subitem {intermediate}, \hyperpage{454}
+    \subitem {new\+Game}, \hyperpage{454}
+    \subitem {serve}, \hyperpage{455}
+    \subitem {store}, \hyperpage{455}
+    \subitem {W\+S\+\_\+\+M3\+\_\+\+D\+A\+TA}, \hyperpage{456}
+    \subitem {W\+S\+\_\+\+M3\+\_\+\+D\+E\+F\+A\+U\+LT}, \hyperpage{457}
+    \subitem {W\+S\+\_\+\+M3\+\_\+\+L\+I\+ST}, \hyperpage{457}
+    \subitem {W\+S\+\_\+\+M3\+\_\+\+S\+E\+L\+E\+C\+T\+OR}, 
+		\hyperpage{457}
+  \item {Winner}, \hyperpage{447}
+    \subitem {\$\+User}, \hyperpage{449}
+    \subitem {\+\_\+\+\_\+construct}, \hyperpage{447}
+    \subitem {\+\_\+\+\_\+to\+String}, \hyperpage{448}
+    \subitem {create}, \hyperpage{448}
+    \subitem {get\+User}, \hyperpage{448}
+    \subitem {set\+User}, \hyperpage{449}
+  \item {winner}
+    \subitem {Replay\+Parser}, \hyperpage{383}
+  \item {winner\+Preg}
+    \subitem {Coll\+Parser}, \hyperpage{77}
+    \subitem {Replay\+Parser}, \hyperpage{384}
+  \item {write}
+    \subitem {Analysis}, \hyperpage{49}
+
+\end{theindex}

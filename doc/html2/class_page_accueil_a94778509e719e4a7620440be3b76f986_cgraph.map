@@ -1,0 +1,11 @@
+<map id="PageAccueil\__construct" name="PageAccueil\__construct">
+<area shape="rect" id="node2" href="$class_page_accueil.html#a92f6557a9cfaf1e0f49d7461d7fac2c4" title="PageAccueil\\addStats" alt="" coords="232,97,393,123"/>
+<area shape="rect" id="node3" href="$class_page_accueil.html#a4acc4c64a5b79fd4d0f12ccbeeabe83e" title="PageAccueil\\computeAllStats" alt="" coords="441,71,652,98"/>
+<area shape="rect" id="node7" href="$class_page_accueil.html#a32d82822c35bdbac485363e5f6b95418" title="PageAccueil\\addStat" alt="" coords="469,122,624,149"/>
+<area shape="rect" id="node4" href="$class_page_accueil.html#a98f6fc9d30fc6ce0e44230887a2f2958" title="PageAccueil\\computeStats" alt="" coords="700,71,895,98"/>
+<area shape="rect" id="node5" href="$class_page_accueil.html#a53981e78427397fc56ec11e28d8f0bd3" title="PageAccueil\\computeStats\lFiles" alt="" coords="952,5,1147,47"/>
+<area shape="rect" id="node6" href="$class_page_accueil.html#a9799218ddbc6dcdbc471e2a99efbe61a" title="PageAccueil\\computeStatsDB" alt="" coords="943,71,1156,98"/>
+<area shape="rect" id="node8" href="$class_page_accueil.html#ac3d7722a9e10fe717e07f5e30550f3a3" title="PageAccueil\\doStats" alt="" coords="721,122,874,149"/>
+<area shape="rect" id="node9" href="$class_page_accueil.html#afe6329de30c9e7b68b5a636b096928d0" title="PageAccueil\\doStatHead" alt="" coords="959,122,1139,149"/>
+<area shape="rect" id="node10" href="$class_page_accueil.html#a4350b2f1c419b669294b5dc89c6e3568" title="PageAccueil\\doStatLine" alt="" coords="963,173,1136,199"/>
+</map>

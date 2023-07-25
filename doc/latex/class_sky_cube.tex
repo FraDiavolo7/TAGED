@@ -1,0 +1,676 @@
+\hypertarget{class_sky_cube}{}\section{Sky\+Cube Class Reference}
+\label{class_sky_cube}\index{Sky\+Cube@{Sky\+Cube}}
+
+
+Inheritance diagram for Sky\+Cube\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sky_cube__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_sky_cube_aa93aeacd5389ce08890582667e987c65}{\+\_\+\+\_\+construct} ( \$Data, \$Relation\+Cols, \$Measure\+Cols, \$Min\+Max=\hyperlink{class_cuboide_afd49ea48fafb0362d27f78f6f4ef8b84}{Cuboide\+::\+T\+O\+\_\+\+M\+AX}, \$Compute\+Accord\+Cuboides=F\+A\+L\+SE)
+\item 
+\hyperlink{class_sky_cube_a315d9eb3672b81c5091139db449dd0ac}{test\+Combinatorial} ()
+\item 
+\hyperlink{class_sky_cube_ad6426ecd7f39e86656afa4de4db347b5}{get\+Multidimensional\+Space} ()
+\item 
+\hyperlink{class_sky_cube_a3627e6be0bf4eb22fde5a7d422ec60d1}{get\+Data\+Set} ()
+\item 
+\hyperlink{class_sky_cube_a8fe81d998c875dbd6921b709f9d464d6}{get\+Row\+Headers} ()
+\item 
+\hyperlink{class_sky_cube_a4b5698250b2e467731f8d3c6a49e04a9}{get\+Col\+I\+Ds} ()
+\item 
+\hyperlink{class_sky_cube_aabad14a4963a4b7f890e5e7abcb5f67b}{get\+Cuboides} ()
+\item 
+\hyperlink{class_sky_cube_ad23b0dcc8513aaa0ce95fee26dfbee0e}{get\+Cuboide\+I\+Ds} ( \$Filtered=T\+R\+UE)
+\item 
+\hyperlink{class_sky_cube_a18c6b3ec100eb483e941b8bb69c40187}{get\+Cuboide} ( \$ID)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{class_sky_cube_a7379f6cb471bafe6208e7c82bd19eafb}{M\+A\+X\+\_\+\+C\+U\+B\+O\+I\+DE} = 128
+\item 
+const \hyperlink{class_sky_cube_a02a81cad7f2521e515a4f7574d2899ae}{M\+I\+N\+\_\+\+C\+O\+L\+ID} = \textquotesingle{}A\textquotesingle{}
+\item 
+const \hyperlink{class_sky_cube_a30dbde9937a3942ea12ad1cd2b9740a0}{C\+U\+B\+O\+I\+DE} = \textquotesingle{}\hyperlink{class_cuboide}{Cuboide}\textquotesingle{}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_sky_cube_a19cef89f0ed6c66283b68fb9b4dcafa6}{generate\+Cuboide\+List\+Lvl} ( \$Level, \$Col\+I\+Ds, \$Compute\+Accord\+Cuboides=F\+A\+L\+SE, \$Current=\textquotesingle{}\textquotesingle{})
+\item 
+\hyperlink{class_sky_cube_a66b8cb4ff0f25754d2384224c7e40ced}{generate\+Cuboide\+List} ( \$Compute\+Accord\+Cuboides=F\+A\+L\+SE)
+\item 
+\hyperlink{class_sky_cube_a055600504acd68aa4dfbb7f7d9425066}{get\+Col\+ID} ( \$Col\+Header, \$Measure\+Cols)
+\item 
+\hyperlink{class_sky_cube_aeccacbd6761b125ed1976e29d061bf41}{compute\+Data\+Set} ( \$Data, \$Relation\+Cols, \$Measure\+Cols)
+\item 
+\hyperlink{class_sky_cube_a7b3e29b56258fde62d37e1a405c819d5}{generate\+Combinatorial} ( \$List, \$Begin=array())
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_sky_cube_a1ca406fe9bd295d4f75e5acc4c8a097c}{\$\+Data\+Set}
+\item 
+\hyperlink{class_sky_cube_a8cea387612952f4291a3f18d962834ce}{\$\+Row\+Headers}
+\item 
+\hyperlink{class_sky_cube_a7b6332fc8c2a70f63f999959d5f0b03a}{\$\+Col\+I\+Ds}
+\item 
+\hyperlink{class_sky_cube_a72e94f47d2fba9130ca1f468d93c85ae}{\$\+Min\+Max}
+\item 
+\hyperlink{class_sky_cube_a2a1f81c33966b049003c0fbc898cb51d}{\$\+Is\+Valid}
+\item 
+\hyperlink{class_sky_cube_aa5c86b2f23b58489a3e2e42c112904b7}{\$\+Current\+Col\+ID}
+\item 
+\hyperlink{class_sky_cube_aeae26ba6326acb0643320e03cb25d37d}{\$\+Sets\+Of\+Parts}
+\item 
+\hyperlink{class_sky_cube_a29a6af34afe03c9484470788644c09ae}{\$\+Cuboides}
+\item 
+\hyperlink{class_sky_cube_ae0988ad067bb0c954c74140b8cd34c67}{\$\+Ordered\+Cuboide\+I\+Ds}
+\item 
+\hyperlink{class_sky_cube_a52a9da29a47e5e8e434b82a7d3caaeeb}{\$\+Filtered\+Cuboide\+I\+Ds}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file Sky\+Cube.\+class.\+php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sky_cube_aa93aeacd5389ce08890582667e987c65}\label{class_sky_cube_aa93aeacd5389ce08890582667e987c65}} 
+\index{Sky\+Cube@{Sky\+Cube}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!Sky\+Cube@{Sky\+Cube}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Sky\+Cube\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{}]{\$\+Data,  }\item[{}]{\$\+Relation\+Cols,  }\item[{}]{\$\+Measure\+Cols,  }\item[{}]{\$\+Min\+Max = {\ttfamily \hyperlink{class_cuboide_afd49ea48fafb0362d27f78f6f4ef8b84}{Cuboide\+::\+T\+O\+\_\+\+M\+AX}},  }\item[{}]{\$\+Compute\+Accord\+Cuboides = {\ttfamily FALSE} }\end{DoxyParamCaption})}
+
+Constructeur de la classe \hyperlink{class_sky_cube}{Sky\+Cube}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+Data} & Les données brutes à utiliser dans l\textquotesingle{}espace multidimensionnel. \\
+\hline
+array & {\em \$\+Relation\+Cols} & Les colonnes d\textquotesingle{}identification de relation. \\
+\hline
+array & {\em \$\+Measure\+Cols} & Les colonnes d\textquotesingle{}identification d\textquotesingle{}attribut (mesure). \\
+\hline
+int & {\em \$\+Min\+Max} & Indicateur pour la valeur maximale ou minimale lors de la construction des Cuboides. \\
+\hline
+bool & {\em \$\+Compute\+Accord\+Cuboides} & Indicateur pour calculer les Cuboides en accord. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 39 of file Sky\+Cube.\+class.\+php.
+
+
+
+References \$\+Data, \$\+Min\+Max, compute\+Data\+Set(), and generate\+Cuboide\+List().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sky_cube_aa93aeacd5389ce08890582667e987c65_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sky_cube_aeccacbd6761b125ed1976e29d061bf41}\label{class_sky_cube_aeccacbd6761b125ed1976e29d061bf41}} 
+\index{Sky\+Cube@{Sky\+Cube}!compute\+Data\+Set@{compute\+Data\+Set}}
+\index{compute\+Data\+Set@{compute\+Data\+Set}!Sky\+Cube@{Sky\+Cube}}
+\subsubsection{\texorpdfstring{compute\+Data\+Set()}{computeDataSet()}}
+{\footnotesize\ttfamily Sky\+Cube\+::compute\+Data\+Set (\begin{DoxyParamCaption}\item[{}]{\$\+Data,  }\item[{}]{\$\+Relation\+Cols,  }\item[{}]{\$\+Measure\+Cols }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Méthode protégée pour calculer le Data\+Set à partir des données brutes, des colonnes de relation et des colonnes d\textquotesingle{}attribut.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+Data} & Les données brutes à utiliser dans l\textquotesingle{}espace multidimensionnel. \\
+\hline
+array & {\em \$\+Relation\+Cols} & Les colonnes d\textquotesingle{}identification de relation. \\
+\hline
+array & {\em \$\+Measure\+Cols} & Les colonnes d\textquotesingle{}identification d\textquotesingle{}attribut (mesure). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 165 of file Sky\+Cube.\+class.\+php.
+
+
+
+References \$\+Data, and get\+Col\+I\+D().
+
+
+
+Referenced by \+\_\+\+\_\+construct().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sky_cube_aeccacbd6761b125ed1976e29d061bf41_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sky_cube_aeccacbd6761b125ed1976e29d061bf41_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_sky_cube_a7b3e29b56258fde62d37e1a405c819d5}\label{class_sky_cube_a7b3e29b56258fde62d37e1a405c819d5}} 
+\index{Sky\+Cube@{Sky\+Cube}!generate\+Combinatorial@{generate\+Combinatorial}}
+\index{generate\+Combinatorial@{generate\+Combinatorial}!Sky\+Cube@{Sky\+Cube}}
+\subsubsection{\texorpdfstring{generate\+Combinatorial()}{generateCombinatorial()}}
+{\footnotesize\ttfamily Sky\+Cube\+::generate\+Combinatorial (\begin{DoxyParamCaption}\item[{}]{\$\+List,  }\item[{}]{\$\+Begin = {\ttfamily array~()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Méthode protégée pour générer des combinaisons de valeurs.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+List} & Le tableau de valeurs à combiner. \\
+\hline
+array & {\em \$\+Begin} & La combinaison actuelle en cours de construction. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array Les combinaisons générées. 
+\end{DoxyReturn}
+
+
+Definition at line 236 of file Sky\+Cube.\+class.\+php.
+
+
+
+Referenced by get\+Multidimensional\+Space(), and test\+Combinatorial().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sky_cube_a7b3e29b56258fde62d37e1a405c819d5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_sky_cube_a66b8cb4ff0f25754d2384224c7e40ced}\label{class_sky_cube_a66b8cb4ff0f25754d2384224c7e40ced}} 
+\index{Sky\+Cube@{Sky\+Cube}!generate\+Cuboide\+List@{generate\+Cuboide\+List}}
+\index{generate\+Cuboide\+List@{generate\+Cuboide\+List}!Sky\+Cube@{Sky\+Cube}}
+\subsubsection{\texorpdfstring{generate\+Cuboide\+List()}{generateCuboideList()}}
+{\footnotesize\ttfamily Sky\+Cube\+::generate\+Cuboide\+List (\begin{DoxyParamCaption}\item[{}]{\$\+Compute\+Accord\+Cuboides = {\ttfamily FALSE} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Méthode protégée pour générer la liste des Cuboides pour un niveau donné.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$\+Level} & Le niveau du \hyperlink{class_cuboide}{Cuboide}. \\
+\hline
+array & {\em \$\+Col\+I\+Ds} & Les I\+Ds des colonnes à utiliser pour générer les Cuboides. \\
+\hline
+bool & {\em \$\+Compute\+Accord\+Cuboides} & Indicateur pour calculer les Cuboides en accord. \\
+\hline
+string & {\em \$\+Current} & La combinaison d\textquotesingle{}en-\/têtes actuelle pour le \hyperlink{class_cuboide}{Cuboide}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 118 of file Sky\+Cube.\+class.\+php.
+
+
+
+References generate\+Cuboide\+List\+Lvl().
+
+
+
+Referenced by \+\_\+\+\_\+construct().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sky_cube_a66b8cb4ff0f25754d2384224c7e40ced_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sky_cube_a66b8cb4ff0f25754d2384224c7e40ced_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_sky_cube_a19cef89f0ed6c66283b68fb9b4dcafa6}\label{class_sky_cube_a19cef89f0ed6c66283b68fb9b4dcafa6}} 
+\index{Sky\+Cube@{Sky\+Cube}!generate\+Cuboide\+List\+Lvl@{generate\+Cuboide\+List\+Lvl}}
+\index{generate\+Cuboide\+List\+Lvl@{generate\+Cuboide\+List\+Lvl}!Sky\+Cube@{Sky\+Cube}}
+\subsubsection{\texorpdfstring{generate\+Cuboide\+List\+Lvl()}{generateCuboideListLvl()}}
+{\footnotesize\ttfamily Sky\+Cube\+::generate\+Cuboide\+List\+Lvl (\begin{DoxyParamCaption}\item[{}]{\$\+Level,  }\item[{}]{\$\+Col\+I\+Ds,  }\item[{}]{\$\+Compute\+Accord\+Cuboides = {\ttfamily FALSE},  }\item[{}]{\$\+Current = {\ttfamily \textquotesingle{}\textquotesingle{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Méthode protégée pour générer la liste des Cuboides pour un niveau donné.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$\+Level} & Le niveau du \hyperlink{class_cuboide}{Cuboide}. \\
+\hline
+array & {\em \$\+Col\+I\+Ds} & Les I\+Ds des colonnes à utiliser pour générer les Cuboides. \\
+\hline
+bool & {\em \$\+Compute\+Accord\+Cuboides} & Indicateur pour calculer les Cuboides en accord. \\
+\hline
+string & {\em \$\+Current} & La combinaison d\textquotesingle{}en-\/têtes actuelle pour le \hyperlink{class_cuboide}{Cuboide}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 68 of file Sky\+Cube.\+class.\+php.
+
+
+
+References \$\+Col\+I\+Ds.
+
+
+
+Referenced by generate\+Cuboide\+List().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sky_cube_a19cef89f0ed6c66283b68fb9b4dcafa6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_sky_cube_a055600504acd68aa4dfbb7f7d9425066}\label{class_sky_cube_a055600504acd68aa4dfbb7f7d9425066}} 
+\index{Sky\+Cube@{Sky\+Cube}!get\+Col\+ID@{get\+Col\+ID}}
+\index{get\+Col\+ID@{get\+Col\+ID}!Sky\+Cube@{Sky\+Cube}}
+\subsubsection{\texorpdfstring{get\+Col\+I\+D()}{getColID()}}
+{\footnotesize\ttfamily Sky\+Cube\+::get\+Col\+ID (\begin{DoxyParamCaption}\item[{}]{\$\+Col\+Header,  }\item[{}]{\$\+Measure\+Cols }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Méthode protégée pour obtenir l\textquotesingle{}ID d\textquotesingle{}une colonne.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$\+Col\+Header} & Le nom de la colonne. \\
+\hline
+array & {\em \$\+Measure\+Cols} & Les colonnes d\textquotesingle{}identification d\textquotesingle{}attribut (mesure). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string L\textquotesingle{}ID de la colonne. 
+\end{DoxyReturn}
+
+
+Definition at line 149 of file Sky\+Cube.\+class.\+php.
+
+
+
+Referenced by compute\+Data\+Set().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sky_cube_a055600504acd68aa4dfbb7f7d9425066_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_sky_cube_a4b5698250b2e467731f8d3c6a49e04a9}\label{class_sky_cube_a4b5698250b2e467731f8d3c6a49e04a9}} 
+\index{Sky\+Cube@{Sky\+Cube}!get\+Col\+I\+Ds@{get\+Col\+I\+Ds}}
+\index{get\+Col\+I\+Ds@{get\+Col\+I\+Ds}!Sky\+Cube@{Sky\+Cube}}
+\subsubsection{\texorpdfstring{get\+Col\+I\+Ds()}{getColIDs()}}
+{\footnotesize\ttfamily Sky\+Cube\+::get\+Col\+I\+Ds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Méthode pour obtenir les en-\/têtes de colonnes (Col\+I\+Ds) du Skycube.
+
+\begin{DoxyReturn}{Returns}
+array Les en-\/têtes de colonnes (Col\+I\+Ds) du Skycube. 
+\end{DoxyReturn}
+
+
+Definition at line 362 of file Sky\+Cube.\+class.\+php.
+
+
+
+References \$\+Col\+I\+Ds.
+
+
+
+Referenced by Co\+Sky\textbackslash{}prepare().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sky_cube_a4b5698250b2e467731f8d3c6a49e04a9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_sky_cube_a18c6b3ec100eb483e941b8bb69c40187}\label{class_sky_cube_a18c6b3ec100eb483e941b8bb69c40187}} 
+\index{Sky\+Cube@{Sky\+Cube}!get\+Cuboide@{get\+Cuboide}}
+\index{get\+Cuboide@{get\+Cuboide}!Sky\+Cube@{Sky\+Cube}}
+\subsubsection{\texorpdfstring{get\+Cuboide()}{getCuboide()}}
+{\footnotesize\ttfamily Sky\+Cube\+::get\+Cuboide (\begin{DoxyParamCaption}\item[{}]{\$\+ID }\end{DoxyParamCaption})}
+
+Méthode pour obtenir un \hyperlink{class_cuboide}{Cuboide} spécifique en fonction de son ID.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$\+ID} & L\textquotesingle{}ID du \hyperlink{class_cuboide}{Cuboide} recherché. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Cuboide$\vert$null Le \hyperlink{class_cuboide}{Cuboide} correspondant à l\textquotesingle{}ID ou N\+U\+LL si non trouvé. 
+\end{DoxyReturn}
+
+
+Definition at line 394 of file Sky\+Cube.\+class.\+php.
+
+
+
+Referenced by Analysis\textbackslash{}compute\+Cuboide(), Analysis\textbackslash{}compute\+Cuboide\+Attribute(), Analysis\textbackslash{}generate\+Algo\+Input(), and Co\+Sky\textbackslash{}prepare().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sky_cube_a18c6b3ec100eb483e941b8bb69c40187_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_sky_cube_ad23b0dcc8513aaa0ce95fee26dfbee0e}\label{class_sky_cube_ad23b0dcc8513aaa0ce95fee26dfbee0e}} 
+\index{Sky\+Cube@{Sky\+Cube}!get\+Cuboide\+I\+Ds@{get\+Cuboide\+I\+Ds}}
+\index{get\+Cuboide\+I\+Ds@{get\+Cuboide\+I\+Ds}!Sky\+Cube@{Sky\+Cube}}
+\subsubsection{\texorpdfstring{get\+Cuboide\+I\+Ds()}{getCuboideIDs()}}
+{\footnotesize\ttfamily Sky\+Cube\+::get\+Cuboide\+I\+Ds (\begin{DoxyParamCaption}\item[{}]{\$\+Filtered = {\ttfamily TRUE} }\end{DoxyParamCaption})}
+
+Méthode pour obtenir les I\+Ds des Cuboides, filtrés ou non, indexés par leur niveau et leur ID.
+
+
+\begin{DoxyParams}[1]{Parameters}
+bool & {\em \$\+Filtered} & Indicateur pour obtenir les Cuboides filtrés ou non. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array Les I\+Ds des Cuboides, filtrés ou non, indexés par leur niveau et leur ID. 
+\end{DoxyReturn}
+
+
+Definition at line 383 of file Sky\+Cube.\+class.\+php.
+
+
+
+Referenced by Analysis\textbackslash{}compute(), Analysis\textbackslash{}generate\+Algo\+Input(), and Co\+Sky\textbackslash{}prepare().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sky_cube_ad23b0dcc8513aaa0ce95fee26dfbee0e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_sky_cube_aabad14a4963a4b7f890e5e7abcb5f67b}\label{class_sky_cube_aabad14a4963a4b7f890e5e7abcb5f67b}} 
+\index{Sky\+Cube@{Sky\+Cube}!get\+Cuboides@{get\+Cuboides}}
+\index{get\+Cuboides@{get\+Cuboides}!Sky\+Cube@{Sky\+Cube}}
+\subsubsection{\texorpdfstring{get\+Cuboides()}{getCuboides()}}
+{\footnotesize\ttfamily Sky\+Cube\+::get\+Cuboides (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Méthode pour obtenir la liste des Cuboides du Skycube.
+
+\begin{DoxyReturn}{Returns}
+array La liste des Cuboides du Skycube. 
+\end{DoxyReturn}
+
+
+Definition at line 372 of file Sky\+Cube.\+class.\+php.
+
+
+
+References \$\+Cuboides.
+
+\mbox{\Hypertarget{class_sky_cube_a3627e6be0bf4eb22fde5a7d422ec60d1}\label{class_sky_cube_a3627e6be0bf4eb22fde5a7d422ec60d1}} 
+\index{Sky\+Cube@{Sky\+Cube}!get\+Data\+Set@{get\+Data\+Set}}
+\index{get\+Data\+Set@{get\+Data\+Set}!Sky\+Cube@{Sky\+Cube}}
+\subsubsection{\texorpdfstring{get\+Data\+Set()}{getDataSet()}}
+{\footnotesize\ttfamily Sky\+Cube\+::get\+Data\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Méthode pour obtenir le Data\+Set du Skycube.
+
+\begin{DoxyReturn}{Returns}
+array Le Data\+Set du Skycube. 
+\end{DoxyReturn}
+
+
+Definition at line 342 of file Sky\+Cube.\+class.\+php.
+
+
+
+References \$\+Data\+Set.
+
+\mbox{\Hypertarget{class_sky_cube_ad6426ecd7f39e86656afa4de4db347b5}\label{class_sky_cube_ad6426ecd7f39e86656afa4de4db347b5}} 
+\index{Sky\+Cube@{Sky\+Cube}!get\+Multidimensional\+Space@{get\+Multidimensional\+Space}}
+\index{get\+Multidimensional\+Space@{get\+Multidimensional\+Space}!Sky\+Cube@{Sky\+Cube}}
+\subsubsection{\texorpdfstring{get\+Multidimensional\+Space()}{getMultidimensionalSpace()}}
+{\footnotesize\ttfamily Sky\+Cube\+::get\+Multidimensional\+Space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Méthode pour obtenir l\textquotesingle{}espace multidimensionnel généré par le Skycube.
+
+\begin{DoxyReturn}{Returns}
+array L\textquotesingle{}espace multidimensionnel. 
+\end{DoxyReturn}
+
+
+Definition at line 282 of file Sky\+Cube.\+class.\+php.
+
+
+
+References generate\+Combinatorial().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sky_cube_ad6426ecd7f39e86656afa4de4db347b5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_sky_cube_a8fe81d998c875dbd6921b709f9d464d6}\label{class_sky_cube_a8fe81d998c875dbd6921b709f9d464d6}} 
+\index{Sky\+Cube@{Sky\+Cube}!get\+Row\+Headers@{get\+Row\+Headers}}
+\index{get\+Row\+Headers@{get\+Row\+Headers}!Sky\+Cube@{Sky\+Cube}}
+\subsubsection{\texorpdfstring{get\+Row\+Headers()}{getRowHeaders()}}
+{\footnotesize\ttfamily Sky\+Cube\+::get\+Row\+Headers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Méthode pour obtenir les en-\/têtes de lignes du Skycube.
+
+\begin{DoxyReturn}{Returns}
+array Les en-\/têtes de lignes du Skycube. 
+\end{DoxyReturn}
+
+
+Definition at line 352 of file Sky\+Cube.\+class.\+php.
+
+
+
+References \$\+Row\+Headers.
+
+\mbox{\Hypertarget{class_sky_cube_a315d9eb3672b81c5091139db449dd0ac}\label{class_sky_cube_a315d9eb3672b81c5091139db449dd0ac}} 
+\index{Sky\+Cube@{Sky\+Cube}!test\+Combinatorial@{test\+Combinatorial}}
+\index{test\+Combinatorial@{test\+Combinatorial}!Sky\+Cube@{Sky\+Cube}}
+\subsubsection{\texorpdfstring{test\+Combinatorial()}{testCombinatorial()}}
+{\footnotesize\ttfamily Sky\+Cube\+::test\+Combinatorial (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Méthode de test pour générer des combinaisons et afficher le résultat. Utilisée uniquement à des fins de test. 
+
+Definition at line 266 of file Sky\+Cube.\+class.\+php.
+
+
+
+References generate\+Combinatorial().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sky_cube_a315d9eb3672b81c5091139db449dd0ac_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_sky_cube_a7b6332fc8c2a70f63f999959d5f0b03a}\label{class_sky_cube_a7b6332fc8c2a70f63f999959d5f0b03a}} 
+\index{Sky\+Cube@{Sky\+Cube}!\$\+Col\+I\+Ds@{\$\+Col\+I\+Ds}}
+\index{\$\+Col\+I\+Ds@{\$\+Col\+I\+Ds}!Sky\+Cube@{Sky\+Cube}}
+\subsubsection{\texorpdfstring{\$\+Col\+I\+Ds}{$ColIDs}}
+{\footnotesize\ttfamily Sky\+Cube\+::\$\+Col\+I\+Ds\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 418 of file Sky\+Cube.\+class.\+php.
+
+
+
+Referenced by generate\+Cuboide\+List\+Lvl(), and get\+Col\+I\+Ds().
+
+\mbox{\Hypertarget{class_sky_cube_a29a6af34afe03c9484470788644c09ae}\label{class_sky_cube_a29a6af34afe03c9484470788644c09ae}} 
+\index{Sky\+Cube@{Sky\+Cube}!\$\+Cuboides@{\$\+Cuboides}}
+\index{\$\+Cuboides@{\$\+Cuboides}!Sky\+Cube@{Sky\+Cube}}
+\subsubsection{\texorpdfstring{\$\+Cuboides}{$Cuboides}}
+{\footnotesize\ttfamily Sky\+Cube\+::\$\+Cuboides\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 453 of file Sky\+Cube.\+class.\+php.
+
+
+
+Referenced by Sky\+Cube\+Emergent\textbackslash{}get\+Cuboide\+I\+Ds(), Sky\+Cube\+Emergent\textbackslash{}get\+Cuboides(), and get\+Cuboides().
+
+\mbox{\Hypertarget{class_sky_cube_aa5c86b2f23b58489a3e2e42c112904b7}\label{class_sky_cube_aa5c86b2f23b58489a3e2e42c112904b7}} 
+\index{Sky\+Cube@{Sky\+Cube}!\$\+Current\+Col\+ID@{\$\+Current\+Col\+ID}}
+\index{\$\+Current\+Col\+ID@{\$\+Current\+Col\+ID}!Sky\+Cube@{Sky\+Cube}}
+\subsubsection{\texorpdfstring{\$\+Current\+Col\+ID}{$CurrentColID}}
+{\footnotesize\ttfamily Sky\+Cube\+::\$\+Current\+Col\+ID\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 439 of file Sky\+Cube.\+class.\+php.
+
+
+
+Referenced by Sky\+Cube\+Emergent\textbackslash{}get\+Col\+I\+D().
+
+\mbox{\Hypertarget{class_sky_cube_a1ca406fe9bd295d4f75e5acc4c8a097c}\label{class_sky_cube_a1ca406fe9bd295d4f75e5acc4c8a097c}} 
+\index{Sky\+Cube@{Sky\+Cube}!\$\+Data\+Set@{\$\+Data\+Set}}
+\index{\$\+Data\+Set@{\$\+Data\+Set}!Sky\+Cube@{Sky\+Cube}}
+\subsubsection{\texorpdfstring{\$\+Data\+Set}{$DataSet}}
+{\footnotesize\ttfamily Sky\+Cube\+::\$\+Data\+Set\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 404 of file Sky\+Cube.\+class.\+php.
+
+
+
+Referenced by get\+Data\+Set().
+
+\mbox{\Hypertarget{class_sky_cube_a52a9da29a47e5e8e434b82a7d3caaeeb}\label{class_sky_cube_a52a9da29a47e5e8e434b82a7d3caaeeb}} 
+\index{Sky\+Cube@{Sky\+Cube}!\$\+Filtered\+Cuboide\+I\+Ds@{\$\+Filtered\+Cuboide\+I\+Ds}}
+\index{\$\+Filtered\+Cuboide\+I\+Ds@{\$\+Filtered\+Cuboide\+I\+Ds}!Sky\+Cube@{Sky\+Cube}}
+\subsubsection{\texorpdfstring{\$\+Filtered\+Cuboide\+I\+Ds}{$FilteredCuboideIDs}}
+{\footnotesize\ttfamily Sky\+Cube\+::\$\+Filtered\+Cuboide\+I\+Ds\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 467 of file Sky\+Cube.\+class.\+php.
+
+\mbox{\Hypertarget{class_sky_cube_a2a1f81c33966b049003c0fbc898cb51d}\label{class_sky_cube_a2a1f81c33966b049003c0fbc898cb51d}} 
+\index{Sky\+Cube@{Sky\+Cube}!\$\+Is\+Valid@{\$\+Is\+Valid}}
+\index{\$\+Is\+Valid@{\$\+Is\+Valid}!Sky\+Cube@{Sky\+Cube}}
+\subsubsection{\texorpdfstring{\$\+Is\+Valid}{$IsValid}}
+{\footnotesize\ttfamily Sky\+Cube\+::\$\+Is\+Valid\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 432 of file Sky\+Cube.\+class.\+php.
+
+\mbox{\Hypertarget{class_sky_cube_a72e94f47d2fba9130ca1f468d93c85ae}\label{class_sky_cube_a72e94f47d2fba9130ca1f468d93c85ae}} 
+\index{Sky\+Cube@{Sky\+Cube}!\$\+Min\+Max@{\$\+Min\+Max}}
+\index{\$\+Min\+Max@{\$\+Min\+Max}!Sky\+Cube@{Sky\+Cube}}
+\subsubsection{\texorpdfstring{\$\+Min\+Max}{$MinMax}}
+{\footnotesize\ttfamily Sky\+Cube\+::\$\+Min\+Max\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 425 of file Sky\+Cube.\+class.\+php.
+
+
+
+Referenced by Sky\+Cube\+Emergent\textbackslash{}\+\_\+\+\_\+construct(), and \+\_\+\+\_\+construct().
+
+\mbox{\Hypertarget{class_sky_cube_ae0988ad067bb0c954c74140b8cd34c67}\label{class_sky_cube_ae0988ad067bb0c954c74140b8cd34c67}} 
+\index{Sky\+Cube@{Sky\+Cube}!\$\+Ordered\+Cuboide\+I\+Ds@{\$\+Ordered\+Cuboide\+I\+Ds}}
+\index{\$\+Ordered\+Cuboide\+I\+Ds@{\$\+Ordered\+Cuboide\+I\+Ds}!Sky\+Cube@{Sky\+Cube}}
+\subsubsection{\texorpdfstring{\$\+Ordered\+Cuboide\+I\+Ds}{$OrderedCuboideIDs}}
+{\footnotesize\ttfamily Sky\+Cube\+::\$\+Ordered\+Cuboide\+I\+Ds\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 460 of file Sky\+Cube.\+class.\+php.
+
+\mbox{\Hypertarget{class_sky_cube_a8cea387612952f4291a3f18d962834ce}\label{class_sky_cube_a8cea387612952f4291a3f18d962834ce}} 
+\index{Sky\+Cube@{Sky\+Cube}!\$\+Row\+Headers@{\$\+Row\+Headers}}
+\index{\$\+Row\+Headers@{\$\+Row\+Headers}!Sky\+Cube@{Sky\+Cube}}
+\subsubsection{\texorpdfstring{\$\+Row\+Headers}{$RowHeaders}}
+{\footnotesize\ttfamily Sky\+Cube\+::\$\+Row\+Headers\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 411 of file Sky\+Cube.\+class.\+php.
+
+
+
+Referenced by get\+Row\+Headers().
+
+\mbox{\Hypertarget{class_sky_cube_aeae26ba6326acb0643320e03cb25d37d}\label{class_sky_cube_aeae26ba6326acb0643320e03cb25d37d}} 
+\index{Sky\+Cube@{Sky\+Cube}!\$\+Sets\+Of\+Parts@{\$\+Sets\+Of\+Parts}}
+\index{\$\+Sets\+Of\+Parts@{\$\+Sets\+Of\+Parts}!Sky\+Cube@{Sky\+Cube}}
+\subsubsection{\texorpdfstring{\$\+Sets\+Of\+Parts}{$SetsOfParts}}
+{\footnotesize\ttfamily Sky\+Cube\+::\$\+Sets\+Of\+Parts\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 446 of file Sky\+Cube.\+class.\+php.
+
+\mbox{\Hypertarget{class_sky_cube_a30dbde9937a3942ea12ad1cd2b9740a0}\label{class_sky_cube_a30dbde9937a3942ea12ad1cd2b9740a0}} 
+\index{Sky\+Cube@{Sky\+Cube}!C\+U\+B\+O\+I\+DE@{C\+U\+B\+O\+I\+DE}}
+\index{C\+U\+B\+O\+I\+DE@{C\+U\+B\+O\+I\+DE}!Sky\+Cube@{Sky\+Cube}}
+\subsubsection{\texorpdfstring{C\+U\+B\+O\+I\+DE}{CUBOIDE}}
+{\footnotesize\ttfamily const Sky\+Cube\+::\+C\+U\+B\+O\+I\+DE = \textquotesingle{}\hyperlink{class_cuboide}{Cuboide}\textquotesingle{}}
+
+Le nom de la classe \hyperlink{class_cuboide}{Cuboide} utilisée pour la construction des Cuboides. 
+
+Definition at line 28 of file Sky\+Cube.\+class.\+php.
+
+\mbox{\Hypertarget{class_sky_cube_a7379f6cb471bafe6208e7c82bd19eafb}\label{class_sky_cube_a7379f6cb471bafe6208e7c82bd19eafb}} 
+\index{Sky\+Cube@{Sky\+Cube}!M\+A\+X\+\_\+\+C\+U\+B\+O\+I\+DE@{M\+A\+X\+\_\+\+C\+U\+B\+O\+I\+DE}}
+\index{M\+A\+X\+\_\+\+C\+U\+B\+O\+I\+DE@{M\+A\+X\+\_\+\+C\+U\+B\+O\+I\+DE}!Sky\+Cube@{Sky\+Cube}}
+\subsubsection{\texorpdfstring{M\+A\+X\+\_\+\+C\+U\+B\+O\+I\+DE}{MAX\_CUBOIDE}}
+{\footnotesize\ttfamily const Sky\+Cube\+::\+M\+A\+X\+\_\+\+C\+U\+B\+O\+I\+DE = 128}
+
+Le nombre maximal de Cuboides autorisé. 
+
+Definition at line 18 of file Sky\+Cube.\+class.\+php.
+
+\mbox{\Hypertarget{class_sky_cube_a02a81cad7f2521e515a4f7574d2899ae}\label{class_sky_cube_a02a81cad7f2521e515a4f7574d2899ae}} 
+\index{Sky\+Cube@{Sky\+Cube}!M\+I\+N\+\_\+\+C\+O\+L\+ID@{M\+I\+N\+\_\+\+C\+O\+L\+ID}}
+\index{M\+I\+N\+\_\+\+C\+O\+L\+ID@{M\+I\+N\+\_\+\+C\+O\+L\+ID}!Sky\+Cube@{Sky\+Cube}}
+\subsubsection{\texorpdfstring{M\+I\+N\+\_\+\+C\+O\+L\+ID}{MIN\_COLID}}
+{\footnotesize\ttfamily const Sky\+Cube\+::\+M\+I\+N\+\_\+\+C\+O\+L\+ID = \textquotesingle{}A\textquotesingle{}}
+
+L\textquotesingle{}ID de la première colonne de données. 
+
+Definition at line 23 of file Sky\+Cube.\+class.\+php.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+taged/application/src/algo/\hyperlink{_sky_cube_8class_8php}{Sky\+Cube.\+class.\+php}\end{DoxyCompactItemize}

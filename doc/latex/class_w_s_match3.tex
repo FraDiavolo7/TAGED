@@ -1,0 +1,330 @@
+\hypertarget{class_w_s_match3}{}\section{W\+S\+Match3 Class Reference}
+\label{class_w_s_match3}\index{W\+S\+Match3@{W\+S\+Match3}}
+
+
+Inheritance diagram for W\+S\+Match3\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{class_w_s_match3__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for W\+S\+Match3\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{class_w_s_match3__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_w_s_match3_a5b15159c3ae0bd42ee40cc318b8b27bc}{\+\_\+\+\_\+construct} ( \$Input\+Data=N\+U\+LL)
+\item 
+\hyperlink{class_w_s_match3_a63e3018032202b5d6f55de7013500aa3}{serve} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{class_w_s_match3_a78b631a8e2dcb333a4288e0257796217}{W\+S\+\_\+\+M3\+\_\+\+D\+A\+TA} = \textquotesingle{}data\textquotesingle{}
+\item 
+const \hyperlink{class_w_s_match3_af985e7b6d16f369725456e078acbb3e2}{W\+S\+\_\+\+M3\+\_\+\+S\+E\+L\+E\+C\+T\+OR} = \textquotesingle{}m3\textquotesingle{}
+\item 
+const \hyperlink{class_w_s_match3_ab480c232699bb4b14555537006172130}{W\+S\+\_\+\+M3\+\_\+\+D\+E\+F\+A\+U\+LT} = \textquotesingle{}nothing\textquotesingle{}
+\item 
+const \hyperlink{class_w_s_match3_a13949996d08030d1bf5f17ad19f77c28}{W\+S\+\_\+\+M3\+\_\+\+L\+I\+ST}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_w_s_match3_a26d2ad6c89b5ec23676d9058351a85ad}{store} ()
+\item 
+\hyperlink{class_w_s_match3_afbcd987857d22156e83f94015f6be8ad}{intermediate} ()
+\item 
+\hyperlink{class_w_s_match3_a16d0c9ff94bf1349edc69fb58a8d0ff1}{game\+Over} ()
+\item 
+\hyperlink{class_w_s_match3_ac52182880ce359a41be077b9ad4142b3}{new\+Game} ()
+\item 
+\hyperlink{class_w_s_match3_aa38859d7b938a1a463f5f71fa9158f18}{get\+M3\+Selector} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_w_s_match3_a5d00b6220eaf523ce74cb85cee870f0a}{\$\+Input\+Data}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 9 of file W\+S\+Match3.\+class.\+php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_w_s_match3_a5b15159c3ae0bd42ee40cc318b8b27bc}\label{class_w_s_match3_a5b15159c3ae0bd42ee40cc318b8b27bc}} 
+\index{W\+S\+Match3@{W\+S\+Match3}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!W\+S\+Match3@{W\+S\+Match3}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+construct()}{\_\_construct()}}
+{\footnotesize\ttfamily W\+S\+Match3\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{}]{\$\+Input\+Data = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+Constructeur de la classe \hyperlink{class_w_s_match3}{W\+S\+Match3}.
+
+Initialise un nouvel objet \hyperlink{class_w_s_match3}{W\+S\+Match3} en récupérant les données d\textquotesingle{}entrée passées en paramètre ou en utilisant la superglobale \$\+\_\+\+R\+E\+Q\+U\+E\+ST si aucun paramètre n\textquotesingle{}est fourni.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array | null & {\em \$\+Input\+Data} & Données d\textquotesingle{}entrée du service web \hyperlink{class_match3}{Match3}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 44 of file W\+S\+Match3.\+class.\+php.
+
+
+
+References \$\+Input\+Data.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_w_s_match3_a16d0c9ff94bf1349edc69fb58a8d0ff1}\label{class_w_s_match3_a16d0c9ff94bf1349edc69fb58a8d0ff1}} 
+\index{W\+S\+Match3@{W\+S\+Match3}!game\+Over@{game\+Over}}
+\index{game\+Over@{game\+Over}!W\+S\+Match3@{W\+S\+Match3}}
+\subsubsection{\texorpdfstring{game\+Over()}{gameOver()}}
+{\footnotesize\ttfamily W\+S\+Match3\+::game\+Over (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Action de fin de partie du \hyperlink{class_match3}{Match3}.
+
+Appelle la méthode de stockage des données (store) et ne renvoie aucune valeur.
+
+\begin{DoxyReturn}{Returns}
+string Chaîne vide. 
+\end{DoxyReturn}
+
+
+Definition at line 109 of file W\+S\+Match3.\+class.\+php.
+
+
+
+References store().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_w_s_match3_a16d0c9ff94bf1349edc69fb58a8d0ff1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_w_s_match3_aa38859d7b938a1a463f5f71fa9158f18}\label{class_w_s_match3_aa38859d7b938a1a463f5f71fa9158f18}} 
+\index{W\+S\+Match3@{W\+S\+Match3}!get\+M3\+Selector@{get\+M3\+Selector}}
+\index{get\+M3\+Selector@{get\+M3\+Selector}!W\+S\+Match3@{W\+S\+Match3}}
+\subsubsection{\texorpdfstring{get\+M3\+Selector()}{getM3Selector()}}
+{\footnotesize\ttfamily W\+S\+Match3\+::get\+M3\+Selector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Obtient le sélecteur \hyperlink{class_match3}{Match3}.
+
+Récupère le sélecteur \hyperlink{class_match3}{Match3} des données d\textquotesingle{}entrée et retourne l\textquotesingle{}action associée dans la liste W\+S\+\_\+\+M3\+\_\+\+L\+I\+ST. Si le sélecteur n\textquotesingle{}est pas trouvé dans la liste, retourne l\textquotesingle{}action par défaut W\+S\+\_\+\+M3\+\_\+\+D\+E\+F\+A\+U\+LT.
+
+\begin{DoxyReturn}{Returns}
+string Action associée au sélecteur \hyperlink{class_match3}{Match3}. 
+\end{DoxyReturn}
+
+
+Definition at line 149 of file W\+S\+Match3.\+class.\+php.
+
+
+
+Referenced by serve().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_w_s_match3_aa38859d7b938a1a463f5f71fa9158f18_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_w_s_match3_afbcd987857d22156e83f94015f6be8ad}\label{class_w_s_match3_afbcd987857d22156e83f94015f6be8ad}} 
+\index{W\+S\+Match3@{W\+S\+Match3}!intermediate@{intermediate}}
+\index{intermediate@{intermediate}!W\+S\+Match3@{W\+S\+Match3}}
+\subsubsection{\texorpdfstring{intermediate()}{intermediate()}}
+{\footnotesize\ttfamily W\+S\+Match3\+::intermediate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Action intermédiaire du \hyperlink{class_match3}{Match3}.
+
+Appelle la méthode de stockage des données (store) et ne renvoie aucune valeur.
+
+\begin{DoxyReturn}{Returns}
+string Chaîne vide. 
+\end{DoxyReturn}
+
+
+Definition at line 92 of file W\+S\+Match3.\+class.\+php.
+
+
+
+References store().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_w_s_match3_afbcd987857d22156e83f94015f6be8ad_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_w_s_match3_ac52182880ce359a41be077b9ad4142b3}\label{class_w_s_match3_ac52182880ce359a41be077b9ad4142b3}} 
+\index{W\+S\+Match3@{W\+S\+Match3}!new\+Game@{new\+Game}}
+\index{new\+Game@{new\+Game}!W\+S\+Match3@{W\+S\+Match3}}
+\subsubsection{\texorpdfstring{new\+Game()}{newGame()}}
+{\footnotesize\ttfamily W\+S\+Match3\+::new\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Action pour démarrer une nouvelle partie du \hyperlink{class_match3}{Match3}.
+
+Récupère les données du \hyperlink{class_match3}{Match3} concernant la nouvelle partie et ne renvoie aucune valeur.
+
+\begin{DoxyReturn}{Returns}
+string Chaîne vide. 
+\end{DoxyReturn}
+
+
+Definition at line 126 of file W\+S\+Match3.\+class.\+php.
+
+
+
+References \$\+Data.
+
+\mbox{\Hypertarget{class_w_s_match3_a63e3018032202b5d6f55de7013500aa3}\label{class_w_s_match3_a63e3018032202b5d6f55de7013500aa3}} 
+\index{W\+S\+Match3@{W\+S\+Match3}!serve@{serve}}
+\index{serve@{serve}!W\+S\+Match3@{W\+S\+Match3}}
+\subsubsection{\texorpdfstring{serve()}{serve()}}
+{\footnotesize\ttfamily W\+S\+Match3\+::serve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Fonction principale du service web.
+
+Exécute l\textquotesingle{}action associée au sélecteur \hyperlink{class_match3}{Match3} (récupéré via la méthode get\+M3\+Selector) et retourne le résultat.
+
+\begin{DoxyReturn}{Returns}
+string Résultat de l\textquotesingle{}action du service web \hyperlink{class_match3}{Match3}. 
+\end{DoxyReturn}
+
+
+Definition at line 57 of file W\+S\+Match3.\+class.\+php.
+
+
+
+References get\+M3\+Selector().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_w_s_match3_a63e3018032202b5d6f55de7013500aa3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_w_s_match3_a26d2ad6c89b5ec23676d9058351a85ad}\label{class_w_s_match3_a26d2ad6c89b5ec23676d9058351a85ad}} 
+\index{W\+S\+Match3@{W\+S\+Match3}!store@{store}}
+\index{store@{store}!W\+S\+Match3@{W\+S\+Match3}}
+\subsubsection{\texorpdfstring{store()}{store()}}
+{\footnotesize\ttfamily W\+S\+Match3\+::store (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Fonction de stockage des données.
+
+Récupère les données du \hyperlink{class_match3}{Match3}, les traite et les sauvegarde dans la base de données en tant que partie de jeu. 
+
+Definition at line 69 of file W\+S\+Match3.\+class.\+php.
+
+
+
+References \$\+Data, and M3\+Game\textbackslash{}build().
+
+
+
+Referenced by game\+Over(), and intermediate().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{class_w_s_match3_a26d2ad6c89b5ec23676d9058351a85ad_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_w_s_match3_a26d2ad6c89b5ec23676d9058351a85ad_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_w_s_match3_a5d00b6220eaf523ce74cb85cee870f0a}\label{class_w_s_match3_a5d00b6220eaf523ce74cb85cee870f0a}} 
+\index{W\+S\+Match3@{W\+S\+Match3}!\$\+Input\+Data@{\$\+Input\+Data}}
+\index{\$\+Input\+Data@{\$\+Input\+Data}!W\+S\+Match3@{W\+S\+Match3}}
+\subsubsection{\texorpdfstring{\$\+Input\+Data}{$InputData}}
+{\footnotesize\ttfamily W\+S\+Match3\+::\$\+Input\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 162 of file W\+S\+Match3.\+class.\+php.
+
+
+
+Referenced by \+\_\+\+\_\+construct().
+
+\mbox{\Hypertarget{class_w_s_match3_a78b631a8e2dcb333a4288e0257796217}\label{class_w_s_match3_a78b631a8e2dcb333a4288e0257796217}} 
+\index{W\+S\+Match3@{W\+S\+Match3}!W\+S\+\_\+\+M3\+\_\+\+D\+A\+TA@{W\+S\+\_\+\+M3\+\_\+\+D\+A\+TA}}
+\index{W\+S\+\_\+\+M3\+\_\+\+D\+A\+TA@{W\+S\+\_\+\+M3\+\_\+\+D\+A\+TA}!W\+S\+Match3@{W\+S\+Match3}}
+\subsubsection{\texorpdfstring{W\+S\+\_\+\+M3\+\_\+\+D\+A\+TA}{WS\_M3\_DATA}}
+{\footnotesize\ttfamily const W\+S\+Match3\+::\+W\+S\+\_\+\+M3\+\_\+\+D\+A\+TA = \textquotesingle{}data\textquotesingle{}}
+
+Constante représentant les données \hyperlink{class_match3}{Match3}. 
+
+Definition at line 14 of file W\+S\+Match3.\+class.\+php.
+
+\mbox{\Hypertarget{class_w_s_match3_ab480c232699bb4b14555537006172130}\label{class_w_s_match3_ab480c232699bb4b14555537006172130}} 
+\index{W\+S\+Match3@{W\+S\+Match3}!W\+S\+\_\+\+M3\+\_\+\+D\+E\+F\+A\+U\+LT@{W\+S\+\_\+\+M3\+\_\+\+D\+E\+F\+A\+U\+LT}}
+\index{W\+S\+\_\+\+M3\+\_\+\+D\+E\+F\+A\+U\+LT@{W\+S\+\_\+\+M3\+\_\+\+D\+E\+F\+A\+U\+LT}!W\+S\+Match3@{W\+S\+Match3}}
+\subsubsection{\texorpdfstring{W\+S\+\_\+\+M3\+\_\+\+D\+E\+F\+A\+U\+LT}{WS\_M3\_DEFAULT}}
+{\footnotesize\ttfamily const W\+S\+Match3\+::\+W\+S\+\_\+\+M3\+\_\+\+D\+E\+F\+A\+U\+LT = \textquotesingle{}nothing\textquotesingle{}}
+
+Constante représentant la valeur par défaut du sélecteur \hyperlink{class_match3}{Match3}. 
+
+Definition at line 24 of file W\+S\+Match3.\+class.\+php.
+
+\mbox{\Hypertarget{class_w_s_match3_a13949996d08030d1bf5f17ad19f77c28}\label{class_w_s_match3_a13949996d08030d1bf5f17ad19f77c28}} 
+\index{W\+S\+Match3@{W\+S\+Match3}!W\+S\+\_\+\+M3\+\_\+\+L\+I\+ST@{W\+S\+\_\+\+M3\+\_\+\+L\+I\+ST}}
+\index{W\+S\+\_\+\+M3\+\_\+\+L\+I\+ST@{W\+S\+\_\+\+M3\+\_\+\+L\+I\+ST}!W\+S\+Match3@{W\+S\+Match3}}
+\subsubsection{\texorpdfstring{W\+S\+\_\+\+M3\+\_\+\+L\+I\+ST}{WS\_M3\_LIST}}
+{\footnotesize\ttfamily const W\+S\+Match3\+::\+W\+S\+\_\+\+M3\+\_\+\+L\+I\+ST}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= array (
+        \textcolor{stringliteral}{'fin'} => \textcolor{stringliteral}{'gameOver'},
+        \textcolor{stringliteral}{'step'} => \textcolor{stringliteral}{'intermediate'},
+        \textcolor{stringliteral}{'new'} => \textcolor{stringliteral}{'newGame'}
+    )
+\end{DoxyCode}
+
+
+Definition at line 30 of file W\+S\+Match3.\+class.\+php.
+
+\mbox{\Hypertarget{class_w_s_match3_af985e7b6d16f369725456e078acbb3e2}\label{class_w_s_match3_af985e7b6d16f369725456e078acbb3e2}} 
+\index{W\+S\+Match3@{W\+S\+Match3}!W\+S\+\_\+\+M3\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{W\+S\+\_\+\+M3\+\_\+\+S\+E\+L\+E\+C\+T\+OR}}
+\index{W\+S\+\_\+\+M3\+\_\+\+S\+E\+L\+E\+C\+T\+OR@{W\+S\+\_\+\+M3\+\_\+\+S\+E\+L\+E\+C\+T\+OR}!W\+S\+Match3@{W\+S\+Match3}}
+\subsubsection{\texorpdfstring{W\+S\+\_\+\+M3\+\_\+\+S\+E\+L\+E\+C\+T\+OR}{WS\_M3\_SELECTOR}}
+{\footnotesize\ttfamily const W\+S\+Match3\+::\+W\+S\+\_\+\+M3\+\_\+\+S\+E\+L\+E\+C\+T\+OR = \textquotesingle{}m3\textquotesingle{}}
+
+Constante représentant le sélecteur \hyperlink{class_match3}{Match3}. 
+
+Definition at line 19 of file W\+S\+Match3.\+class.\+php.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+taged/application/src/ws/\hyperlink{_w_s_match3_8class_8php}{W\+S\+Match3.\+class.\+php}\end{DoxyCompactItemize}

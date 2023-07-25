@@ -21,7 +21,6 @@ class CoSky
     
 	/**
 	 * Execute le calcul de CoSky
-	 * @return nothing?
 	 */
     public function run ()
     {
@@ -29,7 +28,7 @@ class CoSky
         
         $Results = '';
         
-        return $this->interpret ( $Results );
+        $this->interpret ( $Results );
     }
     
 	/**

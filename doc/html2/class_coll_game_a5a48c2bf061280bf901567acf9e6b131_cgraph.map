@@ -1,0 +1,4 @@
+<map id="CollGame\save" name="CollGame\save">
+<area shape="rect" id="node2" href="$class_coll_game.html#a957e9a00e3ce38129276f8454a242dcd" title="CollGame\\saveGame" alt="" coords="175,5,335,32"/>
+<area shape="rect" id="node3" href="$class_coll_game.html#a888d595abf397fe39d4d81833e92ad61" title="CollGame\\savePlayerEngaged" alt="" coords="383,5,601,32"/>
+</map>

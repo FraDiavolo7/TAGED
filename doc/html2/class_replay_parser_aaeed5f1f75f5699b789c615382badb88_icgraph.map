@@ -1,0 +1,7 @@
+<map id="ReplayParser\matchFunc1" name="ReplayParser\matchFunc1">
+<area shape="rect" id="node2" href="$class_replay_parser.html#abbcd249f3c369dc35386fc203bd7dc74" title="ReplayParser\\gameTypePreg" alt="" coords="241,5,448,32"/>
+<area shape="rect" id="node3" href="$class_replay_parser.html#a743e78021b6754ea36c804074e07da2d" title="ReplayParser\\genPreg" alt="" coords="263,56,426,83"/>
+<area shape="rect" id="node4" href="$class_replay_parser.html#ab8290a1fa1d0dce5b391fc53ad808775" title="ReplayParser\\rulePreg" alt="" coords="263,107,427,133"/>
+<area shape="rect" id="node5" href="$class_replay_parser.html#a6dbfd4792430ea1e12ce6aa9b4397ba7" title="ReplayParser\\tierPreg" alt="" coords="264,157,425,184"/>
+<area shape="rect" id="node6" href="$class_replay_parser.html#ae196d3d060e95dfe63e91afe4da55f15" title="ReplayParser\\winnerPreg" alt="" coords="253,208,436,235"/>
+</map>

@@ -1,0 +1,526 @@
+\hypertarget{class_hn_s_hero_parser}{}\section{Hn\+S\+Hero\+Parser Class Reference}
+\label{class_hn_s_hero_parser}\index{Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_hn_s_hero_parser_abaa66274b27ad652c5cc1ec9664d6c87}{\+\_\+\+\_\+construct} ( \$Text\+To\+Parse, \$Parameters=array())
+\item 
+\hyperlink{class_hn_s_hero_parser_a96e12afd4df5dcd65c55348a0c9a60e4}{\+\_\+\+\_\+destruct} ()
+\item 
+\hyperlink{class_hn_s_hero_parser_a6f55841b332636c1abc3894a326b3181}{\+\_\+\+\_\+to\+String} ()
+\item 
+\hyperlink{class_hn_s_hero_parser_afe4a29be403c12f8b5e2e7e0c962953a}{parse} ()
+\begin{DoxyCompactList}\small\item\em Parse (with P\+C\+RE) the \$this-\/$>$text member variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{class_hn_s_hero_parser_a7e8f1a62dc0b4c66d3021b04b0407893}{I\+T\+E\+M\+\_\+\+N\+A\+ME} = \textquotesingle{}itemname\textquotesingle{}
+\item 
+const \hyperlink{class_hn_s_hero_parser_aec4e7d8783aeedcbe16baebb37e8ad3a}{I\+T\+E\+M\+\_\+\+P\+OS} = \textquotesingle{}itempos\textquotesingle{}
+\item 
+const \hyperlink{class_hn_s_hero_parser_ac82fee41e18b6b12f5c14e1ee054bd3f}{I\+T\+E\+M\+\_\+\+I\+MG} = \textquotesingle{}itemimg\textquotesingle{}
+\item 
+const \hyperlink{class_hn_s_hero_parser_a20fb93b9f6d4c9a0195fe9f277a72a31}{I\+T\+E\+M\+\_\+\+A\+F\+F\+IX} = \textquotesingle{}itemaffix\textquotesingle{}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_hn_s_hero_parser_a9cf003b816c6cec46334bce6acb2ee34}{parse\+User} ( \$Matches)
+\item 
+\hyperlink{class_hn_s_hero_parser_a01475115beae31cb18668710cca48144}{parse\+User\+Details} ( \$Matches)
+\item 
+\hyperlink{class_hn_s_hero_parser_af577e30965cb36431463df160e913ff8}{parse\+Hero} ( \$Matches)
+\item 
+\hyperlink{class_hn_s_hero_parser_ade299a51769e68b2aee30b479942b447}{parse\+Items} ( \$Matches)
+\item 
+\hyperlink{class_hn_s_hero_parser_aebda147e79e7e7659ba7976455db095c}{parse\+Item} ( \$Matches)
+\item 
+\hyperlink{class_hn_s_hero_parser_adcd89614ad1fa41941418ae8ea5f0b1a}{parse\+Params} ( \$Matches)
+\item 
+\hyperlink{class_hn_s_hero_parser_a2c7f954291280bae51ad06f81145ff32}{parse\+Active} ( \$Matches)
+\item 
+\hyperlink{class_hn_s_hero_parser_ae5aebf1b85099d63768d7e0bbe3023d0}{parse\+Act} ( \$Matches)
+\item 
+\hyperlink{class_hn_s_hero_parser_adef3a079ee7bfd550c80bac1a6148eb0}{parse\+Passive} ( \$Matches)
+\item 
+\hyperlink{class_hn_s_hero_parser_acef885d138ef4a0ad902150d968b60ef}{parse\+Pass} ( \$Matches)
+\item 
+\hyperlink{class_hn_s_hero_parser_a68bdb1bde555e9a9b70a37716838a681}{parse\+Attributes} ( \$Matches)
+\item 
+\hyperlink{class_hn_s_hero_parser_a9e86a51dd6f1b0d2f60a92a840e3deb4}{parse\+AttrP} ( \$Matches)
+\item 
+\hyperlink{class_hn_s_hero_parser_a322f6767efcd5b7b71ce8e9792f9e469}{parse\+AttrS} ( \$Matches)
+\item 
+\hyperlink{class_hn_s_hero_parser_adcc83933771af3b55b0fa5c6d08e3dba}{parse\+AttrR} ( \$Matches)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_hn_s_hero_parser_a9791a1b55e2668bdb5df8d6f0703cf57}{\$\+Current\+Item}
+\item 
+\hyperlink{class_hn_s_hero_parser_aac2a72273a9c28c805a46cdc40a5ab44}{\$\+Item\+List}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_hn_s_hero_parser_aac2dc1befb5a88823cb1fdacaa170448}{clean} ()
+\begin{DoxyCompactList}\small\item\em Clean the \$this-\/$>$Full\+Text member variable of all undesirables characters. Use because P\+C\+RE pattern modifier m (P\+C\+R\+E\+\_\+\+M\+U\+L\+T\+I\+L\+I\+NE) have to use \char`\"{}\textbackslash{}n\char`\"{} characters in a subject string to match multiline group (particularly useful for lists). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_hn_s_hero_parser_a0aad0d7255ca2726509e3d09f9f9e00d}{\$\+Full\+Text}
+\item 
+\hyperlink{class_hn_s_hero_parser_a1610749a8619f93b7a8315fbd0f18037}{\$\+Processed\+Text}
+\item 
+\hyperlink{class_hn_s_hero_parser_a7deea68c90514b8307ebf40a994e1744}{\$\+Game}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 7 of file Hn\+S\+Hero\+Parser.\+class.\+php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hn_s_hero_parser_abaa66274b27ad652c5cc1ec9664d6c87}\label{class_hn_s_hero_parser_abaa66274b27ad652c5cc1ec9664d6c87}} 
+\index{Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Hn\+S\+Hero\+Parser\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{}]{\$\+Text\+To\+Parse,  }\item[{}]{\$\+Parameters = {\ttfamily array~()} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 21 of file Hn\+S\+Hero\+Parser.\+class.\+php.
+
+
+
+References \$\+Text\+To\+Parse, clean(), Hero\textbackslash{}set\+Class(), Hero\textbackslash{}set\+Rank(), Hero\textbackslash{}set\+Rift(), Hero\textbackslash{}set\+Server(), Hero\textbackslash{}set\+Time(), and Hero\textbackslash{}set\+U\+R\+L().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_hn_s_hero_parser_abaa66274b27ad652c5cc1ec9664d6c87_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_hn_s_hero_parser_a96e12afd4df5dcd65c55348a0c9a60e4}\label{class_hn_s_hero_parser_a96e12afd4df5dcd65c55348a0c9a60e4}} 
+\index{Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}!\+\_\+\+\_\+destruct@{\+\_\+\+\_\+destruct}}
+\index{\+\_\+\+\_\+destruct@{\+\_\+\+\_\+destruct}!Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+destruct()}{\_\_destruct()}}
+{\footnotesize\ttfamily Hn\+S\+Hero\+Parser\+::\+\_\+\+\_\+destruct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 46 of file Hn\+S\+Hero\+Parser.\+class.\+php.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hn_s_hero_parser_a6f55841b332636c1abc3894a326b3181}\label{class_hn_s_hero_parser_a6f55841b332636c1abc3894a326b3181}} 
+\index{Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}!\+\_\+\+\_\+to\+String@{\+\_\+\+\_\+to\+String}}
+\index{\+\_\+\+\_\+to\+String@{\+\_\+\+\_\+to\+String}!Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+to\+String()}{\_\_toString()}}
+{\footnotesize\ttfamily Hn\+S\+Hero\+Parser\+::\+\_\+\+\_\+to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 50 of file Hn\+S\+Hero\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_hn_s_hero_parser_aac2dc1befb5a88823cb1fdacaa170448}\label{class_hn_s_hero_parser_aac2dc1befb5a88823cb1fdacaa170448}} 
+\index{Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}!clean@{clean}}
+\index{clean@{clean}!Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}}
+\subsubsection{\texorpdfstring{clean()}{clean()}}
+{\footnotesize\ttfamily Hn\+S\+Hero\+Parser\+::clean (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Clean the \$this-\/$>$Full\+Text member variable of all undesirables characters. Use because P\+C\+RE pattern modifier m (P\+C\+R\+E\+\_\+\+M\+U\+L\+T\+I\+L\+I\+NE) have to use \char`\"{}\textbackslash{}n\char`\"{} characters in a subject string to match multiline group (particularly useful for lists). 
+
+
+
+Definition at line 63 of file Hn\+S\+Hero\+Parser.\+class.\+php.
+
+
+
+Referenced by \+\_\+\+\_\+construct().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_hn_s_hero_parser_aac2dc1befb5a88823cb1fdacaa170448_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_hn_s_hero_parser_afe4a29be403c12f8b5e2e7e0c962953a}\label{class_hn_s_hero_parser_afe4a29be403c12f8b5e2e7e0c962953a}} 
+\index{Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}!parse@{parse}}
+\index{parse@{parse}!Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}}
+\subsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily Hn\+S\+Hero\+Parser\+::parse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Parse (with P\+C\+RE) the \$this-\/$>$text member variable. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 72 of file Hn\+S\+Hero\+Parser.\+class.\+php.
+
+
+
+References \$\+Processed\+Text, and Hero\textbackslash{}get\+U\+R\+L().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{class_hn_s_hero_parser_afe4a29be403c12f8b5e2e7e0c962953a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_hn_s_hero_parser_ae5aebf1b85099d63768d7e0bbe3023d0}\label{class_hn_s_hero_parser_ae5aebf1b85099d63768d7e0bbe3023d0}} 
+\index{Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}!parse\+Act@{parse\+Act}}
+\index{parse\+Act@{parse\+Act}!Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}}
+\subsubsection{\texorpdfstring{parse\+Act()}{parseAct()}}
+{\footnotesize\ttfamily Hn\+S\+Hero\+Parser\+::parse\+Act (\begin{DoxyParamCaption}\item[{}]{\$\+Matches }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 167 of file Hn\+S\+Hero\+Parser.\+class.\+php.
+
+
+
+References Hero\textbackslash{}add\+Comp().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_hn_s_hero_parser_ae5aebf1b85099d63768d7e0bbe3023d0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_hn_s_hero_parser_a2c7f954291280bae51ad06f81145ff32}\label{class_hn_s_hero_parser_a2c7f954291280bae51ad06f81145ff32}} 
+\index{Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}!parse\+Active@{parse\+Active}}
+\index{parse\+Active@{parse\+Active}!Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}}
+\subsubsection{\texorpdfstring{parse\+Active()}{parseActive()}}
+{\footnotesize\ttfamily Hn\+S\+Hero\+Parser\+::parse\+Active (\begin{DoxyParamCaption}\item[{}]{\$\+Matches }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 160 of file Hn\+S\+Hero\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_hn_s_hero_parser_a68bdb1bde555e9a9b70a37716838a681}\label{class_hn_s_hero_parser_a68bdb1bde555e9a9b70a37716838a681}} 
+\index{Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}!parse\+Attributes@{parse\+Attributes}}
+\index{parse\+Attributes@{parse\+Attributes}!Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}}
+\subsubsection{\texorpdfstring{parse\+Attributes()}{parseAttributes()}}
+{\footnotesize\ttfamily Hn\+S\+Hero\+Parser\+::parse\+Attributes (\begin{DoxyParamCaption}\item[{}]{\$\+Matches }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 197 of file Hn\+S\+Hero\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_hn_s_hero_parser_a9e86a51dd6f1b0d2f60a92a840e3deb4}\label{class_hn_s_hero_parser_a9e86a51dd6f1b0d2f60a92a840e3deb4}} 
+\index{Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}!parse\+AttrP@{parse\+AttrP}}
+\index{parse\+AttrP@{parse\+AttrP}!Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}}
+\subsubsection{\texorpdfstring{parse\+Attr\+P()}{parseAttrP()}}
+{\footnotesize\ttfamily Hn\+S\+Hero\+Parser\+::parse\+AttrP (\begin{DoxyParamCaption}\item[{}]{\$\+Matches }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 206 of file Hn\+S\+Hero\+Parser.\+class.\+php.
+
+
+
+References Hero\textbackslash{}set\+Attr().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_hn_s_hero_parser_a9e86a51dd6f1b0d2f60a92a840e3deb4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_hn_s_hero_parser_adcc83933771af3b55b0fa5c6d08e3dba}\label{class_hn_s_hero_parser_adcc83933771af3b55b0fa5c6d08e3dba}} 
+\index{Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}!parse\+AttrR@{parse\+AttrR}}
+\index{parse\+AttrR@{parse\+AttrR}!Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}}
+\subsubsection{\texorpdfstring{parse\+Attr\+R()}{parseAttrR()}}
+{\footnotesize\ttfamily Hn\+S\+Hero\+Parser\+::parse\+AttrR (\begin{DoxyParamCaption}\item[{}]{\$\+Matches }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 220 of file Hn\+S\+Hero\+Parser.\+class.\+php.
+
+
+
+References Hero\textbackslash{}set\+Attr().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_hn_s_hero_parser_adcc83933771af3b55b0fa5c6d08e3dba_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_hn_s_hero_parser_a322f6767efcd5b7b71ce8e9792f9e469}\label{class_hn_s_hero_parser_a322f6767efcd5b7b71ce8e9792f9e469}} 
+\index{Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}!parse\+AttrS@{parse\+AttrS}}
+\index{parse\+AttrS@{parse\+AttrS}!Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}}
+\subsubsection{\texorpdfstring{parse\+Attr\+S()}{parseAttrS()}}
+{\footnotesize\ttfamily Hn\+S\+Hero\+Parser\+::parse\+AttrS (\begin{DoxyParamCaption}\item[{}]{\$\+Matches }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 213 of file Hn\+S\+Hero\+Parser.\+class.\+php.
+
+
+
+References Hero\textbackslash{}set\+Attr().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_hn_s_hero_parser_a322f6767efcd5b7b71ce8e9792f9e469_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_hn_s_hero_parser_af577e30965cb36431463df160e913ff8}\label{class_hn_s_hero_parser_af577e30965cb36431463df160e913ff8}} 
+\index{Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}!parse\+Hero@{parse\+Hero}}
+\index{parse\+Hero@{parse\+Hero}!Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}}
+\subsubsection{\texorpdfstring{parse\+Hero()}{parseHero()}}
+{\footnotesize\ttfamily Hn\+S\+Hero\+Parser\+::parse\+Hero (\begin{DoxyParamCaption}\item[{}]{\$\+Matches }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 115 of file Hn\+S\+Hero\+Parser.\+class.\+php.
+
+
+
+References Hero\textbackslash{}set\+Heroname(), Hero\textbackslash{}set\+Level(), and Hero\textbackslash{}set\+Parangon().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_hn_s_hero_parser_af577e30965cb36431463df160e913ff8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_hn_s_hero_parser_aebda147e79e7e7659ba7976455db095c}\label{class_hn_s_hero_parser_aebda147e79e7e7659ba7976455db095c}} 
+\index{Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}!parse\+Item@{parse\+Item}}
+\index{parse\+Item@{parse\+Item}!Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}}
+\subsubsection{\texorpdfstring{parse\+Item()}{parseItem()}}
+{\footnotesize\ttfamily Hn\+S\+Hero\+Parser\+::parse\+Item (\begin{DoxyParamCaption}\item[{}]{\$\+Matches }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 135 of file Hn\+S\+Hero\+Parser.\+class.\+php.
+
+
+
+References Hero\textbackslash{}add\+Item().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{class_hn_s_hero_parser_aebda147e79e7e7659ba7976455db095c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_hn_s_hero_parser_ade299a51769e68b2aee30b479942b447}\label{class_hn_s_hero_parser_ade299a51769e68b2aee30b479942b447}} 
+\index{Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}!parse\+Items@{parse\+Items}}
+\index{parse\+Items@{parse\+Items}!Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}}
+\subsubsection{\texorpdfstring{parse\+Items()}{parseItems()}}
+{\footnotesize\ttfamily Hn\+S\+Hero\+Parser\+::parse\+Items (\begin{DoxyParamCaption}\item[{}]{\$\+Matches }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 128 of file Hn\+S\+Hero\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_hn_s_hero_parser_adcd89614ad1fa41941418ae8ea5f0b1a}\label{class_hn_s_hero_parser_adcd89614ad1fa41941418ae8ea5f0b1a}} 
+\index{Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}!parse\+Params@{parse\+Params}}
+\index{parse\+Params@{parse\+Params}!Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}}
+\subsubsection{\texorpdfstring{parse\+Params()}{parseParams()}}
+{\footnotesize\ttfamily Hn\+S\+Hero\+Parser\+::parse\+Params (\begin{DoxyParamCaption}\item[{}]{\$\+Matches }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 152 of file Hn\+S\+Hero\+Parser.\+class.\+php.
+
+
+
+References Hero\textbackslash{}add\+Affix().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_hn_s_hero_parser_adcd89614ad1fa41941418ae8ea5f0b1a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_hn_s_hero_parser_acef885d138ef4a0ad902150d968b60ef}\label{class_hn_s_hero_parser_acef885d138ef4a0ad902150d968b60ef}} 
+\index{Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}!parse\+Pass@{parse\+Pass}}
+\index{parse\+Pass@{parse\+Pass}!Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}}
+\subsubsection{\texorpdfstring{parse\+Pass()}{parsePass()}}
+{\footnotesize\ttfamily Hn\+S\+Hero\+Parser\+::parse\+Pass (\begin{DoxyParamCaption}\item[{}]{\$\+Matches }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 186 of file Hn\+S\+Hero\+Parser.\+class.\+php.
+
+
+
+References Hero\textbackslash{}add\+Comp().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{class_hn_s_hero_parser_acef885d138ef4a0ad902150d968b60ef_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_hn_s_hero_parser_adef3a079ee7bfd550c80bac1a6148eb0}\label{class_hn_s_hero_parser_adef3a079ee7bfd550c80bac1a6148eb0}} 
+\index{Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}!parse\+Passive@{parse\+Passive}}
+\index{parse\+Passive@{parse\+Passive}!Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}}
+\subsubsection{\texorpdfstring{parse\+Passive()}{parsePassive()}}
+{\footnotesize\ttfamily Hn\+S\+Hero\+Parser\+::parse\+Passive (\begin{DoxyParamCaption}\item[{}]{\$\+Matches }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 179 of file Hn\+S\+Hero\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_hn_s_hero_parser_a9cf003b816c6cec46334bce6acb2ee34}\label{class_hn_s_hero_parser_a9cf003b816c6cec46334bce6acb2ee34}} 
+\index{Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}!parse\+User@{parse\+User}}
+\index{parse\+User@{parse\+User}!Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}}
+\subsubsection{\texorpdfstring{parse\+User()}{parseUser()}}
+{\footnotesize\ttfamily Hn\+S\+Hero\+Parser\+::parse\+User (\begin{DoxyParamCaption}\item[{}]{\$\+Matches }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 91 of file Hn\+S\+Hero\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_hn_s_hero_parser_a01475115beae31cb18668710cca48144}\label{class_hn_s_hero_parser_a01475115beae31cb18668710cca48144}} 
+\index{Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}!parse\+User\+Details@{parse\+User\+Details}}
+\index{parse\+User\+Details@{parse\+User\+Details}!Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}}
+\subsubsection{\texorpdfstring{parse\+User\+Details()}{parseUserDetails()}}
+{\footnotesize\ttfamily Hn\+S\+Hero\+Parser\+::parse\+User\+Details (\begin{DoxyParamCaption}\item[{}]{\$\+Matches }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 101 of file Hn\+S\+Hero\+Parser.\+class.\+php.
+
+
+
+References Hero\textbackslash{}get\+Player(), and Hero\textbackslash{}set\+U\+R\+L().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_hn_s_hero_parser_a01475115beae31cb18668710cca48144_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_hn_s_hero_parser_a9791a1b55e2668bdb5df8d6f0703cf57}\label{class_hn_s_hero_parser_a9791a1b55e2668bdb5df8d6f0703cf57}} 
+\index{Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}!\$\+Current\+Item@{\$\+Current\+Item}}
+\index{\$\+Current\+Item@{\$\+Current\+Item}!Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}}
+\subsubsection{\texorpdfstring{\$\+Current\+Item}{$CurrentItem}}
+{\footnotesize\ttfamily Hn\+S\+Hero\+Parser\+::\$\+Current\+Item\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 13 of file Hn\+S\+Hero\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_hn_s_hero_parser_a0aad0d7255ca2726509e3d09f9f9e00d}\label{class_hn_s_hero_parser_a0aad0d7255ca2726509e3d09f9f9e00d}} 
+\index{Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}!\$\+Full\+Text@{\$\+Full\+Text}}
+\index{\$\+Full\+Text@{\$\+Full\+Text}!Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}}
+\subsubsection{\texorpdfstring{\$\+Full\+Text}{$FullText}}
+{\footnotesize\ttfamily Hn\+S\+Hero\+Parser\+::\$\+Full\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 9 of file Hn\+S\+Hero\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_hn_s_hero_parser_a7deea68c90514b8307ebf40a994e1744}\label{class_hn_s_hero_parser_a7deea68c90514b8307ebf40a994e1744}} 
+\index{Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}!\$\+Game@{\$\+Game}}
+\index{\$\+Game@{\$\+Game}!Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}}
+\subsubsection{\texorpdfstring{\$\+Game}{$Game}}
+{\footnotesize\ttfamily Hn\+S\+Hero\+Parser\+::\$\+Game\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 11 of file Hn\+S\+Hero\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_hn_s_hero_parser_aac2a72273a9c28c805a46cdc40a5ab44}\label{class_hn_s_hero_parser_aac2a72273a9c28c805a46cdc40a5ab44}} 
+\index{Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}!\$\+Item\+List@{\$\+Item\+List}}
+\index{\$\+Item\+List@{\$\+Item\+List}!Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}}
+\subsubsection{\texorpdfstring{\$\+Item\+List}{$ItemList}}
+{\footnotesize\ttfamily Hn\+S\+Hero\+Parser\+::\$\+Item\+List\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 14 of file Hn\+S\+Hero\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_hn_s_hero_parser_a1610749a8619f93b7a8315fbd0f18037}\label{class_hn_s_hero_parser_a1610749a8619f93b7a8315fbd0f18037}} 
+\index{Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}!\$\+Processed\+Text@{\$\+Processed\+Text}}
+\index{\$\+Processed\+Text@{\$\+Processed\+Text}!Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}}
+\subsubsection{\texorpdfstring{\$\+Processed\+Text}{$ProcessedText}}
+{\footnotesize\ttfamily Hn\+S\+Hero\+Parser\+::\$\+Processed\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 10 of file Hn\+S\+Hero\+Parser.\+class.\+php.
+
+
+
+Referenced by parse().
+
+\mbox{\Hypertarget{class_hn_s_hero_parser_a20fb93b9f6d4c9a0195fe9f277a72a31}\label{class_hn_s_hero_parser_a20fb93b9f6d4c9a0195fe9f277a72a31}} 
+\index{Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}!I\+T\+E\+M\+\_\+\+A\+F\+F\+IX@{I\+T\+E\+M\+\_\+\+A\+F\+F\+IX}}
+\index{I\+T\+E\+M\+\_\+\+A\+F\+F\+IX@{I\+T\+E\+M\+\_\+\+A\+F\+F\+IX}!Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}}
+\subsubsection{\texorpdfstring{I\+T\+E\+M\+\_\+\+A\+F\+F\+IX}{ITEM\_AFFIX}}
+{\footnotesize\ttfamily const Hn\+S\+Hero\+Parser\+::\+I\+T\+E\+M\+\_\+\+A\+F\+F\+IX = \textquotesingle{}itemaffix\textquotesingle{}}
+
+
+
+Definition at line 19 of file Hn\+S\+Hero\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_hn_s_hero_parser_ac82fee41e18b6b12f5c14e1ee054bd3f}\label{class_hn_s_hero_parser_ac82fee41e18b6b12f5c14e1ee054bd3f}} 
+\index{Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}!I\+T\+E\+M\+\_\+\+I\+MG@{I\+T\+E\+M\+\_\+\+I\+MG}}
+\index{I\+T\+E\+M\+\_\+\+I\+MG@{I\+T\+E\+M\+\_\+\+I\+MG}!Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}}
+\subsubsection{\texorpdfstring{I\+T\+E\+M\+\_\+\+I\+MG}{ITEM\_IMG}}
+{\footnotesize\ttfamily const Hn\+S\+Hero\+Parser\+::\+I\+T\+E\+M\+\_\+\+I\+MG = \textquotesingle{}itemimg\textquotesingle{}}
+
+
+
+Definition at line 18 of file Hn\+S\+Hero\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_hn_s_hero_parser_a7e8f1a62dc0b4c66d3021b04b0407893}\label{class_hn_s_hero_parser_a7e8f1a62dc0b4c66d3021b04b0407893}} 
+\index{Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}!I\+T\+E\+M\+\_\+\+N\+A\+ME@{I\+T\+E\+M\+\_\+\+N\+A\+ME}}
+\index{I\+T\+E\+M\+\_\+\+N\+A\+ME@{I\+T\+E\+M\+\_\+\+N\+A\+ME}!Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}}
+\subsubsection{\texorpdfstring{I\+T\+E\+M\+\_\+\+N\+A\+ME}{ITEM\_NAME}}
+{\footnotesize\ttfamily const Hn\+S\+Hero\+Parser\+::\+I\+T\+E\+M\+\_\+\+N\+A\+ME = \textquotesingle{}itemname\textquotesingle{}}
+
+
+
+Definition at line 16 of file Hn\+S\+Hero\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_hn_s_hero_parser_aec4e7d8783aeedcbe16baebb37e8ad3a}\label{class_hn_s_hero_parser_aec4e7d8783aeedcbe16baebb37e8ad3a}} 
+\index{Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}!I\+T\+E\+M\+\_\+\+P\+OS@{I\+T\+E\+M\+\_\+\+P\+OS}}
+\index{I\+T\+E\+M\+\_\+\+P\+OS@{I\+T\+E\+M\+\_\+\+P\+OS}!Hn\+S\+Hero\+Parser@{Hn\+S\+Hero\+Parser}}
+\subsubsection{\texorpdfstring{I\+T\+E\+M\+\_\+\+P\+OS}{ITEM\_POS}}
+{\footnotesize\ttfamily const Hn\+S\+Hero\+Parser\+::\+I\+T\+E\+M\+\_\+\+P\+OS = \textquotesingle{}itempos\textquotesingle{}}
+
+
+
+Definition at line 17 of file Hn\+S\+Hero\+Parser.\+class.\+php.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+taged/application/src/parse/\hyperlink{_hn_s_hero_parser_8class_8php}{Hn\+S\+Hero\+Parser.\+class.\+php}\end{DoxyCompactItemize}

@@ -196,7 +196,7 @@
     <span>
         &nbsp;= &#039;SkyCubeBlocNestedLoop&#039;                            </span>
 </dt>
-<dd></dd>
+<dd>Le nom de la classe Skycube utilisée pour la construction des SkyCubes internes.</dd>
 
                     <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/SkyCube.html#property_ColIDs">$ColIDs</a>
@@ -208,9 +208,9 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/SkyCubeEmergent.html#property_ComputeAccordCuboides">$ComputeAccordCuboides</a>
     <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: bool            </span>
 </dt>
-<dd></dd>
+<dd>Indicateur pour calculer les Cuboides en accord.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/SkyCube.html#property_Cuboides">$Cuboides</a>
@@ -236,16 +236,16 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/SkyCubeEmergent.html#property_DenumberedColIDs">$DenumberedColIDs</a>
     <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd></dd>
+<dd>Tableau pour stocker les noms de colonnes dénumérotées.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/SkyCubeEmergent.html#property_Emergence">$Emergence</a>
     <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd></dd>
+<dd>Tableau pour stocker les informations d&#039;émergence.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/SkyCube.html#property_FilteredCuboideIDs">$FilteredCuboideIDs</a>
@@ -292,30 +292,30 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/SkyCubeEmergent.html#property_SkyCube1">$SkyCube1</a>
     <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: <a href="classes/SkyCube.html"><abbr title="\SkyCube">SkyCube</abbr></a>|null            </span>
 </dt>
-<dd></dd>
+<dd>Tableau contenant le premier SkyCube.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/SkyCubeEmergent.html#property_SkyCube2">$SkyCube2</a>
     <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: <a href="classes/SkyCube.html"><abbr title="\SkyCube">SkyCube</abbr></a>|null            </span>
 </dt>
-<dd></dd>
+<dd>Tableau contenant le deuxième SkyCube.</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/SkyCubeEmergent.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd>Constructeur de la classe SkyCube.</dd>
+<dd>Constructeur de la classe SkyCubeEmergent.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/SkyCubeEmergent.html#method_getCodedColumnName">getCodedColumnName()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: string    </span>
 </dt>
-<dd></dd>
+<dd>Méthode pour obtenir le nom de colonne encodé à partir du nom complet.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/SkyCube.html#method_getColIDs">getColIDs()</a>
@@ -327,7 +327,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/SkyCubeEmergent.html#method_getCuboide">getCuboide()</a>
     <span>
-                                &nbsp;: <a href="classes/Cuboide.html"><abbr title="\Cuboide">Cuboide</abbr></a>|null    </span>
+                                &nbsp;: <a href="classes/CuboideEmergent.html"><abbr title="\CuboideEmergent">CuboideEmergent</abbr></a>|null    </span>
 </dt>
 <dd>Méthode pour obtenir un Cuboide spécifique en fonction de son ID.</dd>
 
@@ -343,7 +343,7 @@
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd>Méthode pour obtenir la liste des Cuboides du Skycube.</dd>
+<dd>Méthode pour obtenir la liste des Cuboides du SkyCubeEmergent.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/SkyCube.html#method_getDataSet">getDataSet()</a>
@@ -355,30 +355,30 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/SkyCubeEmergent.html#method_getDenumberedColIDs">getDenumberedColIDs()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Méthode pour obtenir la liste des identifiants de colonnes dénumérotées.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/SkyCubeEmergent.html#method_getEmergence">getEmergence()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Méthode pour obtenir l&#039;ensemble des informations d&#039;émergence.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/SkyCubeEmergent.html#method_getFullColumnName">getFullColumnName()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: string    </span>
 </dt>
-<dd></dd>
+<dd>Méthode pour obtenir le nom complet d&#039;une colonne à partir du nom de colonne encodé.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/SkyCubeEmergent.html#method_getMultidimensionalSpace">getMultidimensionalSpace()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd>Méthode pour obtenir l&#039;espace multidimensionnel généré par le Skycube.</dd>
+<dd>Méthode pour obtenir l&#039;espace multidimensionnel généré par le SkyCubeEmergent.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/SkyCube.html#method_getRowHeaders">getRowHeaders()</a>
@@ -390,23 +390,23 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/SkyCubeEmergent.html#method_getSkyCube1">getSkyCube1()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: <a href="classes/SkyCube.html"><abbr title="\SkyCube">SkyCube</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Méthode pour obtenir le premier SkyCube utilisé dans le SkyCubeEmergent.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/SkyCubeEmergent.html#method_getSkyCube2">getSkyCube2()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: <a href="classes/SkyCube.html"><abbr title="\SkyCube">SkyCube</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Méthode pour obtenir le deuxième SkyCube utilisé dans le SkyCubeEmergent.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/SkyCubeEmergent.html#method_setEmergenceRatio">setEmergenceRatio()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
+<dd>Méthode pour définir le ratio d&#039;émergence pour un Cuboide spécifique.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/SkyCube.html#method_testCombinatorial">testCombinatorial()</a>
@@ -455,7 +455,7 @@
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
+<dd>Méthode protégée pour fusionner les listes de Cuboides de SkyCube1 et SkyCube2.</dd>
 
         </dl>
 
@@ -563,11 +563,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/algo/SkyCubeEmergent.class.php"><a href="files/application-src-algo-skycubeemergent-class.html"><abbr title="application/src/algo/SkyCubeEmergent.class.php">SkyCubeEmergent.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">11</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Le nom de la classe Skycube utilisée pour la construction des SkyCubes internes.</p>
+
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
@@ -576,8 +577,7 @@
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <section class="phpdocumentor-description"></section>
 
     
@@ -640,21 +640,20 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/algo/SkyCubeEmergent.class.php"><a href="files/application-src-algo-skycubeemergent-class.html"><abbr title="application/src/algo/SkyCubeEmergent.class.php">SkyCubeEmergent.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">279</span>
+    <span class="phpdocumentor-element-found-in__line">373</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Indicateur pour calculer les Cuboides en accord.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">bool</span>
     <span class="phpdocumentor-signature__name">$ComputeAccordCuboides</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -773,21 +772,20 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/algo/SkyCubeEmergent.class.php"><a href="files/application-src-algo-skycubeemergent-class.html"><abbr title="application/src/algo/SkyCubeEmergent.class.php">SkyCubeEmergent.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">281</span>
+    <span class="phpdocumentor-element-found-in__line">380</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Tableau pour stocker les noms de colonnes dénumérotées.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$DenumberedColIDs</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -807,21 +805,20 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/algo/SkyCubeEmergent.class.php"><a href="files/application-src-algo-skycubeemergent-class.html"><abbr title="application/src/algo/SkyCubeEmergent.class.php">SkyCubeEmergent.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">283</span>
+    <span class="phpdocumentor-element-found-in__line">387</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Tableau pour stocker les informations d&#039;émergence.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$Emergence</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -1039,21 +1036,20 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/algo/SkyCubeEmergent.class.php"><a href="files/application-src-algo-skycubeemergent-class.html"><abbr title="application/src/algo/SkyCubeEmergent.class.php">SkyCubeEmergent.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">277</span>
+    <span class="phpdocumentor-element-found-in__line">359</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Tableau contenant le premier SkyCube.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/SkyCube.html"><abbr title="\SkyCube">SkyCube</abbr></a>|null</span>
     <span class="phpdocumentor-signature__name">$SkyCube1</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -1073,21 +1069,20 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/algo/SkyCubeEmergent.class.php"><a href="files/application-src-algo-skycubeemergent-class.html"><abbr title="application/src/algo/SkyCubeEmergent.class.php">SkyCubeEmergent.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">278</span>
+    <span class="phpdocumentor-element-found-in__line">366</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Tableau contenant le deuxième SkyCube.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/SkyCube.html"><abbr title="\SkyCube">SkyCube</abbr></a>|null</span>
     <span class="phpdocumentor-signature__name">$SkyCube2</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -1111,22 +1106,22 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/algo/SkyCubeEmergent.class.php"><a href="files/application-src-algo-skycubeemergent-class.html"><abbr title="application/src/algo/SkyCubeEmergent.class.php">SkyCubeEmergent.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">25</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Constructeur de la classe SkyCube.</p>
+        <p class="phpdocumentor-summary">Constructeur de la classe SkyCubeEmergent.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Data</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$RelationCols</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$MeasureCols</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$MinMax</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">Cuboide::TO_MAX</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ComputeAccordCuboides</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">FALSE</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Data</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$RelationCols</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$MeasureCols</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$MinMax</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">Cuboide::TO_MAX</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ComputeAccordCuboides</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">FALSE</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$Data</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Les données brutes à utiliser dans l'espace multidimensionnel.</p>
@@ -1135,7 +1130,7 @@
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$RelationCols</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Les colonnes d'identification de relation.</p>
@@ -1144,7 +1139,7 @@
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$MeasureCols</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Les colonnes d'identification d'attribut (mesure).</p>
@@ -1153,7 +1148,7 @@
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$MinMax</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
                  = <span class="phpdocumentor-signature__argument__default-value">Cuboide::TO_MAX</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Indicateur pour la valeur maximale ou minimale lors de la construction des Cuboides.</p>
@@ -1162,7 +1157,7 @@
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$ComputeAccordCuboides</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
                  = <span class="phpdocumentor-signature__argument__default-value">FALSE</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Indicateur pour calculer les Cuboides en accord.</p>
@@ -1192,25 +1187,26 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/algo/SkyCubeEmergent.class.php"><a href="files/application-src-algo-skycubeemergent-class.html"><abbr title="application/src/algo/SkyCubeEmergent.class.php">SkyCubeEmergent.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">236</span>
+    <span class="phpdocumentor-element-found-in__line">284</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Méthode pour obtenir le nom de colonne encodé à partir du nom complet.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getCodedColumnName</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$FullName</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">getCodedColumnName</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$FullName</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$FullName</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Le nom complet de la colonne encodée.</p>
+</section>
 
             </dd>
             </dl>
@@ -1218,9 +1214,11 @@
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>Le nom de colonne encodé.</p>
+</section>
+
     
 </article>
                     <article
@@ -1271,7 +1269,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/algo/SkyCubeEmergent.class.php"><a href="files/application-src-algo-skycubeemergent-class.html"><abbr title="application/src/algo/SkyCubeEmergent.class.php">SkyCubeEmergent.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">178</span>
+    <span class="phpdocumentor-element-found-in__line">205</span>
 
     </aside>
 
@@ -1279,14 +1277,14 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getCuboide</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ID</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Cuboide.html"><abbr title="\Cuboide">Cuboide</abbr></a>|null</span></code>
+                <span class="phpdocumentor-signature__name">getCuboide</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ID</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CuboideEmergent.html"><abbr title="\CuboideEmergent">CuboideEmergent</abbr></a>|null</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$ID</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>L'ID du Cuboide recherché.</p>
@@ -1298,7 +1296,7 @@
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Cuboide.html"><abbr title="\Cuboide">Cuboide</abbr></a>|null</span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/CuboideEmergent.html"><abbr title="\CuboideEmergent">CuboideEmergent</abbr></a>|null</span>
             &mdash;
             <section class="phpdocumentor-description"><p>Le Cuboide correspondant à l'ID ou NULL si non trouvé.</p>
 </section>
@@ -1318,7 +1316,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/algo/SkyCubeEmergent.class.php"><a href="files/application-src-algo-skycubeemergent-class.html"><abbr title="application/src/algo/SkyCubeEmergent.class.php">SkyCubeEmergent.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">199</span>
+    <span class="phpdocumentor-element-found-in__line">232</span>
 
     </aside>
 
@@ -1326,14 +1324,14 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getCuboideIDs</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Filtered</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">TRUE</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                <span class="phpdocumentor-signature__name">getCuboideIDs</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Filtered</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">TRUE</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$Filtered</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
                  = <span class="phpdocumentor-signature__argument__default-value">TRUE</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Indicateur pour obtenir les Cuboides filtrés ou non.</p>
@@ -1365,11 +1363,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/algo/SkyCubeEmergent.class.php"><a href="files/application-src-algo-skycubeemergent-class.html"><abbr title="application/src/algo/SkyCubeEmergent.class.php">SkyCubeEmergent.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">143</span>
+    <span class="phpdocumentor-element-found-in__line">177</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Méthode pour obtenir la liste des Cuboides du Skycube.</p>
+        <p class="phpdocumentor-summary">Méthode pour obtenir la liste des Cuboides du SkyCubeEmergent.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1382,7 +1380,7 @@
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>La liste des Cuboides du Skycube.</p>
+            <section class="phpdocumentor-description"><p>La liste des Cuboides du SkyCubeEmergent.</p>
 </section>
 
     
@@ -1435,24 +1433,26 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/algo/SkyCubeEmergent.class.php"><a href="files/application-src-algo-skycubeemergent-class.html"><abbr title="application/src/algo/SkyCubeEmergent.class.php">SkyCubeEmergent.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">246</span>
+    <span class="phpdocumentor-element-found-in__line">305</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Méthode pour obtenir la liste des identifiants de colonnes dénumérotées.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getDenumberedColIDs</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">getDenumberedColIDs</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>La liste des identifiants de colonnes dénumérotées.</p>
+</section>
+
     
 </article>
                     <article
@@ -1468,24 +1468,26 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/algo/SkyCubeEmergent.class.php"><a href="files/application-src-algo-skycubeemergent-class.html"><abbr title="application/src/algo/SkyCubeEmergent.class.php">SkyCubeEmergent.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">231</span>
+    <span class="phpdocumentor-element-found-in__line">273</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Méthode pour obtenir l&#039;ensemble des informations d&#039;émergence.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getEmergence</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">getEmergence</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>L'ensemble des informations d'émergence.</p>
+</section>
+
     
 </article>
                     <article
@@ -1501,25 +1503,26 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/algo/SkyCubeEmergent.class.php"><a href="files/application-src-algo-skycubeemergent-class.html"><abbr title="application/src/algo/SkyCubeEmergent.class.php">SkyCubeEmergent.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">241</span>
+    <span class="phpdocumentor-element-found-in__line">295</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Méthode pour obtenir le nom complet d&#039;une colonne à partir du nom de colonne encodé.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getFullColumnName</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$CodedName</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">getFullColumnName</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$CodedName</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$CodedName</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Le nom de colonne encodé.</p>
+</section>
 
             </dd>
             </dl>
@@ -1527,9 +1530,11 @@
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>Le nom complet de la colonne.</p>
+</section>
+
     
 </article>
                     <article
@@ -1545,11 +1550,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/algo/SkyCubeEmergent.class.php"><a href="files/application-src-algo-skycubeemergent-class.html"><abbr title="application/src/algo/SkyCubeEmergent.class.php">SkyCubeEmergent.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">226</span>
+    <span class="phpdocumentor-element-found-in__line">263</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Méthode pour obtenir l&#039;espace multidimensionnel généré par le Skycube.</p>
+        <p class="phpdocumentor-summary">Méthode pour obtenir l&#039;espace multidimensionnel généré par le SkyCubeEmergent.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1615,24 +1620,26 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/algo/SkyCubeEmergent.class.php"><a href="files/application-src-algo-skycubeemergent-class.html"><abbr title="application/src/algo/SkyCubeEmergent.class.php">SkyCubeEmergent.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">251</span>
+    <span class="phpdocumentor-element-found-in__line">315</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Méthode pour obtenir le premier SkyCube utilisé dans le SkyCubeEmergent.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getSkyCube1</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">getSkyCube1</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/SkyCube.html"><abbr title="\SkyCube">SkyCube</abbr></a></span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/SkyCube.html"><abbr title="\SkyCube">SkyCube</abbr></a></span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>Le premier SkyCube utilisé dans le SkyCubeEmergent.</p>
+</section>
+
     
 </article>
                     <article
@@ -1648,24 +1655,26 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/algo/SkyCubeEmergent.class.php"><a href="files/application-src-algo-skycubeemergent-class.html"><abbr title="application/src/algo/SkyCubeEmergent.class.php">SkyCubeEmergent.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">256</span>
+    <span class="phpdocumentor-element-found-in__line">325</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Méthode pour obtenir le deuxième SkyCube utilisé dans le SkyCubeEmergent.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getSkyCube2</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">getSkyCube2</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/SkyCube.html"><abbr title="\SkyCube">SkyCube</abbr></a></span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/SkyCube.html"><abbr title="\SkyCube">SkyCube</abbr></a></span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>Le deuxième SkyCube utilisé dans le SkyCubeEmergent.</p>
+</section>
+
     
 </article>
                     <article
@@ -1681,49 +1690,53 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/algo/SkyCubeEmergent.class.php"><a href="files/application-src-algo-skycubeemergent-class.html"><abbr title="application/src/algo/SkyCubeEmergent.class.php">SkyCubeEmergent.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">261</span>
+    <span class="phpdocumentor-element-found-in__line">338</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Méthode pour définir le ratio d&#039;émergence pour un Cuboide spécifique.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">setEmergenceRatio</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$CuboideID</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$MeasureID</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Relation</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$EmergenceRatio</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">setEmergenceRatio</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$CuboideID</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$MeasureID</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Relation</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$EmergenceRatio</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$CuboideID</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>L'ID du Cuboide pour lequel définir le ratio d'émergence.</p>
+</section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$MeasureID</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>L'ID de la mesure concernée.</p>
+</section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$Relation</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Les identifiants de relation pour le Cuboide.</p>
+</section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$EmergenceRatio</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">float</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Le ratio d'émergence à définir.</p>
+</section>
 
             </dd>
             </dl>
@@ -1784,7 +1797,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/algo/SkyCubeEmergent.class.php"><a href="files/application-src-algo-skycubeemergent-class.html"><abbr title="application/src/algo/SkyCubeEmergent.class.php">SkyCubeEmergent.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">69</span>
+    <span class="phpdocumentor-element-found-in__line">95</span>
 
     </aside>
 
@@ -1792,14 +1805,14 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                <span class="phpdocumentor-signature__name">computeDataSet</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Data</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$RelationCols</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$MeasureCols</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">computeDataSet</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Data</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$RelationCols</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$MeasureCols</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$Data</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Les données brutes à utiliser dans l'espace multidimensionnel.</p>
@@ -1808,7 +1821,7 @@
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$RelationCols</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Les colonnes d'identification de relation.</p>
@@ -1817,7 +1830,7 @@
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$MeasureCols</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Les colonnes d'identification d'attribut (mesure).</p>
@@ -2020,7 +2033,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/algo/SkyCubeEmergent.class.php"><a href="files/application-src-algo-skycubeemergent-class.html"><abbr title="application/src/algo/SkyCubeEmergent.class.php">SkyCubeEmergent.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">27</span>
+    <span class="phpdocumentor-element-found-in__line">46</span>
 
     </aside>
 
@@ -2028,14 +2041,14 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                <span class="phpdocumentor-signature__name">getColID</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ColHeader</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$MeasureCols</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                <span class="phpdocumentor-signature__name">getColID</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ColHeader</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$MeasureCols</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$ColHeader</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Le nom de la colonne.</p>
@@ -2044,7 +2057,7 @@
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$MeasureCols</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Les colonnes d'identification d'attribut (mesure).</p>
@@ -2076,17 +2089,17 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/algo/SkyCubeEmergent.class.php"><a href="files/application-src-algo-skycubeemergent-class.html"><abbr title="application/src/algo/SkyCubeEmergent.class.php">SkyCubeEmergent.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">119</span>
+    <span class="phpdocumentor-element-found-in__line">148</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Méthode protégée pour fusionner les listes de Cuboides de SkyCube1 et SkyCube2.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
                 <span class="phpdocumentor-signature__name">mergeCuboideLists</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 

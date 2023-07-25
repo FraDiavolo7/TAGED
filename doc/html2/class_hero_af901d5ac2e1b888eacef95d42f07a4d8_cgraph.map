@@ -1,0 +1,5 @@
+<map id="Hero\save" name="Hero\save">
+<area shape="rect" id="node2" href="$class_hero.html#a5aa91e7ea559a59c8151845a855fd546" title="Hero\\fetchId" alt="" coords="157,5,259,32"/>
+<area shape="rect" id="node3" href="$class_hero.html#a723f83bed9d55248a97b392739402d3a" title="Hero\\saveComps" alt="" coords="141,56,275,83"/>
+<area shape="rect" id="node4" href="$class_hero.html#a4e38d5d658b70461a8380aeb69fdc9d5" title="Hero\\saveItems" alt="" coords="145,107,271,133"/>
+</map>

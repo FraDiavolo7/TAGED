@@ -1,0 +1,8 @@
+<map id="ReplayParser\parser" name="ReplayParser\parser">
+<area shape="rect" id="node2" href="$class_replay_parser.html#a0e77a5f3424e6755f45c77fb7e0a67d8" title="ReplayParser\\gameType" alt="" coords="204,5,381,32"/>
+<area shape="rect" id="node3" href="$class_replay_parser.html#a5e8c15fd657011be38f1d7609395cd6d" title="ReplayParser\\gen" alt="" coords="225,56,360,83"/>
+<area shape="rect" id="node4" href="$class_replay_parser.html#aedbd02d59b5048e0f558e234a2e28c24" title="ReplayParser\\rated" alt="" coords="221,107,365,133"/>
+<area shape="rect" id="node5" href="$class_replay_parser.html#a5556e8ef7ac8a632e073fc71efb6cbf4" title="ReplayParser\\tie" alt="" coords="229,157,356,184"/>
+<area shape="rect" id="node6" href="$class_replay_parser.html#af5dd7c479acbd2646fe9d8ed37e74e79" title="ReplayParser\\tier" alt="" coords="227,208,359,235"/>
+<area shape="rect" id="node7" href="$class_replay_parser.html#a68b9a6f8d99c70c8e6cef889ebe50e3c" title="ReplayParser\\winner" alt="" coords="215,259,370,285"/>
+</map>

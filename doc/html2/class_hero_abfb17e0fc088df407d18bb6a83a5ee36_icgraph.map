@@ -1,0 +1,6 @@
+<map id="Hero\setRobustesse" name="Hero\setRobustesse">
+<area shape="rect" id="node2" href="$class_hero.html#a4936f4afc1324ed3ae4a90a91fd16eb1" title="Hero\\setAttr" alt="" coords="204,56,305,83"/>
+<area shape="rect" id="node3" href="$class_hn_s_hero_parser.html#a9e86a51dd6f1b0d2f60a92a840e3deb4" title="HnSHeroParser\\parseAttrP" alt="" coords="354,5,545,32"/>
+<area shape="rect" id="node4" href="$class_hn_s_hero_parser.html#adcc83933771af3b55b0fa5c6d08e3dba" title="HnSHeroParser\\parseAttrR" alt="" coords="353,56,545,83"/>
+<area shape="rect" id="node5" href="$class_hn_s_hero_parser.html#a322f6767efcd5b7b71ce8e9792f9e469" title="HnSHeroParser\\parseAttrS" alt="" coords="354,107,545,133"/>
+</map>

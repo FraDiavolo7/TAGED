@@ -1,0 +1,368 @@
+\hypertarget{class_hn_s_parser}{}\section{Hn\+S\+Parser Class Reference}
+\label{class_hn_s_parser}\index{Hn\+S\+Parser@{Hn\+S\+Parser}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_hn_s_parser_a609c801ee8a446c2de537155579f0c9b}{\+\_\+\+\_\+construct} ( \$Text\+To\+Parse, \$U\+RL=\textquotesingle{}\textquotesingle{}, \$Srv=\char`\"{}eu\char`\"{}, \$H\+Class=\char`\"{}barbarian\char`\"{})
+\item 
+\hyperlink{class_hn_s_parser_adb3bc07366e819fb18ff9edd702fb954}{\+\_\+\+\_\+destruct} ()
+\item 
+\hyperlink{class_hn_s_parser_a54c9843058539b99d6695a3136184150}{\+\_\+\+\_\+to\+String} ()
+\item 
+\hyperlink{class_hn_s_parser_a472740b8d6c5cc96019b67fe6304d828}{parse} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_hn_s_parser_af1819b45d1b6e1351bf027579db4a1e5}{apply\+Pattern} ( \$Pattern, \$Callback, \$Count=1)
+\item 
+\hyperlink{class_hn_s_parser_ac5bb3acdf1dffb3e1ecd67de9e0e5b06}{parse\+Hero} ( \$Matches)
+\item 
+\hyperlink{class_hn_s_parser_a8090ef63c59e0802986e4ef011994575}{parse\+Hero\+Data} ( \$Matches)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_hn_s_parser_a09477de7b8332274e60f5d62d1053f3f}{clean} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_hn_s_parser_aaf37f9e6c5ffc96136a65a703a99aa8e}{\$filename}
+\item 
+\hyperlink{class_hn_s_parser_a38166aacff8c20cfd58724af3e3245b9}{\$head}
+\item 
+\hyperlink{class_hn_s_parser_ab72334b282b41e35cae1b894dedf550e}{\$text}
+\item 
+\hyperlink{class_hn_s_parser_aa71c0a545d019cb199a4b78fbbc8b5a3}{\$\+Full\+Text}
+\item 
+\hyperlink{class_hn_s_parser_ac36ceaff377f48bfae25db17a0c45b9a}{\$\+Processed\+Text}
+\item 
+\hyperlink{class_hn_s_parser_a21e435563e56096b95d0e4e225cab626}{\$\+Game}
+\item 
+\hyperlink{class_hn_s_parser_a8ec5690da557329c2eaa9c2a72358950}{\$\+Server}
+\item 
+\hyperlink{class_hn_s_parser_a54e8df1596691e3b035ad689b3fad9ca}{\$\+Hero\+Class}
+\item 
+\hyperlink{class_hn_s_parser_ab52651f9df7dd341c91224a0ebd1e40b}{\$\+U\+RL}
+\item 
+\hyperlink{class_hn_s_parser_a5ffc8f527494e16b7398c22b3083b701}{\$\+Base\+U\+RL}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 11 of file Hn\+S\+Parser.\+class.\+php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hn_s_parser_a609c801ee8a446c2de537155579f0c9b}\label{class_hn_s_parser_a609c801ee8a446c2de537155579f0c9b}} 
+\index{Hn\+S\+Parser@{Hn\+S\+Parser}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!Hn\+S\+Parser@{Hn\+S\+Parser}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Hn\+S\+Parser\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{}]{\$\+Text\+To\+Parse,  }\item[{}]{\$\+U\+RL = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{\$\+Srv = {\ttfamily \char`\"{}eu\char`\"{}},  }\item[{}]{\$\+H\+Class = {\ttfamily \char`\"{}barbarian\char`\"{}} }\end{DoxyParamCaption})}
+
+Constructeur de la classe \hyperlink{class_hn_s_parser}{Hn\+S\+Parser}.
+
+Initialise l\textquotesingle{}objet en utilisant les données de texte à analyser, l\textquotesingle{}U\+RL, le serveur et la classe de héros fournis.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$\+Text\+To\+Parse} & Les données de texte à analyser pour Hack\textquotesingle{}N Slash (Diablo 3). \\
+\hline
+string & {\em \$\+U\+RL} & L\textquotesingle{}U\+RL associée aux données de texte (facultatif). \\
+\hline
+string & {\em \$\+Srv} & Le serveur sur lequel le ladder est généré (par défaut \+: \char`\"{}eu\char`\"{}). \\
+\hline
+string & {\em \$\+H\+Class} & La classe des héros répertoriés (par défaut \+: \char`\"{}barbarian\char`\"{}). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 24 of file Hn\+S\+Parser.\+class.\+php.
+
+
+
+References \$\+Text\+To\+Parse, \$\+U\+RL, and clean().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_hn_s_parser_a609c801ee8a446c2de537155579f0c9b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_hn_s_parser_adb3bc07366e819fb18ff9edd702fb954}\label{class_hn_s_parser_adb3bc07366e819fb18ff9edd702fb954}} 
+\index{Hn\+S\+Parser@{Hn\+S\+Parser}!\+\_\+\+\_\+destruct@{\+\_\+\+\_\+destruct}}
+\index{\+\_\+\+\_\+destruct@{\+\_\+\+\_\+destruct}!Hn\+S\+Parser@{Hn\+S\+Parser}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+destruct()}{\_\_destruct()}}
+{\footnotesize\ttfamily Hn\+S\+Parser\+::\+\_\+\+\_\+destruct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructeur de la classe \hyperlink{class_hn_s_parser}{Hn\+S\+Parser}.
+
+Ce destructeur ne contient aucune action spécifique, mais est inclus pour des raisons de cohérence. 
+
+Definition at line 42 of file Hn\+S\+Parser.\+class.\+php.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hn_s_parser_a54c9843058539b99d6695a3136184150}\label{class_hn_s_parser_a54c9843058539b99d6695a3136184150}} 
+\index{Hn\+S\+Parser@{Hn\+S\+Parser}!\+\_\+\+\_\+to\+String@{\+\_\+\+\_\+to\+String}}
+\index{\+\_\+\+\_\+to\+String@{\+\_\+\+\_\+to\+String}!Hn\+S\+Parser@{Hn\+S\+Parser}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+to\+String()}{\_\_toString()}}
+{\footnotesize\ttfamily Hn\+S\+Parser\+::\+\_\+\+\_\+to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Méthode magique \+\_\+\+\_\+to\+String.
+
+Retourne une chaîne de caractères représentant l\textquotesingle{}objet lorsqu\textquotesingle{}il est converti en chaîne.
+
+\begin{DoxyReturn}{Returns}
+string Une chaîne représentant l\textquotesingle{}objet \hyperlink{class_hn_s_parser}{Hn\+S\+Parser}. 
+\end{DoxyReturn}
+
+
+Definition at line 53 of file Hn\+S\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_hn_s_parser_af1819b45d1b6e1351bf027579db4a1e5}\label{class_hn_s_parser_af1819b45d1b6e1351bf027579db4a1e5}} 
+\index{Hn\+S\+Parser@{Hn\+S\+Parser}!apply\+Pattern@{apply\+Pattern}}
+\index{apply\+Pattern@{apply\+Pattern}!Hn\+S\+Parser@{Hn\+S\+Parser}}
+\subsubsection{\texorpdfstring{apply\+Pattern()}{applyPattern()}}
+{\footnotesize\ttfamily Hn\+S\+Parser\+::apply\+Pattern (\begin{DoxyParamCaption}\item[{}]{\$\+Pattern,  }\item[{}]{\$\+Callback,  }\item[{}]{\$\+Count = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Applique un modèle P\+C\+RE (Perl Compatible Regular Expression) à la variable membre \$this-\/$>$Processed\+Text.
+
+Cette méthode est utilisée pour appliquer le modèle P\+C\+RE à la variable membre \$this-\/$>$Processed\+Text, en utilisant la fonction de rappel (callback) fournie.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$\+Pattern} & Le modèle P\+C\+RE à appliquer. \\
+\hline
+callable & {\em \$\+Callback} & La fonction de rappel (callback) à utiliser pour le remplacement. \\
+\hline
+int & {\em \$\+Count} & Le nombre de fois que le modèle P\+C\+RE doit être appliqué (par défaut \+: 1). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 89 of file Hn\+S\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_hn_s_parser_a09477de7b8332274e60f5d62d1053f3f}\label{class_hn_s_parser_a09477de7b8332274e60f5d62d1053f3f}} 
+\index{Hn\+S\+Parser@{Hn\+S\+Parser}!clean@{clean}}
+\index{clean@{clean}!Hn\+S\+Parser@{Hn\+S\+Parser}}
+\subsubsection{\texorpdfstring{clean()}{clean()}}
+{\footnotesize\ttfamily Hn\+S\+Parser\+::clean (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Nettoie la variable membre \$this-\/$>$Full\+Text de tous les caractères indésirables.
+
+Cette méthode utilise la modification de motif P\+C\+RE m (P\+C\+R\+E\+\_\+\+M\+U\+L\+T\+I\+L\+I\+NE) pour utiliser les caractères \char`\"{}\textbackslash{}n\char`\"{} dans une chaîne de sujet afin de faire correspondre les groupes multilignes (particulièrement utile pour les listes). 
+
+Definition at line 67 of file Hn\+S\+Parser.\+class.\+php.
+
+
+
+Referenced by \+\_\+\+\_\+construct().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_hn_s_parser_a09477de7b8332274e60f5d62d1053f3f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_hn_s_parser_a472740b8d6c5cc96019b67fe6304d828}\label{class_hn_s_parser_a472740b8d6c5cc96019b67fe6304d828}} 
+\index{Hn\+S\+Parser@{Hn\+S\+Parser}!parse@{parse}}
+\index{parse@{parse}!Hn\+S\+Parser@{Hn\+S\+Parser}}
+\subsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily Hn\+S\+Parser\+::parse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Analyse (avec P\+C\+RE) la variable membre \$this-\/$>$Processed\+Text.
+
+Cette méthode utilise les expressions régulières P\+C\+RE pour analyser la variable membre \$this-\/$>$Processed\+Text. Elle effectue une série de remplacements et d\textquotesingle{}actions pour extraire les informations pertinentes des données.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & Si une exception se produit lors de l\textquotesingle{}analyse. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 108 of file Hn\+S\+Parser.\+class.\+php.
+
+
+
+References \$\+Processed\+Text.
+
+\mbox{\Hypertarget{class_hn_s_parser_ac5bb3acdf1dffb3e1ecd67de9e0e5b06}\label{class_hn_s_parser_ac5bb3acdf1dffb3e1ecd67de9e0e5b06}} 
+\index{Hn\+S\+Parser@{Hn\+S\+Parser}!parse\+Hero@{parse\+Hero}}
+\index{parse\+Hero@{parse\+Hero}!Hn\+S\+Parser@{Hn\+S\+Parser}}
+\subsubsection{\texorpdfstring{parse\+Hero()}{parseHero()}}
+{\footnotesize\ttfamily Hn\+S\+Parser\+::parse\+Hero (\begin{DoxyParamCaption}\item[{}]{\$\+Matches }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Fonction de rappel (callback) pour l\textquotesingle{}analyse des héros.
+
+Cette méthode est utilisée comme fonction de rappel (callback) par la méthode \hyperlink{class_hn_s_parser_a472740b8d6c5cc96019b67fe6304d828}{parse()} pour analyser les données d\textquotesingle{}un héros spécifique à partir du texte analysé.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+Matches} & Un tableau de correspondances P\+C\+RE (résultat de l\textquotesingle{}analyse).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string Retourne une chaîne vide, car elle ne remplace pas le texte analysé. 
+\end{DoxyReturn}
+
+
+Definition at line 127 of file Hn\+S\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_hn_s_parser_a8090ef63c59e0802986e4ef011994575}\label{class_hn_s_parser_a8090ef63c59e0802986e4ef011994575}} 
+\index{Hn\+S\+Parser@{Hn\+S\+Parser}!parse\+Hero\+Data@{parse\+Hero\+Data}}
+\index{parse\+Hero\+Data@{parse\+Hero\+Data}!Hn\+S\+Parser@{Hn\+S\+Parser}}
+\subsubsection{\texorpdfstring{parse\+Hero\+Data()}{parseHeroData()}}
+{\footnotesize\ttfamily Hn\+S\+Parser\+::parse\+Hero\+Data (\begin{DoxyParamCaption}\item[{}]{\$\+Matches }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Fonction de rappel (callback) pour l\textquotesingle{}analyse des données d\textquotesingle{}un héros.
+
+Cette méthode est utilisée comme fonction de rappel (callback) par la méthode \hyperlink{class_hn_s_parser_ac5bb3acdf1dffb3e1ecd67de9e0e5b06}{parse\+Hero()} pour analyser les données spécifiques d\textquotesingle{}un héros à partir des correspondances P\+C\+RE.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+Matches} & Un tableau de correspondances P\+C\+RE (résultat de l\textquotesingle{}analyse).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string Retourne une chaîne vide, car elle ne remplace pas le texte analysé. 
+\end{DoxyReturn}
+
+
+Definition at line 145 of file Hn\+S\+Parser.\+class.\+php.
+
+
+
+References Hero\textbackslash{}mark4\+D\+L().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{class_hn_s_parser_a8090ef63c59e0802986e4ef011994575_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_hn_s_parser_a5ffc8f527494e16b7398c22b3083b701}\label{class_hn_s_parser_a5ffc8f527494e16b7398c22b3083b701}} 
+\index{Hn\+S\+Parser@{Hn\+S\+Parser}!\$\+Base\+U\+RL@{\$\+Base\+U\+RL}}
+\index{\$\+Base\+U\+RL@{\$\+Base\+U\+RL}!Hn\+S\+Parser@{Hn\+S\+Parser}}
+\subsubsection{\texorpdfstring{\$\+Base\+U\+RL}{$BaseURL}}
+{\footnotesize\ttfamily Hn\+S\+Parser\+::\$\+Base\+U\+RL\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 207 of file Hn\+S\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_hn_s_parser_aaf37f9e6c5ffc96136a65a703a99aa8e}\label{class_hn_s_parser_aaf37f9e6c5ffc96136a65a703a99aa8e}} 
+\index{Hn\+S\+Parser@{Hn\+S\+Parser}!\$filename@{\$filename}}
+\index{\$filename@{\$filename}!Hn\+S\+Parser@{Hn\+S\+Parser}}
+\subsubsection{\texorpdfstring{\$filename}{$filename}}
+{\footnotesize\ttfamily Hn\+S\+Parser\+::\$filename\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 162 of file Hn\+S\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_hn_s_parser_aa71c0a545d019cb199a4b78fbbc8b5a3}\label{class_hn_s_parser_aa71c0a545d019cb199a4b78fbbc8b5a3}} 
+\index{Hn\+S\+Parser@{Hn\+S\+Parser}!\$\+Full\+Text@{\$\+Full\+Text}}
+\index{\$\+Full\+Text@{\$\+Full\+Text}!Hn\+S\+Parser@{Hn\+S\+Parser}}
+\subsubsection{\texorpdfstring{\$\+Full\+Text}{$FullText}}
+{\footnotesize\ttfamily Hn\+S\+Parser\+::\$\+Full\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 177 of file Hn\+S\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_hn_s_parser_a21e435563e56096b95d0e4e225cab626}\label{class_hn_s_parser_a21e435563e56096b95d0e4e225cab626}} 
+\index{Hn\+S\+Parser@{Hn\+S\+Parser}!\$\+Game@{\$\+Game}}
+\index{\$\+Game@{\$\+Game}!Hn\+S\+Parser@{Hn\+S\+Parser}}
+\subsubsection{\texorpdfstring{\$\+Game}{$Game}}
+{\footnotesize\ttfamily Hn\+S\+Parser\+::\$\+Game\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 187 of file Hn\+S\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_hn_s_parser_a38166aacff8c20cfd58724af3e3245b9}\label{class_hn_s_parser_a38166aacff8c20cfd58724af3e3245b9}} 
+\index{Hn\+S\+Parser@{Hn\+S\+Parser}!\$head@{\$head}}
+\index{\$head@{\$head}!Hn\+S\+Parser@{Hn\+S\+Parser}}
+\subsubsection{\texorpdfstring{\$head}{$head}}
+{\footnotesize\ttfamily Hn\+S\+Parser\+::\$head\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 167 of file Hn\+S\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_hn_s_parser_a54e8df1596691e3b035ad689b3fad9ca}\label{class_hn_s_parser_a54e8df1596691e3b035ad689b3fad9ca}} 
+\index{Hn\+S\+Parser@{Hn\+S\+Parser}!\$\+Hero\+Class@{\$\+Hero\+Class}}
+\index{\$\+Hero\+Class@{\$\+Hero\+Class}!Hn\+S\+Parser@{Hn\+S\+Parser}}
+\subsubsection{\texorpdfstring{\$\+Hero\+Class}{$HeroClass}}
+{\footnotesize\ttfamily Hn\+S\+Parser\+::\$\+Hero\+Class\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 197 of file Hn\+S\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_hn_s_parser_ac36ceaff377f48bfae25db17a0c45b9a}\label{class_hn_s_parser_ac36ceaff377f48bfae25db17a0c45b9a}} 
+\index{Hn\+S\+Parser@{Hn\+S\+Parser}!\$\+Processed\+Text@{\$\+Processed\+Text}}
+\index{\$\+Processed\+Text@{\$\+Processed\+Text}!Hn\+S\+Parser@{Hn\+S\+Parser}}
+\subsubsection{\texorpdfstring{\$\+Processed\+Text}{$ProcessedText}}
+{\footnotesize\ttfamily Hn\+S\+Parser\+::\$\+Processed\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 182 of file Hn\+S\+Parser.\+class.\+php.
+
+
+
+Referenced by parse().
+
+\mbox{\Hypertarget{class_hn_s_parser_a8ec5690da557329c2eaa9c2a72358950}\label{class_hn_s_parser_a8ec5690da557329c2eaa9c2a72358950}} 
+\index{Hn\+S\+Parser@{Hn\+S\+Parser}!\$\+Server@{\$\+Server}}
+\index{\$\+Server@{\$\+Server}!Hn\+S\+Parser@{Hn\+S\+Parser}}
+\subsubsection{\texorpdfstring{\$\+Server}{$Server}}
+{\footnotesize\ttfamily Hn\+S\+Parser\+::\$\+Server\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 192 of file Hn\+S\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_hn_s_parser_ab72334b282b41e35cae1b894dedf550e}\label{class_hn_s_parser_ab72334b282b41e35cae1b894dedf550e}} 
+\index{Hn\+S\+Parser@{Hn\+S\+Parser}!\$text@{\$text}}
+\index{\$text@{\$text}!Hn\+S\+Parser@{Hn\+S\+Parser}}
+\subsubsection{\texorpdfstring{\$text}{$text}}
+{\footnotesize\ttfamily Hn\+S\+Parser\+::\$text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 172 of file Hn\+S\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_hn_s_parser_ab52651f9df7dd341c91224a0ebd1e40b}\label{class_hn_s_parser_ab52651f9df7dd341c91224a0ebd1e40b}} 
+\index{Hn\+S\+Parser@{Hn\+S\+Parser}!\$\+U\+RL@{\$\+U\+RL}}
+\index{\$\+U\+RL@{\$\+U\+RL}!Hn\+S\+Parser@{Hn\+S\+Parser}}
+\subsubsection{\texorpdfstring{\$\+U\+RL}{$URL}}
+{\footnotesize\ttfamily Hn\+S\+Parser\+::\$\+U\+RL\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 202 of file Hn\+S\+Parser.\+class.\+php.
+
+
+
+Referenced by \+\_\+\+\_\+construct().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+taged/application/src/parse/\hyperlink{_hn_s_parser_8class_8php}{Hn\+S\+Parser.\+class.\+php}\end{DoxyCompactItemize}

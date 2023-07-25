@@ -1,0 +1,9 @@
+<map id="HnSHeroParser\__construct" name="HnSHeroParser\__construct">
+<area shape="rect" id="node2" href="$class_hn_s_hero_parser.html#aac2dc1befb5a88823cb1fdacaa170448" title="Clean the $this&#45;&gt;FullText member variable of all undesirables characters. Use because PCRE pattern mo..." alt="" coords="251,5,409,32"/>
+<area shape="rect" id="node3" href="$class_hero.html#a25f381160b165cd5e6210d7c6b86062f" title="Hero\\setClass" alt="" coords="274,56,386,83"/>
+<area shape="rect" id="node4" href="$class_hero.html#a28f6b0ed48c9046e2ed5929784884ac6" title="Hero\\setRank" alt="" coords="275,107,385,133"/>
+<area shape="rect" id="node5" href="$class_hero.html#a6fe63a5d6d2b9c2353b049492d443f64" title="Hero\\setRift" alt="" coords="280,157,380,184"/>
+<area shape="rect" id="node6" href="$class_hero.html#a4b70e6c2741977f8561adf943606bdea" title="Hero\\setServer" alt="" coords="271,208,389,235"/>
+<area shape="rect" id="node7" href="$class_hero.html#ac0567d3179edcda779547013ffa8e3a8" title="Hero\\setTime" alt="" coords="275,259,385,285"/>
+<area shape="rect" id="node8" href="$class_hero.html#a38ffcafb45800d2895a8bcf6ffde23e9" title="Hero\\setURL" alt="" coords="279,309,381,336"/>
+</map>

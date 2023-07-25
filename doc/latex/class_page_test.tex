@@ -1,0 +1,182 @@
+\hypertarget{class_page_test}{}\section{Page\+Test Class Reference}
+\label{class_page_test}\index{Page\+Test@{Page\+Test}}
+
+
+Inheritance diagram for Page\+Test\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{class_page_test__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Page\+Test\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{class_page_test__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_page_test_a808f30b68701ec7ae61f5b8cde69915b}{\+\_\+\+\_\+construct} ( \$Input\+Data=N\+U\+LL)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_page_test_a8773e93e42863099063f459a81da9407}{handle} ( \$Data)
+\item 
+\hyperlink{class_page_test_a4d3c2315c1baf52ee8e5f6eec04f3818}{compare\+Res} ( \$Res, \$Attendu)
+\item 
+\hyperlink{class_page_test_a9f3eb21c358b30bd87bbb383a953bfea}{test\+Case} ( \$Input, \$Output, \$From, \$To)
+\item 
+\hyperlink{class_page_test_aeea79500b4f16c79da7bc4ce360268fb}{test\+Strings\+Convert\+Case} ()
+\item 
+\hyperlink{class_page_test_a845eee2f9f69bfd55f596d2ae2614b04}{test\+Export\+C\+SV} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 8 of file Page\+Test.\+class.\+php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_page_test_a808f30b68701ec7ae61f5b8cde69915b}\label{class_page_test_a808f30b68701ec7ae61f5b8cde69915b}} 
+\index{Page\+Test@{Page\+Test}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!Page\+Test@{Page\+Test}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Page\+Test\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{}]{\$\+Input\+Data = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+Initialise l\textquotesingle{}objet \hyperlink{class_page_test}{Page\+Test}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$\+Input\+Data} & Les données d\textquotesingle{}entrée pour initialiser la page. Si null, les données \$\+\_\+\+R\+E\+Q\+U\+E\+ST seront utilisées. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 15 of file Page\+Test.\+class.\+php.
+
+
+
+References \$\+Data, and handle().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{class_page_test_a808f30b68701ec7ae61f5b8cde69915b_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_page_test_a4d3c2315c1baf52ee8e5f6eec04f3818}\label{class_page_test_a4d3c2315c1baf52ee8e5f6eec04f3818}} 
+\index{Page\+Test@{Page\+Test}!compare\+Res@{compare\+Res}}
+\index{compare\+Res@{compare\+Res}!Page\+Test@{Page\+Test}}
+\subsubsection{\texorpdfstring{compare\+Res()}{compareRes()}}
+{\footnotesize\ttfamily Page\+Test\+::compare\+Res (\begin{DoxyParamCaption}\item[{}]{\$\+Res,  }\item[{}]{\$\+Attendu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Compare le résultat et la valeur attendue et retourne le résultat sous forme de texte coloré.
+
+
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$\+Res} & Le résultat obtenu. \\
+\hline
+mixed & {\em \$\+Attendu} & La valeur attendue. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string Le résultat coloré. 
+\end{DoxyReturn}
+
+
+Definition at line 46 of file Page\+Test.\+class.\+php.
+
+\mbox{\Hypertarget{class_page_test_a8773e93e42863099063f459a81da9407}\label{class_page_test_a8773e93e42863099063f459a81da9407}} 
+\index{Page\+Test@{Page\+Test}!handle@{handle}}
+\index{handle@{handle}!Page\+Test@{Page\+Test}}
+\subsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily Page\+Test\+::handle (\begin{DoxyParamCaption}\item[{}]{\$\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Gère la soumission du formulaire et traite les données d\textquotesingle{}entrée.
+
+
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$\+Data} & Les données d\textquotesingle{}entrée à traiter. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 32 of file Page\+Test.\+class.\+php.
+
+
+
+Referenced by \+\_\+\+\_\+construct().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{class_page_test_a8773e93e42863099063f459a81da9407_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_page_test_a9f3eb21c358b30bd87bbb383a953bfea}\label{class_page_test_a9f3eb21c358b30bd87bbb383a953bfea}} 
+\index{Page\+Test@{Page\+Test}!test\+Case@{test\+Case}}
+\index{test\+Case@{test\+Case}!Page\+Test@{Page\+Test}}
+\subsubsection{\texorpdfstring{test\+Case()}{testCase()}}
+{\footnotesize\ttfamily Page\+Test\+::test\+Case (\begin{DoxyParamCaption}\item[{}]{\$\+Input,  }\item[{}]{\$\+Output,  }\item[{}]{\$\+From,  }\item[{}]{\$\+To }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Réalise un test de conversion de cas pour l\textquotesingle{}entrée donnée et affiche le résultat.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$\+Input} & L\textquotesingle{}entrée à convertir. \\
+\hline
+string & {\em \$\+Output} & La valeur attendue après conversion. \\
+\hline
+string & {\em \$\+From} & Le cas source. \\
+\hline
+string & {\em \$\+To} & Le cas cible. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 64 of file Page\+Test.\+class.\+php.
+
+
+
+References \$\+Result.
+
+\mbox{\Hypertarget{class_page_test_a845eee2f9f69bfd55f596d2ae2614b04}\label{class_page_test_a845eee2f9f69bfd55f596d2ae2614b04}} 
+\index{Page\+Test@{Page\+Test}!test\+Export\+C\+SV@{test\+Export\+C\+SV}}
+\index{test\+Export\+C\+SV@{test\+Export\+C\+SV}!Page\+Test@{Page\+Test}}
+\subsubsection{\texorpdfstring{test\+Export\+C\+S\+V()}{testExportCSV()}}
+{\footnotesize\ttfamily Page\+Test\+::test\+Export\+C\+SV (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Réalise les tests pour la fonction d\textquotesingle{}export C\+SV des tableaux. 
+
+Definition at line 131 of file Page\+Test.\+class.\+php.
+
+\mbox{\Hypertarget{class_page_test_aeea79500b4f16c79da7bc4ce360268fb}\label{class_page_test_aeea79500b4f16c79da7bc4ce360268fb}} 
+\index{Page\+Test@{Page\+Test}!test\+Strings\+Convert\+Case@{test\+Strings\+Convert\+Case}}
+\index{test\+Strings\+Convert\+Case@{test\+Strings\+Convert\+Case}!Page\+Test@{Page\+Test}}
+\subsubsection{\texorpdfstring{test\+Strings\+Convert\+Case()}{testStringsConvertCase()}}
+{\footnotesize\ttfamily Page\+Test\+::test\+Strings\+Convert\+Case (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Réalise les tests pour la fonction de conversion de cas des chaînes de caractères. 
+
+Definition at line 76 of file Page\+Test.\+class.\+php.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+taged/application/src/pages/\hyperlink{_page_test_8class_8php}{Page\+Test.\+class.\+php}\end{DoxyCompactItemize}

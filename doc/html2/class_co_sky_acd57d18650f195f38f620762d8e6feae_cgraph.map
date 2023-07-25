@@ -1,0 +1,7 @@
+<map id="CoSky\run" name="CoSky\run">
+<area shape="rect" id="node2" href="$class_co_sky.html#a21516052fcf7945de5775fda402af8e3" title="CoSky\\interpret" alt="" coords="141,5,264,32"/>
+<area shape="rect" id="node3" href="$class_co_sky.html#a66c49b4768ec95a9d5b34e3de4a96811" title="CoSky\\prepare" alt="" coords="144,56,261,83"/>
+<area shape="rect" id="node4" href="$class_sky_cube.html#a4b5698250b2e467731f8d3c6a49e04a9" title="SkyCube\\getColIDs" alt="" coords="328,5,475,32"/>
+<area shape="rect" id="node5" href="$class_sky_cube.html#a18c6b3ec100eb483e941b8bb69c40187" title="SkyCube\\getCuboide" alt="" coords="323,56,480,83"/>
+<area shape="rect" id="node6" href="$class_sky_cube.html#ad23b0dcc8513aaa0ce95fee26dfbee0e" title="SkyCube\\getCuboideIDs" alt="" coords="312,107,491,133"/>
+</map>

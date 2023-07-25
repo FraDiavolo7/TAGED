@@ -1,0 +1,6 @@
+<map id="Analysis\runSkyCube" name="Analysis\runSkyCube">
+<area shape="rect" id="node2" href="$class_analysis.html#a19f2ae7fb1a840da628415f3f86a748a" title="Analysis\\getSkyCube" alt="" coords="212,5,371,32"/>
+<area shape="rect" id="node3" href="$class_analysis.html#a9cda19ef90a12fd21523975730dd769d" title="Analysis\\runCuboide" alt="" coords="214,56,369,83"/>
+<area shape="rect" id="node4" href="$class_analysis.html#aa72f4d177d42a08267acf6442d9dd901" title="Analysis\\getSkyCubeColumns" alt="" coords="419,56,635,83"/>
+<area shape="rect" id="node5" href="$class_analysis.html#aa2139069d2b1f559a9df6f690c8cf076" title="Analysis\\getMeasureCols" alt="" coords="683,56,868,83"/>
+</map>

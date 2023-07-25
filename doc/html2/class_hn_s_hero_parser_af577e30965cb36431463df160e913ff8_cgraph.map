@@ -1,0 +1,5 @@
+<map id="HnSHeroParser\parseHero" name="HnSHeroParser\parseHero">
+<area shape="rect" id="node2" href="$class_hero.html#a10da7e23d594023bf7f2508bb41db1dd" title="Hero\\setHeroname" alt="" coords="244,5,389,32"/>
+<area shape="rect" id="node3" href="$class_hero.html#a193167bb9c4a6410d44511f042660bf3" title="Hero\\setLevel" alt="" coords="261,56,373,83"/>
+<area shape="rect" id="node4" href="$class_hero.html#a610db717ebe7ad94233b86a637fca660" title="Hero\\setParangon" alt="" coords="248,107,385,133"/>
+</map>

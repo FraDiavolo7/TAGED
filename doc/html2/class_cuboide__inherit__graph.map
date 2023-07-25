@@ -1,0 +1,5 @@
+<map id="Cuboide" name="Cuboide">
+<area shape="rect" id="node3" href="$class_cuboide_bloc_nested_loop.html" title="CuboideBlocNestedLoop" alt="" coords="5,155,185,181"/>
+<area shape="rect" id="node4" href="$class_cuboide_brute_force.html" title="CuboideBruteForce" alt="" coords="209,155,355,181"/>
+<area shape="rect" id="node5" href="$class_cuboide_emergent.html" title="CuboideEmergent" alt="" coords="379,155,518,181"/>
+</map>

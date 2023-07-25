@@ -1,0 +1,5 @@
+<map id="PageAccueil\computeAllStats" name="PageAccueil\computeAllStats">
+<area shape="rect" id="node2" href="$class_page_accueil.html#a98f6fc9d30fc6ce0e44230887a2f2958" title="PageAccueil\\computeStats" alt="" coords="264,42,459,69"/>
+<area shape="rect" id="node3" href="$class_page_accueil.html#a53981e78427397fc56ec11e28d8f0bd3" title="PageAccueil\\computeStats\lFiles" alt="" coords="516,5,711,47"/>
+<area shape="rect" id="node4" href="$class_page_accueil.html#a9799218ddbc6dcdbc471e2a99efbe61a" title="PageAccueil\\computeStatsDB" alt="" coords="507,71,720,98"/>
+</map>

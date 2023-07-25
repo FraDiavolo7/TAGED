@@ -1,0 +1,214 @@
+\hypertarget{class_rated}{}\section{Rated Class Reference}
+\label{class_rated}\index{Rated@{Rated}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_rated_a4b9d06c250a48312c7bf82f46c0193b4}{\+\_\+\+\_\+construct} ( \$\hyperlink{class_rated}{Rated}, \$Message=\textquotesingle{}\textquotesingle{})
+\item 
+\hyperlink{class_rated_ac2d6c9d9caa4d778cbdf6bb56cdadd52}{\+\_\+\+\_\+to\+String} ()
+\item 
+\hyperlink{class_rated_a9c4a34001e20782332eec732ef91201c}{get\+Rated} ()
+\item 
+\hyperlink{class_rated_a80c3a8fe3bc7d57891509100c1199c6f}{set\+Rated} ( \$\hyperlink{class_rated}{Rated})
+\item 
+\hyperlink{class_rated_a423269207aab7311214b89e2abe5acae}{get\+Message} ()
+\item 
+\hyperlink{class_rated_a7f3cd6e9f485ad6f1a34afdca362f8e4}{set\+Message} ( \$Message)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_rated_a752da492a12860ffd5dc9d9e63a252e4}{create} ( \$Array)
+\begin{DoxyCompactList}\small\item\em Creates a \hyperlink{class_rated}{Rated} from an array of data arrange as \+: Array \mbox{[}1\mbox{]} =$>$ \hyperlink{class_rated}{Rated} Array \mbox{[}2\mbox{]} =$>$ Message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_rated_af555a3fb7d02d47a336ac857a35d3b49}{\$\+Rated}
+\item 
+\hyperlink{class_rated_a07d166a536dd688f4c838db3b76258fc}{\$\+Message}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 18 of file Rated.\+class.\+php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_rated_a4b9d06c250a48312c7bf82f46c0193b4}\label{class_rated_a4b9d06c250a48312c7bf82f46c0193b4}} 
+\index{Rated@{Rated}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!Rated@{Rated}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Rated\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{}]{\$\+Rated,  }\item[{}]{\$\+Message = {\ttfamily \textquotesingle{}\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\hyperlink{class_rated}{Rated} constructor. 
+\begin{DoxyParams}[1]{Parameters}
+bool & {\em \$\+Rated} & If the game is announced as \hyperlink{class_rated}{Rated} \\
+\hline
+string & {\em \$\+Message} & The message officialising the game \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 35 of file Rated.\+class.\+php.
+
+
+
+References \$\+Message, and \$\+Rated.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_rated_ac2d6c9d9caa4d778cbdf6bb56cdadd52}\label{class_rated_ac2d6c9d9caa4d778cbdf6bb56cdadd52}} 
+\index{Rated@{Rated}!\+\_\+\+\_\+to\+String@{\+\_\+\+\_\+to\+String}}
+\index{\+\_\+\+\_\+to\+String@{\+\_\+\+\_\+to\+String}!Rated@{Rated}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+to\+String()}{\_\_toString()}}
+{\footnotesize\ttfamily Rated\+::\+\_\+\+\_\+to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 57 of file Rated.\+class.\+php.
+
+
+
+References \$\+Message.
+
+\mbox{\Hypertarget{class_rated_a752da492a12860ffd5dc9d9e63a252e4}\label{class_rated_a752da492a12860ffd5dc9d9e63a252e4}} 
+\index{Rated@{Rated}!create@{create}}
+\index{create@{create}!Rated@{Rated}}
+\subsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily static Rated\+::create (\begin{DoxyParamCaption}\item[{}]{\$\+Array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a \hyperlink{class_rated}{Rated} from an array of data arrange as \+: Array \mbox{[}1\mbox{]} =$>$ \hyperlink{class_rated}{Rated} Array \mbox{[}2\mbox{]} =$>$ Message. 
+
+\begin{DoxyNote}{Note}
+If \hyperlink{class_rated}{Rated} is filled but not Message, it means the game is rated. If Message is filled, the game is official, but not necessarily rated 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+Array} & The array to use for filling the \hyperlink{class_rated}{Rated} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{class_rated}{Rated} object 
+\end{DoxyReturn}
+
+
+Definition at line 49 of file Rated.\+class.\+php.
+
+
+
+References \$\+Message, and \$\+Rated.
+
+\mbox{\Hypertarget{class_rated_a423269207aab7311214b89e2abe5acae}\label{class_rated_a423269207aab7311214b89e2abe5acae}} 
+\index{Rated@{Rated}!get\+Message@{get\+Message}}
+\index{get\+Message@{get\+Message}!Rated@{Rated}}
+\subsubsection{\texorpdfstring{get\+Message()}{getMessage()}}
+{\footnotesize\ttfamily Rated\+::get\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+string The message officialising the game 
+\end{DoxyReturn}
+
+
+Definition at line 81 of file Rated.\+class.\+php.
+
+
+
+References \$\+Message.
+
+\mbox{\Hypertarget{class_rated_a9c4a34001e20782332eec732ef91201c}\label{class_rated_a9c4a34001e20782332eec732ef91201c}} 
+\index{Rated@{Rated}!get\+Rated@{get\+Rated}}
+\index{get\+Rated@{get\+Rated}!Rated@{Rated}}
+\subsubsection{\texorpdfstring{get\+Rated()}{getRated()}}
+{\footnotesize\ttfamily Rated\+::get\+Rated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+bool If the game is announced as \hyperlink{class_rated}{Rated} 
+\end{DoxyReturn}
+
+
+Definition at line 65 of file Rated.\+class.\+php.
+
+
+
+References \$\+Rated.
+
+\mbox{\Hypertarget{class_rated_a7f3cd6e9f485ad6f1a34afdca362f8e4}\label{class_rated_a7f3cd6e9f485ad6f1a34afdca362f8e4}} 
+\index{Rated@{Rated}!set\+Message@{set\+Message}}
+\index{set\+Message@{set\+Message}!Rated@{Rated}}
+\subsubsection{\texorpdfstring{set\+Message()}{setMessage()}}
+{\footnotesize\ttfamily Rated\+::set\+Message (\begin{DoxyParamCaption}\item[{}]{\$\+Message }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$\+Message} & The message officialising the game \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 89 of file Rated.\+class.\+php.
+
+
+
+References \$\+Message.
+
+\mbox{\Hypertarget{class_rated_a80c3a8fe3bc7d57891509100c1199c6f}\label{class_rated_a80c3a8fe3bc7d57891509100c1199c6f}} 
+\index{Rated@{Rated}!set\+Rated@{set\+Rated}}
+\index{set\+Rated@{set\+Rated}!Rated@{Rated}}
+\subsubsection{\texorpdfstring{set\+Rated()}{setRated()}}
+{\footnotesize\ttfamily Rated\+::set\+Rated (\begin{DoxyParamCaption}\item[{}]{\$\+Rated }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+bool & {\em \$\+Rated} & If the game is announced as \hyperlink{class_rated}{Rated} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 73 of file Rated.\+class.\+php.
+
+
+
+References \$\+Rated.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_rated_a07d166a536dd688f4c838db3b76258fc}\label{class_rated_a07d166a536dd688f4c838db3b76258fc}} 
+\index{Rated@{Rated}!\$\+Message@{\$\+Message}}
+\index{\$\+Message@{\$\+Message}!Rated@{Rated}}
+\subsubsection{\texorpdfstring{\$\+Message}{$Message}}
+{\footnotesize\ttfamily Rated\+::\$\+Message\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 28 of file Rated.\+class.\+php.
+
+
+
+Referenced by \+\_\+\+\_\+construct(), \+\_\+\+\_\+to\+String(), create(), get\+Message(), and set\+Message().
+
+\mbox{\Hypertarget{class_rated_af555a3fb7d02d47a336ac857a35d3b49}\label{class_rated_af555a3fb7d02d47a336ac857a35d3b49}} 
+\index{Rated@{Rated}!\$\+Rated@{\$\+Rated}}
+\index{\$\+Rated@{\$\+Rated}!Rated@{Rated}}
+\subsubsection{\texorpdfstring{\$\+Rated}{$Rated}}
+{\footnotesize\ttfamily Rated\+::\$\+Rated\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 23 of file Rated.\+class.\+php.
+
+
+
+Referenced by \+\_\+\+\_\+construct(), create(), get\+Rated(), and set\+Rated().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+taged/application/old/\hyperlink{_rated_8class_8php}{Rated.\+class.\+php}\end{DoxyCompactItemize}

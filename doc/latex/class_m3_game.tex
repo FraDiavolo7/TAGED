@@ -1,0 +1,696 @@
+\hypertarget{class_m3_game}{}\section{M3\+Game Class Reference}
+\label{class_m3_game}\index{M3\+Game@{M3\+Game}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_m3_game_a0a95aa60413fd78db8b25f2ff6b0e885}{\+\_\+\+\_\+construct} ( \$I\+D\+Player=\textquotesingle{}\textquotesingle{}, \$Player\+IP=\textquotesingle{}\textquotesingle{}, \$Game\+Date=0, \$Round\+Date=0, \$Round\+Num=0, \$Strokes=array())
+\item 
+\hyperlink{class_m3_game_a40cac41918003792e3387919fa6259ad}{\+\_\+\+\_\+destruct} ()
+\item 
+\hyperlink{class_m3_game_a2c801e9cf5f799663c8713551e9e3eca}{\+\_\+\+\_\+to\+String} ()
+\item 
+\hyperlink{class_m3_game_ad8d64fa5c87bbf87f0cdd9930363eae8}{save\+Player} ()
+\item 
+\hyperlink{class_m3_game_a1f48931de438241e2b54b40895fafd95}{save\+Game} ()
+\item 
+\hyperlink{class_m3_game_a5743cdeed815caf98e1cc1df18d1e646}{save} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_m3_game_a14b38fdf7f73b3947f039fd8e6fc2cce}{build} ( \$Array)
+\item 
+static \hyperlink{class_m3_game_aaf1ddd0b90e0344509b0725546875f90}{get\+Stats} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{class_m3_game_a3cb375f0f17771eacad1ddda6df2668b}{T\+A\+B\+L\+E\+\_\+\+P\+L\+A\+Y\+ER} = \textquotesingle{}joueur\textquotesingle{}
+\item 
+const \hyperlink{class_m3_game_ad28c90a7ca5eae9b08ead40979de156f}{T\+A\+B\+L\+E\+\_\+\+G\+A\+ME} = \textquotesingle{}partie\textquotesingle{}
+\item 
+const \hyperlink{class_m3_game_a7fe842d0022922952e21e6f0a1cd5d4e}{V\+I\+E\+W\+\_\+\+D\+A\+TA} = \textquotesingle{}vw\+\_\+m3\+\_\+data\textquotesingle{}
+\item 
+const \hyperlink{class_m3_game_a5c987dca0edf70067f2ccc44287e8a11}{V\+I\+E\+W\+\_\+\+S\+T\+AT} = \textquotesingle{}vw\+\_\+m3\+\_\+stat\textquotesingle{}
+\item 
+const \hyperlink{class_m3_game_a06dabac4dcdd87171e08ebf1bd7a36ab}{I\+D\+\_\+\+P\+L\+A\+Y\+ER} = \textquotesingle{}id\+\_\+joueur\textquotesingle{}
+\item 
+const \hyperlink{class_m3_game_a34480a034aedca037f65a0818ad5c9f6}{I\+D\+\_\+\+G\+A\+ME} = \textquotesingle{}id\+\_\+partie\textquotesingle{}
+\item 
+const \hyperlink{class_m3_game_abde6ff14061ff191d9925e5ac052c037}{I\+P\+\_\+\+A\+D\+DR} = \textquotesingle{}ip\+\_\+addr\textquotesingle{}
+\item 
+const \hyperlink{class_m3_game_a69bcdab6a3a6c850fdebce7f98d4da62}{D\+A\+T\+E\+\_\+\+G\+A\+ME} = \textquotesingle{}date\+\_\+partie\textquotesingle{}
+\item 
+const \hyperlink{class_m3_game_a9f47a65d1f3bc6309e75cd9c01f6c91c}{N\+U\+M\+\_\+\+R\+O\+U\+ND} = \textquotesingle{}num\+\_\+tour\textquotesingle{}
+\item 
+const \hyperlink{class_m3_game_a3745214b2714253c925e76889b7f7176}{D\+A\+T\+E\+\_\+\+R\+O\+U\+ND} = \textquotesingle{}date\+\_\+tour\textquotesingle{}
+\item 
+const \hyperlink{class_m3_game_a6bfae016f5eb538accd9f4395724c749}{C\+O\+U\+N\+T\+\_\+\+P\+L\+A\+Y\+ER} = \textquotesingle{}count\+\_\+joueur\textquotesingle{}
+\item 
+const \hyperlink{class_m3_game_a6be45891c330f7edbae32e54fc703fb8}{C\+O\+U\+N\+T\+\_\+\+G\+A\+ME} = \textquotesingle{}count\+\_\+partie\textquotesingle{}
+\item 
+const \hyperlink{class_m3_game_aa95f99c254f8dc3f5be158f781c04df3}{C\+O\+U\+N\+T\+\_\+\+S\+T\+R\+O\+KE} = \textquotesingle{}count\+\_\+coup\textquotesingle{}
+\item 
+const \hyperlink{class_m3_game_a2f0ddeb62f9fe56004c969a7d0e515e1}{C\+O\+U\+N\+T\+\_\+\+M\+A\+T\+CH} = \textquotesingle{}count\+\_\+beam\textquotesingle{}
+\item 
+const \hyperlink{class_m3_game_aa97404008a5c3e55dfab27002c45692c}{W\+S\+\_\+\+P\+L\+A\+Y\+ER} = \textquotesingle{}player\textquotesingle{}
+\item 
+const \hyperlink{class_m3_game_ad3cc1e8b89b076282e9142c8694c70b6}{W\+S\+\_\+\+P\+L\+A\+Y\+E\+R\+\_\+\+ID} = \textquotesingle{}player\+\_\+id\textquotesingle{}
+\item 
+const \hyperlink{class_m3_game_ad60528b69eb20175b249d590f1d62059}{W\+S\+\_\+\+P\+L\+A\+Y\+E\+R\+\_\+\+A\+D\+DR} = \textquotesingle{}ipaddress\textquotesingle{}
+\item 
+const \hyperlink{class_m3_game_a0bf1b43fb6a711542fb7960ea8ce13cd}{W\+S\+\_\+\+G\+A\+ME} = \textquotesingle{}game\textquotesingle{}
+\item 
+const \hyperlink{class_m3_game_a49dddb1a702d3b353b17ef4c9f34cad5}{W\+S\+\_\+\+G\+A\+M\+E\+\_\+\+D\+A\+TE} = \textquotesingle{}game\+\_\+date\textquotesingle{}
+\item 
+const \hyperlink{class_m3_game_a0e523cf42a879d8596432daa23257b88}{W\+S\+\_\+\+R\+O\+U\+ND} = \textquotesingle{}round\textquotesingle{}
+\item 
+const \hyperlink{class_m3_game_afbe61beb457d2a2fb735a84d76542b4a}{W\+S\+\_\+\+R\+O\+U\+N\+D\+\_\+\+N\+UM} = \textquotesingle{}round\+\_\+num\textquotesingle{}
+\item 
+const \hyperlink{class_m3_game_abee3c3be7f8ccec72ffebba614f91be2}{W\+S\+\_\+\+R\+O\+U\+N\+D\+\_\+\+D\+A\+TE} = \textquotesingle{}round\+\_\+date\textquotesingle{}
+\item 
+const \hyperlink{class_m3_game_a3eb5e640caded0a0df1b62d108fffe10}{W\+S\+\_\+\+S\+T\+R\+O\+KE} = \textquotesingle{}stroke\textquotesingle{}
+\item 
+const \hyperlink{class_m3_game_af1338c69b83867a23c5221450e309687}{C\+O\+U\+N\+T\+\_\+\+T\+R\+AD}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_m3_game_a67cf9e1f6628972901cfd6667dd2d453}{add\+Stroke} ( \$Stroke\+Data=array())
+\item 
+\hyperlink{class_m3_game_a518b82c571e5b00f48e3898b948cfdc1}{fill} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_m3_game_a9bb1d83064b5c9193d5d01c2919b4ce4}{\$\+Game\+ID}
+\item 
+\hyperlink{class_m3_game_a2dd2bab0e9b24e4eac6a3740bd8a5dfc}{\$\+Player\+ID}
+\item 
+\hyperlink{class_m3_game_ae6cb684233a588d71a74898b7b968574}{\$\+Player\+IP}
+\item 
+\hyperlink{class_m3_game_a49d4459112fafab3817c95969587220b}{\$\+Game\+Date}
+\item 
+\hyperlink{class_m3_game_a604ce7aab65292064d0e781f52cd7cf6}{\$\+Round\+Date}
+\item 
+\hyperlink{class_m3_game_ac465bad6ae1e4f6ce8385d5778c882b0}{\$\+Round\+Num}
+\item 
+\hyperlink{class_m3_game_aaf03b510200a259c6fe81ea59dd76e2d}{\$\+Strokes}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_m3_game_aade0085d4c6ad8e99e1f60886029f63a}{fetch\+Game\+Id} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 7 of file M3\+Game.\+class.\+php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_m3_game_a0a95aa60413fd78db8b25f2ff6b0e885}\label{class_m3_game_a0a95aa60413fd78db8b25f2ff6b0e885}} 
+\index{M3\+Game@{M3\+Game}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+construct()}{\_\_construct()}}
+{\footnotesize\ttfamily M3\+Game\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{}]{\$\+I\+D\+Player = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{\$\+Player\+IP = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{\$\+Game\+Date = {\ttfamily 0},  }\item[{}]{\$\+Round\+Date = {\ttfamily 0},  }\item[{}]{\$\+Round\+Num = {\ttfamily 0},  }\item[{}]{\$\+Strokes = {\ttfamily array~()} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 54 of file M3\+Game.\+class.\+php.
+
+
+
+References \$\+Game\+Date, \$\+Player\+IP, \$\+Round\+Date, \$\+Round\+Num, \$\+Strokes, add\+Stroke(), and fill().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_m3_game_a0a95aa60413fd78db8b25f2ff6b0e885_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_m3_game_a40cac41918003792e3387919fa6259ad}\label{class_m3_game_a40cac41918003792e3387919fa6259ad}} 
+\index{M3\+Game@{M3\+Game}!\+\_\+\+\_\+destruct@{\+\_\+\+\_\+destruct}}
+\index{\+\_\+\+\_\+destruct@{\+\_\+\+\_\+destruct}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+destruct()}{\_\_destruct()}}
+{\footnotesize\ttfamily M3\+Game\+::\+\_\+\+\_\+destruct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 83 of file M3\+Game.\+class.\+php.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_m3_game_a2c801e9cf5f799663c8713551e9e3eca}\label{class_m3_game_a2c801e9cf5f799663c8713551e9e3eca}} 
+\index{M3\+Game@{M3\+Game}!\+\_\+\+\_\+to\+String@{\+\_\+\+\_\+to\+String}}
+\index{\+\_\+\+\_\+to\+String@{\+\_\+\+\_\+to\+String}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+to\+String()}{\_\_toString()}}
+{\footnotesize\ttfamily M3\+Game\+::\+\_\+\+\_\+to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 88 of file M3\+Game.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_game_a67cf9e1f6628972901cfd6667dd2d453}\label{class_m3_game_a67cf9e1f6628972901cfd6667dd2d453}} 
+\index{M3\+Game@{M3\+Game}!add\+Stroke@{add\+Stroke}}
+\index{add\+Stroke@{add\+Stroke}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{add\+Stroke()}{addStroke()}}
+{\footnotesize\ttfamily M3\+Game\+::add\+Stroke (\begin{DoxyParamCaption}\item[{}]{\$\+Stroke\+Data = {\ttfamily array~()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 128 of file M3\+Game.\+class.\+php.
+
+
+
+References M3\+Stroke\textbackslash{}build().
+
+
+
+Referenced by \+\_\+\+\_\+construct().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_m3_game_a67cf9e1f6628972901cfd6667dd2d453_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{class_m3_game_a67cf9e1f6628972901cfd6667dd2d453_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_m3_game_a14b38fdf7f73b3947f039fd8e6fc2cce}\label{class_m3_game_a14b38fdf7f73b3947f039fd8e6fc2cce}} 
+\index{M3\+Game@{M3\+Game}!build@{build}}
+\index{build@{build}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily static M3\+Game\+::build (\begin{DoxyParamCaption}\item[{}]{\$\+Array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 105 of file M3\+Game.\+class.\+php.
+
+
+
+References \$\+Game\+Date, \$\+Player\+ID, \$\+Player\+IP, \$\+Round\+Date, \$\+Round\+Num, and \$\+Strokes.
+
+
+
+Referenced by W\+S\+Match3\textbackslash{}store().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_m3_game_a14b38fdf7f73b3947f039fd8e6fc2cce_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_m3_game_aade0085d4c6ad8e99e1f60886029f63a}\label{class_m3_game_aade0085d4c6ad8e99e1f60886029f63a}} 
+\index{M3\+Game@{M3\+Game}!fetch\+Game\+Id@{fetch\+Game\+Id}}
+\index{fetch\+Game\+Id@{fetch\+Game\+Id}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{fetch\+Game\+Id()}{fetchGameId()}}
+{\footnotesize\ttfamily M3\+Game\+::fetch\+Game\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 158 of file M3\+Game.\+class.\+php.
+
+
+
+Referenced by save\+Game().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_m3_game_aade0085d4c6ad8e99e1f60886029f63a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_m3_game_a518b82c571e5b00f48e3898b948cfdc1}\label{class_m3_game_a518b82c571e5b00f48e3898b948cfdc1}} 
+\index{M3\+Game@{M3\+Game}!fill@{fill}}
+\index{fill@{fill}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{fill()}{fill()}}
+{\footnotesize\ttfamily M3\+Game\+::fill (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 138 of file M3\+Game.\+class.\+php.
+
+
+
+Referenced by \+\_\+\+\_\+construct().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{class_m3_game_a518b82c571e5b00f48e3898b948cfdc1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_m3_game_aaf1ddd0b90e0344509b0725546875f90}\label{class_m3_game_aaf1ddd0b90e0344509b0725546875f90}} 
+\index{M3\+Game@{M3\+Game}!get\+Stats@{get\+Stats}}
+\index{get\+Stats@{get\+Stats}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{get\+Stats()}{getStats()}}
+{\footnotesize\ttfamily static M3\+Game\+::get\+Stats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 176 of file M3\+Game.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_game_a5743cdeed815caf98e1cc1df18d1e646}\label{class_m3_game_a5743cdeed815caf98e1cc1df18d1e646}} 
+\index{M3\+Game@{M3\+Game}!save@{save}}
+\index{save@{save}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily M3\+Game\+::save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 221 of file M3\+Game.\+class.\+php.
+
+
+
+References save\+Game(), and save\+Player().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_m3_game_a5743cdeed815caf98e1cc1df18d1e646_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_m3_game_a1f48931de438241e2b54b40895fafd95}\label{class_m3_game_a1f48931de438241e2b54b40895fafd95}} 
+\index{M3\+Game@{M3\+Game}!save\+Game@{save\+Game}}
+\index{save\+Game@{save\+Game}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{save\+Game()}{saveGame()}}
+{\footnotesize\ttfamily M3\+Game\+::save\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 198 of file M3\+Game.\+class.\+php.
+
+
+
+References fetch\+Game\+Id().
+
+
+
+Referenced by save().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_m3_game_a1f48931de438241e2b54b40895fafd95_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_m3_game_a1f48931de438241e2b54b40895fafd95_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_m3_game_ad8d64fa5c87bbf87f0cdd9930363eae8}\label{class_m3_game_ad8d64fa5c87bbf87f0cdd9930363eae8}} 
+\index{M3\+Game@{M3\+Game}!save\+Player@{save\+Player}}
+\index{save\+Player@{save\+Player}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{save\+Player()}{savePlayer()}}
+{\footnotesize\ttfamily M3\+Game\+::save\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 146 of file M3\+Game.\+class.\+php.
+
+
+
+Referenced by save().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{class_m3_game_ad8d64fa5c87bbf87f0cdd9930363eae8_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_m3_game_a49d4459112fafab3817c95969587220b}\label{class_m3_game_a49d4459112fafab3817c95969587220b}} 
+\index{M3\+Game@{M3\+Game}!\$\+Game\+Date@{\$\+Game\+Date}}
+\index{\$\+Game\+Date@{\$\+Game\+Date}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{\$\+Game\+Date}{$GameDate}}
+{\footnotesize\ttfamily M3\+Game\+::\$\+Game\+Date\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 47 of file M3\+Game.\+class.\+php.
+
+
+
+Referenced by \+\_\+\+\_\+construct(), and build().
+
+\mbox{\Hypertarget{class_m3_game_a9bb1d83064b5c9193d5d01c2919b4ce4}\label{class_m3_game_a9bb1d83064b5c9193d5d01c2919b4ce4}} 
+\index{M3\+Game@{M3\+Game}!\$\+Game\+ID@{\$\+Game\+ID}}
+\index{\$\+Game\+ID@{\$\+Game\+ID}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{\$\+Game\+ID}{$GameID}}
+{\footnotesize\ttfamily M3\+Game\+::\$\+Game\+ID\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 44 of file M3\+Game.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_game_a2dd2bab0e9b24e4eac6a3740bd8a5dfc}\label{class_m3_game_a2dd2bab0e9b24e4eac6a3740bd8a5dfc}} 
+\index{M3\+Game@{M3\+Game}!\$\+Player\+ID@{\$\+Player\+ID}}
+\index{\$\+Player\+ID@{\$\+Player\+ID}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{\$\+Player\+ID}{$PlayerID}}
+{\footnotesize\ttfamily M3\+Game\+::\$\+Player\+ID\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 45 of file M3\+Game.\+class.\+php.
+
+
+
+Referenced by build().
+
+\mbox{\Hypertarget{class_m3_game_ae6cb684233a588d71a74898b7b968574}\label{class_m3_game_ae6cb684233a588d71a74898b7b968574}} 
+\index{M3\+Game@{M3\+Game}!\$\+Player\+IP@{\$\+Player\+IP}}
+\index{\$\+Player\+IP@{\$\+Player\+IP}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{\$\+Player\+IP}{$PlayerIP}}
+{\footnotesize\ttfamily M3\+Game\+::\$\+Player\+IP\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 46 of file M3\+Game.\+class.\+php.
+
+
+
+Referenced by \+\_\+\+\_\+construct(), and build().
+
+\mbox{\Hypertarget{class_m3_game_a604ce7aab65292064d0e781f52cd7cf6}\label{class_m3_game_a604ce7aab65292064d0e781f52cd7cf6}} 
+\index{M3\+Game@{M3\+Game}!\$\+Round\+Date@{\$\+Round\+Date}}
+\index{\$\+Round\+Date@{\$\+Round\+Date}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{\$\+Round\+Date}{$RoundDate}}
+{\footnotesize\ttfamily M3\+Game\+::\$\+Round\+Date\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 48 of file M3\+Game.\+class.\+php.
+
+
+
+Referenced by \+\_\+\+\_\+construct(), and build().
+
+\mbox{\Hypertarget{class_m3_game_ac465bad6ae1e4f6ce8385d5778c882b0}\label{class_m3_game_ac465bad6ae1e4f6ce8385d5778c882b0}} 
+\index{M3\+Game@{M3\+Game}!\$\+Round\+Num@{\$\+Round\+Num}}
+\index{\$\+Round\+Num@{\$\+Round\+Num}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{\$\+Round\+Num}{$RoundNum}}
+{\footnotesize\ttfamily M3\+Game\+::\$\+Round\+Num\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 49 of file M3\+Game.\+class.\+php.
+
+
+
+Referenced by \+\_\+\+\_\+construct(), and build().
+
+\mbox{\Hypertarget{class_m3_game_aaf03b510200a259c6fe81ea59dd76e2d}\label{class_m3_game_aaf03b510200a259c6fe81ea59dd76e2d}} 
+\index{M3\+Game@{M3\+Game}!\$\+Strokes@{\$\+Strokes}}
+\index{\$\+Strokes@{\$\+Strokes}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{\$\+Strokes}{$Strokes}}
+{\footnotesize\ttfamily M3\+Game\+::\$\+Strokes\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 50 of file M3\+Game.\+class.\+php.
+
+
+
+Referenced by \+\_\+\+\_\+construct(), and build().
+
+\mbox{\Hypertarget{class_m3_game_a6be45891c330f7edbae32e54fc703fb8}\label{class_m3_game_a6be45891c330f7edbae32e54fc703fb8}} 
+\index{M3\+Game@{M3\+Game}!C\+O\+U\+N\+T\+\_\+\+G\+A\+ME@{C\+O\+U\+N\+T\+\_\+\+G\+A\+ME}}
+\index{C\+O\+U\+N\+T\+\_\+\+G\+A\+ME@{C\+O\+U\+N\+T\+\_\+\+G\+A\+ME}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{C\+O\+U\+N\+T\+\_\+\+G\+A\+ME}{COUNT\_GAME}}
+{\footnotesize\ttfamily const M3\+Game\+::\+C\+O\+U\+N\+T\+\_\+\+G\+A\+ME = \textquotesingle{}count\+\_\+partie\textquotesingle{}}
+
+
+
+Definition at line 23 of file M3\+Game.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_game_a2f0ddeb62f9fe56004c969a7d0e515e1}\label{class_m3_game_a2f0ddeb62f9fe56004c969a7d0e515e1}} 
+\index{M3\+Game@{M3\+Game}!C\+O\+U\+N\+T\+\_\+\+M\+A\+T\+CH@{C\+O\+U\+N\+T\+\_\+\+M\+A\+T\+CH}}
+\index{C\+O\+U\+N\+T\+\_\+\+M\+A\+T\+CH@{C\+O\+U\+N\+T\+\_\+\+M\+A\+T\+CH}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{C\+O\+U\+N\+T\+\_\+\+M\+A\+T\+CH}{COUNT\_MATCH}}
+{\footnotesize\ttfamily const M3\+Game\+::\+C\+O\+U\+N\+T\+\_\+\+M\+A\+T\+CH = \textquotesingle{}count\+\_\+beam\textquotesingle{}}
+
+
+
+Definition at line 25 of file M3\+Game.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_game_a6bfae016f5eb538accd9f4395724c749}\label{class_m3_game_a6bfae016f5eb538accd9f4395724c749}} 
+\index{M3\+Game@{M3\+Game}!C\+O\+U\+N\+T\+\_\+\+P\+L\+A\+Y\+ER@{C\+O\+U\+N\+T\+\_\+\+P\+L\+A\+Y\+ER}}
+\index{C\+O\+U\+N\+T\+\_\+\+P\+L\+A\+Y\+ER@{C\+O\+U\+N\+T\+\_\+\+P\+L\+A\+Y\+ER}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{C\+O\+U\+N\+T\+\_\+\+P\+L\+A\+Y\+ER}{COUNT\_PLAYER}}
+{\footnotesize\ttfamily const M3\+Game\+::\+C\+O\+U\+N\+T\+\_\+\+P\+L\+A\+Y\+ER = \textquotesingle{}count\+\_\+joueur\textquotesingle{}}
+
+
+
+Definition at line 22 of file M3\+Game.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_game_aa95f99c254f8dc3f5be158f781c04df3}\label{class_m3_game_aa95f99c254f8dc3f5be158f781c04df3}} 
+\index{M3\+Game@{M3\+Game}!C\+O\+U\+N\+T\+\_\+\+S\+T\+R\+O\+KE@{C\+O\+U\+N\+T\+\_\+\+S\+T\+R\+O\+KE}}
+\index{C\+O\+U\+N\+T\+\_\+\+S\+T\+R\+O\+KE@{C\+O\+U\+N\+T\+\_\+\+S\+T\+R\+O\+KE}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{C\+O\+U\+N\+T\+\_\+\+S\+T\+R\+O\+KE}{COUNT\_STROKE}}
+{\footnotesize\ttfamily const M3\+Game\+::\+C\+O\+U\+N\+T\+\_\+\+S\+T\+R\+O\+KE = \textquotesingle{}count\+\_\+coup\textquotesingle{}}
+
+
+
+Definition at line 24 of file M3\+Game.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_game_af1338c69b83867a23c5221450e309687}\label{class_m3_game_af1338c69b83867a23c5221450e309687}} 
+\index{M3\+Game@{M3\+Game}!C\+O\+U\+N\+T\+\_\+\+T\+R\+AD@{C\+O\+U\+N\+T\+\_\+\+T\+R\+AD}}
+\index{C\+O\+U\+N\+T\+\_\+\+T\+R\+AD@{C\+O\+U\+N\+T\+\_\+\+T\+R\+AD}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{C\+O\+U\+N\+T\+\_\+\+T\+R\+AD}{COUNT\_TRAD}}
+{\footnotesize\ttfamily const M3\+Game\+::\+C\+O\+U\+N\+T\+\_\+\+T\+R\+AD}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= array (
+        self::COUNT\_PLAYER => \textcolor{stringliteral}{'Joueurs'},
+        self::COUNT\_GAME   => \textcolor{stringliteral}{'Parties'},
+        self::COUNT\_STROKE => \textcolor{stringliteral}{'Coups'},
+        self::COUNT\_MATCH  => \textcolor{stringliteral}{'Matchs'}
+    )
+\end{DoxyCode}
+
+
+Definition at line 37 of file M3\+Game.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_game_a69bcdab6a3a6c850fdebce7f98d4da62}\label{class_m3_game_a69bcdab6a3a6c850fdebce7f98d4da62}} 
+\index{M3\+Game@{M3\+Game}!D\+A\+T\+E\+\_\+\+G\+A\+ME@{D\+A\+T\+E\+\_\+\+G\+A\+ME}}
+\index{D\+A\+T\+E\+\_\+\+G\+A\+ME@{D\+A\+T\+E\+\_\+\+G\+A\+ME}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{D\+A\+T\+E\+\_\+\+G\+A\+ME}{DATE\_GAME}}
+{\footnotesize\ttfamily const M3\+Game\+::\+D\+A\+T\+E\+\_\+\+G\+A\+ME = \textquotesingle{}date\+\_\+partie\textquotesingle{}}
+
+
+
+Definition at line 18 of file M3\+Game.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_game_a3745214b2714253c925e76889b7f7176}\label{class_m3_game_a3745214b2714253c925e76889b7f7176}} 
+\index{M3\+Game@{M3\+Game}!D\+A\+T\+E\+\_\+\+R\+O\+U\+ND@{D\+A\+T\+E\+\_\+\+R\+O\+U\+ND}}
+\index{D\+A\+T\+E\+\_\+\+R\+O\+U\+ND@{D\+A\+T\+E\+\_\+\+R\+O\+U\+ND}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{D\+A\+T\+E\+\_\+\+R\+O\+U\+ND}{DATE\_ROUND}}
+{\footnotesize\ttfamily const M3\+Game\+::\+D\+A\+T\+E\+\_\+\+R\+O\+U\+ND = \textquotesingle{}date\+\_\+tour\textquotesingle{}}
+
+
+
+Definition at line 20 of file M3\+Game.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_game_a34480a034aedca037f65a0818ad5c9f6}\label{class_m3_game_a34480a034aedca037f65a0818ad5c9f6}} 
+\index{M3\+Game@{M3\+Game}!I\+D\+\_\+\+G\+A\+ME@{I\+D\+\_\+\+G\+A\+ME}}
+\index{I\+D\+\_\+\+G\+A\+ME@{I\+D\+\_\+\+G\+A\+ME}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{I\+D\+\_\+\+G\+A\+ME}{ID\_GAME}}
+{\footnotesize\ttfamily const M3\+Game\+::\+I\+D\+\_\+\+G\+A\+ME = \textquotesingle{}id\+\_\+partie\textquotesingle{}}
+
+
+
+Definition at line 16 of file M3\+Game.\+class.\+php.
+
+
+
+Referenced by M3\+Stroke\textbackslash{}fetch\+Id(), and M3\+Stroke\textbackslash{}save().
+
+\mbox{\Hypertarget{class_m3_game_a06dabac4dcdd87171e08ebf1bd7a36ab}\label{class_m3_game_a06dabac4dcdd87171e08ebf1bd7a36ab}} 
+\index{M3\+Game@{M3\+Game}!I\+D\+\_\+\+P\+L\+A\+Y\+ER@{I\+D\+\_\+\+P\+L\+A\+Y\+ER}}
+\index{I\+D\+\_\+\+P\+L\+A\+Y\+ER@{I\+D\+\_\+\+P\+L\+A\+Y\+ER}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{I\+D\+\_\+\+P\+L\+A\+Y\+ER}{ID\_PLAYER}}
+{\footnotesize\ttfamily const M3\+Game\+::\+I\+D\+\_\+\+P\+L\+A\+Y\+ER = \textquotesingle{}id\+\_\+joueur\textquotesingle{}}
+
+
+
+Definition at line 15 of file M3\+Game.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_game_abde6ff14061ff191d9925e5ac052c037}\label{class_m3_game_abde6ff14061ff191d9925e5ac052c037}} 
+\index{M3\+Game@{M3\+Game}!I\+P\+\_\+\+A\+D\+DR@{I\+P\+\_\+\+A\+D\+DR}}
+\index{I\+P\+\_\+\+A\+D\+DR@{I\+P\+\_\+\+A\+D\+DR}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{I\+P\+\_\+\+A\+D\+DR}{IP\_ADDR}}
+{\footnotesize\ttfamily const M3\+Game\+::\+I\+P\+\_\+\+A\+D\+DR = \textquotesingle{}ip\+\_\+addr\textquotesingle{}}
+
+
+
+Definition at line 17 of file M3\+Game.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_game_a9f47a65d1f3bc6309e75cd9c01f6c91c}\label{class_m3_game_a9f47a65d1f3bc6309e75cd9c01f6c91c}} 
+\index{M3\+Game@{M3\+Game}!N\+U\+M\+\_\+\+R\+O\+U\+ND@{N\+U\+M\+\_\+\+R\+O\+U\+ND}}
+\index{N\+U\+M\+\_\+\+R\+O\+U\+ND@{N\+U\+M\+\_\+\+R\+O\+U\+ND}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{N\+U\+M\+\_\+\+R\+O\+U\+ND}{NUM\_ROUND}}
+{\footnotesize\ttfamily const M3\+Game\+::\+N\+U\+M\+\_\+\+R\+O\+U\+ND = \textquotesingle{}num\+\_\+tour\textquotesingle{}}
+
+
+
+Definition at line 19 of file M3\+Game.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_game_ad28c90a7ca5eae9b08ead40979de156f}\label{class_m3_game_ad28c90a7ca5eae9b08ead40979de156f}} 
+\index{M3\+Game@{M3\+Game}!T\+A\+B\+L\+E\+\_\+\+G\+A\+ME@{T\+A\+B\+L\+E\+\_\+\+G\+A\+ME}}
+\index{T\+A\+B\+L\+E\+\_\+\+G\+A\+ME@{T\+A\+B\+L\+E\+\_\+\+G\+A\+ME}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{T\+A\+B\+L\+E\+\_\+\+G\+A\+ME}{TABLE\_GAME}}
+{\footnotesize\ttfamily const M3\+Game\+::\+T\+A\+B\+L\+E\+\_\+\+G\+A\+ME = \textquotesingle{}partie\textquotesingle{}}
+
+
+
+Definition at line 10 of file M3\+Game.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_game_a3cb375f0f17771eacad1ddda6df2668b}\label{class_m3_game_a3cb375f0f17771eacad1ddda6df2668b}} 
+\index{M3\+Game@{M3\+Game}!T\+A\+B\+L\+E\+\_\+\+P\+L\+A\+Y\+ER@{T\+A\+B\+L\+E\+\_\+\+P\+L\+A\+Y\+ER}}
+\index{T\+A\+B\+L\+E\+\_\+\+P\+L\+A\+Y\+ER@{T\+A\+B\+L\+E\+\_\+\+P\+L\+A\+Y\+ER}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{T\+A\+B\+L\+E\+\_\+\+P\+L\+A\+Y\+ER}{TABLE\_PLAYER}}
+{\footnotesize\ttfamily const M3\+Game\+::\+T\+A\+B\+L\+E\+\_\+\+P\+L\+A\+Y\+ER = \textquotesingle{}joueur\textquotesingle{}}
+
+
+
+Definition at line 9 of file M3\+Game.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_game_a7fe842d0022922952e21e6f0a1cd5d4e}\label{class_m3_game_a7fe842d0022922952e21e6f0a1cd5d4e}} 
+\index{M3\+Game@{M3\+Game}!V\+I\+E\+W\+\_\+\+D\+A\+TA@{V\+I\+E\+W\+\_\+\+D\+A\+TA}}
+\index{V\+I\+E\+W\+\_\+\+D\+A\+TA@{V\+I\+E\+W\+\_\+\+D\+A\+TA}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{V\+I\+E\+W\+\_\+\+D\+A\+TA}{VIEW\_DATA}}
+{\footnotesize\ttfamily const M3\+Game\+::\+V\+I\+E\+W\+\_\+\+D\+A\+TA = \textquotesingle{}vw\+\_\+m3\+\_\+data\textquotesingle{}}
+
+
+
+Definition at line 12 of file M3\+Game.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_game_a5c987dca0edf70067f2ccc44287e8a11}\label{class_m3_game_a5c987dca0edf70067f2ccc44287e8a11}} 
+\index{M3\+Game@{M3\+Game}!V\+I\+E\+W\+\_\+\+S\+T\+AT@{V\+I\+E\+W\+\_\+\+S\+T\+AT}}
+\index{V\+I\+E\+W\+\_\+\+S\+T\+AT@{V\+I\+E\+W\+\_\+\+S\+T\+AT}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{V\+I\+E\+W\+\_\+\+S\+T\+AT}{VIEW\_STAT}}
+{\footnotesize\ttfamily const M3\+Game\+::\+V\+I\+E\+W\+\_\+\+S\+T\+AT = \textquotesingle{}vw\+\_\+m3\+\_\+stat\textquotesingle{}}
+
+
+
+Definition at line 13 of file M3\+Game.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_game_a0bf1b43fb6a711542fb7960ea8ce13cd}\label{class_m3_game_a0bf1b43fb6a711542fb7960ea8ce13cd}} 
+\index{M3\+Game@{M3\+Game}!W\+S\+\_\+\+G\+A\+ME@{W\+S\+\_\+\+G\+A\+ME}}
+\index{W\+S\+\_\+\+G\+A\+ME@{W\+S\+\_\+\+G\+A\+ME}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{W\+S\+\_\+\+G\+A\+ME}{WS\_GAME}}
+{\footnotesize\ttfamily const M3\+Game\+::\+W\+S\+\_\+\+G\+A\+ME = \textquotesingle{}game\textquotesingle{}}
+
+
+
+Definition at line 30 of file M3\+Game.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_game_a49dddb1a702d3b353b17ef4c9f34cad5}\label{class_m3_game_a49dddb1a702d3b353b17ef4c9f34cad5}} 
+\index{M3\+Game@{M3\+Game}!W\+S\+\_\+\+G\+A\+M\+E\+\_\+\+D\+A\+TE@{W\+S\+\_\+\+G\+A\+M\+E\+\_\+\+D\+A\+TE}}
+\index{W\+S\+\_\+\+G\+A\+M\+E\+\_\+\+D\+A\+TE@{W\+S\+\_\+\+G\+A\+M\+E\+\_\+\+D\+A\+TE}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{W\+S\+\_\+\+G\+A\+M\+E\+\_\+\+D\+A\+TE}{WS\_GAME\_DATE}}
+{\footnotesize\ttfamily const M3\+Game\+::\+W\+S\+\_\+\+G\+A\+M\+E\+\_\+\+D\+A\+TE = \textquotesingle{}game\+\_\+date\textquotesingle{}}
+
+
+
+Definition at line 31 of file M3\+Game.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_game_aa97404008a5c3e55dfab27002c45692c}\label{class_m3_game_aa97404008a5c3e55dfab27002c45692c}} 
+\index{M3\+Game@{M3\+Game}!W\+S\+\_\+\+P\+L\+A\+Y\+ER@{W\+S\+\_\+\+P\+L\+A\+Y\+ER}}
+\index{W\+S\+\_\+\+P\+L\+A\+Y\+ER@{W\+S\+\_\+\+P\+L\+A\+Y\+ER}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{W\+S\+\_\+\+P\+L\+A\+Y\+ER}{WS\_PLAYER}}
+{\footnotesize\ttfamily const M3\+Game\+::\+W\+S\+\_\+\+P\+L\+A\+Y\+ER = \textquotesingle{}player\textquotesingle{}}
+
+
+
+Definition at line 27 of file M3\+Game.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_game_ad60528b69eb20175b249d590f1d62059}\label{class_m3_game_ad60528b69eb20175b249d590f1d62059}} 
+\index{M3\+Game@{M3\+Game}!W\+S\+\_\+\+P\+L\+A\+Y\+E\+R\+\_\+\+A\+D\+DR@{W\+S\+\_\+\+P\+L\+A\+Y\+E\+R\+\_\+\+A\+D\+DR}}
+\index{W\+S\+\_\+\+P\+L\+A\+Y\+E\+R\+\_\+\+A\+D\+DR@{W\+S\+\_\+\+P\+L\+A\+Y\+E\+R\+\_\+\+A\+D\+DR}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{W\+S\+\_\+\+P\+L\+A\+Y\+E\+R\+\_\+\+A\+D\+DR}{WS\_PLAYER\_ADDR}}
+{\footnotesize\ttfamily const M3\+Game\+::\+W\+S\+\_\+\+P\+L\+A\+Y\+E\+R\+\_\+\+A\+D\+DR = \textquotesingle{}ipaddress\textquotesingle{}}
+
+
+
+Definition at line 29 of file M3\+Game.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_game_ad3cc1e8b89b076282e9142c8694c70b6}\label{class_m3_game_ad3cc1e8b89b076282e9142c8694c70b6}} 
+\index{M3\+Game@{M3\+Game}!W\+S\+\_\+\+P\+L\+A\+Y\+E\+R\+\_\+\+ID@{W\+S\+\_\+\+P\+L\+A\+Y\+E\+R\+\_\+\+ID}}
+\index{W\+S\+\_\+\+P\+L\+A\+Y\+E\+R\+\_\+\+ID@{W\+S\+\_\+\+P\+L\+A\+Y\+E\+R\+\_\+\+ID}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{W\+S\+\_\+\+P\+L\+A\+Y\+E\+R\+\_\+\+ID}{WS\_PLAYER\_ID}}
+{\footnotesize\ttfamily const M3\+Game\+::\+W\+S\+\_\+\+P\+L\+A\+Y\+E\+R\+\_\+\+ID = \textquotesingle{}player\+\_\+id\textquotesingle{}}
+
+
+
+Definition at line 28 of file M3\+Game.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_game_a0e523cf42a879d8596432daa23257b88}\label{class_m3_game_a0e523cf42a879d8596432daa23257b88}} 
+\index{M3\+Game@{M3\+Game}!W\+S\+\_\+\+R\+O\+U\+ND@{W\+S\+\_\+\+R\+O\+U\+ND}}
+\index{W\+S\+\_\+\+R\+O\+U\+ND@{W\+S\+\_\+\+R\+O\+U\+ND}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{W\+S\+\_\+\+R\+O\+U\+ND}{WS\_ROUND}}
+{\footnotesize\ttfamily const M3\+Game\+::\+W\+S\+\_\+\+R\+O\+U\+ND = \textquotesingle{}round\textquotesingle{}}
+
+
+
+Definition at line 32 of file M3\+Game.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_game_abee3c3be7f8ccec72ffebba614f91be2}\label{class_m3_game_abee3c3be7f8ccec72ffebba614f91be2}} 
+\index{M3\+Game@{M3\+Game}!W\+S\+\_\+\+R\+O\+U\+N\+D\+\_\+\+D\+A\+TE@{W\+S\+\_\+\+R\+O\+U\+N\+D\+\_\+\+D\+A\+TE}}
+\index{W\+S\+\_\+\+R\+O\+U\+N\+D\+\_\+\+D\+A\+TE@{W\+S\+\_\+\+R\+O\+U\+N\+D\+\_\+\+D\+A\+TE}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{W\+S\+\_\+\+R\+O\+U\+N\+D\+\_\+\+D\+A\+TE}{WS\_ROUND\_DATE}}
+{\footnotesize\ttfamily const M3\+Game\+::\+W\+S\+\_\+\+R\+O\+U\+N\+D\+\_\+\+D\+A\+TE = \textquotesingle{}round\+\_\+date\textquotesingle{}}
+
+
+
+Definition at line 34 of file M3\+Game.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_game_afbe61beb457d2a2fb735a84d76542b4a}\label{class_m3_game_afbe61beb457d2a2fb735a84d76542b4a}} 
+\index{M3\+Game@{M3\+Game}!W\+S\+\_\+\+R\+O\+U\+N\+D\+\_\+\+N\+UM@{W\+S\+\_\+\+R\+O\+U\+N\+D\+\_\+\+N\+UM}}
+\index{W\+S\+\_\+\+R\+O\+U\+N\+D\+\_\+\+N\+UM@{W\+S\+\_\+\+R\+O\+U\+N\+D\+\_\+\+N\+UM}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{W\+S\+\_\+\+R\+O\+U\+N\+D\+\_\+\+N\+UM}{WS\_ROUND\_NUM}}
+{\footnotesize\ttfamily const M3\+Game\+::\+W\+S\+\_\+\+R\+O\+U\+N\+D\+\_\+\+N\+UM = \textquotesingle{}round\+\_\+num\textquotesingle{}}
+
+
+
+Definition at line 33 of file M3\+Game.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_game_a3eb5e640caded0a0df1b62d108fffe10}\label{class_m3_game_a3eb5e640caded0a0df1b62d108fffe10}} 
+\index{M3\+Game@{M3\+Game}!W\+S\+\_\+\+S\+T\+R\+O\+KE@{W\+S\+\_\+\+S\+T\+R\+O\+KE}}
+\index{W\+S\+\_\+\+S\+T\+R\+O\+KE@{W\+S\+\_\+\+S\+T\+R\+O\+KE}!M3\+Game@{M3\+Game}}
+\subsubsection{\texorpdfstring{W\+S\+\_\+\+S\+T\+R\+O\+KE}{WS\_STROKE}}
+{\footnotesize\ttfamily const M3\+Game\+::\+W\+S\+\_\+\+S\+T\+R\+O\+KE = \textquotesingle{}stroke\textquotesingle{}}
+
+
+
+Definition at line 35 of file M3\+Game.\+class.\+php.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+taged/application/src/models/\+Match3/\hyperlink{_m3_game_8class_8php}{M3\+Game.\+class.\+php}\end{DoxyCompactItemize}

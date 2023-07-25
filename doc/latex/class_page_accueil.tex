@@ -1,0 +1,444 @@
+\hypertarget{class_page_accueil}{}\section{Page\+Accueil Class Reference}
+\label{class_page_accueil}\index{Page\+Accueil@{Page\+Accueil}}
+
+
+Inheritance diagram for Page\+Accueil\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{class_page_accueil__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Page\+Accueil\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{class_page_accueil__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_page_accueil_a94778509e719e4a7620440be3b76f986}{\+\_\+\+\_\+construct} ( \$Input\+Data=N\+U\+LL)
+\item 
+\hyperlink{class_page_accueil_a92f6557a9cfaf1e0f49d7461d7fac2c4}{add\+Stats} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_page_accueil_a98f6fc9d30fc6ce0e44230887a2f2958}{compute\+Stats} ( \$App)
+\item 
+\hyperlink{class_page_accueil_a9799218ddbc6dcdbc471e2a99efbe61a}{compute\+Stats\+DB} ( \$App)
+\item 
+\hyperlink{class_page_accueil_a53981e78427397fc56ec11e28d8f0bd3}{compute\+Stats\+Files} ( \$App)
+\item 
+\hyperlink{class_page_accueil_a4acc4c64a5b79fd4d0f12ccbeeabe83e}{compute\+All\+Stats} ()
+\item 
+\hyperlink{class_page_accueil_afe6329de30c9e7b68b5a636b096928d0}{do\+Stat\+Head} ( \$Columns)
+\item 
+\hyperlink{class_page_accueil_a4350b2f1c419b669294b5dc89c6e3568}{do\+Stat\+Line} ( \$Stats, \$Columns, \$Part=\textquotesingle{}main\textquotesingle{})
+\item 
+\hyperlink{class_page_accueil_ac3d7722a9e10fe717e07f5e30550f3a3}{do\+Stats} ( \$Data)
+\item 
+\hyperlink{class_page_accueil_a32d82822c35bdbac485363e5f6b95418}{add\+Stat} ( \$Data, \$Stat\+Type)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_page_accueil_aed778338aeedd936d8e5e48bdf1be538}{\$\+Cols}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 8 of file Page\+Accueil.\+class.\+php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_page_accueil_a94778509e719e4a7620440be3b76f986}\label{class_page_accueil_a94778509e719e4a7620440be3b76f986}} 
+\index{Page\+Accueil@{Page\+Accueil}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!Page\+Accueil@{Page\+Accueil}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Page\+Accueil\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{}]{\$\+Input\+Data = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+Constructeur de la classe \hyperlink{class_page_accueil}{Page\+Accueil}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$\+Input\+Data} & Les données d\textquotesingle{}entrée pour la page. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 15 of file Page\+Accueil.\+class.\+php.
+
+
+
+References \$\+Data, and add\+Stats().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_page_accueil_a94778509e719e4a7620440be3b76f986_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_page_accueil_a32d82822c35bdbac485363e5f6b95418}\label{class_page_accueil_a32d82822c35bdbac485363e5f6b95418}} 
+\index{Page\+Accueil@{Page\+Accueil}!add\+Stat@{add\+Stat}}
+\index{add\+Stat@{add\+Stat}!Page\+Accueil@{Page\+Accueil}}
+\subsubsection{\texorpdfstring{add\+Stat()}{addStat()}}
+{\footnotesize\ttfamily Page\+Accueil\+::add\+Stat (\begin{DoxyParamCaption}\item[{}]{\$\+Data,  }\item[{}]{\$\+Stat\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Ajoute une section de statistiques au contenu de la page.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+Data} & Les données de statistiques. \\
+\hline
+string & {\em \$\+Stat\+Type} & Le type de statistiques. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string La section de statistiques au format H\+T\+ML. 
+\end{DoxyReturn}
+
+
+Definition at line 258 of file Page\+Accueil.\+class.\+php.
+
+
+
+References \$\+Data, and do\+Stats().
+
+
+
+Referenced by add\+Stats().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_page_accueil_a32d82822c35bdbac485363e5f6b95418_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_page_accueil_a32d82822c35bdbac485363e5f6b95418_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_page_accueil_a92f6557a9cfaf1e0f49d7461d7fac2c4}\label{class_page_accueil_a92f6557a9cfaf1e0f49d7461d7fac2c4}} 
+\index{Page\+Accueil@{Page\+Accueil}!add\+Stats@{add\+Stats}}
+\index{add\+Stats@{add\+Stats}!Page\+Accueil@{Page\+Accueil}}
+\subsubsection{\texorpdfstring{add\+Stats()}{addStats()}}
+{\footnotesize\ttfamily Page\+Accueil\+::add\+Stats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Ajoute toutes les statistiques calculées à la page. 
+
+Definition at line 268 of file Page\+Accueil.\+class.\+php.
+
+
+
+References \$\+Data, add\+Stat(), and compute\+All\+Stats().
+
+
+
+Referenced by \+\_\+\+\_\+construct().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_page_accueil_a92f6557a9cfaf1e0f49d7461d7fac2c4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_page_accueil_a92f6557a9cfaf1e0f49d7461d7fac2c4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_page_accueil_a4acc4c64a5b79fd4d0f12ccbeeabe83e}\label{class_page_accueil_a4acc4c64a5b79fd4d0f12ccbeeabe83e}} 
+\index{Page\+Accueil@{Page\+Accueil}!compute\+All\+Stats@{compute\+All\+Stats}}
+\index{compute\+All\+Stats@{compute\+All\+Stats}!Page\+Accueil@{Page\+Accueil}}
+\subsubsection{\texorpdfstring{compute\+All\+Stats()}{computeAllStats()}}
+{\footnotesize\ttfamily Page\+Accueil\+::compute\+All\+Stats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Calcule toutes les statistiques pour toutes les applications.
+
+\begin{DoxyReturn}{Returns}
+array Les statistiques calculées pour toutes les applications. 
+\end{DoxyReturn}
+
+
+Definition at line 167 of file Page\+Accueil.\+class.\+php.
+
+
+
+References \$\+G\+L\+O\+B\+A\+LS, A\+P\+P\+\_\+\+L\+I\+ST, A\+P\+P\+\_\+\+N\+A\+ME, and compute\+Stats().
+
+
+
+Referenced by add\+Stats().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_page_accueil_a4acc4c64a5b79fd4d0f12ccbeeabe83e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_page_accueil_a4acc4c64a5b79fd4d0f12ccbeeabe83e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_page_accueil_a98f6fc9d30fc6ce0e44230887a2f2958}\label{class_page_accueil_a98f6fc9d30fc6ce0e44230887a2f2958}} 
+\index{Page\+Accueil@{Page\+Accueil}!compute\+Stats@{compute\+Stats}}
+\index{compute\+Stats@{compute\+Stats}!Page\+Accueil@{Page\+Accueil}}
+\subsubsection{\texorpdfstring{compute\+Stats()}{computeStats()}}
+{\footnotesize\ttfamily Page\+Accueil\+::compute\+Stats (\begin{DoxyParamCaption}\item[{}]{\$\+App }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Calcule les statistiques pour l\textquotesingle{}application spécifiée.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+App} & Les données de l\textquotesingle{}application. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array Les statistiques calculées. 
+\end{DoxyReturn}
+
+
+Definition at line 33 of file Page\+Accueil.\+class.\+php.
+
+
+
+References compute\+Stats\+D\+B(), compute\+Stats\+Files(), S\+T\+A\+T\+S\+\_\+\+DB, and S\+T\+A\+T\+S\+\_\+\+F\+I\+LE.
+
+
+
+Referenced by compute\+All\+Stats().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_page_accueil_a98f6fc9d30fc6ce0e44230887a2f2958_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_page_accueil_a98f6fc9d30fc6ce0e44230887a2f2958_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_page_accueil_a9799218ddbc6dcdbc471e2a99efbe61a}\label{class_page_accueil_a9799218ddbc6dcdbc471e2a99efbe61a}} 
+\index{Page\+Accueil@{Page\+Accueil}!compute\+Stats\+DB@{compute\+Stats\+DB}}
+\index{compute\+Stats\+DB@{compute\+Stats\+DB}!Page\+Accueil@{Page\+Accueil}}
+\subsubsection{\texorpdfstring{compute\+Stats\+D\+B()}{computeStatsDB()}}
+{\footnotesize\ttfamily Page\+Accueil\+::compute\+Stats\+DB (\begin{DoxyParamCaption}\item[{}]{\$\+App }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Calcule les statistiques à partir de la base de données pour l\textquotesingle{}application spécifiée.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+App} & Les données de l\textquotesingle{}application. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array Les statistiques calculées depuis la base de données. 
+\end{DoxyReturn}
+
+
+Definition at line 53 of file Page\+Accueil.\+class.\+php.
+
+
+
+References \$\+Data, S\+T\+A\+T\+S\+\_\+\+C\+O\+LS, S\+T\+A\+T\+S\+\_\+\+D\+A\+TA, and S\+T\+A\+T\+S\+\_\+\+DB.
+
+
+
+Referenced by compute\+Stats().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_page_accueil_a9799218ddbc6dcdbc471e2a99efbe61a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_page_accueil_a53981e78427397fc56ec11e28d8f0bd3}\label{class_page_accueil_a53981e78427397fc56ec11e28d8f0bd3}} 
+\index{Page\+Accueil@{Page\+Accueil}!compute\+Stats\+Files@{compute\+Stats\+Files}}
+\index{compute\+Stats\+Files@{compute\+Stats\+Files}!Page\+Accueil@{Page\+Accueil}}
+\subsubsection{\texorpdfstring{compute\+Stats\+Files()}{computeStatsFiles()}}
+{\footnotesize\ttfamily Page\+Accueil\+::compute\+Stats\+Files (\begin{DoxyParamCaption}\item[{}]{\$\+App }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Calcule les statistiques à partir des fichiers pour l\textquotesingle{}application spécifiée.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+App} & Les données de l\textquotesingle{}application. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array Les statistiques calculées depuis les fichiers. 
+\end{DoxyReturn}
+
+
+Definition at line 90 of file Page\+Accueil.\+class.\+php.
+
+
+
+References \$\+Data, A\+P\+P\+\_\+\+N\+A\+ME, D\+A\+T\+A\+\_\+\+H\+O\+ME, S\+T\+A\+T\+S\+\_\+\+C\+O\+LS, S\+T\+A\+T\+S\+\_\+\+D\+A\+TA, and S\+T\+A\+T\+S\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR.
+
+
+
+Referenced by compute\+Stats().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_page_accueil_a53981e78427397fc56ec11e28d8f0bd3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_page_accueil_afe6329de30c9e7b68b5a636b096928d0}\label{class_page_accueil_afe6329de30c9e7b68b5a636b096928d0}} 
+\index{Page\+Accueil@{Page\+Accueil}!do\+Stat\+Head@{do\+Stat\+Head}}
+\index{do\+Stat\+Head@{do\+Stat\+Head}!Page\+Accueil@{Page\+Accueil}}
+\subsubsection{\texorpdfstring{do\+Stat\+Head()}{doStatHead()}}
+{\footnotesize\ttfamily Page\+Accueil\+::do\+Stat\+Head (\begin{DoxyParamCaption}\item[{}]{\$\+Columns }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Génère la ligne d\textquotesingle{}en-\/tête du tableau de statistiques.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+Columns} & Les colonnes du tableau. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string La ligne d\textquotesingle{}en-\/tête du tableau de statistiques. 
+\end{DoxyReturn}
+
+
+Definition at line 185 of file Page\+Accueil.\+class.\+php.
+
+
+
+Referenced by do\+Stats().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_page_accueil_afe6329de30c9e7b68b5a636b096928d0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_page_accueil_a4350b2f1c419b669294b5dc89c6e3568}\label{class_page_accueil_a4350b2f1c419b669294b5dc89c6e3568}} 
+\index{Page\+Accueil@{Page\+Accueil}!do\+Stat\+Line@{do\+Stat\+Line}}
+\index{do\+Stat\+Line@{do\+Stat\+Line}!Page\+Accueil@{Page\+Accueil}}
+\subsubsection{\texorpdfstring{do\+Stat\+Line()}{doStatLine()}}
+{\footnotesize\ttfamily Page\+Accueil\+::do\+Stat\+Line (\begin{DoxyParamCaption}\item[{}]{\$\+Stats,  }\item[{}]{\$\+Columns,  }\item[{}]{\$\+Part = {\ttfamily \textquotesingle{}main\textquotesingle{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Génère une ligne de statistiques pour le tableau.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+Stats} & Les statistiques. \\
+\hline
+array & {\em \$\+Columns} & Les colonnes du tableau. \\
+\hline
+string & {\em \$\+Part} & La partie des statistiques. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string La ligne de statistiques pour le tableau. 
+\end{DoxyReturn}
+
+
+Definition at line 203 of file Page\+Accueil.\+class.\+php.
+
+
+
+Referenced by do\+Stats().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_page_accueil_a4350b2f1c419b669294b5dc89c6e3568_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_page_accueil_ac3d7722a9e10fe717e07f5e30550f3a3}\label{class_page_accueil_ac3d7722a9e10fe717e07f5e30550f3a3}} 
+\index{Page\+Accueil@{Page\+Accueil}!do\+Stats@{do\+Stats}}
+\index{do\+Stats@{do\+Stats}!Page\+Accueil@{Page\+Accueil}}
+\subsubsection{\texorpdfstring{do\+Stats()}{doStats()}}
+{\footnotesize\ttfamily Page\+Accueil\+::do\+Stats (\begin{DoxyParamCaption}\item[{}]{\$\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Génère le tableau de statistiques.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+Data} & Les données de statistiques. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string Le tableau de statistiques au format H\+T\+ML. 
+\end{DoxyReturn}
+
+
+Definition at line 219 of file Page\+Accueil.\+class.\+php.
+
+
+
+References \$\+Data, do\+Stat\+Head(), do\+Stat\+Line(), S\+T\+A\+T\+S\+\_\+\+C\+O\+LS, and S\+T\+A\+T\+S\+\_\+\+D\+A\+TA.
+
+
+
+Referenced by add\+Stat().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_page_accueil_ac3d7722a9e10fe717e07f5e30550f3a3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_page_accueil_ac3d7722a9e10fe717e07f5e30550f3a3_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_page_accueil_aed778338aeedd936d8e5e48bdf1be538}\label{class_page_accueil_aed778338aeedd936d8e5e48bdf1be538}} 
+\index{Page\+Accueil@{Page\+Accueil}!\$\+Cols@{\$\+Cols}}
+\index{\$\+Cols@{\$\+Cols}!Page\+Accueil@{Page\+Accueil}}
+\subsubsection{\texorpdfstring{\$\+Cols}{$Cols}}
+{\footnotesize\ttfamily Page\+Accueil\+::\$\+Cols\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 295 of file Page\+Accueil.\+class.\+php.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+taged/application/src/pages/\hyperlink{_page_accueil_8class_8php}{Page\+Accueil.\+class.\+php}\end{DoxyCompactItemize}

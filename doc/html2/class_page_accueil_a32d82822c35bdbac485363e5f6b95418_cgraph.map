@@ -1,0 +1,5 @@
+<map id="PageAccueil\addStat" name="PageAccueil\addStat">
+<area shape="rect" id="node2" href="$class_page_accueil.html#ac3d7722a9e10fe717e07f5e30550f3a3" title="PageAccueil\\doStats" alt="" coords="208,31,361,57"/>
+<area shape="rect" id="node3" href="$class_page_accueil.html#afe6329de30c9e7b68b5a636b096928d0" title="PageAccueil\\doStatHead" alt="" coords="409,5,589,32"/>
+<area shape="rect" id="node4" href="$class_page_accueil.html#a4350b2f1c419b669294b5dc89c6e3568" title="PageAccueil\\doStatLine" alt="" coords="413,56,586,83"/>
+</map>

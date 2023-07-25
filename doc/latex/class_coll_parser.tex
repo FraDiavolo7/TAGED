@@ -1,0 +1,603 @@
+\hypertarget{class_coll_parser}{}\section{Coll\+Parser Class Reference}
+\label{class_coll_parser}\index{Coll\+Parser@{Coll\+Parser}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_coll_parser_a0642e6816338ececb86de51a3458a2a9}{\+\_\+\+\_\+construct} ( \$Text\+To\+Parse)
+\item 
+\hyperlink{class_coll_parser_a247899e603dc8e17fb15060498eadcca}{\+\_\+\+\_\+destruct} ()
+\item 
+\hyperlink{class_coll_parser_abdc6979cbc41f9b90e1cf6602d95cefa}{parse} ()
+\item 
+\hyperlink{class_coll_parser_a66f8bad86783c3224b7e94f5736f691e}{\+\_\+\+\_\+to\+String} ()
+\item 
+\hyperlink{class_coll_parser_a80c4fddf08335fdffd0db37a432dce7b}{display} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_coll_parser_ad482ec1ae68430dd0a2bdc60faf32ced}{apply\+Pattern} ( \$Pattern, \$Callback, \$Count=1)
+\item 
+\hyperlink{class_coll_parser_a89a255cb6842c7992021a47fea2f8303}{game\+Id\+Preg} ( \$Match)
+\item 
+\hyperlink{class_coll_parser_aa9797be8edfc480ed489ff5a68a8fd92}{player\+Preg} ( \$Match)
+\item 
+\hyperlink{class_coll_parser_aecd19071144d47fe4a75030de343bf5a}{team\+Size\+Preg} ( \$Match)
+\item 
+\hyperlink{class_coll_parser_aa30643c8dbda4c34c0fdeaf1018c620a}{game\+Type\+Preg} ( \$Match)
+\item 
+\hyperlink{class_coll_parser_aee90e9a89c8fd155d72cddf36240e347}{gen\+Preg} ( \$Match)
+\item 
+\hyperlink{class_coll_parser_a21dea24b254ec24a5d0cb5c233043a8d}{tier\+Preg} ( \$Match)
+\item 
+\hyperlink{class_coll_parser_a3d6b54a92a85ffb379de62914687aa65}{rated\+Preg} ( \$Match)
+\item 
+\hyperlink{class_coll_parser_a69196772c6fbb721c22080ab82e1ea7a}{switch\+P1} ( \$Match)
+\item 
+\hyperlink{class_coll_parser_ab14ed8fd90b3a58b7589d0e46057fc06}{switch\+P2} ( \$Match)
+\item 
+\hyperlink{class_coll_parser_a9712c0a4898503e75816eab8322b7f8b}{rule\+Preg} ( \$Match)
+\item 
+\hyperlink{class_coll_parser_a0adee1fa910879cf58ba3914563a7c80}{team\+Preview\+Pokemon\+Preg} ( \$Match)
+\item 
+\hyperlink{class_coll_parser_a2f101c518748f0b3bc9705931b093f51}{turn\+Preg} ( \$Match)
+\item 
+\hyperlink{class_coll_parser_a80e6d75331d3dbd3af52d6bcc0423bf2}{move1\+Preg} ( \$Match)
+\item 
+\hyperlink{class_coll_parser_ab7104974448aef9449d17923a8ba9284}{move2\+Preg} ( \$Match)
+\item 
+\hyperlink{class_coll_parser_a69653970e854541c1627eb25fa271d32}{winner\+Preg} ( \$Match)
+\item 
+\hyperlink{class_coll_parser_a6fa0362052ba34bde64b06a953320dc2}{tie\+Preg} ( \$Match)
+\item 
+\hyperlink{class_coll_parser_a7c44afe03c478fa3e9c6ac200d0ce9a4}{move1} ( \$pokemon, \$move, \$effect)
+\item 
+\hyperlink{class_coll_parser_a574a74a20fa3e11fa4daa023789f50de}{move2} ( \$pokemon, \$move, \$effect)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_coll_parser_a8c2cd975c9a254ae394a9335c6037582}{clean} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_coll_parser_a713858989a8fd5c809c721a0cd787831}{\$turns}
+\item 
+\hyperlink{class_coll_parser_a5ba1b165a42ee0e41140795c9f4ae02a}{\$\+Full\+Text}
+\item 
+\hyperlink{class_coll_parser_ad2233d0ebcf39ecb4f29733d6dcbb979}{\$\+Processed\+Text}
+\item 
+\hyperlink{class_coll_parser_a176d0a851c115aceb6c31d1b042de670}{\$\+Game}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 7 of file Coll\+Parser.\+class.\+php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_coll_parser_a0642e6816338ececb86de51a3458a2a9}\label{class_coll_parser_a0642e6816338ececb86de51a3458a2a9}} 
+\index{Coll\+Parser@{Coll\+Parser}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!Coll\+Parser@{Coll\+Parser}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Coll\+Parser\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{}]{\$\+Text\+To\+Parse }\end{DoxyParamCaption})}
+
+Construit un nouvel objet \hyperlink{class_coll_parser}{Coll\+Parser}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$\+Text\+To\+Parse} & Le texte brut à analyser. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 15 of file Coll\+Parser.\+class.\+php.
+
+
+
+References \$\+Text\+To\+Parse, and clean().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{class_coll_parser_a0642e6816338ececb86de51a3458a2a9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_coll_parser_a247899e603dc8e17fb15060498eadcca}\label{class_coll_parser_a247899e603dc8e17fb15060498eadcca}} 
+\index{Coll\+Parser@{Coll\+Parser}!\+\_\+\+\_\+destruct@{\+\_\+\+\_\+destruct}}
+\index{\+\_\+\+\_\+destruct@{\+\_\+\+\_\+destruct}!Coll\+Parser@{Coll\+Parser}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+destruct()}{\_\_destruct()}}
+{\footnotesize\ttfamily Coll\+Parser\+::\+\_\+\+\_\+destruct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 23 of file Coll\+Parser.\+class.\+php.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_coll_parser_a66f8bad86783c3224b7e94f5736f691e}\label{class_coll_parser_a66f8bad86783c3224b7e94f5736f691e}} 
+\index{Coll\+Parser@{Coll\+Parser}!\+\_\+\+\_\+to\+String@{\+\_\+\+\_\+to\+String}}
+\index{\+\_\+\+\_\+to\+String@{\+\_\+\+\_\+to\+String}!Coll\+Parser@{Coll\+Parser}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+to\+String()}{\_\_toString()}}
+{\footnotesize\ttfamily Coll\+Parser\+::\+\_\+\+\_\+to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Convertit l\textquotesingle{}objet \hyperlink{class_coll_parser}{Coll\+Parser} en une chaîne de caractères pour l\textquotesingle{}affichage.
+
+\begin{DoxyReturn}{Returns}
+string La représentation de l\textquotesingle{}objet sous forme de chaîne de caractères. 
+\end{DoxyReturn}
+
+
+Definition at line 139 of file Coll\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_coll_parser_ad482ec1ae68430dd0a2bdc60faf32ced}\label{class_coll_parser_ad482ec1ae68430dd0a2bdc60faf32ced}} 
+\index{Coll\+Parser@{Coll\+Parser}!apply\+Pattern@{apply\+Pattern}}
+\index{apply\+Pattern@{apply\+Pattern}!Coll\+Parser@{Coll\+Parser}}
+\subsubsection{\texorpdfstring{apply\+Pattern()}{applyPattern()}}
+{\footnotesize\ttfamily Coll\+Parser\+::apply\+Pattern (\begin{DoxyParamCaption}\item[{}]{\$\+Pattern,  }\item[{}]{\$\+Callback,  }\item[{}]{\$\+Count = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Applique un motif (pattern) avec une fonction de rappel sur le texte traité.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$\+Pattern} & Le motif (pattern) d\textquotesingle{}expression régulière à appliquer. \\
+\hline
+string & {\em \$\+Callback} & La fonction de rappel à appeler pour chaque correspondance. \\
+\hline
+int & {\em \$\+Count} & Le nombre de fois que le motif doit être appliqué (facultatif, par défaut 1). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 48 of file Coll\+Parser.\+class.\+php.
+
+
+
+Referenced by parse().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{class_coll_parser_ad482ec1ae68430dd0a2bdc60faf32ced_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_coll_parser_a8c2cd975c9a254ae394a9335c6037582}\label{class_coll_parser_a8c2cd975c9a254ae394a9335c6037582}} 
+\index{Coll\+Parser@{Coll\+Parser}!clean@{clean}}
+\index{clean@{clean}!Coll\+Parser@{Coll\+Parser}}
+\subsubsection{\texorpdfstring{clean()}{clean()}}
+{\footnotesize\ttfamily Coll\+Parser\+::clean (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Nettoie le contenu de \$this-\/$>$Full\+Text de tous les caractères indésirables. Utilise le modificateur d\textquotesingle{}expression régulière m (P\+C\+R\+E\+\_\+\+M\+U\+L\+T\+I\+L\+I\+NE) pour utiliser des caractères \char`\"{}\textbackslash{}n\char`\"{} dans une chaîne de sujet afin de faire correspondre des groupes multilignes (particulièrement utile pour les listes). 
+
+Definition at line 32 of file Coll\+Parser.\+class.\+php.
+
+
+
+Referenced by \+\_\+\+\_\+construct().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{class_coll_parser_a8c2cd975c9a254ae394a9335c6037582_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_coll_parser_a80c4fddf08335fdffd0db37a432dce7b}\label{class_coll_parser_a80c4fddf08335fdffd0db37a432dce7b}} 
+\index{Coll\+Parser@{Coll\+Parser}!display@{display}}
+\index{display@{display}!Coll\+Parser@{Coll\+Parser}}
+\subsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily Coll\+Parser\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Affiche les informations analysées pour le débogage.
+
+Cette méthode affiche les différentes propriétés et informations analysées par la classe pour le débogage. Elle permet de vérifier que les données ont été correctement extraites et organisées. 
+
+Definition at line 153 of file Coll\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_coll_parser_a89a255cb6842c7992021a47fea2f8303}\label{class_coll_parser_a89a255cb6842c7992021a47fea2f8303}} 
+\index{Coll\+Parser@{Coll\+Parser}!game\+Id\+Preg@{game\+Id\+Preg}}
+\index{game\+Id\+Preg@{game\+Id\+Preg}!Coll\+Parser@{Coll\+Parser}}
+\subsubsection{\texorpdfstring{game\+Id\+Preg()}{gameIdPreg()}}
+{\footnotesize\ttfamily Coll\+Parser\+::game\+Id\+Preg (\begin{DoxyParamCaption}\item[{}]{\$\+Match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Gère la description d\textquotesingle{}un Pokémon dans le texte traité.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+Match} & Le tableau des arguments lus depuis le texte. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 189 of file Coll\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_coll_parser_aa30643c8dbda4c34c0fdeaf1018c620a}\label{class_coll_parser_aa30643c8dbda4c34c0fdeaf1018c620a}} 
+\index{Coll\+Parser@{Coll\+Parser}!game\+Type\+Preg@{game\+Type\+Preg}}
+\index{game\+Type\+Preg@{game\+Type\+Preg}!Coll\+Parser@{Coll\+Parser}}
+\subsubsection{\texorpdfstring{game\+Type\+Preg()}{gameTypePreg()}}
+{\footnotesize\ttfamily Coll\+Parser\+::game\+Type\+Preg (\begin{DoxyParamCaption}\item[{}]{\$\+Match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Gère la description du type de jeu (Game Type) dans le texte traité.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+Match} & Le tableau des arguments lus depuis le texte. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 241 of file Coll\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_coll_parser_aee90e9a89c8fd155d72cddf36240e347}\label{class_coll_parser_aee90e9a89c8fd155d72cddf36240e347}} 
+\index{Coll\+Parser@{Coll\+Parser}!gen\+Preg@{gen\+Preg}}
+\index{gen\+Preg@{gen\+Preg}!Coll\+Parser@{Coll\+Parser}}
+\subsubsection{\texorpdfstring{gen\+Preg()}{genPreg()}}
+{\footnotesize\ttfamily Coll\+Parser\+::gen\+Preg (\begin{DoxyParamCaption}\item[{}]{\$\+Match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Gère la description de la génération (\hyperlink{class_gen}{Gen}) dans le texte traité.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+Match} & Le tableau des arguments lus depuis le texte. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 255 of file Coll\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_coll_parser_a7c44afe03c478fa3e9c6ac200d0ce9a4}\label{class_coll_parser_a7c44afe03c478fa3e9c6ac200d0ce9a4}} 
+\index{Coll\+Parser@{Coll\+Parser}!move1@{move1}}
+\index{move1@{move1}!Coll\+Parser@{Coll\+Parser}}
+\subsubsection{\texorpdfstring{move1()}{move1()}}
+{\footnotesize\ttfamily Coll\+Parser\+::move1 (\begin{DoxyParamCaption}\item[{}]{\$pokemon,  }\item[{}]{\$move,  }\item[{}]{\$effect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Gère la description d\textquotesingle{}un mouvement (Move) d\textquotesingle{}un Pokémon dans le texte traité.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$pokemon} & Le nom du Pokémon. \\
+\hline
+string & {\em \$move} & Le nom du mouvement (Move). \\
+\hline
+string & {\em \$effect} & L\textquotesingle{}effet du mouvement (Move). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 414 of file Coll\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_coll_parser_a80e6d75331d3dbd3af52d6bcc0423bf2}\label{class_coll_parser_a80e6d75331d3dbd3af52d6bcc0423bf2}} 
+\index{Coll\+Parser@{Coll\+Parser}!move1\+Preg@{move1\+Preg}}
+\index{move1\+Preg@{move1\+Preg}!Coll\+Parser@{Coll\+Parser}}
+\subsubsection{\texorpdfstring{move1\+Preg()}{move1Preg()}}
+{\footnotesize\ttfamily Coll\+Parser\+::move1\+Preg (\begin{DoxyParamCaption}\item[{}]{\$\+Match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Gère la description d\textquotesingle{}un mouvement (Move) lors d\textquotesingle{}un switch dans le texte traité.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+Match} & Le tableau des arguments lus depuis le texte. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 361 of file Coll\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_coll_parser_a574a74a20fa3e11fa4daa023789f50de}\label{class_coll_parser_a574a74a20fa3e11fa4daa023789f50de}} 
+\index{Coll\+Parser@{Coll\+Parser}!move2@{move2}}
+\index{move2@{move2}!Coll\+Parser@{Coll\+Parser}}
+\subsubsection{\texorpdfstring{move2()}{move2()}}
+{\footnotesize\ttfamily Coll\+Parser\+::move2 (\begin{DoxyParamCaption}\item[{}]{\$pokemon,  }\item[{}]{\$move,  }\item[{}]{\$effect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Gère la description d\textquotesingle{}un mouvement (Move) d\textquotesingle{}un Pokémon dans le texte traité.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$pokemon} & Le nom du Pokémon. \\
+\hline
+string & {\em \$move} & Le nom du mouvement (Move). \\
+\hline
+string & {\em \$effect} & L\textquotesingle{}effet du mouvement (Move). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 426 of file Coll\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_coll_parser_ab7104974448aef9449d17923a8ba9284}\label{class_coll_parser_ab7104974448aef9449d17923a8ba9284}} 
+\index{Coll\+Parser@{Coll\+Parser}!move2\+Preg@{move2\+Preg}}
+\index{move2\+Preg@{move2\+Preg}!Coll\+Parser@{Coll\+Parser}}
+\subsubsection{\texorpdfstring{move2\+Preg()}{move2Preg()}}
+{\footnotesize\ttfamily Coll\+Parser\+::move2\+Preg (\begin{DoxyParamCaption}\item[{}]{\$\+Match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Gère la description d\textquotesingle{}un mouvement (Move) lors d\textquotesingle{}un switch dans le texte traité.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+Match} & Le tableau des arguments lus depuis le texte. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 371 of file Coll\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_coll_parser_abdc6979cbc41f9b90e1cf6602d95cefa}\label{class_coll_parser_abdc6979cbc41f9b90e1cf6602d95cefa}} 
+\index{Coll\+Parser@{Coll\+Parser}!parse@{parse}}
+\index{parse@{parse}!Coll\+Parser@{Coll\+Parser}}
+\subsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily Coll\+Parser\+::parse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Analyse le texte traité (Processed\+Text) avec des expressions régulières (P\+C\+RE).
+
+Cette méthode parcourt le texte et utilise des motifs d\textquotesingle{}expression régulière pour extraire des informations spécifiques. Elle appelle les fonctions de rappel appropriées pour traiter les correspondances trouvées.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & En cas de problème lors de l\textquotesingle{}analyse. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 66 of file Coll\+Parser.\+class.\+php.
+
+
+
+References \$\+Processed\+Text, and apply\+Pattern().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{class_coll_parser_abdc6979cbc41f9b90e1cf6602d95cefa_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_coll_parser_aa9797be8edfc480ed489ff5a68a8fd92}\label{class_coll_parser_aa9797be8edfc480ed489ff5a68a8fd92}} 
+\index{Coll\+Parser@{Coll\+Parser}!player\+Preg@{player\+Preg}}
+\index{player\+Preg@{player\+Preg}!Coll\+Parser@{Coll\+Parser}}
+\subsubsection{\texorpdfstring{player\+Preg()}{playerPreg()}}
+{\footnotesize\ttfamily Coll\+Parser\+::player\+Preg (\begin{DoxyParamCaption}\item[{}]{\$\+Match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Gère la description d\textquotesingle{}un joueur (Player) dans le texte traité.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+Match} & Le tableau des arguments lus depuis le texte. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 206 of file Coll\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_coll_parser_a3d6b54a92a85ffb379de62914687aa65}\label{class_coll_parser_a3d6b54a92a85ffb379de62914687aa65}} 
+\index{Coll\+Parser@{Coll\+Parser}!rated\+Preg@{rated\+Preg}}
+\index{rated\+Preg@{rated\+Preg}!Coll\+Parser@{Coll\+Parser}}
+\subsubsection{\texorpdfstring{rated\+Preg()}{ratedPreg()}}
+{\footnotesize\ttfamily Coll\+Parser\+::rated\+Preg (\begin{DoxyParamCaption}\item[{}]{\$\+Match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Gère la description d\textquotesingle{}une partie notée (\hyperlink{class_rated}{Rated}) dans le texte traité.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+Match} & Le tableau des arguments lus depuis le texte. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 283 of file Coll\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_coll_parser_a9712c0a4898503e75816eab8322b7f8b}\label{class_coll_parser_a9712c0a4898503e75816eab8322b7f8b}} 
+\index{Coll\+Parser@{Coll\+Parser}!rule\+Preg@{rule\+Preg}}
+\index{rule\+Preg@{rule\+Preg}!Coll\+Parser@{Coll\+Parser}}
+\subsubsection{\texorpdfstring{rule\+Preg()}{rulePreg()}}
+{\footnotesize\ttfamily Coll\+Parser\+::rule\+Preg (\begin{DoxyParamCaption}\item[{}]{\$\+Match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Gère la description d\textquotesingle{}une règle (Rule) dans le texte traité.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+Match} & Le tableau des arguments lus depuis le texte. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000015}{Deprecated}]\end{DoxyRefDesc}
+
+
+Definition at line 327 of file Coll\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_coll_parser_a69196772c6fbb721c22080ab82e1ea7a}\label{class_coll_parser_a69196772c6fbb721c22080ab82e1ea7a}} 
+\index{Coll\+Parser@{Coll\+Parser}!switch\+P1@{switch\+P1}}
+\index{switch\+P1@{switch\+P1}!Coll\+Parser@{Coll\+Parser}}
+\subsubsection{\texorpdfstring{switch\+P1()}{switchP1()}}
+{\footnotesize\ttfamily Coll\+Parser\+::switch\+P1 (\begin{DoxyParamCaption}\item[{}]{\$\+Match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Gère la description d\textquotesingle{}un switch du joueur 1 (P1) dans le texte traité.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+Match} & Le tableau des arguments lus depuis le texte. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 298 of file Coll\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_coll_parser_ab14ed8fd90b3a58b7589d0e46057fc06}\label{class_coll_parser_ab14ed8fd90b3a58b7589d0e46057fc06}} 
+\index{Coll\+Parser@{Coll\+Parser}!switch\+P2@{switch\+P2}}
+\index{switch\+P2@{switch\+P2}!Coll\+Parser@{Coll\+Parser}}
+\subsubsection{\texorpdfstring{switch\+P2()}{switchP2()}}
+{\footnotesize\ttfamily Coll\+Parser\+::switch\+P2 (\begin{DoxyParamCaption}\item[{}]{\$\+Match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Gère la description d\textquotesingle{}un switch du joueur 2 (P2) dans le texte traité.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+Match} & Le tableau des arguments lus depuis le texte. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 312 of file Coll\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_coll_parser_a0adee1fa910879cf58ba3914563a7c80}\label{class_coll_parser_a0adee1fa910879cf58ba3914563a7c80}} 
+\index{Coll\+Parser@{Coll\+Parser}!team\+Preview\+Pokemon\+Preg@{team\+Preview\+Pokemon\+Preg}}
+\index{team\+Preview\+Pokemon\+Preg@{team\+Preview\+Pokemon\+Preg}!Coll\+Parser@{Coll\+Parser}}
+\subsubsection{\texorpdfstring{team\+Preview\+Pokemon\+Preg()}{teamPreviewPokemonPreg()}}
+{\footnotesize\ttfamily Coll\+Parser\+::team\+Preview\+Pokemon\+Preg (\begin{DoxyParamCaption}\item[{}]{\$\+Match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Gère la description d\textquotesingle{}un Pokémon lors du choix des équipes (Team Preview) dans le texte traité.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+Match} & Le tableau des arguments lus depuis le texte. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000016}{Deprecated}]\end{DoxyRefDesc}
+
+
+Definition at line 338 of file Coll\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_coll_parser_aecd19071144d47fe4a75030de343bf5a}\label{class_coll_parser_aecd19071144d47fe4a75030de343bf5a}} 
+\index{Coll\+Parser@{Coll\+Parser}!team\+Size\+Preg@{team\+Size\+Preg}}
+\index{team\+Size\+Preg@{team\+Size\+Preg}!Coll\+Parser@{Coll\+Parser}}
+\subsubsection{\texorpdfstring{team\+Size\+Preg()}{teamSizePreg()}}
+{\footnotesize\ttfamily Coll\+Parser\+::team\+Size\+Preg (\begin{DoxyParamCaption}\item[{}]{\$\+Match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Gère la description d\textquotesingle{}une équipe (Team) dans le texte traité.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+Match} & Le tableau des arguments lus depuis le texte. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 225 of file Coll\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_coll_parser_a6fa0362052ba34bde64b06a953320dc2}\label{class_coll_parser_a6fa0362052ba34bde64b06a953320dc2}} 
+\index{Coll\+Parser@{Coll\+Parser}!tie\+Preg@{tie\+Preg}}
+\index{tie\+Preg@{tie\+Preg}!Coll\+Parser@{Coll\+Parser}}
+\subsubsection{\texorpdfstring{tie\+Preg()}{tiePreg()}}
+{\footnotesize\ttfamily Coll\+Parser\+::tie\+Preg (\begin{DoxyParamCaption}\item[{}]{\$\+Match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Gère la description d\textquotesingle{}une égalité (Tie) dans le texte traité.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+Match} & Le tableau des arguments lus depuis le texte. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 395 of file Coll\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_coll_parser_a21dea24b254ec24a5d0cb5c233043a8d}\label{class_coll_parser_a21dea24b254ec24a5d0cb5c233043a8d}} 
+\index{Coll\+Parser@{Coll\+Parser}!tier\+Preg@{tier\+Preg}}
+\index{tier\+Preg@{tier\+Preg}!Coll\+Parser@{Coll\+Parser}}
+\subsubsection{\texorpdfstring{tier\+Preg()}{tierPreg()}}
+{\footnotesize\ttfamily Coll\+Parser\+::tier\+Preg (\begin{DoxyParamCaption}\item[{}]{\$\+Match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Gère la description du tier dans le texte traité.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+Match} & Le tableau des arguments lus depuis le texte. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 269 of file Coll\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_coll_parser_a2f101c518748f0b3bc9705931b093f51}\label{class_coll_parser_a2f101c518748f0b3bc9705931b093f51}} 
+\index{Coll\+Parser@{Coll\+Parser}!turn\+Preg@{turn\+Preg}}
+\index{turn\+Preg@{turn\+Preg}!Coll\+Parser@{Coll\+Parser}}
+\subsubsection{\texorpdfstring{turn\+Preg()}{turnPreg()}}
+{\footnotesize\ttfamily Coll\+Parser\+::turn\+Preg (\begin{DoxyParamCaption}\item[{}]{\$\+Match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Gère la description d\textquotesingle{}un tour (\hyperlink{class_turn}{Turn}) dans le texte traité.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+Match} & Le tableau des arguments lus depuis le texte. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 348 of file Coll\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_coll_parser_a69653970e854541c1627eb25fa271d32}\label{class_coll_parser_a69653970e854541c1627eb25fa271d32}} 
+\index{Coll\+Parser@{Coll\+Parser}!winner\+Preg@{winner\+Preg}}
+\index{winner\+Preg@{winner\+Preg}!Coll\+Parser@{Coll\+Parser}}
+\subsubsection{\texorpdfstring{winner\+Preg()}{winnerPreg()}}
+{\footnotesize\ttfamily Coll\+Parser\+::winner\+Preg (\begin{DoxyParamCaption}\item[{}]{\$\+Match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Gère la description du gagnant (\hyperlink{class_winner}{Winner}) dans le texte traité.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+Match} & Le tableau des arguments lus depuis le texte. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 381 of file Coll\+Parser.\+class.\+php.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_coll_parser_a5ba1b165a42ee0e41140795c9f4ae02a}\label{class_coll_parser_a5ba1b165a42ee0e41140795c9f4ae02a}} 
+\index{Coll\+Parser@{Coll\+Parser}!\$\+Full\+Text@{\$\+Full\+Text}}
+\index{\$\+Full\+Text@{\$\+Full\+Text}!Coll\+Parser@{Coll\+Parser}}
+\subsubsection{\texorpdfstring{\$\+Full\+Text}{$FullText}}
+{\footnotesize\ttfamily Coll\+Parser\+::\$\+Full\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 440 of file Coll\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_coll_parser_a176d0a851c115aceb6c31d1b042de670}\label{class_coll_parser_a176d0a851c115aceb6c31d1b042de670}} 
+\index{Coll\+Parser@{Coll\+Parser}!\$\+Game@{\$\+Game}}
+\index{\$\+Game@{\$\+Game}!Coll\+Parser@{Coll\+Parser}}
+\subsubsection{\texorpdfstring{\$\+Game}{$Game}}
+{\footnotesize\ttfamily Coll\+Parser\+::\$\+Game\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 450 of file Coll\+Parser.\+class.\+php.
+
+\mbox{\Hypertarget{class_coll_parser_ad2233d0ebcf39ecb4f29733d6dcbb979}\label{class_coll_parser_ad2233d0ebcf39ecb4f29733d6dcbb979}} 
+\index{Coll\+Parser@{Coll\+Parser}!\$\+Processed\+Text@{\$\+Processed\+Text}}
+\index{\$\+Processed\+Text@{\$\+Processed\+Text}!Coll\+Parser@{Coll\+Parser}}
+\subsubsection{\texorpdfstring{\$\+Processed\+Text}{$ProcessedText}}
+{\footnotesize\ttfamily Coll\+Parser\+::\$\+Processed\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 445 of file Coll\+Parser.\+class.\+php.
+
+
+
+Referenced by parse().
+
+\mbox{\Hypertarget{class_coll_parser_a713858989a8fd5c809c721a0cd787831}\label{class_coll_parser_a713858989a8fd5c809c721a0cd787831}} 
+\index{Coll\+Parser@{Coll\+Parser}!\$turns@{\$turns}}
+\index{\$turns@{\$turns}!Coll\+Parser@{Coll\+Parser}}
+\subsubsection{\texorpdfstring{\$turns}{$turns}}
+{\footnotesize\ttfamily Coll\+Parser\+::\$turns\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 435 of file Coll\+Parser.\+class.\+php.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+taged/application/src/parse/\hyperlink{_coll_parser_8class_8php}{Coll\+Parser.\+class.\+php}\end{DoxyCompactItemize}

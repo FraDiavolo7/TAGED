@@ -4,7 +4,7 @@
  * @deprecated
  * @package Deprecated
  */
-class Analysis
+class Analysis_old
 {
     const FILE     = 'AggregateFile';
     const TABLE    = 'AggregateTable';

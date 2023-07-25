@@ -1,0 +1,171 @@
+\hypertarget{class_aggregate_list}{}\section{Aggregate\+List Class Reference}
+\label{class_aggregate_list}\index{Aggregate\+List@{Aggregate\+List}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_aggregate_list_aacb0c8f06040c9a462bbb39b0fe56dec}{\+\_\+\+\_\+construct} ()
+\item 
+\hyperlink{class_aggregate_list_ae6e31bb1eb6117cdaad4c5678e76b735}{get\+List} ()
+\item 
+\hyperlink{class_aggregate_list_a24c68fc9f46133f4e975621dd176e2e9}{get\+File\+Content} ( \$Name)
+\item 
+\hyperlink{class_aggregate_list_a74c1ba53120bbe24223f3812c53f8084}{get\+File\+Field} ( \$Name, \$Field)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_aggregate_list_abf86a0cf0d24900814fc5a8fe866e7cb}{\$\+List}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_aggregate_list_ac39e769305e4c3b5529197d24f72878f}{\$\+Folder} = \hyperlink{application_2src_2define_8php_a31fbb35aca55ac5b16972f6d309e92e2}{A\+G\+G\+R\+E\+G\+A\+T\+E\+\_\+\+F\+O\+L\+D\+E\+R\+\_\+\+D\+E\+SC}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 12 of file Aggregate\+List.\+class.\+php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_aggregate_list_aacb0c8f06040c9a462bbb39b0fe56dec}\label{class_aggregate_list_aacb0c8f06040c9a462bbb39b0fe56dec}} 
+\index{Aggregate\+List@{Aggregate\+List}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!Aggregate\+List@{Aggregate\+List}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Aggregate\+List\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructeur de la classe \hyperlink{class_aggregate_list}{Aggregate\+List}.
+
+Initialise un nouvel objet \hyperlink{class_aggregate_list}{Aggregate\+List} en récupérant la liste des agrégats disponibles dans le répertoire spécifié. 
+
+Definition at line 26 of file Aggregate\+List.\+class.\+php.
+
+
+
+References \$\+File, and \$\+Folder.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_aggregate_list_a24c68fc9f46133f4e975621dd176e2e9}\label{class_aggregate_list_a24c68fc9f46133f4e975621dd176e2e9}} 
+\index{Aggregate\+List@{Aggregate\+List}!get\+File\+Content@{get\+File\+Content}}
+\index{get\+File\+Content@{get\+File\+Content}!Aggregate\+List@{Aggregate\+List}}
+\subsubsection{\texorpdfstring{get\+File\+Content()}{getFileContent()}}
+{\footnotesize\ttfamily Aggregate\+List\+::get\+File\+Content (\begin{DoxyParamCaption}\item[{}]{\$\+Name }\end{DoxyParamCaption})}
+
+Obtient le contenu d\textquotesingle{}un fichier d\textquotesingle{}agrégat spécifique.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$\+Name} & Nom du fichier d\textquotesingle{}agrégat (sans extension .ini). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array$\vert$false Tableau associatif contenant le contenu du fichier d\textquotesingle{}agrégat, ou F\+A\+L\+SE en cas d\textquotesingle{}échec. 
+\end{DoxyReturn}
+
+
+Definition at line 57 of file Aggregate\+List.\+class.\+php.
+
+
+
+References \$\+Folder.
+
+
+
+Referenced by get\+File\+Field().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_aggregate_list_a24c68fc9f46133f4e975621dd176e2e9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_aggregate_list_a74c1ba53120bbe24223f3812c53f8084}\label{class_aggregate_list_a74c1ba53120bbe24223f3812c53f8084}} 
+\index{Aggregate\+List@{Aggregate\+List}!get\+File\+Field@{get\+File\+Field}}
+\index{get\+File\+Field@{get\+File\+Field}!Aggregate\+List@{Aggregate\+List}}
+\subsubsection{\texorpdfstring{get\+File\+Field()}{getFileField()}}
+{\footnotesize\ttfamily Aggregate\+List\+::get\+File\+Field (\begin{DoxyParamCaption}\item[{}]{\$\+Name,  }\item[{}]{\$\+Field }\end{DoxyParamCaption})}
+
+Obtient la valeur d\textquotesingle{}un champ spécifique dans le fichier d\textquotesingle{}agrégat.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$\+Name} & Nom du fichier d\textquotesingle{}agrégat (sans extension .ini). \\
+\hline
+string & {\em \$\+Field} & Nom du champ à récupérer dans le fichier d\textquotesingle{}agrégat. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed$\vert$null Valeur du champ spécifié dans le fichier d\textquotesingle{}agrégat, ou N\+U\+LL si le champ n\textquotesingle{}existe pas. 
+\end{DoxyReturn}
+
+
+Definition at line 70 of file Aggregate\+List.\+class.\+php.
+
+
+
+References \$\+Data, and get\+File\+Content().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_aggregate_list_a74c1ba53120bbe24223f3812c53f8084_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_aggregate_list_ae6e31bb1eb6117cdaad4c5678e76b735}\label{class_aggregate_list_ae6e31bb1eb6117cdaad4c5678e76b735}} 
+\index{Aggregate\+List@{Aggregate\+List}!get\+List@{get\+List}}
+\index{get\+List@{get\+List}!Aggregate\+List@{Aggregate\+List}}
+\subsubsection{\texorpdfstring{get\+List()}{getList()}}
+{\footnotesize\ttfamily Aggregate\+List\+::get\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Obtient la liste des agrégats disponibles.
+
+\begin{DoxyReturn}{Returns}
+array Liste des agrégats disponibles. 
+\end{DoxyReturn}
+
+
+Definition at line 46 of file Aggregate\+List.\+class.\+php.
+
+
+
+References \$\+List.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_aggregate_list_ac39e769305e4c3b5529197d24f72878f}\label{class_aggregate_list_ac39e769305e4c3b5529197d24f72878f}} 
+\index{Aggregate\+List@{Aggregate\+List}!\$\+Folder@{\$\+Folder}}
+\index{\$\+Folder@{\$\+Folder}!Aggregate\+List@{Aggregate\+List}}
+\subsubsection{\texorpdfstring{\$\+Folder}{$Folder}}
+{\footnotesize\ttfamily Aggregate\+List\+::\$\+Folder = \hyperlink{application_2src_2define_8php_a31fbb35aca55ac5b16972f6d309e92e2}{A\+G\+G\+R\+E\+G\+A\+T\+E\+\_\+\+F\+O\+L\+D\+E\+R\+\_\+\+D\+E\+SC}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 18 of file Aggregate\+List.\+class.\+php.
+
+\mbox{\Hypertarget{class_aggregate_list_abf86a0cf0d24900814fc5a8fe866e7cb}\label{class_aggregate_list_abf86a0cf0d24900814fc5a8fe866e7cb}} 
+\index{Aggregate\+List@{Aggregate\+List}!\$\+List@{\$\+List}}
+\index{\$\+List@{\$\+List}!Aggregate\+List@{Aggregate\+List}}
+\subsubsection{\texorpdfstring{\$\+List}{$List}}
+{\footnotesize\ttfamily Aggregate\+List\+::\$\+List\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 80 of file Aggregate\+List.\+class.\+php.
+
+
+
+Referenced by get\+List().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+taged/application/src/aggregates/\hyperlink{_aggregate_list_8class_8php}{Aggregate\+List.\+class.\+php}\end{DoxyCompactItemize}

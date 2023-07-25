@@ -1,0 +1,5 @@
+<map id="CollTeam\save" name="CollTeam\save">
+<area shape="rect" id="node2" href="$class_coll_team.html#a11c61e291459ab9063885e1a94d12a8c" title="CollTeam\\alignePokemon" alt="" coords="173,5,359,32"/>
+<area shape="rect" id="node3" href="$class_coll_team.html#ab2e2067144092a1873ddafe1532d14a1" title="CollTeam\\getPokemonList" alt="" coords="171,56,361,83"/>
+<area shape="rect" id="node4" href="$class_coll_team.html#aa72d17df4167ca7a0a71ff6c7dd9dc19" title="CollTeam\\savePokemon" alt="" coords="177,107,355,133"/>
+</map>

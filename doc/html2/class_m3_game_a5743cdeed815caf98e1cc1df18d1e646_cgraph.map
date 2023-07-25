@@ -1,0 +1,5 @@
+<map id="M3Game\save" name="M3Game\save">
+<area shape="rect" id="node2" href="$class_m3_game.html#a1f48931de438241e2b54b40895fafd95" title="M3Game\\saveGame" alt="" coords="169,5,323,32"/>
+<area shape="rect" id="node4" href="$class_m3_game.html#ad8d64fa5c87bbf87f0cdd9930363eae8" title="M3Game\\savePlayer" alt="" coords="168,56,324,83"/>
+<area shape="rect" id="node3" href="$class_m3_game.html#aade0085d4c6ad8e99e1f60886029f63a" title="M3Game\\fetchGameId" alt="" coords="372,5,540,32"/>
+</map>

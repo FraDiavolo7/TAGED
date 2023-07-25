@@ -1,6 +1,8 @@
 <?php
 
 /**
+ * Classe gérant une Analyse TAGED
+ * 
  * @package TAGED
  */
 class Analysis 

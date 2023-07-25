@@ -1,0 +1,275 @@
+\hypertarget{class_page_show_aggregate}{}\section{Page\+Show\+Aggregate Class Reference}
+\label{class_page_show_aggregate}\index{Page\+Show\+Aggregate@{Page\+Show\+Aggregate}}
+
+
+Inheritance diagram for Page\+Show\+Aggregate\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{class_page_show_aggregate__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Page\+Show\+Aggregate\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{class_page_show_aggregate__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_page_show_aggregate_a3e1094f868d001337de44b7d7feeb51f}{\+\_\+\+\_\+construct} ( \$Input\+Data=N\+U\+LL)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{class_page_show_aggregate_a418c589eaa129c3f895745624cd95f3c}{S\+H\+O\+W\+\_\+\+A\+G\+G\+R\+E\+G\+A\+TE} = \textquotesingle{}change\+\_\+aggregate\textquotesingle{}
+\item 
+const \hyperlink{class_page_show_aggregate_acec417faac863a80d5f66f0929fa64b1}{S\+H\+O\+W\+\_\+\+P\+A\+S\+S\+W\+O\+RD} = \textquotesingle{}change\+\_\+password\textquotesingle{}
+\item 
+const \hyperlink{class_page_show_aggregate_a6ede66ef73c418c0e99059c1790a5e9a}{S\+H\+O\+W\+\_\+\+S\+U\+B\+M\+IT} = \textquotesingle{}change\+\_\+submit\textquotesingle{}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_page_show_aggregate_afc4bd6c13d8f52ef14bb372abe533db2}{handle} ( \$Data)
+\item 
+\hyperlink{class_page_show_aggregate_aa314c7c81c17209770ea207979ca484e}{show} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_page_show_aggregate_aead59d1ee42f7fcec7ddbb2d36c5cf92}{\$\+Result}
+\item 
+\hyperlink{class_page_show_aggregate_acc0bf113b27e61e5c1387c9732cf788b}{\$\+Password}
+\item 
+\hyperlink{class_page_show_aggregate_a4aa5098e8e93a0bc7405b62516570506}{\$\+Aggregate}
+\item 
+\hyperlink{class_page_show_aggregate_ab62dbd4c2a47f13054257627290987d6}{\$\+Aggregate\+Obj}
+\item 
+\hyperlink{class_page_show_aggregate_a1810628506f8763a54b81f65264d50ea}{\$\+Aggregate\+List\+Obj}
+\item 
+\hyperlink{class_page_show_aggregate_a31fa03f3225dfd645217450d8c5b946f}{\$\+Aggregate\+List}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 8 of file Page\+Show\+Aggregate.\+class.\+php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_page_show_aggregate_a3e1094f868d001337de44b7d7feeb51f}\label{class_page_show_aggregate_a3e1094f868d001337de44b7d7feeb51f}} 
+\index{Page\+Show\+Aggregate@{Page\+Show\+Aggregate}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!Page\+Show\+Aggregate@{Page\+Show\+Aggregate}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Page\+Show\+Aggregate\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{}]{\$\+Input\+Data = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+Initialise l\textquotesingle{}objet \hyperlink{class_page_show_aggregate}{Page\+Show\+Aggregate}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$\+Input\+Data} & Les données d\textquotesingle{}entrée pour initialiser la page. Si null, les données \$\+\_\+\+R\+E\+Q\+U\+E\+ST seront utilisées. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 36 of file Page\+Show\+Aggregate.\+class.\+php.
+
+
+
+References \$\+Data, and handle().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_page_show_aggregate_a3e1094f868d001337de44b7d7feeb51f_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_page_show_aggregate_afc4bd6c13d8f52ef14bb372abe533db2}\label{class_page_show_aggregate_afc4bd6c13d8f52ef14bb372abe533db2}} 
+\index{Page\+Show\+Aggregate@{Page\+Show\+Aggregate}!handle@{handle}}
+\index{handle@{handle}!Page\+Show\+Aggregate@{Page\+Show\+Aggregate}}
+\subsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily Page\+Show\+Aggregate\+::handle (\begin{DoxyParamCaption}\item[{}]{\$\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Gère la soumission du formulaire et traite les données d\textquotesingle{}entrée.
+
+
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$\+Data} & Les données d\textquotesingle{}entrée à traiter. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 59 of file Page\+Show\+Aggregate.\+class.\+php.
+
+
+
+References \$\+Data, \$\+Password, and show().
+
+
+
+Referenced by \+\_\+\+\_\+construct().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_page_show_aggregate_afc4bd6c13d8f52ef14bb372abe533db2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_page_show_aggregate_afc4bd6c13d8f52ef14bb372abe533db2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_page_show_aggregate_aa314c7c81c17209770ea207979ca484e}\label{class_page_show_aggregate_aa314c7c81c17209770ea207979ca484e}} 
+\index{Page\+Show\+Aggregate@{Page\+Show\+Aggregate}!show@{show}}
+\index{show@{show}!Page\+Show\+Aggregate@{Page\+Show\+Aggregate}}
+\subsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily Page\+Show\+Aggregate\+::show (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Affiche le contenu de la page. 
+
+Definition at line 85 of file Page\+Show\+Aggregate.\+class.\+php.
+
+
+
+References \$\+Aggregate, \$\+Password, and \$\+Result.
+
+
+
+Referenced by handle().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_page_show_aggregate_aa314c7c81c17209770ea207979ca484e_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_page_show_aggregate_a4aa5098e8e93a0bc7405b62516570506}\label{class_page_show_aggregate_a4aa5098e8e93a0bc7405b62516570506}} 
+\index{Page\+Show\+Aggregate@{Page\+Show\+Aggregate}!\$\+Aggregate@{\$\+Aggregate}}
+\index{\$\+Aggregate@{\$\+Aggregate}!Page\+Show\+Aggregate@{Page\+Show\+Aggregate}}
+\subsubsection{\texorpdfstring{\$\+Aggregate}{$Aggregate}}
+{\footnotesize\ttfamily Page\+Show\+Aggregate\+::\$\+Aggregate\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 129 of file Page\+Show\+Aggregate.\+class.\+php.
+
+
+
+Referenced by show().
+
+\mbox{\Hypertarget{class_page_show_aggregate_a31fa03f3225dfd645217450d8c5b946f}\label{class_page_show_aggregate_a31fa03f3225dfd645217450d8c5b946f}} 
+\index{Page\+Show\+Aggregate@{Page\+Show\+Aggregate}!\$\+Aggregate\+List@{\$\+Aggregate\+List}}
+\index{\$\+Aggregate\+List@{\$\+Aggregate\+List}!Page\+Show\+Aggregate@{Page\+Show\+Aggregate}}
+\subsubsection{\texorpdfstring{\$\+Aggregate\+List}{$AggregateList}}
+{\footnotesize\ttfamily Page\+Show\+Aggregate\+::\$\+Aggregate\+List\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 150 of file Page\+Show\+Aggregate.\+class.\+php.
+
+\mbox{\Hypertarget{class_page_show_aggregate_a1810628506f8763a54b81f65264d50ea}\label{class_page_show_aggregate_a1810628506f8763a54b81f65264d50ea}} 
+\index{Page\+Show\+Aggregate@{Page\+Show\+Aggregate}!\$\+Aggregate\+List\+Obj@{\$\+Aggregate\+List\+Obj}}
+\index{\$\+Aggregate\+List\+Obj@{\$\+Aggregate\+List\+Obj}!Page\+Show\+Aggregate@{Page\+Show\+Aggregate}}
+\subsubsection{\texorpdfstring{\$\+Aggregate\+List\+Obj}{$AggregateListObj}}
+{\footnotesize\ttfamily Page\+Show\+Aggregate\+::\$\+Aggregate\+List\+Obj\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 143 of file Page\+Show\+Aggregate.\+class.\+php.
+
+\mbox{\Hypertarget{class_page_show_aggregate_ab62dbd4c2a47f13054257627290987d6}\label{class_page_show_aggregate_ab62dbd4c2a47f13054257627290987d6}} 
+\index{Page\+Show\+Aggregate@{Page\+Show\+Aggregate}!\$\+Aggregate\+Obj@{\$\+Aggregate\+Obj}}
+\index{\$\+Aggregate\+Obj@{\$\+Aggregate\+Obj}!Page\+Show\+Aggregate@{Page\+Show\+Aggregate}}
+\subsubsection{\texorpdfstring{\$\+Aggregate\+Obj}{$AggregateObj}}
+{\footnotesize\ttfamily Page\+Show\+Aggregate\+::\$\+Aggregate\+Obj\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 136 of file Page\+Show\+Aggregate.\+class.\+php.
+
+\mbox{\Hypertarget{class_page_show_aggregate_acc0bf113b27e61e5c1387c9732cf788b}\label{class_page_show_aggregate_acc0bf113b27e61e5c1387c9732cf788b}} 
+\index{Page\+Show\+Aggregate@{Page\+Show\+Aggregate}!\$\+Password@{\$\+Password}}
+\index{\$\+Password@{\$\+Password}!Page\+Show\+Aggregate@{Page\+Show\+Aggregate}}
+\subsubsection{\texorpdfstring{\$\+Password}{$Password}}
+{\footnotesize\ttfamily Page\+Show\+Aggregate\+::\$\+Password\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 122 of file Page\+Show\+Aggregate.\+class.\+php.
+
+
+
+Referenced by handle(), and show().
+
+\mbox{\Hypertarget{class_page_show_aggregate_aead59d1ee42f7fcec7ddbb2d36c5cf92}\label{class_page_show_aggregate_aead59d1ee42f7fcec7ddbb2d36c5cf92}} 
+\index{Page\+Show\+Aggregate@{Page\+Show\+Aggregate}!\$\+Result@{\$\+Result}}
+\index{\$\+Result@{\$\+Result}!Page\+Show\+Aggregate@{Page\+Show\+Aggregate}}
+\subsubsection{\texorpdfstring{\$\+Result}{$Result}}
+{\footnotesize\ttfamily Page\+Show\+Aggregate\+::\$\+Result\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 115 of file Page\+Show\+Aggregate.\+class.\+php.
+
+
+
+Referenced by show().
+
+\mbox{\Hypertarget{class_page_show_aggregate_a418c589eaa129c3f895745624cd95f3c}\label{class_page_show_aggregate_a418c589eaa129c3f895745624cd95f3c}} 
+\index{Page\+Show\+Aggregate@{Page\+Show\+Aggregate}!S\+H\+O\+W\+\_\+\+A\+G\+G\+R\+E\+G\+A\+TE@{S\+H\+O\+W\+\_\+\+A\+G\+G\+R\+E\+G\+A\+TE}}
+\index{S\+H\+O\+W\+\_\+\+A\+G\+G\+R\+E\+G\+A\+TE@{S\+H\+O\+W\+\_\+\+A\+G\+G\+R\+E\+G\+A\+TE}!Page\+Show\+Aggregate@{Page\+Show\+Aggregate}}
+\subsubsection{\texorpdfstring{S\+H\+O\+W\+\_\+\+A\+G\+G\+R\+E\+G\+A\+TE}{SHOW\_AGGREGATE}}
+{\footnotesize\ttfamily const Page\+Show\+Aggregate\+::\+S\+H\+O\+W\+\_\+\+A\+G\+G\+R\+E\+G\+A\+TE = \textquotesingle{}change\+\_\+aggregate\textquotesingle{}}
+
+
+
+Definition at line 15 of file Page\+Show\+Aggregate.\+class.\+php.
+
+
+
+Referenced by Page\+Gest\+Aggregate\textbackslash{}show().
+
+\mbox{\Hypertarget{class_page_show_aggregate_acec417faac863a80d5f66f0929fa64b1}\label{class_page_show_aggregate_acec417faac863a80d5f66f0929fa64b1}} 
+\index{Page\+Show\+Aggregate@{Page\+Show\+Aggregate}!S\+H\+O\+W\+\_\+\+P\+A\+S\+S\+W\+O\+RD@{S\+H\+O\+W\+\_\+\+P\+A\+S\+S\+W\+O\+RD}}
+\index{S\+H\+O\+W\+\_\+\+P\+A\+S\+S\+W\+O\+RD@{S\+H\+O\+W\+\_\+\+P\+A\+S\+S\+W\+O\+RD}!Page\+Show\+Aggregate@{Page\+Show\+Aggregate}}
+\subsubsection{\texorpdfstring{S\+H\+O\+W\+\_\+\+P\+A\+S\+S\+W\+O\+RD}{SHOW\_PASSWORD}}
+{\footnotesize\ttfamily const Page\+Show\+Aggregate\+::\+S\+H\+O\+W\+\_\+\+P\+A\+S\+S\+W\+O\+RD = \textquotesingle{}change\+\_\+password\textquotesingle{}}
+
+
+
+Definition at line 22 of file Page\+Show\+Aggregate.\+class.\+php.
+
+\mbox{\Hypertarget{class_page_show_aggregate_a6ede66ef73c418c0e99059c1790a5e9a}\label{class_page_show_aggregate_a6ede66ef73c418c0e99059c1790a5e9a}} 
+\index{Page\+Show\+Aggregate@{Page\+Show\+Aggregate}!S\+H\+O\+W\+\_\+\+S\+U\+B\+M\+IT@{S\+H\+O\+W\+\_\+\+S\+U\+B\+M\+IT}}
+\index{S\+H\+O\+W\+\_\+\+S\+U\+B\+M\+IT@{S\+H\+O\+W\+\_\+\+S\+U\+B\+M\+IT}!Page\+Show\+Aggregate@{Page\+Show\+Aggregate}}
+\subsubsection{\texorpdfstring{S\+H\+O\+W\+\_\+\+S\+U\+B\+M\+IT}{SHOW\_SUBMIT}}
+{\footnotesize\ttfamily const Page\+Show\+Aggregate\+::\+S\+H\+O\+W\+\_\+\+S\+U\+B\+M\+IT = \textquotesingle{}change\+\_\+submit\textquotesingle{}}
+
+
+
+Definition at line 29 of file Page\+Show\+Aggregate.\+class.\+php.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+taged/application/src/pages/\hyperlink{_page_show_aggregate_8class_8php}{Page\+Show\+Aggregate.\+class.\+php}\end{DoxyCompactItemize}

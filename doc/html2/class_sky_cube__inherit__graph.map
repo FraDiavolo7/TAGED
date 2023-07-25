@@ -1,0 +1,5 @@
+<map id="SkyCube" name="SkyCube">
+<area shape="rect" id="node2" href="$class_sky_cube_bloc_nested_loop.html" title="SkyCubeBlocNestedLoop" alt="" coords="5,80,189,107"/>
+<area shape="rect" id="node3" href="$class_sky_cube_brute_force.html" title="SkyCubeBruteForce" alt="" coords="213,80,363,107"/>
+<area shape="rect" id="node4" href="$class_sky_cube_emergent.html" title="SkyCubeEmergent" alt="" coords="387,80,530,107"/>
+</map>

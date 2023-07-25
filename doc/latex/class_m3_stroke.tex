@@ -1,0 +1,430 @@
+\hypertarget{class_m3_stroke}{}\section{M3\+Stroke Class Reference}
+\label{class_m3_stroke}\index{M3\+Stroke@{M3\+Stroke}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_m3_stroke_ad6d724aa8f899efc6a413277454bb2ec}{\+\_\+\+\_\+construct} ( \$I\+D\+Stroke=0, \$Stroke\+Num=0, \$Duration=0, \$Time=0, \$Matches=array())
+\item 
+\hyperlink{class_m3_stroke_ae6ccf3c65b84509cf8a37cfaaf11292d}{\+\_\+\+\_\+destruct} ()
+\item 
+\hyperlink{class_m3_stroke_aee60e7a145ea3b9aff3330f1b09c7527}{\+\_\+\+\_\+to\+String} ()
+\item 
+\hyperlink{class_m3_stroke_a5bb3f9ded8ee67731a90a464bd33ecea}{get\+Num} ()
+\item 
+\hyperlink{class_m3_stroke_a3539e375dbcdb90b0ffd2a666b9463a7}{save} ( \$I\+D\+Game=0)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_m3_stroke_a0a5e6074f1d4319f4af7cddca3565362}{build} ( \$Array)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{class_m3_stroke_acf45f0322381e34882812c24a7e5c03a}{T\+A\+B\+LE} = \textquotesingle{}coup\textquotesingle{}
+\item 
+const \hyperlink{class_m3_stroke_a69dd61b8d3643b82cc88fe2c7769b73e}{ID} = \textquotesingle{}id\+\_\+coup\textquotesingle{}
+\item 
+const \hyperlink{class_m3_stroke_af5f8d0256e0cc0bc2cda662f66b8dbdd}{N\+UM} = \textquotesingle{}num\+\_\+coup\textquotesingle{}
+\item 
+const \hyperlink{class_m3_stroke_a4842220b512297d8ca535ff72de2a8e4}{D\+U\+R\+A\+T\+I\+ON} = \textquotesingle{}duree\textquotesingle{}
+\item 
+const \hyperlink{class_m3_stroke_a9343eac5bb4d02af023037a5e291dc15}{T\+I\+ME} = \textquotesingle{}heure\textquotesingle{}
+\item 
+const \hyperlink{class_m3_stroke_ac14351eb2eee8d5cf56f45b514731563}{W\+S\+\_\+\+S\+T\+R\+O\+K\+E\+\_\+\+N\+UM} = \textquotesingle{}stroke\+\_\+num\textquotesingle{}
+\item 
+const \hyperlink{class_m3_stroke_af61ac49a60735e49327ac3f05bbebec4}{W\+S\+\_\+\+D\+U\+R\+A\+T\+I\+ON} = \textquotesingle{}duration\textquotesingle{}
+\item 
+const \hyperlink{class_m3_stroke_aca12eac4d24e485adec1e746a84f94a1}{W\+S\+\_\+\+T\+I\+ME} = \textquotesingle{}time\textquotesingle{}
+\item 
+const \hyperlink{class_m3_stroke_ab61b95e4c61ad8aa6e729a69b20b4010}{W\+S\+\_\+\+M\+A\+T\+CH} = \textquotesingle{}match\textquotesingle{}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_m3_stroke_a09dcfb9dfcbd8dc99b3acd0fe3b378b7}{add\+Match} ( \$Match\+Data=array())
+\item 
+\hyperlink{class_m3_stroke_ae3f223178f7b4d5fc817604242d06a63}{fill} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_m3_stroke_a2315c5feec59a24abc5e0e7b04511897}{\$\+I\+D\+Stroke}
+\item 
+\hyperlink{class_m3_stroke_ae207067a9e94214c11cbb54dd743cb0a}{\$\+Stroke\+Num}
+\item 
+\hyperlink{class_m3_stroke_a04ed9992b36359efc4a199525e58e13f}{\$\+Duration}
+\item 
+\hyperlink{class_m3_stroke_ad96b688792fa3fd78fe3ad3fc14cba14}{\$\+Time}
+\item 
+\hyperlink{class_m3_stroke_ab59a25a76c0ac9b3dbea0135e303f2cf}{\$\+Matches}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_m3_stroke_a576c40bd23077ab7457fb7d368c29d9f}{fetch\+Id} ( \$I\+D\+Game)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 7 of file M3\+Stroke.\+class.\+php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_m3_stroke_ad6d724aa8f899efc6a413277454bb2ec}\label{class_m3_stroke_ad6d724aa8f899efc6a413277454bb2ec}} 
+\index{M3\+Stroke@{M3\+Stroke}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!M3\+Stroke@{M3\+Stroke}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+construct()}{\_\_construct()}}
+{\footnotesize\ttfamily M3\+Stroke\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{}]{\$\+I\+D\+Stroke = {\ttfamily 0},  }\item[{}]{\$\+Stroke\+Num = {\ttfamily 0},  }\item[{}]{\$\+Duration = {\ttfamily 0},  }\item[{}]{\$\+Time = {\ttfamily 0},  }\item[{}]{\$\+Matches = {\ttfamily array~()} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 29 of file M3\+Stroke.\+class.\+php.
+
+
+
+References \$\+Duration, \$\+I\+D\+Stroke, \$\+Matches, \$\+Stroke\+Num, \$\+Time, add\+Match(), and fill().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_m3_stroke_ad6d724aa8f899efc6a413277454bb2ec_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_m3_stroke_ae6ccf3c65b84509cf8a37cfaaf11292d}\label{class_m3_stroke_ae6ccf3c65b84509cf8a37cfaaf11292d}} 
+\index{M3\+Stroke@{M3\+Stroke}!\+\_\+\+\_\+destruct@{\+\_\+\+\_\+destruct}}
+\index{\+\_\+\+\_\+destruct@{\+\_\+\+\_\+destruct}!M3\+Stroke@{M3\+Stroke}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+destruct()}{\_\_destruct()}}
+{\footnotesize\ttfamily M3\+Stroke\+::\+\_\+\+\_\+destruct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 56 of file M3\+Stroke.\+class.\+php.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_m3_stroke_aee60e7a145ea3b9aff3330f1b09c7527}\label{class_m3_stroke_aee60e7a145ea3b9aff3330f1b09c7527}} 
+\index{M3\+Stroke@{M3\+Stroke}!\+\_\+\+\_\+to\+String@{\+\_\+\+\_\+to\+String}}
+\index{\+\_\+\+\_\+to\+String@{\+\_\+\+\_\+to\+String}!M3\+Stroke@{M3\+Stroke}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+to\+String()}{\_\_toString()}}
+{\footnotesize\ttfamily M3\+Stroke\+::\+\_\+\+\_\+to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 60 of file M3\+Stroke.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_stroke_a09dcfb9dfcbd8dc99b3acd0fe3b378b7}\label{class_m3_stroke_a09dcfb9dfcbd8dc99b3acd0fe3b378b7}} 
+\index{M3\+Stroke@{M3\+Stroke}!add\+Match@{add\+Match}}
+\index{add\+Match@{add\+Match}!M3\+Stroke@{M3\+Stroke}}
+\subsubsection{\texorpdfstring{add\+Match()}{addMatch()}}
+{\footnotesize\ttfamily M3\+Stroke\+::add\+Match (\begin{DoxyParamCaption}\item[{}]{\$\+Match\+Data = {\ttfamily array~()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 97 of file M3\+Stroke.\+class.\+php.
+
+
+
+References M3\+Match\textbackslash{}build().
+
+
+
+Referenced by \+\_\+\+\_\+construct().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{class_m3_stroke_a09dcfb9dfcbd8dc99b3acd0fe3b378b7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_m3_stroke_a09dcfb9dfcbd8dc99b3acd0fe3b378b7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_m3_stroke_a0a5e6074f1d4319f4af7cddca3565362}\label{class_m3_stroke_a0a5e6074f1d4319f4af7cddca3565362}} 
+\index{M3\+Stroke@{M3\+Stroke}!build@{build}}
+\index{build@{build}!M3\+Stroke@{M3\+Stroke}}
+\subsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily static M3\+Stroke\+::build (\begin{DoxyParamCaption}\item[{}]{\$\+Array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 77 of file M3\+Stroke.\+class.\+php.
+
+
+
+References \$\+Duration, \$\+Matches, \$\+Stroke\+Num, and \$\+Time.
+
+
+
+Referenced by M3\+Game\textbackslash{}add\+Stroke().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_m3_stroke_a0a5e6074f1d4319f4af7cddca3565362_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_m3_stroke_a576c40bd23077ab7457fb7d368c29d9f}\label{class_m3_stroke_a576c40bd23077ab7457fb7d368c29d9f}} 
+\index{M3\+Stroke@{M3\+Stroke}!fetch\+Id@{fetch\+Id}}
+\index{fetch\+Id@{fetch\+Id}!M3\+Stroke@{M3\+Stroke}}
+\subsubsection{\texorpdfstring{fetch\+Id()}{fetchId()}}
+{\footnotesize\ttfamily M3\+Stroke\+::fetch\+Id (\begin{DoxyParamCaption}\item[{}]{\$\+I\+D\+Game }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 114 of file M3\+Stroke.\+class.\+php.
+
+
+
+References M3\+Game\textbackslash{}\+I\+D\+\_\+\+G\+A\+ME.
+
+
+
+Referenced by save().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{class_m3_stroke_a576c40bd23077ab7457fb7d368c29d9f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_m3_stroke_ae3f223178f7b4d5fc817604242d06a63}\label{class_m3_stroke_ae3f223178f7b4d5fc817604242d06a63}} 
+\index{M3\+Stroke@{M3\+Stroke}!fill@{fill}}
+\index{fill@{fill}!M3\+Stroke@{M3\+Stroke}}
+\subsubsection{\texorpdfstring{fill()}{fill()}}
+{\footnotesize\ttfamily M3\+Stroke\+::fill (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 107 of file M3\+Stroke.\+class.\+php.
+
+
+
+Referenced by \+\_\+\+\_\+construct().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{class_m3_stroke_ae3f223178f7b4d5fc817604242d06a63_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_m3_stroke_a5bb3f9ded8ee67731a90a464bd33ecea}\label{class_m3_stroke_a5bb3f9ded8ee67731a90a464bd33ecea}} 
+\index{M3\+Stroke@{M3\+Stroke}!get\+Num@{get\+Num}}
+\index{get\+Num@{get\+Num}!M3\+Stroke@{M3\+Stroke}}
+\subsubsection{\texorpdfstring{get\+Num()}{getNum()}}
+{\footnotesize\ttfamily M3\+Stroke\+::get\+Num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 92 of file M3\+Stroke.\+class.\+php.
+
+
+
+References \$\+Stroke\+Num.
+
+\mbox{\Hypertarget{class_m3_stroke_a3539e375dbcdb90b0ffd2a666b9463a7}\label{class_m3_stroke_a3539e375dbcdb90b0ffd2a666b9463a7}} 
+\index{M3\+Stroke@{M3\+Stroke}!save@{save}}
+\index{save@{save}!M3\+Stroke@{M3\+Stroke}}
+\subsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily M3\+Stroke\+::save (\begin{DoxyParamCaption}\item[{}]{\$\+I\+D\+Game = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 131 of file M3\+Stroke.\+class.\+php.
+
+
+
+References fetch\+Id(), and M3\+Game\textbackslash{}\+I\+D\+\_\+\+G\+A\+ME.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{class_m3_stroke_a3539e375dbcdb90b0ffd2a666b9463a7_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_m3_stroke_a04ed9992b36359efc4a199525e58e13f}\label{class_m3_stroke_a04ed9992b36359efc4a199525e58e13f}} 
+\index{M3\+Stroke@{M3\+Stroke}!\$\+Duration@{\$\+Duration}}
+\index{\$\+Duration@{\$\+Duration}!M3\+Stroke@{M3\+Stroke}}
+\subsubsection{\texorpdfstring{\$\+Duration}{$Duration}}
+{\footnotesize\ttfamily M3\+Stroke\+::\$\+Duration\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 23 of file M3\+Stroke.\+class.\+php.
+
+
+
+Referenced by \+\_\+\+\_\+construct(), and build().
+
+\mbox{\Hypertarget{class_m3_stroke_a2315c5feec59a24abc5e0e7b04511897}\label{class_m3_stroke_a2315c5feec59a24abc5e0e7b04511897}} 
+\index{M3\+Stroke@{M3\+Stroke}!\$\+I\+D\+Stroke@{\$\+I\+D\+Stroke}}
+\index{\$\+I\+D\+Stroke@{\$\+I\+D\+Stroke}!M3\+Stroke@{M3\+Stroke}}
+\subsubsection{\texorpdfstring{\$\+I\+D\+Stroke}{$IDStroke}}
+{\footnotesize\ttfamily M3\+Stroke\+::\$\+I\+D\+Stroke\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 21 of file M3\+Stroke.\+class.\+php.
+
+
+
+Referenced by \+\_\+\+\_\+construct().
+
+\mbox{\Hypertarget{class_m3_stroke_ab59a25a76c0ac9b3dbea0135e303f2cf}\label{class_m3_stroke_ab59a25a76c0ac9b3dbea0135e303f2cf}} 
+\index{M3\+Stroke@{M3\+Stroke}!\$\+Matches@{\$\+Matches}}
+\index{\$\+Matches@{\$\+Matches}!M3\+Stroke@{M3\+Stroke}}
+\subsubsection{\texorpdfstring{\$\+Matches}{$Matches}}
+{\footnotesize\ttfamily M3\+Stroke\+::\$\+Matches\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 25 of file M3\+Stroke.\+class.\+php.
+
+
+
+Referenced by \+\_\+\+\_\+construct(), and build().
+
+\mbox{\Hypertarget{class_m3_stroke_ae207067a9e94214c11cbb54dd743cb0a}\label{class_m3_stroke_ae207067a9e94214c11cbb54dd743cb0a}} 
+\index{M3\+Stroke@{M3\+Stroke}!\$\+Stroke\+Num@{\$\+Stroke\+Num}}
+\index{\$\+Stroke\+Num@{\$\+Stroke\+Num}!M3\+Stroke@{M3\+Stroke}}
+\subsubsection{\texorpdfstring{\$\+Stroke\+Num}{$StrokeNum}}
+{\footnotesize\ttfamily M3\+Stroke\+::\$\+Stroke\+Num\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 22 of file M3\+Stroke.\+class.\+php.
+
+
+
+Referenced by \+\_\+\+\_\+construct(), build(), and get\+Num().
+
+\mbox{\Hypertarget{class_m3_stroke_ad96b688792fa3fd78fe3ad3fc14cba14}\label{class_m3_stroke_ad96b688792fa3fd78fe3ad3fc14cba14}} 
+\index{M3\+Stroke@{M3\+Stroke}!\$\+Time@{\$\+Time}}
+\index{\$\+Time@{\$\+Time}!M3\+Stroke@{M3\+Stroke}}
+\subsubsection{\texorpdfstring{\$\+Time}{$Time}}
+{\footnotesize\ttfamily M3\+Stroke\+::\$\+Time\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 24 of file M3\+Stroke.\+class.\+php.
+
+
+
+Referenced by \+\_\+\+\_\+construct(), and build().
+
+\mbox{\Hypertarget{class_m3_stroke_a4842220b512297d8ca535ff72de2a8e4}\label{class_m3_stroke_a4842220b512297d8ca535ff72de2a8e4}} 
+\index{M3\+Stroke@{M3\+Stroke}!D\+U\+R\+A\+T\+I\+ON@{D\+U\+R\+A\+T\+I\+ON}}
+\index{D\+U\+R\+A\+T\+I\+ON@{D\+U\+R\+A\+T\+I\+ON}!M3\+Stroke@{M3\+Stroke}}
+\subsubsection{\texorpdfstring{D\+U\+R\+A\+T\+I\+ON}{DURATION}}
+{\footnotesize\ttfamily const M3\+Stroke\+::\+D\+U\+R\+A\+T\+I\+ON = \textquotesingle{}duree\textquotesingle{}}
+
+
+
+Definition at line 13 of file M3\+Stroke.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_stroke_a69dd61b8d3643b82cc88fe2c7769b73e}\label{class_m3_stroke_a69dd61b8d3643b82cc88fe2c7769b73e}} 
+\index{M3\+Stroke@{M3\+Stroke}!ID@{ID}}
+\index{ID@{ID}!M3\+Stroke@{M3\+Stroke}}
+\subsubsection{\texorpdfstring{ID}{ID}}
+{\footnotesize\ttfamily const M3\+Stroke\+::\+ID = \textquotesingle{}id\+\_\+coup\textquotesingle{}}
+
+
+
+Definition at line 11 of file M3\+Stroke.\+class.\+php.
+
+
+
+Referenced by M3\+Match\textbackslash{}fetch\+Id(), and M3\+Match\textbackslash{}save().
+
+\mbox{\Hypertarget{class_m3_stroke_af5f8d0256e0cc0bc2cda662f66b8dbdd}\label{class_m3_stroke_af5f8d0256e0cc0bc2cda662f66b8dbdd}} 
+\index{M3\+Stroke@{M3\+Stroke}!N\+UM@{N\+UM}}
+\index{N\+UM@{N\+UM}!M3\+Stroke@{M3\+Stroke}}
+\subsubsection{\texorpdfstring{N\+UM}{NUM}}
+{\footnotesize\ttfamily const M3\+Stroke\+::\+N\+UM = \textquotesingle{}num\+\_\+coup\textquotesingle{}}
+
+
+
+Definition at line 12 of file M3\+Stroke.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_stroke_acf45f0322381e34882812c24a7e5c03a}\label{class_m3_stroke_acf45f0322381e34882812c24a7e5c03a}} 
+\index{M3\+Stroke@{M3\+Stroke}!T\+A\+B\+LE@{T\+A\+B\+LE}}
+\index{T\+A\+B\+LE@{T\+A\+B\+LE}!M3\+Stroke@{M3\+Stroke}}
+\subsubsection{\texorpdfstring{T\+A\+B\+LE}{TABLE}}
+{\footnotesize\ttfamily const M3\+Stroke\+::\+T\+A\+B\+LE = \textquotesingle{}coup\textquotesingle{}}
+
+
+
+Definition at line 9 of file M3\+Stroke.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_stroke_a9343eac5bb4d02af023037a5e291dc15}\label{class_m3_stroke_a9343eac5bb4d02af023037a5e291dc15}} 
+\index{M3\+Stroke@{M3\+Stroke}!T\+I\+ME@{T\+I\+ME}}
+\index{T\+I\+ME@{T\+I\+ME}!M3\+Stroke@{M3\+Stroke}}
+\subsubsection{\texorpdfstring{T\+I\+ME}{TIME}}
+{\footnotesize\ttfamily const M3\+Stroke\+::\+T\+I\+ME = \textquotesingle{}heure\textquotesingle{}}
+
+
+
+Definition at line 14 of file M3\+Stroke.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_stroke_af61ac49a60735e49327ac3f05bbebec4}\label{class_m3_stroke_af61ac49a60735e49327ac3f05bbebec4}} 
+\index{M3\+Stroke@{M3\+Stroke}!W\+S\+\_\+\+D\+U\+R\+A\+T\+I\+ON@{W\+S\+\_\+\+D\+U\+R\+A\+T\+I\+ON}}
+\index{W\+S\+\_\+\+D\+U\+R\+A\+T\+I\+ON@{W\+S\+\_\+\+D\+U\+R\+A\+T\+I\+ON}!M3\+Stroke@{M3\+Stroke}}
+\subsubsection{\texorpdfstring{W\+S\+\_\+\+D\+U\+R\+A\+T\+I\+ON}{WS\_DURATION}}
+{\footnotesize\ttfamily const M3\+Stroke\+::\+W\+S\+\_\+\+D\+U\+R\+A\+T\+I\+ON = \textquotesingle{}duration\textquotesingle{}}
+
+
+
+Definition at line 17 of file M3\+Stroke.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_stroke_ab61b95e4c61ad8aa6e729a69b20b4010}\label{class_m3_stroke_ab61b95e4c61ad8aa6e729a69b20b4010}} 
+\index{M3\+Stroke@{M3\+Stroke}!W\+S\+\_\+\+M\+A\+T\+CH@{W\+S\+\_\+\+M\+A\+T\+CH}}
+\index{W\+S\+\_\+\+M\+A\+T\+CH@{W\+S\+\_\+\+M\+A\+T\+CH}!M3\+Stroke@{M3\+Stroke}}
+\subsubsection{\texorpdfstring{W\+S\+\_\+\+M\+A\+T\+CH}{WS\_MATCH}}
+{\footnotesize\ttfamily const M3\+Stroke\+::\+W\+S\+\_\+\+M\+A\+T\+CH = \textquotesingle{}match\textquotesingle{}}
+
+
+
+Definition at line 19 of file M3\+Stroke.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_stroke_ac14351eb2eee8d5cf56f45b514731563}\label{class_m3_stroke_ac14351eb2eee8d5cf56f45b514731563}} 
+\index{M3\+Stroke@{M3\+Stroke}!W\+S\+\_\+\+S\+T\+R\+O\+K\+E\+\_\+\+N\+UM@{W\+S\+\_\+\+S\+T\+R\+O\+K\+E\+\_\+\+N\+UM}}
+\index{W\+S\+\_\+\+S\+T\+R\+O\+K\+E\+\_\+\+N\+UM@{W\+S\+\_\+\+S\+T\+R\+O\+K\+E\+\_\+\+N\+UM}!M3\+Stroke@{M3\+Stroke}}
+\subsubsection{\texorpdfstring{W\+S\+\_\+\+S\+T\+R\+O\+K\+E\+\_\+\+N\+UM}{WS\_STROKE\_NUM}}
+{\footnotesize\ttfamily const M3\+Stroke\+::\+W\+S\+\_\+\+S\+T\+R\+O\+K\+E\+\_\+\+N\+UM = \textquotesingle{}stroke\+\_\+num\textquotesingle{}}
+
+
+
+Definition at line 16 of file M3\+Stroke.\+class.\+php.
+
+\mbox{\Hypertarget{class_m3_stroke_aca12eac4d24e485adec1e746a84f94a1}\label{class_m3_stroke_aca12eac4d24e485adec1e746a84f94a1}} 
+\index{M3\+Stroke@{M3\+Stroke}!W\+S\+\_\+\+T\+I\+ME@{W\+S\+\_\+\+T\+I\+ME}}
+\index{W\+S\+\_\+\+T\+I\+ME@{W\+S\+\_\+\+T\+I\+ME}!M3\+Stroke@{M3\+Stroke}}
+\subsubsection{\texorpdfstring{W\+S\+\_\+\+T\+I\+ME}{WS\_TIME}}
+{\footnotesize\ttfamily const M3\+Stroke\+::\+W\+S\+\_\+\+T\+I\+ME = \textquotesingle{}time\textquotesingle{}}
+
+
+
+Definition at line 18 of file M3\+Stroke.\+class.\+php.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+taged/application/src/models/\+Match3/\hyperlink{_m3_stroke_8class_8php}{M3\+Stroke.\+class.\+php}\end{DoxyCompactItemize}

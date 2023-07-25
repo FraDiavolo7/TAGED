@@ -1,0 +1,7 @@
+<map id="Analysis\compute" name="Analysis\compute">
+<area shape="rect" id="node2" href="$class_analysis.html#a25f3a02a783d2e29d3fd4d8c4a03cc4d" title="Analysis\\check" alt="" coords="228,5,347,32"/>
+<area shape="rect" id="node3" href="$class_analysis.html#ad9a44950c6c52270f9734ee4f2b2c05b" title="Analysis\\computeCuboide" alt="" coords="192,56,383,83"/>
+<area shape="rect" id="node6" href="$class_sky_cube.html#ad23b0dcc8513aaa0ce95fee26dfbee0e" title="SkyCube\\getCuboideIDs" alt="" coords="198,107,377,133"/>
+<area shape="rect" id="node4" href="$class_sky_cube.html#a18c6b3ec100eb483e941b8bb69c40187" title="SkyCube\\getCuboide" alt="" coords="727,56,884,83"/>
+<area shape="rect" id="node5" href="$class_analysis.html#af6dda0245ca2b9e4e5a736c46311d05c" title="Analysis\\computeCuboideAttribute" alt="" coords="431,81,679,108"/>
+</map>

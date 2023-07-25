@@ -122,7 +122,7 @@
 
             <div class="phpdocumentor-column -eight phpdocumentor-content">
                     <ul class="phpdocumentor-breadcrumbs">
-            <li class="phpdocumentor-breadcrumb"><a href="packages/Deprecated.html">Deprecated</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="packages/TAGED.html">TAGED</a></li>
     </ul>
 
     <article class="phpdocumentor-element -class">
@@ -133,7 +133,7 @@
             <div class="phpdocumentor-element__package">
             in package
             <ul class="phpdocumentor-breadcrumbs">
-                                    <li class="phpdocumentor-breadcrumb"><a href="packages/Deprecated.html">Deprecated</a></li>
+                                    <li class="phpdocumentor-breadcrumb"><a href="packages/TAGED.html">TAGED</a></li>
                             </ul>
         </div>
     
@@ -141,28 +141,16 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">7</span>
+    <span class="phpdocumentor-element-found-in__line">8</span>
 
     </aside>
 
-        
+            <p class="phpdocumentor-summary">Classe gérant une Analyse TAGED</p>
 
 
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">deprecated</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                             
-                                    </dd>
-                        </dl>
+
 
 
 
@@ -178,105 +166,161 @@
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/Analysis.html#constant_DBCLASS">DBCLASS</a>
     <span>
-        &nbsp;= &#039;DBClass&#039;                            </span>
+        &nbsp;= &#039;DbClass&#039;                            </span>
 </dt>
-<dd></dd>
+<dd>Clé pour la classe de base de données.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/Analysis.html#constant_DESC_FILE_PATH">DESC_FILE_PATH</a>
+    <span>
+        &nbsp;= &#039;/chemin/vers/le/fichier_de_description.txt&#039;                            </span>
+</dt>
+<dd>Chemin du fichier de description.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/Analysis.html#constant_FILE">FILE</a>
     <span>
-        &nbsp;= &#039;AggregateFile&#039;                            </span>
+        &nbsp;= &#039;File&#039;                            </span>
 </dt>
-<dd></dd>
+<dd>Clé pour le nom du fichier de requête.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/Analysis.html#constant_GAME_DB">GAME_DB</a>
     <span>
         &nbsp;= array(\APP_NAME_COLLECTION =&gt; &#039;TagedDBColl&#039;, \APP_NAME_MATCH3 =&gt; &#039;TagedDBMatch3&#039;, \APP_NAME_HACK_N_SLASH =&gt; &#039;TagedDBHnS&#039;)                            </span>
 </dt>
-<dd></dd>
+<dd>Tableau associatif contenant les noms de base de données du jeu.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/Analysis.html#constant_MES_COLS">MES_COLS</a>
     <span>
         &nbsp;= &#039;MeasureCols&#039;                            </span>
 </dt>
-<dd></dd>
+<dd>Clé pour les colonnes à mesurer dans les données de test.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/Analysis.html#constant_REL_COLS">REL_COLS</a>
     <span>
         &nbsp;= &#039;RelationCols&#039;                            </span>
 </dt>
-<dd></dd>
+<dd>Clé pour les colonnes de relation dans les données de test.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/Analysis.html#constant_TABLE">TABLE</a>
     <span>
-        &nbsp;= &#039;AggregateTable&#039;                            </span>
+        &nbsp;= &#039;Table&#039;                            </span>
+</dt>
+<dd>Clé pour le nom de la table de base de données.</dd>
+
+                    <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/Analysis.html#property_Algorithm">$Algorithm</a>
+    <span>
+                        &nbsp;: string|null            </span>
 </dt>
 <dd></dd>
 
-                    <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/Analysis.html#property_AttributeIgnored">$AttributeIgnored</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/Analysis.html#property_AttributeValues">$AttributeValues</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/Analysis.html#property_DataSet">$DataSet</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;|null            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Analysis.html#property_DBClass">$DBClass</a>
     <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: string|null            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Analysis.html#property_DBTable">$DBTable</a>
     <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: string|null            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Analysis.html#property_DescFile">$DescFile</a>
     <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: string|null            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Analysis.html#property_DescFilePath">$DescFilePath</a>
     <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: string            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/Analysis.html#property_IsTest">$IsTest</a>
+    <span>
+                        &nbsp;: bool            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/Analysis.html#property_Max">$Max</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Analysis.html#property_MeasureCols">$MeasureCols</a>
     <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: array&lt;string|int, mixed&gt;|null            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/Analysis.html#property_Min">$Min</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Analysis.html#property_RelationCols">$RelationCols</a>
     <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: array&lt;string|int, mixed&gt;|null            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Analysis.html#property_RequestFile">$RequestFile</a>
     <span>
-                        &nbsp;: mixed            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Analysis.html#property_Result">$Result</a>
-    <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: string|null            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Analysis.html#property_Runnable">$Runnable</a>
     <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: bool            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/Analysis.html#property_SkyCube">$SkyCube</a>
+    <span>
+                        &nbsp;: <a href="classes/SkyCubeEmergent.html"><abbr title="\SkyCubeEmergent">SkyCubeEmergent</abbr></a>|null            </span>
 </dt>
 <dd></dd>
 
@@ -285,28 +329,35 @@
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
+<dd>Constructeur de l&#039;analyse.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Analysis.html#method_cleanData">cleanData()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>Nettoie les données en remplaçant les caractères spéciaux par des underscores.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Analysis.html#method_compute">compute()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+<dd>Effectue l&#039;analyse en utilisant l&#039;algorithme sélectionné.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Analysis.html#method_create">create()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
+<dd>Crée une nouvelle instance d&#039;analyse avec les paramètres spécifiés et l&#039;écrit dans le fichier de description.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Analysis.html#method_delete">delete()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Analysis.html#method_formatResult">formatResult()</a>
-    <span>
-                                &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
+<dd>Supprime une instance d&#039;analyse existante par son nom.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Analysis.html#method_getAggregateFile">getAggregateFile()</a>
@@ -318,163 +369,205 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Analysis.html#method_getDBClass">getDBClass()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: string    </span>
 </dt>
-<dd></dd>
+<dd>Récupère le nom de la classe de base de données.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Analysis.html#method_getDBTable">getDBTable()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: string    </span>
 </dt>
-<dd></dd>
+<dd>Récupère le nom de la table de base de données.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Analysis.html#method_getMeasureCols">getMeasureCols()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Récupère les colonnes à mesurer pour l&#039;analyse.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Analysis.html#method_getRelationCols">getRelationCols()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Récupère les colonnes de relation pour l&#039;analyse.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Analysis.html#method_getRequestFile">getRequestFile()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: string    </span>
 </dt>
-<dd></dd>
+<dd>Récupère le nom du fichier de requête.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Analysis.html#method_getResult">getResult()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: string    </span>
 </dt>
-<dd></dd>
+<dd>Obtient le résultat de l&#039;analyse.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Analysis.html#method_getSkyCube">getSkyCube()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: <a href="classes/SkyCube.html"><abbr title="\SkyCube">SkyCube</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Récupère le cube de données multidimensionnel SkyCube.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Analysis.html#method_getSkyCubeColumns">getSkyCubeColumns()</a>
+    <a href="classes/Analysis.html#method_prepare">prepare()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
+<dd>Prépare l&#039;analyse en chargeant les données et en créant l&#039;instance de SkyCube.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Analysis.html#method_run">run()</a>
+    <a href="classes/Analysis.html#method_setAlgorithm">setAlgorithm()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Analysis.html#method_runSkyCube">runSkyCube()</a>
-    <span>
-                                &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
+<dd>Définit l&#039;algorithme utilisé pour l&#039;analyse.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Analysis.html#method_setDBClass">setDBClass()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
+<dd>Définit le nom de la classe de base de données.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Analysis.html#method_setDBTable">setDBTable()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
+<dd>Définit le nom de la table de base de données.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Analysis.html#method_setMax">setMax()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+<dd>Définit les valeurs maximales pour chaque colonne.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Analysis.html#method_setMeasureCols">setMeasureCols()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
+<dd>Définit les colonnes à mesurer pour l&#039;analyse.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Analysis.html#method_setMin">setMin()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+<dd>Définit les valeurs minimales pour chaque colonne.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Analysis.html#method_setRelationCols">setRelationCols()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
+<dd>Définit les colonnes de relation pour l&#039;analyse.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Analysis.html#method_setRequestFile">setRequestFile()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
+<dd>Définit le nom du fichier de requête.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Analysis.html#method_write">write()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
+<dd>Écrit les paramètres d&#039;analyse dans le fichier de description.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Analysis.html#method_check">check()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
+<dd>Vérifie si l&#039;analyse est prête pour le calcul.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Analysis.html#method_computeCuboide">computeCuboide()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+<dd>Calcule le Cuboide complet et ses attributs.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Analysis.html#method_computeCuboideAttribute">computeCuboideAttribute()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+<dd>Calcule l&#039;attribut Cuboide et définit le taux d&#039;émergence dans SkyCube.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Analysis.html#method_convertToNumerics">convertToNumerics()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+<dd>Convertit une valeur en numérique et conserve une correspondance des valeurs d&#039;attribut.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Analysis.html#method_explodeCols">explodeCols()</a>
     <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Explose une chaîne de colonnes en un tableau.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Analysis.html#method_generateAlgoInput">generateAlgoInput()</a>
+    <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
+<dd>Génère l&#039;entrée pour l&#039;algorithme en traitant tous les Cuboides.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Analysis.html#method_getTestData">getTestData()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Récupère les données de test pour l&#039;analyse.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Analysis.html#method_getTestMax">getTestMax()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Récupère les valeurs maximales pour chaque colonne.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Analysis.html#method_getTestMesCols">getTestMesCols()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Récupère les colonnes à mesurer dans les données de test.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Analysis.html#method_getTestMin">getTestMin()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Récupère les valeurs minimales pour chaque colonne.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Analysis.html#method_getTestRelCols">getTestRelCols()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Récupère les colonnes de relation dans les données de test.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Analysis.html#method_load">load()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/Analysis.html#method_runCuboide">runCuboide()</a>
-    <span>
-                                &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
+<dd>Charge les données à partir du fichier de description.</dd>
 
         </dl>
 
@@ -493,23 +586,52 @@
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">11</span>
+    <span class="phpdocumentor-element-found-in__line">31</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Clé pour la classe de base de données.</p>
+
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
     <span class="phpdocumentor-signature__name">DBCLASS</span>
-    = <span class="phpdocumentor-signature__default-value">&#039;DBClass&#039;</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;DbClass&#039;</span>
 </code>
 
 
+    
         <section class="phpdocumentor-description"></section>
 
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_DESC_FILE_PATH">
+        DESC_FILE_PATH
+        <a href="classes/Analysis.html#constant_DESC_FILE_PATH" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">26</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Chemin du fichier de description.</p>
+
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">DESC_FILE_PATH</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;/chemin/vers/le/fichier_de_description.txt&#039;</span>
+</code>
+
+
+    
         <section class="phpdocumentor-description"></section>
 
     
@@ -522,23 +644,23 @@
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">9</span>
+    <span class="phpdocumentor-element-found-in__line">41</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Clé pour le nom du fichier de requête.</p>
+
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
     <span class="phpdocumentor-signature__name">FILE</span>
-    = <span class="phpdocumentor-signature__default-value">&#039;AggregateFile&#039;</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;File&#039;</span>
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <section class="phpdocumentor-description"></section>
 
     
@@ -551,13 +673,14 @@
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">15</span>
+    <span class="phpdocumentor-element-found-in__line">58</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Tableau associatif contenant les noms de base de données du jeu.</p>
+
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
@@ -566,7 +689,9 @@
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
+        <section class="phpdocumentor-description"><p>Chaque clé représente le nom d'une application spécifique du jeu,
+et chaque valeur est le nom de la base de données correspondante.</p>
+</section>
 
         <section class="phpdocumentor-description"></section>
 
@@ -580,13 +705,14 @@
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Clé pour les colonnes à mesurer dans les données de test.</p>
+
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
@@ -595,8 +721,7 @@
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <section class="phpdocumentor-description"></section>
 
     
@@ -609,13 +734,14 @@
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">46</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Clé pour les colonnes de relation dans les données de test.</p>
+
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
@@ -624,8 +750,7 @@
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <section class="phpdocumentor-description"></section>
 
     
@@ -638,23 +763,23 @@
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">10</span>
+    <span class="phpdocumentor-element-found-in__line">36</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Clé pour le nom de la table de base de données.</p>
+
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
     <span class="phpdocumentor-signature__name">TABLE</span>
-    = <span class="phpdocumentor-signature__default-value">&#039;AggregateTable&#039;</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;Table&#039;</span>
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <section class="phpdocumentor-description"></section>
 
     
@@ -675,6 +800,142 @@
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_Algorithm">
+        $Algorithm
+        <a href="classes/Analysis.html#property_Algorithm" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">827</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">string|null</span>
+    <span class="phpdocumentor-signature__name">$Algorithm</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"><p>Algorithme utilisé pour l'analyse.</p>
+</section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_AttributeIgnored">
+        $AttributeIgnored
+        <a href="classes/Analysis.html#property_AttributeIgnored" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">782</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$AttributeIgnored</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"><p>Tableau contenant les attributs ignorés lors des tests.</p>
+</section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_AttributeValues">
+        $AttributeValues
+        <a href="classes/Analysis.html#property_AttributeValues" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">777</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$AttributeValues</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"><p>Tableau associatif contenant les valeurs des attributs pour les tests.</p>
+</section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_DataSet">
+        $DataSet
+        <a href="classes/Analysis.html#property_DataSet" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">832</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;|null</span>
+    <span class="phpdocumentor-signature__name">$DataSet</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"><p>Jeu de données utilisé pour l'analyse.</p>
+</section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_DBClass">
         $DBClass
         <a href="classes/Analysis.html#property_DBClass" class="headerlink"><i class="fas fa-link"></i></a>
@@ -682,22 +943,22 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">458</span>
+    <span class="phpdocumentor-element-found-in__line">802</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">string|null</span>
     <span class="phpdocumentor-signature__name">$DBClass</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
+    
+        <section class="phpdocumentor-description"><p>Nom de la classe de base de données.</p>
+</section>
 
     
 
@@ -716,22 +977,22 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">457</span>
+    <span class="phpdocumentor-element-found-in__line">797</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">string|null</span>
     <span class="phpdocumentor-signature__name">$DBTable</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
+    
+        <section class="phpdocumentor-description"><p>Nom de la table de base de données.</p>
+</section>
 
     
 
@@ -750,22 +1011,22 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">454</span>
+    <span class="phpdocumentor-element-found-in__line">787</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">string|null</span>
     <span class="phpdocumentor-signature__name">$DescFile</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
+    
+        <section class="phpdocumentor-description"><p>Chemin vers le fichier de description.</p>
+</section>
 
     
 
@@ -784,22 +1045,90 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">455</span>
+    <span class="phpdocumentor-element-found-in__line">822</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$DescFilePath</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
+    
+        <section class="phpdocumentor-description"><p>Chemin vers le fichier de description.</p>
+</section>
 
-        <section class="phpdocumentor-description"></section>
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_IsTest">
+        $IsTest
+        <a href="classes/Analysis.html#property_IsTest" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">852</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">bool</span>
+    <span class="phpdocumentor-signature__name">$IsTest</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"><p>Indique si l'analyse est à des fins de test.</p>
+</section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_Max">
+        $Max
+        <a href="classes/Analysis.html#property_Max" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">847</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$Max</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"><p>Un tableau pour stocker les valeurs maximales de chaque colonne.</p>
+</section>
 
     
 
@@ -818,22 +1147,56 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">460</span>
+    <span class="phpdocumentor-element-found-in__line">812</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;|null</span>
     <span class="phpdocumentor-signature__name">$MeasureCols</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
+    
+        <section class="phpdocumentor-description"><p>Colonnes utilisées pour les mesures.</p>
+</section>
 
-        <section class="phpdocumentor-description"></section>
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_Min">
+        $Min
+        <a href="classes/Analysis.html#property_Min" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">842</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$Min</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"><p>Un tableau pour stocker les valeurs minimales de chaque colonne.</p>
+</section>
 
     
 
@@ -852,22 +1215,22 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">459</span>
+    <span class="phpdocumentor-element-found-in__line">807</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;|null</span>
     <span class="phpdocumentor-signature__name">$RelationCols</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
+    
+        <section class="phpdocumentor-description"><p>Colonnes utilisées pour les relations.</p>
+</section>
 
     
 
@@ -886,56 +1249,22 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">456</span>
+    <span class="phpdocumentor-element-found-in__line">792</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">string|null</span>
     <span class="phpdocumentor-signature__name">$RequestFile</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_Result">
-        $Result
-        <a href="classes/Analysis.html#property_Result" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">462</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">$Result</span>
-    </code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
+        <section class="phpdocumentor-description"><p>Chemin vers le fichier de requête.</p>
+</section>
 
     
 
@@ -954,22 +1283,56 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">461</span>
+    <span class="phpdocumentor-element-found-in__line">817</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">bool</span>
     <span class="phpdocumentor-signature__name">$Runnable</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
+    
+        <section class="phpdocumentor-description"><p>Indique si l'analyse peut être exécutée.</p>
+</section>
 
-        <section class="phpdocumentor-description"></section>
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_SkyCube">
+        $SkyCube
+        <a href="classes/Analysis.html#property_SkyCube" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">837</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/SkyCubeEmergent.html"><abbr title="\SkyCubeEmergent">SkyCubeEmergent</abbr></a>|null</span>
+    <span class="phpdocumentor-signature__name">$SkyCube</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"><p>Instance de SkyCube utilisée pour l'analyse.</p>
+</section>
 
     
 
@@ -992,31 +1355,121 @@
         <a href="classes/Analysis.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">69</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Constructeur de l&#039;analyse.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$DescFile</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$DescFile</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$IsTest</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">FALSE</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$DescFile</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Chemin vers le fichier de description.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$IsTest</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">FALSE</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Indique si l'analyse est à des fins de test.</p>
+</section>
 
             </dd>
             </dl>
 
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_cleanData">
+        cleanData()
+        <a href="classes/Analysis.html#method_cleanData" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">220</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Nettoie les données en remplaçant les caractères spéciaux par des underscores.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">cleanData</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$Data</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Les données à nettoyer.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Les données nettoyées.</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_compute">
+        compute()
+        <a href="classes/Analysis.html#method_compute" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">417</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Effectue l&#039;analyse en utilisant l&#039;algorithme sélectionné.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">compute</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+    
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -1036,67 +1489,73 @@
         <a href="classes/Analysis.html#method_create" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">331</span>
+    <span class="phpdocumentor-element-found-in__line">475</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Crée une nouvelle instance d&#039;analyse avec les paramètres spécifiés et l&#039;écrit dans le fichier de description.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">create</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Game</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$RelationCols</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$MeasureCols</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$File</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">NULL</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Table</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">NULL</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">create</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Game</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$RelationCols</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$MeasureCols</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$File</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">NULL</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Table</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">NULL</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$Name</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Le nom de l'analyse.</p>
+</section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$Game</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Le jeu pour lequel l'analyse est créée.</p>
+</section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$RelationCols</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Les colonnes utilisées pour les relations.</p>
+</section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$MeasureCols</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Les colonnes utilisées pour les mesures.</p>
+</section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$File</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">NULL</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Le chemin du fichier de requête.</p>
+</section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$Table</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">NULL</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Le nom de la table de base de données.</p>
+</section>
 
             </dd>
             </dl>
@@ -1120,64 +1579,32 @@
         <a href="classes/Analysis.html#method_delete" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">349</span>
+    <span class="phpdocumentor-element-found-in__line">497</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Supprime une instance d&#039;analyse existante par son nom.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">delete</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">delete</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$Name</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Le nom de l'analyse à supprimer.</p>
+</section>
 
             </dd>
             </dl>
 
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_formatResult">
-        formatResult()
-        <a href="classes/Analysis.html#method_formatResult" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">158</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">formatResult</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -1197,9 +1624,9 @@
         <a href="classes/Analysis.html#method_getAggregateFile" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">366</span>
+    <span class="phpdocumentor-element-found-in__line">514</span>
 
     </aside>
 
@@ -1241,26 +1668,28 @@
         <a href="classes/Analysis.html#method_getDBClass" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">431</span>
+    <span class="phpdocumentor-element-found-in__line">680</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Récupère le nom de la classe de base de données.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getDBClass</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">getDBClass</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>Le nom de la classe de base de données.</p>
+</section>
+
     
 </article>
                     <article
@@ -1274,26 +1703,28 @@
         <a href="classes/Analysis.html#method_getDBTable" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">430</span>
+    <span class="phpdocumentor-element-found-in__line">674</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Récupère le nom de la table de base de données.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getDBTable</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">getDBTable</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>Le nom de la table de base de données.</p>
+</section>
+
     
 </article>
                     <article
@@ -1307,26 +1738,28 @@
         <a href="classes/Analysis.html#method_getMeasureCols" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">433</span>
+    <span class="phpdocumentor-element-found-in__line">694</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Récupère les colonnes à mesurer pour l&#039;analyse.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getMeasureCols</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">getMeasureCols</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>Les colonnes à mesurer.</p>
+</section>
+
     
 </article>
                     <article
@@ -1340,26 +1773,28 @@
         <a href="classes/Analysis.html#method_getRelationCols" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">432</span>
+    <span class="phpdocumentor-element-found-in__line">687</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Récupère les colonnes de relation pour l&#039;analyse.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getRelationCols</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">getRelationCols</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>Les colonnes de relation.</p>
+</section>
+
     
 </article>
                     <article
@@ -1373,26 +1808,28 @@
         <a href="classes/Analysis.html#method_getRequestFile" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">429</span>
+    <span class="phpdocumentor-element-found-in__line">668</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Récupère le nom du fichier de requête.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getRequestFile</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">getRequestFile</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>Le nom du fichier de requête.</p>
+</section>
+
     
 </article>
                     <article
@@ -1406,26 +1843,28 @@
         <a href="classes/Analysis.html#method_getResult" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">326</span>
+    <span class="phpdocumentor-element-found-in__line">461</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Obtient le résultat de l&#039;analyse.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getResult</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">getResult</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>Le résultat de l'analyse.</p>
+</section>
+
     
 </article>
                     <article
@@ -1439,53 +1878,28 @@
         <a href="classes/Analysis.html#method_getSkyCube" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">405</span>
+    <span class="phpdocumentor-element-found-in__line">701</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Récupère le cube de données multidimensionnel SkyCube.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getSkyCube</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$AsNumerics</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">FALSE</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$MinMax</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">Cuboide::TO_MAX</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Bidon</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">FALSE</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">getSkyCube</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/SkyCube.html"><abbr title="\SkyCube">SkyCube</abbr></a></span></code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$AsNumerics</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">FALSE</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$MinMax</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">Cuboide::TO_MAX</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$Bidon</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">FALSE</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
+    
+    
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/SkyCube.html"><abbr title="\SkyCube">SkyCube</abbr></a></span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>Le cube de données multidimensionnel.</p>
+</section>
+
     
 </article>
                     <article
@@ -1494,24 +1908,24 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getSkyCubeColumns">
-        getSkyCubeColumns()
-        <a href="classes/Analysis.html#method_getSkyCubeColumns" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_prepare">
+        prepare()
+        <a href="classes/Analysis.html#method_prepare" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">299</span>
+    <span class="phpdocumentor-element-found-in__line">167</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Prépare l&#039;analyse en chargeant les données et en créant l&#039;instance de SkyCube.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getSkyCubeColumns</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">prepare</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 
@@ -1527,116 +1941,33 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_run">
-        run()
-        <a href="classes/Analysis.html#method_run" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_setAlgorithm">
+        setAlgorithm()
+        <a href="classes/Analysis.html#method_setAlgorithm" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">99</span>
+    <span class="phpdocumentor-element-found-in__line">757</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Définit l&#039;algorithme utilisé pour l&#039;analyse.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">run</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Algorithm</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$M</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$N</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">setAlgorithm</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Algo</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$Algorithm</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                <span class="phpdocumentor-signature__argument__name">$Algo</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$M</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$N</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_runSkyCube">
-        runSkyCube()
-        <a href="classes/Analysis.html#method_runSkyCube" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">282</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">runSkyCube</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Algorithm</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$M</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$N</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$MinMax</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">Cuboide::TO_MAX</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$Algorithm</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$M</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$N</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$MinMax</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">Cuboide::TO_MAX</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Le nom de l'algorithme à utiliser.</p>
+</section>
 
             </dd>
             </dl>
@@ -1660,27 +1991,28 @@
         <a href="classes/Analysis.html#method_setDBClass" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">437</span>
+    <span class="phpdocumentor-element-found-in__line">722</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Définit le nom de la classe de base de données.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">setDBClass</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$NewValue</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">setDBClass</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$NewValue</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$NewValue</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Le nouveau nom de la classe de base de données.</p>
+</section>
 
             </dd>
             </dl>
@@ -1704,27 +2036,73 @@
         <a href="classes/Analysis.html#method_setDBTable" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">436</span>
+    <span class="phpdocumentor-element-found-in__line">715</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Définit le nom de la table de base de données.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">setDBTable</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$NewValue</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">setDBTable</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$NewValue</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$NewValue</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Le nouveau nom de la table de base de données.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setMax">
+        setMax()
+        <a href="classes/Analysis.html#method_setMax" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">750</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Définit les valeurs maximales pour chaque colonne.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">setMax</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$NewValue</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$NewValue</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Les nouvelles valeurs maximales par colonne.</p>
+</section>
 
             </dd>
             </dl>
@@ -1748,27 +2126,73 @@
         <a href="classes/Analysis.html#method_setMeasureCols" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">439</span>
+    <span class="phpdocumentor-element-found-in__line">736</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Définit les colonnes à mesurer pour l&#039;analyse.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">setMeasureCols</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$NewValue</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">setMeasureCols</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$NewValue</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$NewValue</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Les nouvelles colonnes à mesurer.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setMin">
+        setMin()
+        <a href="classes/Analysis.html#method_setMin" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">743</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Définit les valeurs minimales pour chaque colonne.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">setMin</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$NewValue</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$NewValue</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Les nouvelles valeurs minimales par colonne.</p>
+</section>
 
             </dd>
             </dl>
@@ -1792,27 +2216,28 @@
         <a href="classes/Analysis.html#method_setRelationCols" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">438</span>
+    <span class="phpdocumentor-element-found-in__line">729</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Définit les colonnes de relation pour l&#039;analyse.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">setRelationCols</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$NewValue</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">setRelationCols</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$NewValue</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$NewValue</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Les nouvelles colonnes de relation.</p>
+</section>
 
             </dd>
             </dl>
@@ -1836,27 +2261,28 @@
         <a href="classes/Analysis.html#method_setRequestFile" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">435</span>
+    <span class="phpdocumentor-element-found-in__line">708</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Définit le nom du fichier de requête.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">setRequestFile</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$NewValue</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">setRequestFile</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$NewValue</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$NewValue</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Le nouveau nom du fichier de requête.</p>
+</section>
 
             </dd>
             </dl>
@@ -1880,19 +2306,19 @@
         <a href="classes/Analysis.html#method_write" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">441</span>
+    <span class="phpdocumentor-element-found-in__line">762</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Écrit les paramètres d&#039;analyse dans le fichier de description.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">write</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 
@@ -1913,19 +2339,19 @@
         <a href="classes/Analysis.html#method_check" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">51</span>
+    <span class="phpdocumentor-element-found-in__line">134</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Vérifie si l&#039;analyse est prête pour le calcul.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
                 <span class="phpdocumentor-signature__name">check</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 
@@ -1939,6 +2365,179 @@
         class="phpdocumentor-element
             -method
             -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_computeCuboide">
+        computeCuboide()
+        <a href="classes/Analysis.html#method_computeCuboide" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">317</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Calcule le Cuboide complet et ses attributs.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">computeCuboide</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$CuboideID</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Folder</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$CuboideID</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>L'ID du Cuboide.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$Folder</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Le chemin du dossier.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_computeCuboideAttribute">
+        computeCuboideAttribute()
+        <a href="classes/Analysis.html#method_computeCuboideAttribute" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">269</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Calcule l&#039;attribut Cuboide et définit le taux d&#039;émergence dans SkyCube.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">computeCuboideAttribute</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$CuboideID</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ColID</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Folder</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$CuboideID</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>L'ID du Cuboide.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$ColID</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>L'ID de la colonne.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$Folder</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Le chemin du dossier.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_convertToNumerics">
+        convertToNumerics()
+        <a href="classes/Analysis.html#method_convertToNumerics" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">232</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Convertit une valeur en numérique et conserve une correspondance des valeurs d&#039;attribut.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">convertToNumerics</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Value</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Attribute</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$Value</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>La valeur à convertir en numérique.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$Attribute</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Le nom de l'attribut.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>La valeur numérique convertie.</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
                                     -static                    "
 >
     <h4 class="phpdocumentor-element__name" id="method_explodeCols">
@@ -1946,31 +2545,67 @@
         <a href="classes/Analysis.html#method_explodeCols" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">81</span>
+    <span class="phpdocumentor-element-found-in__line">113</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Explose une chaîne de colonnes en un tableau.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">explodeCols</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Cols</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">explodeCols</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Cols</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$Cols</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Les colonnes sous forme de chaîne séparée par des virgules.</p>
+</section>
 
             </dd>
             </dl>
 
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Les colonnes sous forme de tableau associatif.</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_generateAlgoInput">
+        generateAlgoInput()
+        <a href="classes/Analysis.html#method_generateAlgoInput" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">353</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Génère l&#039;entrée pour l&#039;algorithme en traitant tous les Cuboides.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">generateAlgoInput</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+    
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -1990,26 +2625,63 @@
         <a href="classes/Analysis.html#method_getTestData" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">371</span>
+    <span class="phpdocumentor-element-found-in__line">524</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Récupère les données de test pour l&#039;analyse.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                <span class="phpdocumentor-signature__name">getTestData</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">getTestData</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>Les données de test sous forme de tableau.</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getTestMax">
+        getTestMax()
+        <a href="classes/Analysis.html#method_getTestMax" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">657</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Récupère les valeurs maximales pour chaque colonne.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">getTestMax</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Les valeurs maximales par colonne.</p>
+</section>
+
     
 </article>
                     <article
@@ -2023,26 +2695,63 @@
         <a href="classes/Analysis.html#method_getTestMesCols" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">382</span>
+    <span class="phpdocumentor-element-found-in__line">616</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Récupère les colonnes à mesurer dans les données de test.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                <span class="phpdocumentor-signature__name">getTestMesCols</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">getTestMesCols</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>Les colonnes à mesurer.</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getTestMin">
+        getTestMin()
+        <a href="classes/Analysis.html#method_getTestMin" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">647</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Récupère les valeurs minimales pour chaque colonne.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">getTestMin</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Les valeurs minimales par colonne.</p>
+</section>
+
     
 </article>
                     <article
@@ -2056,26 +2765,28 @@
         <a href="classes/Analysis.html#method_getTestRelCols" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">396</span>
+    <span class="phpdocumentor-element-found-in__line">632</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Récupère les colonnes de relation dans les données de test.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                <span class="phpdocumentor-signature__name">getTestRelCols</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">getTestRelCols</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>Les colonnes de relation.</p>
+</section>
+
     
 </article>
                     <article
@@ -2089,88 +2800,20 @@
         <a href="classes/Analysis.html#method_load" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis.class.php"><a href="files/application-src-analysis-class.html"><abbr title="application/src/Analysis.class.php">Analysis.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">35</span>
+    <span class="phpdocumentor-element-found-in__line">90</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Charge les données à partir du fichier de description.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
                 <span class="phpdocumentor-signature__name">load</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
     
     
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_runCuboide">
-        runCuboide()
-        <a href="classes/Analysis.html#method_runCuboide" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/Analysis_old.class.php"><a href="files/application-src-analysis-old-class.html"><abbr title="application/src/Analysis_old.class.php">Analysis_old.class.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">245</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-                <span class="phpdocumentor-signature__name">runCuboide</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Cuboide</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Algorithm</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$M</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$N</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$Cuboide</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$Algorithm</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$M</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$N</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>

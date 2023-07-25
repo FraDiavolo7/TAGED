@@ -1,0 +1,21 @@
+<map id="TagedPage" name="TagedPage">
+<area shape="rect" id="node3" href="$class_page_accueil.html" title="PageAccueil" alt="" coords="312,5,412,32"/>
+<area shape="rect" id="node4" href="$class_page_change_aggregate.html" title="PageChangeAggregate" alt="" coords="277,56,447,83"/>
+<area shape="rect" id="node5" href="$class_page_coll_aggregate.html" title="PageCollAggregate" alt="" coords="289,107,435,133"/>
+<area shape="rect" id="node6" href="$class_page_coll_data.html" title="PageCollData" alt="" coords="307,157,417,184"/>
+<area shape="rect" id="node7" href="$class_page_coll_parse.html" title="PageCollParse" alt="" coords="305,208,419,235"/>
+<area shape="rect" id="node8" href="$class_page_gest_aggregate.html" title="PageGestAggregate" alt="" coords="287,259,437,285"/>
+<area shape="rect" id="node9" href="$class_page_hn_s_data.html" title="PageHnSData" alt="" coords="307,309,417,336"/>
+<area shape="rect" id="node10" href="$class_page_hn_s_parse.html" title="PageHnSParse" alt="" coords="305,360,419,387"/>
+<area shape="rect" id="node11" href="$class_page_match3.html" title="PageMatch3" alt="" coords="312,411,412,437"/>
+<area shape="rect" id="node12" href="$class_page_new_aggregate.html" title="PageNewAggregate" alt="" coords="287,461,437,488"/>
+<area shape="rect" id="node13" href="$class_page_run_analysis.html" title="PageRunAnalysis" alt="" coords="296,512,428,539"/>
+<area shape="rect" id="node14" href="$class_page_run_sky_cube_analysis.html" title="PageRunSkyCubeAnalysis" alt="" coords="267,563,457,589"/>
+<area shape="rect" id="node15" href="$class_page_show_aggregate.html" title="PageShowAggregate" alt="" coords="285,613,439,640"/>
+<area shape="rect" id="node16" href="$class_page_show_sky_cube.html" title="PageShowSkyCube" alt="" coords="289,664,435,691"/>
+<area shape="rect" id="node17" href="$class_page_test.html" title="PageTest" alt="" coords="323,715,401,741"/>
+<area shape="rect" id="node18" href="$class_page_test_accords.html" title="PageTestAccords" alt="" coords="297,765,427,792"/>
+<area shape="rect" id="node19" href="$class_page_test_co_sky.html" title="PageTestCoSky" alt="" coords="302,816,422,843"/>
+<area shape="rect" id="node20" href="$class_page_test_sky_cube.html" title="PageTestSkyCube" alt="" coords="294,867,430,893"/>
+<area shape="rect" id="node21" href="$class_page_test_sky_cube_emergent.html" title="PageTestSkyCubeEmergent" alt="" coords="263,917,461,944"/>
+</map>

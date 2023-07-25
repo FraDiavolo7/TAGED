@@ -1,0 +1,8 @@
+<map id="SkyCube\getCuboideIDs" name="SkyCube\getCuboideIDs">
+<area shape="rect" id="node2" href="$class_analysis.html#a034c1e5ed7251cf8ebbe9a2f03ca0785" title="Analysis\\compute" alt="" coords="263,5,402,32"/>
+<area shape="rect" id="node3" href="$class_analysis.html#a6a342ad151dc1807858480b8f024cddf" title="Analysis\\generateAlgoInput" alt="" coords="232,56,433,83"/>
+<area shape="rect" id="node4" href="$class_co_sky.html#a66c49b4768ec95a9d5b34e3de4a96811" title="CoSky\\prepare" alt="" coords="274,107,391,133"/>
+<area shape="rect" id="node5" href="$class_co_sky.html#acd57d18650f195f38f620762d8e6feae" title="CoSky\\run" alt="" coords="481,107,569,133"/>
+<area shape="rect" id="node6" href="$class_page_run_analysis.html#a568bf81b0bfacd815f07ef353836b64c" title="PageRunAnalysis\\handle" alt="" coords="617,107,797,133"/>
+<area shape="rect" id="node7" href="$class_page_run_analysis.html#a55b883af577385e55cb40c5420e0a692" title="PageRunAnalysis\\__construct" alt="" coords="845,107,1056,133"/>
+</map>

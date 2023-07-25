@@ -1,0 +1,318 @@
+\hypertarget{class_display_cuboide}{}\section{Display\+Cuboide Class Reference}
+\label{class_display_cuboide}\index{Display\+Cuboide@{Display\+Cuboide}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_display_cuboide_a9e65582b70a5c17de4ce9ad3ee7f51cd}{\+\_\+\+\_\+construct} ( \$Cuboide\+ID, \$\hyperlink{class_sky_cube}{Sky\+Cube}, \$Min\+Max=self\+::\+T\+O\+\_\+\+M\+AX)
+\item 
+\hyperlink{class_display_cuboide_a052175949aadbfd62fccceb3ecfdfd9e}{\+\_\+\+\_\+to\+String} ()
+\item 
+\hyperlink{class_display_cuboide_af79a766a7a6dbbc9edabfddbc5371023}{to\+H\+T\+ML} ()
+\item 
+\hyperlink{class_display_cuboide_a28f97d6c528f98b99d41c0124b4aad0e}{to\+La\+TeX} ( \$Node, \$X, \$Y)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{class_display_cuboide_a1e2af9c770b1b3347e5d07a9094a5b5b}{T\+O\+\_\+\+M\+AX} = \textquotesingle{}max\textquotesingle{}
+\item 
+const \hyperlink{class_display_cuboide_a8f47e910be1e56af06c646035e9cfb92}{T\+O\+\_\+\+M\+IN} = \textquotesingle{}min\textquotesingle{}
+\item 
+const \hyperlink{class_display_cuboide_a5abd1f75b4baff664a0c7f3381bb744f}{T\+E\+S\+T\+\_\+\+ON} = self\+::\+T\+O\+\_\+\+M\+AX
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_display_cuboide_a40d7338cee6f9b27e2772864b71edcab}{compute\+Data\+Set} ( \$\hyperlink{class_sky_cube}{Sky\+Cube})
+\item 
+\hyperlink{class_display_cuboide_ade706d53e065cd76a38c2e998d36f81c}{compute\+Cuboide} ()
+\item 
+\hyperlink{class_display_cuboide_a4e383e8a460e9785065e27d4db15f1dd}{get\+La\+Te\+X\+Header} ( \$Col\+Header)
+\item 
+\hyperlink{class_display_cuboide_a0ff1d1fb20501b079f5597ebfaa6f9cf}{is\+In\+Cuboide} ( \$Considered\+Row\+ID)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_display_cuboide_a6648e1e391bde1bff4182eda3fd27a27}{\$\+ID}
+\item 
+\hyperlink{class_display_cuboide_a4c9e8d018d1d68b4250fbe9eb42dcc36}{\$\+Data\+Set}
+\item 
+\hyperlink{class_display_cuboide_a5d84a5c5342acf1f06024ea9caf5a821}{\$\+Row\+Headers}
+\item 
+\hyperlink{class_display_cuboide_aa8ff4a28b9da50fca3e279c8751dcd4d}{\$\+Col\+I\+Ds}
+\item 
+\hyperlink{class_display_cuboide_a919f27c7fc385e6f2f60949972672fa8}{\$\+Min\+Max}
+\item 
+\hyperlink{class_display_cuboide_a5d17f55777efb7e9d05792efb0a9ff17}{\$\+Is\+Valid}
+\item 
+\hyperlink{class_display_cuboide_adfffe80cf360bf0ef1eeed572023aa74}{\$\+Max\+Cols}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 6 of file Display\+Cuboide.\+class.\+php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_display_cuboide_a9e65582b70a5c17de4ce9ad3ee7f51cd}\label{class_display_cuboide_a9e65582b70a5c17de4ce9ad3ee7f51cd}} 
+\index{Display\+Cuboide@{Display\+Cuboide}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!Display\+Cuboide@{Display\+Cuboide}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Display\+Cuboide\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{}]{\$\+Cuboide\+ID,  }\item[{}]{\$\+Sky\+Cube,  }\item[{}]{\$\+Min\+Max = {\ttfamily self\+:\+:TO\+\_\+MAX} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 13 of file Display\+Cuboide.\+class.\+php.
+
+
+
+References \$\+Min\+Max, compute\+Cuboide(), and compute\+Data\+Set().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_display_cuboide_a9e65582b70a5c17de4ce9ad3ee7f51cd_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_display_cuboide_a052175949aadbfd62fccceb3ecfdfd9e}\label{class_display_cuboide_a052175949aadbfd62fccceb3ecfdfd9e}} 
+\index{Display\+Cuboide@{Display\+Cuboide}!\+\_\+\+\_\+to\+String@{\+\_\+\+\_\+to\+String}}
+\index{\+\_\+\+\_\+to\+String@{\+\_\+\+\_\+to\+String}!Display\+Cuboide@{Display\+Cuboide}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+to\+String()}{\_\_toString()}}
+{\footnotesize\ttfamily Display\+Cuboide\+::\+\_\+\+\_\+to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 41 of file Display\+Cuboide.\+class.\+php.
+
+\mbox{\Hypertarget{class_display_cuboide_ade706d53e065cd76a38c2e998d36f81c}\label{class_display_cuboide_ade706d53e065cd76a38c2e998d36f81c}} 
+\index{Display\+Cuboide@{Display\+Cuboide}!compute\+Cuboide@{compute\+Cuboide}}
+\index{compute\+Cuboide@{compute\+Cuboide}!Display\+Cuboide@{Display\+Cuboide}}
+\subsubsection{\texorpdfstring{compute\+Cuboide()}{computeCuboide()}}
+{\footnotesize\ttfamily Display\+Cuboide\+::compute\+Cuboide (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 130 of file Display\+Cuboide.\+class.\+php.
+
+
+
+References is\+In\+Cuboide().
+
+
+
+Referenced by \+\_\+\+\_\+construct().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_display_cuboide_ade706d53e065cd76a38c2e998d36f81c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_display_cuboide_ade706d53e065cd76a38c2e998d36f81c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_display_cuboide_a40d7338cee6f9b27e2772864b71edcab}\label{class_display_cuboide_a40d7338cee6f9b27e2772864b71edcab}} 
+\index{Display\+Cuboide@{Display\+Cuboide}!compute\+Data\+Set@{compute\+Data\+Set}}
+\index{compute\+Data\+Set@{compute\+Data\+Set}!Display\+Cuboide@{Display\+Cuboide}}
+\subsubsection{\texorpdfstring{compute\+Data\+Set()}{computeDataSet()}}
+{\footnotesize\ttfamily Display\+Cuboide\+::compute\+Data\+Set (\begin{DoxyParamCaption}\item[{}]{\$\+Sky\+Cube }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 88 of file Display\+Cuboide.\+class.\+php.
+
+
+
+Referenced by \+\_\+\+\_\+construct().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_display_cuboide_a40d7338cee6f9b27e2772864b71edcab_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_display_cuboide_a4e383e8a460e9785065e27d4db15f1dd}\label{class_display_cuboide_a4e383e8a460e9785065e27d4db15f1dd}} 
+\index{Display\+Cuboide@{Display\+Cuboide}!get\+La\+Te\+X\+Header@{get\+La\+Te\+X\+Header}}
+\index{get\+La\+Te\+X\+Header@{get\+La\+Te\+X\+Header}!Display\+Cuboide@{Display\+Cuboide}}
+\subsubsection{\texorpdfstring{get\+La\+Te\+X\+Header()}{getLaTeXHeader()}}
+{\footnotesize\ttfamily Display\+Cuboide\+::get\+La\+Te\+X\+Header (\begin{DoxyParamCaption}\item[{}]{\$\+Col\+Header }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 150 of file Display\+Cuboide.\+class.\+php.
+
+\mbox{\Hypertarget{class_display_cuboide_a0ff1d1fb20501b079f5597ebfaa6f9cf}\label{class_display_cuboide_a0ff1d1fb20501b079f5597ebfaa6f9cf}} 
+\index{Display\+Cuboide@{Display\+Cuboide}!is\+In\+Cuboide@{is\+In\+Cuboide}}
+\index{is\+In\+Cuboide@{is\+In\+Cuboide}!Display\+Cuboide@{Display\+Cuboide}}
+\subsubsection{\texorpdfstring{is\+In\+Cuboide()}{isInCuboide()}}
+{\footnotesize\ttfamily Display\+Cuboide\+::is\+In\+Cuboide (\begin{DoxyParamCaption}\item[{}]{\$\+Considered\+Row\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 207 of file Display\+Cuboide.\+class.\+php.
+
+
+
+Referenced by compute\+Cuboide().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_display_cuboide_a0ff1d1fb20501b079f5597ebfaa6f9cf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_display_cuboide_af79a766a7a6dbbc9edabfddbc5371023}\label{class_display_cuboide_af79a766a7a6dbbc9edabfddbc5371023}} 
+\index{Display\+Cuboide@{Display\+Cuboide}!to\+H\+T\+ML@{to\+H\+T\+ML}}
+\index{to\+H\+T\+ML@{to\+H\+T\+ML}!Display\+Cuboide@{Display\+Cuboide}}
+\subsubsection{\texorpdfstring{to\+H\+T\+M\+L()}{toHTML()}}
+{\footnotesize\ttfamily Display\+Cuboide\+::to\+H\+T\+ML (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 49 of file Display\+Cuboide.\+class.\+php.
+
+\mbox{\Hypertarget{class_display_cuboide_a28f97d6c528f98b99d41c0124b4aad0e}\label{class_display_cuboide_a28f97d6c528f98b99d41c0124b4aad0e}} 
+\index{Display\+Cuboide@{Display\+Cuboide}!to\+La\+TeX@{to\+La\+TeX}}
+\index{to\+La\+TeX@{to\+La\+TeX}!Display\+Cuboide@{Display\+Cuboide}}
+\subsubsection{\texorpdfstring{to\+La\+Te\+X()}{toLaTeX()}}
+{\footnotesize\ttfamily Display\+Cuboide\+::to\+La\+TeX (\begin{DoxyParamCaption}\item[{}]{\$\+Node,  }\item[{}]{\$X,  }\item[{}]{\$Y }\end{DoxyParamCaption})}
+
+
+
+Definition at line 157 of file Display\+Cuboide.\+class.\+php.
+
+
+
+References \$\+ID, and \$\+Result.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_display_cuboide_aa8ff4a28b9da50fca3e279c8751dcd4d}\label{class_display_cuboide_aa8ff4a28b9da50fca3e279c8751dcd4d}} 
+\index{Display\+Cuboide@{Display\+Cuboide}!\$\+Col\+I\+Ds@{\$\+Col\+I\+Ds}}
+\index{\$\+Col\+I\+Ds@{\$\+Col\+I\+Ds}!Display\+Cuboide@{Display\+Cuboide}}
+\subsubsection{\texorpdfstring{\$\+Col\+I\+Ds}{$ColIDs}}
+{\footnotesize\ttfamily Display\+Cuboide\+::\$\+Col\+I\+Ds\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 215 of file Display\+Cuboide.\+class.\+php.
+
+\mbox{\Hypertarget{class_display_cuboide_a4c9e8d018d1d68b4250fbe9eb42dcc36}\label{class_display_cuboide_a4c9e8d018d1d68b4250fbe9eb42dcc36}} 
+\index{Display\+Cuboide@{Display\+Cuboide}!\$\+Data\+Set@{\$\+Data\+Set}}
+\index{\$\+Data\+Set@{\$\+Data\+Set}!Display\+Cuboide@{Display\+Cuboide}}
+\subsubsection{\texorpdfstring{\$\+Data\+Set}{$DataSet}}
+{\footnotesize\ttfamily Display\+Cuboide\+::\$\+Data\+Set\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 213 of file Display\+Cuboide.\+class.\+php.
+
+\mbox{\Hypertarget{class_display_cuboide_a6648e1e391bde1bff4182eda3fd27a27}\label{class_display_cuboide_a6648e1e391bde1bff4182eda3fd27a27}} 
+\index{Display\+Cuboide@{Display\+Cuboide}!\$\+ID@{\$\+ID}}
+\index{\$\+ID@{\$\+ID}!Display\+Cuboide@{Display\+Cuboide}}
+\subsubsection{\texorpdfstring{\$\+ID}{$ID}}
+{\footnotesize\ttfamily Display\+Cuboide\+::\$\+ID\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 212 of file Display\+Cuboide.\+class.\+php.
+
+
+
+Referenced by to\+La\+Te\+X().
+
+\mbox{\Hypertarget{class_display_cuboide_a5d17f55777efb7e9d05792efb0a9ff17}\label{class_display_cuboide_a5d17f55777efb7e9d05792efb0a9ff17}} 
+\index{Display\+Cuboide@{Display\+Cuboide}!\$\+Is\+Valid@{\$\+Is\+Valid}}
+\index{\$\+Is\+Valid@{\$\+Is\+Valid}!Display\+Cuboide@{Display\+Cuboide}}
+\subsubsection{\texorpdfstring{\$\+Is\+Valid}{$IsValid}}
+{\footnotesize\ttfamily Display\+Cuboide\+::\$\+Is\+Valid\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 217 of file Display\+Cuboide.\+class.\+php.
+
+\mbox{\Hypertarget{class_display_cuboide_adfffe80cf360bf0ef1eeed572023aa74}\label{class_display_cuboide_adfffe80cf360bf0ef1eeed572023aa74}} 
+\index{Display\+Cuboide@{Display\+Cuboide}!\$\+Max\+Cols@{\$\+Max\+Cols}}
+\index{\$\+Max\+Cols@{\$\+Max\+Cols}!Display\+Cuboide@{Display\+Cuboide}}
+\subsubsection{\texorpdfstring{\$\+Max\+Cols}{$MaxCols}}
+{\footnotesize\ttfamily Display\+Cuboide\+::\$\+Max\+Cols\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 218 of file Display\+Cuboide.\+class.\+php.
+
+\mbox{\Hypertarget{class_display_cuboide_a919f27c7fc385e6f2f60949972672fa8}\label{class_display_cuboide_a919f27c7fc385e6f2f60949972672fa8}} 
+\index{Display\+Cuboide@{Display\+Cuboide}!\$\+Min\+Max@{\$\+Min\+Max}}
+\index{\$\+Min\+Max@{\$\+Min\+Max}!Display\+Cuboide@{Display\+Cuboide}}
+\subsubsection{\texorpdfstring{\$\+Min\+Max}{$MinMax}}
+{\footnotesize\ttfamily Display\+Cuboide\+::\$\+Min\+Max\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 216 of file Display\+Cuboide.\+class.\+php.
+
+
+
+Referenced by \+\_\+\+\_\+construct().
+
+\mbox{\Hypertarget{class_display_cuboide_a5d84a5c5342acf1f06024ea9caf5a821}\label{class_display_cuboide_a5d84a5c5342acf1f06024ea9caf5a821}} 
+\index{Display\+Cuboide@{Display\+Cuboide}!\$\+Row\+Headers@{\$\+Row\+Headers}}
+\index{\$\+Row\+Headers@{\$\+Row\+Headers}!Display\+Cuboide@{Display\+Cuboide}}
+\subsubsection{\texorpdfstring{\$\+Row\+Headers}{$RowHeaders}}
+{\footnotesize\ttfamily Display\+Cuboide\+::\$\+Row\+Headers\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 214 of file Display\+Cuboide.\+class.\+php.
+
+\mbox{\Hypertarget{class_display_cuboide_a5abd1f75b4baff664a0c7f3381bb744f}\label{class_display_cuboide_a5abd1f75b4baff664a0c7f3381bb744f}} 
+\index{Display\+Cuboide@{Display\+Cuboide}!T\+E\+S\+T\+\_\+\+ON@{T\+E\+S\+T\+\_\+\+ON}}
+\index{T\+E\+S\+T\+\_\+\+ON@{T\+E\+S\+T\+\_\+\+ON}!Display\+Cuboide@{Display\+Cuboide}}
+\subsubsection{\texorpdfstring{T\+E\+S\+T\+\_\+\+ON}{TEST\_ON}}
+{\footnotesize\ttfamily const Display\+Cuboide\+::\+T\+E\+S\+T\+\_\+\+ON = self\+::\+T\+O\+\_\+\+M\+AX}
+
+
+
+Definition at line 11 of file Display\+Cuboide.\+class.\+php.
+
+\mbox{\Hypertarget{class_display_cuboide_a1e2af9c770b1b3347e5d07a9094a5b5b}\label{class_display_cuboide_a1e2af9c770b1b3347e5d07a9094a5b5b}} 
+\index{Display\+Cuboide@{Display\+Cuboide}!T\+O\+\_\+\+M\+AX@{T\+O\+\_\+\+M\+AX}}
+\index{T\+O\+\_\+\+M\+AX@{T\+O\+\_\+\+M\+AX}!Display\+Cuboide@{Display\+Cuboide}}
+\subsubsection{\texorpdfstring{T\+O\+\_\+\+M\+AX}{TO\_MAX}}
+{\footnotesize\ttfamily const Display\+Cuboide\+::\+T\+O\+\_\+\+M\+AX = \textquotesingle{}max\textquotesingle{}}
+
+
+
+Definition at line 8 of file Display\+Cuboide.\+class.\+php.
+
+\mbox{\Hypertarget{class_display_cuboide_a8f47e910be1e56af06c646035e9cfb92}\label{class_display_cuboide_a8f47e910be1e56af06c646035e9cfb92}} 
+\index{Display\+Cuboide@{Display\+Cuboide}!T\+O\+\_\+\+M\+IN@{T\+O\+\_\+\+M\+IN}}
+\index{T\+O\+\_\+\+M\+IN@{T\+O\+\_\+\+M\+IN}!Display\+Cuboide@{Display\+Cuboide}}
+\subsubsection{\texorpdfstring{T\+O\+\_\+\+M\+IN}{TO\_MIN}}
+{\footnotesize\ttfamily const Display\+Cuboide\+::\+T\+O\+\_\+\+M\+IN = \textquotesingle{}min\textquotesingle{}}
+
+
+
+Definition at line 9 of file Display\+Cuboide.\+class.\+php.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+taged/application/old/\hyperlink{_display_cuboide_8class_8php}{Display\+Cuboide.\+class.\+php}\end{DoxyCompactItemize}

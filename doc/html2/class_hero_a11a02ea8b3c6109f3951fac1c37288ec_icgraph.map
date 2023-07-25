@@ -1,0 +1,7 @@
+<map id="Hero\setRessource2" name="Hero\setRessource2">
+<area shape="rect" id="node2" href="$class_hero.html#a136f0b99dae0a4f99d9e30193ee3972a" title="Hero\\setResources" alt="" coords="204,56,347,83"/>
+<area shape="rect" id="node3" href="$class_hero.html#a4936f4afc1324ed3ae4a90a91fd16eb1" title="Hero\\setAttr" alt="" coords="395,56,496,83"/>
+<area shape="rect" id="node4" href="$class_hn_s_hero_parser.html#a9e86a51dd6f1b0d2f60a92a840e3deb4" title="HnSHeroParser\\parseAttrP" alt="" coords="545,5,735,32"/>
+<area shape="rect" id="node5" href="$class_hn_s_hero_parser.html#adcc83933771af3b55b0fa5c6d08e3dba" title="HnSHeroParser\\parseAttrR" alt="" coords="544,56,736,83"/>
+<area shape="rect" id="node6" href="$class_hn_s_hero_parser.html#a322f6767efcd5b7b71ce8e9792f9e469" title="HnSHeroParser\\parseAttrS" alt="" coords="545,107,735,133"/>
+</map>

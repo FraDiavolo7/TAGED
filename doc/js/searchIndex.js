@@ -278,37 +278,37 @@ Search.appendIndex(
         },                {
             "fqsen": "\\AggregateList",
             "name": "AggregateList",
-            "summary": "",
+            "summary": "Classe\u0020g\u00E9rant\u0020une\u0020liste\u0020d\u0027agr\u00E9gats.",
             "url": "classes/AggregateList.html"
         },                {
             "fqsen": "\\AggregateList\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020AggregateList.",
             "url": "classes/AggregateList.html#method___construct"
         },                {
             "fqsen": "\\AggregateList\u003A\u003AgetList\u0028\u0029",
             "name": "getList",
-            "summary": "",
+            "summary": "Obtient\u0020la\u0020liste\u0020des\u0020agr\u00E9gats\u0020disponibles.",
             "url": "classes/AggregateList.html#method_getList"
         },                {
             "fqsen": "\\AggregateList\u003A\u003AgetFileContent\u0028\u0029",
             "name": "getFileContent",
-            "summary": "",
+            "summary": "Obtient\u0020le\u0020contenu\u0020d\u0027un\u0020fichier\u0020d\u0027agr\u00E9gat\u0020sp\u00E9cifique.",
             "url": "classes/AggregateList.html#method_getFileContent"
         },                {
             "fqsen": "\\AggregateList\u003A\u003AgetFileField\u0028\u0029",
             "name": "getFileField",
-            "summary": "",
+            "summary": "Obtient\u0020la\u0020valeur\u0020d\u0027un\u0020champ\u0020sp\u00E9cifique\u0020dans\u0020le\u0020fichier\u0020d\u0027agr\u00E9gat.",
             "url": "classes/AggregateList.html#method_getFileField"
         },                {
             "fqsen": "\\AggregateList\u003A\u003A\u0024Folder",
             "name": "Folder",
-            "summary": "",
+            "summary": "R\u00E9pertoire\u0020o\u00F9\u0020se\u0020trouvent\u0020les\u0020fichiers\u0020d\u0027agr\u00E9gats.",
             "url": "classes/AggregateList.html#property_Folder"
         },                {
             "fqsen": "\\AggregateList\u003A\u003A\u0024List",
             "name": "List",
-            "summary": "",
+            "summary": "Liste\u0020des\u0020agr\u00E9gats\u0020disponibles.",
             "url": "classes/AggregateList.html#property_List"
         },                {
             "fqsen": "\\CoSky",
@@ -318,187 +318,187 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CoSky\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Contructeur\u0020pour\u0020CoSky",
             "url": "classes/CoSky.html#method___construct"
         },                {
             "fqsen": "\\CoSky\u003A\u003Arun\u0028\u0029",
             "name": "run",
-            "summary": "",
+            "summary": "Execute\u0020le\u0020calcul\u0020de\u0020CoSky",
             "url": "classes/CoSky.html#method_run"
         },                {
             "fqsen": "\\CoSky\u003A\u003Aprepare\u0028\u0029",
             "name": "prepare",
-            "summary": "",
+            "summary": "Prepare\u0020le\u0020calcul\u0020de\u0020CoSky",
             "url": "classes/CoSky.html#method_prepare"
         },                {
             "fqsen": "\\CoSky\u003A\u003Ainterpret\u0028\u0029",
             "name": "interpret",
-            "summary": "Do\u0020not\u0020read,\u0020not\u0020yet\u0020unpublished",
+            "summary": "Do\u0020not\u0020read,\u0020not\u0020yet\u0020published\nInterpr\u00E8te\u0020les\u0020r\u00E9sultats\u0020de\u0020CoSky",
             "url": "classes/CoSky.html#method_interpret"
         },                {
             "fqsen": "\\CoSky\u003A\u003AsortScores\u0028\u0029",
             "name": "sortScores",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020prot\u00E9g\u00E9e\u0020pour\u0020trier\u0020un\u0020tableau\u0020d\u0027entr\u00E9es\u0020en\u0020fonction\u0020des\u0020scores\u0020associ\u00E9s.",
             "url": "classes/CoSky.html#method_sortScores"
         },                {
             "fqsen": "\\CoSky\u003A\u003AgetScores\u0028\u0029",
             "name": "getScores",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020publique\u0020pour\u0020obtenir\u0020les\u0020k\u0020meilleurs\u0020scores\u0020des\u0020tuples\u0020avec\u0020les\u0020attributs\u0020associ\u00E9s.",
             "url": "classes/CoSky.html#method_getScores"
         },                {
             "fqsen": "\\CoSky\u003A\u003AgetData\u0028\u0029",
             "name": "getData",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020d\u0027acc\u00E8s\u0020pour\u0020obtenir\u0020les\u0020donn\u00E9es\u0020de\u0020l\u0027algorithme.",
             "url": "classes/CoSky.html#method_getData"
         },                {
             "fqsen": "\\CoSky\u003A\u003AgetN\u0028\u0029",
             "name": "getN",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020d\u0027acc\u00E8s\u0020pour\u0020obtenir\u0020la\u0020valeur\u0020de\u0020N\u0020\u0028nombre\u0020total\u0020de\u0020tuples\u0029.",
             "url": "classes/CoSky.html#method_getN"
         },                {
             "fqsen": "\\CoSky\u003A\u003AgetGini\u0028\u0029",
             "name": "getGini",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020d\u0027acc\u00E8s\u0020pour\u0020obtenir\u0020la\u0020valeur\u0020de\u0020Gini.",
             "url": "classes/CoSky.html#method_getGini"
         },                {
             "fqsen": "\\CoSky\u003A\u003AgetW\u0028\u0029",
             "name": "getW",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020d\u0027acc\u00E8s\u0020pour\u0020obtenir\u0020la\u0020valeur\u0020de\u0020W.",
             "url": "classes/CoSky.html#method_getW"
         },                {
             "fqsen": "\\CoSky\u003A\u003AgetP\u0028\u0029",
             "name": "getP",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020d\u0027acc\u00E8s\u0020pour\u0020obtenir\u0020la\u0020valeur\u0020de\u0020P.",
             "url": "classes/CoSky.html#method_getP"
         },                {
             "fqsen": "\\CoSky\u003A\u003AgetIdeal\u0028\u0029",
             "name": "getIdeal",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020d\u0027acc\u00E8s\u0020pour\u0020obtenir\u0020la\u0020valeur\u0020d\u0027Ideal.",
             "url": "classes/CoSky.html#method_getIdeal"
         },                {
             "fqsen": "\\CoSky\u003A\u003AgetSumAttr\u0028\u0029",
             "name": "getSumAttr",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020d\u0027acc\u00E8s\u0020pour\u0020obtenir\u0020la\u0020somme\u0020des\u0020attributs\u0020\u0028SumAttr\u0029.",
             "url": "classes/CoSky.html#method_getSumAttr"
         },                {
             "fqsen": "\\CoSky\u003A\u003AgetSumNSquare\u0028\u0029",
             "name": "getSumNSquare",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020d\u0027acc\u00E8s\u0020pour\u0020obtenir\u0020la\u0020somme\u0020des\u0020carr\u00E9s\u0020des\u0020N\u0020\u0028SumNSquare\u0029.",
             "url": "classes/CoSky.html#method_getSumNSquare"
         },                {
             "fqsen": "\\CoSky\u003A\u003AgetSumPSquare\u0028\u0029",
             "name": "getSumPSquare",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020d\u0027acc\u00E8s\u0020pour\u0020obtenir\u0020la\u0020somme\u0020des\u0020carr\u00E9s\u0020des\u0020P\u0020\u0028SumPSquare\u0029.",
             "url": "classes/CoSky.html#method_getSumPSquare"
         },                {
             "fqsen": "\\CoSky\u003A\u003AgetSumIdealSquare\u0028\u0029",
             "name": "getSumIdealSquare",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020d\u0027acc\u00E8s\u0020pour\u0020obtenir\u0020la\u0020somme\u0020des\u0020carr\u00E9s\u0020des\u0020valeurs\u0020id\u00E9ales\u0020\u0028SumIdealSquare\u0029.",
             "url": "classes/CoSky.html#method_getSumIdealSquare"
         },                {
             "fqsen": "\\CoSky\u003A\u003AgetSumGini\u0028\u0029",
             "name": "getSumGini",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020d\u0027acc\u00E8s\u0020pour\u0020obtenir\u0020la\u0020somme\u0020des\u0020valeurs\u0020Gini\u0020\u0028SumGini\u0029.",
             "url": "classes/CoSky.html#method_getSumGini"
         },                {
             "fqsen": "\\CoSky\u003A\u003AgetSqrtSumPSquare\u0028\u0029",
             "name": "getSqrtSumPSquare",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020d\u0027acc\u00E8s\u0020pour\u0020obtenir\u0020la\u0020racine\u0020carr\u00E9e\u0020de\u0020la\u0020somme\u0020des\u0020carr\u00E9s\u0020des\u0020P\u0020\u0028SqrtSumPSquare\u0029.",
             "url": "classes/CoSky.html#method_getSqrtSumPSquare"
         },                {
             "fqsen": "\\CoSky\u003A\u003AgetSqrtSumIdealSquare\u0028\u0029",
             "name": "getSqrtSumIdealSquare",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020d\u0027acc\u00E8s\u0020pour\u0020obtenir\u0020la\u0020racine\u0020carr\u00E9e\u0020de\u0020la\u0020somme\u0020des\u0020carr\u00E9s\u0020des\u0020valeurs\u0020id\u00E9ales\u0020\u0028SqrtSumIdealSquare\u0029.",
             "url": "classes/CoSky.html#method_getSqrtSumIdealSquare"
         },                {
             "fqsen": "\\CoSky\u003A\u003A\u0024k",
             "name": "k",
-            "summary": "",
+            "summary": "Nombre\u0020de\u0020tuples\u0020\u00E0\u0020consid\u00E9rer\u0020dans\u0020l\u0027algorithme.",
             "url": "classes/CoSky.html#property_k"
         },                {
             "fqsen": "\\CoSky\u003A\u003A\u0024SkyCube",
             "name": "SkyCube",
-            "summary": "",
+            "summary": "Instance\u0020de\u0020la\u0020classe\u0020SkyCube\u0020utilis\u00E9e\u0020pour\u0020les\u0020calculs.",
             "url": "classes/CoSky.html#property_SkyCube"
         },                {
             "fqsen": "\\CoSky\u003A\u003A\u0024Data",
             "name": "Data",
-            "summary": "",
+            "summary": "Tableau\u0020contenant\u0020les\u0020donn\u00E9es\u0020d\u0027entr\u00E9e\u0020pour\u0020l\u0027algorithme.",
             "url": "classes/CoSky.html#property_Data"
         },                {
             "fqsen": "\\CoSky\u003A\u003A\u0024Tuples",
             "name": "Tuples",
-            "summary": "",
+            "summary": "Tableau\u0020contenant\u0020les\u0020tuples\u0020sur\u0020lesquels\u0020l\u0027algorithme\u0020va\u0020op\u00E9rer.",
             "url": "classes/CoSky.html#property_Tuples"
         },                {
             "fqsen": "\\CoSky\u003A\u003A\u0024MinMax",
             "name": "MinMax",
-            "summary": "",
+            "summary": "MinMax\u0020pour\u0020l\u0027algorithme\u0020de\u0020Skycube.",
             "url": "classes/CoSky.html#property_MinMax"
         },                {
             "fqsen": "\\CoSky\u003A\u003A\u0024N",
             "name": "N",
-            "summary": "",
+            "summary": "Nombre\u0020total\u0020de\u0020tuples\u0020dans\u0020les\u0020donn\u00E9es\u0020d\u0027entr\u00E9e.",
             "url": "classes/CoSky.html#property_N"
         },                {
             "fqsen": "\\CoSky\u003A\u003A\u0024Gini",
             "name": "Gini",
-            "summary": "",
+            "summary": "Valeur\u0020de\u0020l\u0027indice\u0020de\u0020Gini\u0020calcul\u00E9e\u0020pour\u0020les\u0020donn\u00E9es\u0020d\u0027entr\u00E9e.",
             "url": "classes/CoSky.html#property_Gini"
         },                {
             "fqsen": "\\CoSky\u003A\u003A\u0024W",
             "name": "W",
-            "summary": "",
+            "summary": "Valeur\u0020de\u0020l\u0027indice\u0020W\u0020calcul\u00E9e\u0020pour\u0020les\u0020donn\u00E9es\u0020d\u0027entr\u00E9e.",
             "url": "classes/CoSky.html#property_W"
         },                {
             "fqsen": "\\CoSky\u003A\u003A\u0024P",
             "name": "P",
-            "summary": "",
+            "summary": "Valeur\u0020de\u0020l\u0027indice\u0020P\u0020calcul\u00E9e\u0020pour\u0020les\u0020donn\u00E9es\u0020d\u0027entr\u00E9e.",
             "url": "classes/CoSky.html#property_P"
         },                {
             "fqsen": "\\CoSky\u003A\u003A\u0024Ideal",
             "name": "Ideal",
-            "summary": "",
+            "summary": "Valeur\u0020de\u0020l\u0027indice\u0020Ideal\u0020calcul\u00E9e\u0020pour\u0020les\u0020donn\u00E9es\u0020d\u0027entr\u00E9e.",
             "url": "classes/CoSky.html#property_Ideal"
         },                {
             "fqsen": "\\CoSky\u003A\u003A\u0024Score",
             "name": "Score",
-            "summary": "",
+            "summary": "Tableau\u0020associatif\u0020contenant\u0020les\u0020scores\u0020pour\u0020chaque\u0020tuple.",
             "url": "classes/CoSky.html#property_Score"
         },                {
             "fqsen": "\\CoSky\u003A\u003A\u0024SumAttr",
             "name": "SumAttr",
-            "summary": "",
+            "summary": "Somme\u0020des\u0020attributs\u0020par\u0020attribut.",
             "url": "classes/CoSky.html#property_SumAttr"
         },                {
             "fqsen": "\\CoSky\u003A\u003A\u0024SumNSquare",
             "name": "SumNSquare",
-            "summary": "",
+            "summary": "Somme\u0020des\u0020carr\u00E9s\u0020des\u0020valeurs\u0020des\u0020N\u0020\u0028tuples\u0029\u0020par\u0020attribut.",
             "url": "classes/CoSky.html#property_SumNSquare"
         },                {
             "fqsen": "\\CoSky\u003A\u003A\u0024SumPSquare",
             "name": "SumPSquare",
-            "summary": "",
+            "summary": "Somme\u0020des\u0020carr\u00E9s\u0020des\u0020valeurs\u0020des\u0020P\u0020\u0028attributs\u0029\u0020par\u0020tuple.",
             "url": "classes/CoSky.html#property_SumPSquare"
         },                {
             "fqsen": "\\CoSky\u003A\u003A\u0024SumIdealSquare",
             "name": "SumIdealSquare",
-            "summary": "",
+            "summary": "Somme\u0020des\u0020carr\u00E9s\u0020des\u0020valeurs\u0020id\u00E9ales\u0020\u0028Ideal\u0029\u0020par\u0020tuple.",
             "url": "classes/CoSky.html#property_SumIdealSquare"
         },                {
             "fqsen": "\\CoSky\u003A\u003A\u0024SumGini",
             "name": "SumGini",
-            "summary": "",
+            "summary": "Somme\u0020des\u0020valeurs\u0020Gini\u0020par\u0020tuple.",
             "url": "classes/CoSky.html#property_SumGini"
         },                {
             "fqsen": "\\CoSky\u003A\u003A\u0024SqrtSumPSquare",
             "name": "SqrtSumPSquare",
-            "summary": "",
+            "summary": "Racine\u0020carr\u00E9e\u0020des\u0020sommes\u0020des\u0020carr\u00E9s\u0020des\u0020valeurs\u0020des\u0020P\u0020\u0028attributs\u0029\u0020par\u0020tuple.",
             "url": "classes/CoSky.html#property_SqrtSumPSquare"
         },                {
             "fqsen": "\\CoSky\u003A\u003A\u0024SqrtSumIdealSquare",
             "name": "SqrtSumIdealSquare",
-            "summary": "",
+            "summary": "Racine\u0020carr\u00E9e\u0020des\u0020sommes\u0020des\u0020carr\u00E9s\u0020des\u0020valeurs\u0020id\u00E9ales\u0020\u0028Ideal\u0029\u0020par\u0020tuple.",
             "url": "classes/CoSky.html#property_SqrtSumIdealSquare"
         },                {
             "fqsen": "\\Cuboide",
@@ -543,7 +543,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Cuboide\u003A\u003ACURRENT",
             "name": "CURRENT",
-            "summary": "",
+            "summary": "Nom\u0020du\u0020Cuboide\u0020courant\u0020\u0028pour\u0020le\u0020debuggage\u0029",
             "url": "classes/Cuboide.html#constant_CURRENT"
         },                {
             "fqsen": "\\Cuboide\u003A\u003A\u0024MinMax",
@@ -568,7 +568,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CuboideBlocNestedLoop\u003A\u003ACURRENT",
             "name": "CURRENT",
-            "summary": "",
+            "summary": "Nom\u0020du\u0020Cuboide\u0020courant\u0020\u0028pour\u0020le\u0020debuggage\u0029",
             "url": "classes/CuboideBlocNestedLoop.html#constant_CURRENT"
         },                {
             "fqsen": "\\CuboideBruteForce",
@@ -618,7 +618,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CuboideEmergent\u003A\u003ACURRENT",
             "name": "CURRENT",
-            "summary": "",
+            "summary": "Nom\u0020du\u0020Cuboide\u0020courant\u0020\u0028pour\u0020le\u0020debuggage\u0029",
             "url": "classes/CuboideEmergent.html#constant_CURRENT"
         },                {
             "fqsen": "\\CuboideEmergent\u003A\u003A\u0024FilteredDataSet",
@@ -1203,7 +1203,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\SkyCubeEmergent\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020SkyCube.",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020SkyCubeEmergent.",
             "url": "classes/SkyCubeEmergent.html#method___construct"
         },                {
             "fqsen": "\\SkyCubeEmergent\u003A\u003AgetColID\u0028\u0029",
@@ -1218,12 +1218,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\SkyCubeEmergent\u003A\u003AmergeCuboideLists\u0028\u0029",
             "name": "mergeCuboideLists",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020prot\u00E9g\u00E9e\u0020pour\u0020fusionner\u0020les\u0020listes\u0020de\u0020Cuboides\u0020de\u0020SkyCube1\u0020et\u0020SkyCube2.",
             "url": "classes/SkyCubeEmergent.html#method_mergeCuboideLists"
         },                {
             "fqsen": "\\SkyCubeEmergent\u003A\u003AgetCuboides\u0028\u0029",
             "name": "getCuboides",
-            "summary": "M\u00E9thode\u0020pour\u0020obtenir\u0020la\u0020liste\u0020des\u0020Cuboides\u0020du\u0020Skycube.",
+            "summary": "M\u00E9thode\u0020pour\u0020obtenir\u0020la\u0020liste\u0020des\u0020Cuboides\u0020du\u0020SkyCubeEmergent.",
             "url": "classes/SkyCubeEmergent.html#method_getCuboides"
         },                {
             "fqsen": "\\SkyCubeEmergent\u003A\u003AgetCuboide\u0028\u0029",
@@ -1238,72 +1238,72 @@ Search.appendIndex(
         },                {
             "fqsen": "\\SkyCubeEmergent\u003A\u003AgetMultidimensionalSpace\u0028\u0029",
             "name": "getMultidimensionalSpace",
-            "summary": "M\u00E9thode\u0020pour\u0020obtenir\u0020l\u0027espace\u0020multidimensionnel\u0020g\u00E9n\u00E9r\u00E9\u0020par\u0020le\u0020Skycube.",
+            "summary": "M\u00E9thode\u0020pour\u0020obtenir\u0020l\u0027espace\u0020multidimensionnel\u0020g\u00E9n\u00E9r\u00E9\u0020par\u0020le\u0020SkyCubeEmergent.",
             "url": "classes/SkyCubeEmergent.html#method_getMultidimensionalSpace"
         },                {
             "fqsen": "\\SkyCubeEmergent\u003A\u003AgetEmergence\u0028\u0029",
             "name": "getEmergence",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020pour\u0020obtenir\u0020l\u0027ensemble\u0020des\u0020informations\u0020d\u0027\u00E9mergence.",
             "url": "classes/SkyCubeEmergent.html#method_getEmergence"
         },                {
             "fqsen": "\\SkyCubeEmergent\u003A\u003AgetCodedColumnName\u0028\u0029",
             "name": "getCodedColumnName",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020pour\u0020obtenir\u0020le\u0020nom\u0020de\u0020colonne\u0020encod\u00E9\u0020\u00E0\u0020partir\u0020du\u0020nom\u0020complet.",
             "url": "classes/SkyCubeEmergent.html#method_getCodedColumnName"
         },                {
             "fqsen": "\\SkyCubeEmergent\u003A\u003AgetFullColumnName\u0028\u0029",
             "name": "getFullColumnName",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020pour\u0020obtenir\u0020le\u0020nom\u0020complet\u0020d\u0027une\u0020colonne\u0020\u00E0\u0020partir\u0020du\u0020nom\u0020de\u0020colonne\u0020encod\u00E9.",
             "url": "classes/SkyCubeEmergent.html#method_getFullColumnName"
         },                {
             "fqsen": "\\SkyCubeEmergent\u003A\u003AgetDenumberedColIDs\u0028\u0029",
             "name": "getDenumberedColIDs",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020pour\u0020obtenir\u0020la\u0020liste\u0020des\u0020identifiants\u0020de\u0020colonnes\u0020d\u00E9num\u00E9rot\u00E9es.",
             "url": "classes/SkyCubeEmergent.html#method_getDenumberedColIDs"
         },                {
             "fqsen": "\\SkyCubeEmergent\u003A\u003AgetSkyCube1\u0028\u0029",
             "name": "getSkyCube1",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020pour\u0020obtenir\u0020le\u0020premier\u0020SkyCube\u0020utilis\u00E9\u0020dans\u0020le\u0020SkyCubeEmergent.",
             "url": "classes/SkyCubeEmergent.html#method_getSkyCube1"
         },                {
             "fqsen": "\\SkyCubeEmergent\u003A\u003AgetSkyCube2\u0028\u0029",
             "name": "getSkyCube2",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020pour\u0020obtenir\u0020le\u0020deuxi\u00E8me\u0020SkyCube\u0020utilis\u00E9\u0020dans\u0020le\u0020SkyCubeEmergent.",
             "url": "classes/SkyCubeEmergent.html#method_getSkyCube2"
         },                {
             "fqsen": "\\SkyCubeEmergent\u003A\u003AsetEmergenceRatio\u0028\u0029",
             "name": "setEmergenceRatio",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020pour\u0020d\u00E9finir\u0020le\u0020ratio\u0020d\u0027\u00E9mergence\u0020pour\u0020un\u0020Cuboide\u0020sp\u00E9cifique.",
             "url": "classes/SkyCubeEmergent.html#method_setEmergenceRatio"
         },                {
             "fqsen": "\\SkyCubeEmergent\u003A\u003ASKYCUBE",
             "name": "SKYCUBE",
-            "summary": "",
+            "summary": "Le\u0020nom\u0020de\u0020la\u0020classe\u0020Skycube\u0020utilis\u00E9e\u0020pour\u0020la\u0020construction\u0020des\u0020SkyCubes\u0020internes.",
             "url": "classes/SkyCubeEmergent.html#constant_SKYCUBE"
         },                {
             "fqsen": "\\SkyCubeEmergent\u003A\u003A\u0024SkyCube1",
             "name": "SkyCube1",
-            "summary": "",
+            "summary": "Tableau\u0020contenant\u0020le\u0020premier\u0020SkyCube.",
             "url": "classes/SkyCubeEmergent.html#property_SkyCube1"
         },                {
             "fqsen": "\\SkyCubeEmergent\u003A\u003A\u0024SkyCube2",
             "name": "SkyCube2",
-            "summary": "",
+            "summary": "Tableau\u0020contenant\u0020le\u0020deuxi\u00E8me\u0020SkyCube.",
             "url": "classes/SkyCubeEmergent.html#property_SkyCube2"
         },                {
             "fqsen": "\\SkyCubeEmergent\u003A\u003A\u0024ComputeAccordCuboides",
             "name": "ComputeAccordCuboides",
-            "summary": "",
+            "summary": "Indicateur\u0020pour\u0020calculer\u0020les\u0020Cuboides\u0020en\u0020accord.",
             "url": "classes/SkyCubeEmergent.html#property_ComputeAccordCuboides"
         },                {
             "fqsen": "\\SkyCubeEmergent\u003A\u003A\u0024DenumberedColIDs",
             "name": "DenumberedColIDs",
-            "summary": "",
+            "summary": "Tableau\u0020pour\u0020stocker\u0020les\u0020noms\u0020de\u0020colonnes\u0020d\u00E9num\u00E9rot\u00E9es.",
             "url": "classes/SkyCubeEmergent.html#property_DenumberedColIDs"
         },                {
             "fqsen": "\\SkyCubeEmergent\u003A\u003A\u0024Emergence",
             "name": "Emergence",
-            "summary": "",
+            "summary": "Tableau\u0020pour\u0020stocker\u0020les\u0020informations\u0020d\u0027\u00E9mergence.",
             "url": "classes/SkyCubeEmergent.html#property_Emergence"
         },                {
             "fqsen": "\\Algo",
@@ -1313,7 +1313,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Algo\u003A\u003AgenerateList\u0028\u0029",
             "name": "generateList",
-            "summary": "",
+            "summary": "Generates\u0020the\u0020list\u0020of\u0020available\u0020algorithms",
             "url": "classes/Algo.html#method_generateList"
         },                {
             "fqsen": "\\Algo\u003A\u003AFOLDER",
@@ -1323,77 +1323,77 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Analysis",
             "name": "Analysis",
-            "summary": "",
+            "summary": "Classe\u0020g\u00E9rant\u0020une\u0020Analyse\u0020TAGED",
             "url": "classes/Analysis.html"
         },                {
             "fqsen": "\\Analysis\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructeur\u0020de\u0020l\u0027analyse.",
             "url": "classes/Analysis.html#method___construct"
         },                {
             "fqsen": "\\Analysis\u003A\u003Aload\u0028\u0029",
             "name": "load",
-            "summary": "",
+            "summary": "Charge\u0020les\u0020donn\u00E9es\u0020\u00E0\u0020partir\u0020du\u0020fichier\u0020de\u0020description.",
             "url": "classes/Analysis.html#method_load"
         },                {
             "fqsen": "\\Analysis\u003A\u003AexplodeCols\u0028\u0029",
             "name": "explodeCols",
-            "summary": "",
+            "summary": "Explose\u0020une\u0020cha\u00EEne\u0020de\u0020colonnes\u0020en\u0020un\u0020tableau.",
             "url": "classes/Analysis.html#method_explodeCols"
         },                {
             "fqsen": "\\Analysis\u003A\u003Acheck\u0028\u0029",
             "name": "check",
-            "summary": "",
+            "summary": "V\u00E9rifie\u0020si\u0020l\u0027analyse\u0020est\u0020pr\u00EAte\u0020pour\u0020le\u0020calcul.",
             "url": "classes/Analysis.html#method_check"
         },                {
             "fqsen": "\\Analysis\u003A\u003Aprepare\u0028\u0029",
             "name": "prepare",
-            "summary": "",
+            "summary": "Pr\u00E9pare\u0020l\u0027analyse\u0020en\u0020chargeant\u0020les\u0020donn\u00E9es\u0020et\u0020en\u0020cr\u00E9ant\u0020l\u0027instance\u0020de\u0020SkyCube.",
             "url": "classes/Analysis.html#method_prepare"
         },                {
             "fqsen": "\\Analysis\u003A\u003AcleanData\u0028\u0029",
             "name": "cleanData",
-            "summary": "",
+            "summary": "Nettoie\u0020les\u0020donn\u00E9es\u0020en\u0020rempla\u00E7ant\u0020les\u0020caract\u00E8res\u0020sp\u00E9ciaux\u0020par\u0020des\u0020underscores.",
             "url": "classes/Analysis.html#method_cleanData"
         },                {
             "fqsen": "\\Analysis\u003A\u003AconvertToNumerics\u0028\u0029",
             "name": "convertToNumerics",
-            "summary": "",
+            "summary": "Convertit\u0020une\u0020valeur\u0020en\u0020num\u00E9rique\u0020et\u0020conserve\u0020une\u0020correspondance\u0020des\u0020valeurs\u0020d\u0027attribut.",
             "url": "classes/Analysis.html#method_convertToNumerics"
         },                {
             "fqsen": "\\Analysis\u003A\u003AcomputeCuboideAttribute\u0028\u0029",
             "name": "computeCuboideAttribute",
-            "summary": "",
+            "summary": "Calcule\u0020l\u0027attribut\u0020Cuboide\u0020et\u0020d\u00E9finit\u0020le\u0020taux\u0020d\u0027\u00E9mergence\u0020dans\u0020SkyCube.",
             "url": "classes/Analysis.html#method_computeCuboideAttribute"
         },                {
             "fqsen": "\\Analysis\u003A\u003AcomputeCuboide\u0028\u0029",
             "name": "computeCuboide",
-            "summary": "",
+            "summary": "Calcule\u0020le\u0020Cuboide\u0020complet\u0020et\u0020ses\u0020attributs.",
             "url": "classes/Analysis.html#method_computeCuboide"
         },                {
             "fqsen": "\\Analysis\u003A\u003AgenerateAlgoInput\u0028\u0029",
             "name": "generateAlgoInput",
-            "summary": "",
+            "summary": "G\u00E9n\u00E8re\u0020l\u0027entr\u00E9e\u0020pour\u0020l\u0027algorithme\u0020en\u0020traitant\u0020tous\u0020les\u0020Cuboides.",
             "url": "classes/Analysis.html#method_generateAlgoInput"
         },                {
             "fqsen": "\\Analysis\u003A\u003Acompute\u0028\u0029",
             "name": "compute",
-            "summary": "",
+            "summary": "Effectue\u0020l\u0027analyse\u0020en\u0020utilisant\u0020l\u0027algorithme\u0020s\u00E9lectionn\u00E9.",
             "url": "classes/Analysis.html#method_compute"
         },                {
             "fqsen": "\\Analysis\u003A\u003AgetResult\u0028\u0029",
             "name": "getResult",
-            "summary": "",
+            "summary": "Obtient\u0020le\u0020r\u00E9sultat\u0020de\u0020l\u0027analyse.",
             "url": "classes/Analysis.html#method_getResult"
         },                {
             "fqsen": "\\Analysis\u003A\u003Acreate\u0028\u0029",
             "name": "create",
-            "summary": "",
+            "summary": "Cr\u00E9e\u0020une\u0020nouvelle\u0020instance\u0020d\u0027analyse\u0020avec\u0020les\u0020param\u00E8tres\u0020sp\u00E9cifi\u00E9s\u0020et\u0020l\u0027\u00E9crit\u0020dans\u0020le\u0020fichier\u0020de\u0020description.",
             "url": "classes/Analysis.html#method_create"
         },                {
             "fqsen": "\\Analysis\u003A\u003Adelete\u0028\u0029",
             "name": "delete",
-            "summary": "",
+            "summary": "Supprime\u0020une\u0020instance\u0020d\u0027analyse\u0020existante\u0020par\u0020son\u0020nom.",
             "url": "classes/Analysis.html#method_delete"
         },                {
             "fqsen": "\\Analysis\u003A\u003AgetAggregateFile\u0028\u0029",
@@ -1403,132 +1403,137 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Analysis\u003A\u003AgetTestData\u0028\u0029",
             "name": "getTestData",
-            "summary": "",
+            "summary": "R\u00E9cup\u00E8re\u0020les\u0020donn\u00E9es\u0020de\u0020test\u0020pour\u0020l\u0027analyse.",
             "url": "classes/Analysis.html#method_getTestData"
         },                {
             "fqsen": "\\Analysis\u003A\u003AgetTestMesCols\u0028\u0029",
             "name": "getTestMesCols",
-            "summary": "",
+            "summary": "R\u00E9cup\u00E8re\u0020les\u0020colonnes\u0020\u00E0\u0020mesurer\u0020dans\u0020les\u0020donn\u00E9es\u0020de\u0020test.",
             "url": "classes/Analysis.html#method_getTestMesCols"
         },                {
             "fqsen": "\\Analysis\u003A\u003AgetTestRelCols\u0028\u0029",
             "name": "getTestRelCols",
-            "summary": "",
+            "summary": "R\u00E9cup\u00E8re\u0020les\u0020colonnes\u0020de\u0020relation\u0020dans\u0020les\u0020donn\u00E9es\u0020de\u0020test.",
             "url": "classes/Analysis.html#method_getTestRelCols"
         },                {
             "fqsen": "\\Analysis\u003A\u003AgetTestMin\u0028\u0029",
             "name": "getTestMin",
-            "summary": "",
+            "summary": "R\u00E9cup\u00E8re\u0020les\u0020valeurs\u0020minimales\u0020pour\u0020chaque\u0020colonne.",
             "url": "classes/Analysis.html#method_getTestMin"
         },                {
             "fqsen": "\\Analysis\u003A\u003AgetTestMax\u0028\u0029",
             "name": "getTestMax",
-            "summary": "",
+            "summary": "R\u00E9cup\u00E8re\u0020les\u0020valeurs\u0020maximales\u0020pour\u0020chaque\u0020colonne.",
             "url": "classes/Analysis.html#method_getTestMax"
         },                {
             "fqsen": "\\Analysis\u003A\u003AgetRequestFile\u0028\u0029",
             "name": "getRequestFile",
-            "summary": "",
+            "summary": "R\u00E9cup\u00E8re\u0020le\u0020nom\u0020du\u0020fichier\u0020de\u0020requ\u00EAte.",
             "url": "classes/Analysis.html#method_getRequestFile"
         },                {
             "fqsen": "\\Analysis\u003A\u003AgetDBTable\u0028\u0029",
             "name": "getDBTable",
-            "summary": "",
+            "summary": "R\u00E9cup\u00E8re\u0020le\u0020nom\u0020de\u0020la\u0020table\u0020de\u0020base\u0020de\u0020donn\u00E9es.",
             "url": "classes/Analysis.html#method_getDBTable"
         },                {
             "fqsen": "\\Analysis\u003A\u003AgetDBClass\u0028\u0029",
             "name": "getDBClass",
-            "summary": "",
+            "summary": "R\u00E9cup\u00E8re\u0020le\u0020nom\u0020de\u0020la\u0020classe\u0020de\u0020base\u0020de\u0020donn\u00E9es.",
             "url": "classes/Analysis.html#method_getDBClass"
         },                {
             "fqsen": "\\Analysis\u003A\u003AgetRelationCols\u0028\u0029",
             "name": "getRelationCols",
-            "summary": "",
+            "summary": "R\u00E9cup\u00E8re\u0020les\u0020colonnes\u0020de\u0020relation\u0020pour\u0020l\u0027analyse.",
             "url": "classes/Analysis.html#method_getRelationCols"
         },                {
             "fqsen": "\\Analysis\u003A\u003AgetMeasureCols\u0028\u0029",
             "name": "getMeasureCols",
-            "summary": "",
+            "summary": "R\u00E9cup\u00E8re\u0020les\u0020colonnes\u0020\u00E0\u0020mesurer\u0020pour\u0020l\u0027analyse.",
             "url": "classes/Analysis.html#method_getMeasureCols"
         },                {
             "fqsen": "\\Analysis\u003A\u003AgetSkyCube\u0028\u0029",
             "name": "getSkyCube",
-            "summary": "",
+            "summary": "R\u00E9cup\u00E8re\u0020le\u0020cube\u0020de\u0020donn\u00E9es\u0020multidimensionnel\u0020SkyCube.",
             "url": "classes/Analysis.html#method_getSkyCube"
         },                {
             "fqsen": "\\Analysis\u003A\u003AsetRequestFile\u0028\u0029",
             "name": "setRequestFile",
-            "summary": "",
+            "summary": "D\u00E9finit\u0020le\u0020nom\u0020du\u0020fichier\u0020de\u0020requ\u00EAte.",
             "url": "classes/Analysis.html#method_setRequestFile"
         },                {
             "fqsen": "\\Analysis\u003A\u003AsetDBTable\u0028\u0029",
             "name": "setDBTable",
-            "summary": "",
+            "summary": "D\u00E9finit\u0020le\u0020nom\u0020de\u0020la\u0020table\u0020de\u0020base\u0020de\u0020donn\u00E9es.",
             "url": "classes/Analysis.html#method_setDBTable"
         },                {
             "fqsen": "\\Analysis\u003A\u003AsetDBClass\u0028\u0029",
             "name": "setDBClass",
-            "summary": "",
+            "summary": "D\u00E9finit\u0020le\u0020nom\u0020de\u0020la\u0020classe\u0020de\u0020base\u0020de\u0020donn\u00E9es.",
             "url": "classes/Analysis.html#method_setDBClass"
         },                {
             "fqsen": "\\Analysis\u003A\u003AsetRelationCols\u0028\u0029",
             "name": "setRelationCols",
-            "summary": "",
+            "summary": "D\u00E9finit\u0020les\u0020colonnes\u0020de\u0020relation\u0020pour\u0020l\u0027analyse.",
             "url": "classes/Analysis.html#method_setRelationCols"
         },                {
             "fqsen": "\\Analysis\u003A\u003AsetMeasureCols\u0028\u0029",
             "name": "setMeasureCols",
-            "summary": "",
+            "summary": "D\u00E9finit\u0020les\u0020colonnes\u0020\u00E0\u0020mesurer\u0020pour\u0020l\u0027analyse.",
             "url": "classes/Analysis.html#method_setMeasureCols"
         },                {
             "fqsen": "\\Analysis\u003A\u003AsetMin\u0028\u0029",
             "name": "setMin",
-            "summary": "",
+            "summary": "D\u00E9finit\u0020les\u0020valeurs\u0020minimales\u0020pour\u0020chaque\u0020colonne.",
             "url": "classes/Analysis.html#method_setMin"
         },                {
             "fqsen": "\\Analysis\u003A\u003AsetMax\u0028\u0029",
             "name": "setMax",
-            "summary": "",
+            "summary": "D\u00E9finit\u0020les\u0020valeurs\u0020maximales\u0020pour\u0020chaque\u0020colonne.",
             "url": "classes/Analysis.html#method_setMax"
         },                {
             "fqsen": "\\Analysis\u003A\u003AsetAlgorithm\u0028\u0029",
             "name": "setAlgorithm",
-            "summary": "",
+            "summary": "D\u00E9finit\u0020l\u0027algorithme\u0020utilis\u00E9\u0020pour\u0020l\u0027analyse.",
             "url": "classes/Analysis.html#method_setAlgorithm"
         },                {
             "fqsen": "\\Analysis\u003A\u003Awrite\u0028\u0029",
             "name": "write",
-            "summary": "",
+            "summary": "\u00C9crit\u0020les\u0020param\u00E8tres\u0020d\u0027analyse\u0020dans\u0020le\u0020fichier\u0020de\u0020description.",
             "url": "classes/Analysis.html#method_write"
         },                {
-            "fqsen": "\\Analysis\u003A\u003AFILE",
-            "name": "FILE",
-            "summary": "",
-            "url": "classes/Analysis.html#constant_FILE"
-        },                {
-            "fqsen": "\\Analysis\u003A\u003ATABLE",
-            "name": "TABLE",
-            "summary": "",
-            "url": "classes/Analysis.html#constant_TABLE"
+            "fqsen": "\\Analysis\u003A\u003ADESC_FILE_PATH",
+            "name": "DESC_FILE_PATH",
+            "summary": "Chemin\u0020du\u0020fichier\u0020de\u0020description.",
+            "url": "classes/Analysis.html#constant_DESC_FILE_PATH"
         },                {
             "fqsen": "\\Analysis\u003A\u003ADBCLASS",
             "name": "DBCLASS",
-            "summary": "",
+            "summary": "Cl\u00E9\u0020pour\u0020la\u0020classe\u0020de\u0020base\u0020de\u0020donn\u00E9es.",
             "url": "classes/Analysis.html#constant_DBCLASS"
+        },                {
+            "fqsen": "\\Analysis\u003A\u003ATABLE",
+            "name": "TABLE",
+            "summary": "Cl\u00E9\u0020pour\u0020le\u0020nom\u0020de\u0020la\u0020table\u0020de\u0020base\u0020de\u0020donn\u00E9es.",
+            "url": "classes/Analysis.html#constant_TABLE"
+        },                {
+            "fqsen": "\\Analysis\u003A\u003AFILE",
+            "name": "FILE",
+            "summary": "Cl\u00E9\u0020pour\u0020le\u0020nom\u0020du\u0020fichier\u0020de\u0020requ\u00EAte.",
+            "url": "classes/Analysis.html#constant_FILE"
         },                {
             "fqsen": "\\Analysis\u003A\u003AREL_COLS",
             "name": "REL_COLS",
-            "summary": "",
+            "summary": "Cl\u00E9\u0020pour\u0020les\u0020colonnes\u0020de\u0020relation\u0020dans\u0020les\u0020donn\u00E9es\u0020de\u0020test.",
             "url": "classes/Analysis.html#constant_REL_COLS"
         },                {
             "fqsen": "\\Analysis\u003A\u003AMES_COLS",
             "name": "MES_COLS",
-            "summary": "",
+            "summary": "Cl\u00E9\u0020pour\u0020les\u0020colonnes\u0020\u00E0\u0020mesurer\u0020dans\u0020les\u0020donn\u00E9es\u0020de\u0020test.",
             "url": "classes/Analysis.html#constant_MES_COLS"
         },                {
             "fqsen": "\\Analysis\u003A\u003AGAME_DB",
             "name": "GAME_DB",
-            "summary": "",
+            "summary": "Tableau\u0020associatif\u0020contenant\u0020les\u0020noms\u0020de\u0020base\u0020de\u0020donn\u00E9es\u0020du\u0020jeu.",
             "url": "classes/Analysis.html#constant_GAME_DB"
         },                {
             "fqsen": "\\Analysis\u003A\u003A\u0024AttributeValues",
@@ -1545,11 +1550,6 @@ Search.appendIndex(
             "name": "DescFile",
             "summary": "",
             "url": "classes/Analysis.html#property_DescFile"
-        },                {
-            "fqsen": "\\Analysis\u003A\u003A\u0024DescFilePath",
-            "name": "DescFilePath",
-            "summary": "",
-            "url": "classes/Analysis.html#property_DescFilePath"
         },                {
             "fqsen": "\\Analysis\u003A\u003A\u0024RequestFile",
             "name": "RequestFile",
@@ -1581,15 +1581,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Analysis.html#property_Runnable"
         },                {
-            "fqsen": "\\Analysis\u003A\u003A\u0024Result",
-            "name": "Result",
+            "fqsen": "\\Analysis\u003A\u003A\u0024DescFilePath",
+            "name": "DescFilePath",
             "summary": "",
-            "url": "classes/Analysis.html#property_Result"
+            "url": "classes/Analysis.html#property_DescFilePath"
         },                {
             "fqsen": "\\Analysis\u003A\u003A\u0024Algorithm",
             "name": "Algorithm",
             "summary": "",
             "url": "classes/Analysis.html#property_Algorithm"
+        },                {
+            "fqsen": "\\Analysis\u003A\u003A\u0024DataSet",
+            "name": "DataSet",
+            "summary": "",
+            "url": "classes/Analysis.html#property_DataSet"
         },                {
             "fqsen": "\\Analysis\u003A\u003A\u0024SkyCube",
             "name": "SkyCube",
@@ -1611,30 +1616,225 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Analysis.html#property_IsTest"
         },                {
-            "fqsen": "\\Analysis\u003A\u003Arun\u0028\u0029",
+            "fqsen": "\\Analysis_old",
+            "name": "Analysis_old",
+            "summary": "",
+            "url": "classes/Analysis-old.html"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Analysis-old.html#method___construct"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003Aload\u0028\u0029",
+            "name": "load",
+            "summary": "",
+            "url": "classes/Analysis-old.html#method_load"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003Acheck\u0028\u0029",
+            "name": "check",
+            "summary": "",
+            "url": "classes/Analysis-old.html#method_check"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003AexplodeCols\u0028\u0029",
+            "name": "explodeCols",
+            "summary": "",
+            "url": "classes/Analysis-old.html#method_explodeCols"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003Arun\u0028\u0029",
             "name": "run",
             "summary": "",
-            "url": "classes/Analysis.html#method_run"
+            "url": "classes/Analysis-old.html#method_run"
         },                {
-            "fqsen": "\\Analysis\u003A\u003AformatResult\u0028\u0029",
+            "fqsen": "\\Analysis_old\u003A\u003AformatResult\u0028\u0029",
             "name": "formatResult",
             "summary": "",
-            "url": "classes/Analysis.html#method_formatResult"
+            "url": "classes/Analysis-old.html#method_formatResult"
         },                {
-            "fqsen": "\\Analysis\u003A\u003ArunCuboide\u0028\u0029",
+            "fqsen": "\\Analysis_old\u003A\u003ArunCuboide\u0028\u0029",
             "name": "runCuboide",
             "summary": "",
-            "url": "classes/Analysis.html#method_runCuboide"
+            "url": "classes/Analysis-old.html#method_runCuboide"
         },                {
-            "fqsen": "\\Analysis\u003A\u003ArunSkyCube\u0028\u0029",
+            "fqsen": "\\Analysis_old\u003A\u003ArunSkyCube\u0028\u0029",
             "name": "runSkyCube",
             "summary": "",
-            "url": "classes/Analysis.html#method_runSkyCube"
+            "url": "classes/Analysis-old.html#method_runSkyCube"
         },                {
-            "fqsen": "\\Analysis\u003A\u003AgetSkyCubeColumns\u0028\u0029",
+            "fqsen": "\\Analysis_old\u003A\u003AgetSkyCubeColumns\u0028\u0029",
             "name": "getSkyCubeColumns",
             "summary": "",
-            "url": "classes/Analysis.html#method_getSkyCubeColumns"
+            "url": "classes/Analysis-old.html#method_getSkyCubeColumns"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003AgetResult\u0028\u0029",
+            "name": "getResult",
+            "summary": "",
+            "url": "classes/Analysis-old.html#method_getResult"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "",
+            "url": "classes/Analysis-old.html#method_create"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003Adelete\u0028\u0029",
+            "name": "delete",
+            "summary": "",
+            "url": "classes/Analysis-old.html#method_delete"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003AgetAggregateFile\u0028\u0029",
+            "name": "getAggregateFile",
+            "summary": "",
+            "url": "classes/Analysis-old.html#method_getAggregateFile"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003AgetTestData\u0028\u0029",
+            "name": "getTestData",
+            "summary": "",
+            "url": "classes/Analysis-old.html#method_getTestData"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003AgetTestMesCols\u0028\u0029",
+            "name": "getTestMesCols",
+            "summary": "",
+            "url": "classes/Analysis-old.html#method_getTestMesCols"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003AgetTestRelCols\u0028\u0029",
+            "name": "getTestRelCols",
+            "summary": "",
+            "url": "classes/Analysis-old.html#method_getTestRelCols"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003AgetSkyCube\u0028\u0029",
+            "name": "getSkyCube",
+            "summary": "",
+            "url": "classes/Analysis-old.html#method_getSkyCube"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003AgetRequestFile\u0028\u0029",
+            "name": "getRequestFile",
+            "summary": "",
+            "url": "classes/Analysis-old.html#method_getRequestFile"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003AgetDBTable\u0028\u0029",
+            "name": "getDBTable",
+            "summary": "",
+            "url": "classes/Analysis-old.html#method_getDBTable"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003AgetDBClass\u0028\u0029",
+            "name": "getDBClass",
+            "summary": "",
+            "url": "classes/Analysis-old.html#method_getDBClass"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003AgetRelationCols\u0028\u0029",
+            "name": "getRelationCols",
+            "summary": "",
+            "url": "classes/Analysis-old.html#method_getRelationCols"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003AgetMeasureCols\u0028\u0029",
+            "name": "getMeasureCols",
+            "summary": "",
+            "url": "classes/Analysis-old.html#method_getMeasureCols"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003AsetRequestFile\u0028\u0029",
+            "name": "setRequestFile",
+            "summary": "",
+            "url": "classes/Analysis-old.html#method_setRequestFile"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003AsetDBTable\u0028\u0029",
+            "name": "setDBTable",
+            "summary": "",
+            "url": "classes/Analysis-old.html#method_setDBTable"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003AsetDBClass\u0028\u0029",
+            "name": "setDBClass",
+            "summary": "",
+            "url": "classes/Analysis-old.html#method_setDBClass"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003AsetRelationCols\u0028\u0029",
+            "name": "setRelationCols",
+            "summary": "",
+            "url": "classes/Analysis-old.html#method_setRelationCols"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003AsetMeasureCols\u0028\u0029",
+            "name": "setMeasureCols",
+            "summary": "",
+            "url": "classes/Analysis-old.html#method_setMeasureCols"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003Awrite\u0028\u0029",
+            "name": "write",
+            "summary": "",
+            "url": "classes/Analysis-old.html#method_write"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003AFILE",
+            "name": "FILE",
+            "summary": "",
+            "url": "classes/Analysis-old.html#constant_FILE"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003ATABLE",
+            "name": "TABLE",
+            "summary": "",
+            "url": "classes/Analysis-old.html#constant_TABLE"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003ADBCLASS",
+            "name": "DBCLASS",
+            "summary": "",
+            "url": "classes/Analysis-old.html#constant_DBCLASS"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003AREL_COLS",
+            "name": "REL_COLS",
+            "summary": "",
+            "url": "classes/Analysis-old.html#constant_REL_COLS"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003AMES_COLS",
+            "name": "MES_COLS",
+            "summary": "",
+            "url": "classes/Analysis-old.html#constant_MES_COLS"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003AGAME_DB",
+            "name": "GAME_DB",
+            "summary": "",
+            "url": "classes/Analysis-old.html#constant_GAME_DB"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003A\u0024DescFile",
+            "name": "DescFile",
+            "summary": "",
+            "url": "classes/Analysis-old.html#property_DescFile"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003A\u0024DescFilePath",
+            "name": "DescFilePath",
+            "summary": "",
+            "url": "classes/Analysis-old.html#property_DescFilePath"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003A\u0024RequestFile",
+            "name": "RequestFile",
+            "summary": "",
+            "url": "classes/Analysis-old.html#property_RequestFile"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003A\u0024DBTable",
+            "name": "DBTable",
+            "summary": "",
+            "url": "classes/Analysis-old.html#property_DBTable"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003A\u0024DBClass",
+            "name": "DBClass",
+            "summary": "",
+            "url": "classes/Analysis-old.html#property_DBClass"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003A\u0024RelationCols",
+            "name": "RelationCols",
+            "summary": "",
+            "url": "classes/Analysis-old.html#property_RelationCols"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003A\u0024MeasureCols",
+            "name": "MeasureCols",
+            "summary": "",
+            "url": "classes/Analysis-old.html#property_MeasureCols"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003A\u0024Runnable",
+            "name": "Runnable",
+            "summary": "",
+            "url": "classes/Analysis-old.html#property_Runnable"
+        },                {
+            "fqsen": "\\Analysis_old\u003A\u003A\u0024Result",
+            "name": "Result",
+            "summary": "",
+            "url": "classes/Analysis-old.html#property_Result"
         },                {
             "fqsen": "\\DATA_HOME",
             "name": "DATA_HOME",
@@ -5018,7 +5218,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CollParser\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Construit\u0020un\u0020nouvel\u0020objet\u0020CollParser.",
             "url": "classes/CollParser.html#method___construct"
         },                {
             "fqsen": "\\CollParser\u003A\u003A__destruct\u0028\u0029",
@@ -5028,117 +5228,117 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CollParser\u003A\u003Aclean\u0028\u0029",
             "name": "clean",
-            "summary": "",
+            "summary": "Nettoie\u0020le\u0020contenu\u0020de\u0020\u0024this\u002D\u003EFullText\u0020de\u0020tous\u0020les\u0020caract\u00E8res\u0020ind\u00E9sirables.",
             "url": "classes/CollParser.html#method_clean"
         },                {
             "fqsen": "\\CollParser\u003A\u003AapplyPattern\u0028\u0029",
             "name": "applyPattern",
-            "summary": "",
+            "summary": "Applique\u0020un\u0020motif\u0020\u0028pattern\u0029\u0020avec\u0020une\u0020fonction\u0020de\u0020rappel\u0020sur\u0020le\u0020texte\u0020trait\u00E9.",
             "url": "classes/CollParser.html#method_applyPattern"
         },                {
             "fqsen": "\\CollParser\u003A\u003Aparse\u0028\u0029",
             "name": "parse",
-            "summary": "",
+            "summary": "Analyse\u0020le\u0020texte\u0020trait\u00E9\u0020\u0028ProcessedText\u0029\u0020avec\u0020des\u0020expressions\u0020r\u00E9guli\u00E8res\u0020\u0028PCRE\u0029.",
             "url": "classes/CollParser.html#method_parse"
         },                {
             "fqsen": "\\CollParser\u003A\u003A__toString\u0028\u0029",
             "name": "__toString",
-            "summary": "",
+            "summary": "Convertit\u0020l\u0027objet\u0020CollParser\u0020en\u0020une\u0020cha\u00EEne\u0020de\u0020caract\u00E8res\u0020pour\u0020l\u0027affichage.",
             "url": "classes/CollParser.html#method___toString"
         },                {
             "fqsen": "\\CollParser\u003A\u003Adisplay\u0028\u0029",
             "name": "display",
-            "summary": "",
+            "summary": "Affiche\u0020les\u0020informations\u0020analys\u00E9es\u0020pour\u0020le\u0020d\u00E9bogage.",
             "url": "classes/CollParser.html#method_display"
         },                {
             "fqsen": "\\CollParser\u003A\u003AgameIdPreg\u0028\u0029",
             "name": "gameIdPreg",
-            "summary": "",
+            "summary": "G\u00E8re\u0020la\u0020description\u0020d\u0027un\u0020Pok\u00E9mon\u0020dans\u0020le\u0020texte\u0020trait\u00E9.",
             "url": "classes/CollParser.html#method_gameIdPreg"
         },                {
             "fqsen": "\\CollParser\u003A\u003AplayerPreg\u0028\u0029",
             "name": "playerPreg",
-            "summary": "",
+            "summary": "G\u00E8re\u0020la\u0020description\u0020d\u0027un\u0020joueur\u0020\u0028Player\u0029\u0020dans\u0020le\u0020texte\u0020trait\u00E9.",
             "url": "classes/CollParser.html#method_playerPreg"
         },                {
             "fqsen": "\\CollParser\u003A\u003AteamSizePreg\u0028\u0029",
             "name": "teamSizePreg",
-            "summary": "",
+            "summary": "G\u00E8re\u0020la\u0020description\u0020d\u0027une\u0020\u00E9quipe\u0020\u0028Team\u0029\u0020dans\u0020le\u0020texte\u0020trait\u00E9.",
             "url": "classes/CollParser.html#method_teamSizePreg"
         },                {
             "fqsen": "\\CollParser\u003A\u003AgameTypePreg\u0028\u0029",
             "name": "gameTypePreg",
-            "summary": "",
+            "summary": "G\u00E8re\u0020la\u0020description\u0020du\u0020type\u0020de\u0020jeu\u0020\u0028Game\u0020Type\u0029\u0020dans\u0020le\u0020texte\u0020trait\u00E9.",
             "url": "classes/CollParser.html#method_gameTypePreg"
         },                {
             "fqsen": "\\CollParser\u003A\u003AgenPreg\u0028\u0029",
             "name": "genPreg",
-            "summary": "",
+            "summary": "G\u00E8re\u0020la\u0020description\u0020de\u0020la\u0020g\u00E9n\u00E9ration\u0020\u0028Gen\u0029\u0020dans\u0020le\u0020texte\u0020trait\u00E9.",
             "url": "classes/CollParser.html#method_genPreg"
         },                {
             "fqsen": "\\CollParser\u003A\u003AtierPreg\u0028\u0029",
             "name": "tierPreg",
-            "summary": "",
+            "summary": "G\u00E8re\u0020la\u0020description\u0020du\u0020tier\u0020dans\u0020le\u0020texte\u0020trait\u00E9.",
             "url": "classes/CollParser.html#method_tierPreg"
         },                {
             "fqsen": "\\CollParser\u003A\u003AratedPreg\u0028\u0029",
             "name": "ratedPreg",
-            "summary": "",
+            "summary": "G\u00E8re\u0020la\u0020description\u0020d\u0027une\u0020partie\u0020not\u00E9e\u0020\u0028Rated\u0029\u0020dans\u0020le\u0020texte\u0020trait\u00E9.",
             "url": "classes/CollParser.html#method_ratedPreg"
         },                {
             "fqsen": "\\CollParser\u003A\u003AswitchP1\u0028\u0029",
             "name": "switchP1",
-            "summary": "",
+            "summary": "G\u00E8re\u0020la\u0020description\u0020d\u0027un\u0020switch\u0020du\u0020joueur\u00201\u0020\u0028P1\u0029\u0020dans\u0020le\u0020texte\u0020trait\u00E9.",
             "url": "classes/CollParser.html#method_switchP1"
         },                {
             "fqsen": "\\CollParser\u003A\u003AswitchP2\u0028\u0029",
             "name": "switchP2",
-            "summary": "",
+            "summary": "G\u00E8re\u0020la\u0020description\u0020d\u0027un\u0020switch\u0020du\u0020joueur\u00202\u0020\u0028P2\u0029\u0020dans\u0020le\u0020texte\u0020trait\u00E9.",
             "url": "classes/CollParser.html#method_switchP2"
         },                {
             "fqsen": "\\CollParser\u003A\u003ArulePreg\u0028\u0029",
             "name": "rulePreg",
-            "summary": "",
+            "summary": "G\u00E8re\u0020la\u0020description\u0020d\u0027une\u0020r\u00E8gle\u0020\u0028Rule\u0029\u0020dans\u0020le\u0020texte\u0020trait\u00E9.",
             "url": "classes/CollParser.html#method_rulePreg"
         },                {
             "fqsen": "\\CollParser\u003A\u003AteamPreviewPokemonPreg\u0028\u0029",
             "name": "teamPreviewPokemonPreg",
-            "summary": "",
+            "summary": "G\u00E8re\u0020la\u0020description\u0020d\u0027un\u0020Pok\u00E9mon\u0020lors\u0020du\u0020choix\u0020des\u0020\u00E9quipes\u0020\u0028Team\u0020Preview\u0029\u0020dans\u0020le\u0020texte\u0020trait\u00E9.",
             "url": "classes/CollParser.html#method_teamPreviewPokemonPreg"
         },                {
             "fqsen": "\\CollParser\u003A\u003AturnPreg\u0028\u0029",
             "name": "turnPreg",
-            "summary": "",
+            "summary": "G\u00E8re\u0020la\u0020description\u0020d\u0027un\u0020tour\u0020\u0028Turn\u0029\u0020dans\u0020le\u0020texte\u0020trait\u00E9.",
             "url": "classes/CollParser.html#method_turnPreg"
         },                {
             "fqsen": "\\CollParser\u003A\u003Amove1Preg\u0028\u0029",
             "name": "move1Preg",
-            "summary": "",
+            "summary": "G\u00E8re\u0020la\u0020description\u0020d\u0027un\u0020mouvement\u0020\u0028Move\u0029\u0020lors\u0020d\u0027un\u0020switch\u0020dans\u0020le\u0020texte\u0020trait\u00E9.",
             "url": "classes/CollParser.html#method_move1Preg"
         },                {
             "fqsen": "\\CollParser\u003A\u003Amove2Preg\u0028\u0029",
             "name": "move2Preg",
-            "summary": "",
+            "summary": "G\u00E8re\u0020la\u0020description\u0020d\u0027un\u0020mouvement\u0020\u0028Move\u0029\u0020lors\u0020d\u0027un\u0020switch\u0020dans\u0020le\u0020texte\u0020trait\u00E9.",
             "url": "classes/CollParser.html#method_move2Preg"
         },                {
             "fqsen": "\\CollParser\u003A\u003AwinnerPreg\u0028\u0029",
             "name": "winnerPreg",
-            "summary": "",
+            "summary": "G\u00E8re\u0020la\u0020description\u0020du\u0020gagnant\u0020\u0028Winner\u0029\u0020dans\u0020le\u0020texte\u0020trait\u00E9.",
             "url": "classes/CollParser.html#method_winnerPreg"
         },                {
             "fqsen": "\\CollParser\u003A\u003AtiePreg\u0028\u0029",
             "name": "tiePreg",
-            "summary": "",
+            "summary": "G\u00E8re\u0020la\u0020description\u0020d\u0027une\u0020\u00E9galit\u00E9\u0020\u0028Tie\u0029\u0020dans\u0020le\u0020texte\u0020trait\u00E9.",
             "url": "classes/CollParser.html#method_tiePreg"
         },                {
             "fqsen": "\\CollParser\u003A\u003Amove1\u0028\u0029",
             "name": "move1",
-            "summary": "",
+            "summary": "G\u00E8re\u0020la\u0020description\u0020d\u0027un\u0020mouvement\u0020\u0028Move\u0029\u0020d\u0027un\u0020Pok\u00E9mon\u0020dans\u0020le\u0020texte\u0020trait\u00E9.",
             "url": "classes/CollParser.html#method_move1"
         },                {
             "fqsen": "\\CollParser\u003A\u003Amove2\u0028\u0029",
             "name": "move2",
-            "summary": "",
+            "summary": "G\u00E8re\u0020la\u0020description\u0020d\u0027un\u0020mouvement\u0020\u0028Move\u0029\u0020d\u0027un\u0020Pok\u00E9mon\u0020dans\u0020le\u0020texte\u0020trait\u00E9.",
             "url": "classes/CollParser.html#method_move2"
         },                {
             "fqsen": "\\CollParser\u003A\u003A\u0024turns",
@@ -5308,47 +5508,47 @@ Search.appendIndex(
         },                {
             "fqsen": "\\HnSParser",
             "name": "HnSParser",
-            "summary": "Parser\u0020for\u0020Hack\u0027N\u0020Slash\u0020\u0020\u0028\u0020Diablo\u00203\u0020\u0029",
+            "summary": "Parser\u0020pour\u0020Hack\u0027N\u0020Slash\u0020\u0028Diablo\u00203\u0029.",
             "url": "classes/HnSParser.html"
         },                {
             "fqsen": "\\HnSParser\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020HnSParser.",
             "url": "classes/HnSParser.html#method___construct"
         },                {
             "fqsen": "\\HnSParser\u003A\u003A__destruct\u0028\u0029",
             "name": "__destruct",
-            "summary": "",
+            "summary": "Destructeur\u0020de\u0020la\u0020classe\u0020HnSParser.",
             "url": "classes/HnSParser.html#method___destruct"
         },                {
             "fqsen": "\\HnSParser\u003A\u003A__toString\u0028\u0029",
             "name": "__toString",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020magique\u0020__toString.",
             "url": "classes/HnSParser.html#method___toString"
         },                {
             "fqsen": "\\HnSParser\u003A\u003Aclean\u0028\u0029",
             "name": "clean",
-            "summary": "",
+            "summary": "Nettoie\u0020la\u0020variable\u0020membre\u0020\u0024this\u002D\u003EFullText\u0020de\u0020tous\u0020les\u0020caract\u00E8res\u0020ind\u00E9sirables.",
             "url": "classes/HnSParser.html#method_clean"
         },                {
             "fqsen": "\\HnSParser\u003A\u003AapplyPattern\u0028\u0029",
             "name": "applyPattern",
-            "summary": "",
+            "summary": "Applique\u0020un\u0020mod\u00E8le\u0020PCRE\u0020\u0028Perl\u0020Compatible\u0020Regular\u0020Expression\u0029\u0020\u00E0\u0020la\u0020variable\u0020membre\u0020\u0024this\u002D\u003EProcessedText.",
             "url": "classes/HnSParser.html#method_applyPattern"
         },                {
             "fqsen": "\\HnSParser\u003A\u003Aparse\u0028\u0029",
             "name": "parse",
-            "summary": "",
+            "summary": "Analyse\u0020\u0028avec\u0020PCRE\u0029\u0020la\u0020variable\u0020membre\u0020\u0024this\u002D\u003EProcessedText.",
             "url": "classes/HnSParser.html#method_parse"
         },                {
             "fqsen": "\\HnSParser\u003A\u003AparseHero\u0028\u0029",
             "name": "parseHero",
-            "summary": "",
+            "summary": "Fonction\u0020de\u0020rappel\u0020\u0028callback\u0029\u0020pour\u0020l\u0027analyse\u0020des\u0020h\u00E9ros.",
             "url": "classes/HnSParser.html#method_parseHero"
         },                {
             "fqsen": "\\HnSParser\u003A\u003AparseHeroData\u0028\u0029",
             "name": "parseHeroData",
-            "summary": "",
+            "summary": "Fonction\u0020de\u0020rappel\u0020\u0028callback\u0029\u0020pour\u0020l\u0027analyse\u0020des\u0020donn\u00E9es\u0020d\u0027un\u0020h\u00E9ros.",
             "url": "classes/HnSParser.html#method_parseHeroData"
         },                {
             "fqsen": "\\HnSParser\u003A\u003A\u0024filename",
@@ -5403,7 +5603,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\TagedDBColl",
             "name": "TagedDBColl",
-            "summary": "",
+            "summary": "Cette\u0020classe\u0020repr\u00E9sente\u0020la\u0020connexion\u0020\u00E0\u0020la\u0020base\u0020de\u0020donn\u00E9es\u0020pour\u0020l\u0027application\u0020TAGED.",
             "url": "classes/TagedDBColl.html"
         },                {
             "fqsen": "\\TagedDBColl\u003A\u003A\u0024DBserver",
@@ -5433,7 +5633,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\TagedDBHnS",
             "name": "TagedDBHnS",
-            "summary": "",
+            "summary": "Cette\u0020classe\u0020repr\u00E9sente\u0020la\u0020connexion\u0020\u00E0\u0020la\u0020base\u0020de\u0020donn\u00E9es\u0020pour\u0020l\u0027application\u0020TAGED\u0020en\u0020mode\u0020\u0022Hide\u0020and\u0020Seek\u0022\u0020\u0028HnS\u0029.",
             "url": "classes/TagedDBHnS.html"
         },                {
             "fqsen": "\\TagedDBHnS\u003A\u003A\u0024DBserver",
@@ -5463,7 +5663,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\TagedDBMatch3",
             "name": "TagedDBMatch3",
-            "summary": "",
+            "summary": "Cette\u0020classe\u0020repr\u00E9sente\u0020la\u0020connexion\u0020\u00E0\u0020la\u0020base\u0020de\u0020donn\u00E9es\u0020pour\u0020l\u0027application\u0020TAGED\u0020en\u0020mode\u0020\u0022Match\u002D3\u0022.",
             "url": "classes/TagedDBMatch3.html"
         },                {
             "fqsen": "\\TagedDBMatch3\u003A\u003A\u0024DBserver",
@@ -5533,7 +5733,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\TagedWS\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020BasicWS.",
             "url": "classes/TagedWS.html#method___construct"
         },                {
             "fqsen": "\\TagedWS\u003A\u003AgetSelector\u0028\u0029",
@@ -5563,92 +5763,92 @@ Search.appendIndex(
         },                {
             "fqsen": "\\WSDefault\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020WSDefault.",
             "url": "classes/WSDefault.html#method___construct"
         },                {
             "fqsen": "\\WSMatch3",
             "name": "WSMatch3",
-            "summary": "Match3\u0020WebService",
+            "summary": "Service\u0020Web\u0020Match3",
             "url": "classes/WSMatch3.html"
         },                {
             "fqsen": "\\WSMatch3\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020WSMatch3.",
             "url": "classes/WSMatch3.html#method___construct"
         },                {
             "fqsen": "\\WSMatch3\u003A\u003Aserve\u0028\u0029",
             "name": "serve",
-            "summary": "",
+            "summary": "Fonction\u0020principale\u0020du\u0020service\u0020web.",
             "url": "classes/WSMatch3.html#method_serve"
         },                {
             "fqsen": "\\WSMatch3\u003A\u003Astore\u0028\u0029",
             "name": "store",
-            "summary": "",
+            "summary": "Fonction\u0020de\u0020stockage\u0020des\u0020donn\u00E9es.",
             "url": "classes/WSMatch3.html#method_store"
         },                {
             "fqsen": "\\WSMatch3\u003A\u003Aintermediate\u0028\u0029",
             "name": "intermediate",
-            "summary": "",
+            "summary": "Action\u0020interm\u00E9diaire\u0020du\u0020Match3.",
             "url": "classes/WSMatch3.html#method_intermediate"
         },                {
             "fqsen": "\\WSMatch3\u003A\u003AgameOver\u0028\u0029",
             "name": "gameOver",
-            "summary": "",
+            "summary": "Action\u0020de\u0020fin\u0020de\u0020partie\u0020du\u0020Match3.",
             "url": "classes/WSMatch3.html#method_gameOver"
         },                {
             "fqsen": "\\WSMatch3\u003A\u003AnewGame\u0028\u0029",
             "name": "newGame",
-            "summary": "",
+            "summary": "Action\u0020pour\u0020d\u00E9marrer\u0020une\u0020nouvelle\u0020partie\u0020du\u0020Match3.",
             "url": "classes/WSMatch3.html#method_newGame"
         },                {
             "fqsen": "\\WSMatch3\u003A\u003AgetM3Selector\u0028\u0029",
             "name": "getM3Selector",
-            "summary": "",
+            "summary": "Obtient\u0020le\u0020s\u00E9lecteur\u0020Match3.",
             "url": "classes/WSMatch3.html#method_getM3Selector"
         },                {
             "fqsen": "\\WSMatch3\u003A\u003AWS_M3_DATA",
             "name": "WS_M3_DATA",
-            "summary": "",
+            "summary": "Constante\u0020repr\u00E9sentant\u0020les\u0020donn\u00E9es\u0020Match3.",
             "url": "classes/WSMatch3.html#constant_WS_M3_DATA"
         },                {
             "fqsen": "\\WSMatch3\u003A\u003AWS_M3_SELECTOR",
             "name": "WS_M3_SELECTOR",
-            "summary": "",
+            "summary": "Constante\u0020repr\u00E9sentant\u0020le\u0020s\u00E9lecteur\u0020Match3.",
             "url": "classes/WSMatch3.html#constant_WS_M3_SELECTOR"
         },                {
             "fqsen": "\\WSMatch3\u003A\u003AWS_M3_DEFAULT",
             "name": "WS_M3_DEFAULT",
-            "summary": "",
+            "summary": "Constante\u0020repr\u00E9sentant\u0020la\u0020valeur\u0020par\u0020d\u00E9faut\u0020du\u0020s\u00E9lecteur\u0020Match3.",
             "url": "classes/WSMatch3.html#constant_WS_M3_DEFAULT"
         },                {
             "fqsen": "\\WSMatch3\u003A\u003AWS_M3_LIST",
             "name": "WS_M3_LIST",
-            "summary": "",
+            "summary": "Liste\u0020des\u0020correspondances\u0020s\u00E9lecteur\u0020Match3\u0020\u002D\u0020action.",
             "url": "classes/WSMatch3.html#constant_WS_M3_LIST"
         },                {
             "fqsen": "\\WSMatch3\u003A\u003A\u0024InputData",
             "name": "InputData",
-            "summary": "",
+            "summary": "Donn\u00E9es\u0020d\u0027entr\u00E9e\u0020du\u0020service\u0020web\u0020Match3.",
             "url": "classes/WSMatch3.html#property_InputData"
         },                {
             "fqsen": "\\PageMaintenance",
             "name": "PageMaintenance",
-            "summary": "Basic\u0020features\u0020of\u0020a\u0020Page\u0020on\u0020this\u0020framework",
+            "summary": "",
             "url": "classes/PageMaintenance.html"
         },                {
             "fqsen": "\\PageMaintenance\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020BasicPage.",
             "url": "classes/PageMaintenance.html#method___construct"
         },                {
             "fqsen": "\\PageMaintenance\u003A\u003AshowPageHeader\u0028\u0029",
             "name": "showPageHeader",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020abstraite\u0020qui\u0020doit\u0020\u00EAtre\u0020impl\u00E9ment\u00E9e\u0020dans\u0020les\u0020classes\u0020enfants\u0020pour\u0020afficher\u0020l\u0027en\u002Dt\u00EAte\u0020de\u0020la\u0020page.",
             "url": "classes/PageMaintenance.html#method_showPageHeader"
         },                {
             "fqsen": "\\PageMaintenance\u003A\u003AshowPageFooter\u0028\u0029",
             "name": "showPageFooter",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020abstraite\u0020qui\u0020doit\u0020\u00EAtre\u0020impl\u00E9ment\u00E9e\u0020dans\u0020les\u0020classes\u0020enfants\u0020pour\u0020afficher\u0020le\u0020pied\u0020de\u0020page\u0020de\u0020la\u0020page.",
             "url": "classes/PageMaintenance.html#method_showPageFooter"
         },                {
             "fqsen": "\\PageMaintenance\u003A\u003APAGE_SELECTOR",
@@ -5668,237 +5868,237 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Aggregate",
             "name": "Aggregate",
-            "summary": "",
+            "summary": "Classe\u0020pour\u0020l\u0027agr\u00E9gation\u0020de\u0020donn\u00E9es\u0020provenant\u0020d\u0027une\u0020table\u0020dans\u0020une\u0020base\u0020de\u0020donn\u00E9es.",
             "url": "classes/Aggregate.html"
         },                {
             "fqsen": "\\Aggregate\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020Aggregate.",
             "url": "classes/Aggregate.html#method___construct"
         },                {
             "fqsen": "\\Aggregate\u003A\u003A__destruct\u0028\u0029",
             "name": "__destruct",
-            "summary": "",
+            "summary": "Destructeur\u0020de\u0020la\u0020classe\u0020Aggregate.",
             "url": "classes/Aggregate.html#method___destruct"
         },                {
             "fqsen": "\\Aggregate\u003A\u003A__toString\u0028\u0029",
             "name": "__toString",
-            "summary": "",
+            "summary": "Convertit\u0020l\u0027objet\u0020Aggregate\u0020en\u0020une\u0020cha\u00EEne\u0020de\u0020caract\u00E8res.",
             "url": "classes/Aggregate.html#method___toString"
         },                {
             "fqsen": "\\Aggregate\u003A\u003AshowTableHeader\u0028\u0029",
             "name": "showTableHeader",
-            "summary": "",
+            "summary": "Affiche\u0020l\u0027en\u002Dt\u00EAte\u0020du\u0020tableau\u0020pour\u0020la\u0020repr\u00E9sentation\u0020HTML.",
             "url": "classes/Aggregate.html#method_showTableHeader"
         },                {
             "fqsen": "\\Aggregate\u003A\u003AshowTableFooter\u0028\u0029",
             "name": "showTableFooter",
-            "summary": "",
+            "summary": "Affiche\u0020le\u0020pied\u0020du\u0020tableau\u0020pour\u0020la\u0020repr\u00E9sentation\u0020HTML.",
             "url": "classes/Aggregate.html#method_showTableFooter"
         },                {
             "fqsen": "\\Aggregate\u003A\u003AshowAsTableContent\u0028\u0029",
             "name": "showAsTableContent",
-            "summary": "",
+            "summary": "Affiche\u0020le\u0020contenu\u0020du\u0020tableau\u0020pour\u0020la\u0020repr\u00E9sentation\u0020HTML.",
             "url": "classes/Aggregate.html#method_showAsTableContent"
         },                {
             "fqsen": "\\Aggregate\u003A\u003Ashow\u0028\u0029",
             "name": "show",
-            "summary": "",
+            "summary": "Affiche\u0020l\u0027objet\u0020Aggregate\u0020sous\u0020forme\u0020de\u0020tableau\u0020HTML.",
             "url": "classes/Aggregate.html#method_show"
         },                {
             "fqsen": "\\Aggregate\u003A\u003Aexport\u0028\u0029",
             "name": "export",
-            "summary": "",
+            "summary": "Exporte\u0020les\u0020donn\u00E9es\u0020agr\u00E9g\u00E9es\u0020sous\u0020forme\u0020de\u0020fichiers\u0020CSV.",
             "url": "classes/Aggregate.html#method_export"
         },                {
             "fqsen": "\\Aggregate\u003A\u003AgetData\u0028\u0029",
             "name": "getData",
-            "summary": "",
+            "summary": "Retourne\u0020les\u0020donn\u00E9es\u0020agr\u00E9g\u00E9es\u0020sous\u0020forme\u0020de\u0020tableau\u0020associatif.",
             "url": "classes/Aggregate.html#method_getData"
         },                {
             "fqsen": "\\Aggregate\u003A\u003AgetNbAttributes\u0028\u0029",
             "name": "getNbAttributes",
-            "summary": "",
+            "summary": "Retourne\u0020le\u0020nombre\u0020total\u0020d\u0027attributs\u0020\u0028colonnes\u0029\u0020de\u0020la\u0020table.",
             "url": "classes/Aggregate.html#method_getNbAttributes"
         },                {
             "fqsen": "\\Aggregate\u003A\u003AgetAttributes\u0028\u0029",
             "name": "getAttributes",
-            "summary": "",
+            "summary": "Retourne\u0020les\u0020noms\u0020des\u0020attributs\u0020\u0028colonnes\u0029\u0020de\u0020la\u0020table.",
             "url": "classes/Aggregate.html#method_getAttributes"
         },                {
             "fqsen": "\\Aggregate\u003A\u003AgetAttributeValues\u0028\u0029",
             "name": "getAttributeValues",
-            "summary": "",
+            "summary": "Retourne\u0020les\u0020valeurs\u0020uniques\u0020pour\u0020chaque\u0020attribut.",
             "url": "classes/Aggregate.html#method_getAttributeValues"
         },                {
             "fqsen": "\\Aggregate\u003A\u003AgetNbTuples\u0028\u0029",
             "name": "getNbTuples",
-            "summary": "",
+            "summary": "Retourne\u0020le\u0020nombre\u0020total\u0020de\u0020tuples\u0020\u0028enregistrements\u0029\u0020de\u0020la\u0020table.",
             "url": "classes/Aggregate.html#method_getNbTuples"
         },                {
             "fqsen": "\\Aggregate\u003A\u003AgetTuple\u0028\u0029",
             "name": "getTuple",
-            "summary": "",
+            "summary": "Retourne\u0020les\u0020donn\u00E9es\u0020d\u0027un\u0020tuple\u0020sp\u00E9cifique.",
             "url": "classes/Aggregate.html#method_getTuple"
         },                {
             "fqsen": "\\Aggregate\u003A\u003Acheck\u0028\u0029",
             "name": "check",
-            "summary": "",
+            "summary": "V\u00E9rifie\u0020si\u0020les\u0020donn\u00E9es\u0020agr\u00E9g\u00E9es\u0020sont\u0020valides.",
             "url": "classes/Aggregate.html#method_check"
         },                {
             "fqsen": "\\Aggregate\u003A\u003AconvertToNumerics\u0028\u0029",
             "name": "convertToNumerics",
-            "summary": "",
+            "summary": "Convertit\u0020une\u0020valeur\u0020en\u0020num\u00E9rique\u0020si\u0020n\u00E9cessaire\u0020et\u0020met\u0020\u00E0\u0020jour\u0020les\u0020valeurs\u0020uniques\u0020pour\u0020l\u0027attribut.",
             "url": "classes/Aggregate.html#method_convertToNumerics"
         },                {
             "fqsen": "\\Aggregate\u003A\u003AretrieveData\u0028\u0029",
             "name": "retrieveData",
-            "summary": "",
+            "summary": "R\u00E9cup\u00E8re\u0020les\u0020donn\u00E9es\u0020de\u0020la\u0020base\u0020de\u0020donn\u00E9es.",
             "url": "classes/Aggregate.html#method_retrieveData"
         },                {
             "fqsen": "\\Aggregate\u003A\u003Afill\u0028\u0029",
             "name": "fill",
-            "summary": "",
+            "summary": "Remplit\u0020l\u0027objet\u0020Aggregate\u0020avec\u0020les\u0020donn\u00E9es\u0020r\u00E9cup\u00E9r\u00E9es\u0020de\u0020la\u0020base\u0020de\u0020donn\u00E9es.",
             "url": "classes/Aggregate.html#method_fill"
         },                {
             "fqsen": "\\Aggregate\u003A\u003A\u0024Table",
             "name": "Table",
-            "summary": "",
+            "summary": "Le\u0020nom\u0020de\u0020la\u0020table\u0020dans\u0020la\u0020base\u0020de\u0020donn\u00E9es.",
             "url": "classes/Aggregate.html#property_Table"
         },                {
             "fqsen": "\\Aggregate\u003A\u003A\u0024DBClass",
             "name": "DBClass",
-            "summary": "",
+            "summary": "Le\u0020nom\u0020de\u0020la\u0020classe\u0020de\u0020base\u0020de\u0020donn\u00E9es\u0020utilis\u00E9e\u0020pour\u0020ex\u00E9cuter\u0020les\u0020requ\u00EAtes\u0020SQL.",
             "url": "classes/Aggregate.html#property_DBClass"
         },                {
             "fqsen": "\\Aggregate\u003A\u003A\u0024Data",
             "name": "Data",
-            "summary": "",
+            "summary": "Un\u0020tableau\u0020contenant\u0020les\u0020donn\u00E9es\u0020agr\u00E9g\u00E9es.",
             "url": "classes/Aggregate.html#property_Data"
         },                {
             "fqsen": "\\Aggregate\u003A\u003A\u0024Attributes",
             "name": "Attributes",
-            "summary": "",
+            "summary": "Un\u0020tableau\u0020contenant\u0020les\u0020noms\u0020des\u0020attributs\u0020\u0028colonnes\u0029\u0020de\u0020la\u0020table.",
             "url": "classes/Aggregate.html#property_Attributes"
         },                {
             "fqsen": "\\Aggregate\u003A\u003A\u0024NbTuples",
             "name": "NbTuples",
-            "summary": "",
+            "summary": "Le\u0020nombre\u0020total\u0020de\u0020tuples\u0020\u0028enregistrements\u0029\u0020de\u0020la\u0020table.",
             "url": "classes/Aggregate.html#property_NbTuples"
         },                {
             "fqsen": "\\Aggregate\u003A\u003A\u0024AttributeValues",
             "name": "AttributeValues",
-            "summary": "",
+            "summary": "Un\u0020tableau\u0020associatif\u0020contenant\u0020les\u0020valeurs\u0020uniques\u0020pour\u0020chaque\u0020attribut.",
             "url": "classes/Aggregate.html#property_AttributeValues"
         },                {
             "fqsen": "\\Aggregate\u003A\u003A\u0024AttributeIgnored",
             "name": "AttributeIgnored",
-            "summary": "",
+            "summary": "Un\u0020tableau\u0020pour\u0020les\u0020attributs\u0020qui\u0020ne\u0020sont\u0020pas\u0020utilis\u00E9s\u0020comme\u0020num\u00E9riques.",
             "url": "classes/Aggregate.html#property_AttributeIgnored"
         },                {
             "fqsen": "\\Aggregate\u003A\u003A\u0024AsNumerics",
             "name": "AsNumerics",
-            "summary": "",
+            "summary": "Un\u0020bool\u00E9en\u0020indiquant\u0020si\u0020les\u0020valeurs\u0020doivent\u0020\u00EAtre\u0020trait\u00E9es\u0020comme\u0020num\u00E9riques.",
             "url": "classes/Aggregate.html#property_AsNumerics"
         },                {
             "fqsen": "\\AggregateFile",
             "name": "AggregateFile",
-            "summary": "",
+            "summary": "Classe\u0020\u00E9tendant\u0020Aggregate\u0020pour\u0020agr\u00E9ger\u0020des\u0020donn\u00E9es\u0020\u00E0\u0020partir\u0020d\u0027un\u0020fichier\u0020ou\u0020d\u0027une\u0020table\u0020dans\u0020une\u0020base\u0020de\u0020donn\u00E9es.",
             "url": "classes/AggregateFile.html"
         },                {
             "fqsen": "\\AggregateFile\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020AggregateFile.",
             "url": "classes/AggregateFile.html#method___construct"
         },                {
             "fqsen": "\\AggregateFile\u003A\u003AretrieveData\u0028\u0029",
             "name": "retrieveData",
-            "summary": "",
+            "summary": "R\u00E9cup\u00E8re\u0020les\u0020donn\u00E9es\u0020de\u0020la\u0020base\u0020de\u0020donn\u00E9es\u0020ou\u0020du\u0020fichier,\u0020selon\u0020ce\u0020qui\u0020est\u0020disponible.",
             "url": "classes/AggregateFile.html#method_retrieveData"
         },                {
             "fqsen": "\\AggregateFile\u003A\u003AgetRequest\u0028\u0029",
             "name": "getRequest",
-            "summary": "",
+            "summary": "R\u00E9cup\u00E8re\u0020la\u0020requ\u00EAte\u0020SQL\u0020\u00E0\u0020partir\u0020du\u0020fichier,\u0020ou\u0020utilise\u0020le\u0020nom\u0020de\u0020la\u0020table\u0020par\u0020d\u00E9faut.",
             "url": "classes/AggregateFile.html#method_getRequest"
         },                {
             "fqsen": "\\AggregateFile\u003A\u003AsetRequest\u0028\u0029",
             "name": "setRequest",
-            "summary": "",
+            "summary": "Modifie\u0020la\u0020requ\u00EAte\u0020SQL\u0020stock\u00E9e\u0020dans\u0020le\u0020fichier\u0020par\u0020la\u0020nouvelle\u0020requ\u00EAte\u0020sp\u00E9cifi\u00E9e.",
             "url": "classes/AggregateFile.html#method_setRequest"
         },                {
             "fqsen": "\\AggregateFile\u003A\u003A\u0024Folder",
             "name": "Folder",
-            "summary": "",
+            "summary": "Le\u0020dossier\u0020de\u0020destination\u0020pour\u0020les\u0020requ\u00EAtes\u0020de\u0020fichier.",
             "url": "classes/AggregateFile.html#property_Folder"
         },                {
             "fqsen": "\\AggregateFile\u003A\u003A\u0024File",
             "name": "File",
-            "summary": "",
+            "summary": "Le\u0020chemin\u0020complet\u0020du\u0020fichier\u0020contenant\u0020la\u0020requ\u00EAte\u0020SQL.",
             "url": "classes/AggregateFile.html#property_File"
         },                {
             "fqsen": "\\AggregateFile\u003A\u003A\u0024DBTable",
             "name": "DBTable",
-            "summary": "",
+            "summary": "Le\u0020nom\u0020de\u0020la\u0020table\u0020dans\u0020la\u0020base\u0020de\u0020donn\u00E9es.",
             "url": "classes/AggregateFile.html#property_DBTable"
         },                {
             "fqsen": "\\AggregateFile\u003A\u003A\u0024ClassDB",
             "name": "ClassDB",
-            "summary": "",
+            "summary": "Le\u0020nom\u0020de\u0020la\u0020classe\u0020de\u0020base\u0020de\u0020donn\u00E9es\u0020utilis\u00E9e\u0020pour\u0020ex\u00E9cuter\u0020les\u0020requ\u00EAtes\u0020SQL.",
             "url": "classes/AggregateFile.html#property_ClassDB"
         },                {
             "fqsen": "\\Arrays",
             "name": "Arrays",
-            "summary": "",
+            "summary": "Classe\u0020utilitaire\u0020pour\u0020les\u0020op\u00E9rations\u0020sur\u0020les\u0020tableaux.",
             "url": "classes/Arrays.html"
         },                {
             "fqsen": "\\Arrays\u003A\u003AechoArr\u0028\u0029",
             "name": "echoArr",
-            "summary": "",
+            "summary": "Affiche\u0020un\u0020tableau\u0020associatif\u0020sous\u0020forme\u0020de\u0020cha\u00EEne\u0020de\u0020caract\u00E8res\u0020format\u00E9e.",
             "url": "classes/Arrays.html#method_echoArr"
         },                {
             "fqsen": "\\Arrays\u003A\u003AarrToString\u0028\u0029",
             "name": "arrToString",
-            "summary": "",
+            "summary": "Convertit\u0020un\u0020tableau\u0020associatif\u0020en\u0020une\u0020cha\u00EEne\u0020de\u0020caract\u00E8res\u0020format\u00E9e.",
             "url": "classes/Arrays.html#method_arrToString"
         },                {
             "fqsen": "\\Arrays\u003A\u003AgetIfSet\u0028\u0029",
             "name": "getIfSet",
-            "summary": "",
+            "summary": "R\u00E9cup\u00E8re\u0020la\u0020valeur\u0020d\u0027une\u0020cl\u00E9\u0020dans\u0020un\u0020tableau\u0020associatif,\u0020ou\u0020une\u0020valeur\u0020par\u0020d\u00E9faut\u0020si\u0020la\u0020cl\u00E9\u0020n\u0027existe\u0020pas.",
             "url": "classes/Arrays.html#method_getIfSet"
         },                {
             "fqsen": "\\Arrays\u003A\u003AgetOrCrash\u0028\u0029",
             "name": "getOrCrash",
-            "summary": "",
+            "summary": "R\u00E9cup\u00E8re\u0020la\u0020valeur\u0020d\u0027une\u0020cl\u00E9\u0020dans\u0020un\u0020tableau\u0020associatif\u0020ou\u0020g\u00E9n\u00E8re\u0020une\u0020exception\u0020si\u0020la\u0020cl\u00E9\u0020n\u0027existe\u0020pas.",
             "url": "classes/Arrays.html#method_getOrCrash"
         },                {
             "fqsen": "\\Arrays\u003A\u003AextractColumns\u0028\u0029",
             "name": "extractColumns",
-            "summary": "",
+            "summary": "Extrait\u0020les\u0020colonnes\u0020du\u0020tableau\u0020d\u0027entr\u00E9e\u0020en\u0020fonction\u0020des\u0020param\u00E8tres\u0020fournis.",
             "url": "classes/Arrays.html#method_extractColumns"
         },                {
             "fqsen": "\\Arrays\u003A\u003AreplaceIfNeeded\u0028\u0029",
             "name": "replaceIfNeeded",
-            "summary": "",
+            "summary": "Remplace\u0020une\u0020sous\u002Dcha\u00EEne\u0020dans\u0020une\u0020cha\u00EEne\u0020si\u0020n\u00E9cessaire.",
             "url": "classes/Arrays.html#method_replaceIfNeeded"
         },                {
             "fqsen": "\\Arrays\u003A\u003AexportAsCSV\u0028\u0029",
             "name": "exportAsCSV",
-            "summary": "",
+            "summary": "Exporte\u0020les\u0020donn\u00E9es\u0020fournies\u0020au\u0020format\u0020CSV.",
             "url": "classes/Arrays.html#method_exportAsCSV"
         },                {
             "fqsen": "\\Arrays\u003A\u003AgetCSVLine\u0028\u0029",
             "name": "getCSVLine",
-            "summary": "",
+            "summary": "R\u00E9cup\u00E8re\u0020la\u0020ligne\u0020correspondant\u0020\u00E0\u0020la\u0020valeur\u0020recherch\u00E9e\u0020dans\u0020un\u0020fichier\u0020CSV.",
             "url": "classes/Arrays.html#method_getCSVLine"
         },                {
             "fqsen": "\\Arrays\u003A\u003AarrayMergeRecursive\u0028\u0029",
             "name": "arrayMergeRecursive",
-            "summary": "Same\u0020behavior\u0020as\u0020array_merge_recursive,\u0020but\u0020numeric\u0020keys\u0020are\u0020considered\u0020as\u0020identical",
+            "summary": "Fusionne\u0020deux\u0020tableaux\u0020de\u0020mani\u00E8re\u0020r\u00E9cursive,\u0020en\u0020consid\u00E9rant\u0020les\u0020cl\u00E9s\u0020num\u00E9riques\u0020comme\u0020identiques.",
             "url": "classes/Arrays.html#method_arrayMergeRecursive"
         },                {
             "fqsen": "\\Arrays\u003A\u003AgetColumns\u0028\u0029",
             "name": "getColumns",
-            "summary": "Same\u0020behavior\u0020as\u0020array_column,\u0020but\u0020multiple\u0020columns\u0020are\u0020supported",
+            "summary": "R\u00E9cup\u00E8re\u0020les\u0020colonnes\u0020sp\u00E9cifi\u00E9es\u0020d\u0027un\u0020tableau\u0020associatif,\u0020en\u0020les\u0020renommant\u0020si\u0020n\u00E9cessaire.",
             "url": "classes/Arrays.html#method_getColumns"
         },                {
             "fqsen": "\\Arrays\u003A\u003AEXPORT_COLUMN_FROM_DATA",
@@ -5933,167 +6133,162 @@ Search.appendIndex(
         },                {
             "fqsen": "\\BasicPage",
             "name": "BasicPage",
-            "summary": "Basic\u0020features\u0020of\u0020a\u0020Page\u0020on\u0020this\u0020framework",
+            "summary": "",
             "url": "classes/BasicPage.html"
         },                {
             "fqsen": "\\BasicPage\u003A\u003AshowPageHeader\u0028\u0029",
             "name": "showPageHeader",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020abstraite\u0020qui\u0020doit\u0020\u00EAtre\u0020impl\u00E9ment\u00E9e\u0020dans\u0020les\u0020classes\u0020enfants\u0020pour\u0020afficher\u0020l\u0027en\u002Dt\u00EAte\u0020de\u0020la\u0020page.",
             "url": "classes/BasicPage.html#method_showPageHeader"
         },                {
             "fqsen": "\\BasicPage\u003A\u003AshowPageFooter\u0028\u0029",
             "name": "showPageFooter",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020abstraite\u0020qui\u0020doit\u0020\u00EAtre\u0020impl\u00E9ment\u00E9e\u0020dans\u0020les\u0020classes\u0020enfants\u0020pour\u0020afficher\u0020le\u0020pied\u0020de\u0020page\u0020de\u0020la\u0020page.",
             "url": "classes/BasicPage.html#method_showPageFooter"
         },                {
             "fqsen": "\\BasicPage\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020BasicPage.",
             "url": "classes/BasicPage.html#method___construct"
         },                {
             "fqsen": "\\BasicPage\u003A\u003A__destruct\u0028\u0029",
             "name": "__destruct",
-            "summary": "",
+            "summary": "Destructeur\u0020de\u0020la\u0020classe\u0020BasicPage.",
             "url": "classes/BasicPage.html#method___destruct"
         },                {
             "fqsen": "\\BasicPage\u003A\u003AaddMeta\u0028\u0029",
             "name": "addMeta",
-            "summary": "",
+            "summary": "Ajoute\u0020des\u0020m\u00E9tadonn\u00E9es\u0020\u00E0\u0020la\u0020page.",
             "url": "classes/BasicPage.html#method_addMeta"
         },                {
             "fqsen": "\\BasicPage\u003A\u003AaddJS\u0028\u0029",
             "name": "addJS",
-            "summary": "",
+            "summary": "Ajoute\u0020un\u0020fichier\u0020JavaScript\u0020\u00E0\u0020inclure\u0020dans\u0020la\u0020page.",
             "url": "classes/BasicPage.html#method_addJS"
         },                {
             "fqsen": "\\BasicPage\u003A\u003AaddCSS\u0028\u0029",
             "name": "addCSS",
-            "summary": "",
+            "summary": "Ajoute\u0020un\u0020fichier\u0020CSS\u0020\u00E0\u0020inclure\u0020dans\u0020la\u0020page.",
             "url": "classes/BasicPage.html#method_addCSS"
         },                {
             "fqsen": "\\BasicPage\u003A\u003AaddJScode\u0028\u0029",
             "name": "addJScode",
-            "summary": "",
+            "summary": "Ajoute\u0020du\u0020code\u0020JavaScript\u0020\u00E0\u0020inclure\u0020dans\u0020la\u0020page.",
             "url": "classes/BasicPage.html#method_addJScode"
         },                {
             "fqsen": "\\BasicPage\u003A\u003AaddCSScode\u0028\u0029",
             "name": "addCSScode",
-            "summary": "",
+            "summary": "Ajoute\u0020du\u0020code\u0020CSS\u0020\u00E0\u0020inclure\u0020dans\u0020la\u0020page.",
             "url": "classes/BasicPage.html#method_addCSScode"
         },                {
             "fqsen": "\\BasicPage\u003A\u003Aadd\u0028\u0029",
             "name": "add",
-            "summary": "",
+            "summary": "Ajoute\u0020du\u0020contenu\u0020HTML\u0020\u00E0\u0020afficher\u0020dans\u0020la\u0020page.",
             "url": "classes/BasicPage.html#method_add"
         },                {
             "fqsen": "\\BasicPage\u003A\u003AshowHead\u0028\u0029",
             "name": "showHead",
-            "summary": "",
+            "summary": "Affiche\u0020la\u0020section\u0020\u003Chead\u003E\u0020de\u0020la\u0020page\u0020HTML,\u0020incluant\u0020les\u0020m\u00E9tadonn\u00E9es,\u0020les\u0020fichiers\u0020JavaScript\u0020et\u0020CSS,\u0020ainsi\u0020que\u0020les\u0020codes\u0020JavaScript\u0020et\u0020CSS.",
             "url": "classes/BasicPage.html#method_showHead"
         },                {
             "fqsen": "\\BasicPage\u003A\u003AshowFoot\u0028\u0029",
             "name": "showFoot",
-            "summary": "",
+            "summary": "Affiche\u0020la\u0020fin\u0020de\u0020la\u0020page\u0020HTML.",
             "url": "classes/BasicPage.html#method_showFoot"
         },                {
             "fqsen": "\\BasicPage\u003A\u003AshowPageContent\u0028\u0029",
             "name": "showPageContent",
-            "summary": "",
+            "summary": "Affiche\u0020le\u0020contenu\u0020HTML\u0020ajout\u00E9\u0020\u00E0\u0020la\u0020page\u0020\u00E0\u0020l\u0027aide\u0020de\u0020la\u0020m\u00E9thode\u0020add\u0028\u0029.",
             "url": "classes/BasicPage.html#method_showPageContent"
         },                {
             "fqsen": "\\BasicPage\u003A\u003Aredirect\u0028\u0029",
             "name": "redirect",
-            "summary": "",
+            "summary": "Effectue\u0020une\u0020redirection\u0020vers\u0020l\u0027URL\u0020sp\u00E9cifi\u00E9e.",
             "url": "classes/BasicPage.html#method_redirect"
         },                {
-            "fqsen": "\\BasicPage\u003A\u003A\u0024SiteTitle",
-            "name": "SiteTitle",
-            "summary": "",
-            "url": "classes/BasicPage.html#property_SiteTitle"
-        },                {
-            "fqsen": "\\BasicPage\u003A\u003A\u0024PageTitle",
-            "name": "PageTitle",
-            "summary": "",
-            "url": "classes/BasicPage.html#property_PageTitle"
+            "fqsen": "\\BasicPage\u003A\u003A\u0024MetaList",
+            "name": "MetaList",
+            "summary": "Tableau\u0020contenant\u0020les\u0020m\u00E9tadonn\u00E9es\u0020de\u0020la\u0020page.",
+            "url": "classes/BasicPage.html#property_MetaList"
         },                {
             "fqsen": "\\BasicPage\u003A\u003A\u0024CSSList",
             "name": "CSSList",
-            "summary": "",
+            "summary": "Tableau\u0020contenant\u0020les\u0020chemins\u0020des\u0020fichiers\u0020CSS\u0020\u00E0\u0020inclure\u0020dans\u0020la\u0020page.",
             "url": "classes/BasicPage.html#property_CSSList"
         },                {
             "fqsen": "\\BasicPage\u003A\u003A\u0024CSSCodes",
             "name": "CSSCodes",
-            "summary": "",
+            "summary": "Tableau\u0020contenant\u0020les\u0020codes\u0020CSS\u0020\u00E0\u0020inclure\u0020dans\u0020la\u0020page.",
             "url": "classes/BasicPage.html#property_CSSCodes"
         },                {
             "fqsen": "\\BasicPage\u003A\u003A\u0024JSList",
             "name": "JSList",
-            "summary": "",
+            "summary": "Tableau\u0020contenant\u0020les\u0020chemins\u0020des\u0020fichiers\u0020JavaScript\u0020\u00E0\u0020inclure\u0020dans\u0020la\u0020page.",
             "url": "classes/BasicPage.html#property_JSList"
         },                {
             "fqsen": "\\BasicPage\u003A\u003A\u0024JSCodes",
             "name": "JSCodes",
-            "summary": "",
+            "summary": "Tableau\u0020contenant\u0020les\u0020codes\u0020JavaScript\u0020\u00E0\u0020inclure\u0020dans\u0020la\u0020page.",
             "url": "classes/BasicPage.html#property_JSCodes"
         },                {
             "fqsen": "\\BasicPage\u003A\u003A\u0024HTMLContent",
             "name": "HTMLContent",
-            "summary": "",
+            "summary": "Tableau\u0020contenant\u0020le\u0020contenu\u0020HTML\u0020\u00E0\u0020afficher\u0020dans\u0020la\u0020page.",
             "url": "classes/BasicPage.html#property_HTMLContent"
         },                {
             "fqsen": "\\BasicPage\u003A\u003A\u0024RedirectURL",
             "name": "RedirectURL",
-            "summary": "",
+            "summary": "URL\u0020de\u0020redirection.\u0020Si\u0020d\u00E9finie,\u0020la\u0020page\u0020redirigera\u0020vers\u0020cette\u0020URL.",
             "url": "classes/BasicPage.html#property_RedirectURL"
         },                {
             "fqsen": "\\BasicWS",
             "name": "BasicWS",
-            "summary": "",
+            "summary": "Classe\u0020abstraite\u0020repr\u00E9sentant\u0020un\u0020service\u0020Web\u0020de\u0020base.",
             "url": "classes/BasicWS.html"
         },                {
             "fqsen": "\\BasicWS\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020BasicWS.",
             "url": "classes/BasicWS.html#method___construct"
         },                {
             "fqsen": "\\BasicWS\u003A\u003A__destruct\u0028\u0029",
             "name": "__destruct",
-            "summary": "",
+            "summary": "Destructeur\u0020de\u0020la\u0020classe\u0020BasicWS.",
             "url": "classes/BasicWS.html#method___destruct"
         },                {
             "fqsen": "\\BasicWS\u003A\u003Aserve\u0028\u0029",
             "name": "serve",
-            "summary": "",
+            "summary": "Fonction\u0020principale\u0020du\u0020service\u0020Web.",
             "url": "classes/BasicWS.html#method_serve"
         },                {
             "fqsen": "\\BasicWS\u003A\u003Anothing\u0028\u0029",
             "name": "nothing",
-            "summary": "",
+            "summary": "Fonction\u0020utilis\u00E9e\u0020par\u0020les\u0020classes\u0020enfants\u0020comme\u0020fonction\u0020par\u0020d\u00E9faut.",
             "url": "classes/BasicWS.html#method_nothing"
         },                {
             "fqsen": "\\Connection",
             "name": "Connection",
-            "summary": "",
+            "summary": "Trait\u0020repr\u00E9sentant\u0020des\u0020fonctionnalit\u00E9s\u0020de\u0020connexion.",
             "url": "classes/Connection.html"
         },                {
             "fqsen": "\\Connection\u003A\u003AconnectionForm\u0028\u0029",
             "name": "connectionForm",
-            "summary": "",
+            "summary": "Affiche\u0020le\u0020formulaire\u0020de\u0020connexion.",
             "url": "classes/Connection.html#method_connectionForm"
         },                {
             "fqsen": "\\Connection\u003A\u003AconnectionHandle\u0028\u0029",
             "name": "connectionHandle",
-            "summary": "",
+            "summary": "G\u00E8re\u0020la\u0020soumission\u0020du\u0020formulaire\u0020de\u0020connexion.",
             "url": "classes/Connection.html#method_connectionHandle"
         },                {
             "fqsen": "\\Connection\u003A\u003AconnectionSuccess\u0028\u0029",
             "name": "connectionSuccess",
-            "summary": "",
+            "summary": "Affiche\u0020un\u0020message\u0020de\u0020succ\u00E8s\u0020de\u0020connexion.",
             "url": "classes/Connection.html#method_connectionSuccess"
         },                {
             "fqsen": "\\Connection\u003A\u003AconnectionError\u0028\u0029",
             "name": "connectionError",
-            "summary": "",
+            "summary": "Affiche\u0020un\u0020message\u0020d\u0027erreur\u0020de\u0020connexion.",
             "url": "classes/Connection.html#method_connectionError"
         },                {
             "fqsen": "\\Connection\u003A\u003A\u0024RES_NO_CONNEC",
@@ -6158,97 +6353,97 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CuboideBase",
             "name": "CuboideBase",
-            "summary": "",
+            "summary": "Classe\u0020de\u0020base\u0020abstraite\u0020pour\u0020les\u0020Cuboides.",
             "url": "classes/CuboideBase.html"
         },                {
             "fqsen": "\\CuboideBase\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020CuboideBase.",
             "url": "classes/CuboideBase.html#method___construct"
         },                {
             "fqsen": "\\CuboideBase\u003A\u003AcomputeCuboide\u0028\u0029",
             "name": "computeCuboide",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020abstraite\u0020pour\u0020calculer\u0020le\u0020Cuboide.",
             "url": "classes/CuboideBase.html#method_computeCuboide"
         },                {
             "fqsen": "\\CuboideBase\u003A\u003AlogVar\u0028\u0029",
             "name": "logVar",
-            "summary": "",
+            "summary": "Enregistre\u0020une\u0020variable\u0020pour\u0020le\u0020d\u00E9bogage.",
             "url": "classes/CuboideBase.html#method_logVar"
         },                {
             "fqsen": "\\CuboideBase\u003A\u003Alog\u0028\u0029",
             "name": "log",
-            "summary": "",
+            "summary": "Enregistre\u0020un\u0020message\u0020dans\u0020le\u0020log\u0020ou\u0020affiche\u0020si\u0020c\u0027est\u0020le\u0020Cuboide\u0020courant.",
             "url": "classes/CuboideBase.html#method_log"
         },                {
             "fqsen": "\\CuboideBase\u003A\u003AisEquivalent\u0028\u0029",
             "name": "isEquivalent",
-            "summary": "",
+            "summary": "V\u00E9rifie\u0020si\u0020une\u0020ligne\u0020donn\u00E9e\u0020est\u0020\u00E9quivalente\u0020\u00E0\u0020une\u0020ligne\u0020de\u0020r\u00E9f\u00E9rence.",
             "url": "classes/CuboideBase.html#method_isEquivalent"
         },                {
             "fqsen": "\\CuboideBase\u003A\u003AgetID\u0028\u0029",
             "name": "getID",
-            "summary": "",
+            "summary": "ID\u0020du\u0020cuboide\u0020\u0028combinaison\u0020de\u0020ColIDs\u0029.",
             "url": "classes/CuboideBase.html#method_getID"
         },                {
             "fqsen": "\\CuboideBase\u003A\u003AgetDataSet\u0028\u0029",
             "name": "getDataSet",
-            "summary": "",
+            "summary": "Tableau\u0020de\u0020donn\u00E9es\u0020index\u00E9\u0020par\u0020RowID\u0020et\u0020ColID\u0020des\u0020mesures\u0020de\u0020la\u0020relation.",
             "url": "classes/CuboideBase.html#method_getDataSet"
         },                {
             "fqsen": "\\CuboideBase\u003A\u003AgetRowHeaders\u0028\u0029",
             "name": "getRowHeaders",
-            "summary": "",
+            "summary": "Tableau\u0020des\u0020en\u002Dt\u00EAtes\u0020de\u0020lignes\u0020index\u00E9\u0020par\u0020RowID\u0020des\u0020identifiants\u0020de\u0020la\u0020relation.",
             "url": "classes/CuboideBase.html#method_getRowHeaders"
         },                {
             "fqsen": "\\CuboideBase\u003A\u003AgetColIDs\u0028\u0029",
             "name": "getColIDs",
-            "summary": "",
+            "summary": "Tableau\u0020des\u0020identifiants\u0020de\u0020colonnes\u0020index\u00E9\u0020par\u0020ColID\u0020des\u0020identifiants\u0020de\u0020mesure.",
             "url": "classes/CuboideBase.html#method_getColIDs"
         },                {
             "fqsen": "\\CuboideBase\u003A\u003AisValid\u0028\u0029",
             "name": "isValid",
-            "summary": "",
+            "summary": "Indique\u0020si\u0020le\u0020cuboide\u0020est\u0020valide\u0020ou\u0020non.",
             "url": "classes/CuboideBase.html#method_isValid"
         },                {
             "fqsen": "\\CuboideBase\u003A\u003AgetFilteredIDs\u0028\u0029",
             "name": "getFilteredIDs",
-            "summary": "",
+            "summary": "Tableau\u0020des\u0020identifiants\u0020de\u0020lignes\u0020apr\u00E8s\u0020le\u0020filtrage\u0020SkyLine.",
             "url": "classes/CuboideBase.html#method_getFilteredIDs"
         },                {
             "fqsen": "\\CuboideBase\u003A\u003AgetComputedIDs\u0028\u0029",
             "name": "getComputedIDs",
-            "summary": "",
+            "summary": "Tableau\u0020des\u0020identifiants\u0020de\u0020lignes\u0020apr\u00E8s\u0020le\u0020traitement\u0020Taged.",
             "url": "classes/CuboideBase.html#method_getComputedIDs"
         },                {
             "fqsen": "\\CuboideBase\u003A\u003AgetRowHeadersFiltered\u0028\u0029",
             "name": "getRowHeadersFiltered",
-            "summary": "",
+            "summary": "Retourne\u0020les\u0020en\u002Dt\u00EAtes\u0020de\u0020lignes\u0020filtr\u00E9es.",
             "url": "classes/CuboideBase.html#method_getRowHeadersFiltered"
         },                {
             "fqsen": "\\CuboideBase\u003A\u003AgetDataSetFiltered\u0028\u0029",
             "name": "getDataSetFiltered",
-            "summary": "",
+            "summary": "Retourne\u0020le\u0020jeu\u0020de\u0020donn\u00E9es\u0020filtr\u00E9es.",
             "url": "classes/CuboideBase.html#method_getDataSetFiltered"
         },                {
             "fqsen": "\\CuboideBase\u003A\u003AgetRowHeadersComputed\u0028\u0029",
             "name": "getRowHeadersComputed",
-            "summary": "",
+            "summary": "Retourne\u0020les\u0020en\u002Dt\u00EAtes\u0020de\u0020lignes\u0020calcul\u00E9es.",
             "url": "classes/CuboideBase.html#method_getRowHeadersComputed"
         },                {
             "fqsen": "\\CuboideBase\u003A\u003AgetDataSetComputed\u0028\u0029",
             "name": "getDataSetComputed",
-            "summary": "",
+            "summary": "Retourne\u0020le\u0020jeu\u0020de\u0020donn\u00E9es\u0020calcul\u00E9es.",
             "url": "classes/CuboideBase.html#method_getDataSetComputed"
         },                {
             "fqsen": "\\CuboideBase\u003A\u003AgetEquivalenceClasses\u0028\u0029",
             "name": "getEquivalenceClasses",
-            "summary": "",
+            "summary": "Retourne\u0020les\u0020classes\u0020d\u0027\u00E9quivalence\u0020pour\u0020les\u0020lignes.",
             "url": "classes/CuboideBase.html#method_getEquivalenceClasses"
         },                {
             "fqsen": "\\CuboideBase\u003A\u003ACURRENT",
             "name": "CURRENT",
-            "summary": "",
+            "summary": "Nom\u0020du\u0020Cuboide\u0020courant\u0020\u0028pour\u0020le\u0020debuggage\u0029",
             "url": "classes/CuboideBase.html#constant_CURRENT"
         },                {
             "fqsen": "\\CuboideBase\u003A\u003A\u0024ID",
@@ -6298,52 +6493,52 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Database",
             "name": "Database",
-            "summary": "",
+            "summary": "Classe\u0020abstraite\u0020de\u0020gestion\u0020de\u0020la\u0020base\u0020de\u0020donn\u00E9es.",
             "url": "classes/Database.html"
         },                {
             "fqsen": "\\Database\u003A\u003Ainit\u0028\u0029",
             "name": "init",
-            "summary": "",
+            "summary": "Initialise\u0020la\u0020connexion\u0020\u00E0\u0020la\u0020base\u0020de\u0020donn\u00E9es.",
             "url": "classes/Database.html#method_init"
         },                {
             "fqsen": "\\Database\u003A\u003Aclose\u0028\u0029",
             "name": "close",
-            "summary": "",
+            "summary": "Ferme\u0020la\u0020connexion\u0020\u00E0\u0020la\u0020base\u0020de\u0020donn\u00E9es\u0020en\u0020mettant\u0020l\u0027objet\u0020PDO\u0020\u00E0\u0020NULL.",
             "url": "classes/Database.html#method_close"
         },                {
             "fqsen": "\\Database\u003A\u003Aexecute\u0028\u0029",
             "name": "execute",
-            "summary": "",
+            "summary": "Ex\u00E9cute\u0020une\u0020requ\u00EAte\u0020sur\u0020la\u0020base\u0020de\u0020donn\u00E9es.",
             "url": "classes/Database.html#method_execute"
         },                {
             "fqsen": "\\Database\u003A\u003Astats\u0028\u0029",
             "name": "stats",
-            "summary": "",
+            "summary": "WIP",
             "url": "classes/Database.html#method_stats"
         },                {
             "fqsen": "\\Database\u003A\u003AgetResults\u0028\u0029",
             "name": "getResults",
-            "summary": "",
+            "summary": "Retourne\u0020les\u0020r\u00E9sultats\u0020de\u0020la\u0020derni\u00E8re\u0020requ\u00EAte\u0020ex\u00E9cut\u00E9e.",
             "url": "classes/Database.html#method_getResults"
         },                {
             "fqsen": "\\Database\u003A\u003Aescape4HTML\u0028\u0029",
             "name": "escape4HTML",
-            "summary": "",
+            "summary": "\u00C9chappe\u0020les\u0020caract\u00E8res\u0020sp\u00E9ciaux\u0020d\u0027une\u0020cha\u00EEne\u0020pour\u0020une\u0020utilisation\u0020s\u00FBre\u0020dans\u0020du\u0020HTML.",
             "url": "classes/Database.html#method_escape4HTML"
         },                {
             "fqsen": "\\Database\u003A\u003Aescape4Text\u0028\u0029",
             "name": "escape4Text",
-            "summary": "",
+            "summary": "\u00C9chappe\u0020les\u0020caract\u00E8res\u0020sp\u00E9ciaux\u0020d\u0027une\u0020cha\u00EEne\u0020pour\u0020une\u0020utilisation\u0020s\u00FBre\u0020dans\u0020du\u0020texte\u0020brut.",
             "url": "classes/Database.html#method_escape4Text"
         },                {
             "fqsen": "\\Database\u003A\u003AtestEscapeText\u0028\u0029",
             "name": "testEscapeText",
-            "summary": "",
+            "summary": "Teste\u0020si\u0020l\u0027\u00E9chappement\u0020de\u0020texte\u0020fonctionne\u0020correctement\u0020pour\u0020une\u0020cha\u00EEne\u0020donn\u00E9e.",
             "url": "classes/Database.html#method_testEscapeText"
         },                {
             "fqsen": "\\Database\u003A\u003AtestEscape4HTML\u0028\u0029",
             "name": "testEscape4HTML",
-            "summary": "",
+            "summary": "Teste\u0020l\u0027\u00E9chappement\u0020pour\u0020les\u0020caract\u00E8res\u0020HTML\u0020sp\u00E9ciaux.",
             "url": "classes/Database.html#method_testEscape4HTML"
         },                {
             "fqsen": "\\Database\u003A\u003A\u0024DBserver",
@@ -6373,57 +6568,57 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Date",
             "name": "Date",
-            "summary": "",
+            "summary": "Classe\u0020Date\u0020pour\u0020g\u00E9rer\u0020les\u0020op\u00E9rations\u0020li\u00E9es\u0020\u00E0\u0020la\u0020date.",
             "url": "classes/Date.html"
         },                {
             "fqsen": "\\Date\u003A\u003AgetDateHTML\u0028\u0029",
             "name": "getDateHTML",
-            "summary": "",
+            "summary": "R\u00E9cup\u00E8re\u0020la\u0020date\u0020actuelle\u0020au\u0020format\u0020HTML\u0020\u0028jj\/mm\/aa\u0020hh\u003Amm\u003Ass\u0029.",
             "url": "classes/Date.html#method_getDateHTML"
         },                {
             "fqsen": "\\Form",
             "name": "Form",
-            "summary": "",
+            "summary": "Classe\u0020Form\u0020pour\u0020g\u00E9rer\u0020les\u0020op\u00E9rations\u0020li\u00E9es\u0020aux\u0020formulaires.",
             "url": "classes/Form.html"
         },                {
             "fqsen": "\\Form\u003A\u003AgetData\u0028\u0029",
             "name": "getData",
-            "summary": "",
+            "summary": "R\u00E9cup\u00E8re\u0020les\u0020donn\u00E9es\u0020du\u0020formulaire\u0020en\u0020fonction\u0020du\u0020nom\u0020du\u0020champ\u0020sp\u00E9cifi\u00E9.",
             "url": "classes/Form.html#method_getData"
         },                {
             "fqsen": "\\Form\u003A\u003AgetFileName\u0028\u0029",
             "name": "getFileName",
-            "summary": "",
+            "summary": "R\u00E9cup\u00E8re\u0020le\u0020nom\u0020du\u0020fichier\u0020upload\u00E9\u0020pour\u0020le\u0020champ\u0020sp\u00E9cifi\u00E9.",
             "url": "classes/Form.html#method_getFileName"
         },                {
             "fqsen": "\\HTML",
             "name": "HTML",
-            "summary": "",
+            "summary": "Classe\u0020HTML\u0020pour\u0020g\u00E9n\u00E9rer\u0020des\u0020balises\u0020HTML\u0020de\u0020mani\u00E8re\u0020simplifi\u00E9e.",
             "url": "classes/HTML.html"
         },                {
             "fqsen": "\\HTML\u003A\u003AshowHeader\u0028\u0029",
             "name": "showHeader",
-            "summary": "",
+            "summary": "Affiche\u0020l\u0027en\u002Dt\u00EAte\u0020HTML\u0020avec\u0020le\u0020titre\u0020de\u0020la\u0020page\u0020sp\u00E9cifi\u00E9e.",
             "url": "classes/HTML.html#method_showHeader"
         },                {
             "fqsen": "\\HTML\u003A\u003AshowFooter\u0028\u0029",
             "name": "showFooter",
-            "summary": "",
+            "summary": "Affiche\u0020le\u0020pied\u0020de\u0020page\u0020HTML.",
             "url": "classes/HTML.html#method_showFooter"
         },                {
             "fqsen": "\\HTML\u003A\u003AshowMenu\u0028\u0029",
             "name": "showMenu",
-            "summary": "",
+            "summary": "Affiche\u0020le\u0020menu\u0020de\u0020navigation.",
             "url": "classes/HTML.html#method_showMenu"
         },                {
             "fqsen": "\\HTML\u003A\u003Aredirect\u0028\u0029",
             "name": "redirect",
-            "summary": "",
+            "summary": "Redirige\u0020vers\u0020une\u0020autre\u0020URL\u0020avec\u0020une\u0020pause\u0020de\u0020temps\u0020optionnelle.",
             "url": "classes/HTML.html#method_redirect"
         },                {
             "fqsen": "\\HTML\u003A\u003AshowRedirect\u0028\u0029",
             "name": "showRedirect",
-            "summary": "",
+            "summary": "Affiche\u0020une\u0020redirection\u0020automatique\u0020vers\u0020une\u0020autre\u0020URL\u0020avec\u0020une\u0020pause\u0020de\u0020temps\u0020optionnelle.",
             "url": "classes/HTML.html#method_showRedirect"
         },                {
             "fqsen": "\\HTML\u003A\u003Abool\u0028\u0029",
@@ -7203,97 +7398,97 @@ Search.appendIndex(
         },                {
             "fqsen": "\\HTML\u003A\u003APAGE_SELECTOR",
             "name": "PAGE_SELECTOR",
-            "summary": "",
+            "summary": "Constante\u0020pour\u0020le\u0020s\u00E9lecteur\u0020de\u0020page\u0020utilis\u00E9\u0020dans\u0020les\u0020liens\u0020internes",
             "url": "classes/HTML.html#constant_PAGE_SELECTOR"
         },                {
             "fqsen": "\\Log",
             "name": "Log",
-            "summary": "",
+            "summary": "Classe\u0020utilitaire\u0020pour\u0020la\u0020gestion\u0020des\u0020logs\u0020dans\u0020une\u0020application\u0020PHP.",
             "url": "classes/Log.html"
         },                {
             "fqsen": "\\Log\u003A\u003Afct_enter\u0028\u0029",
             "name": "fct_enter",
-            "summary": "",
+            "summary": "D\u00E9marre\u0020le\u0020chronom\u00E8tre\u0020pour\u0020une\u0020fonction\u0020donn\u00E9e\u0020et\u0020affiche\u0020un\u0020message\u0020de\u0020log\u0020de\u0020d\u00E9but.",
             "url": "classes/Log.html#method_fct_enter"
         },                {
             "fqsen": "\\Log\u003A\u003Afct_exit\u0028\u0029",
             "name": "fct_exit",
-            "summary": "",
+            "summary": "Arr\u00EAte\u0020le\u0020chronom\u00E8tre\u0020pour\u0020une\u0020fonction\u0020donn\u00E9e\u0020et\u0020affiche\u0020un\u0020message\u0020de\u0020log\u0020de\u0020fin\u0020avec\u0020le\u0020temps\u0020d\u0027ex\u00E9cution.",
             "url": "classes/Log.html#method_fct_exit"
         },                {
             "fqsen": "\\Log\u003A\u003Aerror\u0028\u0029",
             "name": "error",
-            "summary": "",
+            "summary": "Affiche\u0020un\u0020message\u0020de\u0020log\u0020de\u0020niveau\u0020ERROR.",
             "url": "classes/Log.html#method_error"
         },                {
             "fqsen": "\\Log\u003A\u003Awarning\u0028\u0029",
             "name": "warning",
-            "summary": "",
+            "summary": "Affiche\u0020un\u0020message\u0020de\u0020log\u0020de\u0020niveau\u0020WARNING.",
             "url": "classes/Log.html#method_warning"
         },                {
             "fqsen": "\\Log\u003A\u003Ainfo\u0028\u0029",
             "name": "info",
-            "summary": "",
+            "summary": "Affiche\u0020un\u0020message\u0020de\u0020log\u0020de\u0020niveau\u0020INFO.",
             "url": "classes/Log.html#method_info"
         },                {
             "fqsen": "\\Log\u003A\u003Adebug\u0028\u0029",
             "name": "debug",
-            "summary": "",
+            "summary": "Affiche\u0020un\u0020message\u0020de\u0020log\u0020de\u0020niveau\u0020DEBUG.",
             "url": "classes/Log.html#method_debug"
         },                {
             "fqsen": "\\Log\u003A\u003AlogVar\u0028\u0029",
             "name": "logVar",
-            "summary": "",
+            "summary": "Affiche\u0020le\u0020contenu\u0020d\u0027une\u0020variable\u0020dans\u0020les\u0020logs\u0020\u0028niveau\u0020DEBUG\u0029.",
             "url": "classes/Log.html#method_logVar"
         },                {
             "fqsen": "\\Log\u003A\u003AlogText\u0028\u0029",
             "name": "logText",
-            "summary": "",
+            "summary": "Affiche\u0020un\u0020message\u0020de\u0020log\u0020avec\u0020le\u0020niveau\u0020sp\u00E9cifi\u00E9,\u0020la\u0020date\/heure,\u0020le\u0020fichier\u0020et\u0020la\u0020ligne\u0020d\u0027appel.",
             "url": "classes/Log.html#method_logText"
         },                {
             "fqsen": "\\Log\u003A\u003AsetLogFile\u0028\u0029",
             "name": "setLogFile",
-            "summary": "",
+            "summary": "D\u00E9finit\u0020le\u0020chemin\u0020du\u0020fichier\u0020de\u0020log.",
             "url": "classes/Log.html#method_setLogFile"
         },                {
             "fqsen": "\\Log\u003A\u003AsetLogLink\u0028\u0029",
             "name": "setLogLink",
-            "summary": "",
+            "summary": "D\u00E9finit\u0020le\u0020chemin\u0020du\u0020lien\u0020symbolique\u0020vers\u0020le\u0020fichier\u0020de\u0020log.",
             "url": "classes/Log.html#method_setLogLink"
         },                {
             "fqsen": "\\Log\u003A\u003AsetDebug\u0028\u0029",
             "name": "setDebug",
-            "summary": "",
+            "summary": "Active\u0020ou\u0020d\u00E9sactive\u0020le\u0020mode\u0020de\u0020d\u00E9bogage\u0020pour\u0020un\u0020fichier\u0020sp\u00E9cifi\u00E9.",
             "url": "classes/Log.html#method_setDebug"
         },                {
             "fqsen": "\\Log\u003A\u003AisDebug\u0028\u0029",
             "name": "isDebug",
-            "summary": "",
+            "summary": "V\u00E9rifie\u0020si\u0020le\u0020d\u00E9bogage\u0020est\u0020activ\u00E9\u0020pour\u0020un\u0020fichier\u0020sp\u00E9cifi\u00E9.",
             "url": "classes/Log.html#method_isDebug"
         },                {
             "fqsen": "\\Log\u003A\u003AERROR",
             "name": "ERROR",
-            "summary": "",
+            "summary": "Niveau\u0020de\u0020log\u0020pour\u0020les\u0020erreurs.",
             "url": "classes/Log.html#constant_ERROR"
         },                {
             "fqsen": "\\Log\u003A\u003AWARNING",
             "name": "WARNING",
-            "summary": "",
+            "summary": "Niveau\u0020de\u0020log\u0020pour\u0020les\u0020avertissements.",
             "url": "classes/Log.html#constant_WARNING"
         },                {
             "fqsen": "\\Log\u003A\u003AINFO",
             "name": "INFO",
-            "summary": "",
+            "summary": "Niveau\u0020de\u0020log\u0020pour\u0020les\u0020informations.",
             "url": "classes/Log.html#constant_INFO"
         },                {
             "fqsen": "\\Log\u003A\u003ADEBUG",
             "name": "DEBUG",
-            "summary": "",
+            "summary": "Niveau\u0020de\u0020log\u0020pour\u0020le\u0020d\u00E9bogage.",
             "url": "classes/Log.html#constant_DEBUG"
         },                {
             "fqsen": "\\Log\u003A\u003AALL",
             "name": "ALL",
-            "summary": "",
+            "summary": "Constante\u0020sp\u00E9ciale\u0020pour\u0020activer\u0020le\u0020d\u00E9bogage\u0020pour\u0020tous\u0020les\u0020fichiers.",
             "url": "classes/Log.html#constant_ALL"
         },                {
             "fqsen": "\\Log\u003A\u003A\u0024LogLinkSet",
@@ -7533,12 +7728,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\THPage",
             "name": "THPage",
-            "summary": "Basic\u0020features\u0020of\u0020a\u0020Page\u0020on\u0020this\u0020framework",
+            "summary": "",
             "url": "classes/THPage.html"
         },                {
             "fqsen": "\\THPage\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020BasicPage.",
             "url": "classes/THPage.html#method___construct"
         },                {
             "fqsen": "\\THPage\u003A\u003Alinks\u0028\u0029",
@@ -7548,12 +7743,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\THPage\u003A\u003AshowPageHeader\u0028\u0029",
             "name": "showPageHeader",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020abstraite\u0020qui\u0020doit\u0020\u00EAtre\u0020impl\u00E9ment\u00E9e\u0020dans\u0020les\u0020classes\u0020enfants\u0020pour\u0020afficher\u0020l\u0027en\u002Dt\u00EAte\u0020de\u0020la\u0020page.",
             "url": "classes/THPage.html#method_showPageHeader"
         },                {
             "fqsen": "\\THPage\u003A\u003AshowPageFooter\u0028\u0029",
             "name": "showPageFooter",
-            "summary": "",
+            "summary": "M\u00E9thode\u0020abstraite\u0020qui\u0020doit\u0020\u00EAtre\u0020impl\u00E9ment\u00E9e\u0020dans\u0020les\u0020classes\u0020enfants\u0020pour\u0020afficher\u0020le\u0020pied\u0020de\u0020page\u0020de\u0020la\u0020page.",
             "url": "classes/THPage.html#method_showPageFooter"
         },                {
             "fqsen": "\\THPage\u003A\u003ATAGED_URL",
@@ -7568,12 +7763,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\THWS",
             "name": "THWS",
-            "summary": "",
+            "summary": "Classe\u0020abstraite\u0020repr\u00E9sentant\u0020un\u0020service\u0020Web\u0020de\u0020base.",
             "url": "classes/THWS.html"
         },                {
             "fqsen": "\\THWS\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020BasicWS.",
             "url": "classes/THWS.html#method___construct"
         },                {
             "fqsen": "\\Trad",
@@ -7828,7 +8023,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\AggCollRequete",
             "name": "AggCollRequete",
-            "summary": "",
+            "summary": "Classe\u0020\u00E9tendant\u0020Aggregate\u0020pour\u0020agr\u00E9ger\u0020des\u0020donn\u00E9es\u0020\u00E0\u0020partir\u0020d\u0027un\u0020fichier\u0020ou\u0020d\u0027une\u0020table\u0020dans\u0020une\u0020base\u0020de\u0020donn\u00E9es.",
             "url": "classes/AggCollRequete.html"
         },                {
             "fqsen": "\\AggCollRequete\u003A\u003A\u0024Table",
@@ -7843,22 +8038,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\AggCollRequete\u003A\u003A\u0024File",
             "name": "File",
-            "summary": "",
+            "summary": "Le\u0020chemin\u0020complet\u0020du\u0020fichier\u0020contenant\u0020la\u0020requ\u00EAte\u0020SQL.",
             "url": "classes/AggCollRequete.html#property_File"
         },                {
             "fqsen": "\\AggCollVWCombat",
             "name": "AggCollVWCombat",
-            "summary": "",
+            "summary": "Classe\u0020pour\u0020l\u0027agr\u00E9gation\u0020de\u0020donn\u00E9es\u0020provenant\u0020d\u0027une\u0020table\u0020dans\u0020une\u0020base\u0020de\u0020donn\u00E9es.",
             "url": "classes/AggCollVWCombat.html"
         },                {
             "fqsen": "\\AggCollVWCombat\u003A\u003A\u0024Table",
             "name": "Table",
-            "summary": "",
+            "summary": "Le\u0020nom\u0020de\u0020la\u0020table\u0020dans\u0020la\u0020base\u0020de\u0020donn\u00E9es.",
             "url": "classes/AggCollVWCombat.html#property_Table"
         },                {
             "fqsen": "\\AggCollVWCombat\u003A\u003A\u0024DBClass",
             "name": "DBClass",
-            "summary": "",
+            "summary": "Le\u0020nom\u0020de\u0020la\u0020classe\u0020de\u0020base\u0020de\u0020donn\u00E9es\u0020utilis\u00E9e\u0020pour\u0020ex\u00E9cuter\u0020les\u0020requ\u00EAtes\u0020SQL.",
             "url": "classes/AggCollVWCombat.html#property_DBClass"
         },                {
             "fqsen": "\\GameType",

@@ -1,0 +1,6 @@
+<map id="SkyCube\__construct" name="SkyCube\__construct">
+<area shape="rect" id="node2" href="$class_sky_cube.html#aeccacbd6761b125ed1976e29d061bf41" title="SkyCube\\computeDataSet" alt="" coords="223,5,415,32"/>
+<area shape="rect" id="node4" href="$class_sky_cube.html#a66b8cb4ff0f25754d2384224c7e40ced" title="SkyCube\\generateCuboideList" alt="" coords="211,56,428,83"/>
+<area shape="rect" id="node3" href="$class_sky_cube.html#a055600504acd68aa4dfbb7f7d9425066" title="SkyCube\\getColID" alt="" coords="525,5,663,32"/>
+<area shape="rect" id="node5" href="$class_sky_cube.html#a19cef89f0ed6c66283b68fb9b4dcafa6" title="SkyCube\\generateCuboideListLvl" alt="" coords="476,56,712,83"/>
+</map>

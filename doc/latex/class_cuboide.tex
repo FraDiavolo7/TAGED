@@ -1,0 +1,247 @@
+\hypertarget{class_cuboide}{}\section{Cuboide Class Reference}
+\label{class_cuboide}\index{Cuboide@{Cuboide}}
+
+
+Inheritance diagram for Cuboide\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cuboide__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Cuboide\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{class_cuboide__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_cuboide_af2d05516a10563902f1e13a2f387e90b}{\+\_\+\+\_\+construct} ( \$Cuboide\+ID, \$Raw\+Data\+Set, \$Raw\+Row\+Headers, \$Raw\+Col\+I\+Ds, \$Min\+Max=self\+::\+T\+O\+\_\+\+M\+AX)
+\item 
+\hyperlink{class_cuboide_a53d2c94aad8c0cde1a7e3492bd94914d}{compute\+Cuboide} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{class_cuboide_afd49ea48fafb0362d27f78f6f4ef8b84}{T\+O\+\_\+\+M\+AX} = \textquotesingle{}max\textquotesingle{}
+\item 
+const \hyperlink{class_cuboide_aa9d05eb5bedc8406d495de6132fb693b}{T\+O\+\_\+\+M\+IN} = \textquotesingle{}min\textquotesingle{}
+\item 
+const \hyperlink{class_cuboide_addf8c5b96a0aa67d15fc9502e748546a}{T\+E\+S\+T\+\_\+\+ON} = self\+::\+T\+O\+\_\+\+M\+AX
+\item 
+const \hyperlink{class_cuboide_a534dda68c1a0a0ebfc8644e6f4ded546}{C\+U\+R\+R\+E\+NT} = \textquotesingle{}\textquotesingle{}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_cuboide_aec2eedda1f5b778028d663e925b19d02}{compute\+Data\+Set} ( \$Raw\+Data\+Set, \$Raw\+Col\+I\+Ds)
+\item 
+\hyperlink{class_cuboide_a3ff86ac8b2e6fa1bffdfb4404b4a01d3}{is\+In\+Cuboide} ( \$Considered\+Row\+ID)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_cuboide_a2efb593af39f6b2d067267ba4a9ffb4c}{\$\+Min\+Max}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 7 of file Cuboide.\+class.\+php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_cuboide_af2d05516a10563902f1e13a2f387e90b}\label{class_cuboide_af2d05516a10563902f1e13a2f387e90b}} 
+\index{Cuboide@{Cuboide}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!Cuboide@{Cuboide}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Cuboide\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{}]{\$\+Cuboide\+ID,  }\item[{}]{\$\+Raw\+Data\+Set,  }\item[{}]{\$\+Raw\+Row\+Headers,  }\item[{}]{\$\+Raw\+Col\+I\+Ds,  }\item[{}]{\$\+Min\+Max = {\ttfamily self\+:\+:TO\+\_\+MAX} }\end{DoxyParamCaption})}
+
+\hyperlink{class_cuboide}{Cuboide} constructor.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$\+Cuboide\+ID} & The \hyperlink{class_cuboide}{Cuboide} ID. \\
+\hline
+array & {\em \$\+Raw\+Data\+Set} & The raw data set. \\
+\hline
+array & {\em \$\+Raw\+Row\+Headers} & The raw row headers. \\
+\hline
+array & {\em \$\+Raw\+Col\+I\+Ds} & The raw column I\+Ds. \\
+\hline
+string & {\em \$\+Min\+Max} & The minimum or maximum value type (T\+O\+\_\+\+M\+AX or T\+O\+\_\+\+M\+IN). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 25 of file Cuboide.\+class.\+php.
+
+
+
+References \$\+Min\+Max, and compute\+Data\+Set().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cuboide_af2d05516a10563902f1e13a2f387e90b_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_cuboide_a53d2c94aad8c0cde1a7e3492bd94914d}\label{class_cuboide_a53d2c94aad8c0cde1a7e3492bd94914d}} 
+\index{Cuboide@{Cuboide}!compute\+Cuboide@{compute\+Cuboide}}
+\index{compute\+Cuboide@{compute\+Cuboide}!Cuboide@{Cuboide}}
+\subsubsection{\texorpdfstring{compute\+Cuboide()}{computeCuboide()}}
+{\footnotesize\ttfamily Cuboide\+::compute\+Cuboide (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Computes the \hyperlink{class_cuboide}{Cuboide}. 
+
+Definition at line 103 of file Cuboide.\+class.\+php.
+
+
+
+References is\+In\+Cuboide().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cuboide_a53d2c94aad8c0cde1a7e3492bd94914d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_cuboide_aec2eedda1f5b778028d663e925b19d02}\label{class_cuboide_aec2eedda1f5b778028d663e925b19d02}} 
+\index{Cuboide@{Cuboide}!compute\+Data\+Set@{compute\+Data\+Set}}
+\index{compute\+Data\+Set@{compute\+Data\+Set}!Cuboide@{Cuboide}}
+\subsubsection{\texorpdfstring{compute\+Data\+Set()}{computeDataSet()}}
+{\footnotesize\ttfamily Cuboide\+::compute\+Data\+Set (\begin{DoxyParamCaption}\item[{}]{\$\+Raw\+Data\+Set,  }\item[{}]{\$\+Raw\+Col\+I\+Ds }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Prepares the data set
+
+Removes empty lines Computes Accords classes 
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\+Raw\+Data\+Set} & \\
+\hline
+array & {\em \$\+Raw\+Col\+I\+Ds} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 43 of file Cuboide.\+class.\+php.
+
+
+
+Referenced by \+\_\+\+\_\+construct().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cuboide_aec2eedda1f5b778028d663e925b19d02_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_cuboide_a3ff86ac8b2e6fa1bffdfb4404b4a01d3}\label{class_cuboide_a3ff86ac8b2e6fa1bffdfb4404b4a01d3}} 
+\index{Cuboide@{Cuboide}!is\+In\+Cuboide@{is\+In\+Cuboide}}
+\index{is\+In\+Cuboide@{is\+In\+Cuboide}!Cuboide@{Cuboide}}
+\subsubsection{\texorpdfstring{is\+In\+Cuboide()}{isInCuboide()}}
+{\footnotesize\ttfamily Cuboide\+::is\+In\+Cuboide (\begin{DoxyParamCaption}\item[{}]{\$\+Considered\+Row\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Checks if a given row is in the \hyperlink{class_cuboide}{Cuboide}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$\+Considered\+Row\+ID} & The row ID to consider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Returns true if the row is in the \hyperlink{class_cuboide}{Cuboide}, otherwise false. 
+\end{DoxyReturn}
+
+
+Definition at line 123 of file Cuboide.\+class.\+php.
+
+
+
+Referenced by compute\+Cuboide().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cuboide_a3ff86ac8b2e6fa1bffdfb4404b4a01d3_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_cuboide_a2efb593af39f6b2d067267ba4a9ffb4c}\label{class_cuboide_a2efb593af39f6b2d067267ba4a9ffb4c}} 
+\index{Cuboide@{Cuboide}!\$\+Min\+Max@{\$\+Min\+Max}}
+\index{\$\+Min\+Max@{\$\+Min\+Max}!Cuboide@{Cuboide}}
+\subsubsection{\texorpdfstring{\$\+Min\+Max}{$MinMax}}
+{\footnotesize\ttfamily Cuboide\+::\$\+Min\+Max\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 128 of file Cuboide.\+class.\+php.
+
+
+
+Referenced by \+\_\+\+\_\+construct().
+
+\mbox{\Hypertarget{class_cuboide_a534dda68c1a0a0ebfc8644e6f4ded546}\label{class_cuboide_a534dda68c1a0a0ebfc8644e6f4ded546}} 
+\index{Cuboide@{Cuboide}!C\+U\+R\+R\+E\+NT@{C\+U\+R\+R\+E\+NT}}
+\index{C\+U\+R\+R\+E\+NT@{C\+U\+R\+R\+E\+NT}!Cuboide@{Cuboide}}
+\subsubsection{\texorpdfstring{C\+U\+R\+R\+E\+NT}{CURRENT}}
+{\footnotesize\ttfamily const Cuboide\+::\+C\+U\+R\+R\+E\+NT = \textquotesingle{}\textquotesingle{}}
+
+
+
+Definition at line 14 of file Cuboide.\+class.\+php.
+
+\mbox{\Hypertarget{class_cuboide_addf8c5b96a0aa67d15fc9502e748546a}\label{class_cuboide_addf8c5b96a0aa67d15fc9502e748546a}} 
+\index{Cuboide@{Cuboide}!T\+E\+S\+T\+\_\+\+ON@{T\+E\+S\+T\+\_\+\+ON}}
+\index{T\+E\+S\+T\+\_\+\+ON@{T\+E\+S\+T\+\_\+\+ON}!Cuboide@{Cuboide}}
+\subsubsection{\texorpdfstring{T\+E\+S\+T\+\_\+\+ON}{TEST\_ON}}
+{\footnotesize\ttfamily const Cuboide\+::\+T\+E\+S\+T\+\_\+\+ON = self\+::\+T\+O\+\_\+\+M\+AX}
+
+
+
+Definition at line 12 of file Cuboide.\+class.\+php.
+
+\mbox{\Hypertarget{class_cuboide_afd49ea48fafb0362d27f78f6f4ef8b84}\label{class_cuboide_afd49ea48fafb0362d27f78f6f4ef8b84}} 
+\index{Cuboide@{Cuboide}!T\+O\+\_\+\+M\+AX@{T\+O\+\_\+\+M\+AX}}
+\index{T\+O\+\_\+\+M\+AX@{T\+O\+\_\+\+M\+AX}!Cuboide@{Cuboide}}
+\subsubsection{\texorpdfstring{T\+O\+\_\+\+M\+AX}{TO\_MAX}}
+{\footnotesize\ttfamily const Cuboide\+::\+T\+O\+\_\+\+M\+AX = \textquotesingle{}max\textquotesingle{}}
+
+
+
+Definition at line 9 of file Cuboide.\+class.\+php.
+
+\mbox{\Hypertarget{class_cuboide_aa9d05eb5bedc8406d495de6132fb693b}\label{class_cuboide_aa9d05eb5bedc8406d495de6132fb693b}} 
+\index{Cuboide@{Cuboide}!T\+O\+\_\+\+M\+IN@{T\+O\+\_\+\+M\+IN}}
+\index{T\+O\+\_\+\+M\+IN@{T\+O\+\_\+\+M\+IN}!Cuboide@{Cuboide}}
+\subsubsection{\texorpdfstring{T\+O\+\_\+\+M\+IN}{TO\_MIN}}
+{\footnotesize\ttfamily const Cuboide\+::\+T\+O\+\_\+\+M\+IN = \textquotesingle{}min\textquotesingle{}}
+
+
+
+Definition at line 10 of file Cuboide.\+class.\+php.
+
+
+
+Referenced by Page\+Test\+Accords\textbackslash{}handle(), Page\+Test\+Sky\+Cube\textbackslash{}handle(), Page\+Test\+Sky\+Cube\+Emergent\textbackslash{}handle(), Page\+Run\+Sky\+Cube\+Analysis\textbackslash{}handle(), Page\+Show\+Sky\+Cube\textbackslash{}handle(), and Analysis\textbackslash{}prepare().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+taged/application/src/algo/\hyperlink{_cuboide_8class_8php}{Cuboide.\+class.\+php}\end{DoxyCompactItemize}
