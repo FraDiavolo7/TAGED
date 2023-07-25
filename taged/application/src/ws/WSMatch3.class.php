@@ -3,28 +3,28 @@
 /**
  * Service Web Match3
  * 
- * Gère toutes les données Match3 provenant du Match3.
+ * GÃ¨re toutes les donnÃ©es Match3 provenant du Match3.
  * @package TAGED\WebServices
  */
 class WSMatch3 extends TagedWS
 {
     /**
-     * Constante représentant les données Match3.
+     * Constante reprÃ©sentant les donnÃ©es Match3.
      */
     const WS_M3_DATA = 'data';
     
     /**
-     * Constante représentant le sélecteur Match3.
+     * Constante reprÃ©sentant le sÃ©lecteur Match3.
      */
     const WS_M3_SELECTOR = 'm3';
     
     /**
-     * Constante représentant la valeur par défaut du sélecteur Match3.
+     * Constante reprÃ©sentant la valeur par dÃ©faut du sÃ©lecteur Match3.
      */
     const WS_M3_DEFAULT = 'nothing';
     
     /**
-     * Liste des correspondances sélecteur Match3 - action.
+     * Liste des correspondances sÃ©lecteur Match3 - action.
      * @var array
      */
     const WS_M3_LIST = array (
@@ -36,10 +36,10 @@ class WSMatch3 extends TagedWS
     /**
      * Constructeur de la classe WSMatch3.
      * 
-     * Initialise un nouvel objet WSMatch3 en récupérant les données d'entrée passées en paramètre
-     * ou en utilisant la superglobale $_REQUEST si aucun paramètre n'est fourni.
+     * Initialise un nouvel objet WSMatch3 en rÃ©cupÃ©rant les donnÃ©es d'entrÃ©e passÃ©es en paramÃ¨tre
+     * ou en utilisant la superglobale $_REQUEST si aucun paramÃ¨tre n'est fourni.
      * 
-     * @param array|null $InputData Données d'entrée du service web Match3.
+     * @param array|null $InputData DonnÃ©es d'entrÃ©e du service web Match3.
      */
 	public function __construct ( $InputData = NULL )
 	{
@@ -50,9 +50,9 @@ class WSMatch3 extends TagedWS
 	/**
 	 * Fonction principale du service web.
 	 * 
-	 * Exécute l'action associée au sélecteur Match3 (récupéré via la méthode getM3Selector) et retourne le résultat.
+	 * ExÃ©cute l'action associÃ©e au sÃ©lecteur Match3 (rÃ©cupÃ©rÃ© via la mÃ©thode getM3Selector) et retourne le rÃ©sultat.
 	 * 
-	 * @return string Résultat de l'action du service web Match3.
+	 * @return string RÃ©sultat de l'action du service web Match3.
 	 */
 	public function serve ()
 	{
@@ -62,9 +62,9 @@ class WSMatch3 extends TagedWS
 	}
 	
 	/**
-	 * Fonction de stockage des données.
+	 * Fonction de stockage des donnÃ©es.
 	 * 
-	 * Récupère les données du Match3, les traite et les sauvegarde dans la base de données en tant que partie de jeu.
+	 * RÃ©cupÃ¨re les donnÃ©es du Match3, les traite et les sauvegarde dans la base de donnÃ©es en tant que partie de jeu.
 	 */
 	protected function store ()
 	{
@@ -83,11 +83,11 @@ class WSMatch3 extends TagedWS
 	}
 
 	/**
-	 * Action intermédiaire du Match3.
+	 * Action intermÃ©diaire du Match3.
 	 * 
-	 * Appelle la méthode de stockage des données (store) et ne renvoie aucune valeur.
+	 * Appelle la mÃ©thode de stockage des donnÃ©es (store) et ne renvoie aucune valeur.
 	 * 
-	 * @return string Chaîne vide.
+	 * @return string ChaÃ®ne vide.
 	 */
 	protected function intermediate ()
 	{
@@ -102,9 +102,9 @@ class WSMatch3 extends TagedWS
 	/**
 	 * Action de fin de partie du Match3.
 	 * 
-	 * Appelle la méthode de stockage des données (store) et ne renvoie aucune valeur.
+	 * Appelle la mÃ©thode de stockage des donnÃ©es (store) et ne renvoie aucune valeur.
 	 * 
-	 * @return string Chaîne vide.
+	 * @return string ChaÃ®ne vide.
 	 */
 	protected function gameOver ()
 	{
@@ -117,11 +117,11 @@ class WSMatch3 extends TagedWS
 	}
 	
 	/**
-	 * Action pour démarrer une nouvelle partie du Match3.
+	 * Action pour dÃ©marrer une nouvelle partie du Match3.
 	 * 
-	 * Récupère les données du Match3 concernant la nouvelle partie et ne renvoie aucune valeur.
+	 * RÃ©cupÃ¨re les donnÃ©es du Match3 concernant la nouvelle partie et ne renvoie aucune valeur.
 	 * 
-	 * @return string Chaîne vide.
+	 * @return string ChaÃ®ne vide.
 	 */
 	protected function newGame ()
 	{
@@ -139,12 +139,12 @@ class WSMatch3 extends TagedWS
 	}
 	
 	/**
-	 * Obtient le sélecteur Match3.
+	 * Obtient le sÃ©lecteur Match3.
 	 * 
-	 * Récupère le sélecteur Match3 des données d'entrée et retourne l'action associée dans la liste WS_M3_LIST.
-	 * Si le sélecteur n'est pas trouvé dans la liste, retourne l'action par défaut WS_M3_DEFAULT.
+	 * RÃ©cupÃ¨re le sÃ©lecteur Match3 des donnÃ©es d'entrÃ©e et retourne l'action associÃ©e dans la liste WS_M3_LIST.
+	 * Si le sÃ©lecteur n'est pas trouvÃ© dans la liste, retourne l'action par dÃ©faut WS_M3_DEFAULT.
 	 * 
-	 * @return string Action associée au sélecteur Match3.
+	 * @return string Action associÃ©e au sÃ©lecteur Match3.
 	 */
 	protected function getM3Selector ()
 	{
@@ -156,7 +156,7 @@ class WSMatch3 extends TagedWS
 	}
 	
 	/**
-	 * Données d'entrée du service web Match3.
+	 * DonnÃ©es d'entrÃ©e du service web Match3.
 	 * @var array
 	 */
 	protected $InputData;

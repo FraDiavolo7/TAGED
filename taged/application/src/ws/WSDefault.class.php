@@ -9,9 +9,9 @@ class WSDefault extends TagedWS
 	/**
 	 * Constructeur de la classe WSDefault.
 	 * 
-	 * Initialise l'objet en utilisant les données d'entrée fournies. Si aucune donnée n'est fournie, les données de la requête ($_REQUEST) seront utilisées par défaut.
+	 * Initialise l'objet en utilisant les donnÃ©es d'entrÃ©e fournies. Si aucune donnÃ©e n'est fournie, les donnÃ©es de la requÃªte ($_REQUEST) seront utilisÃ©es par dÃ©faut.
 	 * 
-	 * @param array|null $InputData Les données d'entrée à utiliser pour initialiser l'objet (facultatif). Si aucune donnée n'est fournie, les données de la requête ($_REQUEST) seront utilisées.
+	 * @param array|null $InputData Les donnÃ©es d'entrÃ©e Ã  utiliser pour initialiser l'objet (facultatif). Si aucune donnÃ©e n'est fournie, les donnÃ©es de la requÃªte ($_REQUEST) seront utilisÃ©es.
 	 */
 	public function __construct ( $InputData = NULL )
 	{
