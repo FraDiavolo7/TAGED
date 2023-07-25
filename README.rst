@@ -5,7 +5,7 @@ This is the prototype for the TAGED method. TAGED is Tool Assisted Game Equilibr
 Documentation
 -------------
 
-|Documentation Status|
+.. |Documentation Status|
 
 The documentation for ``TAGED`` is included in the repository.
 
@@ -17,21 +17,17 @@ TAGED is a full solution which needs a heavy installation on a dedicated server,
 Attribution
 -----------
 
-|JOSS|
+.. |JOSS|
 
 
 
-Please also cite the Zenodo DOI |DOI| as a software citation - see the
-`documentation
-<http://gala.adrian.pw/en/latest/index.html#citation-and-attribution>`_ for up
-to date citation information.
 
 License
 -------
 
-|License|
+.. |License|
 
-Copyright 2023 Adrian Price-Whelan and contributors.
+Copyright 2023 and contributors.
 
 ``TAGED`` is free software made available under the MIT License. For details see
 the `LICENSE <https://github.com/adrn/gala/blob/main/LICENSE>`_ file.
@@ -56,12 +52,12 @@ the `LICENSE <https://github.com/adrn/gala/blob/main/LICENSE>`_ file.
    :target: https://zenodo.org/badge/latestdoi/17577779
 .. |ASCL| image:: https://img.shields.io/badge/ascl-1707.006-blue.svg?colorB=262255
    :target: http://ascl.net/1707.006
-.. |logo| image:: https://gala.adrian.pw/en/latest/_static/Gala_Logo_RGB.png
-   :target: https://github.com/adrn/gala
+.. |logo| image:: TAGED_logo.png
+   :target: https://github.com/FraDiavolo7/TAGED
    :width: 400
 
 Contributors
 ------------
 
-See the `AUTHORS.rst <https://github.com/adrn/gala/blob/main/AUTHORS.rst>`_
-file for a complete list of contributors to the project.
+.. See the `AUTHORS.rst <https://github.com/adrn/gala/blob/main/AUTHORS.rst>`_
+.. file for a complete list of contributors to the project.
