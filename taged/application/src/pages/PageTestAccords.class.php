@@ -1,12 +1,18 @@
 <?php
 
 /**
- * Test page for Accords
+ * Cette classe représente une page de test des accords.
+ * 
  * @package TAGED\Pages\Test
  */
 class PageTestAccords extends TagedPage
 {
-	public function __construct ( $InputData = NULL )
+    /**
+     * Initialise l'objet PageTestAccords.
+     *
+     * @param mixed $InputData Les données d'entrée pour initialiser la page. Si null, les données $_REQUEST seront utilisées.
+     */
+    public function __construct ( $InputData = NULL )
 	{
 		parent::__construct ( $InputData );
 		$Data = ( NULL == $InputData ? $_REQUEST : $InputData );
@@ -18,6 +24,11 @@ class PageTestAccords extends TagedPage
 		$this->handle ( $Data );
 	}
 	
+	/**
+	 * Gère la soumission du formulaire et traite les données d'entrée.
+	 *
+	 * @param mixed $Data Les données d'entrée à traiter.
+	 */
 	protected function handle ( $Data )
 	{
 	    

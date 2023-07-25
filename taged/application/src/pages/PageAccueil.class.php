@@ -1,12 +1,18 @@
 <?php
 
 /**
+ * Classe représentant la page d'accueil.
  * 
  * @package TAGED\Pages
  */
 class PageAccueil extends TagedPage
 {
-	public function __construct ( $InputData = NULL )
+    /**
+     * Constructeur de la classe PageAccueil.
+     *
+     * @param mixed $InputData Les données d'entrée pour la page.
+     */
+    public function __construct ( $InputData = NULL )
 	{
 		parent::__construct ( $InputData );
 		$Data = ( NULL == $InputData ? $_REQUEST : $InputData );
@@ -18,6 +24,12 @@ class PageAccueil extends TagedPage
         $this->addStats ();
 	}
 
+	/**
+	 * Calcule les statistiques pour l'application spécifiée.
+	 *
+	 * @param array $App Les données de l'application.
+	 * @return array Les statistiques calculées.
+	 */
 	protected function computeStats ( $App )
 	{
 	    $Stats = array ();
@@ -32,6 +44,12 @@ class PageAccueil extends TagedPage
 	    return $Stats;
 	}
 	
+	/**
+	 * Calcule les statistiques à partir de la base de données pour l'application spécifiée.
+	 *
+	 * @param array $App Les données de l'application.
+	 * @return array Les statistiques calculées depuis la base de données.
+	 */
 	protected function computeStatsDB ( $App )
 	{
 	    $StatsCols = array ();
@@ -63,6 +81,12 @@ class PageAccueil extends TagedPage
 	}
 	
 	
+	/**
+	 * Calcule les statistiques à partir des fichiers pour l'application spécifiée.
+	 *
+	 * @param array $App Les données de l'application.
+	 * @return array Les statistiques calculées depuis les fichiers.
+	 */
 	protected function computeStatsFiles ( $App )
     {
         $AppName = $App [APP_NAME];
@@ -135,7 +159,12 @@ class PageAccueil extends TagedPage
         return $Stats;
 	}
 
-    protected function computeAllStats ( )
+	/**
+	 * Calcule toutes les statistiques pour toutes les applications.
+	 *
+	 * @return array Les statistiques calculées pour toutes les applications.
+	 */
+	protected function computeAllStats ( )
     {
         $Stats = array ();
 
@@ -147,6 +176,12 @@ class PageAccueil extends TagedPage
         return $Stats;
     }
 
+    /**
+     * Génère la ligne d'en-tête du tableau de statistiques.
+     *
+     * @param array $Columns Les colonnes du tableau.
+     * @return string La ligne d'en-tête du tableau de statistiques.
+     */
     protected function doStatHead ( $Columns )
     {
         $LineContent = HTML::th ( 'Part' );
@@ -157,6 +192,14 @@ class PageAccueil extends TagedPage
         return HTML::tr ( $LineContent );
     }
 
+    /**
+     * Génère une ligne de statistiques pour le tableau.
+     *
+     * @param array $Stats Les statistiques.
+     * @param array $Columns Les colonnes du tableau.
+     * @param string $Part La partie des statistiques.
+     * @return string La ligne de statistiques pour le tableau.
+     */
     protected function doStatLine ( $Stats, $Columns, $Part = 'main' )
     {
         $LineContent = HTML::td ( $Part );
@@ -167,7 +210,12 @@ class PageAccueil extends TagedPage
         return HTML::tr ( $LineContent );
     }
 
-
+    /**
+     * Génère le tableau de statistiques.
+     *
+     * @param array $Data Les données de statistiques.
+     * @return string Le tableau de statistiques au format HTML.
+     */
     protected function doStats ( $Data )
     {
         $StatsData = $Data [STATS_DATA];
@@ -200,6 +248,13 @@ class PageAccueil extends TagedPage
         return HTML::div ( HTML::table ( $TableHead . $TableContentFirst . $TableContent . $TableContentLast, array ( 'class' => 'taged_stats' ) ) );
     }
 
+    /**
+     * Ajoute une section de statistiques au contenu de la page.
+     *
+     * @param array $Data Les données de statistiques.
+     * @param string $StatType Le type de statistiques.
+     * @return string La section de statistiques au format HTML.
+     */
     protected function addStat ( $Data, $StatType )
     {
         $StatTitle = HTML::title ( $StatType, 4 );
@@ -207,6 +262,9 @@ class PageAccueil extends TagedPage
         return HTML::div ( $StatTitle . $TableContent );
     }
 
+    /**
+     * Ajoute toutes les statistiques calculées à la page.
+     */
     public function addStats () 
     {
         $Stats = $this->computeAllStats ();
@@ -229,5 +287,10 @@ class PageAccueil extends TagedPage
         TagedDBHnS::stats ();
     }
 
+    /**
+     * Les colonnes des statistiques.
+     *
+     * @var mixed $Cols Les colonnes des statistiques.
+     */
     protected $Cols;
 } // PageAccueil

@@ -1,20 +1,60 @@
 <?php
 
 /**
+ * Classe représentant une page permettant de créer une agrégation de données.
  *
  * @package TAGED\Pages
  */
 class PageNewAggregate extends TagedPage
 {
-    const NAG_AGGREGATE = 'nag_aggregate';
-    const NAG_REL_COLS  = 'nag_relation_cols';
-    const NAG_MES_COLS  = 'nag_measure_cols';
-    const NAG_TABLE     = 'nag_table';
-    const NAG_PASSWORD  = 'nag_password';
-    const NAG_DB        = 'nag_game';
-    const NAG_SUBMIT    = 'nag_submit';
+    /**
+     * Clé pour récupérer le nom de la base de données de jeu à utiliser.
+     * @var string
+     */
+    const NAG_DB = 'nag_game';
     
-	public function __construct ( $InputData = NULL )
+    /**
+     * Clé pour récupérer le nom de l'agrégation à créer.
+     * @var string
+     */
+    const NAG_AGGREGATE = 'nag_aggregate';
+    
+    /**
+     * Clé pour récupérer le nom de la table en base de données à utiliser.
+     * @var string
+     */
+    const NAG_TABLE = 'nag_table';
+    
+    /**
+     * Clé pour récupérer les attributs de relation à associer à l'agrégation.
+     * @var string
+     */
+    const NAG_REL_COLS = 'nag_relation_cols';
+    
+    /**
+     * Clé pour récupérer les attributs de mesure à associer à l'agrégation.
+     * @var string
+     */
+    const NAG_MES_COLS = 'nag_measure_cols';
+    
+    /**
+     * Clé pour récupérer le mot de passe nécessaire pour créer l'agrégation.
+     * @var string
+     */
+    const NAG_PASSWORD = 'nag_password';
+    
+    /**
+     * Clé pour récupérer le nom de l'agrégation à créer lors de la soumission du formulaire.
+     * @var string
+     */
+    const NAG_SUBMIT = 'nag_submit';
+    
+    /**
+     * Constructeur de la classe PageNewAggregate.
+     *
+     * @param mixed $InputData Les données d'entrée pour la page.
+     */
+    public function __construct ( $InputData = NULL )
 	{
 		parent::__construct ( $InputData );
 		$Data = ( NULL == $InputData ? $_REQUEST : $InputData );
@@ -35,6 +75,11 @@ class PageNewAggregate extends TagedPage
 		$this->handle ( $Data );
 	}
 
+	/**
+	 * Gère les données entrées dans le formulaire pour créer une agrégation.
+	 *
+	 * @param mixed $Data Les données du formulaire.
+	 */
 	protected function handle ( $Data )
 	{
 // 	    $this->add ( HTML::div ( print_r ( $Data, true ) ) );
@@ -86,6 +131,9 @@ class PageNewAggregate extends TagedPage
 	    }
 	}
 	
+	/**
+	 * Affiche le formulaire pour créer une agrégation de données.
+	 */
 	protected function show ( )
 	{
         $Content = '';
@@ -108,6 +156,25 @@ class PageNewAggregate extends TagedPage
 
 	    $this->add ( HTML::form ( $Content, array ( 'method' => 'POST',  'enctype' => 'multipart/form-data' ) ) );
 	}
-
-	protected $AggregateList;
-} // PageChangeAggregate
+	
+	/**
+	 * Liste des jeux disponibles pour créer une agrégation.
+	 *
+	 * @var array
+	 */
+	protected $Games;
+	
+	/**
+	 * Le mot de passe requis pour créer une agrégation.
+	 *
+	 * @var string
+	 */
+	protected $Password;
+	
+	/**
+     * Nom de l'agrégation en cours de création.
+	 *
+	 * @var string
+	 */
+	protected $Aggregate;
+} // PageNewAggregate

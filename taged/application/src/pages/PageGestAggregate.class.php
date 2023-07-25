@@ -1,16 +1,33 @@
 <?php
 
 /**
+ * Classe représentant la page de gestion des agrégations.
  *
  * @package TAGED\Pages
  */
 class PageGestAggregate extends TagedPage
 {
+    /**
+     * Constante représentant le nom du champ d'agrégation.
+     */
     const GAG_AGGREGATE = 'gag_aggregate';
+    
+    /**
+     * Constante représentant le nom du champ de mot de passe.
+     */
     const GAG_PASSWORD = 'gag_password';
+    
+    /**
+     * Constante représentant le nom du champ de soumission du formulaire.
+     */
     const GAG_SUBMIT = 'gag_submit';
     
-	public function __construct ( $InputData = NULL )
+    /**
+     * Constructeur de la classe PageGestAggregate.
+     *
+     * @param mixed $InputData Les données d'entrée pour la page.
+     */
+    public function __construct ( $InputData = NULL )
 	{
 		parent::__construct ( $InputData );
 		$Data = ( NULL == $InputData ? $_REQUEST : $InputData );
@@ -23,6 +40,11 @@ class PageGestAggregate extends TagedPage
 		$this->handle ( $Data );
 	}
 
+	/**
+	 * Gère le traitement des données d'entrée.
+	 *
+	 * @param mixed $Data Les données d'entrée pour la page.
+	 */
 	protected function handle ( $Data )
 	{
 	    $Submit = Form::getData ( self::GAG_SUBMIT, '', $Data );
@@ -30,7 +52,7 @@ class PageGestAggregate extends TagedPage
 	    if ( $Submit != '' )
 	    {
 	        $this->Aggregate = Form::getData ( self::GAG_AGGREGATE, '', $Data );
-	        $Password = Form::getData ( self::GAG_PASSWORD, '', $Data );
+	        $Password        = Form::getData ( self::GAG_PASSWORD,  '', $Data );
 	        
             if ( ( $Password == $this->Password ) && ( NULL != $Aggregate ) ) 
 	        {
@@ -41,6 +63,9 @@ class PageGestAggregate extends TagedPage
 	    $this->show ();
 	}
 	
+	/**
+	 * Affiche le contenu de la page.
+	 */
 	protected function show ( )
 	{
 	    $AggregateListObj = new AggregateList ();
@@ -56,10 +81,10 @@ class PageGestAggregate extends TagedPage
             $TableContent .= HTML::tr (
                 HTML::td ( $Label, array ( 'class' => 'agg_label' ) ) .
                 HTML::td ( 
-                    HTML::link ( Menu::buildGenLink ( 'RunAnalysis', array ( PageRunAnalysis::RAN_AGGREGATE => $Name ) ), "Analyser" ) .
-                    HTML::link ( Menu::buildGenLink ( 'ShowAggregate', array ( PageShowAggregate::SHOW_AGGREGATE => $Name ) ), "Afficher" ) .
-                    HTML::link ( Menu::buildGenLink ( 'ChangeAggregate', array ( PageChangeAggregate::CHANGE_AGGREGATE => $Name ) ), "Modifier" ) .
-                    HTML::link ( Menu::buildGenLink ( 'GestAggregate', array ( self::GAG_AGGREGATE => $Name ) ), "Supprimer" ), 
+                    HTML::link ( Menu::buildGenLink ( 'RunAnalysis',     array ( PageRunAnalysis::RAN_AGGREGATE        => $Name ) ), "Analyser"  ) .
+                    HTML::link ( Menu::buildGenLink ( 'ShowAggregate',   array ( PageShowAggregate::SHOW_AGGREGATE     => $Name ) ), "Afficher"  ) .
+                    HTML::link ( Menu::buildGenLink ( 'ChangeAggregate', array ( PageChangeAggregate::CHANGE_AGGREGATE => $Name ) ), "Modifier"  ) .
+                    HTML::link ( Menu::buildGenLink ( 'GestAggregate',   array ( self::GAG_AGGREGATE                   => $Name ) ), "Supprimer" ), 
                     array ( 'class' => 'agg_actions' )
                     )
                 );
@@ -69,5 +94,10 @@ class PageGestAggregate extends TagedPage
         $this->add ( HTML::div ( HTML::table ( $TableContent ) , array ( 'class' => 'taged_gest_aggregates' ) ) ); 
 	}
 
-	protected $AggregateList;
-} // PageChangeAggregate
+	/**
+	 * Le mot de passe requis pour supprimer une agrégation.
+	 *
+	 * @var string
+	 */
+	protected $Password;
+} // PageGestAggregate

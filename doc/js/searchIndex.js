@@ -4068,372 +4068,382 @@ Search.appendIndex(
         },                {
             "fqsen": "\\PageAccueil",
             "name": "PageAccueil",
-            "summary": "Basic\u0020page\u0020for\u0020a\u0020Taged\u0020page",
+            "summary": "Classe\u0020repr\u00E9sentant\u0020la\u0020page\u0020d\u0027accueil.",
             "url": "classes/PageAccueil.html"
         },                {
             "fqsen": "\\PageAccueil\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020PageAccueil.",
             "url": "classes/PageAccueil.html#method___construct"
         },                {
             "fqsen": "\\PageAccueil\u003A\u003AcomputeStats\u0028\u0029",
             "name": "computeStats",
-            "summary": "",
+            "summary": "Calcule\u0020les\u0020statistiques\u0020pour\u0020l\u0027application\u0020sp\u00E9cifi\u00E9e.",
             "url": "classes/PageAccueil.html#method_computeStats"
         },                {
             "fqsen": "\\PageAccueil\u003A\u003AcomputeStatsDB\u0028\u0029",
             "name": "computeStatsDB",
-            "summary": "",
+            "summary": "Calcule\u0020les\u0020statistiques\u0020\u00E0\u0020partir\u0020de\u0020la\u0020base\u0020de\u0020donn\u00E9es\u0020pour\u0020l\u0027application\u0020sp\u00E9cifi\u00E9e.",
             "url": "classes/PageAccueil.html#method_computeStatsDB"
         },                {
             "fqsen": "\\PageAccueil\u003A\u003AcomputeStatsFiles\u0028\u0029",
             "name": "computeStatsFiles",
-            "summary": "",
+            "summary": "Calcule\u0020les\u0020statistiques\u0020\u00E0\u0020partir\u0020des\u0020fichiers\u0020pour\u0020l\u0027application\u0020sp\u00E9cifi\u00E9e.",
             "url": "classes/PageAccueil.html#method_computeStatsFiles"
         },                {
             "fqsen": "\\PageAccueil\u003A\u003AcomputeAllStats\u0028\u0029",
             "name": "computeAllStats",
-            "summary": "",
+            "summary": "Calcule\u0020toutes\u0020les\u0020statistiques\u0020pour\u0020toutes\u0020les\u0020applications.",
             "url": "classes/PageAccueil.html#method_computeAllStats"
         },                {
             "fqsen": "\\PageAccueil\u003A\u003AdoStatHead\u0028\u0029",
             "name": "doStatHead",
-            "summary": "",
+            "summary": "G\u00E9n\u00E8re\u0020la\u0020ligne\u0020d\u0027en\u002Dt\u00EAte\u0020du\u0020tableau\u0020de\u0020statistiques.",
             "url": "classes/PageAccueil.html#method_doStatHead"
         },                {
             "fqsen": "\\PageAccueil\u003A\u003AdoStatLine\u0028\u0029",
             "name": "doStatLine",
-            "summary": "",
+            "summary": "G\u00E9n\u00E8re\u0020une\u0020ligne\u0020de\u0020statistiques\u0020pour\u0020le\u0020tableau.",
             "url": "classes/PageAccueil.html#method_doStatLine"
         },                {
             "fqsen": "\\PageAccueil\u003A\u003AdoStats\u0028\u0029",
             "name": "doStats",
-            "summary": "",
+            "summary": "G\u00E9n\u00E8re\u0020le\u0020tableau\u0020de\u0020statistiques.",
             "url": "classes/PageAccueil.html#method_doStats"
         },                {
             "fqsen": "\\PageAccueil\u003A\u003AaddStat\u0028\u0029",
             "name": "addStat",
-            "summary": "",
+            "summary": "Ajoute\u0020une\u0020section\u0020de\u0020statistiques\u0020au\u0020contenu\u0020de\u0020la\u0020page.",
             "url": "classes/PageAccueil.html#method_addStat"
         },                {
             "fqsen": "\\PageAccueil\u003A\u003AaddStats\u0028\u0029",
             "name": "addStats",
-            "summary": "",
+            "summary": "Ajoute\u0020toutes\u0020les\u0020statistiques\u0020calcul\u00E9es\u0020\u00E0\u0020la\u0020page.",
             "url": "classes/PageAccueil.html#method_addStats"
         },                {
             "fqsen": "\\PageAccueil\u003A\u003A\u0024Cols",
             "name": "Cols",
-            "summary": "",
+            "summary": "Les\u0020colonnes\u0020des\u0020statistiques.",
             "url": "classes/PageAccueil.html#property_Cols"
         },                {
             "fqsen": "\\PageChangeAggregate",
             "name": "PageChangeAggregate",
-            "summary": "Basic\u0020page\u0020for\u0020a\u0020Taged\u0020page",
+            "summary": "Classe\u0020repr\u00E9sentant\u0020la\u0020page\u0020de\u0020modification\u0020des\u0020agr\u00E9gations.",
             "url": "classes/PageChangeAggregate.html"
         },                {
             "fqsen": "\\PageChangeAggregate\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020PageChangeAggregate.",
             "url": "classes/PageChangeAggregate.html#method___construct"
         },                {
             "fqsen": "\\PageChangeAggregate\u003A\u003Ahandle\u0028\u0029",
             "name": "handle",
-            "summary": "",
+            "summary": "G\u00E8re\u0020les\u0020actions\u0020de\u0020la\u0020page.",
             "url": "classes/PageChangeAggregate.html#method_handle"
         },                {
             "fqsen": "\\PageChangeAggregate\u003A\u003Ashow\u0028\u0029",
             "name": "show",
-            "summary": "",
+            "summary": "Affiche\u0020le\u0020contenu\u0020de\u0020la\u0020page.",
             "url": "classes/PageChangeAggregate.html#method_show"
         },                {
             "fqsen": "\\PageChangeAggregate\u003A\u003ACHANGE_AGGREGATE",
             "name": "CHANGE_AGGREGATE",
-            "summary": "",
+            "summary": "Constante\u0020repr\u00E9sentant\u0020l\u0027action\u0020\u0022Modifier\u0020Aggregation\u0022.",
             "url": "classes/PageChangeAggregate.html#constant_CHANGE_AGGREGATE"
         },                {
             "fqsen": "\\PageChangeAggregate\u003A\u003ACHANGE_PASSWORD",
             "name": "CHANGE_PASSWORD",
-            "summary": "",
+            "summary": "Constante\u0020repr\u00E9sentant\u0020l\u0027action\u0020\u0022Modifier\u0020Mot\u0020de\u0020passe\u0022.",
             "url": "classes/PageChangeAggregate.html#constant_CHANGE_PASSWORD"
         },                {
             "fqsen": "\\PageChangeAggregate\u003A\u003ACHANGE_REQUEST",
             "name": "CHANGE_REQUEST",
-            "summary": "",
+            "summary": "Constante\u0020repr\u00E9sentant\u0020l\u0027action\u0020\u0022Modifier\u0020la\u0020Requ\u00EAte\u0022.",
             "url": "classes/PageChangeAggregate.html#constant_CHANGE_REQUEST"
         },                {
             "fqsen": "\\PageChangeAggregate\u003A\u003ACHANGE_REL_COLS",
             "name": "CHANGE_REL_COLS",
-            "summary": "",
+            "summary": "Constante\u0020repr\u00E9sentant\u0020l\u0027action\u0020\u0022Modifier\u0020les\u0020Colonnes\u0020de\u0020Relation\u0022.",
             "url": "classes/PageChangeAggregate.html#constant_CHANGE_REL_COLS"
         },                {
             "fqsen": "\\PageChangeAggregate\u003A\u003ACHANGE_MES_COLS",
             "name": "CHANGE_MES_COLS",
-            "summary": "",
+            "summary": "Constante\u0020repr\u00E9sentant\u0020l\u0027action\u0020\u0022Modifier\u0020les\u0020Colonnes\u0020de\u0020Mesure\u0022.",
             "url": "classes/PageChangeAggregate.html#constant_CHANGE_MES_COLS"
         },                {
             "fqsen": "\\PageChangeAggregate\u003A\u003ACHANGE_SUBMIT",
             "name": "CHANGE_SUBMIT",
-            "summary": "",
+            "summary": "Constante\u0020repr\u00E9sentant\u0020l\u0027action\u0020\u0022Envoyer\u0020les\u0020Modifications\u0022.",
             "url": "classes/PageChangeAggregate.html#constant_CHANGE_SUBMIT"
         },                {
             "fqsen": "\\PageChangeAggregate\u003A\u003A\u0024Request",
             "name": "Request",
-            "summary": "",
+            "summary": "La\u0020requ\u00EAte.",
             "url": "classes/PageChangeAggregate.html#property_Request"
         },                {
             "fqsen": "\\PageChangeAggregate\u003A\u003A\u0024Password",
             "name": "Password",
-            "summary": "",
+            "summary": "Le\u0020mot\u0020de\u0020passe.",
             "url": "classes/PageChangeAggregate.html#property_Password"
         },                {
             "fqsen": "\\PageChangeAggregate\u003A\u003A\u0024Aggregate",
             "name": "Aggregate",
-            "summary": "",
+            "summary": "Le\u0020nom\u0020de\u0020l\u0027agr\u00E9gation\u0020s\u00E9lectionn\u00E9e.",
             "url": "classes/PageChangeAggregate.html#property_Aggregate"
         },                {
             "fqsen": "\\PageChangeAggregate\u003A\u003A\u0024AggregateObj",
             "name": "AggregateObj",
-            "summary": "",
+            "summary": "L\u0027objet\u0020de\u0020l\u0027agr\u00E9gation\u0020s\u00E9lectionn\u00E9e.",
             "url": "classes/PageChangeAggregate.html#property_AggregateObj"
         },                {
             "fqsen": "\\PageChangeAggregate\u003A\u003A\u0024AggregateListObj",
             "name": "AggregateListObj",
-            "summary": "",
+            "summary": "L\u0027objet\u0020de\u0020la\u0020liste\u0020des\u0020agr\u00E9gations.",
             "url": "classes/PageChangeAggregate.html#property_AggregateListObj"
         },                {
             "fqsen": "\\PageChangeAggregate\u003A\u003A\u0024AggregateList",
             "name": "AggregateList",
-            "summary": "",
+            "summary": "La\u0020liste\u0020des\u0020agr\u00E9gations.",
             "url": "classes/PageChangeAggregate.html#property_AggregateList"
         },                {
             "fqsen": "\\PageCollAggregate",
             "name": "PageCollAggregate",
-            "summary": "Basic\u0020page\u0020for\u0020a\u0020Taged\u0020page",
+            "summary": "Classe\u0020repr\u00E9sentant\u0020la\u0020page\u0020de\u0020collection\u0020d\u0027agr\u00E9gation.",
             "url": "classes/PageCollAggregate.html"
         },                {
             "fqsen": "\\PageCollAggregate\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020PageCollAggregate.",
             "url": "classes/PageCollAggregate.html#method___construct"
         },                {
             "fqsen": "\\PageCollData",
             "name": "PageCollData",
-            "summary": "Basic\u0020page\u0020for\u0020a\u0020Taged\u0020page",
+            "summary": "Classe\u0020repr\u00E9sentant\u0020la\u0020page\u0020de\u0020donn\u00E9es\u0020de\u0020collection.",
             "url": "classes/PageCollData.html"
         },                {
             "fqsen": "\\PageCollData\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020PageCollData.",
             "url": "classes/PageCollData.html#method___construct"
         },                {
             "fqsen": "\\PageCollParse",
             "name": "PageCollParse",
-            "summary": "Basic\u0020page\u0020for\u0020a\u0020Taged\u0020page",
+            "summary": "Classe\u0020repr\u00E9sentant\u0020la\u0020page\u0020de\u0020parsing\u0020de\u0020collection.",
             "url": "classes/PageCollParse.html"
         },                {
             "fqsen": "\\PageCollParse\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020PageCollParse.",
             "url": "classes/PageCollParse.html#method___construct"
         },                {
             "fqsen": "\\PageCollParse\u003A\u003Ahandle\u0028\u0029",
             "name": "handle",
-            "summary": "",
+            "summary": "G\u00E8re\u0020le\u0020traitement\u0020des\u0020donn\u00E9es\u0020d\u0027entr\u00E9e.",
             "url": "classes/PageCollParse.html#method_handle"
         },                {
             "fqsen": "\\PageCollParse\u003A\u003Ashow\u0028\u0029",
             "name": "show",
-            "summary": "",
+            "summary": "Affiche\u0020le\u0020contenu\u0020de\u0020la\u0020page.",
             "url": "classes/PageCollParse.html#method_show"
         },                {
             "fqsen": "\\PageCollParse\u003A\u003Aparse\u0028\u0029",
             "name": "parse",
-            "summary": "",
+            "summary": "Effectue\u0020l\u0027op\u00E9ration\u0020de\u0020parsing.",
             "url": "classes/PageCollParse.html#method_parse"
         },                {
             "fqsen": "\\PageCollParse\u003A\u003APARSER_FILE",
             "name": "PARSER_FILE",
-            "summary": "",
+            "summary": "Constante\u0020repr\u00E9sentant\u0020le\u0020nom\u0020du\u0020champ\u0020de\u0020fichier\u0020de\u0020parsing.",
             "url": "classes/PageCollParse.html#constant_PARSER_FILE"
         },                {
             "fqsen": "\\PageCollParse\u003A\u003APARSER_SUBMIT",
             "name": "PARSER_SUBMIT",
-            "summary": "",
+            "summary": "Constante\u0020repr\u00E9sentant\u0020le\u0020nom\u0020du\u0020champ\u0020de\u0020soumission\u0020du\u0020formulaire.",
             "url": "classes/PageCollParse.html#constant_PARSER_SUBMIT"
         },                {
             "fqsen": "\\PageCollParse\u003A\u003A\u0024FileToParse",
             "name": "FileToParse",
-            "summary": "",
+            "summary": "Le\u0020fichier\u0020\u00E0\u0020parser.",
             "url": "classes/PageCollParse.html#property_FileToParse"
         },                {
             "fqsen": "\\PageGestAggregate",
             "name": "PageGestAggregate",
-            "summary": "Basic\u0020page\u0020for\u0020a\u0020Taged\u0020page",
+            "summary": "Classe\u0020repr\u00E9sentant\u0020la\u0020page\u0020de\u0020gestion\u0020des\u0020agr\u00E9gations.",
             "url": "classes/PageGestAggregate.html"
         },                {
             "fqsen": "\\PageGestAggregate\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020PageGestAggregate.",
             "url": "classes/PageGestAggregate.html#method___construct"
         },                {
             "fqsen": "\\PageGestAggregate\u003A\u003Ahandle\u0028\u0029",
             "name": "handle",
-            "summary": "",
+            "summary": "G\u00E8re\u0020le\u0020traitement\u0020des\u0020donn\u00E9es\u0020d\u0027entr\u00E9e.",
             "url": "classes/PageGestAggregate.html#method_handle"
         },                {
             "fqsen": "\\PageGestAggregate\u003A\u003Ashow\u0028\u0029",
             "name": "show",
-            "summary": "",
+            "summary": "Affiche\u0020le\u0020contenu\u0020de\u0020la\u0020page.",
             "url": "classes/PageGestAggregate.html#method_show"
         },                {
             "fqsen": "\\PageGestAggregate\u003A\u003AGAG_AGGREGATE",
             "name": "GAG_AGGREGATE",
-            "summary": "",
+            "summary": "Constante\u0020repr\u00E9sentant\u0020le\u0020nom\u0020du\u0020champ\u0020d\u0027agr\u00E9gation.",
             "url": "classes/PageGestAggregate.html#constant_GAG_AGGREGATE"
         },                {
             "fqsen": "\\PageGestAggregate\u003A\u003AGAG_PASSWORD",
             "name": "GAG_PASSWORD",
-            "summary": "",
+            "summary": "Constante\u0020repr\u00E9sentant\u0020le\u0020nom\u0020du\u0020champ\u0020de\u0020mot\u0020de\u0020passe.",
             "url": "classes/PageGestAggregate.html#constant_GAG_PASSWORD"
         },                {
             "fqsen": "\\PageGestAggregate\u003A\u003AGAG_SUBMIT",
             "name": "GAG_SUBMIT",
-            "summary": "",
+            "summary": "Constante\u0020repr\u00E9sentant\u0020le\u0020nom\u0020du\u0020champ\u0020de\u0020soumission\u0020du\u0020formulaire.",
             "url": "classes/PageGestAggregate.html#constant_GAG_SUBMIT"
         },                {
-            "fqsen": "\\PageGestAggregate\u003A\u003A\u0024AggregateList",
-            "name": "AggregateList",
-            "summary": "",
-            "url": "classes/PageGestAggregate.html#property_AggregateList"
+            "fqsen": "\\PageGestAggregate\u003A\u003A\u0024Password",
+            "name": "Password",
+            "summary": "Le\u0020mot\u0020de\u0020passe\u0020requis\u0020pour\u0020supprimer\u0020une\u0020agr\u00E9gation.",
+            "url": "classes/PageGestAggregate.html#property_Password"
         },                {
             "fqsen": "\\PageHnSData",
             "name": "PageHnSData",
-            "summary": "Basic\u0020page\u0020for\u0020a\u0020Taged\u0020page",
+            "summary": "Classe\u0020repr\u00E9sentant\u0020la\u0020page\u0020de\u0020donn\u00E9es\u0020Hack\u0027n\u0020Slash.",
             "url": "classes/PageHnSData.html"
         },                {
             "fqsen": "\\PageHnSData\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020PageHnSData.",
             "url": "classes/PageHnSData.html#method___construct"
         },                {
             "fqsen": "\\PageHnSParse",
             "name": "PageHnSParse",
-            "summary": "Basic\u0020page\u0020for\u0020a\u0020Taged\u0020page",
+            "summary": "Classe\u0020repr\u00E9sentant\u0020la\u0020page\u0020de\u0020parsing\u0020Hack\u0027n\u0020Slash.",
             "url": "classes/PageHnSParse.html"
         },                {
             "fqsen": "\\PageHnSParse\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020PageHnSParse.",
             "url": "classes/PageHnSParse.html#method___construct"
         },                {
             "fqsen": "\\PageHnSParse\u003A\u003Ahandle\u0028\u0029",
             "name": "handle",
-            "summary": "",
+            "summary": "G\u00E8re\u0020les\u0020actions\u0020en\u0020fonction\u0020des\u0020donn\u00E9es\u0020d\u0027entr\u00E9e.",
             "url": "classes/PageHnSParse.html#method_handle"
         },                {
             "fqsen": "\\PageHnSParse\u003A\u003Ashow\u0028\u0029",
             "name": "show",
-            "summary": "",
+            "summary": "Affiche\u0020le\u0020contenu\u0020de\u0020la\u0020page.",
             "url": "classes/PageHnSParse.html#method_show"
         },                {
             "fqsen": "\\PageHnSParse\u003A\u003Aparse\u0028\u0029",
             "name": "parse",
-            "summary": "",
+            "summary": "Parse\u0020le\u0020contenu\u0020du\u0020fichier\u0020sp\u00E9cifi\u00E9\u0020et\u0020affiche\u0020le\u0020r\u00E9sultat\u0020du\u0020parsing.",
             "url": "classes/PageHnSParse.html#method_parse"
         },                {
             "fqsen": "\\PageHnSParse\u003A\u003APARSER_FILE",
             "name": "PARSER_FILE",
-            "summary": "",
+            "summary": "Nom\u0020de\u0020la\u0020propri\u00E9t\u00E9\u0020repr\u00E9sentant\u0020le\u0020nom\u0020du\u0020fichier\u0020\u00E0\u0020parser.",
             "url": "classes/PageHnSParse.html#constant_PARSER_FILE"
         },                {
             "fqsen": "\\PageHnSParse\u003A\u003APARSER_SUBMIT",
             "name": "PARSER_SUBMIT",
-            "summary": "",
+            "summary": "Nom\u0020de\u0020la\u0020propri\u00E9t\u00E9\u0020repr\u00E9sentant\u0020le\u0020bouton\u0020de\u0020soumission\u0020pour\u0020le\u0020parsing.",
             "url": "classes/PageHnSParse.html#constant_PARSER_SUBMIT"
         },                {
             "fqsen": "\\PageHnSParse\u003A\u003A\u0024FileToParse",
             "name": "FileToParse",
-            "summary": "",
+            "summary": "Propri\u00E9t\u00E9\u0020repr\u00E9sentant\u0020le\u0020nom\u0020du\u0020fichier\u0020\u00E0\u0020parser.",
             "url": "classes/PageHnSParse.html#property_FileToParse"
         },                {
             "fqsen": "\\PageMatch3",
             "name": "PageMatch3",
-            "summary": "Redirection\u0020to\u0020Match\u00203\u0020game",
+            "summary": "Classe\u0020repr\u00E9sentant\u0020une\u0020redirection\u0020vers\u0020le\u0020jeu\u0020Match\u00203.",
             "url": "classes/PageMatch3.html"
         },                {
             "fqsen": "\\PageMatch3\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020PageMatch3.",
             "url": "classes/PageMatch3.html#method___construct"
         },                {
             "fqsen": "\\PageNewAggregate",
             "name": "PageNewAggregate",
-            "summary": "Basic\u0020page\u0020for\u0020a\u0020Taged\u0020page",
+            "summary": "Classe\u0020repr\u00E9sentant\u0020une\u0020page\u0020permettant\u0020de\u0020cr\u00E9er\u0020une\u0020agr\u00E9gation\u0020de\u0020donn\u00E9es.",
             "url": "classes/PageNewAggregate.html"
         },                {
             "fqsen": "\\PageNewAggregate\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020PageNewAggregate.",
             "url": "classes/PageNewAggregate.html#method___construct"
         },                {
             "fqsen": "\\PageNewAggregate\u003A\u003Ahandle\u0028\u0029",
             "name": "handle",
-            "summary": "",
+            "summary": "G\u00E8re\u0020les\u0020donn\u00E9es\u0020entr\u00E9es\u0020dans\u0020le\u0020formulaire\u0020pour\u0020cr\u00E9er\u0020une\u0020agr\u00E9gation.",
             "url": "classes/PageNewAggregate.html#method_handle"
         },                {
             "fqsen": "\\PageNewAggregate\u003A\u003Ashow\u0028\u0029",
             "name": "show",
-            "summary": "",
+            "summary": "Affiche\u0020le\u0020formulaire\u0020pour\u0020cr\u00E9er\u0020une\u0020agr\u00E9gation\u0020de\u0020donn\u00E9es.",
             "url": "classes/PageNewAggregate.html#method_show"
+        },                {
+            "fqsen": "\\PageNewAggregate\u003A\u003ANAG_DB",
+            "name": "NAG_DB",
+            "summary": "Cl\u00E9\u0020pour\u0020r\u00E9cup\u00E9rer\u0020le\u0020nom\u0020de\u0020la\u0020base\u0020de\u0020donn\u00E9es\u0020de\u0020jeu\u0020\u00E0\u0020utiliser.",
+            "url": "classes/PageNewAggregate.html#constant_NAG_DB"
         },                {
             "fqsen": "\\PageNewAggregate\u003A\u003ANAG_AGGREGATE",
             "name": "NAG_AGGREGATE",
-            "summary": "",
+            "summary": "Cl\u00E9\u0020pour\u0020r\u00E9cup\u00E9rer\u0020le\u0020nom\u0020de\u0020l\u0027agr\u00E9gation\u0020\u00E0\u0020cr\u00E9er.",
             "url": "classes/PageNewAggregate.html#constant_NAG_AGGREGATE"
+        },                {
+            "fqsen": "\\PageNewAggregate\u003A\u003ANAG_TABLE",
+            "name": "NAG_TABLE",
+            "summary": "Cl\u00E9\u0020pour\u0020r\u00E9cup\u00E9rer\u0020le\u0020nom\u0020de\u0020la\u0020table\u0020en\u0020base\u0020de\u0020donn\u00E9es\u0020\u00E0\u0020utiliser.",
+            "url": "classes/PageNewAggregate.html#constant_NAG_TABLE"
         },                {
             "fqsen": "\\PageNewAggregate\u003A\u003ANAG_REL_COLS",
             "name": "NAG_REL_COLS",
-            "summary": "",
+            "summary": "Cl\u00E9\u0020pour\u0020r\u00E9cup\u00E9rer\u0020les\u0020attributs\u0020de\u0020relation\u0020\u00E0\u0020associer\u0020\u00E0\u0020l\u0027agr\u00E9gation.",
             "url": "classes/PageNewAggregate.html#constant_NAG_REL_COLS"
         },                {
             "fqsen": "\\PageNewAggregate\u003A\u003ANAG_MES_COLS",
             "name": "NAG_MES_COLS",
-            "summary": "",
+            "summary": "Cl\u00E9\u0020pour\u0020r\u00E9cup\u00E9rer\u0020les\u0020attributs\u0020de\u0020mesure\u0020\u00E0\u0020associer\u0020\u00E0\u0020l\u0027agr\u00E9gation.",
             "url": "classes/PageNewAggregate.html#constant_NAG_MES_COLS"
-        },                {
-            "fqsen": "\\PageNewAggregate\u003A\u003ANAG_TABLE",
-            "name": "NAG_TABLE",
-            "summary": "",
-            "url": "classes/PageNewAggregate.html#constant_NAG_TABLE"
         },                {
             "fqsen": "\\PageNewAggregate\u003A\u003ANAG_PASSWORD",
             "name": "NAG_PASSWORD",
-            "summary": "",
+            "summary": "Cl\u00E9\u0020pour\u0020r\u00E9cup\u00E9rer\u0020le\u0020mot\u0020de\u0020passe\u0020n\u00E9cessaire\u0020pour\u0020cr\u00E9er\u0020l\u0027agr\u00E9gation.",
             "url": "classes/PageNewAggregate.html#constant_NAG_PASSWORD"
-        },                {
-            "fqsen": "\\PageNewAggregate\u003A\u003ANAG_DB",
-            "name": "NAG_DB",
-            "summary": "",
-            "url": "classes/PageNewAggregate.html#constant_NAG_DB"
         },                {
             "fqsen": "\\PageNewAggregate\u003A\u003ANAG_SUBMIT",
             "name": "NAG_SUBMIT",
-            "summary": "",
+            "summary": "Cl\u00E9\u0020pour\u0020r\u00E9cup\u00E9rer\u0020le\u0020nom\u0020de\u0020l\u0027agr\u00E9gation\u0020\u00E0\u0020cr\u00E9er\u0020lors\u0020de\u0020la\u0020soumission\u0020du\u0020formulaire.",
             "url": "classes/PageNewAggregate.html#constant_NAG_SUBMIT"
         },                {
-            "fqsen": "\\PageNewAggregate\u003A\u003A\u0024AggregateList",
-            "name": "AggregateList",
-            "summary": "",
-            "url": "classes/PageNewAggregate.html#property_AggregateList"
+            "fqsen": "\\PageNewAggregate\u003A\u003A\u0024Games",
+            "name": "Games",
+            "summary": "Liste\u0020des\u0020jeux\u0020disponibles\u0020pour\u0020cr\u00E9er\u0020une\u0020agr\u00E9gation.",
+            "url": "classes/PageNewAggregate.html#property_Games"
+        },                {
+            "fqsen": "\\PageNewAggregate\u003A\u003A\u0024Password",
+            "name": "Password",
+            "summary": "Le\u0020mot\u0020de\u0020passe\u0020requis\u0020pour\u0020cr\u00E9er\u0020une\u0020agr\u00E9gation.",
+            "url": "classes/PageNewAggregate.html#property_Password"
+        },                {
+            "fqsen": "\\PageNewAggregate\u003A\u003A\u0024Aggregate",
+            "name": "Aggregate",
+            "summary": "Nom\u0020de\u0020l\u0027agr\u00E9gation\u0020en\u0020cours\u0020de\u0020cr\u00E9ation.",
+            "url": "classes/PageNewAggregate.html#property_Aggregate"
         },                {
             "fqsen": "\\PageRunAnalysis",
             "name": "PageRunAnalysis",
-            "summary": "Basic\u0020page\u0020for\u0020a\u0020Taged\u0020page",
+            "summary": "Classe\u0020de\u0020base\u0020pour\u0020les\u0020pages\u0020Taged.",
             "url": "classes/PageRunAnalysis.html"
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020TagedPage.",
             "url": "classes/PageRunAnalysis.html#method___construct"
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003Ahandle\u0028\u0029",
@@ -4468,62 +4478,62 @@ Search.appendIndex(
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003ASHOW_TEST",
             "name": "SHOW_TEST",
-            "summary": "",
+            "summary": "Cl\u00E9\u0020pour\u0020afficher\u0020le\u0020test.",
             "url": "classes/PageRunAnalysis.html#constant_SHOW_TEST"
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003ARAN_MIN",
             "name": "RAN_MIN",
-            "summary": "",
+            "summary": "Cl\u00E9\u0020pour\u0020la\u0020valeur\u0020minimale.",
             "url": "classes/PageRunAnalysis.html#constant_RAN_MIN"
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003ARAN_MAX",
             "name": "RAN_MAX",
-            "summary": "",
+            "summary": "Cl\u00E9\u0020pour\u0020la\u0020valeur\u0020maximale.",
             "url": "classes/PageRunAnalysis.html#constant_RAN_MAX"
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003ASHOW_INPUT",
             "name": "SHOW_INPUT",
-            "summary": "",
+            "summary": "Cl\u00E9\u0020pour\u0020afficher\u0020l\u0027entr\u00E9e.",
             "url": "classes/PageRunAnalysis.html#constant_SHOW_INPUT"
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003ASHOW_ESPACE",
             "name": "SHOW_ESPACE",
-            "summary": "",
+            "summary": "Cl\u00E9\u0020pour\u0020afficher\u0020l\u0027espace\u0020multidimensionnel.",
             "url": "classes/PageRunAnalysis.html#constant_SHOW_ESPACE"
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003ASHOW_ACCORDS",
             "name": "SHOW_ACCORDS",
-            "summary": "",
+            "summary": "Cl\u00E9\u0020pour\u0020afficher\u0020les\u0020accords.",
             "url": "classes/PageRunAnalysis.html#constant_SHOW_ACCORDS"
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003ASHOW_DATACUBE",
             "name": "SHOW_DATACUBE",
-            "summary": "",
+            "summary": "Cl\u00E9\u0020pour\u0020afficher\u0020le\u0020DataCube.",
             "url": "classes/PageRunAnalysis.html#constant_SHOW_DATACUBE"
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003ASHOW_SKYCUBE",
             "name": "SHOW_SKYCUBE",
-            "summary": "",
+            "summary": "Cl\u00E9\u0020pour\u0020afficher\u0020le\u0020SkyCube.",
             "url": "classes/PageRunAnalysis.html#constant_SHOW_SKYCUBE"
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003ASHOW_FUSION",
             "name": "SHOW_FUSION",
-            "summary": "",
+            "summary": "Cl\u00E9\u0020pour\u0020afficher\u0020la\u0020relation\u0020fusionn\u00E9e.",
             "url": "classes/PageRunAnalysis.html#constant_SHOW_FUSION"
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003ASHOW_FUS_ABREGE",
             "name": "SHOW_FUS_ABREGE",
-            "summary": "",
+            "summary": "Cl\u00E9\u0020pour\u0020afficher\u0020la\u0020relation\u0020fusionn\u00E9e\u0020abr\u00E9g\u00E9e.",
             "url": "classes/PageRunAnalysis.html#constant_SHOW_FUS_ABREGE"
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003ASHOW_COSKY",
             "name": "SHOW_COSKY",
-            "summary": "",
+            "summary": "Cl\u00E9\u0020pour\u0020afficher\u0020le\u0020classement\u0020des\u0020Skyline\u0020\u0028CoSky\u0029.",
             "url": "classes/PageRunAnalysis.html#constant_SHOW_COSKY"
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003ASHOW_TAGED_CUBE",
             "name": "SHOW_TAGED_CUBE",
-            "summary": "",
+            "summary": "Cl\u00E9\u0020pour\u0020afficher\u0020le\u0020r\u00E9sultat\u0020Taged.",
             "url": "classes/PageRunAnalysis.html#constant_SHOW_TAGED_CUBE"
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003A\u0024Password",
@@ -4553,72 +4563,72 @@ Search.appendIndex(
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003A\u0024Test",
             "name": "Test",
-            "summary": "",
+            "summary": "Indicateur\u0020pour\u0020activer\u0020ou\u0020d\u00E9sactiver\u0020la\u0020section\u0020de\u0020test\u0020dans\u0020les\u0020r\u00E9sultats.",
             "url": "classes/PageRunAnalysis.html#property_Test"
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003A\u0024Min",
             "name": "Min",
-            "summary": "",
+            "summary": "Tableau\u0020associatif\u0020des\u0020valeurs\u0020minimales\u0020pour\u0020les\u0020colonnes\u0020de\u0020l\u0027agr\u00E9gat.",
             "url": "classes/PageRunAnalysis.html#property_Min"
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003A\u0024Max",
             "name": "Max",
-            "summary": "",
+            "summary": "Tableau\u0020associatif\u0020des\u0020valeurs\u0020maximales\u0020pour\u0020les\u0020colonnes\u0020de\u0020l\u0027agr\u00E9gat.",
             "url": "classes/PageRunAnalysis.html#property_Max"
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003A\u0024CoSky1",
             "name": "CoSky1",
-            "summary": "",
+            "summary": "Objet\u0020CoSky\u0020pour\u0020le\u0020classement\u0020des\u0020Skylines\u0020du\u0020SkyCube\u00201.",
             "url": "classes/PageRunAnalysis.html#property_CoSky1"
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003A\u0024CoSky2",
             "name": "CoSky2",
-            "summary": "",
+            "summary": "Objet\u0020CoSky\u0020pour\u0020le\u0020classement\u0020des\u0020Skylines\u0020du\u0020SkyCube\u00202.",
             "url": "classes/PageRunAnalysis.html#property_CoSky2"
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003A\u0024ShowInput",
             "name": "ShowInput",
-            "summary": "",
+            "summary": "Indicateur\u0020pour\u0020activer\u0020ou\u0020d\u00E9sactiver\u0020l\u0027affichage\u0020de\u0020la\u0020section\u0020\u0022Entr\u00E9e\u0022\u0020dans\u0020les\u0020r\u00E9sultats.",
             "url": "classes/PageRunAnalysis.html#property_ShowInput"
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003A\u0024ShowEspace",
             "name": "ShowEspace",
-            "summary": "",
+            "summary": "Indicateur\u0020pour\u0020activer\u0020ou\u0020d\u00E9sactiver\u0020l\u0027affichage\u0020de\u0020la\u0020section\u0020\u0022Espace\u0020Multidimensionnel\u0022\u0020dans\u0020les\u0020r\u00E9sultats.",
             "url": "classes/PageRunAnalysis.html#property_ShowEspace"
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003A\u0024ShowAccords",
             "name": "ShowAccords",
-            "summary": "",
+            "summary": "Indicateur\u0020pour\u0020activer\u0020ou\u0020d\u00E9sactiver\u0020l\u0027affichage\u0020de\u0020la\u0020section\u0020\u0022Classes\u0020d\u0027accords\u0022\u0020dans\u0020les\u0020r\u00E9sultats.",
             "url": "classes/PageRunAnalysis.html#property_ShowAccords"
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003A\u0024ShowDataCube",
             "name": "ShowDataCube",
-            "summary": "",
+            "summary": "Indicateur\u0020pour\u0020activer\u0020ou\u0020d\u00E9sactiver\u0020l\u0027affichage\u0020de\u0020la\u0020section\u0020\u0022DataCube\u0022\u0020dans\u0020les\u0020r\u00E9sultats.",
             "url": "classes/PageRunAnalysis.html#property_ShowDataCube"
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003A\u0024ShowSkyCube",
             "name": "ShowSkyCube",
-            "summary": "",
+            "summary": "Indicateur\u0020pour\u0020activer\u0020ou\u0020d\u00E9sactiver\u0020l\u0027affichage\u0020de\u0020la\u0020section\u0020\u0022SkyCube\u0022\u0020dans\u0020les\u0020r\u00E9sultats.",
             "url": "classes/PageRunAnalysis.html#property_ShowSkyCube"
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003A\u0024ShowFusion",
             "name": "ShowFusion",
-            "summary": "",
+            "summary": "Indicateur\u0020pour\u0020activer\u0020ou\u0020d\u00E9sactiver\u0020l\u0027affichage\u0020de\u0020la\u0020section\u0020\u0022Relation\u0020Fusionn\u00E9e\u0022\u0020dans\u0020les\u0020r\u00E9sultats.",
             "url": "classes/PageRunAnalysis.html#property_ShowFusion"
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003A\u0024ShowFusionAbregee",
             "name": "ShowFusionAbregee",
-            "summary": "",
+            "summary": "Indicateur\u0020pour\u0020activer\u0020ou\u0020d\u00E9sactiver\u0020l\u0027affichage\u0020de\u0020la\u0020section\u0020\u0022Relation\u0020Fusionn\u00E9e\u0020abr\u00E9g\u00E9e\u0022\u0020dans\u0020les\u0020r\u00E9sultats.",
             "url": "classes/PageRunAnalysis.html#property_ShowFusionAbregee"
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003A\u0024ShowCoSky",
             "name": "ShowCoSky",
-            "summary": "",
+            "summary": "Indicateur\u0020pour\u0020activer\u0020ou\u0020d\u00E9sactiver\u0020l\u0027affichage\u0020de\u0020la\u0020section\u0020\u0022Classement\u0020des\u0020Skyline\u0020\u0028CoSky\u0029\u0022\u0020dans\u0020les\u0020r\u00E9sultats.",
             "url": "classes/PageRunAnalysis.html#property_ShowCoSky"
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003A\u0024ShowTagedCube",
             "name": "ShowTagedCube",
-            "summary": "",
+            "summary": "Indicateur\u0020pour\u0020activer\u0020ou\u0020d\u00E9sactiver\u0020l\u0027affichage\u0020de\u0020la\u0020section\u0020\u0022R\u00E9sultat\u0020Taged\u0022\u0020dans\u0020les\u0020r\u00E9sultats.",
             "url": "classes/PageRunAnalysis.html#property_ShowTagedCube"
         },                {
             "fqsen": "\\PageRunAnalysis\u003A\u003ARAN_MIN1",
@@ -4633,12 +4643,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\PageRunSkyCubeAnalysis",
             "name": "PageRunSkyCubeAnalysis",
-            "summary": "Basic\u0020page\u0020for\u0020a\u0020Taged\u0020page",
+            "summary": "Classe\u0020de\u0020base\u0020pour\u0020les\u0020pages\u0020Taged.",
             "url": "classes/PageRunSkyCubeAnalysis.html"
         },                {
             "fqsen": "\\PageRunSkyCubeAnalysis\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020TagedPage.",
             "url": "classes/PageRunSkyCubeAnalysis.html#method___construct"
         },                {
             "fqsen": "\\PageRunSkyCubeAnalysis\u003A\u003Ahandle\u0028\u0029",
@@ -4708,297 +4718,297 @@ Search.appendIndex(
         },                {
             "fqsen": "\\PageShowAggregate",
             "name": "PageShowAggregate",
-            "summary": "Basic\u0020page\u0020for\u0020a\u0020Taged\u0020page",
+            "summary": "Cette\u0020classe\u0020repr\u00E9sente\u0020une\u0020page\u0020pour\u0020afficher\u0020une\u0020agr\u00E9gation.",
             "url": "classes/PageShowAggregate.html"
         },                {
             "fqsen": "\\PageShowAggregate\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Initialise\u0020l\u0027objet\u0020PageShowAggregate.",
             "url": "classes/PageShowAggregate.html#method___construct"
         },                {
             "fqsen": "\\PageShowAggregate\u003A\u003Ahandle\u0028\u0029",
             "name": "handle",
-            "summary": "",
+            "summary": "G\u00E8re\u0020la\u0020soumission\u0020du\u0020formulaire\u0020et\u0020traite\u0020les\u0020donn\u00E9es\u0020d\u0027entr\u00E9e.",
             "url": "classes/PageShowAggregate.html#method_handle"
         },                {
             "fqsen": "\\PageShowAggregate\u003A\u003Ashow\u0028\u0029",
             "name": "show",
-            "summary": "",
+            "summary": "Affiche\u0020le\u0020contenu\u0020de\u0020la\u0020page.",
             "url": "classes/PageShowAggregate.html#method_show"
         },                {
             "fqsen": "\\PageShowAggregate\u003A\u003ASHOW_AGGREGATE",
             "name": "SHOW_AGGREGATE",
-            "summary": "",
+            "summary": "Constante\u0020pour\u0020d\u00E9finir\u0020la\u0020cl\u00E9\u0020permettant\u0020de\u0020r\u00E9cup\u00E9rer\u0020la\u0020valeur\u0020d\u0027agr\u00E9gation\u0020s\u00E9lectionn\u00E9e\u0020\u00E0\u0020partir\u0020des\u0020donn\u00E9es\u0020d\u0027entr\u00E9e\u0020de\u0020l\u0027utilisateur.",
             "url": "classes/PageShowAggregate.html#constant_SHOW_AGGREGATE"
         },                {
             "fqsen": "\\PageShowAggregate\u003A\u003ASHOW_PASSWORD",
             "name": "SHOW_PASSWORD",
-            "summary": "",
+            "summary": "Constante\u0020pour\u0020d\u00E9finir\u0020la\u0020cl\u00E9\u0020permettant\u0020de\u0020r\u00E9cup\u00E9rer\u0020le\u0020mot\u0020de\u0020passe\u0020saisi\u0020par\u0020l\u0027utilisateur.",
             "url": "classes/PageShowAggregate.html#constant_SHOW_PASSWORD"
         },                {
             "fqsen": "\\PageShowAggregate\u003A\u003ASHOW_SUBMIT",
             "name": "SHOW_SUBMIT",
-            "summary": "",
+            "summary": "Constante\u0020pour\u0020d\u00E9finir\u0020la\u0020cl\u00E9\u0020pour\u0020soumettre\u0020les\u0020donn\u00E9es\u0020du\u0020formulaire.",
             "url": "classes/PageShowAggregate.html#constant_SHOW_SUBMIT"
         },                {
             "fqsen": "\\PageShowAggregate\u003A\u003A\u0024Result",
             "name": "Result",
-            "summary": "",
+            "summary": "Le\u0020r\u00E9sultat\u0020de\u0020l\u0027op\u00E9ration\u0020d\u0027agr\u00E9gation.",
             "url": "classes/PageShowAggregate.html#property_Result"
         },                {
             "fqsen": "\\PageShowAggregate\u003A\u003A\u0024Password",
             "name": "Password",
-            "summary": "",
+            "summary": "Le\u0020mot\u0020de\u0020passe\u0020pour\u0020l\u0027authentification\u0020afin\u0020de\u0020voir\u0020l\u0027agr\u00E9gation.",
             "url": "classes/PageShowAggregate.html#property_Password"
         },                {
             "fqsen": "\\PageShowAggregate\u003A\u003A\u0024Aggregate",
             "name": "Aggregate",
-            "summary": "",
+            "summary": "La\u0020valeur\u0020d\u0027agr\u00E9gation\u0020s\u00E9lectionn\u00E9e\u0020par\u0020l\u0027utilisateur.",
             "url": "classes/PageShowAggregate.html#property_Aggregate"
         },                {
             "fqsen": "\\PageShowAggregate\u003A\u003A\u0024AggregateObj",
             "name": "AggregateObj",
-            "summary": "",
+            "summary": "L\u0027objet\u0020Analysis\u0020associ\u00E9\u0020\u00E0\u0020l\u0027agr\u00E9gation\u0020s\u00E9lectionn\u00E9e.",
             "url": "classes/PageShowAggregate.html#property_AggregateObj"
         },                {
             "fqsen": "\\PageShowAggregate\u003A\u003A\u0024AggregateListObj",
             "name": "AggregateListObj",
-            "summary": "",
+            "summary": "L\u0027objet\u0020repr\u00E9sentant\u0020la\u0020liste\u0020des\u0020agr\u00E9gations\u0020disponibles.",
             "url": "classes/PageShowAggregate.html#property_AggregateListObj"
         },                {
             "fqsen": "\\PageShowAggregate\u003A\u003A\u0024AggregateList",
             "name": "AggregateList",
-            "summary": "",
+            "summary": "Le\u0020tableau\u0020associatif\u0020des\u0020agr\u00E9gations\u0020disponibles\u0020avec\u0020leurs\u0020identifiants.",
             "url": "classes/PageShowAggregate.html#property_AggregateList"
         },                {
             "fqsen": "\\PageShowSkyCube",
             "name": "PageShowSkyCube",
-            "summary": "Basic\u0020page\u0020for\u0020a\u0020Taged\u0020page",
+            "summary": "Cette\u0020classe\u0020repr\u00E9sente\u0020une\u0020page\u0020pour\u0020afficher\u0020une\u0020agr\u00E9gation\u0020en\u0020SkyCube\u0020Emergent.",
             "url": "classes/PageShowSkyCube.html"
         },                {
             "fqsen": "\\PageShowSkyCube\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Initialise\u0020l\u0027objet\u0020PageShowSkyCube.",
             "url": "classes/PageShowSkyCube.html#method___construct"
         },                {
             "fqsen": "\\PageShowSkyCube\u003A\u003Ahandle\u0028\u0029",
             "name": "handle",
-            "summary": "",
+            "summary": "G\u00E8re\u0020la\u0020soumission\u0020du\u0020formulaire\u0020et\u0020traite\u0020les\u0020donn\u00E9es\u0020d\u0027entr\u00E9e.",
             "url": "classes/PageShowSkyCube.html#method_handle"
         },                {
             "fqsen": "\\PageShowSkyCube\u003A\u003Ashow\u0028\u0029",
             "name": "show",
-            "summary": "",
+            "summary": "Affiche\u0020le\u0020contenu\u0020de\u0020la\u0020page.",
             "url": "classes/PageShowSkyCube.html#method_show"
         },                {
             "fqsen": "\\PageShowSkyCube\u003A\u003ASHOW_AGGREGATE",
             "name": "SHOW_AGGREGATE",
-            "summary": "",
+            "summary": "Constante\u0020pour\u0020d\u00E9finir\u0020la\u0020cl\u00E9\u0020permettant\u0020de\u0020r\u00E9cup\u00E9rer\u0020la\u0020valeur\u0020d\u0027agr\u00E9gation\u0020s\u00E9lectionn\u00E9e\u0020\u00E0\u0020partir\u0020des\u0020donn\u00E9es\u0020d\u0027entr\u00E9e\u0020de\u0020l\u0027utilisateur.",
             "url": "classes/PageShowSkyCube.html#constant_SHOW_AGGREGATE"
         },                {
             "fqsen": "\\PageShowSkyCube\u003A\u003ASHOW_PASSWORD",
             "name": "SHOW_PASSWORD",
-            "summary": "",
+            "summary": "Constante\u0020pour\u0020d\u00E9finir\u0020la\u0020cl\u00E9\u0020permettant\u0020de\u0020r\u00E9cup\u00E9rer\u0020le\u0020mot\u0020de\u0020passe\u0020saisi\u0020par\u0020l\u0027utilisateur.",
             "url": "classes/PageShowSkyCube.html#constant_SHOW_PASSWORD"
         },                {
             "fqsen": "\\PageShowSkyCube\u003A\u003ASHOW_SUBMIT",
             "name": "SHOW_SUBMIT",
-            "summary": "",
+            "summary": "Constante\u0020pour\u0020d\u00E9finir\u0020la\u0020cl\u00E9\u0020pour\u0020soumettre\u0020les\u0020donn\u00E9es\u0020du\u0020formulaire.",
             "url": "classes/PageShowSkyCube.html#constant_SHOW_SUBMIT"
         },                {
             "fqsen": "\\PageShowSkyCube\u003A\u003ASHOW_TEST",
             "name": "SHOW_TEST",
-            "summary": "",
+            "summary": "Constante\u0020pour\u0020d\u00E9finir\u0020la\u0020cl\u00E9\u0020pour\u0020afficher\u0020le\u0020test.",
             "url": "classes/PageShowSkyCube.html#constant_SHOW_TEST"
         },                {
             "fqsen": "\\PageShowSkyCube\u003A\u003ASHOW_INPUT",
             "name": "SHOW_INPUT",
-            "summary": "",
+            "summary": "Constante\u0020pour\u0020d\u00E9finir\u0020la\u0020cl\u00E9\u0020pour\u0020afficher\u0020l\u0027entr\u00E9e.",
             "url": "classes/PageShowSkyCube.html#constant_SHOW_INPUT"
         },                {
             "fqsen": "\\PageShowSkyCube\u003A\u003ASHOW_ESPACE",
             "name": "SHOW_ESPACE",
-            "summary": "",
+            "summary": "Constante\u0020pour\u0020d\u00E9finir\u0020la\u0020cl\u00E9\u0020pour\u0020afficher\u0020l\u0027espace\u0020multidimensionnel.",
             "url": "classes/PageShowSkyCube.html#constant_SHOW_ESPACE"
         },                {
             "fqsen": "\\PageShowSkyCube\u003A\u003ASHOW_ACCORDS",
             "name": "SHOW_ACCORDS",
-            "summary": "",
+            "summary": "Constante\u0020pour\u0020d\u00E9finir\u0020la\u0020cl\u00E9\u0020pour\u0020afficher\u0020les\u0020classes\u0020d\u0027accords.",
             "url": "classes/PageShowSkyCube.html#constant_SHOW_ACCORDS"
         },                {
             "fqsen": "\\PageShowSkyCube\u003A\u003ASHOW_DATACUBE",
             "name": "SHOW_DATACUBE",
-            "summary": "",
+            "summary": "Constante\u0020pour\u0020d\u00E9finir\u0020la\u0020cl\u00E9\u0020pour\u0020afficher\u0020le\u0020DataCube.",
             "url": "classes/PageShowSkyCube.html#constant_SHOW_DATACUBE"
         },                {
             "fqsen": "\\PageShowSkyCube\u003A\u003ASHOW_SKYCUBE",
             "name": "SHOW_SKYCUBE",
-            "summary": "",
+            "summary": "Constante\u0020pour\u0020d\u00E9finir\u0020la\u0020cl\u00E9\u0020pour\u0020afficher\u0020le\u0020SkyCube.",
             "url": "classes/PageShowSkyCube.html#constant_SHOW_SKYCUBE"
         },                {
             "fqsen": "\\PageShowSkyCube\u003A\u003ASHOW_TAGED_CUBE",
             "name": "SHOW_TAGED_CUBE",
-            "summary": "",
+            "summary": "Constante\u0020pour\u0020d\u00E9finir\u0020la\u0020cl\u00E9\u0020pour\u0020afficher\u0020le\u0020r\u00E9sultat\u0020TagedCube.",
             "url": "classes/PageShowSkyCube.html#constant_SHOW_TAGED_CUBE"
         },                {
             "fqsen": "\\PageShowSkyCube\u003A\u003A\u0024SkyCube",
             "name": "SkyCube",
-            "summary": "",
+            "summary": "Le\u0020cube\u0020SkyCube\u0020r\u00E9sultant.",
             "url": "classes/PageShowSkyCube.html#property_SkyCube"
         },                {
             "fqsen": "\\PageShowSkyCube\u003A\u003A\u0024Password",
             "name": "Password",
-            "summary": "",
+            "summary": "Le\u0020mot\u0020de\u0020passe\u0020pour\u0020acc\u00E9der\u0020\u00E0\u0020la\u0020page.",
             "url": "classes/PageShowSkyCube.html#property_Password"
         },                {
             "fqsen": "\\PageShowSkyCube\u003A\u003A\u0024Aggregate",
             "name": "Aggregate",
-            "summary": "",
+            "summary": "L\u0027agr\u00E9gation\u0020s\u00E9lectionn\u00E9e.",
             "url": "classes/PageShowSkyCube.html#property_Aggregate"
         },                {
             "fqsen": "\\PageShowSkyCube\u003A\u003A\u0024AggregateObj",
             "name": "AggregateObj",
-            "summary": "",
+            "summary": "L\u0027objet\u0020d\u0027agr\u00E9gation\u0020associ\u00E9\u0020\u00E0\u0020l\u0027agr\u00E9gation\u0020s\u00E9lectionn\u00E9e.",
             "url": "classes/PageShowSkyCube.html#property_AggregateObj"
         },                {
             "fqsen": "\\PageShowSkyCube\u003A\u003A\u0024Test",
             "name": "Test",
-            "summary": "",
+            "summary": "Indique\u0020si\u0020le\u0020test\u0020doit\u0020\u00EAtre\u0020affich\u00E9\u0020ou\u0020non.",
             "url": "classes/PageShowSkyCube.html#property_Test"
         },                {
             "fqsen": "\\PageShowSkyCube\u003A\u003A\u0024ShowInput",
             "name": "ShowInput",
-            "summary": "",
+            "summary": "Indique\u0020si\u0020l\u0027entr\u00E9e\u0020doit\u0020\u00EAtre\u0020affich\u00E9e\u0020ou\u0020non.",
             "url": "classes/PageShowSkyCube.html#property_ShowInput"
         },                {
             "fqsen": "\\PageShowSkyCube\u003A\u003A\u0024ShowEspace",
             "name": "ShowEspace",
-            "summary": "",
+            "summary": "Indique\u0020si\u0020l\u0027espace\u0020multidimensionnel\u0020doit\u0020\u00EAtre\u0020affich\u00E9\u0020ou\u0020non.",
             "url": "classes/PageShowSkyCube.html#property_ShowEspace"
         },                {
             "fqsen": "\\PageShowSkyCube\u003A\u003A\u0024ShowAccords",
             "name": "ShowAccords",
-            "summary": "",
+            "summary": "Indique\u0020si\u0020les\u0020classes\u0020d\u0027accords\u0020doivent\u0020\u00EAtre\u0020affich\u00E9es\u0020ou\u0020non.",
             "url": "classes/PageShowSkyCube.html#property_ShowAccords"
         },                {
             "fqsen": "\\PageShowSkyCube\u003A\u003A\u0024ShowDataCube",
             "name": "ShowDataCube",
-            "summary": "",
+            "summary": "Indique\u0020si\u0020le\u0020DataCube\u0020doit\u0020\u00EAtre\u0020affich\u00E9\u0020ou\u0020non.",
             "url": "classes/PageShowSkyCube.html#property_ShowDataCube"
         },                {
             "fqsen": "\\PageShowSkyCube\u003A\u003A\u0024ShowSkyCube",
             "name": "ShowSkyCube",
-            "summary": "",
+            "summary": "Indique\u0020si\u0020le\u0020SkyCube\u0020doit\u0020\u00EAtre\u0020affich\u00E9\u0020ou\u0020non.",
             "url": "classes/PageShowSkyCube.html#property_ShowSkyCube"
         },                {
             "fqsen": "\\PageShowSkyCube\u003A\u003A\u0024ShowTagedCube",
             "name": "ShowTagedCube",
-            "summary": "",
+            "summary": "Indique\u0020si\u0020le\u0020r\u00E9sultat\u0020TagedCube\u0020doit\u0020\u00EAtre\u0020affich\u00E9\u0020ou\u0020non.",
             "url": "classes/PageShowSkyCube.html#property_ShowTagedCube"
         },                {
             "fqsen": "\\PageShowSkyCube\u003A\u003A\u0024AggregateListObj",
             "name": "AggregateListObj",
-            "summary": "",
+            "summary": "L\u0027objet\u0020AggregateList\u0020contenant\u0020la\u0020liste\u0020des\u0020agr\u00E9gations.",
             "url": "classes/PageShowSkyCube.html#property_AggregateListObj"
         },                {
             "fqsen": "\\PageShowSkyCube\u003A\u003A\u0024AggregateList",
             "name": "AggregateList",
-            "summary": "",
+            "summary": "La\u0020liste\u0020des\u0020agr\u00E9gations.",
             "url": "classes/PageShowSkyCube.html#property_AggregateList"
         },                {
             "fqsen": "\\PageTest",
             "name": "PageTest",
-            "summary": "Test\u0020page",
+            "summary": "Cette\u0020classe\u0020repr\u00E9sente\u0020une\u0020page\u0020de\u0020test.",
             "url": "classes/PageTest.html"
         },                {
             "fqsen": "\\PageTest\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Initialise\u0020l\u0027objet\u0020PageTest.",
             "url": "classes/PageTest.html#method___construct"
         },                {
             "fqsen": "\\PageTest\u003A\u003Ahandle\u0028\u0029",
             "name": "handle",
-            "summary": "",
+            "summary": "G\u00E8re\u0020la\u0020soumission\u0020du\u0020formulaire\u0020et\u0020traite\u0020les\u0020donn\u00E9es\u0020d\u0027entr\u00E9e.",
             "url": "classes/PageTest.html#method_handle"
         },                {
             "fqsen": "\\PageTest\u003A\u003AcompareRes\u0028\u0029",
             "name": "compareRes",
-            "summary": "",
+            "summary": "Compare\u0020le\u0020r\u00E9sultat\u0020et\u0020la\u0020valeur\u0020attendue\u0020et\u0020retourne\u0020le\u0020r\u00E9sultat\u0020sous\u0020forme\u0020de\u0020texte\u0020color\u00E9.",
             "url": "classes/PageTest.html#method_compareRes"
         },                {
             "fqsen": "\\PageTest\u003A\u003AtestCase\u0028\u0029",
             "name": "testCase",
-            "summary": "",
+            "summary": "R\u00E9alise\u0020un\u0020test\u0020de\u0020conversion\u0020de\u0020cas\u0020pour\u0020l\u0027entr\u00E9e\u0020donn\u00E9e\u0020et\u0020affiche\u0020le\u0020r\u00E9sultat.",
             "url": "classes/PageTest.html#method_testCase"
         },                {
             "fqsen": "\\PageTest\u003A\u003AtestStringsConvertCase\u0028\u0029",
             "name": "testStringsConvertCase",
-            "summary": "",
+            "summary": "R\u00E9alise\u0020les\u0020tests\u0020pour\u0020la\u0020fonction\u0020de\u0020conversion\u0020de\u0020cas\u0020des\u0020cha\u00EEnes\u0020de\u0020caract\u00E8res.",
             "url": "classes/PageTest.html#method_testStringsConvertCase"
         },                {
             "fqsen": "\\PageTest\u003A\u003AtestExportCSV\u0028\u0029",
             "name": "testExportCSV",
-            "summary": "",
+            "summary": "R\u00E9alise\u0020les\u0020tests\u0020pour\u0020la\u0020fonction\u0020d\u0027export\u0020CSV\u0020des\u0020tableaux.",
             "url": "classes/PageTest.html#method_testExportCSV"
         },                {
             "fqsen": "\\PageTestAccords",
             "name": "PageTestAccords",
-            "summary": "Test\u0020page\u0020for\u0020Accords",
+            "summary": "Cette\u0020classe\u0020repr\u00E9sente\u0020une\u0020page\u0020de\u0020test\u0020des\u0020accords.",
             "url": "classes/PageTestAccords.html"
         },                {
             "fqsen": "\\PageTestAccords\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Initialise\u0020l\u0027objet\u0020PageTestAccords.",
             "url": "classes/PageTestAccords.html#method___construct"
         },                {
             "fqsen": "\\PageTestAccords\u003A\u003Ahandle\u0028\u0029",
             "name": "handle",
-            "summary": "",
+            "summary": "G\u00E8re\u0020la\u0020soumission\u0020du\u0020formulaire\u0020et\u0020traite\u0020les\u0020donn\u00E9es\u0020d\u0027entr\u00E9e.",
             "url": "classes/PageTestAccords.html#method_handle"
         },                {
             "fqsen": "\\PageTestCoSky",
             "name": "PageTestCoSky",
-            "summary": "Test\u0020page",
+            "summary": "Cette\u0020classe\u0020repr\u00E9sente\u0020une\u0020page\u0020de\u0020test\u0020de\u0020la\u0020classe\u0020CoSky.",
             "url": "classes/PageTestCoSky.html"
         },                {
             "fqsen": "\\PageTestCoSky\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Initialise\u0020l\u0027objet\u0020PageTestCoSky.",
             "url": "classes/PageTestCoSky.html#method___construct"
         },                {
             "fqsen": "\\PageTestCoSky\u003A\u003Ahandle\u0028\u0029",
             "name": "handle",
-            "summary": "",
+            "summary": "G\u00E8re\u0020la\u0020soumission\u0020du\u0020formulaire\u0020et\u0020traite\u0020les\u0020donn\u00E9es\u0020d\u0027entr\u00E9e.",
             "url": "classes/PageTestCoSky.html#method_handle"
         },                {
             "fqsen": "\\PageTestSkyCube",
             "name": "PageTestSkyCube",
-            "summary": "Test\u0020page",
+            "summary": "Cette\u0020classe\u0020repr\u00E9sente\u0020une\u0020page\u0020de\u0020test\u0020des\u0020classes\u0020SkyCube.",
             "url": "classes/PageTestSkyCube.html"
         },                {
             "fqsen": "\\PageTestSkyCube\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Initialise\u0020l\u0027objet\u0020PageTestSkyCube.",
             "url": "classes/PageTestSkyCube.html#method___construct"
         },                {
             "fqsen": "\\PageTestSkyCube\u003A\u003Ahandle\u0028\u0029",
             "name": "handle",
-            "summary": "",
+            "summary": "G\u00E8re\u0020la\u0020soumission\u0020du\u0020formulaire\u0020et\u0020traite\u0020les\u0020donn\u00E9es\u0020d\u0027entr\u00E9e.",
             "url": "classes/PageTestSkyCube.html#method_handle"
         },                {
             "fqsen": "\\PageTestSkyCubeEmergent",
             "name": "PageTestSkyCubeEmergent",
-            "summary": "Test\u0020page",
+            "summary": "Cette\u0020classe\u0020repr\u00E9sente\u0020une\u0020page\u0020de\u0020test\u0020de\u0020la\u0020classe\u0020SkyCubeEmergent.",
             "url": "classes/PageTestSkyCubeEmergent.html"
         },                {
             "fqsen": "\\PageTestSkyCubeEmergent\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Initialise\u0020l\u0027objet\u0020PageTestSkyCubeEmergent.",
             "url": "classes/PageTestSkyCubeEmergent.html#method___construct"
         },                {
             "fqsen": "\\PageTestSkyCubeEmergent\u003A\u003Ahandle\u0028\u0029",
             "name": "handle",
-            "summary": "",
+            "summary": "G\u00E8re\u0020la\u0020soumission\u0020du\u0020formulaire\u0020et\u0020traite\u0020les\u0020donn\u00E9es\u0020d\u0027entr\u00E9e.",
             "url": "classes/PageTestSkyCubeEmergent.html#method_handle"
         },                {
             "fqsen": "\\CollParser",
@@ -5483,37 +5493,37 @@ Search.appendIndex(
         },                {
             "fqsen": "\\TagedPage",
             "name": "TagedPage",
-            "summary": "Basic\u0020page\u0020for\u0020a\u0020Taged\u0020page",
+            "summary": "Classe\u0020de\u0020base\u0020pour\u0020les\u0020pages\u0020Taged.",
             "url": "classes/TagedPage.html"
         },                {
             "fqsen": "\\TagedPage\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020TagedPage.",
             "url": "classes/TagedPage.html#method___construct"
         },                {
             "fqsen": "\\TagedPage\u003A\u003AshowPageHeader\u0028\u0029",
             "name": "showPageHeader",
-            "summary": "",
+            "summary": "Affiche\u0020l\u0027en\u002Dt\u00EAte\u0020de\u0020la\u0020page.",
             "url": "classes/TagedPage.html#method_showPageHeader"
         },                {
             "fqsen": "\\TagedPage\u003A\u003AshowPageFooter\u0028\u0029",
             "name": "showPageFooter",
-            "summary": "",
+            "summary": "Affiche\u0020le\u0020pied\u0020de\u0020page\u0020de\u0020la\u0020page.",
             "url": "classes/TagedPage.html#method_showPageFooter"
         },                {
             "fqsen": "\\TagedPage\u003A\u003APAGE_SELECTOR",
             "name": "PAGE_SELECTOR",
-            "summary": "",
+            "summary": "Cl\u00E9\u0020pour\u0020le\u0020s\u00E9lecteur\u0020de\u0020page.",
             "url": "classes/TagedPage.html#constant_PAGE_SELECTOR"
         },                {
             "fqsen": "\\TagedPage\u003A\u003APAGE_DEFAULT",
             "name": "PAGE_DEFAULT",
-            "summary": "",
+            "summary": "Nom\u0020de\u0020la\u0020page\u0020par\u0020d\u00E9faut.",
             "url": "classes/TagedPage.html#constant_PAGE_DEFAULT"
         },                {
             "fqsen": "\\TagedPage\u003A\u003APAGE_LIST",
             "name": "PAGE_LIST",
-            "summary": "",
+            "summary": "Liste\u0020des\u0020pages\u0020disponibles\u0020avec\u0020leurs\u0020noms\u0020affich\u00E9s.",
             "url": "classes/TagedPage.html#constant_PAGE_LIST"
         },                {
             "fqsen": "\\TagedWS",

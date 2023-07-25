@@ -1,12 +1,18 @@
 <?php
 
 /**
+ * Classe représentant la page de données de collection.
  *
  * @package TAGED\Pages
  */
 class PageCollData extends TagedPage
 {
-	public function __construct ( $InputData = NULL )
+    /**
+     * Constructeur de la classe PageCollData.
+     *
+     * @param mixed $InputData Les données d'entrée pour la page.
+     */
+    public function __construct ( $InputData = NULL )
 	{
 		parent::__construct ( $InputData );
 		$Data = ( NULL == $InputData ? $_REQUEST : $InputData );

@@ -1,14 +1,29 @@
 <?php
 
 /**
- * Basic page for a Taged page
+ * Classe de base pour les pages Taged.
+ * 
  * @package TAGED
  */
 class TagedPage extends THPage
 {
-	const PAGE_SELECTOR = 'sel';
-	const PAGE_DEFAULT = 'Accueil';
-	const PAGE_LIST = array (
+    /**
+     * Clé pour le sélecteur de page.
+     * @var string
+     */
+    const PAGE_SELECTOR = 'sel';
+    
+    /**
+     * Nom de la page par défaut.
+     * @var string
+     */
+    const PAGE_DEFAULT = 'Accueil';
+    
+    /**
+     * Liste des pages disponibles avec leurs noms affichés.
+     * @var array
+     */
+    const PAGE_LIST = array (
 		'Accueil' => 'Accueil',
 	    'Match 3' => 'Match3',
 	    'Collection Data' => 'CollData',
@@ -24,7 +39,11 @@ class TagedPage extends THPage
 //	    'Collection Aggregate' => 'CollAggregate',
 	);
     	
-	public function __construct ( $InputData = NULL )
+    /**
+     * Constructeur de la classe TagedPage.
+     * @param mixed $InputData Données d'entrée pour la page.
+     */
+    public function __construct ( $InputData = NULL )
 	{
 		parent::__construct ( $InputData );
 		
@@ -32,6 +51,9 @@ class TagedPage extends THPage
 		$this->addCSS ( '/css/taged.css' );
 	}
 
+	/**
+	 * Affiche l'en-tête de la page.
+	 */
 	public function showPageHeader ()
 	{
 	    Log::fct_enter ( __METHOD__ );
@@ -50,8 +72,11 @@ class TagedPage extends THPage
 	    Log::fct_exit ( __METHOD__ );
 	}
 	    
+	/**
+	 * Affiche le pied de page de la page.
+	 */
 	public function showPageFooter ()
 	{
 	    HTML::showEndBody ();
 	}
-} // FetePage
+} // TagedPage

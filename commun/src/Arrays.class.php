@@ -1,16 +1,68 @@
 <?php
 
 /**
+ * Classe utilitaire pour les opérations sur les tableaux.
+ * 
+ * Cette classe contient des méthodes pour effectuer différentes opérations sur les tableaux.
  *
  * @package Commun
  */
 abstract class Arrays  
 {
+    /**
+     * @var string EXPORT_COLUMN_FROM_DATA Utilisé pour indiquer que les libellés des colonnes doivent être extraits du tableau de données.
+     */
+    const EXPORT_COLUMN_FROM_DATA = 'export_col_data';
+    
+    /**
+     * @var string EXPORT_COLUMN_AS_NUM Utilisé pour indiquer que les libellés des colonnes doivent être des nombres séquentiels.
+     */
+    const EXPORT_COLUMN_AS_NUM = 'export_col_num';
+    
+    /**
+     * @var string EXPORT_COLUMN_NO_HEADER Utilisé pour indiquer qu'aucun libellé de colonne ne doit être présenté dans l'export CSV.
+     */
+    const EXPORT_COLUMN_NO_HEADER = 'export_col_not';
+    
+    /**
+     * @var string EXPORT_ROW_FROM_DATA Utilisé pour indiquer que les libellés des lignes doivent être extraits du tableau de données.
+     */
+    const EXPORT_ROW_FROM_DATA = 'export_row_data';
+    
+    /**
+     * @var string EXPORT_ROW_ADD_NUM Utilisé pour indiquer que des nombres séquentiels doivent être ajoutés comme libellés de lignes.
+     */
+    const EXPORT_ROW_ADD_NUM = 'export_row_add';
+    
+    /**
+     * @var string EXPORT_ROW_NO_HEADER Utilisé pour indiquer qu'aucun libellé de ligne ne doit être présenté dans l'export CSV.
+     */
+    const EXPORT_ROW_NO_HEADER = 'export_row_not';
+    
+    
+    
+    /**
+     * Affiche un tableau associatif sous forme de chaîne de caractères formatée.
+     *
+     * @param array $Array Le tableau associatif à afficher.
+     * @param string $Label Le libellé à afficher avant le tableau (facultatif).
+     * @param string $LineLabel Le libellé à afficher avant chaque ligne (facultatif).
+     * @param string $LineEnd La chaîne à utiliser à la fin de chaque ligne (facultatif).
+     */
     public static function echoArr ( $Array, $Label = '', $LineLabel = '', $LineEnd = '' )
     {
         echo self::arrToString ( $Array, $Label, $LineLabel, $LineEnd );
     }
     
+    /**
+     * Convertit un tableau associatif en une chaîne de caractères formatée.
+     *
+     * @param array $Array Le tableau associatif à convertir.
+     * @param string $Label Le libellé à afficher avant le tableau (facultatif).
+     * @param string $LineLabel Le libellé à afficher avant chaque ligne (facultatif).
+     * @param string $LineEnd La chaîne à utiliser à la fin de chaque ligne (facultatif).
+     * @return string La chaîne de caractères formatée.
+     */
     public static function arrToString ( $Array, $Label = '', $LineLabel = '', $LineEnd = '' )
     {
         $Result = '';
@@ -25,6 +77,14 @@ abstract class Arrays
         return $Result;
     }
     
+    /**
+     * Récupère la valeur d'une clé dans un tableau associatif, ou une valeur par défaut si la clé n'existe pas.
+     *
+     * @param array $Array Le tableau associatif.
+     * @param string $Label La clé à récupérer.
+     * @param mixed $Default La valeur par défaut à retourner si la clé n'existe pas (facultatif, valeur par défaut : "").
+     * @return mixed La valeur de la clé ou la valeur par défaut si la clé n'existe pas.
+     */
     public static function getIfSet ( $Array, $Label, $Default = "" )
     {
         $Result = $Default;
@@ -37,6 +97,15 @@ abstract class Arrays
         return $Result;
     }
     
+    /**
+     * Récupère la valeur d'une clé dans un tableau associatif ou génère une exception si la clé n'existe pas.
+     *
+     * @param array $Array Le tableau associatif.
+     * @param string $Label La clé à récupérer.
+     * @param string $ExceptionText Le texte de l'exception à générer si la clé n'existe pas.
+     * @return mixed La valeur de la clé si elle existe.
+     * @throws Exception Si la clé n'existe pas dans le tableau.
+     */
     public static function getOrCrash ( $Array, $Label, $ExceptionText )
     {
         $Result = NULL;
@@ -53,17 +122,19 @@ abstract class Arrays
         return $Result;
         
     }
-    
-    const EXPORT_COLUMN_FROM_DATA = 'export_col_data';
-    const EXPORT_COLUMN_AS_NUM = 'export_col_num';
-    const EXPORT_COLUMN_NO_HEADER = 'export_col_not';
 
-    const EXPORT_ROW_FROM_DATA = 'export_row_data';
-    const EXPORT_ROW_ADD_NUM = 'export_row_add';
-    const EXPORT_ROW_NO_HEADER = 'export_row_not';
     
-    
-    
+    /**
+     * Extrait les colonnes du tableau d'entrée en fonction des paramètres fournis.
+     *
+     * Cette méthode extrait les colonnes du tableau d'entrée en fonction du paramètre $ColumnHeader.
+     * Les colonnes à ignorer peuvent être spécifiées avec le paramètre $IgnoreColumns.
+     *
+     * @param array $InputData Le tableau d'entrée à partir duquel extraire les colonnes.
+     * @param string|array $ColumnHeader Comment le libellé des colonnes doit être géré.
+     * @param array $IgnoreColumns Liste des colonnes à ignorer dans la présentation (facultatif, valeur par défaut : array()).
+     * @return array Les colonnes extraites du tableau d'entrée.
+     */
     private static function extractColumns ( $InputData, $ColumnHeader = self::EXPORT_COLUMN_FROM_DATA, $IgnoreColumns = array () )
     {
         $Columns = array ();
@@ -122,6 +193,17 @@ abstract class Arrays
         return $Columns;
     }
     
+    /**
+     * Remplace une sous-chaîne dans une chaîne si nécessaire.
+     *
+     * Cette méthode remplace la sous-chaîne $Needle par la chaîne $ReplaceBy dans la chaîne $String,
+     * si $ReplaceBy n'est pas une chaîne vide. Sinon, elle retourne la chaîne $String inchangée.
+     *
+     * @param string $String La chaîne dans laquelle effectuer le remplacement.
+     * @param string $Needle La sous-chaîne à remplacer.
+     * @param string $ReplaceBy La chaîne de remplacement (facultatif, valeur par défaut : '').
+     * @return string La chaîne résultante après le remplacement (ou inchangée si $ReplaceBy est vide).
+     */
     private static function replaceIfNeeded ( $String, $Needle, $ReplaceBy = '' )
     {
         $Result = $String;
@@ -134,26 +216,33 @@ abstract class Arrays
     }
     
     /**
-     * @brief Exports the given $InputData as a CSV text
-     * Row Header can be either :
-     *  - EXPORT_ROW_FROM_DATA : Using the data index as row header 
-     *  - EXPORT_ROW_ADD_NUM : A number will be added as row header
-     *  - EXPORT_ROW_NO_HEADER : Nothing is presented as row header
-     *  - an array : A list of indexes to use (index shall match Input Data)
-     *  - a string : The name of the row to present as row header
-     * Column Header can be either :
-     *  - EXPORT_COLUMN_FROM_DATA : Using the data index as column header 
-     *  - EXPORT_COLUMN_AS_NUM : Using a number as column header
-     *  - EXPORT_COLUMN_NO_HEADER : Nothing is presented as column header 
-     *  - an array : A list of column names indexed by output label (column names shall match Input Data)
-     * @param array $InputData The data to export
-     * @param string $Separator The field separator
-     * @param string|array $ColumnHeader How the column header should be handled
-     * @param string|array $RowHeader How the column header should be handled
-     * @param sring $FilePath The path of the file to export to (if any )
-     * @param array $IgnoreColums List of columns to ignore in presentation
-     * @param array $IgnoreRows List of rows to ignore in presentation
-     * @return Error message ('' if no problem)
+     * Exporte les données fournies au format CSV.
+     *
+     * Cette méthode exporte les données fournies au format CSV avec les options spécifiées.
+     * Le résultat peut être enregistré dans un fichier si le paramètre $FilePath est fourni.
+     * Les libellés des colonnes et des lignes peuvent être gérés avec les paramètres $ColumnHeader et $RowHeader.
+     * Les colonnes ou lignes à ignorer dans la présentation peuvent être spécifiées avec $IgnoreColumns et $IgnoreRows.
+     * Row Header peut être:
+     *  - EXPORT_ROW_FROM_DATA : Utilise l'index des données d'entrée 
+     *  - EXPORT_ROW_ADD_NUM : Un nombre est ajouté artificiellement
+     *  - EXPORT_ROW_NO_HEADER : Rien n'est présenté comme entête
+     *  - un array : Une liste d'index à utiliser (autant d'index que de lignes de données)
+     *  - un string : Le nom de la colonne à présenter comme entête
+     * Column Header peut être:
+     *  - EXPORT_COLUMN_FROM_DATA : Utilise l'index des données d'entrée 
+     *  - EXPORT_COLUMN_AS_NUM : Utilise un numéro artificiel comme entête
+     *  - EXPORT_COLUMN_NO_HEADER : Rien n'est présenté comme entête
+     *  - an array : Une liste d'index à utiliser (autant d'index que de colonnes de données)
+
+     * @param array $InputData Les données à exporter.
+     * @param string $Separator Le séparateur de champ (facultatif, valeur par défaut : ',').
+     * @param string|array $ColumnHeader Comment le libellé des colonnes doit être géré.
+     * @param string|array $RowHeader Comment le libellé des lignes doit être géré.
+     * @param sring $FilePath Le chemin du fichier dans lequel enregistrer les données CSV (facultatif, valeur par défaut : '').
+     * @param array $IgnoreColumns Liste des colonnes à ignorer dans la présentation (facultatif, valeur par défaut : array()).
+     * @param array $IgnoreRows Liste des lignes à ignorer dans la présentation (facultatif, valeur par défaut : array()).
+     * @param string $ReplaceSep La chaîne de remplacement pour le séparateur (facultatif, valeur par défaut : '').
+     * @return string Le message d'erreur s'il y a un problème lors de l'exportation (ou chaîne vide si tout va bien).
      */
     public static function exportAsCSV ( $InputData, $Separator = ',', $ColumnHeader = self::EXPORT_COLUMN_FROM_DATA, $RowHeader = self::EXPORT_ROW_FROM_DATA, $FilePath = '', $IgnoreColumns = array (), $IgnoreRows = array (), $ReplaceSep = '' )
     {
@@ -246,6 +335,17 @@ abstract class Arrays
         return $Result;
     }
     
+    /**
+     * Récupère la ligne correspondant à la valeur recherchée dans un fichier CSV.
+     *
+     * @param string $CSVFile Le chemin complet du fichier CSV.
+     * @param mixed $SearchValue La valeur recherchée.
+     * @param int $Column Le numéro de colonne à rechercher (facultatif, valeur par défaut : 0).
+     * @param int $MaxLength La longueur maximale d'une ligne du fichier CSV (facultatif, valeur par défaut : 1000).
+     * @param string $Separator Le séparateur de champ du fichier CSV (facultatif, valeur par défaut : ',').
+     * @param bool $IgnoreTitles Indique si les titres de colonnes doivent être ignorés (facultatif, valeur par défaut : true).
+     * @return array La ligne correspondant à la valeur recherchée, ou un tableau vide s'il n'y a pas de correspondance.
+     */
     public static function getCSVLine ( $CSVFile, $SearchValue, $Column = 0, $MaxLength = 1000, $Separator = ',', $IgnoreTitles = TRUE )
     {
         $Row = array ();
@@ -279,8 +379,9 @@ abstract class Arrays
     }
     
     /**
-     * Same behavior as array_merge_recursive, but numeric keys are considered as identical
-     * @return Array
+     * Fusionne deux tableaux de manière récursive, en considérant les clés numériques comme identiques.
+     *
+     * @return array Le tableau résultant de la fusion.
      */
     public static function arrayMergeRecursive () 
     {
@@ -307,12 +408,12 @@ abstract class Arrays
     }
     
     /**
-     * Same behavior as array_column, but multiple columns are supported
-     * @see https://www.php.net/manual/en/function.array-column.php
-     * @param array $Array A multi-dimensional array or an array of objects from which to pull a column of values from. 
-     * @param int|string|null $Columns The columns of values to return. 
-     * @param int|string|null $IndexKey The column to use as the index/keys for the returned array.
-     * @return array
+     * Récupère les colonnes spécifiées d'un tableau associatif, en les renommant si nécessaire.
+     *
+     * @param array $Array Un tableau multidimensionnel ou un tableau d'objets à partir duquel extraire les colonnes.
+     * @param int|string|null $Columns Les colonnes de valeurs à renvoyer.
+     * @param int|string|null $IndexKey La colonne à utiliser comme index/clés pour le tableau résultant (facultatif).
+     * @return array Le tableau résultant contenant les colonnes spécifiées.
      */
     public static function getColumns ( $Array, $Columns, $IndexKey = NULL )
     {

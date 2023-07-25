@@ -1,12 +1,18 @@
 <?php
 
 /**
- * Test page
+ * Cette classe représente une page de test.
+ * 
  * @package TAGED\Pages\Test
  */
 class PageTest extends TagedPage
 {
-	public function __construct ( $InputData = NULL )
+    /**
+     * Initialise l'objet PageTest.
+     *
+     * @param mixed $InputData Les données d'entrée pour initialiser la page. Si null, les données $_REQUEST seront utilisées.
+     */
+    public function __construct ( $InputData = NULL )
 	{
 		parent::__construct ( $InputData );
 		$Data = ( NULL == $InputData ? $_REQUEST : $InputData );
@@ -18,6 +24,11 @@ class PageTest extends TagedPage
 		$this->handle ( $Data );
 	}
 	
+	/**
+	 * Gère la soumission du formulaire et traite les données d'entrée.
+	 *
+	 * @param mixed $Data Les données d'entrée à traiter.
+	 */
 	protected function handle ( $Data )
 	{
 //	    self::testExportCSV ();
@@ -25,6 +36,13 @@ class PageTest extends TagedPage
 	    self::testStringsConvertCase ();
 	}
 
+	/**
+	 * Compare le résultat et la valeur attendue et retourne le résultat sous forme de texte coloré.
+	 *
+	 * @param mixed $Res Le résultat obtenu.
+	 * @param mixed $Attendu La valeur attendue.
+	 * @return string Le résultat coloré.
+	 */
 	protected function compareRes ( $Res, $Attendu )
 	{
 	    $Content = HTML::span ( 'KO', array ( 'style' => 'background-color: red; color: white') );
@@ -35,6 +53,14 @@ class PageTest extends TagedPage
 	    return $Content;
 	}
 	
+	/**
+	 * Réalise un test de conversion de cas pour l'entrée donnée et affiche le résultat.
+	 *
+	 * @param string $Input L'entrée à convertir.
+	 * @param string $Output La valeur attendue après conversion.
+	 * @param string $From Le cas source.
+	 * @param string $To Le cas cible.
+	 */
 	protected function testCase ( $Input, $Output, $From, $To )
 	{
 	    $Result = Strings::convertCase ( $Input, $To, $From );
@@ -44,6 +70,9 @@ class PageTest extends TagedPage
 	        ));
 	}
 	
+	/**
+	 * Réalise les tests pour la fonction de conversion de cas des chaînes de caractères.
+	 */
 	protected function testStringsConvertCase ()
 	{ 
 	    $Snake = "texte_qui_sert_a_tester";
@@ -96,6 +125,9 @@ class PageTest extends TagedPage
 	    self::testCase ( $NaturalLow, $NaturalLow, Strings::CASE_NATURAL_LOWER, Strings::CASE_NATURAL_LOWER );
 	}
 	
+	/**
+	 * Réalise les tests pour la fonction d'export CSV des tableaux.
+	 */
 	protected function testExportCSV ()
 	{
 	    
@@ -176,4 +208,4 @@ class PageTest extends TagedPage
 	    
 	}
 	
-} // PageCollParse
+} // PageTest

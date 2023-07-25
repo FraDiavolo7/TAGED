@@ -148,11 +148,11 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/pages/PageGestAggregate.class.php"><a href="files/application-src-pages-pagegestaggregate-class.html"><abbr title="application/src/pages/PageGestAggregate.class.php">PageGestAggregate.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">7</span>
+    <span class="phpdocumentor-element-found-in__line">8</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Basic page for a Taged page</p>
+            <p class="phpdocumentor-summary">Classe représentant la page de gestion des agrégations.</p>
 
 
 
@@ -173,21 +173,21 @@
     <span>
         &nbsp;= &#039;gag_aggregate&#039;                            </span>
 </dt>
-<dd></dd>
+<dd>Constante représentant le nom du champ d&#039;agrégation.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/PageGestAggregate.html#constant_GAG_PASSWORD">GAG_PASSWORD</a>
     <span>
         &nbsp;= &#039;gag_password&#039;                            </span>
 </dt>
-<dd></dd>
+<dd>Constante représentant le nom du champ de mot de passe.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/PageGestAggregate.html#constant_GAG_SUBMIT">GAG_SUBMIT</a>
     <span>
         &nbsp;= &#039;gag_submit&#039;                            </span>
 </dt>
-<dd></dd>
+<dd>Constante représentant le nom du champ de soumission du formulaire.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/THPage.html#constant_LINK_LIST">LINK_LIST</a>
@@ -201,21 +201,21 @@
     <span>
         &nbsp;= &#039;Accueil&#039;                            </span>
 </dt>
-<dd></dd>
+<dd>Nom de la page par défaut.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/TagedPage.html#constant_PAGE_LIST">PAGE_LIST</a>
     <span>
         &nbsp;= array(&#039;Accueil&#039; =&gt; &#039;Accueil&#039;, &#039;Match 3&#039; =&gt; &#039;Match3&#039;, &#039;Collection Data&#039; =&gt; &#039;CollData&#039;, &#039;Hack&amp;apos;n Slash Data&#039; =&gt; &#039;HnSData&#039;, &#039;Gestion Aggregations&#039; =&gt; &#039;GestAggregate&#039;)                            </span>
 </dt>
-<dd></dd>
+<dd>Liste des pages disponibles avec leurs noms affichés.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/TagedPage.html#constant_PAGE_SELECTOR">PAGE_SELECTOR</a>
     <span>
         &nbsp;= &#039;sel&#039;                            </span>
 </dt>
-<dd></dd>
+<dd>Clé pour le sélecteur de page.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/THPage.html#constant_TAGED_URL">TAGED_URL</a>
@@ -225,13 +225,6 @@
 <dd></dd>
 
                     <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/PageGestAggregate.html#property_AggregateList">$AggregateList</a>
-    <span>
-                        &nbsp;: mixed            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Connection.html#property_BUTTON_SIGN_UP_LABEL">$BUTTON_SIGN_UP_LABEL</a>
     <span>
                         &nbsp;: mixed            </span>
@@ -337,6 +330,13 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/PageGestAggregate.html#property_Password">$Password</a>
+    <span>
+                        &nbsp;: string            </span>
+</dt>
+<dd>Le mot de passe requis pour supprimer une agrégation.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/BasicPage.html#property_RedirectURL">$RedirectURL</a>
     <span>
                         &nbsp;: mixed            </span>
@@ -376,7 +376,7 @@
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
+<dd>Constructeur de la classe PageGestAggregate.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/BasicPage.html#method___destruct">__destruct()</a>
@@ -495,7 +495,7 @@
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
+<dd>Gère le traitement des données d&#039;entrée.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/THPage.html#method_links">links()</a>
@@ -509,7 +509,7 @@
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
+<dd>Affiche le contenu de la page.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/BasicPage.html#method_showFoot">showFoot()</a>
@@ -537,11 +537,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/pages/PageGestAggregate.class.php"><a href="files/application-src-pages-pagegestaggregate-class.html"><abbr title="application/src/pages/PageGestAggregate.class.php">PageGestAggregate.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">9</span>
+    <span class="phpdocumentor-element-found-in__line">13</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Constante représentant le nom du champ d&#039;agrégation.</p>
+
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
@@ -550,8 +551,7 @@
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <section class="phpdocumentor-description"></section>
 
     
@@ -566,11 +566,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/pages/PageGestAggregate.class.php"><a href="files/application-src-pages-pagegestaggregate-class.html"><abbr title="application/src/pages/PageGestAggregate.class.php">PageGestAggregate.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">10</span>
+    <span class="phpdocumentor-element-found-in__line">18</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Constante représentant le nom du champ de mot de passe.</p>
+
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
@@ -579,8 +580,7 @@
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <section class="phpdocumentor-description"></section>
 
     
@@ -595,11 +595,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/pages/PageGestAggregate.class.php"><a href="files/application-src-pages-pagegestaggregate-class.html"><abbr title="application/src/pages/PageGestAggregate.class.php">PageGestAggregate.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">11</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Constante représentant le nom du champ de soumission du formulaire.</p>
+
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
@@ -608,8 +609,7 @@
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <section class="phpdocumentor-description"></section>
 
     
@@ -653,23 +653,22 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/TagedPage.class.php"><a href="files/application-src-tagedpage-class.html"><abbr title="application/src/TagedPage.class.php">TagedPage.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">10</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Nom de la page par défaut.</p>
+
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">PAGE_DEFAULT</span>
     = <span class="phpdocumentor-signature__default-value">&#039;Accueil&#039;</span>
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -682,23 +681,22 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/TagedPage.class.php"><a href="files/application-src-tagedpage-class.html"><abbr title="application/src/TagedPage.class.php">TagedPage.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">11</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Liste des pages disponibles avec leurs noms affichés.</p>
+
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">PAGE_LIST</span>
     = <span class="phpdocumentor-signature__default-value">array(&#039;Accueil&#039; =&gt; &#039;Accueil&#039;, &#039;Match 3&#039; =&gt; &#039;Match3&#039;, &#039;Collection Data&#039; =&gt; &#039;CollData&#039;, &#039;Hack&amp;apos;n Slash Data&#039; =&gt; &#039;HnSData&#039;, &#039;Gestion Aggregations&#039; =&gt; &#039;GestAggregate&#039;)</span>
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -711,23 +709,22 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/TagedPage.class.php"><a href="files/application-src-tagedpage-class.html"><abbr title="application/src/TagedPage.class.php">TagedPage.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">9</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Clé pour le sélecteur de page.</p>
+
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">PAGE_SELECTOR</span>
     = <span class="phpdocumentor-signature__default-value">&#039;sel&#039;</span>
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -768,40 +765,6 @@
             Properties
             <a href="classes/PageGestAggregate.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_AggregateList">
-        $AggregateList
-        <a href="classes/PageGestAggregate.html#property_AggregateList" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="application/src/pages/PageGestAggregate.class.php"><a href="files/application-src-pages-pagegestaggregate-class.html"><abbr title="application/src/pages/PageGestAggregate.class.php">PageGestAggregate.class.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">72</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">$AggregateList</span>
-    </code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
                     <article
         class="
             phpdocumentor-element
@@ -1319,6 +1282,39 @@
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_Password">
+        $Password
+        <a href="classes/PageGestAggregate.html#property_Password" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="application/src/pages/PageGestAggregate.class.php"><a href="files/application-src-pages-pagegestaggregate-class.html"><abbr title="application/src/pages/PageGestAggregate.class.php">PageGestAggregate.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">102</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Le mot de passe requis pour supprimer une agrégation.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$Password</span>
+    </code>
+
+    
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_RedirectURL">
         $RedirectURL
         <a href="classes/BasicPage.html#property_RedirectURL" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1502,17 +1498,17 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/pages/PageGestAggregate.class.php"><a href="files/application-src-pages-pagegestaggregate-class.html"><abbr title="application/src/pages/PageGestAggregate.class.php">PageGestAggregate.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">30</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Constructeur de la classe PageGestAggregate.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$InputData</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">NULL</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1520,7 +1516,8 @@
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">NULL</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Les données d'entrée pour la page.</p>
+</section>
 
             </dd>
             </dl>
@@ -2211,17 +2208,17 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/pages/PageGestAggregate.class.php"><a href="files/application-src-pages-pagegestaggregate-class.html"><abbr title="application/src/pages/PageGestAggregate.class.php">PageGestAggregate.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">48</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Gère le traitement des données d&#039;entrée.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
                 <span class="phpdocumentor-signature__name">handle</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$Data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2229,7 +2226,8 @@
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Les données d'entrée pour la page.</p>
+</section>
 
             </dd>
             </dl>
@@ -2288,17 +2286,17 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="application/src/pages/PageGestAggregate.class.php"><a href="files/application-src-pages-pagegestaggregate-class.html"><abbr title="application/src/pages/PageGestAggregate.class.php">PageGestAggregate.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">69</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Affiche le contenu de la page.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
                 <span class="phpdocumentor-signature__name">show</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 
