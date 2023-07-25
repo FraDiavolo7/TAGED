@@ -1,18 +1,18 @@
 <?php
 
 /**
- * Classe gérant une liste d'agrégats.
+ * Classe gÃ©rant une liste d'agrÃ©gats.
  * 
- * Cette classe permet de récupérer la liste des agrégats disponibles depuis un répertoire spécifié.
- * Elle fournit également des méthodes pour obtenir le contenu d'un fichier d'agrégat spécifique,
- * ainsi que pour obtenir la valeur d'un champ spécifique dans le fichier d'agrégat.
+ * Cette classe permet de rÃ©cupÃ©rer la liste des agrÃ©gats disponibles depuis un rÃ©pertoire spÃ©cifiÃ©.
+ * Elle fournit Ã©galement des mÃ©thodes pour obtenir le contenu d'un fichier d'agrÃ©gat spÃ©cifique,
+ * ainsi que pour obtenir la valeur d'un champ spÃ©cifique dans le fichier d'agrÃ©gat.
  * 
  * @package TAGED\Aggregates
  */
 class AggregateList
 {
     /**
-     * Répertoire où se trouvent les fichiers d'agrégats.
+     * RÃ©pertoire oÃ¹ se trouvent les fichiers d'agrÃ©gats.
      * @var string
      */
     protected static $Folder = AGGREGATE_FOLDER_DESC;
@@ -20,8 +20,8 @@ class AggregateList
     /**
      * Constructeur de la classe AggregateList.
      * 
-     * Initialise un nouvel objet AggregateList en récupérant la liste des agrégats disponibles
-     * dans le répertoire spécifié.
+     * Initialise un nouvel objet AggregateList en rÃ©cupÃ©rant la liste des agrÃ©gats disponibles
+     * dans le rÃ©pertoire spÃ©cifiÃ©.
      */
     public function __construct ( )
     {
@@ -39,9 +39,9 @@ class AggregateList
     }
     
     /**
-     * Obtient la liste des agrégats disponibles.
+     * Obtient la liste des agrÃ©gats disponibles.
      * 
-     * @return array Liste des agrégats disponibles.
+     * @return array Liste des agrÃ©gats disponibles.
      */
     public function getList ()
     {
@@ -49,10 +49,10 @@ class AggregateList
     }
 
     /**
-     * Obtient le contenu d'un fichier d'agrégat spécifique.
+     * Obtient le contenu d'un fichier d'agrÃ©gat spÃ©cifique.
      * 
-     * @param string $Name Nom du fichier d'agrégat (sans extension .ini).
-     * @return array|false Tableau associatif contenant le contenu du fichier d'agrégat, ou FALSE en cas d'échec.
+     * @param string $Name Nom du fichier d'agrÃ©gat (sans extension .ini).
+     * @return array|false Tableau associatif contenant le contenu du fichier d'agrÃ©gat, ou FALSE en cas d'Ã©chec.
      */
     public function getFileContent ( $Name )
     {
@@ -61,11 +61,11 @@ class AggregateList
     }
     
     /**
-     * Obtient la valeur d'un champ spécifique dans le fichier d'agrégat.
+     * Obtient la valeur d'un champ spÃ©cifique dans le fichier d'agrÃ©gat.
      * 
-     * @param string $Name Nom du fichier d'agrégat (sans extension .ini).
-     * @param string $Field Nom du champ à récupérer dans le fichier d'agrégat.
-     * @return mixed|null Valeur du champ spécifié dans le fichier d'agrégat, ou NULL si le champ n'existe pas.
+     * @param string $Name Nom du fichier d'agrÃ©gat (sans extension .ini).
+     * @param string $Field Nom du champ Ã  rÃ©cupÃ©rer dans le fichier d'agrÃ©gat.
+     * @return mixed|null Valeur du champ spÃ©cifiÃ© dans le fichier d'agrÃ©gat, ou NULL si le champ n'existe pas.
      */
     public function getFileField ( $Name, $Field )
     {
@@ -74,7 +74,7 @@ class AggregateList
     }
     
     /**
-     * Liste des agrégats disponibles.
+     * Liste des agrÃ©gats disponibles.
      * @var array
      */
     protected $List;
