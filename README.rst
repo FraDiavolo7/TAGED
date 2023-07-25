@@ -30,6 +30,7 @@ License
 Copyright 2023 and contributors.
 
 ``TAGED`` is free software made available under the MIT License. 
+
 .. For details see the `LICENSE <https://github.com/adrn/gala/blob/main/LICENSE>`_ file.
 
 .. |Coverage Status| image:: https://codecov.io/gh/adrn/gala/branch/main/graph/badge.svg
