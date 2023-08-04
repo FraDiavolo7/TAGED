@@ -35,53 +35,53 @@ Video games, especially online ones, can record every action of every player, th
 
 The TAGED method (for Tool Assisted Game Equilibrium Design) we propose offers a solution adaptable for single-player or multiplayer games with large volume of numerical or qualitative analysable data, being either intrinsic to the game itself (relative to characters, objects, levels...) or extrinsic, in relation to the players' behaviours (game durations, game loops, intermediate scoring, action sequences...).
 
-La recherche d'un bon équilibre dans un jeu vidéo est un concept central car il va fortement impacter la satisfaction des joueurs. Dans le cadre d'un jeu solo, s'il est déséquilibré en terme de difficulté, les joueurs risquent très rapidement de s'en désintéresser par absence de défi, ou inversement, par frustration lié à l'impossibilité d'atteindre son objectif. Dans les jeux multijoueurs, la problématique gagne à la fois en importance et en complexité de part la multiplicité des situations qui explose. Il devient donc crucial de détecter au plus vite ces déséquilibres qui peuvent radicalement déstabiliser un jeu vidéo lorsqu'ils sont découverts par des joueurs qui en tirent un profit perçu comme immérité. L'objectif de notre travail de recherche est donc à la fois de détecter ces déséquilibres par une analyse des données du jeu vidéo et de son moteur de règles mais aussi de les découvrir grâce à une analyse en temps réel de la dynamique des comportements des joueurs.
+Finding proper equilibrium in video game is one central concept as it drastically impact players satisfactions. For single-player games, dificulty disbalance can negatively impact interest of the player due to of the lack of challenge, or on the opposite, generate frustration by the impossibility of goals accomplishment. For multiplayer games, due to significant situations multiplication, the case increase in complexity and importance. Early disbalance detection is crutial as players can exploit it wich may generate frustration among others players. Our researsh main goal is both, to detect those disbalances by video game and rules engine data analysis but aslo to discover them by player dynamics behaviors in real time analysis. 
 
 # Statement of need
 
-TAGED offre un large panel d'usages dans l'équilibrage en conception de jeu vidéo. Son utilisation par les concepteurs de jeux peut se faire durant toute la durée de vie d'un dispositif ludique : qu'il soit en conception, en développement ou en production.
+TAGED offers wide use case in video game design balancing. Game designers can use TAGED throughout all steps of a game device from conception to production.
 
-TAGED est actuellement d'un TRL 5. Il porte pour le moment sur trois jeux vidéo de types très populaires et différents : jeu vidéo de collection pour Pokémon Showdown!, Hack 'n' slash pour Diablo III: Reaper of Souls et jeu vidéo *puzzle-game* de type Match 3 pour Open Match 3. Cette diversité sert de véritable démonstrateur à notre proposition, et ce même pour des jeux vidéo qui semblent avoir peu en commun.
+TAGED has a TRL 5. It is applied for now on three popular and different video games: Pokemon Showdown! as collectible type, Diablo III: Reaper of Souls as Hack 'n' shash type and Open Match 3 as match-three puzzle-game type. This types diversity serve as our porposition demonstrator, even for such heterogeneous games.
 
-Voici la schématisation du principe de fonctionnement de TAGED :
+Here is a schematic diagram of how TAGED works:
 <!--- 
 <p align="center">
-	<img src="how-taged-works.png" alt="Principe de fonctionnement de TAGED" width="800">
+	<img src="how-taged-works.png" alt="How tagged works" width="800">
 </p>
  --->
  
-![Principe de fonctionnement de TAGED](how-taged-works.png)
+![How tagged works](how-taged-works.png)
 
-Et voici la présentation détaillée de TAGED :
+And here is the TAGED method:
 <!--- 
 <p align="center">
-	<img src="taged-method.png" alt="Principe de fonctionnement de TAGED" width="800">
+	<img src="taged-method.png" alt="How tagged works" width="800">
 </p>
  --->
  
-![Présentation détaillée de TAGED](taged-method.png)
+![TAGED method](taged-method.png)
 
-TAGED est un outil d'extraction de données qui peut s'utiliser avec des données brutes d'entrée, réelles ou modélisées, intrinsèques au jeu vidéo, comme celles issues des mécaniques, dynamiques ou esthétiques de jeu [@books/lib/SalenZ04], ou bien extrinsèques comme celles extraites des *verbatims* des comportements de joueurs, déviants ou atypiques, et des informations de parties, solo ou multijoueur.
+TAGED is a data extraction tool wich can be used with raw data input, real or modelled, video game intrinsic, such as those derived from game mecanics, dynamics or esthetics [@books/lib/SalenZ04], or extrinsic as those from player behaviour verbatims, deviant or atypical, and single or multiplayer game information.
 
-Les connaissances acquises grâce à TAGED permettent d'équilibrer le *gameplay* de jeux vidéo, en influençant notamment l'ajout ou la suppression de briques de *gameplay* [@Alvarez2018] dans le but de garantir au mieux l'état de *flow* [@books/Csikszentmihalyi09].
+TAGED knowledge generated simplify video game gameplay equilibrium, especially influencing gameplay tiles addition or removal [@Alvarez2018] in order to best ensure the state of flow [@books/Csikszentmihalyi09].
 
-TAGED s'appuie sur les théories fondamentales suivantes :
+TAGED is based on the following fundamental theories:
 
-- Skyline [@icde/BorzsonyiKS01] et Skycube [@vldb/YuanLLWYZ05]
+- Skyline [@icde/BorzsonyiKS01] and Skycube [@vldb/YuanLLWYZ05]
 
-- Cube de données [@datamine/GrayCBLRVPP97] et cube de données émergent [@dawak/NedjarCCL07]
+- Datacube [@datamine/GrayCBLRVPP97] and emergent datacube [@dawak/NedjarCCL07]
 
-- Cosky et Top-*k* [@Yiu:2007:Ongoing]
+- Cosky and Top-k [@Yiu:2007:Ongoing]
 
-L'approche Skycube alliée à celle de cube de données émergent donne celle de Skycube émergent. Après classement, nous obtenons un Skycube émergent ordonné.
+Combined Skycube and emergent datacube approach provide emergent Skycube. After ranking, we obtained ranked emerging Skycube. 
 
-TAGED utilise les algorithmes :
+TAGED uses the following algorithms :
 
-- BNL : block-nested loop is used to compute SKyline
+- BNL: block-nested loop is used to compute Skyline
 
-- IDEA : la plateforme algorithmique IDEA, et notamment les algorithmes E-IDEA et F-IDEA, eux-même basés sur l'algorithme BUC [@sigmod/BeyerR99], et comptible avec C-IDEA [@martinnevot:hal-02446921]
+- IDEA: IDEA BUC algorithm based plateform [@sigmod/BeyerR99], especially E-IDEA and F-IDEA algorithms, and C-IDEA ready [@martinnevot:hal-02446921]
 
-- DeepSky : uses multilevel Skylines [@Preisinger:2015:Approach] with Cosky ranking method
+- DeepSky: uses multilevel Skylines [@Preisinger:2015:Approach] with Cosky ranking method
 
 # Acknowledgements
 
