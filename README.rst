@@ -14,8 +14,8 @@ Installation and Dependencies
 
 TAGED is a full solution which needs a heavy installation on a dedicated server, details for the installation are yet to be simplified. 
 
-Attribution
------------
+.. Attribution
+.. -----------
 
 .. |JOSS|
 
@@ -27,11 +27,9 @@ License
 
 .. |License|
 
-Copyright 2023 and contributors.
+Copyright 2023 Christophe Delagarde and contributors.
 
-``TAGED`` is free software made available under the MIT License. 
-
-.. For details see the `LICENSE <https://github.com/adrn/gala/blob/main/LICENSE>`_ file.
+``TAGED`` is free software made available under the MIT License. For details see the `LICENSE <https://github.com/FraDiavolo7/TAGED/blob/main/LICENSE.txt>`_ file.
 
 .. |Coverage Status| image:: https://codecov.io/gh/adrn/gala/branch/main/graph/badge.svg
    :target: https://codecov.io/gh/adrn/gala
@@ -60,5 +58,5 @@ Copyright 2023 and contributors.
 Contributors
 ------------
 
-.. See the `AUTHORS.rst <https://github.com/adrn/gala/blob/main/AUTHORS.rst>`_
-.. file for a complete list of contributors to the project.
+See the `AUTHORS.rst <https://github.com/FraDiavolo7/TAGED/blob/main/AUTHORS.rst>`_
+file for a complete list of contributors to the project.
