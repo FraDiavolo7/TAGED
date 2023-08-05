@@ -1,4 +1,4 @@
-**Main author:** Christophe Delagarde (`@adrn <https://github.com/FraDiavolo7>`_)
+**Main author:** Christophe Delagarde (`<https://github.com/FraDiavolo7>`_)
 
 All other contributors (alphabetical last name):
 
