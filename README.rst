@@ -27,7 +27,7 @@ License
 
 .. |License|
 
-Copyright 2023 Christophe Delagarde and contributors.
+Copyright 2023 Mickaël Martin Nevot, Christophe Delagarde and contributors.
 
 ``TAGED`` is free software made available under the MIT License. For details see the `LICENSE <https://github.com/FraDiavolo7/TAGED/blob/main/LICENSE.txt>`_ file.
 
