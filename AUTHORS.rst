@@ -1,7 +1,6 @@
-**Main author:** Christophe Delagarde (`<https://github.com/FraDiavolo7>`_)
+**Main authors:** Mickaël Martin Nevot (`<https://github.com/MickaelMartinNevot>`_) and Christophe Delagarde (`<https://github.com/FraDiavolo7>`_)
 
 All other contributors (alphabetical last name):
 
 * Lotfi Lakhal
-* Mickaël Martin Nevot
 * Sébastien Nedjar
