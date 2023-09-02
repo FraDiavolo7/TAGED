@@ -1,8 +1,5 @@
 |logo|
 
-HTML: <a href="https://joss.theoj.org/papers/5bf0e66648a5ab42fdf80003867345a0"><img src="https://joss.theoj.org/papers/5bf0e66648a5ab42fdf80003867345a0/status.svg"></a>
-Markdown: [![status](https://joss.theoj.org/papers/5bf0e66648a5ab42fdf80003867345a0/status.svg)](https://joss.theoj.org/papers/5bf0e66648a5ab42fdf80003867345a0)
-
 This is the prototype for the TAGED method. TAGED is Tool Assisted Game Equilibrium Design.
 
 Documentation
@@ -17,12 +14,15 @@ Installation and Dependencies
 
 TAGED is a full solution which needs a heavy installation on a dedicated server, details for the installation are yet to be simplified. 
 
-.. Attribution
-.. -----------
+Attribution
+-----------
 
 .. |JOSS|
 
 
+.. raw:: html
+
+   <a href="https://joss.theoj.org/papers/5bf0e66648a5ab42fdf80003867345a0"><img src="https://joss.theoj.org/papers/5bf0e66648a5ab42fdf80003867345a0/status.svg"></a>
 
 
 License
