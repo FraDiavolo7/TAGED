@@ -1,0 +1,155 @@
+|   .gitattributes                                      | 
+|   .gitignore                                          | 
+|   .project                                            | 
+|   AUTHORS.rst                                         | 
+|   generateDoc.sh                                      | 
+|   generatePDF.sh                                      | 
+|   how-taged-works.png                                 | 
+|   LICENSE.txt                                         | 
+|   paper.bib                                           | 
+|   paper.md                                            | 
+|   README.rst                                          | 
+|   taged-method.png                                    | 
+|   taged.conf                                          | 
+|   TAGED.doxyfile                                      | 
+|   TAGED.doxyfile~                                     | 
+|   TAGED_doc.pdf                                       | 
+|   TAGED_logo.png                                      | 
+|                                                       | 
++---.github                                             | Scripts for Github processing
++---.phpdoc                                             | Generated documentation 
++---commun                                              | Various centralized functions to ease development (in-house framework)
++---lots                                                | intermediate packages for deliveries (deprecated)
++---Match3                                              | One of the games used for the prototype, open source and coming from an another author but modified to provide statistics
++---taged                                               | TAGED main folder
+|   +---application                                     | TAGED application folder
+|   |   +---cfg                                         | configuration folder (deprecated)
+|   |   +---data                                        | initialization folder (deprecated)
+|   |   +---log                                         | operational logs
+|   |   +---old                                         | waste bin for old files
+|   |   +---script                                      | Scripts for data gathering and operational maintenance
+|   |   |   |   analysis.php                            | 
+|   |   |   |   datamanager.sh                          | script handling the storage of files (input buffer, duplicate prevention and memorization for re-entry if need be)
+|   |   |   |   TAGED_get_collection.sh                 | Collection processing
+|   |   |   |   TAGED_process_collection.sh             | Collection processing
+|   |   |   |   processColl.sh                          | Collection processing
+|   |   |   |   processCollEntry.php                    | Collection processing
+|   |   |   |   getReplays.sh                           | Collection processing
+|   |   |   |   TAGED_get_hns.sh                        | Hack'n Slash processing
+|   |   |   |   processHnS.php                          | Hack'n Slash processing
+|   |   |   |   processHnSFile.php                      | Hack'n Slash processing
+|   |   |   |   processHnSFolder.php                    | Hack'n Slash processing
+|   |   |   |   getDiablo.php                           | Hack'n Slash processing
+|   |   |   |   getHnSFile.php                          | Hack'n Slash processing
+|   |   |   |   ParseHnSHero.php                        | Hack'n Slash processing
+|   |   |   |   getStats.sh                             | Used to show stats on the welcome page
+|   |   |   |   TAGED_set_stats.sh                      | Used to sets the stats for the welcome page
+|   |   |   |   setStats.sh                             | Used to sets the stats for the welcome page
+|   |   |   |   GIT_commit_push.sh                      | Git autocommit (to prevent brain lapses)
+|   |   |   |   GIT_commit_push_data.sh                 | Git autocommit for data files
+|   |   |   |   GIT_tell.sh                             | Git autocommit failure messaging
+|   |   |   |   POSTGRES_dump.sh                        | DB dump
+|   |   |   |   dump.sh                                 | DB dump
+|   |   |   |   ROOT_heartbeat.sh                       | Status communication
+|   |   |   |   ROOT_reboot.sh                          | Status communication
+|   |   |   |   ROOT_tell.sh                            | Status communication
+|   |   |   |   SIGNAL_send.sh                          | Status communication
+|   |   |   |   test.php                                | 
+|   |   |   |   dayslipper.crontab                      | Cron configuration
+|   |   |   |   postgres.crontab                        | Cron configuration
+|   |   |   |   root.crontab                            | Cron configuration
+|   |   |   |   taged.crontab                           | Cron configuration
+|   |   |   |                                           | 
+|   |   |   +---Analysis                                | 
+|   |   |   \---db_dump                                 | 
+|   |   +---src                                         | TAGED sources
+|   |   |   |   Algo.class.php                          | anaysis algorithm list 
+|   |   |   |   Analysis.class.php                      | TAGED Analysis handler
+|   |   |   |   Analysis_old.class.php                  | deprecated
+|   |   |   |   define.php                              | 
+|   |   |   |   TagedDBColl.class.php                   | Database configuration for Collection
+|   |   |   |   TagedDBHnS.class.php                    | Database configuration for Hack'n Slash
+|   |   |   |   TagedDBMatch3.class.php                 | Database configuration for Match3
+|   |   |   |   TagedPage.class.php                     | Page template
+|   |   |   |   TagedWS.class.php                       | WebService template
+|   |   |   |                                           | 
+|   |   |   +---aggregates                              | 
+|   |   |   |       AggregateList.class.php             | aggregate relation handler
+|   |   |   |                                           | 
+|   |   |   +---algo                                    | Algorithm used by TAGED application
+|   |   |   |       CoSky.class.php                     | CoSky PHP implementation
+|   |   |   |       Cuboide.class.php                   | SkyCube Cuboid handler
+|   |   |   |       CuboideBlocNestedLoop.class.php     | SkyLine BNL implementation for a SkyCube Cuboid
+|   |   |   |       CuboideBruteForce.class.php         | SkyLine Brute Force (approximative) implementation for a SkyCube Cuboid
+|   |   |   |       CuboideEmergent.class.php           | Emergent SkyCube Cuboid handler
+|   |   |   |       IDEA.class.php                      | Run an IDEA analysis (wrapper for TagedAlgo C++ applications)
+|   |   |   |       SKDisplay.class.php                 | Display functions
+|   |   |   |       SkyCube.class.php                   | SkyCube handler
+|   |   |   |       SkyCubeBlocNestedLoop.class.php     | SkyLine BNL implementation for a SkyCube
+|   |   |   |       SkyCubeBruteForce.class.php         | SkyLine Brute Force (approximative) implementation for a SkyCube
+|   |   |   |       SkyCubeEmergent.class.php           | Emergent SkyCube handler
+|   |   |   |                                           | 
+|   |   |   +---models                                  | 
+|   |   |   |   +---Coll                                | Collection database interactions
+|   |   |   |   |       CollGame.class.php              | 
+|   |   |   |   |       CollPlayer.class.php            | 
+|   |   |   |   |       CollTable.class.php             | 
+|   |   |   |   |       CollTeam.class.php              | 
+|   |   |   |   |                                       | 
+|   |   |   |   +---HnS                                 | Hack'n Slash database interactions
+|   |   |   |   |       Hero.class.php                  | 
+|   |   |   |   |       HnSComp.class.php               | 
+|   |   |   |   |       HnSItem.class.php               | 
+|   |   |   |   |       HnSPlayer.class.php             | 
+|   |   |   |   |       HnSTable.class.php              | 
+|   |   |   |   |                                       | 
+|   |   |   |   \---Match3                              | Match3 database interactions
+|   |   |   |           M3Game.class.php                | 
+|   |   |   |           M3Match.class.php               | 
+|   |   |   |           M3Stroke.class.php              | 
+|   |   |   |           Match3.class.php                | 
+|   |   |   +---modules                                 | 
+|   |   |   +---pages                                   | Pages of the Application
+|   |   |   |       PageAccueil.class.php               | Welcome page
+|   |   |   |       PageChangeAggregate.class.php       | Modify an aggregate relation
+|   |   |   |       PageCollAggregate.class.php         | deprecated
+|   |   |   |       PageCollData.class.php              | Show Collection data
+|   |   |   |       PageCollParse.class.php             | Manually enter a Collection file
+|   |   |   |       PageGestAggregate.class.php         | Manage aggregate relations
+|   |   |   |       PageHnSData.class.php               | Show Hack'n Slash data
+|   |   |   |       PageHnSParse.class.php              | Manually enter a Hack'n Slash file
+|   |   |   |       PageMatch3.class.php                | Show the Match3 game
+|   |   |   |       PageNewAggregate.class.php          | Create an aggregate relation
+|   |   |   |       PageRunAnalysis.class.php           | Run a TAGED Analysis ( Main purpose of the TAGED application )
+|   |   |   |       PageRunAnalysis_old.class.php       | Deprecated Run a TAGED Analysis
+|   |   |   |       PageRunSkyCubeAnalysis.class.php    | Deprecated Run a TAGED Analysis
+|   |   |   |       PageShowAggregate.class.php         | Show an aggregate relation's data
+|   |   |   |       PageShowSkyCube.class.php           | Deprecated Run a TAGED Analysis
+|   |   |   |       PageTest.class.php                  | Test page
+|   |   |   |       PageTestAccords.class.php           | Test page
+|   |   |   |       PageTestCoSky.class.php             | Test page
+|   |   |   |       PageTestSkyCube.class.php           | Test page
+|   |   |   |       PageTestSkyCubeEmergent.class.php   | Test page
+|   |   |   +---parse                                   | Parsers for data retrieval (Collection & Hack'n Slash)
+|   |   |   |       CollParser.class.php                | Collection
+|   |   |   |       HnSHeroParser.class.php             | Hack'n Slash
+|   |   |   |       HnSParser.class.php                 | Hack'n Slash
+|   |   |   \---ws                                      | WebService code (for Match3 data retrieval)
+|   |   \---www                                         |
+|   |       |   index.php                               | Main PHP page for the application
+|   |       |   phpinfo.php                             | 
+|   |       |   ws.php                                  | WebService (for Match3 data retrieval)
+|   |       +---css                                     |
+|   |       |   |   latex.css                           | attempt to present the visuals for LaTeX (scrapped for time constraints)
+|   |       |   |   match3.css                          | CSS for Match3 game
+|   |       |   |   taged.css                           | Main CSS
+|   |       |   |   th.css                              | Generic CSS
+|   |       |   \---fonts                               |
+|   |       +---fonts                                   |
+|   |       +---img                                     | 
+|   |       \---js                                      | mainly for Match3 game
+|   +---dump                                            | database dumps
+|   \---maintenance                                     | basic page to present if the TAGED application is not available
++---TagedAlgo                                           | IDEA algorithms embedded for the project (nearly unchanged)
+\---vgdm                                                | deprecated folder
+														|
