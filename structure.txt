@@ -1,3 +1,8 @@
+Markers :
+O | comming from an outside source
+! | main interest of the application
+
+
 |   .gitattributes                                      | 
 |   .gitignore                                          | 
 |   .project                                            | 
@@ -20,7 +25,7 @@
 +---.phpdoc                                             | Generated documentation 
 +---commun                                              | Various centralized functions to ease development (in-house framework)
 +---lots                                                | intermediate packages for deliveries (deprecated)
-+---Match3                                              | One of the games used for the prototype, open source and coming from an another author but modified to provide statistics
++---Match3                                            O | One of the games used for the prototype, open source and coming from an another author but modified to provide statistics
 +---taged                                               | TAGED main folder
 |   +---application                                     | TAGED application folder
 |   |   +---cfg                                         | configuration folder (deprecated)
@@ -77,9 +82,9 @@
 |   |   |   |       AggregateList.class.php             | aggregate relation handler
 |   |   |   |                                           | 
 |   |   |   +---algo                                    | Algorithm used by TAGED application
-|   |   |   |       CoSky.class.php                     | CoSky PHP implementation
+|   |   |   |       CoSky.class.php                   ! | CoSky PHP implementation
 |   |   |   |       Cuboide.class.php                   | SkyCube Cuboid handler
-|   |   |   |       CuboideBlocNestedLoop.class.php     | SkyLine BNL implementation for a SkyCube Cuboid
+|   |   |   |       CuboideBlocNestedLoop.class.php   ! | SkyLine BNL implementation for a SkyCube Cuboid
 |   |   |   |       CuboideBruteForce.class.php         | SkyLine Brute Force (approximative) implementation for a SkyCube Cuboid
 |   |   |   |       CuboideEmergent.class.php           | Emergent SkyCube Cuboid handler
 |   |   |   |       IDEA.class.php                      | Run an IDEA analysis (wrapper for TagedAlgo C++ applications)
@@ -120,7 +125,7 @@
 |   |   |   |       PageHnSParse.class.php              | Manually enter a Hack'n Slash file
 |   |   |   |       PageMatch3.class.php                | Show the Match3 game
 |   |   |   |       PageNewAggregate.class.php          | Create an aggregate relation
-|   |   |   |       PageRunAnalysis.class.php           | Run a TAGED Analysis ( Main purpose of the TAGED application )
+|   |   |   |       PageRunAnalysis.class.php         ! | Run a TAGED Analysis ( Main purpose of the TAGED application )
 |   |   |   |       PageRunAnalysis_old.class.php       | Deprecated Run a TAGED Analysis
 |   |   |   |       PageRunSkyCubeAnalysis.class.php    | Deprecated Run a TAGED Analysis
 |   |   |   |       PageShowAggregate.class.php         | Show an aggregate relation's data
@@ -141,15 +146,15 @@
 |   |       |   ws.php                                  | WebService (for Match3 data retrieval)
 |   |       +---css                                     |
 |   |       |   |   latex.css                           | attempt to present the visuals for LaTeX (scrapped for time constraints)
-|   |       |   |   match3.css                          | CSS for Match3 game
+|   |       |   |   match3.css                        O | CSS for Match3 game
 |   |       |   |   taged.css                           | Main CSS
 |   |       |   |   th.css                              | Generic CSS
 |   |       |   \---fonts                               |
-|   |       +---fonts                                   |
-|   |       +---img                                     | 
-|   |       \---js                                      | mainly for Match3 game
+|   |       +---fonts                                 O |
+|   |       +---img                                   O | 
+|   |       \---js                                    O | mainly for Match3 game
 |   +---dump                                            | database dumps
 |   \---maintenance                                     | basic page to present if the TAGED application is not available
-+---TagedAlgo                                           | IDEA algorithms embedded for the project (nearly unchanged)
-\---vgdm                                                | deprecated folder
++---TagedAlgo                                         O | IDEA algorithms embedded for the project (nearly unchanged)
+\---vgdm                                              O | deprecated folder
 														|
