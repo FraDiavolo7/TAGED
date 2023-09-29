@@ -9,10 +9,12 @@ tags:
   - Tool assisted
 
 authors:
-  - name: Mickaël Martin Nevot
+  - given-names: Mickaël
+    surname: Martin Nevot
     orcid: 0009-0004-7893-3449
     affiliation: "1"
-  - name: Christophe Delagarde
+  - given-names: Christophe
+    surname: Delagarde
     orcid: 0009-0006-4498-9887
     affiliation: "2"
 
