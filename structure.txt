@@ -69,7 +69,7 @@ O | comming from an outside source
 |   |   |   \---db_dump                                 | 
 |   |   +---src                                         | TAGED sources
 |   |   |   |   Algo.class.php                          | anaysis algorithm list 
-|   |   |   |   Analysis.class.php                      | TAGED Analysis handler
+|   |   |   |   Analysis.class.php                    ! | TAGED Analysis handler
 |   |   |   |   Analysis_old.class.php                  | deprecated
 |   |   |   |   define.php                              | 
 |   |   |   |   TagedDBColl.class.php                   | Database configuration for Collection
