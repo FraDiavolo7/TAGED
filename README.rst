@@ -22,7 +22,7 @@ Attribution
 
 .. raw:: html
 
-   <a href="https://joss.theoj.org/papers/5bf0e66648a5ab42fdf80003867345a0"><img src="https://joss.theoj.org/papers/5bf0e66648a5ab42fdf80003867345a0/status.svg"></a>
+..   <a href="https://joss.theoj.org/papers/5bf0e66648a5ab42fdf80003867345a0"><img src="https://joss.theoj.org/papers/5bf0e66648a5ab42fdf80003867345a0/status.svg"></a>
 
 
 License
